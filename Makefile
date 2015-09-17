@@ -1,4 +1,4 @@
-default: d2vpk update
+default: d2vpk update commit push
 
 d2vpk:
 	go get github.com/Nightgunner5/vpk
@@ -6,3 +6,10 @@ d2vpk:
 
 update:
 	ruby update.rb
+
+commit:
+	git commit -m "`./d2vpk -v`"
+
+push:
+	git push
+

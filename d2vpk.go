@@ -84,7 +84,7 @@ var infMatch = regexp.MustCompile(`(?m)^([^=]+)=(\S+)\s*`)
 
 func getVersion() {
 	home := os.Getenv("HOME")
-	inf, err := ioutil.ReadFile(home + "/Steam/steamapps/common/dota 2 beta/dota/steam.inf")
+	inf, err := ioutil.ReadFile(home + "/Steam/steamapps/common/dota 2 beta/game/dota/steam.inf")
 	if err != nil {
 		panic(err)
 	}
@@ -94,5 +94,5 @@ func getVersion() {
 		steamInf[match[1]] = match[2]
 	}
 
-	fmt.Printf("Client %s Patch %s\n", steamInf["ClientVersion"], steamInf["PatchVersion"])
+	fmt.Printf("Client %s\n", steamInf["ClientVersion"])
 }
