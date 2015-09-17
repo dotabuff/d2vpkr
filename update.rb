@@ -6,7 +6,7 @@ require "fileutils"
 require_relative "./vdf"
 
 DOTA = File.expand_path(ENV["DOTA"] || "~/Steam/steamapps/common/dota 2 beta/game")
-TEMP = File.expand_path(ENV["TEMP"] || "/tmp")
+TEMP = File.expand_path(ENV["TEMP"] || "/tmp/paks")
 
 CONVERT_TO_JSON = %w[
   dota/resource/{items,dota}_*.txt
@@ -25,6 +25,7 @@ def convert_encoding(path)
 
   case type
   when /UTF-16/, /illegal byte sequence/
+    puts "converting #{path} to utf8..."
     `iconv -f UTF-16 -t UTF-8 "#{path}" > "#{path}.tmp"`
     `mv "#{path}.tmp" "#{path}"`
   end
@@ -52,8 +53,6 @@ end
 
 # Copies a file from a source to a destination (if changed)
 def copy_resource(src, dst)
-  return if (File.exist?(src) && File.exist?(dst) && FileUtils.compare_file(src, dst))
-
   dstdir = File.dirname(dst)
   sh("mkdir", "-p", dstdir) unless Dir.exist?(dstdir)
   sh("cp", "-a", src, dst)
@@ -65,12 +64,12 @@ def extract_vpk(src)
   vpkname = File.basename(src.gsub("#{DOTA}/", "").tr("/", "_"), "_dir.vpk")
   tmppath = "#{TEMP}/#{vpkname}"
   sh("mkdir", "-p", tmppath)
-  sh("./d2vpk", src, tmppath)
+  sh("./d2vpk", src, tmppath, "+.vdf", "+.res", "+.txt", "+.png")
 end
 
 # Extract VPK files
 Dir.glob("#{DOTA}/**/*_dir.vpk") do |path|
-  # extract_vpk(path)
+  extract_vpk(path)
 end
 
 # Copy non-VPK resources
@@ -81,7 +80,7 @@ end
 # Copy VPK resources
 Dir.glob("#{TEMP}/**/*.{vdf,res,txt,png}") do |src|
   next if src =~ /econ|hud_skins|core_pak01/
-  copy_resource(src, src.gsub("#{TEMP}/", "").gsub("_pak01", ""))
+  # copy_resource(src, src.gsub("#{TEMP}/", "").gsub("_pak01", ""))
 end
 
 # Convert given resources to JSON
@@ -90,8 +89,5 @@ CONVERT_TO_JSON.each do |pattern|
     convert_json(src)
   end
 end
-
-# Add to git
-sh("git", "add", "-A", "dota")
 
 exit 0

@@ -8,6 +8,7 @@ update:
 	ruby update.rb
 
 commit:
+	git add -A dota
 	git commit -m "`./d2vpk -v`"
 
 push:
