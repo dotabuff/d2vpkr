@@ -80,7 +80,7 @@ end
 # Copy VPK resources
 Dir.glob("#{TEMP}/**/*.{vdf,res,txt,png}") do |src|
   next if src =~ /econ|hud_skins|core_pak01/
-  # copy_resource(src, src.gsub("#{TEMP}/", "").gsub("_pak01", ""))
+  copy_resource(src, src.gsub("#{TEMP}/", "").gsub("_pak01", ""))
 end
 
 # Convert given resources to JSON
