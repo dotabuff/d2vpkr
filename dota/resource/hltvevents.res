@@ -32,14 +32,6 @@
 // HLTV specific events
 //////////////////////////////////////////////////////////////////////
 	
-	"hltv_status"				// general HLTV status
-	{
-		"clients"	"long"		// number of HLTV spectators
-		"slots"		"long"		// number of HLTV slots
-		"proxies"	"short"		// number of HLTV proxies
-		"master"	"string"	// disptach master IP:port
-	}
-	
 	"hltv_cameraman"			// a spectator/player is a cameraman
 	{
 		"index"		"short"			// camera man entity index
