@@ -1642,7 +1642,7 @@
 	{    
 		"challengetype"		"34"
 		"desc"				"#DOTA_ChallengeDesc_KillCourier"
-		"image"				"images/challenges/icon_challenges_xdamage_time.png"
+		"image"				"images/challenges/icon_challenges_xcouriers_killed.png"
 	
 
 		"events"
@@ -1691,7 +1691,6 @@
 	{    
 		"challengetype"		"35"
 		"desc"				"#DOTA_ChallengeDesc_KillCouriersAsHero"
-		"image"				"images/challenges/icon_challenges_xdamage_time.png"
 		"requiredhero"		"<hero_id>"
 
 		"events"
@@ -1745,7 +1744,7 @@
 	{    
 		"challengetype"			"36"
 		"desc"				"#DOTA_ChallengeDesc_BuildingDamage"
-		"image"				"images/challenges/icon_challenges_building.png"
+		"image"				"images/challenges/icon_challenges_xbuilding_damage.png"
 
 		"events"
 		{
@@ -1754,7 +1753,7 @@
 			{
 				"damage_event"
 				{
-					"event"			"damage"
+					"event"				"damage"
 					"damage_source"		"!hero"
 					"attacker_team"		"!team"
 					"target_team"		"!enemyteam"
@@ -1796,6 +1795,7 @@
 	{
 		"challengetype"	"37"
 		"desc"			"#DOTA_ChallengeDesc_TeleportKill" 
+		"image"				"images/challenges/icon_challenges_teleport_kills.png"
 		
 		"events"
 		{
@@ -1808,12 +1808,13 @@
 					"modifier"					"modifier_teleporting"
 					"caster"					"!hero"
 				}			
-				"separator"		"15.0"
+				"separator"		"20.0"
 				"enemy_hero_kill"
 				{
 					"event"						"death"
-					"damage_source"				"!hero"
 					"target_must_be_hero"		"1"
+					"target_team"				"!enemyteam"
+					"assist_player_id"			"!playerid"
 				}
 
 			}
@@ -1851,7 +1852,8 @@
 
 		"challengetype"	"38"
 		"desc"			"#DOTA_ChallengeDesc_StackCamps" 
-		
+		"image"			"images/challenges/icon_challenges_xneutral_creeps.png"		
+
 		"events"
 		{
 			"matching_type"		"linear_series"
@@ -1897,6 +1899,7 @@
 
 		"challengetype"	"39"
 		"desc"			"#DOTA_ChallengeDesc_PickupRunes"
+		"image"			"images/challenges/icon_challenges_xrune_pickups.png"
 		
 		"events"
 		{
@@ -2054,7 +2057,6 @@
 	{
 		"challengetype"	"42"
 		"desc"			"#DOTA_ChallengeDesc_TreantHealing"
-		"image"			"images/challenges/icon_challenges_xheals.png"
 		"requiredhero"	"83"
 		"events"
 		{
@@ -2148,26 +2150,25 @@
 					"ability"					"wisp_relocate"
 					"caster"					"!hero"
 				}
-				"separator"		"12.0"
+				"separator"		"13.0"
 				"enemy_hero_kill"
 				{
 					"event"						"death"
-					"target"					"!1"
-				}
-				"separator"		"AND"
-				"get_assist"
-				{
-					"event"						"damage"
-					"attacker"					"!hero"
 					"target_must_be_hero"		"1"
-					"storage"
-					{
-						"1"			"target"
-					}
+					"target_team"				"!enemyteam"
+					"assist_player_id"			"!playerid"
 				}
 			}
 
 			"progress_stored_in"		"1"
+			"postmatch_increments"
+			{
+				"1"
+				{
+					"aggregator"	"increment"
+				}
+			}
+			
 			"post_tests"
 			{
 				"test_relocate_ganks"
@@ -2258,30 +2259,19 @@
 			"matching_type"		"linear_series"
 			"query"
 			{
-				"buff_lost"
-				{
-					"event"					"modifier_remove"
-					"modifier"				"modifier_ice_blast"
-					"caster"				"!hero"
-					"target"				"!1"
-				}	
-				"separator"			"1.0"
 				"enemy_killed"
 				{
 					"event"					"death"
-					"target_team"			"!enemyteam"
-					"target_must_be_hero"	"1"
-					"storage"
-					{
-						"1"					"target"
-					}
+					"inflictor"				"ancient_apparition_ice_blast"
+					"target_team"				"!enemyteam"
+					"target_must_be_hero"			"1"
 				}
 			}
 			
-			"progress_stored_in"		"2"
+			"progress_stored_in"		1
 			"postmatch_increments"
 			{
-				"2"
+				"1"
 				{
 					"aggregator"	"increment"
 				}
@@ -2290,7 +2280,7 @@
 			{
 				"test_ice_blast_kills"
 				{
-					"storage"		"2"
+					"storage"		"1"
 					"compare"		">="
 					"amount"		"<iceblast_kills>"
 				}
@@ -2311,25 +2301,74 @@
 	{
 		"challengetype"	"46"
 		"desc"			"#DOTA_ChallengeDesc_FirstBlood"
+		"image"			"images/challenges/icon_challenges_first_bloods.png"
 		
 		"events"
 		{
 			"matching_type"		"linear_series"
 			"query"
 			{
-				"get_first_blood"
-				{
-					"event"			"first_blood"
-					"team"			"!team"
-					"playerid"		"!playerid"
-				}
-				"separator"		"OR"
 				"get_assist"
 				{
 					"event"			"first_blood"
 					"team"			"!team"
 					"assist_player_id"	"!playerid"
 				}
+			}
+		}
+	}
+
+	"get_smoke_kills"
+	{
+		"challengetype"	"47"
+		"desc"			"#DOTA_ChallengeDesc_SmokeKill"
+		"image"			"images/challenges/icon_challenges_smoked_kills.png"
+		
+		"events"
+		{
+			"matching_type"		"linear_series"
+			"query"
+			{
+				"buff_lost"
+				{
+					"event"					"modifier_remove"
+					"modifier"				"modifier_smoke_of_deceit"
+					"caster"				"!hero"
+				}	
+				"separator"						"30.0"
+				"enemy_hero_kill"
+				{
+					"event"						"death"
+					"target_must_be_hero"		"1"
+					"target_team"				"!enemyteam"
+					"assist_player_id"			"!playerid"
+				}
+			}
+			"progress_stored_in"		"1"
+			"postmatch_increments"
+			{
+				"1"
+				{
+					"aggregator"	"increment"
+				}
+			}
+			"post_tests"
+			{
+				"test_smoke_ganks"
+				{
+					"storage"		"1"
+					"compare"		">="
+					"amount"		"<smoke_ganks>"
+				}
+			}
+		}
+
+		"variables"
+		{
+			"<smoke_ganks>"
+			{
+				"format"	"int"
+				"index"		"0"
 			}
 		}
 	}
