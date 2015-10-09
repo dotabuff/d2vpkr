@@ -25,7 +25,7 @@
 					id				= "mesh_portrait"
 					s1_legacy_name	= "lod0"
 					name			= "#DOTA_Workshop_LOD0Title"
-					desc			= "#DOTA_Workshop_LOD0Desc_Courier"
+					desc			= "#DOTA_Workshop_LOD0Desc"
 					max_polygons	= 3500
 					optional		= true
 				},
@@ -33,7 +33,7 @@
 					id				= "mesh_world"
 					s1_legacy_name	= "lod1"
 					name			= "#DOTA_Workshop_LOD1Title"
-					desc			= "#DOTA_Workshop_LOD1Desc_Courier"
+					desc			= "#DOTA_Workshop_LOD1Desc"
 					max_polygons	= 3000
 				},
 			]
@@ -65,6 +65,7 @@
 					id				= "animation_die"
 					s1_legacy_name	= "anim3"
 					name			= "#DOTA_Workshop_Animation_Die"
+					desc			= "#DOTA_Workshop_Animation_Courier_Die_Desc"
 					suffix			= "_anim_die"
 					sequence_name	= "courier_death"
 					activity_name	= "ACT_DOTA_DIE"
@@ -75,7 +76,7 @@
 				{
 					id				= "idle_anims"
 					name			= "#DOTA_Workshop_Animation_Idle"
-					bundle_type		= "idle_anim_bundle"
+					bundle_type		= "loop_and_rare"
 					anim_list =
 					[
 						{
@@ -103,7 +104,7 @@
 				{
 					id				= "portrait_anims"
 					name			= "#DOTA_Workshop_Animation_PortraitIdle"
-					bundle_type		= "portrait_anim_bundle"
+					bundle_type		= "loop_and_rare"
 					fallback_bundles = [ "idle_anims" ]
 					optional		= true
 					anim_list =
@@ -112,6 +113,7 @@
 							id				= "passive_anim_loop"
 							s1_legacy_name	= "anim6"
 							name			= "#DOTA_Workshop_Animation_PortraitIdle"
+							desc			= "#DOTA_Workshop_Animation_PortraitIdle_Desc"
 							suffix			= "_portrait_idle"
 							sequence_name	= "courier_capture"
 							activity_name	= "ACT_DOTA_CAPTURE"
@@ -123,6 +125,7 @@
 							id				= "passive_anim_rare"
 							s1_legacy_name	= "anim7"
 							name			= "#DOTA_Workshop_Animation_PortraitRare"
+							desc			= "#DOTA_Workshop_Animation_PortraitRare_Desc"
 							suffix			= "_portrait_idle_alt"
 							sequence_name	= "courier_capture_rare"
 							activity_name	= "ACT_DOTA_CAPTURE"
@@ -134,7 +137,7 @@
 					id				= "loadout_anims"
 					name			= "#DOTA_Workshop_Animation_LoadoutIdle"
 					desc			= "#DOTA_Workshop_Animation_LoadoutIdle_Desc"
-					bundle_type		= "loadout_anim_bundle"
+					bundle_type		= "loop_and_rare"
 					fallback_bundles = [ "idle_anims", "portrait_anims" ]
 					optional		= true
 					anim_list =
@@ -143,6 +146,7 @@
 							id				= "passive_anim_loop"
 							s1_legacy_name	= "anim12"
 							name			= "#DOTA_Workshop_Animation_LoadoutIdle"
+							desc			= "#DOTA_Workshop_Animation_LoadoutIdle_Desc"
 							suffix			= "_loadout_idle"
 							sequence_name	= "courier_loadout"
 							activity_name	= "ACT_DOTA_LOADOUT"
@@ -153,6 +157,7 @@
 							id				= "passive_anim_rare"
 							s1_legacy_name	= "anim13"
 							name			= "#DOTA_Workshop_Animation_LoadoutRare"
+							desc			= "#DOTA_Workshop_Animation_LoadoutRare_Desc"
 							suffix			= "_loadout_idle_alt"
 							sequence_name	= "courier_loadout_rare"
 							activity_name	= "ACT_DOTA_LOADOUT_RARE"
@@ -164,24 +169,24 @@
 					id						= "run_anims"
 					name					= "#DOTA_Workshop_Animation_Run"
 					bundle_type				= "run_anim_bundle"
-					turn_sequence_name		= "courier_turns"
+					compound_sequence_name	= "courier_turns"
 					anim_list =
 					[
 						{
 							id				= "run_anim_base"
 							s1_legacy_name	= "anim2"
 							name			= "#DOTA_Workshop_Animation_Run"
+							desc			= "#DOTA_Workshop_Animation_Run_Desc"
 							suffix			= "_run"
 							sequence_name	= "courier_run"
 							activity_name	= "ACT_DOTA_RUN"
 							looping			= true
-							activity_weight	= 3
 						},
 						{
 							id				= "run_anim_turnpose_center"
 							s1_legacy_name	= "anim8"
 							name			= "#DOTA_Workshop_Animation_TurnPoseCenter"
-							desc			= "DOTA_Workshop_Animation_TurnPoseCenter_Desc"
+							desc			= "#DOTA_Workshop_Animation_TurnPoseCenter_Desc"
 							suffix			= "_turn_center"
 							sequence_name	= "courier_turn_center"
 							optional		= true
@@ -190,7 +195,7 @@
 							id				= "run_anim_turnpose_left"
 							s1_legacy_name	= "anim9"
 							name			= "#DOTA_Workshop_Animation_TurnPoseLeft"
-							desc			= "DOTA_Workshop_Animation_TurnPoseLeft_Desc"
+							desc			= "#DOTA_Workshop_Animation_TurnPoseLeft_Desc"
 							suffix			= "_turn_left"
 							sequence_name	= "courier_turn_left"
 							optional		= true
@@ -199,7 +204,7 @@
 							id				= "run_anim_turnpose_right"
 							s1_legacy_name	= "anim10"
 							name			= "#DOTA_Workshop_Animation_TurnPoseRight"
-							desc			= "DOTA_Workshop_Animation_TurnPoseRight_Desc"
+							desc			= "#DOTA_Workshop_Animation_TurnPoseRight_Desc"
 							suffix			= "_turn_right"
 							sequence_name	= "courier_turn_right"
 							optional		= true
@@ -266,7 +271,7 @@
 					id				= "mesh_portrait"
 					s1_legacy_name	= "lod0"
 					name			= "#DOTA_Workshop_LOD0Title"
-					desc			= "#DOTA_Workshop_LOD0Desc_Courier"
+					desc			= "#DOTA_Workshop_LOD0Desc"
 					max_polygons	= 3500
 					optional		= true
 				},
@@ -274,7 +279,7 @@
 					id				= "mesh_world"
 					s1_legacy_name	= "lod1"
 					name			= "#DOTA_Workshop_LOD1Title"
-					desc			= "#DOTA_Workshop_LOD1Desc_Courier"
+					desc			= "#DOTA_Workshop_LOD1Desc"
 					max_polygons	= 3000
 				},
 			]
@@ -284,6 +289,7 @@
 					id				= "animation_die"
 					s1_legacy_name	= "anim3"
 					name			= "#DOTA_Workshop_Animation_Die"
+					desc			= "#DOTA_Workshop_Animation_FlyingCourier_Die_Desc"
 					suffix			= "_anim_die"
 					sequence_name	= "courier_death"
 					activity_name	= "ACT_DOTA_DIE"
@@ -292,7 +298,7 @@
 					id				= "animation_run_haste"
 					s1_legacy_name	= "anim10"
 					name			= "#DOTA_Workshop_Animation_RunHaste"
-					desc			= "DOTA_Workshop_Animation_RunHaste_Desc"
+					desc			= "#DOTA_Workshop_Animation_RunHaste_Desc"
 					suffix			= "_anim_run_haste"
 					sequence_name	= "courier_run_haste"
 					activity_name	= "ACT_DOTA_RUN"
@@ -311,8 +317,8 @@
 			[
 				{
 					id				= "idle_anims"
-					name			= "#DOTA_Workshop_Animation_Idle"
-					bundle_type		= "idle_anim_bundle"
+					name			= "#DOTA_Workshop_Animation_FlyingCourier_Idle"
+					bundle_type		= "loop_and_rare"
 					anim_list =
 					[
 						{
@@ -327,7 +333,7 @@
 						},
 						{
 							id				= "passive_anim_rare"
-							s1_legacy_name	= "anim13"
+							s1_legacy_name	= "anim3"
 							name			= "#DOTA_Workshop_Animation_IdleRare"
 							desc			= "#DOTA_Workshop_Animation_IdleRare_Desc"
 							suffix			= "_anim_idlerare"
@@ -339,8 +345,8 @@
 				},
 				{
 					id				= "portrait_anims"
-					name			= "#DOTA_Workshop_Animation_PortraitIdle"
-					bundle_type		= "portrait_anim_bundle"
+					name			= "#DOTA_Workshop_Animation_FlyingCourier_PortraitIdle"
+					bundle_type		= "loop_and_rare"
 					fallback_bundles = [ "idle_anims" ]
 					optional		= true
 					anim_list =
@@ -349,6 +355,7 @@
 							id				= "passive_anim_loop"
 							s1_legacy_name	= "anim5"
 							name			= "#DOTA_Workshop_Animation_PortraitIdle"
+							desc			= "#DOTA_Workshop_Animation_PortraitIdle_Desc"
 							suffix			= "_portrait_idle"
 							sequence_name	= "courier_capture"
 							activity_name	= "ACT_DOTA_CAPTURE"
@@ -360,6 +367,7 @@
 							id				= "passive_anim_rare"
 							s1_legacy_name	= "anim6"
 							name			= "#DOTA_Workshop_Animation_PortraitRare"
+							desc			= "#DOTA_Workshop_Animation_PortraitRare_Desc"
 							suffix			= "_portrait_idle_alt"
 							sequence_name	= "courier_capture_rare"
 							activity_name	= "ACT_DOTA_CAPTURE"
@@ -369,9 +377,9 @@
 				},
 				{
 					id				= "loadout_anims"
-					name			= "#DOTA_Workshop_Animation_LoadoutIdle"
+					name			= "#DOTA_Workshop_Animation_FlyingCourier_LoadoutIdle"
 					desc			= "#DOTA_Workshop_Animation_LoadoutIdle_Desc"
-					bundle_type		= "loadout_anim_bundle"
+					bundle_type		= "loop_and_rare"
 					fallback_bundles = [ "idle_anims", "portrait_anims" ]
 					optional		= true
 					anim_list =
@@ -380,6 +388,7 @@
 							id				= "passive_anim_loop"
 							s1_legacy_name	= "anim11"
 							name			= "#DOTA_Workshop_Animation_LoadoutIdle"
+							desc			= "#DOTA_Workshop_Animation_LoadoutIdle_Desc"
 							suffix			= "_loadout_idle"
 							sequence_name	= "courier_loadout"
 							activity_name	= "ACT_DOTA_LOADOUT"
@@ -390,6 +399,7 @@
 							id				= "passive_anim_rare"
 							s1_legacy_name	= "anim12"
 							name			= "#DOTA_Workshop_Animation_LoadoutRare"
+							desc			= "#DOTA_Workshop_Animation_LoadoutRare_Desc"
 							suffix			= "_loadout_idle_alt"
 							sequence_name	= "courier_loadout_rare"
 							activity_name	= "ACT_DOTA_LOADOUT_RARE"
@@ -399,10 +409,11 @@
 				},
 				{
 					id				= "run_anims"
-					name			= "#DOTA_Workshop_Animation_Run"
+					name			= "#DOTA_Workshop_Animation_FlyingCourier_Run"
+					desc			= "#DOTA_Workshop_Animation_Run_Desc"
 					bundle_type		= "run_anim_bundle"
 					compound_sequence_name = "@courier_turns"
-					turn_sequence_name = "courier_turns"
+					compound_sequence_name = "courier_turns"
 					
 					anim_list =
 					[
@@ -410,17 +421,17 @@
 							id				= "run_anim_base"
 							s1_legacy_name	= "anim1"
 							name			= "#DOTA_Workshop_Animation_Run"
+							desc			= "#DOTA_Workshop_Animation_Run_Desc"
 							suffix			= "_run"
 							sequence_name	= "courier_run"
 							activity_name	= "ACT_DOTA_RUN"
 							looping			= true
-							activity_weight	= 3
 						},
 						{
 							id				= "run_anim_turnpose_center"
 							s1_legacy_name	= "anim7"
 							name			= "#DOTA_Workshop_Animation_TurnPoseCenter"
-							desc			= "DOTA_Workshop_Animation_TurnPoseCenter_Desc"
+							desc			= "#DOTA_Workshop_Animation_TurnPoseCenter_Desc"
 							suffix			= "_turn_center"
 							sequence_name	= "courier_turn_center"
 							optional		= true
@@ -429,7 +440,7 @@
 							id				= "run_anim_turnpose_left"
 							s1_legacy_name	= "anim8"
 							name			= "#DOTA_Workshop_Animation_TurnPoseLeft"
-							desc			= "DOTA_Workshop_Animation_TurnPoseLeft_Desc"
+							desc			= "#DOTA_Workshop_Animation_TurnPoseLeft_Desc"
 							suffix			= "_turn_left"
 							sequence_name	= "courier_turn_left"
 							optional		= true
@@ -438,7 +449,7 @@
 							id				= "run_anim_turnpose_right"
 							s1_legacy_name	= "anim9"
 							name			= "#DOTA_Workshop_Animation_TurnPoseRight"
-							desc			= "DOTA_Workshop_Animation_TurnPoseRight_Desc"
+							desc			= "#DOTA_Workshop_Animation_TurnPoseRight_Desc"
 							suffix			= "_turn_right"
 							sequence_name	= "courier_turn_right"
 							optional		= true
