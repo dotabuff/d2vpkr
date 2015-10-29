@@ -330,8 +330,6 @@ Response windrunner_Death
 {
 	scene "scenes/windrunner/windrunner_wind_death_01.vcd" nodelay noscene 
 	scene "scenes/windrunner/windrunner_wind_death_03.vcd" nodelay noscene 
-	scene "scenes/windrunner/windrunner_wind_death_04.vcd" nodelay noscene 
-	scene "scenes/windrunner/windrunner_wind_death_05.vcd" nodelay noscene 
 	scene "scenes/windrunner/windrunner_wind_death_06.vcd" nodelay noscene 
 	scene "scenes/windrunner/windrunner_wind_death_07.vcd" nodelay noscene 
 	scene "scenes/windrunner/windrunner_wind_death_08.vcd" nodelay noscene 
@@ -345,6 +343,18 @@ Rule windrunner_Death_Rule
 {
 	criteria Death Iswindrunner 
 	response windrunner_Death
+}
+
+Response windrunner_DeathChance_3%
+{
+	scene "scenes/windrunner/windrunner_wind_death_04.vcd" nodelay noscene 
+	scene "scenes/windrunner/windrunner_wind_death_05.vcd" nodelay noscene 
+}
+
+Rule windrunner_DeathChance_3%_Rule
+{
+	criteria Death Iswindrunner Chance_3%
+	response windrunner_DeathChance_3%
 }
 
 Response windrunner_DeathIsReincarnating
@@ -425,6 +435,26 @@ Rule windrunner_AllyNearIsAllyDrowRangerEarlyGame_Rule
 	response windrunner_AllyNearIsAllyDrowRangerEarlyGame
 }
 
+Response windrunner_Respawn
+{
+	scene "scenes/windrunner/windrunner_wind_respawn_01.vcd" nodelay noscene 
+	scene "scenes/windrunner/windrunner_wind_respawn_02.vcd" nodelay noscene 
+	scene "scenes/windrunner/windrunner_wind_respawn_03.vcd" nodelay noscene 
+	scene "scenes/windrunner/windrunner_wind_respawn_04.vcd" nodelay noscene 
+	scene "scenes/windrunner/windrunner_wind_respawn_05.vcd" nodelay noscene 
+	scene "scenes/windrunner/windrunner_wind_respawn_06.vcd" nodelay noscene 
+	scene "scenes/windrunner/windrunner_wind_respawn_07.vcd" nodelay noscene 
+	scene "scenes/windrunner/windrunner_wind_respawn_08.vcd" nodelay noscene 
+	scene "scenes/windrunner/windrunner_wind_respawn_09.vcd" nodelay noscene 
+	scene "scenes/windrunner/windrunner_wind_respawn_10.vcd" nodelay noscene 
+}
+
+Rule windrunner_Respawn_Rule
+{
+	criteria Respawn Iswindrunner 
+	response windrunner_Respawn
+}
+
 Response windrunner_LastHit
 {
 	scene "scenes/windrunner/windrunner_wind_lasthit_03.vcd" nodelay noscene 
@@ -445,24 +475,23 @@ Rule windrunner_LastHit_Rule
 	response windrunner_LastHit
 }
 
-Response windrunner_Respawn
+Response windrunner_Deny
 {
-	scene "scenes/windrunner/windrunner_wind_respawn_01.vcd" nodelay noscene 
-	scene "scenes/windrunner/windrunner_wind_respawn_02.vcd" nodelay noscene 
-	scene "scenes/windrunner/windrunner_wind_respawn_03.vcd" nodelay noscene 
-	scene "scenes/windrunner/windrunner_wind_respawn_04.vcd" nodelay noscene 
-	scene "scenes/windrunner/windrunner_wind_respawn_05.vcd" nodelay noscene 
-	scene "scenes/windrunner/windrunner_wind_respawn_06.vcd" nodelay noscene 
-	scene "scenes/windrunner/windrunner_wind_respawn_07.vcd" nodelay noscene 
-	scene "scenes/windrunner/windrunner_wind_respawn_08.vcd" nodelay noscene 
-	scene "scenes/windrunner/windrunner_wind_respawn_09.vcd" nodelay noscene 
-	scene "scenes/windrunner/windrunner_wind_respawn_10.vcd" nodelay noscene 
+	scene "scenes/windrunner/windrunner_wind_deny_01.vcd" nodelay noscene 
+	scene "scenes/windrunner/windrunner_wind_deny_02.vcd" nodelay noscene 
+	scene "scenes/windrunner/windrunner_wind_deny_03.vcd" nodelay noscene 
+	scene "scenes/windrunner/windrunner_wind_deny_04.vcd" nodelay noscene 
+	scene "scenes/windrunner/windrunner_wind_deny_05.vcd" nodelay noscene 
+	scene "scenes/windrunner/windrunner_wind_deny_06.vcd" nodelay noscene 
+	scene "scenes/windrunner/windrunner_wind_deny_07.vcd" nodelay noscene 
+	scene "scenes/windrunner/windrunner_wind_deny_08.vcd" nodelay noscene 
+	scene "scenes/windrunner/windrunner_wind_haste_03.vcd" nodelay noscene 
 }
 
-Rule windrunner_Respawn_Rule
+Rule windrunner_Deny_Rule
 {
-	criteria Respawn Iswindrunner 
-	response windrunner_Respawn
+	criteria Deny Iswindrunner 
+	response windrunner_Deny
 }
 
 Response windrunner_Select
@@ -682,25 +711,6 @@ Rule windrunner_Bottling_Rule
 	response windrunner_Bottling
 }
 
-Response windrunner_Deny
-{
-	scene "scenes/windrunner/windrunner_wind_deny_01.vcd" nodelay noscene 
-	scene "scenes/windrunner/windrunner_wind_deny_02.vcd" nodelay noscene 
-	scene "scenes/windrunner/windrunner_wind_deny_03.vcd" nodelay noscene 
-	scene "scenes/windrunner/windrunner_wind_deny_04.vcd" nodelay noscene 
-	scene "scenes/windrunner/windrunner_wind_deny_05.vcd" nodelay noscene 
-	scene "scenes/windrunner/windrunner_wind_deny_06.vcd" nodelay noscene 
-	scene "scenes/windrunner/windrunner_wind_deny_07.vcd" nodelay noscene 
-	scene "scenes/windrunner/windrunner_wind_deny_08.vcd" nodelay noscene 
-	scene "scenes/windrunner/windrunner_wind_haste_03.vcd" nodelay noscene 
-}
-
-Rule windrunner_Deny_Rule
-{
-	criteria Deny Iswindrunner 
-	response windrunner_Deny
-}
-
 Response windrunner_MissingIsLaneTop
 {
 	scene "scenes/windrunner/windrunner_wind_missing_lane_01.vcd" nodelay noscene 
@@ -902,6 +912,69 @@ Rule windrunner_PowerupIsPowerupInvisibilityChance_5%_Rule
 	response windrunner_PowerupIsPowerupInvisibilityChance_5%
 }
 
+Response windrunner_Thanks
+{
+	scene "scenes/windrunner/windrunner_wind_thanks_01.vcd" nodelay noscene 
+	scene "scenes/windrunner/windrunner_wind_thanks_02.vcd" nodelay noscene 
+	scene "scenes/windrunner/windrunner_wind_thanks_03.vcd" nodelay noscene 
+}
+
+Rule windrunner_Thanks_Rule
+{
+	criteria Thanks Iswindrunner 
+	response windrunner_Thanks
+}
+
+Response windrunner_PainChance_25%
+{
+	scene "scenes/windrunner/windrunner_wind_underattack_01.vcd" nodelay noscene respeakdelay 120
+}
+
+Rule windrunner_PainChance_25%_Rule
+{
+	criteria Pain Iswindrunner Chance_25%
+	response windrunner_PainChance_25%
+}
+
+Response windrunner_PainChance_1%
+{
+	scene "scenes/windrunner/windrunner_wind_underattack_02.vcd" nodelay noscene speakonce
+}
+
+Rule windrunner_PainChance_1%_Rule
+{
+	criteria Pain Iswindrunner Chance_1%
+	response windrunner_PainChance_1%
+}
+
+Response windrunner_Pain
+{
+	scene "scenes/windrunner/windrunner_wind_pain_01.vcd" nodelay noscene 
+	scene "scenes/windrunner/windrunner_wind_pain_02.vcd" nodelay noscene 
+	scene "scenes/windrunner/windrunner_wind_pain_03.vcd" nodelay noscene 
+	scene "scenes/windrunner/windrunner_wind_pain_04.vcd" nodelay noscene 
+	scene "scenes/windrunner/windrunner_wind_pain_06.vcd" nodelay noscene 
+	scene "scenes/windrunner/windrunner_wind_pain_05.vcd" nodelay noscene 
+}
+
+Rule windrunner_Pain_Rule
+{
+	criteria Pain Iswindrunner 
+	response windrunner_Pain
+}
+
+Response windrunner_InTheBag
+{
+	scene "scenes/windrunner/windrunner_wind_inthebag_01.vcd" nodelay noscene 
+	scene "scenes/windrunner/windrunner_wind_inthebag_02.vcd" nodelay noscene 
+}
+
+Rule windrunner_InTheBag_Rule
+{
+	criteria InTheBag Iswindrunner 
+	response windrunner_InTheBag
+}
+
 Response windrunner_CooldownLittleNag
 {
 	scene "scenes/windrunner/windrunner_wind_notyet_01.vcd" nodelay noscene 
@@ -978,69 +1051,6 @@ Rule windrunner_NoManaSuperNag_Rule
 {
 	criteria NoMana Iswindrunner SuperNag
 	response windrunner_NoManaSuperNag
-}
-
-Response windrunner_Thanks
-{
-	scene "scenes/windrunner/windrunner_wind_thanks_01.vcd" nodelay noscene 
-	scene "scenes/windrunner/windrunner_wind_thanks_02.vcd" nodelay noscene 
-	scene "scenes/windrunner/windrunner_wind_thanks_03.vcd" nodelay noscene 
-}
-
-Rule windrunner_Thanks_Rule
-{
-	criteria Thanks Iswindrunner 
-	response windrunner_Thanks
-}
-
-Response windrunner_PainChance_25%
-{
-	scene "scenes/windrunner/windrunner_wind_underattack_01.vcd" nodelay noscene respeakdelay 120
-}
-
-Rule windrunner_PainChance_25%_Rule
-{
-	criteria Pain Iswindrunner Chance_25%
-	response windrunner_PainChance_25%
-}
-
-Response windrunner_PainChance_1%
-{
-	scene "scenes/windrunner/windrunner_wind_underattack_02.vcd" nodelay noscene speakonce
-}
-
-Rule windrunner_PainChance_1%_Rule
-{
-	criteria Pain Iswindrunner Chance_1%
-	response windrunner_PainChance_1%
-}
-
-Response windrunner_Pain
-{
-	scene "scenes/windrunner/windrunner_wind_pain_01.vcd" nodelay noscene 
-	scene "scenes/windrunner/windrunner_wind_pain_02.vcd" nodelay noscene 
-	scene "scenes/windrunner/windrunner_wind_pain_03.vcd" nodelay noscene 
-	scene "scenes/windrunner/windrunner_wind_pain_04.vcd" nodelay noscene 
-	scene "scenes/windrunner/windrunner_wind_pain_06.vcd" nodelay noscene 
-	scene "scenes/windrunner/windrunner_wind_pain_05.vcd" nodelay noscene 
-}
-
-Rule windrunner_Pain_Rule
-{
-	criteria Pain Iswindrunner 
-	response windrunner_Pain
-}
-
-Response windrunner_InTheBag
-{
-	scene "scenes/windrunner/windrunner_wind_inthebag_01.vcd" nodelay noscene 
-	scene "scenes/windrunner/windrunner_wind_inthebag_02.vcd" nodelay noscene 
-}
-
-Rule windrunner_InTheBag_Rule
-{
-	criteria InTheBag Iswindrunner 
-	response windrunner_InTheBag
 }
 
 Response windrunner_Defeat

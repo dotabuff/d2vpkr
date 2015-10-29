@@ -1112,5 +1112,8 @@
 		"message"				"short"
 		"coins"				"uint64"
 	}
+	"colorblind_mode_changed"
+	{
+	}
 }
 

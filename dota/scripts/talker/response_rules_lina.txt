@@ -25,8 +25,8 @@ Rule lina_Spawn_Rule
 Response lina_CustomIsGameStart
 {
 	scene "scenes/lina/lina_lina_spawn_03.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_cast_01.vcd" nodelay noscene 
 	scene "scenes/lina/lina_lina_battlebegins_01.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_cast_01.vcd" nodelay noscene 
 }
 
 Rule lina_CustomIsGameStart_Rule
@@ -35,71 +35,15 @@ Rule lina_CustomIsGameStart_Rule
 	response lina_CustomIsGameStart
 }
 
-Response lina_Move
+Response lina_KillIsFirstBlood
 {
-	scene "scenes/lina/lina_lina_move_01.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_move_02.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_move_03.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_move_04.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_move_05.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_move_06.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_move_07.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_move_08.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_move_09.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_move_10.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_move_11.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_move_12.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_firstblood_01.vcd" nodelay noscene 
 }
 
-Rule lina_Move_Rule
+Rule lina_KillIsFirstBlood_Rule
 {
-	criteria Move Islina 
-	response lina_Move
-}
-
-Response lina_Attack
-{
-	scene "scenes/lina/lina_lina_attack_01.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_attack_02.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_attack_03.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_attack_04.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_attack_05.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_attack_06.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_attack_07.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_attack_08.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_attack_09.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_attack_10.vcd" nodelay noscene 
-}
-
-Rule lina_Attack_Rule
-{
-	criteria Attack Islina 
-	response lina_Attack
-}
-
-Response lina_AttackIsEnemyCrystalMaidenChance_25%
-{
-	scene "scenes/lina/lina_lina_cm_02.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_cm_03.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_cm_09.vcd" nodelay noscene 
-}
-
-Rule lina_AttackIsEnemyCrystalMaidenChance_25%_Rule
-{
-	criteria Attack Islina IsEnemyCrystalMaiden Chance_25%
-	response lina_AttackIsEnemyCrystalMaidenChance_25%
-}
-
-Response lina_CastOrder
-{
-	scene "scenes/lina/lina_lina_cast_02.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_cast_03.vcd" nodelay noscene 
-}
-
-Rule lina_CastOrder_Rule
-{
-	criteria CastOrder Islina 
-	response lina_CastOrder
+	criteria Kill Islina IsFirstBlood
+	response lina_KillIsFirstBlood
 }
 
 Response lina_KillIsLightStrikeKillChance_25%
@@ -179,17 +123,6 @@ Rule lina_KillIsEnemyCrystalMaiden_Rule
 {
 	criteria Kill Islina IsEnemyCrystalMaiden
 	response lina_KillIsEnemyCrystalMaiden
-}
-
-Response lina_KillIsFirstBlood
-{
-	scene "scenes/lina/lina_lina_firstblood_01.vcd" nodelay noscene 
-}
-
-Rule lina_KillIsFirstBlood_Rule
-{
-	criteria Kill Islina IsFirstBlood
-	response lina_KillIsFirstBlood
 }
 
 Response lina_KillIsEnemyTreantChance_20%
@@ -342,6 +275,105 @@ Rule lina_KillIsEnemyBatriderChance_20%_Rule
 	response lina_KillIsEnemyBatriderChance_20%
 }
 
+Response lina_Move
+{
+	scene "scenes/lina/lina_lina_move_01.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_move_02.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_move_03.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_move_04.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_move_05.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_move_06.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_move_07.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_move_08.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_move_09.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_move_10.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_move_11.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_move_12.vcd" nodelay noscene 
+}
+
+Rule lina_Move_Rule
+{
+	criteria Move Islina 
+	response lina_Move
+}
+
+Response lina_Attack
+{
+	scene "scenes/lina/lina_lina_attack_01.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_attack_02.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_attack_03.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_attack_04.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_attack_05.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_attack_06.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_attack_07.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_attack_08.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_attack_09.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_attack_10.vcd" nodelay noscene 
+}
+
+Rule lina_Attack_Rule
+{
+	criteria Attack Islina 
+	response lina_Attack
+}
+
+Response lina_AttackIsEnemyCrystalMaidenChance_25%
+{
+	scene "scenes/lina/lina_lina_cm_02.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_cm_03.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_cm_09.vcd" nodelay noscene 
+}
+
+Rule lina_AttackIsEnemyCrystalMaidenChance_25%_Rule
+{
+	criteria Attack Islina IsEnemyCrystalMaiden Chance_25%
+	response lina_AttackIsEnemyCrystalMaidenChance_25%
+}
+
+Response lina_CastOrder
+{
+	scene "scenes/lina/lina_lina_cast_02.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_cast_03.vcd" nodelay noscene 
+}
+
+Rule lina_CastOrder_Rule
+{
+	criteria CastOrder Islina 
+	response lina_CastOrder
+}
+
+Response lina_LevelUp
+{
+	scene "scenes/lina/lina_lina_level_01.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_level_02.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_level_03.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_level_04.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_level_05.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_level_06.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_level_07.vcd" nodelay noscene 
+}
+
+Rule lina_LevelUp_Rule
+{
+	criteria LevelUp Islina 
+	response lina_LevelUp
+}
+
+Response lina_DeathIsEnemyCrystalMaiden
+{
+	scene "scenes/lina/lina_lina_cm_04.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_cm_05.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_cm_11.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_cm_14.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_cm_15.vcd" nodelay noscene 
+}
+
+Rule lina_DeathIsEnemyCrystalMaiden_Rule
+{
+	criteria Death Islina IsEnemyCrystalMaiden
+	response lina_DeathIsEnemyCrystalMaiden
+}
+
 Response lina_Death
 {
 	scene "scenes/lina/lina_lina_death_01.vcd" nodelay noscene 
@@ -366,8 +398,8 @@ Rule lina_Death_Rule
 
 Response lina_DeathIsReincarnating
 {
-	scene "scenes/lina/lina_lina_laugh_10.vcd" nodelay noscene 
 	scene "scenes/lina/lina_lina_fastres_01.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_laugh_10.vcd" nodelay noscene 
 }
 
 Rule lina_DeathIsReincarnating_Rule
@@ -376,19 +408,73 @@ Rule lina_DeathIsReincarnating_Rule
 	response lina_DeathIsReincarnating
 }
 
-Response lina_DeathIsEnemyCrystalMaiden
+Response lina_AllyNearIsAllyCrystalMaidenEarlyGame
 {
-	scene "scenes/lina/lina_lina_cm_04.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_cm_05.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_cm_11.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_cm_14.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_cm_15.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_cm_13.vcd" nodelay noscene speakonce
+	scene "scenes/lina/lina_lina_ally_05.vcd" nodelay noscene speakonce
+	scene "scenes/lina/lina_lina_ally_06.vcd" nodelay noscene speakonce
+	scene "scenes/lina/lina_lina_ally_07.vcd" nodelay noscene speakonce
 }
 
-Rule lina_DeathIsEnemyCrystalMaiden_Rule
+Rule lina_AllyNearIsAllyCrystalMaidenEarlyGame_Rule
 {
-	criteria Death Islina IsEnemyCrystalMaiden
-	response lina_DeathIsEnemyCrystalMaiden
+	criteria AllyNear Islina IsAllyCrystalMaiden EarlyGame
+	response lina_AllyNearIsAllyCrystalMaidenEarlyGame
+}
+
+Response lina_AllyNearIsAllyClinkzEarlyGame
+{
+	scene "scenes/lina/lina_lina_ally_01.vcd" nodelay noscene speakonce
+}
+
+Rule lina_AllyNearIsAllyClinkzEarlyGame_Rule
+{
+	criteria AllyNear Islina IsAllyClinkz EarlyGame
+	response lina_AllyNearIsAllyClinkzEarlyGame
+}
+
+Response lina_AllyNearIsAllyJakiroEarlyGame
+{
+	scene "scenes/lina/lina_lina_ally_02.vcd" nodelay noscene speakonce
+}
+
+Rule lina_AllyNearIsAllyJakiroEarlyGame_Rule
+{
+	criteria AllyNear Islina IsAllyJakiro EarlyGame
+	response lina_AllyNearIsAllyJakiroEarlyGame
+}
+
+Response lina_AllyNearIsAllyBatriderEarlyGame
+{
+	scene "scenes/lina/lina_lina_ally_03.vcd" nodelay noscene speakonce
+}
+
+Rule lina_AllyNearIsAllyBatriderEarlyGame_Rule
+{
+	criteria AllyNear Islina IsAllyBatrider EarlyGame
+	response lina_AllyNearIsAllyBatriderEarlyGame
+}
+
+Response lina_AllyNearIsAllyLionEarlyGame
+{
+	scene "scenes/lina/lina_lina_ally_04.vcd" nodelay noscene speakonce
+}
+
+Rule lina_AllyNearIsAllyLionEarlyGame_Rule
+{
+	criteria AllyNear Islina IsAllyLion EarlyGame
+	response lina_AllyNearIsAllyLionEarlyGame
+}
+
+Response lina_AllyNearIsAllyTreantEarlyGame
+{
+	scene "scenes/lina/lina_lina_ally_08.vcd" nodelay noscene speakonce
+}
+
+Rule lina_AllyNearIsAllyTreantEarlyGame_Rule
+{
+	criteria AllyNear Islina IsAllyTreant EarlyGame
+	response lina_AllyNearIsAllyTreantEarlyGame
 }
 
 Response lina_Respawn
@@ -411,6 +497,51 @@ Rule lina_Respawn_Rule
 {
 	criteria Respawn Islina 
 	response lina_Respawn
+}
+
+Response lina_LastHit
+{
+	scene "scenes/lina/lina_lina_lasthit_01.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_lasthit_02.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_lasthit_03.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_lasthit_04.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_lasthit_05.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_lasthit_06.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_lasthit_07.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_lasthit_08.vcd" nodelay noscene 
+}
+
+Rule lina_LastHit_Rule
+{
+	criteria LastHit Islina 
+	response lina_LastHit
+}
+
+Response lina_Deny
+{
+	scene "scenes/lina/lina_lina_deny_01.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_deny_02.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_deny_03.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_deny_04.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_deny_05.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_deny_06.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_deny_07.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_deny_08.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_deny_09.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_deny_10.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_deny_11.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_deny_12.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_deny_13.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_deny_14.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_deny_15.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_deny_16.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_deny_17.vcd" nodelay noscene 
+}
+
+Rule lina_Deny_Rule
+{
+	criteria Deny Islina 
+	response lina_Deny
 }
 
 Response lina_Select
@@ -553,28 +684,6 @@ Rule lina_PurchaseIsForceStaff_Rule
 	response lina_PurchaseIsForceStaff
 }
 
-Response lina_Immortality
-{
-	scene "scenes/lina/lina_lina_immort_01.vcd" nodelay noscene 
-}
-
-Rule lina_Immortality_Rule
-{
-	criteria Immortality Islina 
-	response lina_Immortality
-}
-
-Response lina_ImmortalityChance_25%
-{
-	scene "scenes/lina/lina_lina_immort_02.vcd" nodelay noscene 
-}
-
-Rule lina_ImmortalityChance_25%_Rule
-{
-	criteria Immortality Islina Chance_25%
-	response lina_ImmortalityChance_25%
-}
-
 Response lina_MissingIsLaneTop
 {
 	scene "scenes/lina/lina_lina_missing_lane_01.vcd" nodelay noscene 
@@ -608,79 +717,6 @@ Rule lina_MissingIsLaneBot_Rule
 	response lina_MissingIsLaneBot
 }
 
-Response lina_Deny
-{
-	scene "scenes/lina/lina_lina_deny_01.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_deny_02.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_deny_03.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_deny_04.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_deny_05.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_deny_06.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_deny_07.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_deny_08.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_deny_09.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_deny_10.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_deny_11.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_deny_12.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_deny_13.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_deny_14.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_deny_15.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_deny_16.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_deny_17.vcd" nodelay noscene 
-}
-
-Rule lina_Deny_Rule
-{
-	criteria Deny Islina 
-	response lina_Deny
-}
-
-Response lina_LastHit
-{
-	scene "scenes/lina/lina_lina_lasthit_01.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_lasthit_02.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_lasthit_03.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_lasthit_04.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_lasthit_05.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_lasthit_06.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_lasthit_07.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_lasthit_08.vcd" nodelay noscene 
-}
-
-Rule lina_LastHit_Rule
-{
-	criteria LastHit Islina 
-	response lina_LastHit
-}
-
-Response lina_Defeat
-{
-	scene "scenes/lina/lina_lina_lose_01.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_lose_02.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_lose_03.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_lose_04.vcd" nodelay noscene 
-}
-
-Rule lina_Defeat_Rule
-{
-	criteria Defeat Islina 
-	response lina_Defeat
-}
-
-Response lina_Victory
-{
-	scene "scenes/lina/lina_lina_win_01.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_win_02.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_win_03.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_win_04.vcd" nodelay noscene 
-}
-
-Rule lina_Victory_Rule
-{
-	criteria Victory Islina 
-	response lina_Victory
-}
-
 Response lina_Bottling
 {
 	scene "scenes/lina/lina_lina_bottle_01.vcd" nodelay noscene 
@@ -692,6 +728,64 @@ Rule lina_Bottling_Rule
 {
 	criteria Bottling Islina 
 	response lina_Bottling
+}
+
+Response lina_ItemDropIsCommonDrop
+{
+	scene "scenes/lina/lina_lina_drop_common_01.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_happy_01.vcd" nodelay noscene 
+}
+
+Rule lina_ItemDropIsCommonDrop_Rule
+{
+	criteria ItemDrop Islina IsCommonDrop
+	response lina_ItemDropIsCommonDrop
+}
+
+Response lina_ItemDropIsRareDrop
+{
+	scene "scenes/lina/lina_lina_drop_medium_01.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_happy_03.vcd" nodelay noscene 
+}
+
+Rule lina_ItemDropIsRareDrop_Rule
+{
+	criteria ItemDrop Islina IsRareDrop
+	response lina_ItemDropIsRareDrop
+}
+
+Response lina_ItemDropIsUltraRareDrop
+{
+	scene "scenes/lina/lina_lina_drop_rare_01.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_happy_02.vcd" nodelay noscene 
+}
+
+Rule lina_ItemDropIsUltraRareDrop_Rule
+{
+	criteria ItemDrop Islina IsUltraRareDrop
+	response lina_ItemDropIsUltraRareDrop
+}
+
+Response lina_Immortality
+{
+	scene "scenes/lina/lina_lina_immort_01.vcd" nodelay noscene 
+}
+
+Rule lina_Immortality_Rule
+{
+	criteria Immortality Islina 
+	response lina_Immortality
+}
+
+Response lina_ImmortalityChance_25%
+{
+	scene "scenes/lina/lina_lina_immort_02.vcd" nodelay noscene 
+}
+
+Rule lina_ImmortalityChance_25%_Rule
+{
+	criteria Immortality Islina Chance_25%
+	response lina_ImmortalityChance_25%
 }
 
 Response lina_PowerupIsPowerupHaste
@@ -793,21 +887,28 @@ Rule lina_PowerupIsPowerupInvisibility_Rule
 	response lina_PowerupIsPowerupInvisibility
 }
 
-Response lina_LevelUp
+Response lina_Thanks
 {
-	scene "scenes/lina/lina_lina_level_01.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_level_02.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_level_03.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_level_04.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_level_05.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_level_06.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_level_07.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_thanks_01.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_thanks_02.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_thanks_03.vcd" nodelay noscene 
 }
 
-Rule lina_LevelUp_Rule
+Rule lina_Thanks_Rule
 {
-	criteria LevelUp Islina 
-	response lina_LevelUp
+	criteria Thanks Islina 
+	response lina_Thanks
+}
+
+Response lina_PainChance_25%
+{
+	scene "scenes/lina/lina_lina_underattack_01.vcd" nodelay noscene respeakdelay 120
+}
+
+Rule lina_PainChance_25%_Rule
+{
+	criteria Pain Islina Chance_25%
+	response lina_PainChance_25%
 }
 
 Response lina_Pain
@@ -828,15 +929,15 @@ Rule lina_Pain_Rule
 	response lina_Pain
 }
 
-Response lina_PainChance_25%
+Response lina_InTheBag
 {
-	scene "scenes/lina/lina_lina_underattack_01.vcd" nodelay noscene respeakdelay 120
+	scene "scenes/lina/lina_lina_inthebag_01.vcd" nodelay noscene 
 }
 
-Rule lina_PainChance_25%_Rule
+Rule lina_InTheBag_Rule
 {
-	criteria Pain Islina Chance_25%
-	response lina_PainChance_25%
+	criteria InTheBag Islina 
+	response lina_InTheBag
 }
 
 Response lina_CooldownLittleNag
@@ -917,120 +1018,32 @@ Rule lina_NoManaSuperNag_Rule
 	response lina_NoManaSuperNag
 }
 
-Response lina_ItemDropIsCommonDrop
+Response lina_Defeat
 {
-	scene "scenes/lina/lina_lina_happy_01.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_drop_common_01.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_lose_01.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_lose_02.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_lose_03.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_lose_04.vcd" nodelay noscene 
 }
 
-Rule lina_ItemDropIsCommonDrop_Rule
+Rule lina_Defeat_Rule
 {
-	criteria ItemDrop Islina IsCommonDrop
-	response lina_ItemDropIsCommonDrop
+	criteria Defeat Islina 
+	response lina_Defeat
 }
 
-Response lina_ItemDropIsUltraRareDrop
+Response lina_Victory
 {
-	scene "scenes/lina/lina_lina_happy_02.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_drop_rare_01.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_win_01.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_win_02.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_win_03.vcd" nodelay noscene 
+	scene "scenes/lina/lina_lina_win_04.vcd" nodelay noscene 
 }
 
-Rule lina_ItemDropIsUltraRareDrop_Rule
+Rule lina_Victory_Rule
 {
-	criteria ItemDrop Islina IsUltraRareDrop
-	response lina_ItemDropIsUltraRareDrop
-}
-
-Response lina_ItemDropIsRareDrop
-{
-	scene "scenes/lina/lina_lina_happy_03.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_drop_medium_01.vcd" nodelay noscene 
-}
-
-Rule lina_ItemDropIsRareDrop_Rule
-{
-	criteria ItemDrop Islina IsRareDrop
-	response lina_ItemDropIsRareDrop
-}
-
-Response lina_InTheBag
-{
-	scene "scenes/lina/lina_lina_inthebag_01.vcd" nodelay noscene 
-}
-
-Rule lina_InTheBag_Rule
-{
-	criteria InTheBag Islina 
-	response lina_InTheBag
-}
-
-Response lina_AllyNearIsAllyCrystalMaidenEarlyGame
-{
-	scene "scenes/lina/lina_lina_cm_13.vcd" nodelay noscene speakonce
-	scene "scenes/lina/lina_lina_ally_05.vcd" nodelay noscene speakonce
-	scene "scenes/lina/lina_lina_ally_06.vcd" nodelay noscene speakonce
-	scene "scenes/lina/lina_lina_ally_07.vcd" nodelay noscene speakonce
-}
-
-Rule lina_AllyNearIsAllyCrystalMaidenEarlyGame_Rule
-{
-	criteria AllyNear Islina IsAllyCrystalMaiden EarlyGame
-	response lina_AllyNearIsAllyCrystalMaidenEarlyGame
-}
-
-Response lina_AllyNearIsAllyClinkzEarlyGame
-{
-	scene "scenes/lina/lina_lina_ally_01.vcd" nodelay noscene speakonce
-}
-
-Rule lina_AllyNearIsAllyClinkzEarlyGame_Rule
-{
-	criteria AllyNear Islina IsAllyClinkz EarlyGame
-	response lina_AllyNearIsAllyClinkzEarlyGame
-}
-
-Response lina_AllyNearIsAllyJakiroEarlyGame
-{
-	scene "scenes/lina/lina_lina_ally_02.vcd" nodelay noscene speakonce
-}
-
-Rule lina_AllyNearIsAllyJakiroEarlyGame_Rule
-{
-	criteria AllyNear Islina IsAllyJakiro EarlyGame
-	response lina_AllyNearIsAllyJakiroEarlyGame
-}
-
-Response lina_AllyNearIsAllyBatriderEarlyGame
-{
-	scene "scenes/lina/lina_lina_ally_03.vcd" nodelay noscene speakonce
-}
-
-Rule lina_AllyNearIsAllyBatriderEarlyGame_Rule
-{
-	criteria AllyNear Islina IsAllyBatrider EarlyGame
-	response lina_AllyNearIsAllyBatriderEarlyGame
-}
-
-Response lina_AllyNearIsAllyLionEarlyGame
-{
-	scene "scenes/lina/lina_lina_ally_04.vcd" nodelay noscene speakonce
-}
-
-Rule lina_AllyNearIsAllyLionEarlyGame_Rule
-{
-	criteria AllyNear Islina IsAllyLion EarlyGame
-	response lina_AllyNearIsAllyLionEarlyGame
-}
-
-Response lina_AllyNearIsAllyTreantEarlyGame
-{
-	scene "scenes/lina/lina_lina_ally_08.vcd" nodelay noscene speakonce
-}
-
-Rule lina_AllyNearIsAllyTreantEarlyGame_Rule
-{
-	criteria AllyNear Islina IsAllyTreant EarlyGame
-	response lina_AllyNearIsAllyTreantEarlyGame
+	criteria Victory Islina 
+	response lina_Victory
 }
 
 Response lina_EmoteIsEmoteLaugh
@@ -1051,19 +1064,6 @@ Rule lina_EmoteIsEmoteLaugh_Rule
 {
 	criteria Emote Islina IsEmoteLaugh
 	response lina_EmoteIsEmoteLaugh
-}
-
-Response lina_Thanks
-{
-	scene "scenes/lina/lina_lina_thanks_01.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_thanks_02.vcd" nodelay noscene 
-	scene "scenes/lina/lina_lina_thanks_03.vcd" nodelay noscene 
-}
-
-Rule lina_Thanks_Rule
-{
-	criteria Thanks Islina 
-	response lina_Thanks
 }
 
 Response lina_TauntIsLinaTauntGetBurned
