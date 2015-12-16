@@ -109,5 +109,16 @@
 		"hotx"		"14"
 		"hoty"		"14"
 	}
-
+	
+	cursor_hand_open
+	{
+		"hotx"		"14"
+		"hoty"		"14"
+	}
+	
+	cursor_hand_closed
+	{
+		"hotx"		"14"
+		"hoty"		"14"
+	}
 }
