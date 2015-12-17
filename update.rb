@@ -73,12 +73,12 @@ Dir.glob("#{DOTA}/**/*_dir.vpk") do |path|
 end
 
 # Copy non-VPK resources
-Dir.glob("#{DOTA}/dota/**/*.{vdf,res,txt,png}") do |src|
+Dir.glob("#{DOTA}/dota/**/*.{vdf,res,txt,png,inf}") do |src|
   copy_resource(src, src.gsub("#{DOTA}/", ""))
 end
 
 # Copy VPK resources
-Dir.glob("#{TEMP}/**/*.{vdf,res,txt,png}") do |src|
+Dir.glob("#{TEMP}/**/*.{vdf,res,txt,png,inf}") do |src|
   next if src =~ /econ|hud_skins|core_pak01/
   copy_resource(src, src.gsub("#{TEMP}/", "").gsub("_pak01", ""))
 end
