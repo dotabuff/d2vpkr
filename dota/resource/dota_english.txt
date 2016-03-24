@@ -106,6 +106,9 @@
 		"DOTA_No_Courier"		"NO COURIER"	// A courier does not exist
 		"DOTA_LocalPlayer"		"Local Player"
 
+		"DOTA_Keybind_ALT"		"ALT"
+		"DOTA_Keybind_SHIFT"	"SHIFT"
+
 		"CopyToClipboard"			"Copy to Clipboard"
 		"ReplayTakeover"			"Takeover"
 		"LobbyTakeoverDescription"	"Taking Over MatchID %s1 at time %s2"
@@ -214,7 +217,8 @@
 		"DOTA_HeroSelect"		"Select Hero"
 		"DOTA_HeroCenter"		"Center Hero"
 		"DOTA_HeroMoveHome"		"Hero Move Home"
-		"DOTA_ControlGroupCycle"	"Control Group Tab"
+		"DOTA_ControlGroupCycle"	"Next Unit"
+		"DOTA_ControlGroupCyclePrev"	"Prev Unit"
 		"DOTA_ControlGroup1"		"Group 1"
 		"DOTA_ControlGroup2"		"Group 2"
 		"DOTA_ControlGroup3"		"Group 3"
@@ -509,7 +513,8 @@
 		"DOTA_Hotkeys_Tooltip_Pause"  "Pause and Unpause a game in progress."
 		"DOTA_Hotkeys_Tooltip_ScreenshotSettings"  "Take a screenshot of the current game view."
 		"DOTA_Hotkeys_Tooltip_Console"  "Open the console. (For advanced users only)"
-		"DOTA_Hotkeys_Tooltip_ControlGroupCycle"  "Cycle through each unit of a selected group."
+		"DOTA_Hotkeys_Tooltip_ControlGroupCycle"  "Cycle through each unit of a selected group. Holding CTRL while pressing this button will cycle in reverse."
+		"DOTA_Hotkeys_Tooltip_ControlGroupCyclePrev"  "Cycle backwards through each unit of a selected group."
 		"DOTA_Hotkeys_Tooltip_Group"  "Select a preset control group of units. To define a control group, select the desired units and holding CTRL + one of these group hotkeys."
 		"DOTA_Hotkeys_Tooltip_Legacy"  "Use all hotkeys associated with Dota 1.  Ability hotkeys will vary per Hero."
 		"DOTA_Hotkeys_Tooltip_Quickcast"  "A Quickcast ability will trigger as soon as the hotkey is pressed at the current location of the mouse cursor."
@@ -558,7 +563,9 @@
 		"DOTA_Chat_TowerKilledGood"		"A tower was destroyed by The Dire!"
 		"DOTA_Chat_TowerKilledBad"		"A tower was destroyed by The Radiant!"
 		"DOTA_Chat_BarracksKilled"		"%s1 %s2 %s3 Barracks has been destroyed!"
+		"DOTA_Chat_BarracksKilled_By"	"%s1 %s2 %s3 Barracks has been destroyed by %s4!"
 		"DOTA_Chat_EffigyKilled"		"%s1's Effigy has been destroyed!"
+		"DOTA_Chat_EffigyKilled_By"		"%s1's Effigy has been destroyed by %s2!"
 		"DOTA_Chat_TowerDenied"			"%s1 denied a tower!"
 		"DOTA_Chat_FirstBlood"			"%s1 drew first blood by killing %s2"
 		"DOTA_Chat_DoubleKill"			"%s1 got a double kill!"
@@ -2662,6 +2669,7 @@ As each stone's cultural influence spread, it eventually came in conflict with t
 		"DOTA_Tooltip_ability_sandking_epicenter_epicenter_slow"						"%MOVEMENT SLOW:"
 		"DOTA_Tooltip_ability_sandking_epicenter_epicenter_slow_as"						"ATTACK SLOW:"
 		"DOTA_Tooltip_ability_sandking_epicenter_epicenter_slow_duration_tooltip"		"SLOW DURATION:"
+		"DOTA_Tooltip_ability_sandking_epicenter_aghanim_description"					"" // intentionally blank, so that we don't show the "hero has no aghs" string
 		"npc_dota_hero_sand_king_bio"													"The sands of the Scintillant Waste are alive and sentient--the whole vast desert speaks to itself, thinking thoughts only such a vastness can conceive. But when it needs must find a form to communicate with those of more limited scope, it frees a fragment of itself, and fills a carapace of magic armor formed by the cunning Djinn of Qaldin. This essential identity calls itself Crixalis, meaning 'Soul of the Sand,' but others know it as Sand King.  Sand King takes the form of a huge arachnid, inspired by the Scintillant Waste's small but ubiquitous denizens; and this is a true outward expression of his ferocious nature. Guardian, warrior, ambassador--Sand King is all of these things, inseparable from the endless desert that gave him life."
 		
 		//NEVERMORE
@@ -2680,7 +2688,7 @@ As each stone's cultural influence spread, it eventually came in conflict with t
 		"DOTA_Tooltip_ability_nevermore_necromastery"									"Necromastery"
 		"DOTA_Tooltip_ability_nevermore_necromastery_Description"						"Shadow Fiend steals the soul from units he kills, gaining bonus damage. If the killed unit is a hero, he gains 12 souls.  On death, he releases half of them from bondage."
 		"DOTA_Tooltip_ability_nevermore_necromastery_Lore"								"Harvested souls swirl in and out of the Abysm, empowering the Shadow Fiend to increase the size of his collection."
-		"DOTA_Tooltip_ability_nevermore_necromastery_Note0"								"Denies, neutral creeps, and buildings also provide bonus damage through Necromastery."
+		"DOTA_Tooltip_ability_nevermore_necromastery_Note0"								"Denies and neutral creeps also provide bonus damage through Necromastery."
 		"DOTA_Tooltip_ability_nevermore_necromastery_necromastery_max_souls"			"MAX SOULS:"
 		"DOTA_Tooltip_ability_nevermore_necromastery_necromastery_damage_per_soul"		"DAMAGE PER SOUL:"
 		"DOTA_Tooltip_ability_nevermore_dark_lord"										"Presence of the Dark Lord"
@@ -2822,7 +2830,7 @@ As each stone's cultural influence spread, it eventually came in conflict with t
 		"DOTA_Tooltip_ability_drow_ranger_wave_of_silence_silence_duration"				"SILENCE DURATION:"
 		"DOTA_Tooltip_ability_drow_ranger_wave_of_silence_knockback_duration"			"KNOCKBACK DURATION:"
 		"DOTA_Tooltip_ability_drow_ranger_trueshot"										"Precision Aura"
-		"DOTA_Tooltip_ability_drow_ranger_trueshot_Description"							"Adds bonus damage to the physical attack of allied, ranged Hero units on the map based on a percentage of Drow's agility.  Affects creeps for 30 seconds when cast."
+		"DOTA_Tooltip_ability_drow_ranger_trueshot_Description"							"Adds bonus damage to the physical attack of allied, ranged Hero units based on a percentage of Drow's agility.  Affects creeps for 30 seconds when cast."
 		"DOTA_Tooltip_ability_drow_ranger_trueshot_Lore"								"Traxex' time spent alone in the forests of her Drow home has allowed her to teach other archers how to improve their bow skills."
 		"DOTA_Tooltip_ability_drow_ranger_trueshot_trueshot_ranged_damage"				"%RANGE DAMAGE BONUS:"
 		"DOTA_Tooltip_ability_drow_ranger_trueshot_trueshot_aura_radius"				"RADIUS:"
@@ -3155,7 +3163,6 @@ As each stone's cultural influence spread, it eventually came in conflict with t
 		"DOTA_Tooltip_ability_warlock_shadow_word"										"Shadow Word"
 		"DOTA_Tooltip_ability_warlock_shadow_word_Description"							"Warlock whispers an incantation, healing a friendly unit or damaging an enemy unit over time."
 		"DOTA_Tooltip_ability_warlock_shadow_word_Lore"									"Demnok's arcane arts have a myriad of uses, allowing them to be powerful friendly enchantments or damaging curses."
-		"DOTA_Tooltip_ability_warlock_shadow_word_Note0"								"A hero affected by Shadow Word may be denied once it falls below 25% of its maximum health."
 		"DOTA_Tooltip_ability_warlock_shadow_word_duration"								"DURATION:"
 		"DOTA_Tooltip_ability_warlock_upheaval"											"Upheaval"
 		"DOTA_Tooltip_ability_warlock_upheaval_Description"								"CHANNELED - A powerful slowing current that grows stronger as it's channelled. Lasts up to 16 seconds.  Enemies are slowed for 3 seconds after leaving the area or the spell ends."
@@ -4088,7 +4095,7 @@ Unaware of the spell, Clinkz waded into battle, defending his lands against the 
 
 		//ENCHANTRESS
 		"DOTA_Tooltip_ability_enchantress_untouchable"									"Untouchable"
-		"DOTA_Tooltip_ability_enchantress_untouchable_Description"						"Enchantress beguiles her enemies, slowing their attacks when she is attacked.  Lasts 4 seconds."
+		"DOTA_Tooltip_ability_enchantress_untouchable_Description"						"Enchantress beguiles her enemies, slowing their attacks when she is attacked."
 		"DOTA_Tooltip_ability_enchantress_untouchable_Lore"								"After attacking Aiushtha, most opponents are overwhelmed with guilt having attacked such a natural beauty."
 		"DOTA_Tooltip_ability_enchantress_untouchable_Note0"							"All units who directly attack or cast spells on Enchantress will get slowed."
 		"DOTA_Tooltip_ability_enchantress_untouchable_Note1"							"The slow is applied on the attacking unit when the attack starts, not when damage is applied."
@@ -4568,7 +4575,7 @@ Six times his name was tolled from the great bell of Vashundol. Six and sixty ti
 		"DOTA_Tooltip_ability_ancient_apparition_ice_blast_Lore"						"Ice storms from ages past flow through Kaldr's frosty limbs, crashing into the world and turning its inhabitants into monuments to his eternal power."
 		"DOTA_Tooltip_ability_ancient_apparition_ice_blast_Note0"						"The area of effect is 275 + 50*TimeTraveled, capped at 1000.  The freeze area along the path is 275."
 		"DOTA_Tooltip_ability_ancient_apparition_ice_blast_Note1"						"Kill will be granted to the source of the damage that triggers the shatter."
-		"DOTA_Tooltip_ability_ancient_apparition_ice_blast_Note2"						"The instant kill doesn't work on illusions or Meepo clones."
+		"DOTA_Tooltip_ability_ancient_apparition_ice_blast_Note2"						"The instant kill doesn't work on illusions."
 		"DOTA_Tooltip_ability_ancient_apparition_ice_blast_Note3"						"The HP Freeze prevents most kinds of healing, including the fountain."
 		"DOTA_Tooltip_ability_ancient_apparition_ice_blast_Note4"						"The Frostbitten debuff cannot be purged."
 		"DOTA_Tooltip_ability_ancient_apparition_ice_blast_damage"						"DAMAGE:"
@@ -10496,6 +10503,7 @@ Flung to the farthest reaches by the prison's explosion, Zet was transformed by 
 		"keybind_template_HON"											"Heroes of Newerth"
 		"keybind_template_SMITE"										"Smite"
 		"or"																			"or"
+		"not"																			"not"
 		
 		"UI_U"																			"U"
 
@@ -10707,6 +10715,10 @@ Flung to the farthest reaches by the prison's explosion, Zet was transformed by 
 		"DOTA_UserMenu_UnignorePlayer"									"Unignore Player"
 		"DOTA_UserMenu_Inspect"											"Inspect Hero"
 		"DOTA_UserMenu_TeamTransferAdmin"								"Make Team Admin"
+		"DOTA_UserMenu_Mute_Voice"										"Mute Voice"
+		"DOTA_UserMenu_Unmute_Voice"									"Unmute Voice"
+		"DOTA_UserMenu_Mute_Text"										"Mute Text"
+		"DOTA_UserMenu_Unmute_Text"										"Unmute Text"
 		"DOTA_InvitedToParty"											"%s1 has invited you to a party."
 		"DOTA_InvitedToPartyForTeam"									"%s1 has invited you to a party for a team match with %s2."
 		"DOTA_InvitedToLowPriorityParty"								"%s1 has invited you to a low-priority party."
@@ -10935,6 +10947,29 @@ Flung to the farthest reaches by the prison's explosion, Zet was transformed by 
 		"game_mode_20"												"All Random Deathmatch"
 		"game_mode_21"												"1v1 Solo Mid"
 		"game_mode_22"												"All Pick"
+
+		"game_mode_lobby_name_0"									"-"
+		"game_mode_lobby_name_1"									"All Pick"
+		"game_mode_lobby_name_2"									"Captains Mode"
+		"game_mode_lobby_name_3"									"Random Draft"
+		"game_mode_lobby_name_4"									"Single Draft"
+		"game_mode_lobby_name_5"									"All Random"
+		"game_mode_lobby_name_6"									"-"
+		"game_mode_lobby_name_7"									"Diretide"
+		"game_mode_lobby_name_8"									"Reverse Captains Mode"
+		"game_mode_lobby_name_9"									"The Greeviling"
+		"game_mode_lobby_name_10"									"Tutorial"
+		"game_mode_lobby_name_11"									"Mid Only"
+		"game_mode_lobby_name_12"									"Least Played"
+		"game_mode_lobby_name_13"									"Limited Heroes"
+		"game_mode_lobby_name_14"									"Compendium"  //aka forced hero
+		"game_mode_lobby_name_15"									"Custom"
+		"game_mode_lobby_name_16"									"Captains Draft"
+		"game_mode_lobby_name_17"									"Balanced Draft"
+		"game_mode_lobby_name_18"									"Ability Draft"
+		"game_mode_lobby_name_20"									"All Random Deathmatch"
+		"game_mode_lobby_name_21"									"1v1 Solo Mid"
+		"game_mode_lobby_name_22"									"Ranked All Pick"
 		
 		"game_mode_AllStarDraft"									"All-Star Draft"
 
@@ -12998,6 +13033,17 @@ Flung to the farthest reaches by the prison's explosion, Zet was transformed by 
 		"DOTA_ItemTest_Attachment_GenericRightEye"		"Right Eye Bone name"
 		"DOTA_ItemTest_Attachment_GenericRightEye_Desc"		"Specifies where on the model to place particle effects intended for the Right Eye of a creature. Avoid using an eye joint that animates. If an eye joint can't be used, use the head joint and then position the attachment onto the Right Eye with the red tx arrow pointing forward."
 		
+		"DOTA_ItemTest_Attachment_CKMountLeftEye"		"Left Eye Bone name"
+		"DOTA_ItemTest_Attachment_CKMountLeftEye_Desc"		"Specifies where on the model to place default particle effects intended for the Left Eye of the mount. You will be able to reposition this attachment after compiling. If your mount does not have eyes, we will remove the effect."
+		"DOTA_ItemTest_Attachment_CKMountRightEye"		"Right Eye Bone name"
+		"DOTA_ItemTest_Attachment_CKMountRightEye_Desc"		"Specifies where on the model to place default particle effects intended for the Right Eye of the mount. You will be able to reposition this attachment after compiling. If your mount does not have eyes, we will remove the effect."
+		"DOTA_ItemTest_Attachment_CKMountTail"			"Tail Bone name"
+		"DOTA_ItemTest_Attachment_CKMountTail_Desc"		"Specifies where on the model to place default particle effects intended for the Tail of the mount. You will be able to reposition this attachment after compiling. If your mount does not need the tail particles, we will remove the effect."
+		"DOTA_ItemTest_Attachment_CKHelmetLeftEye"		"Left Eye Bone name"
+		"DOTA_ItemTest_Attachment_CKHelmetLeftEye_Desc"		"Specifies where on the model to place default particle effects intended for the Left Eye of the helmet. You will be able to reposition this attachment after compiling. If your helmet does not have eyes, we will remove the effect."
+		"DOTA_ItemTest_Attachment_CKHelmetRightEye"		"Right Eye Bone name"
+		"DOTA_ItemTest_Attachment_CKHelmetRightEye_Desc"	"Specifies where on the model to place default particle effects intended for the Right Eye of the helmet. You will be able to reposition this attachment after compiling. If your helmet does not have eyes, we will remove the effect."
+
 		"DOTA_ItemTest_Attachment_AttackPoint"		"Attack Point Bone name"
 		"DOTA_ItemTest_Attachment_AttackPoint_Desc"	"For ranged attack units, this specifies where their attack projectiles should start. For melee units, it's this is where we spawn hit effects, like blood splashes."
 		"DOTA_ItemTest_Attachment_AttackPoint2"		"Offhand Attack Point Bone name"
@@ -13036,7 +13082,7 @@ Flung to the farthest reaches by the prison's explosion, Zet was transformed by 
 		"DOTA_Workshop_Attachment_Wing_Left"		"Left Wing1 Inner"
 		"DOTA_Workshop_Attachment_Wing_Left2"		"Left Wing2 Middle"
 		"DOTA_Workshop_Attachment_Wing_Left3"		"Left Wing3 Outer"
-		"DOTA_Workshop_Attachment_Wing_Particle_Desc"	"Attachment for Wing Particle Effects"
+		"DOTA_Workshop_Attachment_Wing_Particle_Desc"	"Attachment for default Wing Particle Effects. You will be able to reposition these attachments after compiling. If you are using a totally custom skeleton, you will need to change the bone names."
 		
 		
 		//ATTACHMENT END
@@ -13252,6 +13298,7 @@ Flung to the farthest reaches by the prison's explosion, Zet was transformed by 
 		"DOTA_ItemTest_LD_Trueform_Ability4_Desc"		"25 frames long, the summon takes place on frame 7."
 		"DOTA_ItemTest_LD_Trueform_AbilityUlt"			"Druid Form"
 		"DOTA_ItemTest_LD_Trueform_AbilityUlt_Desc"		"Morph back into Druid Form. 70 frames total, should disappear beneath the ground on frame 58."
+		
 		//LONE DRUID SPIRIT BEAR
 		"DOTA_ItemTest_Animation_IdleOutOfRange"		"Idle (Out of Range)"
 		"DOTA_ItemTest_Animation_IdleOutOfRange_Desc_SB"	"This Idle is used when Lone Druid is too far from his bear for it to attack."
@@ -13281,11 +13328,10 @@ Flung to the farthest reaches by the prison's explosion, Zet was transformed by 
 		
 		//DRAGON KNIGHT DRAGON
 		"DOTA_WorkshopAnim_Dragon_Knight_Dragon_Change"		"Change"
+		"DOTA_WorkshopAnim_Dragon_Knight_Dragon_Attack"		"Attack"
+		"DOTA_WorkshopAnim_Dragon_Knight_Dragon_Bash"		"Bash"
+		"DOTA_WorkshopAnim_Dragon_Knight_Dragon_Breath"		"Breath"
 		
-		//ARC WARDEN SPARK WRAITH
-		//"DOTA_Workshop_Anim_Spark_Wraith_Idle"		"Idle"
-		//"DOTA_Workshop_Anim_Spark_Wraith_Idle_Desc"		"Spark Wraith's idle is at least 1500 frames long and starts with a spawn up from the ground, turning in various directions over the course of the long idle animation. It does not need to loop."
-
 		//UNDYING FLESH GOLEM
 		"DOTA_WorkshopAnim_FleshGolem_Decay"			"Decay"
 		"DOTA_WorkshopAnim_FleshGolem_Decay_Injured"		"Decay Injured"
@@ -13293,6 +13339,14 @@ Flung to the farthest reaches by the prison's explosion, Zet was transformed by 
 		"DOTA_WorkshopAnim_FleshGolem_SoulRip_Injured"		"Soul Rip Injured"
 		"DOTA_WorkshopAnim_FleshGolem_Tombstone"		"Tombstone"
 		"DOTA_WorkshopAnim_FleshGolem_Tombstone_Injured"	"Tombstone Injured"
+		
+		//UNDYING TOMBSTONE
+		"DOTA_Workshop_Animation_Undying_Tower_Destruction"		"Tower Destruction"
+		"DOTA_Workshop_Animation_Undying_Tower_Destruction_Desc"	"This is a 4 second animation of the tower being destroyed and the debris settling on the ground. You can submit optional alternate destructions."
+		"DOTA_Workshop_Animation_Undying_Tower_Destruction_Dupe"	"Tower Destruction Static Debris"
+		"DOTA_Workshop_Animation_Undying_Tower_Destruction_Dupe_Desc"	"This is a single frame from the end of the destruction animation with the debris in its final position. If you submit more than one destruction, make sure your destruction and static submissions match."
+		
+		
 		
 		//ANIMATION END
 
@@ -13389,12 +13443,22 @@ Flung to the farthest reaches by the prison's explosion, Zet was transformed by 
 		"DOTA_Import_Rattletrap_Cog"				"Power Cog"
 		"DOTA_Import_Rattletrap_Cog_Desc"			"Clockwerk's Power Cog requires a single model."
 		
-		//"DOTA_Import_Spark_Wraith"				"Spark Wraith"
-		//"DOTA_Import_Spark_Wraith_Desc"			"Arc Warden's Spark Wraith requires a single model."
-		
 		"DOTA_Import_Undying_Flesh_Golem"			"Flesh Golem"
-		"DOTA_Import_Undying_Flesh_Golem_Desc"			"Undying's Flesh Golum requires a single model."
+		"DOTA_Import_Undying_Flesh_Golem_Desc"			"Undying's Flesh Golum requires a single model. If your mesh is designed to work with the cloth bones for the entrails, the cloth will not be enabled when previewing your submission. If your golem has gore, skulls or entrails, you may need to provide a low-violence version."
 
+		"DOTA_Workshop_Nightstalker_Head"			"Night Stalker Head Day"
+		"DOTA_Workshop_Nightstalker_Head_Night"			"Night Stalker Head Night"
+		"DOTA_Workshop_Nightstalker_Tail"			"Night Stalker Tail Day"
+		"DOTA_Workshop_Nightstalker_Tail_Night"			"Night Stalker Tail Night"
+		"DOTA_Workshop_Nightstalker_Legs"			"Night Stalker Legs Day"
+		"DOTA_Workshop_Nightstalker_Legs_Night"			"Night Stalker Legs Night"
+		"DOTA_Workshop_Nightstalker_Arms"			"Night Stalker Arms Day"
+		"DOTA_Workshop_Nightstalker_Arms_Night"			"Night Stalker Arms Night"
+		"DOTA_Workshop_Nightstalker_Back"			"Night Stalker Wings Day"
+		"DOTA_Workshop_Nightstalker_Back_Night"			"Night Stalker Wings Night"
+		
+
+		
 
 		
 		//IMPORT END
@@ -13845,7 +13909,8 @@ Flung to the farthest reaches by the prison's explosion, Zet was transformed by 
 		"GiftUse"				"Gift"
 		"OpenGift"				"Open Gift"
 		"CreateGem"				"Create Gems"
-		"OpenBundle"			"Open Bundle"
+		"OpenBundle"			"Unbundle"
+		"OpenBundleAndEquip"	"Unbundle and Equip"
 		"OpenPresent"			"Unwrap Present"
 		"CustomizeItem"			"Customize"
 		"ToolActionCancel"		"Cancel"
@@ -14192,7 +14257,6 @@ Flung to the farthest reaches by the prison's explosion, Zet was transformed by 
 		"LoadoutSlot_Alchemist_TinyArmor"					"Tiny Armor"
 		"LoadoutSlot_Alchemist_Flask"						"Flask"
 		"LoadoutSlot_Alchemist_TinyHead"					"Tiny Head"
-		"LoadoutSlot_Arc_Warden_Spark_Wraith"					"Spark Wraith"
 		"LoadoutSlot_Beastmaster_Hawk"						"Hawk"
 		"LoadoutSlot_Beastmaster_Boar"						"Boar"
 		"LoadoutSlot_Brewmaster_Barrel"						"Barrel"
@@ -14281,6 +14345,10 @@ Flung to the farthest reaches by the prison's explosion, Zet was transformed by 
 		"Store_Loading_Screens"		"Loading Screens"
 		"Store_ProGear"				"Pro Gear"
 		"Store_Emoticons"			"Chat Emoticons"
+		"Store_Terrain"				"Terrain"
+		"Store_Weather"				"Weather"
+		"Store_Effigies"			"Effigies"
+		"Store_Cursor_Packs"		"Cursor Packs"
 
 		// Store dropdown labels
 		"Store_FilterType_Heroes"	"Hero:"
@@ -15031,7 +15099,8 @@ Flung to the farthest reaches by the prison's explosion, Zet was transformed by 
 		"StoreBanner_Header_JJLin_Music_Bundle"				"JJ Lin's Timekeeper Music Pack Bundle"
 		"StoreBanner_Text_JJLin_Music_Bundle"				"If purchased by March 6th, 2016, you will receive an 'EXALTED' quality on this item."
 
-
+		"StoreBanner_Header_Matt_Lange_Music_Bundle"				"Matt Lange Abstraction Music Pack"
+		"StoreBanner_Text_Matt_Lange_Music_Bundle"				"Cinematic, glitchy atmospheres and hard-hitting rhythms by Matt Lange"
 		
 		
 
@@ -16849,12 +16918,14 @@ Flung to the farthest reaches by the prison's explosion, Zet was transformed by 
 		"DOTA_HeroStatue_TooltipHeader_Empty"			"No Inscription"
 		"DOTA_HeroStatue_BackToEffigy"					"Return to Heroic Effigy"
 		"DOTA_HeroStatue_Likes"							"Commends: <b>%s1</b>"
+		"DOTA_HeroStatue_Commends"						"Commends: <b>{d:commends}</b>"
 		"DOTA_HeroStatue_ReforgeInfoHeader"				"Reforging an Effigy"
 		"DOTA_HeroStatue_ReforgeInfo"					"To use an Effigy Reforger, right-click on a Heroic Effigy and select the Reforge option."
 		"DOTA_HeroStatue_ReforgeOption"					"Reforge"
 		"DOTA_HeroStatue_PoseOption"					"Pose"
 		"DOTA_HeroStatue_ReforgeFirstTimeHeader"		"Reforging an Effigy"
 		"DOTA_HeroStatue_ReforgeFirstTime"				"You are entering Effigy Reforging Mode.  This allows you to edit any element of an existing Effigy.  Accepting your changes will modify your original Effigy and consume one Effigy Reforger item."
+		"DOTA_HeroStatue_Inscription_Panorama"			"\"{s:inscription}\""
 
 		"DOTA_STATUE_name_model_abaddon"				"Abaddon"
 		"DOTA_STATUE_name_model_alchemist"				"Alchemist"
