@@ -1,8 +1,11 @@
-default: d2vpk update commit push
+default: d2vpk pull update commit push
 
 d2vpk:
 	go get github.com/Nightgunner5/vpk
 	go build -o d2vpk d2vpk.go
+
+pull:
+	git pull
 
 update:
 	ruby update.rb
