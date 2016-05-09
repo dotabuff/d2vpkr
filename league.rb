@@ -8,10 +8,12 @@ ITEMS_GAME_JSON = "dota/scripts/items/items_game.json"
 LEAGUES_JSON = "dota/scripts/items/leagues.json"
 
 begin
+  puts "Reading #{ITEMS_GAME_JSON}"
   output = Hash.new
 
   json_data = File.read(ITEMS_GAME_JSON)
   d = JSON.parse(json_data)
+  puts "Successfully parsed #{ITEMS_GAME_JSON}. Iterating through ticket econ items..."
   d["items_game"]["items"].each do |k, v|
     if v.key?("prefab") and v["prefab"] == "league"
       league_id = v["tool"]["usage"]["league_id"] rescue next
