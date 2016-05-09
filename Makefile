@@ -6,6 +6,7 @@ d2vpk:
 
 update:
 	ruby update.rb
+	ruby league.rb
 
 commit:
 	git add -A dota
