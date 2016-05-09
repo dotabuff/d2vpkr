@@ -29,7 +29,6 @@ begin
         :banner => banner,
         :tier => tier,
       }
-      puts "Adding League ID #{v["tool"]["usage"]["league_id"]}: #{v["name"]}"
     end
   end
 
