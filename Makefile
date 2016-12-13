@@ -1,7 +1,7 @@
 default: d2vpk pull update commit push
 
 d2vpk:
-	go get github.com/Nightgunner5/vpk
+	go get github.com/watbe/vpk
 	go build -o d2vpk d2vpk.go
 
 pull:
