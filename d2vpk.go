@@ -10,7 +10,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/Nightgunner5/vpk"
+	"github.com/watbe/vpk"
 )
 
 var versionFlag = flag.Bool("v", false, "get version from ~/Steam")
@@ -63,11 +63,11 @@ func main() {
 	vpkFile, err := vpk.ReadVPKFile(f)
 	if err != nil {
 		panic(err)
-	}	
+	}
 
 	for _, filename := range vpkFile.ListFiles() {
 		ignore := includeAny
-		ext := path.Ext(filename)		
+		ext := path.Ext(filename)
 
 		if excludeExt[ext] {
 			ignore = true
@@ -109,8 +109,8 @@ func main() {
 		fd, err := os.Create(path.Join(dir, path.Base(filename)))
 		if err != nil {
 			panic(err)
-		}		
-		
+		}
+
 		io.Copy(fd, data)
 		fd.Close()
 		data.Close()
