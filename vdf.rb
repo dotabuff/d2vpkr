@@ -60,6 +60,10 @@ class VDF
     scan(/\}/)
   end
 
+  def null_byte
+    scan(/\0/)
+  end
+
   def kv_pair
     [string, space, string]
   end
@@ -84,6 +88,9 @@ class VDF
         end
       elsif hash_tail
         # nothing to do here
+      elsif null_byte
+        # EOF
+        break
       else
         raise "expected key"
       end
