@@ -10,7 +10,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/Nightgunner5/vpk"
+	"github.com/watbe/vpk"
 )
 
 var versionFlag = flag.Bool("v", false, "get version from ~/Steam")
