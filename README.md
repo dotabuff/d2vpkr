@@ -20,3 +20,7 @@ to notify users of any changes by creating an issue or pull request.
 
 If there are any issues regarding this repository or if there are requests 
 on adding different types of files, please create an issue on GitHub.
+
+## License
+
+The source code in the root directory is © [Elo Entertainment LLC.] and under MIT license. The contents of files in extracted directories are © Valve Corporation.
