@@ -44,7 +44,9 @@ def convert_json(path)
     contents.gsub!(re, repl)
   end
 
-  vdf = VDF.new(contents)
+  # Allow duplicate keys in items_game.txt, disallow them in others
+  vdf = path.include?("items_game.txt") ? VDF.new(contents, true) : VDF.new(contents, false)
+
   json = JSON.pretty_generate(vdf.kvs)
   File.open(dst, "w") {|f| f.write(json) }
 rescue => ex
@@ -67,20 +69,22 @@ def extract_vpk(src)
   sh("./d2vpk", src, tmppath, "+.vdf", "+.res", "+.txt", "+.png")
 end
 
-# Extract VPK files
-Dir.glob("#{DOTA}/**/*_dir.vpk") do |path|
-  extract_vpk(path)
-end
+if ARGV.length == 0 || ARGV[0] != "--skip-vpk"
+  # Extract VPK files
+  Dir.glob("#{DOTA}/**/*_dir.vpk") do |path|
+    extract_vpk(path)
+  end
 
-# Copy non-VPK resources
-Dir.glob("#{DOTA}/dota/**/*.{vdf,res,txt,png,inf}") do |src|
-  copy_resource(src, src.gsub("#{DOTA}/", ""))
-end
+  # Copy non-VPK resources
+  Dir.glob("#{DOTA}/dota/**/*.{vdf,res,txt,png,inf}") do |src|
+    copy_resource(src, src.gsub("#{DOTA}/", ""))
+  end
 
-# Copy VPK resources
-Dir.glob("#{TEMP}/**/*.{vdf,res,txt,png,inf}") do |src|
-  next if src =~ /econ|hud_skins|core_pak01/
-  copy_resource(src, src.gsub("#{TEMP}/", "").gsub("_pak01", ""))
+  # Copy VPK resources
+  Dir.glob("#{TEMP}/**/*.{vdf,res,txt,png,inf}") do |src|
+    next if src =~ /econ|hud_skins|core_pak01/
+    copy_resource(src, src.gsub("#{TEMP}/", "").gsub("_pak01", ""))
+  end
 end
 
 # Convert given resources to JSON

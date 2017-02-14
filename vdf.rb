@@ -3,7 +3,8 @@ require 'strscan'
 class VDF
   attr_reader :scanner
 
-  def initialize(string)
+  def initialize(string, allow_duplicate_keys)
+    @allow_duplicate_keys = allow_duplicate_keys
     @scanner = StringScanner.new(string)
   end
 
@@ -77,12 +78,22 @@ class VDF
       if hash_head
         key = scanner[1]
         value = kvs
-        hash[key] = value
+        if @allow_duplicate_keys && hash.key?(key)
+          hash[key] = [hash[key]] unless hash[key].is_a?(Array)
+          hash[key] << value
+        else
+          hash[key] = value
+        end
         ignorable
       elsif key = string
         ignorable
         if value = string
-          hash[key] = value
+          if @allow_duplicate_keys && hash.key?(key)
+            hash[key] = [hash[key]] unless hash[key].is_a?(Array)
+            hash[key] << value
+          else
+            hash[key] = value
+          end
         else
           raise "expected value"
         end
