@@ -36,8 +36,8 @@ def convert_encoding(path)
 end
 
 # Converts a .txt file to a separate .json file
-def convert_json(path)
-  dst = path.gsub(".txt", ".json")
+def convert_json(path, suffix="", allow_dupe_keys=false)
+  dst = path.gsub(".txt", suffix + ".json")
 
   contents = IO.read(path)
   VDF_PATCHES.each do |re, repl|
@@ -45,7 +45,7 @@ def convert_json(path)
   end
 
   # Allow duplicate keys in items_game.txt, disallow them in others
-  vdf = path.include?("items_game.txt") ? VDF.new(contents, true) : VDF.new(contents, false)
+  vdf = VDF.new(contents, allow_dupe_keys)
 
   json = JSON.pretty_generate(vdf.kvs)
   File.open(dst, "w") {|f| f.write(json) }
@@ -91,6 +91,13 @@ end
 CONVERT_TO_JSON.each do |pattern|
   Dir.glob(pattern).each do |src|
     convert_json(src)
+  end
+end
+
+# Convert given resources to JSON, and allow dupe keys
+CONVERT_TO_JSON.each do |pattern|
+  Dir.glob(pattern).each do |src|
+    convert_json(src, "_with_dupes", true)
   end
 end
 
