@@ -12,7 +12,7 @@ as they track a different subset of files.
 This repository also runs automatic conversions on selected files from Valve's
 VDF format to an accessible JSON format. 
 While the conversion is fairly stable, they may change from 
-[time to time](https://github.com/dotabuff/d2vpkr/pull/7). 
+[time to time](https://github.com/dotabuff/d2vpkr/pull/9).
 We encourage you to watch this repository if you rely on automatically 
 parsing JSON files from it. 
 **We do not guarantee backwards compatibility**, but we will try our best 
