@@ -74,35 +74,85 @@
 		"hoty"		"0"
 	}
 
-	cursor_spell_default
+	cursor_spell_default_vsz0
 	{
-		"hotx"		"14"
-		"hoty"		"14"
+		"hotx"		"16"
+		"hoty"		"16"
 	}
+	
+	cursor_spell_default_vsz1
+	{
+		"hotx"		"24"
+		"hoty"		"24"
+	}
+	cursor_spell_default_vsz2
+	{
+		"hotx"		"36"
+		"hoty"		"36"
+	}
+	cursor_spell_default_vsz3
+	{
+		"hotx"		"48"
+		"hoty"		"48"
+	}	
 
 	cursor_spell_enemy
 	{
-		"hotx"		"14"
-		"hoty"		"14"
+		"hotx"		"24"
+		"hoty"		"24"
 	}
-
-	cursor_spell_illegal
+	
+	cursor_spell_illegal_vsz0
 	{
-		"hotx"		"14"
-		"hoty"		"14"
+		"hotx"		"16"
+		"hoty"		"16"
 	}
+	
+	cursor_spell_illegal_vsz1
+	{
+		"hotx"		"24"
+		"hoty"		"24"
+	}
+	cursor_spell_illegal_vsz2
+	{
+		"hotx"		"36"
+		"hoty"		"36"
+	}
+	cursor_spell_illegal_vsz3
+	{
+		"hotx"		"48"
+		"hoty"		"48"
+	}	
 
 	cursor_spell_team
 	{
-		"hotx"		"14"
-		"hoty"		"14"
+		"hotx"		"24"
+		"hoty"		"24"
 	}
-
-	cursor_spell_walkto
+	
+	cursor_spell_walkto_vsz0
 	{
-		"hotx"		"14"
-		"hoty"		"14"
+		"hotx"		"16"
+		"hoty"		"16"
 	}
+	
+	cursor_spell_walkto_vsz1
+	{
+		"hotx"		"24"
+		"hoty"		"24"
+	}
+	
+	cursor_spell_walkto_vsz2
+	{
+		"hotx"		"36"
+		"hoty"		"36"
+	}
+	
+	cursor_spell_walkto_vsz3
+	{
+		"hotx"		"48"
+		"hoty"		"48"
+	}		
 
 	cursor_db_ibeam
 	{
