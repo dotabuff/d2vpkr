@@ -13,6 +13,7 @@ CONVERT_TO_JSON = %w[
   dota/scripts/items/items_game.txt
   dota/scripts/{regions,emoticons}.txt
   dota/scripts/npc/{npc_abilities,npc_heroes,npc_units,items,activelist}.txt
+  dota/panorama/localization/dota_*.txt
 ]
 
 VDF_PATCHES = {
