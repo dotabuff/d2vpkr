@@ -98,7 +98,8 @@ class VDF
           raise "expected value"
         end
       elsif hash_tail
-        # nothing to do here
+        # empty kvs, return nil
+        return nil
       elsif null_byte
         # EOF
         break
