@@ -10,6 +10,7 @@ TEMP = File.expand_path(ENV["TEMP"] || "/tmp/paks")
 
 CONVERT_TO_JSON = %w[
   dota/resource/{items,dota}_*.txt
+  dota/resource/localization/{abilities,dota,items}_*.txt
   dota/scripts/items/items_game.txt
   dota/scripts/{regions,emoticons}.txt
   dota/scripts/npc/{npc_abilities,npc_heroes,npc_units,items,activelist}.txt
