@@ -127,13 +127,17 @@ class VDF
 
       case var_type
       when 'FIELD_INTEGER'
-        if value =~ /\s/
+        if value.nil? || value.empty?
+          hash = {key => 0}
+        elsif value =~ /\s/
           hash = {key => value.split.map{|i| i.to_i }}
         else
           hash = {key => value.to_i}
         end
       when 'FIELD_FLOAT'
-        if value =~ /\s/
+        if value.nil? || value.empty?
+          hash = {key => Float(0)}
+        elsif value =~ /\s/
           hash = {key => value.scan(/[\d.]+/).map{|i| Float(i) }}
         else
           hash = {key => Float(value[/[\d.]+/])}
