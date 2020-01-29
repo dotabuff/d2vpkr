@@ -126,7 +126,7 @@ class VDF
       key, value = hash.first
 
       case var_type
-      when 'FIELD_INTEGER'
+      when 'FIELD_INTEGER', 'FIELD_INT'
         if value.nil? || value.empty?
           hash = {key => 0}
         elsif value =~ /\s/
