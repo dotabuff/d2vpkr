@@ -32,12 +32,16 @@ class VDF
   end
 
   def ignorable
-    while space || comment
+    while space || comment || bom
     end
   end
 
   def comment
     scan(/\s*\/.*/)
+  end
+
+  def bom
+    scan(/\uFEFF/)
   end
 
   def space
