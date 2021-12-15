@@ -160,15 +160,51 @@
 		"hoty"		"14"
 	}
 	
-	cursor_hand_open
+	cursor_hand_open_vsz0
 	{
 		"hotx"		"14"
 		"hoty"		"14"
 	}
+
+	cursor_hand_open_vsz1
+	{
+		"hotx"		"24"
+		"hoty"		"24"
+	}
+
+	cursor_hand_open_vsz2
+	{
+		"hotx"		"36"
+		"hoty"		"36"
+	}
+
+	cursor_hand_open_vsz3
+	{
+		"hotx"		"48"
+		"hoty"		"48"
+	}
 	
-	cursor_hand_closed
+	cursor_hand_closed_vsz0
 	{
 		"hotx"		"14"
 		"hoty"		"14"
+	}
+
+	cursor_hand_closed_vsz1
+	{
+		"hotx"		"24"
+		"hoty"		"24"
+	}
+
+	cursor_hand_closed_vsz2
+	{
+		"hotx"		"36"
+		"hoty"		"36"
+	}
+
+	cursor_hand_closed_vsz3
+	{
+		"hotx"		"48"
+		"hoty"		"48"
 	}
 }
