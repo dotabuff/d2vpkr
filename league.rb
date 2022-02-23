@@ -11,7 +11,7 @@ begin
   puts "Reading #{ITEMS_GAME_JSON}"
   output = Hash.new
 
-  json_data = File.read(ITEMS_GAME_JSON)
+  json_data = File.read(ITEMS_GAME_JSON, :encoding => 'iso-8859-1')
   d = JSON.parse(json_data)
   puts "Successfully parsed #{ITEMS_GAME_JSON}. Iterating through ticket econ items..."
   d["items_game"]["items"].each do |k, v|
