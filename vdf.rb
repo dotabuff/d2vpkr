@@ -56,8 +56,16 @@ class VDF
     end
   end
 
+  def int
+    scan(/-?\d+/)
+  end
+
   def hash_head
-    scan(/"([^"]*)"(\s|\s*\/[^\r\n]+)*\{/m)
+    if scan(/"([^"]*)"(\s|\s*\/[^\r\n]+)*\{/m)
+      scanner[1]
+    else scan(/(\w+)(\s|\s*\/[^\r\n]+)*\{/m)
+      scanner[1]
+    end
   end
 
   def hash_tail
@@ -82,6 +90,14 @@ class VDF
       if hash_head
         key = scanner[1]
         value = kvs
+
+        if num_key = Integer(key, exception: false)
+          key = num_key.to_s
+          if hash.key?(key)
+            key = (num_key + 1).to_s
+          end
+        end
+
         if @allow_duplicate_keys && hash.key?(key)
           hash[key] = [hash[key]] unless hash[key].is_a?(Array)
           hash[key] << value
@@ -91,7 +107,7 @@ class VDF
         ignorable
       elsif key = string
         ignorable
-        if value = string
+        if value = string or value = int
           if @allow_duplicate_keys && hash.key?(key)
             hash[key] = [hash[key]] unless hash[key].is_a?(Array)
             hash[key] << value
@@ -99,7 +115,7 @@ class VDF
             hash[key] = value
           end
         else
-          raise "expected value"
+          raise "expected value for key \"#{key}\" at pos: #{scanner.pos}"
         end
       elsif hash_tail
         # empty kvs, return nil
@@ -108,7 +124,7 @@ class VDF
         # EOF
         break
       else
-        raise "expected key"
+        raise "expected key at pos: #{scanner.pos}"
       end
 
       ignorable
