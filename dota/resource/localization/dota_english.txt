@@ -724,6 +724,7 @@
 		"DOTA_Item_Ping_InStash"				"%s1%s2 %s3In Stash"
 		"DOTA_Item_Ping_InStashCooldown"		"%s1%s2 %s3In Stash And On Cooldown (%s4 seconds remain)"
 		"DOTA_Item_Ping_OnCourier"				"%s1%s2 %s3On Courier"
+		"DOTA_Item_Ping_OnCourierDead"			"%s1%s2 %s3On Courier (Dead for %s4)"
 		"DOTA_Item_Ping_OnCourierCooldown"		"%s1%s2 %s3On Courier And On Cooldown (%s4 seconds remain)"
 		"DOTA_Item_Ping_NameExtended" "%s1 ( <font color='%s2'>%s3</font> )"
 
@@ -912,8 +913,10 @@
 		"DOTA_Chat_ObserverWardKilledBad"	"The Dire has destroyed an Observer Ward!"
 		"DOTA_Chat_SentryWardGood"			"The Radiant has destroyed a Sentry Ward!"
 		"DOTA_Chat_SentryWardBad"			"The Dire has destroyed a Sentry Ward!"
+		
 		"DOTA_Chat_KilledRoshanGood"	"Roshan has been killed by the Radiant! %s1 gold to each hero of The Radiant!"
 		"DOTA_Chat_KilledRoshanBad"		"Roshan has been killed by the Dire! %s1 gold to each hero of The Dire!"
+
 		"DOTA_Chat_RoshanbooCandy"		"Roshan wants candy from %s1!"
 		"DOTA_Chat_SuperCreepsGood"		"All of the Dire Barracks have fallen. The Radiant now have Mega creeps!"
 		"DOTA_Chat_SuperCreepsBad"		"All of the Radiant Barracks have fallen. The Dire now have Mega creeps!"
@@ -2371,7 +2374,10 @@ As each stone's cultural influence spread, it eventually came in conflict with t
 		"npc_dota_badguys_siege"						"Siege Creep"
 		"npc_dota_badguys_siege_upgraded"				"Super Siege Creep"
 		"npc_dota_badguys_siege_upgraded_mega"			"Mega Siege Creep"
-		
+		"npc_dota_creep_badguys_flagbearer"					"Flagbearer Creep"
+		"npc_dota_creep_badguys_flagbearer_upgraded"		"Super Flagbearer Creep"
+		"npc_dota_creep_badguys_flagbearer_upgraded_mega"	"Mega Flagbearer Creep"
+
 		"npc_dota_creep_goodguys_melee"					"Melee Creep"
 		"npc_dota_creep_goodguys_melee_upgraded"		"Super Melee Creep"
 		"npc_dota_creep_goodguys_melee_upgraded_mega"	"Mega Melee Creep"
@@ -2381,7 +2387,9 @@ As each stone's cultural influence spread, it eventually came in conflict with t
 		"npc_dota_goodguys_siege"						"Siege Creep"
 		"npc_dota_goodguys_siege_upgraded"				"Super Siege Creep"
 		"npc_dota_goodguys_siege_upgraded_mega"			"Mega Siege Creep"
-
+		"npc_dota_creep_goodguys_flagbearer"					"Flagbearer Creep"
+		"npc_dota_creep_goodguys_flagbearer_upgraded"		"Super Flagbearer Creep"
+		"npc_dota_creep_goodguys_flagbearer_upgraded_mega"	"Mega Flagbearer Creep"
 		// Neutral Creeps
 
 		"npc_dota_neutral_kobold"						"Kobold"
@@ -5537,8 +5545,19 @@ As each stone's cultural influence spread, it eventually came in conflict with t
 
 		"game_mode_event_overthrow_3v3v3"							"Overthrow Trios"
 		"game_mode_event_overthrow_3v3v3_desc"						"Three teams of three compete to hit the kill limit or have the most kills when the round ends."
-		"game_mode_event_overthrow_5v5v5"							"Overthrow Fives"
+		"game_mode_event_overthrow_4v4v4v4"							"Overthrow Quads"
+		"game_mode_event_overthrow_4v4v4v4_desc"					"Four teams of four compete to hit the kill limit or have the most kills when the round ends."
+		"game_mode_event_overthrow_5v5v5"							"Overthrow Quints"
 		"game_mode_event_overthrow_5v5v5_desc"						"Three teams of five compete to hit the kill limit or have the most kills when the round ends."
+
+		"game_mode_event_conquest"									"Jungle Colosseum"
+		"game_mode_event_conquest_desc"								"Two teams of five fight for territorial control, in an all-out battle for dominance."
+
+		"game_mode_event_dark_moon"									"Holdout: Dark Moon"
+		"game_mode_event_dark_moon_desc"							"Work together to defend Selemene's temple from the Dark Moon Horde."
+
+		"game_mode_event_10v10"										"All Pick 10 vs 10"
+		"game_mode_event_10v10_desc"								"A version of All Pick where each team has 10 players."
 
 		"dota_matchmaking_language_1"								"English"
 		"dota_matchmaking_language_2"								"Russian"
@@ -5647,7 +5666,9 @@ As each stone's cultural influence spread, it eventually came in conflict with t
 		"dota_hud_error_only_cast_on_own_ward"			"Ability Can't Target Wards That Aren't Yours"
 		"dota_hud_error_only_cast_mana_units"			"Ability Can't Target Units Without Mana"
 		"dota_hud_error_only_cast_only_self_units"			"Ability Can Only Target Your Units"
-		"dota_hud_error_already_capturing"			"Outpost already being captured by enemy team."
+		"dota_hud_error_already_capturing"				"Outpost already being captured by enemy team."
+		"dota_hud_error_already_summoning"				"Another hero is summoning."		
+		"dota_hud_error_outpost_cooldown"					"Summoning is on Cooldown."
 		"dota_hud_error_glimmmer_building"				"Cannot cast on buildings so soon"
 		"dota_hud_error_cannot_dominate"				"Cannot Dominate this unit"
 		"dota_hud_error_cannot_enchant_enchanted"				"Cannot Enchant already Enchanted unit"
@@ -9768,6 +9789,8 @@ As each stone's cultural influence spread, it eventually came in conflict with t
 		"Attrib_Netolic_Pro_League"				"Netolic Pro League %s1"
 		"Econ_Set_Bonus"						"Set Bonus:"
 		"DOTA_Halloween_Prizes"					"Prizes have been awarded to the %s."
+		"Attrib_AutographQuality"				"Autograph Quality"
+
 
 		"DOTA_FindSetMarketplace"				"COMMUNITY MARKET"
 		"DOTA_PurchaseAndEquip"					"PURCHASE AND EQUIP"
@@ -18799,6 +18822,7 @@ Special Techies Taunt"
 		"DOTA_HUD_KilledRoshanBad"		"The Dire {s:killed_icon}{s:roshan_icon} Roshan{s:gold}"
 		"DOTA_HUD_KilledHUDFlippedRoshanGood"		"The Radiant {s:killed_icon}{s:roshan_icon} Roshan{s:gold}"
 		"DOTA_HUD_KilledHUDFlippedRoshanBad"		"The Dire {s:killed_icon}{s:roshan_icon} Roshan{s:gold}"
+
 		"DOTA_HUD_ScanUsed"				"{s:team} {s:radar_icon} Scan"
 		"DOTA_HUD_PickedUpAegis"		"{s:player_name} {s:aegis_icon} Aegis of the Immortal"
 		"DOTA_HUD_DeniedAegis"			"{s:player_name} denied {s:aegis_icon} Aegis of the Immortal"
@@ -21433,15 +21457,18 @@ Special Techies Taunt"
 	"DOTA_GameMode_SingleDraft"			"Single Draft"
 	"DOTA_GameMode_CaptainsMode"		"Captains Mode"
 	"DOTA_GameMode_RandomDraft"			"Random Draft"
+	"DOTA_GameMode_DarkMoon"			"Holdout: Dark Moon"
 	"DOTA_GameMode_AbilityDraft"		"Ability Draft"
 	"DOTA_GameMode_LeastPlayed"			"Least Played"
 	"DOTA_GameMode_AllRandom"			"All Random"
+	"DOTA_GameMode_10v10"				"All Pick 10 vs 10"
 	"DOTA_GameMode_LimitedHeroes"		"Limited Heroes"
 	"DOTA_GameMode_CaptainsDraft"		"Captains Draft"
 	"DOTA_GameMode_AllRandomDeathMatch"	"All Random Death Match"
-	"DOTA_GameMode_AllDraft"	"All Pick"
-	"DOTA_GameMode_Turbo"	"Turbo"
-	"DOTA_GameMode_Mutation"	"Mutation"
+	"DOTA_GameMode_Colosseum"			"Jungle Colosseum"
+	"DOTA_GameMode_AllDraft"			"All Pick"
+	"DOTA_GameMode_Turbo"				"Turbo"
+	"DOTA_GameMode_Mutation"			"Mutation"
 
 	"DOTAAbilityDraft_Ultimates"		"Ultimates can be drafted anytime it is your turn.<br><br>Only one Ultimate Ability can be drafted. "
 	"DOTAAbilityDraft_Standard"			"Once drafted, a Standard Ability can be re-ordered by dragging the ability to another slot. <br><br> Certain Abilities are not compatible with Ability Draft Mode and will be replaced by a random Ability from another Hero."
@@ -23462,7 +23489,6 @@ To join as an experienced player, you must have at least {d:new_player_req_games
 	"DOTA_BattlePassLog_WeeklyGame"					"Won from Slark's Riptide Rumble"
 	"DOTA_BattlePassLog_ExploitCorrection"			"Exploit Correction"
 	"DOTA_BattlePassLog_BonusTreasure"				"Recycling Bonus for {g:dota_item_link:bonus_treasure_item}"
-	"DOTA_BattlePassLog_HeroLevelCurve"				"Hero Level Curve Updated: {g:dota_hero_name:hero_id}"
 	"DOTA_BattlePassLog_SupportGrant"				"Customer Support Grant"
 	"DOTA_BattlePassLog_SuccessfulPrediction"		"Successful Pro Circuit Prediction for {g:dota_league_name:league_id}"
 	"DOTA_BattlePassLog_EventGameReward"			"Found in {g:dota_event_game_name:event_id}: Match ID <a href=\"event:UIPopupButtonClicked( DOTAShowMatchDetails({u:match_id}) )\">{u:match_id}</a>"
@@ -24010,7 +24036,7 @@ To join as an experienced player, you must have at least {d:new_player_req_games
     "dota_play_ranked_classic_desc"             "Roles will not be assigned to your team in this classic matchmaking mode."
 	
 	"dota_play_featured_title"					"Weekend Spotlight"
-	"dota_play_game_mode"										"Game Mode"
+	"dota_play_game_mode"						"Game Mode"
 	"dota_play_featured_desc"					"Play this mode for extra shards."
 	"dota_play_featured_ends"					"Ends in {s:ends_in_time}"
 	"dota_play_featured_end_time"				"Ends {T:s:game_mode_end_time} {T:t:game_mode_end_time}"
@@ -24325,7 +24351,10 @@ To join as an experienced player, you must have at least {d:new_player_req_games
 	"dota_settings_teleportrequireshalt"		"Teleport Requires Hold/Stop"
 	"dota_settings_channelrequireshalt"			"Channeled Abilities Require Hold/Stop"
 	"dota_settings_showqueuedorders"			"Show Queued Orders On the HUD"
-	"dota_settings_force_right_click_attack"	"Right-Click to Force Attack"
+	"dota_settings_force_right_click_attack"	"Right-Click Allies"
+	"dota_settings_force_right_click_attack_0"	"To Follow"
+	"dota_settings_force_right_click_attack_1"	"To Attack"
+	"dota_settings_force_right_click_attack_2"	"To Deny"
 	"dota_settings_herofinder"					"Holding ALT Highlights Hero"
 	"dota_alt_shows_neutral_spawn_boxes"		"Holding ALT Shows Neutral Spawnboxes"
 	"dota_alt_shows_tower_attack_range"			"Holding ALT Shows Tower Attack Range"
@@ -24630,7 +24659,9 @@ To join as an experienced player, you must have at least {d:new_player_req_games
 	"DOTA_Settings_Tooltip_UnifiedOrders"						"Holding down CTRL when issuing an order will send it to all units you control."
 	"DOTA_Settings_Tooltip_TeleportStop"						"Moving or casting a spell won't cancel a teleport in progress. Applies only to Teleport Scrolls or Boots of Travel."
 	"DOTA_Settings_Tooltip_ChannelStop"						"Moving or casting a spell won't cancel a channel in progress. Applies to all Channeled Items and Abilities except Teleport Scrolls and Boots of Travel."
+	"DOTA_Settings_Tooltip_Force_Right_Click_Attack_0"			"Right-clicking on a friendly unit will cause your hero to follow that unit."
 	"DOTA_Settings_Tooltip_Force_Right_Click_Attack"			"Right-clicking on a friendly unit will cause your hero to attempt to attack that unit."
+	"DOTA_Settings_Tooltip_Force_Right_Click_Attack_2"			"Right-clicking on a friendly unit will cause your hero to attempt to deny that unit if it is deniable, otherwise it will follow that unit."
 	"DOTA_Settings_Tooltip_BroadcasterStats"				"When spectating a game, show the stats dropdown that the broadcaster is using."
 	"DOTA_Settings_Tooltip_Deceleration"						"The speed at which the camera comes to rest after moving.  Larger number equates to a faster stop."
 	"DOTA_Settings_Tooltip_Screenshake"						"Some spells and stuns shake the camera."
@@ -25007,7 +25038,7 @@ To join as an experienced player, you must have at least {d:new_player_req_games
 	"GC_Queue_Wait_Time"				"Dota 2 game coordinator currently full. Queue position: {i:gc_queue_position}, Estimated wait time: {s:gc_queue_wait_time}"
 	"GC_Wait_Time"						"Estimated wait time: %s1"
 	"GC_Wait_Time_Unknown"				"Unknown"
-	"GC_suspended"						"Account Suspended due to a VAC ban on your account."
+	"GC_suspended"						"Account Suspended due to a VAC or GAME ban on your account."
 	"dota_practice_vs_bots"			"Begin Practice vs Bots"
 	"dota_practice_vs_bots_desc"	"Play a practice match versus Bots. This doesn't use matchmaking and you can leave the match at any time"
 	"dota_practice_vs_bots_difficulty"	"Bot Difficulty"
@@ -28245,6 +28276,19 @@ To join as an experienced player, you must have at least {d:new_player_req_games
 	"FrontPage_DPC_SpringMajor2022_Dates3"			"May 20 - 22"
 	"FrontPage_DPC_SpringMajor2022_ButtonText" 		"Follow Live"
 	"FrontPage_DPC_SpringMajor2022_MajorTitle" 		"The Stockholm Major"
+
+	"FrontPage_DPC_SummerMajor2022_MajorTitle" 		"The Arlington Major"
+	"FrontPage_DPC_SummerMajor2022_PresentedBy"		"Presented by PGL"
+	"FrontPage_DPC_SummerMajor2022_Dates1"			"August 4 - 8"
+	"FrontPage_DPC_SummerMajor2022_Dates2"			"August 9 - 11"
+	"FrontPage_DPC_SummerMajor2022_Dates3"			"August 12 - 14"
+
+	"FrontPage_DPC_SummerMajor2022_Winner_Title" 		"The Arlington Major Champions"
+	"FrontPage_DPC_SummerMajor2022_Winner_Desc"		"Congratulations to Team Spirit for winning The Arlington Major."
+
+
+	"FrontPage_ChestOfEndlessDays_Title"		"Chest of Endless Days"
+	"FrontPage_ChestOfEndlessDays_Text"			"13 new hero sets. Receive treasures randomly when playing, and purchase a key to open them or sell them on the market."
 
 	"dpc_event_spring21"							"Spring Tour"
 	"dpc_event_springmajor22"						"The Stockholm Major"
@@ -32277,13 +32321,14 @@ With early pressure heroes like Zeus and Death Prophet making appearances, split
     "DOTA_730e_Update"    "7.30e Gameplay Update"
     "DOTA_730f_Update"    "7.30f Gameplay Update"
     "DOTA_730g_Update"    "7.30g Gameplay Update"
-    "DOTA_731_Update"		"7.31 Gameplay Update"
+    "DOTA_731_Update"	  "7.31 Gameplay Update"
     "DOTA_731b_Update"    "7.31b Gameplay Update"
     "DOTA_731c_Update"    "7.31c Gameplay Update"
     "DOTA_731d_Update"    "7.31d Gameplay Update"
     "DOTA_731e_Update"    "7.31e Gameplay Update"
     "DOTA_731f_Update"    "7.31f Gameplay Update"
     "DOTA_731g_Update"    "7.31g Gameplay Update"
+    "DOTA_732_Update"	  "7.32 Gameplay Update"
 
 	"DOTA_Settings_Tooltip_NetworkLatency" "If you have a network connection with packet loss, setting this to 'LOW' will increase latency but improve overall smoothness."
 
@@ -35374,12 +35419,14 @@ With early pressure heroes like Zeus and Death Prophet making appearances, split
 
 	"DOTA_DPCTeams_RegistrationPeriod7"				"Winter Tour"
 
-	"DOTA_DPCTeams_SeasonPeriod3_Name"				"Winter Tour"
-	"DOTA_DPCTeams_SeasonPeriod3_Dates"				"Nov 30, 2021 - Feb 21, 2022"
+	"DOTA_DPCTeams_SeasonPeriod_Event34_Name"		"Winter Tour"
+	"DOTA_DPCTeams_SeasonPeriod_Event34_Dates"		"Nov 30, 2021 - Feb 21, 2022"
 	"DOTA_DPCTeams_SeasonPeriod_Event35_Name"		"Spring Tour"
 	"DOTA_DPCTeams_SeasonPeriod_Event35_Dates"		"Mar 14, 2022 - Apr 24, 2022"
 	"DOTA_DPCTeams_SeasonPeriod_Event37_Name"		"Summer Tour"
-	"DOTA_DPCTeams_SeasonPeriod_Event37_Dates"		"Jun 6, 2022 - July 17, 2022"
+	"DOTA_DPCTeams_SeasonPeriod_Event37_Dates"		"Jun 6, 2022 - Aug 14, 2022"
+	"DOTA_DPCTeams_SeasonPeriod_Event38_Name"		"The International 2022"
+	"DOTA_DPCTeams_SeasonPeriod_Event38_Dates"		"Oct 8, 2022 - Oct 30, 2022"
 
 	"DOTA_FavoriteTeamSet"							"Favorite Team Set"
 	"DOTA_NewFavoriteTeam"							"{s:favorite_team} is now set as your featured team. This will be reflected in different parts of the dashboard interface and in-game."
@@ -35512,6 +35559,7 @@ With early pressure heroes like Zeus and Death Prophet making appearances, split
 	"DOTA_PlayerMatchSurvey_Negative_Smurf"					"Smurf in the Game"
 
 	// Clip Builder
+	"DOTA_ClipBuilder_EstimatedFileSize"				"Estimated File Size : ~ <font color='grey>{d:estimated_filesize_mb}MB</font>"
 	"DOTA_ClipBuilder_RangeSliderFillTooltip"			"Clip Length: {d:duration_seconds}s"
 	"DOTA_ClipBuilder_RangeSliderLowTooltip"			"{s:range_time}"
 	"DOTA_ClipBuilder_RangeSliderHighTooltip"			"{s:range_time}"
@@ -36104,6 +36152,7 @@ With early pressure heroes like Zeus and Death Prophet making appearances, split
 	"DOTA_Guild_Result_Already_Assigned"				"Another player has requested that contract."
 	"DOTA_Guild_Result_InvalidContractSlot"				"Invalid contract slot."
 	"DOTA_Guild_Result_ContractSlotLocked"				"Your guild has not yet unlocked the use of this contract slot."
+	"DOTA_Guild_Result_ContractSlotLockedDotaPlus"      "You must have Dota Plus to unlock the use of this contract slot."
 	"DOTA_Guild_Result_ContractSlotCooldown"			"This contract slot is still on cooldown."
 	"DOTA_Guild_Result_LeaveLastAdmin"					"You must transfer leadership of the guild to another player before leaving."
 	"DOTA_Guild_Result_RequiresInvite"					"You may not join this guild without an invite from a member."
@@ -37194,6 +37243,9 @@ Each region has a live leaderboard that will be used to calculate the guild's ti
 		"DOTA_DDB_Promo_ReleasePost" "New Animated Series"
 		"DOTA_DDB_Promo_ReleasePostTitle" "DOTA: Dragon's Blood Season 2"
 		"DOTA_DDB_Promo_ReleasePostDesc" "Dragon Knight and Mirana face demons and gods with unexpected allies in this all-new anime series now streaming on Netflix."
+
+		"DOTA_DDB_Promo_ReleasePost_S3" "Animated Series : Season 3"
+		"DOTA_DDB_Promo_ReleasePostTitle_S3" "DOTA: Dragon's Blood Season 3"
 		
 		"DOTA_DDB_Promo_Takeover_Copy" "&nbsp;&nbsp;&nbsp;&nbsp;Discover a world of Dragon Knights, gods, and demons as Davion and Mirana leap into action in <font color='#FFFFFF'><b>DOTA: Dragon's Blood</b></font> — premiering on Netflix March 25th."
 		"DOTA_DDB_Promo_Takeover_CellCall" "View All Trailers"
@@ -37203,6 +37255,7 @@ Each region has a live leaderboard that will be used to calculate the guild's ti
 		"DOTA_DDB_Promo_Call_ComingSoon" "Now Streaming on Netflix"
 
 		"DOTA_DDB_Promo_Call_ComingSoon_S2" "Season 2 Now Streaming on Netflix"
+		"DOTA_DDB_Promo_Call_ComingSoon_S3" "Season 3 Premiering on Netflix August 11, 2022"
 
 		"DOTA_DDB_Promo_Teaser_Date" "February 19th, 2021"
 		"DOTA_DDB_Promo_Trailer_Date" "March 1st, 2021"
@@ -37212,7 +37265,9 @@ Each region has a live leaderboard that will be used to calculate the guild's ti
 
 		"DOTA_DDB_Promo_Intro" "Dragon Knight and Mirana face demons and gods with unexpected allies in this all-new anime series premiering on Netflix. Discover heroes both old and new as Dota 2 comes to life like never before."
 		"DOTA_DDB_Promo_Intro_S2" "Davion and Mirana face the consequences of the battle for the Nightsilver Woods and along with help from some new allies, try to stave off the dark powers threatening the entire world of Dota."
+		"DOTA_DDB_Promo_Intro_S3" "Davion and Mirana join other brave warriors to conquer an indomitable foe and save the world."
 		"DOTA_DDB_Promo_S2" "Season 2"
+		"DOTA_DDB_Promo_S3" "Season 3"
 
 		"DOTA_DDB_Promo_S2_Desc" "New allies enter the world of DOTA: Dragon's Blood as Season 2 begins streaming"
 
@@ -38897,6 +38952,7 @@ If you don't feel that you were able to dedicate the appropriate attention level
 		"DOTA_CompendiumSummary_PlayerCards_StarterPacks"			"Starter Packs"
 		"DOTA_CompendiumSummary_PlayerCards_StarterPacksCount:p{starter_pack_count}"	"{d:starter_pack_count} Starter Pack#|#{d:starter_pack_count} Starter Packs"
 		"DOTA_CompendiumSummary_PlayerCards_SupportersPacks"		"Supporters Packs"
+		"DOTA_CompendiumSummary_PlayerCards_SupportersPacksCount:p{supporter_pack_count}"	"{d:supporter_pack_count} Supporters Club Pack#|#{d:supporter_pack_count} Supporters Club Packs"
 		"DOTA_CompendiumSummary_PlayerCards_BecomeASupporter"		"Become a Supporter"
 		"DOTA_CompendiumSummary_PlayerCards_DailyWinPack"			"Daily Win Pack"
 		"DOTA_CompendiumSummary_PlayerCards_DailyWinPackCount:p"	"{d:daily_pack_count} Daily Win Pack#|#{d:daily_pack_count} Daily Win Packs"
@@ -43900,12 +43956,6 @@ If you don't feel that you were able to dedicate the appropriate attention level
 		"DOTA_Tooltip_modifier_item_ambient_sorcery_effect"						"Ambient Sorcery"
 		"DOTA_Tooltip_modifier_item_ambient_sorcery_effect_Description"			"This unit is more vulnerable to magic damage."
 
-		"DOTA_Tooltip_Ability_item_ogre_seal_totem"								"Ogre Seal Totem"
-		"DOTA_Tooltip_Ability_item_ogre_seal_totem_Description"					"<h1>Active: Ogre Seal Flop</h1>Flop like an ogre seal, doing %damage% damage and stunning for %stun_duration% second on each bounce."
-		"DOTA_Tooltip_ability_item_ogre_seal_totem_Lore"						"A totem carved from an ogre seal's tooth."
-		"DOTA_Tooltip_Ability_item_ogre_seal_totem_bonus_strength"				"+$str"
-		"DOTA_Tooltip_Ability_item_ogre_seal_totem_bonus_hp"					"+$health"
-
 		"DOTA_Tooltip_Ability_item_bear_cloak"								"Cloak of the Bear"
 		"DOTA_Tooltip_Ability_item_bear_cloak_Description"					"<h1>Aura: Rough Bearskin</h1>Provides %aura_bonus_magic_resist%%  bonus magic resistance to nearby allies."
 		"DOTA_Tooltip_ability_item_bear_cloak_Lore"							"There's no shortage of natural armor in the wild."
@@ -43977,6 +44027,10 @@ If you don't feel that you were able to dedicate the appropriate attention level
 		"DOTA_TeamMute_Title"		"Team Mute"
 		"DOTA_TeamMute_Text"		"Click to mute all members on this team for the rest of the match, except those in your party, guild, or friends list."
 
+		"DOTA_Matchmaking_LongWait_Title" "Long Matchmaking Wait Detected"
+		"DOTA_Matchmaking_LongWait_Text" "The matchmaker has found few compatible players for your party while searching. Selecting more regions or enabling more game modes can help find matches more quickly."
+
+
 		// Faceless Void Arcana
 
 		"DOTA_FacelessVoidArcana_ProgressHeader"						"Damage Under Chrono"
@@ -43986,5 +44040,7 @@ If you don't feel that you were able to dedicate the appropriate attention level
 		"DOTA_FacelessVoidArcana_Label"									"Arcana Progress"
 		"DOTA_FacelessVoidArcana_Score"									"{s:current_score}/{d:unlock_value}"
 		// END Faceless Void Arcana
+
+		"DOTA_Profile_Tooltip_LifetimeGames"							"{d:lifetime_games} Lifetime Games"
 	}
 }
