@@ -406,6 +406,7 @@
       "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_ENEMY",
       "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC",
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
+      "SpellDispellableType": "SPELL_DISPELLABLE_YES",
       "AbilitySound": "Hero_Bane.Enfeeble",
       "AbilityCastPoint": "0.2",
       "AbilityCastRange": "800 900 1000 1100",
@@ -696,7 +697,8 @@
         "hp_pct": {
           "value": "10",
           "CalculateSpellDamageTooltip": "0",
-          "special_bonus_unique_bloodseeker_7": "+10"
+          "special_bonus_unique_bloodseeker_7": "+10",
+          "DamageTypeTooltip": "DAMAGE_TYPE_PURE"
         },
         "damage_cap_amount": {
           "value": "200",
@@ -729,7 +731,10 @@
       "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_4",
       "AbilityManaCost": "0",
       "AbilityValues": {
-        "hp_cost_per_second": "7",
+        "hp_cost_per_second": {
+          "value": "7",
+          "DamageTypeTooltip": "DAMAGE_TYPE_MAGICAL"
+        },
         "radius": "450",
         "movement_slow": "30",
         "thirst_bonus_pct": "50"
@@ -1335,6 +1340,7 @@
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES",
       "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
+      "SpellDispellableType": "SPELL_DISPELLABLE_NO",
       "MaxLevel": "1",
       "FightRecapLevel": "1",
       "IsGrantedByScepter": "1",
@@ -1958,7 +1964,6 @@
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET",
       "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_ENEMY",
       "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC",
-      "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
       "SpellDispellableType": "SPELL_DISPELLABLE_YES_STRONG",
       "FightRecapLevel": "1",
@@ -4268,14 +4273,18 @@
           "special_bonus_unique_tiny_7": "+40"
         },
         "attack_speed_reduction": "-30",
-        "toss_bonus_damage": "100 200 300"
+        "toss_bonus_damage": {
+          "value": "100 200 300",
+          "DamageTypeTooltip": "DAMAGE_TYPE_MAGICAL"
+        }
       }
     },
     "zuus_heavenly_jump": {
       "ID": "641",
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES",
-      "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
       "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
+      "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
+      "SpellDispellableType": "SPELL_DISPELLABLE_YES",
       "FightRecapLevel": "1",
       "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_3",
       "AbilityCastGestureSlot": "DEFAULT",
@@ -4755,7 +4764,8 @@
         "damage_reduction": {
           "value": "-30 -40 -50 -60",
           "special_bonus_unique_tidehunter_3": "-25",
-          "CalculateSpellDamageTooltip": "0"
+          "CalculateSpellDamageTooltip": "0",
+          "DamageTypeTooltip": "DAMAGE_TYPE_NONE"
         },
         "reduction_duration": "6.0 6.0 6.0 6.0",
         "radius": "375",
@@ -4918,7 +4928,9 @@
       "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_CUSTOM",
       "AbilityUnitTargetType": "DOTA_UNIT_TARGET_CUSTOM",
       "AbilityUnitTargetFlags": "DOTA_UNIT_TARGET_FLAG_INVULNERABLE",
+      "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_YES",
+      "SpellDispellableType": "SPELL_DISPELLABLE_YES",
       "FightRecapLevel": "2",
       "AbilitySound": "Hero_VengefulSpirit.NetherSwap",
       "AbilityCastRange": "800 950 1100",
@@ -4927,8 +4939,14 @@
       "AbilityCooldown": "50 40 30",
       "AbilityManaCost": "100 150 200",
       "AbilityValues": {
-        "damage_reduction": "30 40 50",
-        "damage_reduction_duration": "3",
+        "damage_reduction": {
+          "value": "30 40 50",
+          "DamageTypeTooltip": "DAMAGE_TYPE_NONE"
+        },
+        "damage_reduction_duration": {
+          "value": "3",
+          "DamageTypeTooltip": "DAMAGE_TYPE_NONE"
+        },
         "damage": {
           "value": "50",
           "special_bonus_unique_vengeful_spirit_swap_damage": "+150"
@@ -5522,6 +5540,7 @@
     "witch_doctor_voodoo_restoration": {
       "ID": "5139",
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL",
+      "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
       "SpellDispellableType": "SPELL_DISPELLABLE_NO",
       "SpellImmunityType": "SPELL_IMMUNITY_ALLIES_YES",
       "AbilitySound": "Hero_WitchDoctor.Voodoo_Restoration",
@@ -5651,6 +5670,7 @@
     "witch_doctor_voodoo_switcheroo": {
       "ID": "632",
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES",
+      "SpellDispellableType": "SPELL_DISPELLABLE_NO",
       "MaxLevel": "1",
       "IsGrantedByShard": "1",
       "AbilityCastPoint": "0.1",
@@ -6006,7 +6026,6 @@
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES",
       "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_FRIENDLY",
       "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC",
-      "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
       "SpellDispellableType": "SPELL_DISPELLABLE_YES",
       "FightRecapLevel": "1",
@@ -6521,7 +6540,7 @@
       "ID": "5158",
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET",
       "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
-      "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
+      "SpellImmunityType": "SPELL_IMMUNITY_ALLIES_YES_ENEMIES_NO",
       "FightRecapLevel": "1",
       "AbilitySound": "Hero_Necrolyte.DeathPulse",
       "AbilityDraftShardAbility": "necrolyte_death_seeker",
@@ -6555,6 +6574,7 @@
       "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_ENEMY",
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
       "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
+      "SpellDispellableType": "SPELL_DISPELLABLE_NO",
       "HasScepterUpgrade": "1",
       "AbilityValues": {
         "aura_radius": "800",
@@ -6718,6 +6738,7 @@
     "warlock_upheaval": {
       "ID": "5164",
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_AOE",
+      "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
       "SpellDispellableType": "SPELL_DISPELLABLE_YES",
       "AbilitySound": "Hero_Warlock.Upheaval",
@@ -6738,7 +6759,10 @@
         "aspd_per_second": "10",
         "damage_per_second": "10",
         "max_damage": "30 50 70 90",
-        "damage_tick_interval": "1"
+        "damage_tick_interval": {
+          "value": "1",
+          "DamageTypeTooltip": "DAMAGE_TYPE_NONE"
+        }
       },
       "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_3"
     },
@@ -6746,7 +6770,6 @@
       "ID": "5165",
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE",
       "AbilityType": "DOTA_ABILITY_TYPE_ULTIMATE",
-      "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_YES",
       "SpellDispellableType": "SPELL_DISPELLABLE_YES_STRONG",
       "FightRecapLevel": "2",
@@ -7038,7 +7061,10 @@
         "duration": "3.0 3.5 4.0",
         "damage": "150 225 300",
         "side_damage": "150 225 300",
-        "damage_radius": "300",
+        "damage_radius": {
+          "value": "300",
+          "DamageTypeTooltip": "DAMAGE_TYPE_NONE"
+        },
         "slow_movement_speed_pct": "-60",
         "slow_attack_speed_pct": "-60",
         "push_distance": "450",
@@ -7486,6 +7512,7 @@
     "faceless_void_time_dilation": {
       "ID": "5691",
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET",
+      "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
       "SpellDispellableType": "SPELL_DISPELLABLE_YES",
       "AbilitySound": "Hero_FacelessVoid.TimeDilation.Cast",
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
@@ -7503,8 +7530,7 @@
         "base_damage": "0",
         "damage_per_stack": {
           "value": "10 11 12 13",
-          "special_bonus_unique_faceless_void_6": "+6",
-          "DamageTypeTooltip": "DAMAGE_TYPE_MAGICAL"
+          "special_bonus_unique_faceless_void_6": "+6"
         }
       },
       "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_2"
@@ -7956,6 +7982,7 @@
       "ID": "5197",
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING",
       "AbilityType": "DOTA_ABILITY_TYPE_ULTIMATE",
+      "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
       "SpellDispellableType": "SPELL_DISPELLABLE_YES",
       "AbilitySound": "Hero_TemplarAssassin.Trap",
@@ -8307,6 +8334,7 @@
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES",
       "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
+      "SpellDispellableType": "SPELL_DISPELLABLE_YES",
       "IsGrantedByScepter": "1",
       "MaxLevel": "1",
       "AbilityCastPoint": "0.1",
@@ -8921,6 +8949,7 @@
       "ID": "7304",
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET",
       "AbilityType": "DOTA_ABILITY_TYPE_ULTIMATE",
+      "AbilityUnitDamageType": "DAMAGE_TYPE_PHYSICAL",
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
       "SpellDispellableType": "SPELL_DISPELLABLE_NO",
       "AbilityDraftPreAbility": "dazzle_good_juju",
@@ -8966,6 +8995,7 @@
     "rattletrap_jetpack": {
       "ID": "630",
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES",
+      "SpellDispellableType": "SPELL_DISPELLABLE_YES",
       "MaxLevel": "1",
       "FightRecapLevel": "1",
       "IsGrantedByShard": "1",
@@ -8993,6 +9023,7 @@
       "ID": "321",
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES",
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
+      "SpellDispellableType": "SPELL_DISPELLABLE_NO",
       "MaxLevel": "1",
       "FightRecapLevel": "1",
       "IsGrantedByScepter": "1",
@@ -9294,8 +9325,8 @@
       "ID": "539",
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE| DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES",
       "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_ENEMY",
-      "AbilityUnitDamageType": "DAMAGE_TYPE_PHYSICAL",
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
+      "SpellDispellableType": "SPELL_DISPELLABLE_YES",
       "FightRecapLevel": "1",
       "HasScepterUpgrade": "1",
       "MaxLevel": "1",
@@ -9496,6 +9527,7 @@
       "ID": "5248",
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT",
       "AbilityType": "DOTA_ABILITY_TYPE_ULTIMATE",
+      "SpellDispellableType": "SPELL_DISPELLABLE_YES",
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
       "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
       "FightRecapLevel": "2",
@@ -9547,6 +9579,7 @@
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET",
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
       "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
+      "SpellDispellableType": "SPELL_DISPELLABLE_YES",
       "FightRecapLevel": "1",
       "AbilitySound": "Hero_Furion.WrathOfNature_Cast",
       "MaxLevel": "1",
@@ -9819,6 +9852,7 @@
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES",
       "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_ENEMY",
       "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC",
+      "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
       "MaxLevel": "1",
       "IsGrantedByScepter": "1",
       "AbilityCooldown": "9",
@@ -9960,7 +9994,6 @@
       "ID": "5258",
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_VECTOR_TARGETING",
       "AbilityType": "DOTA_ABILITY_TYPE_ULTIMATE",
-      "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_YES",
       "FightRecapLevel": "2",
       "AbilitySound": "Hero_Dark_Seer.Wall_of_Replica_Start",
@@ -10021,7 +10054,7 @@
       "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_ENEMY",
       "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC",
       "AbilityUnitDamageType": "DAMAGE_TYPE_PHYSICAL",
-      "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
+      "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_YES",
       "FightRecapLevel": "1",
       "AbilityCastPoint": "0.2",
       "AbilityChannelTime": "2.0",
@@ -10224,7 +10257,7 @@
       "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_FRIENDLY",
       "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC",
       "AbilityUnitDamageType": "DAMAGE_TYPE_PURE",
-      "SpellImmunityType": "SPELL_IMMUNITY_ALLIES_YES",
+      "SpellImmunityType": "SPELL_IMMUNITY_ALLIES_YES_ENEMIES_NO",
       "FightRecapLevel": "1",
       "AbilitySound": "Hero_Omniknight.Purification",
       "AbilityCastRange": "550",
@@ -10336,6 +10369,8 @@
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET",
       "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO",
       "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_FRIENDLY",
+      "SpellImmunityType": "SPELL_IMMUNITY_ALLIES_YES",
+      "SpellDispellableType": "SPELL_DISPELLABLE_YES",
       "AbilityCastRange": "700",
       "AbilityCastPoint": "0.3",
       "AbilityCooldown": "26 22 18 14",
@@ -10438,7 +10473,6 @@
     "enchantress_bunny_hop": {
       "ID": "320",
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES",
-      "AbilityUnitTargetType": "DOTA_UNIT_TARGET_TREE",
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
       "MaxLevel": "1",
       "FightRecapLevel": "1",
@@ -10471,9 +10505,8 @@
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING",
       "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_ENEMY",
       "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC",
-      "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
-      "SpellDispellableType": "SPELL_DISPELLABLE_YES_STRONG",
+      "SpellDispellableType": "SPELL_DISPELLABLE_NO",
       "FightRecapLevel": [
         "1",
         "1"
@@ -10650,15 +10683,20 @@
         },
         "movement_slow_pct": {
           "value": "0",
-          "special_bonus_shard": "+40"
+          "special_bonus_shard": "+40",
+          "RequiresShard": "1"
         },
         "hero_damage_heal_pct": {
           "value": "0",
-          "special_bonus_shard": "+50"
+          "special_bonus_shard": "+50",
+          "DamageTypeTooltip": "DAMAGE_TYPE_NONE",
+          "RequiresShard": "1"
         },
         "creep_damage_heal_pct": {
           "value": "0",
-          "special_bonus_shard": "+10"
+          "special_bonus_shard": "+10",
+          "DamageTypeTooltip": "DAMAGE_TYPE_NONE",
+          "RequiresShard": "1"
         }
       },
       "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_1"
@@ -11002,6 +11040,7 @@
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET",
       "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_ENEMY",
       "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC",
+      "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
       "SpellDispellableType": "SPELL_DISPELLABLE_YES",
       "FightRecapLevel": "1",
@@ -11022,12 +11061,10 @@
         "duration": "6",
         "projectile_speed": "1200",
         "impact_damage": {
-          "value": "100 120 140 160",
-          "DamageTypeTooltip": "DAMAGE_TYPE_MAGICAL"
+          "value": "100 120 140 160"
         },
         "attack_damage": {
-          "value": "6 7 8 9",
-          "DamageTypeTooltip": "DAMAGE_TYPE_MAGICAL"
+          "value": "6 7 8 9"
         },
         "miss_chance": {
           "value": "40 45 50 55",
@@ -11745,6 +11782,7 @@
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING",
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
       "SpellDispellableType": "SPELL_DISPELLABLE_YES",
+      "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
       "AbilitySound": "Hero_Batrider.StickyNapalm.Impact",
       "HasShardUpgrade": "1",
       "AbilityCastRange": "550 600 650 700",
@@ -11799,7 +11837,10 @@
       "AbilityValues": {
         "damage_impact": "30 60 90 120",
         "damage_per_second": "15",
-        "damage_duration": "2 4 6 8",
+        "damage_duration": {
+          "value": "2 4 6 8",
+          "DamageTypeTooltip": "DAMAGE_TYPE_NONE"
+        },
         "explosion_radius": "500",
         "collision_radius": "100 100 100 100",
         "stun_duration": "0.5 0.5 0.5 0.5",
@@ -12089,6 +12130,7 @@
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET",
       "AbilityType": "DOTA_ABILITY_TYPE_ULTIMATE",
       "SpellImmunityType": "SPELL_IMMUNITY_ALLIES_YES",
+      "SpellDispellableType": "SPELL_DISPELLABLE_YES",
       "FightRecapLevel": "2",
       "AbilitySound": "Hero_Chen.HandOfGodHealHero",
       "AbilityCastPoint": "0.3 0.3 0.3",
@@ -13731,7 +13773,8 @@
         "travel_speed": "300",
         "damage_interval": {
           "value": "0.5",
-          "CalculateSpellDamageTooltip": "0"
+          "CalculateSpellDamageTooltip": "0",
+          "DamageTypeTooltip": "DAMAGE_TYPE_NONE"
         },
         "vision_distance": "500",
         "end_vision_duration": "3.0",
@@ -13745,7 +13788,8 @@
           "value": "10 14 18 22 26 30 34 38",
           "levelkey": "exortlevel",
           "CalculateSpellDamageTooltip": "1",
-          "special_bonus_unique_invoker_6": "+80%"
+          "special_bonus_unique_invoker_6": "+80%",
+          "DamageTypeTooltip": "DAMAGE_TYPE_MAGICAL"
         },
         "meteor_count": {
           "value": "1",
@@ -14285,6 +14329,7 @@
       "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_ENEMY",
       "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC",
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
+      "SpellDispellableType": "SPELL_DISPELLABLE_NO",
       "AbilityUnitDamageType": "DAMAGE_TYPE_PURE",
       "AbilitySound": "Hero_Silencer.GlaivesOfWisdom",
       "HasShardUpgrade": "1",
@@ -14404,7 +14449,6 @@
       "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC",
       "AbilityUnitDamageType": "DAMAGE_TYPE_PURE",
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
-      "SpellDispellableType": "SPELL_DISPELLABLE_NO",
       "AbilitySound": "Hero_ObsidianDestroyer.ArcaneOrb",
       "AbilityCastRange": "450",
       "AbilityManaCost": "0",
@@ -14508,8 +14552,6 @@
     "obsidian_destroyer_equilibrium": {
       "ID": "5684",
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_PASSIVE",
-      "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
-      "SpellDispellableType": "SPELL_DISPELLABLE_NO",
       "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_5",
       "AbilityCastPoint": "0.75",
       "AbilitySpecial": [
@@ -14554,7 +14596,6 @@
       "FightRecapLevel": "2",
       "AbilitySound": "Hero_ObsidianDestroyer.SanityEclipse",
       "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_4",
-      "SpellDispellableType": "SPELL_DISPELLABLE_NO",
       "AbilityCooldown": "160 145 130",
       "AbilityManaCost": "200 325 450",
       "AbilitySpecial": [
@@ -15237,7 +15278,7 @@
       "ID": "5402",
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE",
       "AbilitySound": "Hero_Brewmaster.Brawler.Crit",
-      "SpellDispellableType": "SPELL_DISPELLABLE_YES",
+      "SpellDispellableType": "SPELL_DISPELLABLE_NO",
       "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_3",
       "AbilityCastGestureSlot": "DEFAULT",
       "HasShardUpgrade": "1",
@@ -15773,7 +15814,6 @@
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_YES",
       "SpellDispellableType": "SPELL_DISPELLABLE_NO",
       "AbilityType": "DOTA_ABILITY_TYPE_ULTIMATE",
-      "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
       "FightRecapLevel": "2",
       "HasScepterUpgrade": "1",
       "IsGrantedByShard": "1",
@@ -15962,7 +16002,6 @@
       "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_FRIENDLY",
       "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO",
       "AbilityUnitTargetFlags": "DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO",
-      "AbilityCastRange": "1200",
       "AbilitySound": "Hero_ChaosKnight.Phantasm",
       "AbilityCastPoint": "0.4 0.4 0.4",
       "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_4",
@@ -16005,6 +16044,7 @@
     "meepo_petrify": {
       "ID": "547",
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES",
+      "SpellDispellableType": "SPELL_DISPELLABLE_NO",
       "MaxLevel": "1",
       "FightRecapLevel": "1",
       "IsGrantedByScepter": "1",
@@ -16107,11 +16147,13 @@
       "AbilityValues": {
         "health_steal_heroes": {
           "value": "6 10 14 18",
-          "LinkedSpecialBonus": "special_bonus_unique_meepo_6"
+          "LinkedSpecialBonus": "special_bonus_unique_meepo_6",
+          "DamageTypeTooltip": "DAMAGE_TYPE_PURE"
         },
         "health_steal_creeps": {
           "value": "3 5 7 9",
-          "LinkedSpecialBonus": "special_bonus_unique_meepo_6"
+          "LinkedSpecialBonus": "special_bonus_unique_meepo_6",
+          "DamageTypeTooltip": "DAMAGE_TYPE_PURE"
         }
       },
       "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_3"
@@ -16138,7 +16180,7 @@
       "AbilityCastRange": "900",
       "AbilityCastPoint": "0.2 0.2 0.2 0.2",
       "AbilityCooldown": "18 16 14",
-      "AbilityDamage": "100",
+      "AbilityDamage": "0",
       "AbilityManaCost": "0",
       "AbilityValues": {
         "tooltip_clones": {
@@ -16154,6 +16196,10 @@
         "rat_pack": {
           "value": "0",
           "special_bonus_unique_meepo_7": "+1"
+        },
+        "tooltip_damage": {
+          "value": "100",
+          "RequiresShard": "1"
         }
       }
     },
@@ -16353,7 +16399,6 @@
       "ID": "5649",
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES",
       "AbilityUnitTargetType": "DOTA_UNIT_TARGET_TREE",
-      "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
       "MaxLevel": "1",
       "FightRecapLevel": "1",
       "IsGrantedByScepter": "1",
@@ -17198,6 +17243,7 @@
       "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_ENEMY",
       "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO",
       "AbilityUnitTargetFlags": "DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO",
+      "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
       "SpellDispellableType": "SPELL_DISPELLABLE_NO",
       "FightRecapLevel": "1",
@@ -17810,8 +17856,7 @@
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET",
       "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_FRIENDLY",
       "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC",
-      "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
-      "SpellDispellableType": "SPELL_DISPELLABLE_YES",
+      "SpellImmunityType": "SPELL_IMMUNITY_ALLIES_YES",
       "AbilitySound": "Hero_KeeperOfTheLight.ChakraMagic.Target",
       "AbilityCastRange": "900 900 900 900",
       "AbilityCastPoint": "0.3 0.3 0.3 0.3",
@@ -17928,6 +17973,7 @@
     "keeper_of_the_light_blinding_light": {
       "ID": "5476",
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES",
+      "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
       "SpellDispellableType": "SPELL_DISPELLABLE_YES",
       "AbilitySound": "Hero_KeeperOfTheLight.BlindingLight",
@@ -18677,7 +18723,6 @@
       "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC",
       "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
-      "SpellDispellableType": "SPELL_DISPELLABLE_YES",
       "MaxLevel": "1",
       "FightRecapLevel": "1",
       "IsGrantedByShard": "1",
@@ -18807,8 +18852,8 @@
     "troll_warlord_rampage": {
       "ID": "728",
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES",
-      "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
-      "SpellDispellableType": "SPELL_DISPELLABLE_NO",
+      "SpellImmunityType": "SPELL_IMMUNITY_ALLIES_YES",
+      "SpellDispellableType": "SPELL_DISPELLABLE_YES",
       "MaxLevel": "1",
       "IsShardUpgrade": "1",
       "IsGrantedByShard": "1",
@@ -18832,6 +18877,7 @@
     "troll_warlord_berserkers_rage": {
       "ID": "5508",
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE",
+      "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_YES",
       "AbilitySound": "Hero_TrollWarlord.BerserkersRage.Toggle",
       "AbilityCastPoint": "0.2 0.2 0.2 0.2",
       "AbilitySpecial": [
@@ -18911,11 +18957,13 @@
         "axe_count": "5",
         "AbilityCooldown": {
           "value": "9",
-          "special_bonus_scepter": "-5"
+          "special_bonus_scepter": "-5",
+          "RequiresScepter": "1"
         },
         "AbilityManacost": {
           "value": "60",
-          "special_bonus_scepter": "-30"
+          "special_bonus_scepter": "-30",
+          "RequiresScepter": "1"
         },
         "pierces_magic_immunity": {
           "value": "0",
@@ -19155,10 +19203,9 @@
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET |  DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING",
       "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_FRIENDLY",
       "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO",
-      "FightRecapLevel": [
-        "1",
-        "1"
-      ],
+      "SpellDispellableType": "SPELL_DISPELLABLE_NO",
+      "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_YES",
+      "FightRecapLevel": "1",
       "MaxLevel": "1",
       "IsGrantedByScepter": "1",
       "AbilitySound": "Hero_Centaur.Stampede",
@@ -19813,7 +19860,6 @@
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES",
       "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_ENEMY",
       "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC",
-      "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
       "SpellImmunityType": "SPELL_IMMUNITY_ALLIES_YES",
       "SpellDispellableType": "SPELL_DISPELLABLE_YES",
       "MaxLevel": "1",
@@ -20659,12 +20705,14 @@
         },
         "damage_creeps": {
           "value": "3 7 11 15",
-          "CalculateSpellDamageTooltip": "0"
+          "CalculateSpellDamageTooltip": "0",
+          "DamageTypeTooltip": "DAMAGE_TYPE_NONE"
         },
         "damage_heroes": {
           "value": "14 36 58 80",
           "special_bonus_unique_elder_titan": "+25",
-          "CalculateSpellDamageTooltip": "0"
+          "CalculateSpellDamageTooltip": "0",
+          "DamageTypeTooltip": "DAMAGE_TYPE_NONE"
         },
         "armor_creeps": "0.5",
         "armor_heroes": "1.5 3 4.5 6",
@@ -21049,8 +21097,7 @@
         "radius": "400",
         "absorb_amount": {
           "value": "85 190 295 400",
-          "LinkedSpecialBonus": "special_bonus_unique_ember_spirit_1",
-          "DamageTypeTooltip": "DAMAGE_TYPE_MAGICAL"
+          "LinkedSpecialBonus": "special_bonus_unique_ember_spirit_1"
         },
         "tick_interval": "0.2",
         "damage_per_second": {
@@ -21496,6 +21543,7 @@
       "ID": "5615",
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA",
       "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_ENEMY",
+      "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_YES",
       "SpellDispellableType": "SPELL_DISPELLABLE_NO",
       "AbilityCastRange": "900",
       "AbilityValues": {
@@ -21550,7 +21598,8 @@
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING ",
       "AbilityType": "DOTA_ABILITY_TYPE_ULTIMATE",
       "FightRecapLevel": "1",
-      "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
+      "SpellImmunityType": "SPELL_IMMUNITY_ALLIES_YES",
+      "SpellDispellableType": "SPELL_DISPELLABLE_YES",
       "AbilitySound": "Hero_Undying.Tombstone",
       "MaxLevel": "3",
       "HasScepterUpgrade": "1",
@@ -21700,7 +21749,7 @@
       "ID": "425",
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE",
       "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC",
-      "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
+      "SpellDispellableType": "SPELL_DISPELLABLE_YES",
       "MaxLevel": "1",
       "FightRecapLevel": "1",
       "IsGrantedByScepter": "1",
@@ -21729,7 +21778,7 @@
       "ID": "699",
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN  | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES",
       "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC",
-      "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
+      "SpellDispellableType": "SPELL_DISPELLABLE_YES",
       "MaxLevel": "1",
       "FightRecapLevel": "1",
       "IsGrantedByShard": "1",
@@ -22270,6 +22319,7 @@
       "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_ENEMY",
       "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC",
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
+      "SpellDispellableType": "SPELL_DISPELLABLE_YES_STRONG",
       "AbilityUnitDamageType": "DAMAGE_TYPE_PHYSICAL",
       "FightRecapLevel": "1",
       "AbilityCastAnimation": "ACT_DOTA_MK_STRIKE",
@@ -23232,7 +23282,7 @@
       "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC",
       "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
       "SpellDispellableType": "SPELL_DISPELLABLE_YES",
-      "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
+      "SpellImmunityType": "SPELL_IMMUNITY_ALLIES_YES_ENEMIES_NO",
       "AbilitySound": "Hero_ObsidianDestroyer.AstralImprisonment",
       "FightRecapLevel": "1",
       "HasShardUpgrade": "1",
@@ -23900,6 +23950,7 @@
       "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC",
       "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
+      "SpellDispellableType": "SPELL_DISPELLABLE_YES",
       "FightRecapLevel": "1",
       "AbilitySound": "Hero_Snapfire.Shotgun.Fire",
       "AbilityCastRange": "800",
@@ -24034,6 +24085,7 @@
       "MaxLevel": "1",
       "FightRecapLevel": "1",
       "IsGrantedByScepter": "1",
+      "HasScepterUpgrade": "1",
       "AbilitySound": "Hero_Snapfire.MortimerBlob.Launch",
       "AbilityCastRange": "3000",
       "AbilityCastPoint": "0.3",
@@ -24211,7 +24263,6 @@
       "AbilitySound": "Hero_VengefulSpirit.MagicMissile",
       "MaxLevel": "1",
       "IsGrantedByShard": "1",
-      "HasScepterUpgrade": "1",
       "AbilityCastRange": "900",
       "AbilityCastPoint": "0.2",
       "AbilityCooldown": "18",
@@ -24253,9 +24304,6 @@
     "hoodwink_decoy": {
       "ID": "8107",
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE",
-      "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_FRIENDLY",
-      "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO",
-      "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
       "SpellDispellableType": "SPELL_DISPELLABLE_YES",
       "IsGrantedByScepter": "1",
       "MaxLevel": "1",
@@ -24768,7 +24816,7 @@
       "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_FRIENDLY",
       "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO",
       "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
-      "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
+      "SpellImmunityType": "SPELL_IMMUNITY_ALLIES_YES_ENEMIES_NO",
       "FightRecapLevel": "1",
       "LinkedAbility": "dawnbreaker_land",
       "HasScepterUpgrade": "1",
@@ -25081,6 +25129,7 @@
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET",
       "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_FRIENDLY",
       "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO",
+      "SpellImmunityType": "SPELL_IMMUNITY_ALLIES_YES",
       "SpellDispellableType": "SPELL_DISPELLABLE_YES",
       "FightRecapLevel": "1",
       "AbilitySound": "Hero_Marci.Guardian.Applied",
@@ -28317,6 +28366,7 @@
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE",
       "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
+      "SpellDispellableType": "SPELL_DISPELLABLE_YES",
       "FightRecapLevel": "1",
       "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_6",
       "AbilityCastRange": "1000",
@@ -28352,6 +28402,8 @@
       "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
       "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_FRIENDLY",
       "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP",
+      "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
+      "SpellDispellableType": "SPELL_DISPELLABLE_YES",
       "FightRecapLevel": "1",
       "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_2",
       "HasScepterUpgrade": "1",
@@ -28378,6 +28430,7 @@
       "AbilityType": "DOTA_ABILITY_TYPE_ULTIMATE",
       "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_6",
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
+      "SpellDispellableType": "SPELL_DISPELLABLE_YES",
       "HasScepterUpgrade": "1",
       "AbilityDraftPreAbility": "techies_focused_detonate",
       "AbilityCastRange": "500",
