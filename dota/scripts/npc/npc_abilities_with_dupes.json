@@ -1209,6 +1209,10 @@
         "healing_ward_bonus_health": {
           "value": "0",
           "special_bonus_unique_juggernaut_2": "+2"
+        },
+        "healing_ward_hits_to_kill_tooltip": {
+          "value": "1",
+          "special_bonus_unique_juggernaut_2": "+2"
         }
       },
       "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_2"
@@ -1840,7 +1844,6 @@
     "mirana_leap": {
       "ID": "5050",
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES",
-      "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
       "SpellDispellableType": "SPELL_DISPELLABLE_YES",
       "AbilitySound": "Ability.Leap",
       "HasShardUpgrade": "1",
@@ -1871,7 +1874,8 @@
         },
         "shard_damage": {
           "value": "150",
-          "RequiresShard": "1"
+          "RequiresShard": "1",
+          "DamageTypeTooltip": "DAMAGE_TYPE_MAGICAL"
         },
         "shard_slow_pct": {
           "value": "30",
@@ -3023,6 +3027,9 @@
             85,
             120
           ]
+        },
+        {
+          "attack_range_tooltip": 650
         },
         {
           "duration": [
@@ -4295,6 +4302,7 @@
       "ID": "5109",
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_PASSIVE",
       "AbilityType": "DOTA_ABILITY_TYPE_ULTIMATE",
+      "AbilityUnitDamageType": "DAMAGE_TYPE_PHYSICAL",
       "AbilitySound": "Tiny.Grow",
       "AbilityCastAnimation": "ACT_INVALID",
       "AbilityValues": {
@@ -4305,7 +4313,9 @@
         },
         "tree_bonus_damage_pct": {
           "value": "20 30 40",
-          "special_bonus_unique_tiny_7": "+40"
+          "special_bonus_unique_tiny_7": "+40",
+          "DamageTypeTooltip": "DAMAGE_TYPE_NONE",
+          "CalculateSpellDamageTooltip": "0"
         },
         "attack_speed_reduction": "-30",
         "toss_bonus_damage": {
@@ -6156,7 +6166,11 @@
           "vision_radius": 200
         },
         {
-          "tooltip_channel_time": 3.0
+          "channel_time_tooltip": [
+            4.5,
+            4.0,
+            3.5
+          ]
         }
       ]
     },
@@ -6736,13 +6750,16 @@
       "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_4",
       "AbilityCooldown": "110",
       "AbilityManaCost": "250 375 500",
-      "AbilityCastRange": "600",
       "AbilityModifierSupportValue": "0.1",
       "AbilityValues": {
         "damage_per_health": "0.7 0.8 0.9",
         "stun_duration": "1.5 1.5 1.5",
         "hp_per_kill": "2 4 6",
-        "mana_per_kill": "1 2 3"
+        "mana_per_kill": "1 2 3",
+        "AbilityCastRange": {
+          "value": "600",
+          "special_bonus_unique_necrophos_6": "+100"
+        }
       }
     },
     "warlock_fatal_bonds": {
@@ -7867,6 +7884,7 @@
       "ID": "662",
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES",
       "AbilityUnitDamageType": "DAMAGE_TYPE_PURE",
+      "SpellDispellableType": "SPELL_DISPELLABLE_YES",
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_YES",
       "MaxLevel": "1",
       "FightRecapLevel": "1",
@@ -9761,6 +9779,7 @@
       "ID": "5250",
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_PASSIVE",
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_YES",
+      "AbilityUnitDamageType": "DAMAGE_TYPE_PHYSICAL",
       "AbilitySpecial": [
         {
           "hp_leech_percent": [
@@ -11068,6 +11087,7 @@
       "ID": "5278",
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET",
       "AbilityType": "DOTA_ABILITY_TYPE_ULTIMATE",
+      "AbilityUnitDamageType": "DAMAGE_TYPE_PHYSICAL",
       "SpellDispellableType": "SPELL_DISPELLABLE_NO",
       "AbilitySound": "Hero_Nightstalker.Darkness",
       "AbilityCastPoint": "0.3 0.3 0.3",
@@ -11081,7 +11101,8 @@
         },
         "bonus_damage": {
           "value": "50 100 150",
-          "special_bonus_unique_night_stalker_3": "+35"
+          "special_bonus_unique_night_stalker_3": "+35",
+          "CalculateSpellDamageTooltip": "0"
         }
       }
     },
@@ -11257,7 +11278,8 @@
       "AbilityManaCost": "50 60 70 80",
       "AbilityValues": {
         "bonus_damage": {
-          "value": "35 45 55 65"
+          "value": "35 45 55 65",
+          "CalculateSpellDamageTooltip": "0"
         },
         "lifesteal_pct": {
           "value": "40 60 80 100"
@@ -13918,7 +13940,8 @@
         "bonus_damage": {
           "value": "10 22 34 46 58 70 82 94",
           "levelkey": "exortlevel",
-          "special_bonus_unique_invoker_5": "+30"
+          "special_bonus_unique_invoker_5": "+30",
+          "CalculateSpellDamageTooltip": "0"
         },
         "duration": "9"
       }
@@ -14814,7 +14837,10 @@
         "wolf_index": "1 2 3 4",
         "wolf_duration": "50",
         "wolf_bat": "1.2 1.1 1.0 0.9",
-        "wolf_damage": "18 24 30 36",
+        "wolf_damage": {
+          "value": "21 27 33 39",
+          "special_bonus_unique_lycan_3": "+10"
+        },
         "wolf_hp": {
           "value": "325 375 425 475",
           "special_bonus_unique_lycan_7": "+200"
@@ -16054,7 +16080,7 @@
     },
     "shadow_demon_disseminate": {
       "ID": "1001",
-      "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET",
+      "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE",
       "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_BOTH",
       "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC",
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
@@ -16621,7 +16647,7 @@
           "value": "85",
           "CalculateSpellDamageTooltip": "1"
         },
-        "purgable": {
+        "undispellable": {
           "value": "0",
           "special_bonus_unique_treant_11": "+1"
         }
@@ -21930,6 +21956,7 @@
     "terrorblade_metamorphosis": {
       "ID": "5621",
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE",
+      "AbilityUnitDamageType": "DAMAGE_TYPE_PHYSICAL",
       "SpellDispellableType": "SPELL_DISPELLABLE_NO",
       "AbilitySound": "Hero_Terrorblade.Metamorphosis",
       "HasScepterUpgrade": "1",
@@ -22032,7 +22059,10 @@
         "berserk_bonus_movement_speed": "50",
         "melee_bonus": "100",
         "duration": "7",
-        "health_cost_pct": "20"
+        "health_cost_pct": {
+          "value": "20",
+          "DamageTypeTooltip": "DAMAGE_TYPE_PURE"
+        }
       }
     },
     "terrorblade_sunder": {
@@ -22817,6 +22847,7 @@
     "monkey_king_jingu_mastery": {
       "ID": "5723",
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_PASSIVE",
+      "AbilityUnitDamageType": "DAMAGE_TYPE_PHYSICAL",
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_YES",
       "SpellDispellableType": "SPELL_DISPELLABLE_NO",
       "FightRecapLevel": "1",
@@ -25411,6 +25442,7 @@
     "marci_guardian": {
       "ID": "8234",
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET",
+      "AbilityUnitDamageType": "DAMAGE_TYPE_PHYSICAL",
       "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_FRIENDLY",
       "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO",
       "SpellImmunityType": "SPELL_IMMUNITY_ALLIES_YES",
@@ -28513,6 +28545,7 @@
       "ID": "5599",
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE",
       "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
+      "SpellDispellableType": "SPELL_DISPELLABLE_YES",
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
       "AbilityType": "DOTA_ABILITY_TYPE_ULTIMATE",
       "AbilityCastRange": "400",
@@ -28682,7 +28715,6 @@
     "techies_reactive_tazer": {
       "ID": "886",
       "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET",
-      "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
       "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_FRIENDLY",
       "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP",
       "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
@@ -28702,7 +28734,8 @@
         "stun_radius": "400",
         "scepter_damage": {
           "value": "300",
-          "RequiresScepter": "1"
+          "RequiresScepter": "1",
+          "DamageTypeTooltip": "DAMAGE_TYPE_MAGICAL"
         }
       }
     },
