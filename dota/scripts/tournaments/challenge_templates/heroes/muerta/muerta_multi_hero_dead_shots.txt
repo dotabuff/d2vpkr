@@ -1,0 +1,47 @@
+"muerta_multi_hero_dead_shots"
+{
+	"desc"					"#DOTA_ChallengeDesc_Muerta_MultiHeroDeadShots"
+	"requiredhero"			"muerta"
+	"image"					"images/spellicons/muerta_dead_shot.png"
+	"events"
+	{
+		"matching_type"		"linear_series"
+		"query"
+		{
+			"multi_hero_dead_shot_killeater"
+			{
+				"event"						"kill_eater"
+				"caster"					"!hero"
+				"kill_eater_event"			"846"
+			}
+		}
+		"postmatch_increments"
+		{
+			"storage"
+			{
+				"1"
+				{
+					"aggregator"		"increment"
+				}
+			}
+		}
+		"progress_stored_in"		"1"
+		"post_tests"
+		{
+			"test_multi_hero_dead_shot_killeater"
+			{
+				"storage"		"1"
+				"compare"		">="
+				"amount"		"<multi_hero_dead_shots>"
+			}
+		}
+	}
+	"variables"
+	{
+		"<multi_hero_dead_shots>"
+		{
+			"format"	"int"
+			"index"		"0"
+		}
+	}
+}

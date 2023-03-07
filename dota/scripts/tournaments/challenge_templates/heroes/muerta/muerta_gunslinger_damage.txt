@@ -1,0 +1,49 @@
+"muerta_gunslinger_damage"
+{
+	"desc"				"#DOTA_ChallengeDesc_Muerta_GunslingerDamage"
+	"image"				"images/spellicons/muerta_gunslinger.png"
+	"requiredhero"		"muerta"
+	"events"
+	{
+	
+		"matching_type"		"linear_series"
+		"query"
+		{
+			"gunslinger_damage"
+			{
+				"event"		"damage"
+				"attacker"		"!hero"
+				"target_must_be_hero"		"1"
+				"attacker_team"		"!team"
+				"target_team"		"!enemyteam"
+				"attack"		"muerta_gunslinger"
+				"storage"
+				{
+					"1"
+					{
+						"key"		"value"
+						"aggregator"		"sum"
+					}
+				}
+			}
+		}
+		"progress_stored_in"		"1"			
+		"post_tests"
+		{
+			"test_value"
+			{
+				"storage"		"1"
+				"compare"		">="
+				"amount"		"<gunslinger_damage>"
+			}
+		}
+	}
+	"variables"
+	{
+		"<gunslinger_damage>"
+		{
+			"format"		"int"
+			"index"		"0"
+		}
+	}
+}

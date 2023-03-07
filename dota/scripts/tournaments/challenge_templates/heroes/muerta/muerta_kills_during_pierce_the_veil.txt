@@ -1,0 +1,47 @@
+"muerta_kills_during_pierce_the_veil"
+{
+	"desc"					"#DOTA_ChallengeDesc_Muerta_KillsDuringPierceTheVeil"
+	"requiredhero"			"muerta"
+	"image"					"images/spellicons/muerta_pierce_the_veil.png"
+	"events"
+	{
+		"matching_type"		"linear_series"
+		"query"
+		{
+			"pierce_the_veil_kills_killeater"
+			{
+				"event"						"kill_eater"
+				"caster"					"!hero"
+				"kill_eater_event"			"848"
+			}
+		}
+		"postmatch_increments"
+		{
+			"storage"
+			{
+				"1"
+				{
+					"aggregator"		"increment"
+				}
+			}
+		}
+		"progress_stored_in"		"1"
+		"post_tests"
+		{
+			"test_pierce_the_veil_kills_killeater"
+			{
+				"storage"		"1"
+				"compare"		">="
+				"amount"		"<pierce_the_veil_kills>"
+			}
+		}
+	}
+	"variables"
+	{
+		"<pierce_the_veil_kills>"
+		{
+			"format"	"int"
+			"index"		"0"
+		}
+	}
+}
