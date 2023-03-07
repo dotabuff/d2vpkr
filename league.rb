@@ -15,7 +15,7 @@ begin
   d = JSON.parse(json_data)
   puts "Successfully parsed #{ITEMS_GAME_JSON}. Iterating through ticket econ items..."
   d["items_game"]["items"].each do |k, v|
-    if v.key?("prefab") and v["prefab"] == "league"
+    if !v.nil? and v.key?("prefab") and v["prefab"] == "league"
       league_id = v["tool"]["usage"]["league_id"] rescue next
 
       if league_id.to_i <= 0

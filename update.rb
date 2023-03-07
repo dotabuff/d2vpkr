@@ -19,6 +19,7 @@ CONVERT_TO_JSON = %w[
 
 VDF_PATCHES = {
   "Lee \"Kyxy\" Kang Yang" => "Lee 'Kyxy' Kang Yang",
+  "and turn rate reduced by %dMODIFIER_PROPERTY_TURN_RATE_PERCENTAGE%%%." => "",
 }
 
 # Converts "bad" encodings to UTF-8 with unix line termination
