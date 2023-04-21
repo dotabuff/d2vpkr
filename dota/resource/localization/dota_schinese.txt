@@ -211,6 +211,8 @@
 		"DOTA_BadGuysShort"			"夜魇"
 		"DOTA_Towers"			"剩余防御塔数：%s1"
 		"DOTA_Barracks"			"兵营数：%s1"
+		"DOTA_DraftPool"		"征召池"
+		
 		// Captains Mode
 		"Captains Mode"			"队长模式"
 		"timeline_ban"			"禁用"
@@ -2148,6 +2150,7 @@
 		"npc_dota_beastmaster_boar_4"					"豪猪"
 		"npc_dota_beastmaster_greater_boar"				"高级豪猪"
 		"npc_dota_courier"								"信使"
+		"npc_dota_scout"								"侦察者"
 		"npc_dota_miniboss"								"痛苦魔方"
 		"npc_dota_mango_tree"							"莲花池"
 		"npc_dota_unit_twin_gate"						"双生之门"
@@ -2472,6 +2475,8 @@
 		"Dota_Shop_Edit"						"编辑模式"
 		"DOTA_Shop_NeutralTier"					"第{d:tier_number}级"
 		"DOTA_Shop_NeutralItemsDescription"		"掉落自中立生物，无法购买。"
+		"DOTA_Shop_TeamNeutralTokens"		"团队中立代币"
+		"DOTA_Shop_YourNeutralItems"		"我的中立物品"
 		"DOTA_Shop_NeutralTierNoTokensAvailable"	"没有可用的中立代币"
 		
 		// Tags
@@ -4294,7 +4299,7 @@
 		"DOTA_ToolTip_Damage_Pure"			"<font color=\"#d8ae53\">纯粹</font>"
 		"DOTA_ToolTip_Damage_HP_Removal"	"生命移除"
 
-		"DOTA_ToolTip_PiercesSpellImmunity"					"无视免疫减益："
+		"DOTA_ToolTip_PiercesSpellImmunity"					"无视减益免疫："
 		"DOTA_ToolTip_PiercesSpellImmunity_Yes"				"<font color=\"#70EA72\">是</font>"
 		"DOTA_ToolTip_PiercesSpellImmunity_No"				"否"
 		"DOTA_ToolTip_PiercesSpellImmunity_AlliesYesEnemiesNo"		"对友无视，对敌无效"
@@ -5313,6 +5318,8 @@
 		"DOTA_AutomaticSelectionPriority_ChoiceResponse_UnknownError"	"选择阵营/选人顺序时发生未知错误。"
 
 		"DOTA_Lobby_PlayerDraft_Error"									"冠绝征召设置"
+		"DOTA_Lobby_PlayerDraft_Error_BadTeams"							"冠绝征召需要双方队伍只包含他们的团队队长。没有队长的队伍会自动分配一名。剩余未分配的玩家都会被征召入队。"
+
 		"DOTA_Lobby_MVP_Awarded_Title"									"MVP"
 		"DOTA_Lobby_MVP_Awarded_Message"								"你被奖励为MVP"
 
@@ -6177,6 +6184,7 @@
 		"DOTA_RP_COACHING"					"%s1: 担任教练中"
 		"DOTA_RP_STRATEGY_TIME"				"%s1：策略时间"
 		"DOTA_RP_WAIT_FOR_MAP_TO_LOAD"		"%s1：等待游戏载入"
+		"DOTA_RP_PLAYER_DRAFT"				"%s1：冠绝征召"
 		"DOTA_RP_PRE_GAME"					"%s1：赛前"
 		"DOTA_RP_GAME_IN_PROGRESS"			"%s1：游戏中"
 		"DOTA_RP_GAME_IN_PROGRESS_CUSTOM"	"正在进行%s1"
@@ -21026,7 +21034,7 @@
 	"DOTA_AbilityTooltip_TargetType" "影响：{s:targettype}"
 	"DOTA_AbilityTooltip_CastType" "技能：{s:casttype}"
 	"DOTA_AbilityTooltip_DamageType" "伤害类型：{s:damagetype}"
-	"DOTA_AbilityTooltip_SpellImmunityType" "无视免疫减益：{s:spellimmunity}"
+	"DOTA_AbilityTooltip_SpellImmunityType" "无视减益免疫：{s:spellimmunity}"
 	"DOTA_AbilityTooltip_DispelType" "能否驱散：{s:dispeltype}"
 	"DOTA_AbilityTooltip_Description" "{s:description}"
 	"DOTA_AbilityTooltip_ScepterDescription" "{s:scepterdescription}"
@@ -21346,6 +21354,10 @@
 	"DOTA_Chat_SuggestHeroBan"		"建议禁用<a class=\"SuggestedHero\" href=\"event:DOTASuggestedHeroActivated( {d:hero_id} )\">[{g:dota_hero_name:hero_id}]</a>。"
 	"DOTA_Chat_SuggestHeroRole"		"建议选择<a class=\"SuggestedHeroRole\" href=\"event:DOTASuggestedHeroRoleActivated( {s:hero_role} )\">[{s:localized_hero_role}]</a>英雄。"
 	"DOTA_Chat_SuggestPlayerDraftPick"	"建议选择{g:dota_player_name:nh:target_player_id}。"
+	"DOTA_Chat_PlayerDraftPick_Radiant"	"已征召{g:dota_player_name:nh:target_player_id}进入<font color='#47C5AE'>天辉</font>。"
+	"DOTA_Chat_PlayerDraftPick_Dire"	"已征召{g:dota_player_name:nh:target_player_id}进入<font color='#FE2142'>夜魇</font>。"
+
+
 	"DOTA_Chat_Ability_Draft_Start"    "同时<font color='#8FA7BB'>按住<font color='#C5D1DC'><b>Ctrl键</b></font>和<font color='#C5D1DC'><b>Alt键</b></font>，查看阿哈利姆升级效果。</font><br><font color='#8FA7BB'>按住<font color='#C5D1DC'><b>Alt键</b></font>并点击技能，让队友知道你的选择。<br>按住<font color='#C5D1DC'><b>Ctrl键</b></font>并点击技能，建议队友选择该技能。</font>"
 	"DOTA_Chat_Ability_Draft_Randomed" "%s1随机指定了<font color='#FAEAC9'><b>[%s2]</b></font>。"
 	"DOTA_Chat_RequestAbility"		"打算选择<span class=\"RequestedAbility\" >[{g:dota_ability_name:ability_name}]</span>。"
@@ -21486,6 +21498,8 @@
 	"DOTA_HeroSelectorCategory_PrimaryAttribute_Strength"		"力量"
 	"DOTA_HeroSelectorCategory_PrimaryAttribute_Agility"		"敏捷"
 	"DOTA_HeroSelectorCategory_PrimaryAttribute_Intelligence"	"智力"
+	"DOTA_HeroSelectorCategory_PrimaryAttribute_All"			"全才"
+
 	"DOTA_DerivedStatsHelp_Tooltip_Damage"						"攻击力"
 	"DOTA_DerivedStatsHelp_Tooltip_Damage_Desc"					"每次攻击造成的物理伤害数值。"
 	"DOTA_DerivedStatsHelp_Tooltip_Armor"						"护甲"
@@ -21565,6 +21579,8 @@
 	"DOTA_Lobby_Settings_All_Chat"					"所有人聊天"
 	"DOTA_Lobby_Settings_Fill_Bots"					"机器人填满空位"
 	"DOTA_Lobby_Settings_PlayerDraft"				"冠绝征召"
+	"DOTA_Lobby_Settings_PlayerDraft_Tooltip"		"选择一名玩家成为队伍的<b>队长</b>，或者留空，让命运来决定。<br><br>队长会从剩下的玩家中选出队友，然后开始挑选英雄。"
+
 	"DOTA_Lobby_Settings_Bot_Settings"				"机器人设置"
 	"DOTA_Lobby_Settings_Bots_Radiant"				"天辉方机器人"
 	"DOTA_Lobby_Settings_Bots_Radiant_Difficulty"	"天辉方难度"
@@ -21801,6 +21817,8 @@
 
 	"LobbySetting_League"			"联赛"
 	"LobbySetting_League_Value"		"{s:lobbysetting_league}"
+
+	"LobbySetting_PlayerDraftEnabled"	"征召阵营"
 
 	"dota_lobby_lan_title"		"本地房间"
 
@@ -35049,6 +35067,8 @@
 	"DOTA_GameState_TeamShowcase"			"对阵画面"
 	"DOTA_GameState_CustomGameSetup"		"自定义游戏设置"
 	"DOTA_GameState_WaitForMapToLoad"		"等待地图载入中"
+	"DOTA_GameState_PlayerDraft"			"正在挑选阵营"
+
 	// DPC
 	"DOTA_DPC_ShortDayOfWeek0"												"周日"
 	"DOTA_DPC_ShortDayOfWeek1"												"周一"
@@ -38261,6 +38281,8 @@
 		"DOTA_Glossary_Map_Roshan_Shards_Desc"		"第三次被击败时，还将掉落刷新球碎片或阿哈利姆福佑。第四次以后，每次二者都会掉落。"
 
 		"DOTA_Glossary_Map_Tormentor"				"痛苦魔方"
+		"DOTA_Glossary_Map_Tormentor_Desc"			"痛苦魔方是强大又神秘的建筑，位于天辉和夜魇劣势路附近。它拥有强大的护盾和伤害反弹技能，难以被摧毁，而且击败后会奖励阿哈利姆魔晶。"
+
 		"DOTA_Glossary_Teamwork"				"团队协作"
 		
 		"DOTA_Glossary_Teamwork_Communication"		"交流沟通"
@@ -44790,6 +44812,7 @@
 		// END Muerta Release event
 
 		"DOTA_MapUpdate2023Summary_FrontPageCell_Title"							"全新英雄属性类型："
+		"DOTA_MapUpdate2023Summary_FrontPageCell_Bullet1"						"隆重推出全才属性"
 		"DOTA_MapUpdate2023Summary_FrontPageCell_ActionLabel"					"了解更多"
 
 		"DOTA_MapUpdate2023Additional_FrontPageCell_Title"						"全新与更新后物品："
@@ -44797,6 +44820,7 @@
 		"DOTA_MapUpdate2023Additional_FrontPageCell_Bullet2"					"散魂剑"
 		"DOTA_MapUpdate2023Additional_FrontPageCell_Bullet3"					"鱼叉"
 		"DOTA_MapUpdate2023Additional_FrontPageCell_Bullet4"					"灵匣"
+		"DOTA_MapUpdate2023Additional_FrontPageCell_Bullet5"					"还有其他很多物品"
 		"DOTA_MapUpdate2023Additional_FrontPageCell_ActionLabel"				"了解更多"
 
 		"DOTA_MapUpdate2023Tooltip_Header_Watcher"									"观察者"
@@ -44841,6 +44865,7 @@
 		"DOTA_MapUpdate2023Tooltip_PersonalStat_ShieldRune"							"个人收集护盾神符"
 		"DOTA_MapUpdate2023Tooltip_PersonalStatNumber_ShieldRune"					"{d:personal_shield_runes_gained}"
 	
+		"DOTA_MapUpdate2023Tooltip_Header_Gate"										"守护者之门"
 		"DOTA_MapUpdate2023Tooltip_Description_Gate"								"己方基地外围的实用力场，可以让队友随意出入，而敌人无法通过。"
 		"DOTA_MapUpdate2023Tooltip_Header_Portal"									"双生之门"
 		"DOTA_MapUpdate2023Tooltip_Description_Portal"								"两道大门，连接优势路一塔附近的地图角落，玩家持续施法后可以在地图边缘来回穿梭。"
@@ -44850,17 +44875,21 @@
 		"DOTA_MapUpdate2023Tooltip_PersonalStatNumber_Portal"						"{d:personal_portals_used}"
 	
 		"DOTA_MapUpdate2023Tooltip_Header_Outpost"									"前哨"
+		"DOTA_MapUpdate2023Tooltip_Description_Outpost"								"扩展的新地图有两座新前哨，而原有的前哨已经移至新地点。"
 		"DOTA_MapUpdate2023Tooltip_GlobalStat_Outpost"								"全球前哨占领次数"
 		"DOTA_MapUpdate2023Tooltip_GlobalStatNumber_Outpost"						"{d:global_outposts_captured}"
 		"DOTA_MapUpdate2023Tooltip_PersonalStat_Outpost"							"个人前哨占领次数"
 		"DOTA_MapUpdate2023Tooltip_PersonalStatNumber_Outpost"						"{d:personal_outposts_captured}"
 
+		"DOTA_MapUpdate2023Tooltip_Header_Camp"									"全新野点"
+		"DOTA_MapUpdate2023Tooltip_Description_Camp"								"有部分野怪受不了一直在野区被屠杀，建立了12个新营地，散落在扩张后的地图里。所以现在也能去那些地方屠杀他们。"
 		"DOTA_MapUpdate2023_NewMap"					"全新地图"
 		"DOTA_MapUpdate2023_NewMap_Roshan"			"1. 肉山搬家"
 		"DOTA_MapUpdate2023_NewMap_TwinGates"		"2. 双生之门"
 		"DOTA_MapUpdate2023_NewMap_LotusPools"		"3. 莲花池"
 		"DOTA_MapUpdate2023_NewMap_Tormentors"		"4. 痛苦魔方"
 		"DOTA_MapUpdate2023_NewMap_Watchers"		"5. 观察者"
+		"DOTA_MapUpdate2023_NewMap_Barriers"		"6. 守护者之门"
 		"DOTA_MapUpdate2023_NewMap_WisdomRunes"		"7. 智慧神符"
 		"DOTA_MapUpdate2023_NewMap_ShieldRunes"		"8. 护盾神符"
 		"DOTA_MapUpdate2023_NewMap_CreepCamps"		"9. 全新野点"
@@ -44868,12 +44897,29 @@
 		"DOTA_MapUpdate2023_MajorGameplay"		"重要游戏性改动"
 		"DOTA_MapUpdate2023_MajorGameplay_Desc"	"全新英雄属性类型、黑皇杖重做、全新物品、全新中立物品等等。"
 		"DOTA_MapUpdate2023_Matchmaking"		"比赛匹配"
+		"DOTA_MapUpdate2023_Matchmaking_Desc"	"冠绝一世匹配，全新水平评分系统等等。"
 		"DOTA_MapUpdate2023_UserInterface"		"用户界面"
+		"DOTA_MapUpdate2023_UserInterface_Desc"	"全新护盾显示，血条优化和生命消耗类技能。"
+
 		"DOTA_NeutralItemPicker_Title"		"第<span class=\"NeutralItemTier\">{d:neutral_item_tier}</span>级中立物品"
 		"DOTA_NeutralItemPicker_Subtitle"	"选择一件"
 		"DOTA_Miniboss_Scepter"				"%s1获得了阿哈利姆福佑"
 		"DOTA_Miniboss_Shard"				"%s1获得了阿哈利姆魔晶"
-"DOTA_PlayerDraft_RecommendInstructions"	"按住[Alt]键来推荐玩家"
+
+		// Immortal Draft
+		"DOTA_PlayerDraft_Title"					"冠绝征召"
+		"DOTA_PlayerDraft_ModeTitle"				"队伍征召"
+		"DOTA_PlayerDraft_Intro_Captain_Title"		"准备好选择你的冠绝阵营"
+		"DOTA_PlayerDraft_Intro_Captain_Desc"		"<b>{s:local_player_name}</b>，你已被选为团队队长。你将从其他冠绝一世的玩家中选出你的队友进行比赛。"
+		"DOTA_PlayerDraft_Intro_Player_Title"		"团队队长"
+		"DOTA_PlayerDraft_Intro_Player_Desc"		"你会接受征召进入天辉或夜魇。使用个人资料旁的按钮，让队长知道你喜欢玩什么位置。"
+		"DOTA_PlayerDraft_Intro_Versus"				"对阵"
+		"DOTA_PlayerDraft_LocalPlayerBadge_Label"	"你"
+		"DOTA_PlayerDraft_RecommendInstructions"	"按住[Alt]键来推荐玩家"
+
+		"DOTA_PlayerDraft_YourPick"					"{s:local_player_name}，轮到你来选人"
+		"DOTA_PlayerDraft_RadiantPick"				"{s:radiant_captain_name}正在选人..."
+		"DOTA_PlayerDraft_DirePick"					"{s:dire_captain_name}正在选人..."
 
 		"DOTA_PlayerDraft_SelectPreferences"		"设置偏好的阵营和定位（可选）"
 		"DOTA_PlayerDraft_RadiantTeam"				"{s:radiant_team_name}"
@@ -44891,5 +44937,7 @@
 		"DOTA_PlayerDraft_PreferredTeam_None"		"--"
 
 		"DOTA_patch_note_creep_general"				"综合"
-		}
+		"DOTA_patch_note_item_general"				"综合"
+		"DOTA_patch_note_neutral_item_general"		"综合"
+	}
 }
