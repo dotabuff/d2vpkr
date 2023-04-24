@@ -8,6 +8,8 @@
 		"DOTA_SalePrice"		"Precio"
 		"DOTA_MoreInfo"			"Más información"
 		"DOTA_MoreInformation"	"Más información"
+		"DOTA_PatchNotes"		"Notas del parche"
+		
 		"DOTA_AttackMove"		"Ataque / Forzar ataque"
 		"DOTA_Move"			"Desplazarse"
 		"DOTA_UnitQuery"		"Colocar objeto/unidad en cola"
@@ -2148,6 +2150,8 @@ Al extenderse su influencia cultural, entraron en conflicto entre sí. La interf
 		"npc_dota_beastmaster_boar_4"					"Jabalí"
 		"npc_dota_beastmaster_greater_boar"				"Gran Jabalí"
 		"npc_dota_courier"								"Mensajero"
+		"npc_dota_scout"								"Rastreador"
+		"npc_dota_miniboss"								"Torturador"
 		"npc_dota_clinkz_skeleton_archer"				"Esqueleto Arquero"
 		"npc_dota_flying_courier"						"Mensajero Volador"
 		"npc_dota_furion_treant"						"Ent"
@@ -21125,6 +21129,7 @@ Burla especial de Techies"
 	"DOTA_AbilityTooltip_TargetType" "AFECTA A: {s:targettype}"
 	"DOTA_AbilityTooltip_CastType" "HABILIDAD: {s:casttype}"
 	"DOTA_AbilityTooltip_DamageType" "TIPO DE DAÑO: {s:damagetype}"
+	"DOTA_AbilityTooltip_SpellImmunityType" "IGNORA INMUNIDAD A EFECTOS NEGATIVOS: {s:spellimmunity}"
 	"DOTA_AbilityTooltip_DispelType" "DISIPABLE: {s:dispeltype}"
 	"DOTA_AbilityTooltip_Description" "{s:description}"
 	"DOTA_AbilityTooltip_ScepterDescription" "{s:scepterdescription}"
@@ -21133,6 +21138,7 @@ Burla especial de Techies"
 	"DOTA_AbilityTooltip_Attributes" "{s:attributes}"
 	"DOTA_AbilityTooltip_Cooldown" "{s:cooldown}"
 	"DOTA_AbilityTooltip_ManaCost" "{s:manacost}"
+	"DOTA_AbilityTooltip_HealthCost" "{s:healthcost}"
 	"DOTA_AbilityTooltip_Lore" "{s:lore}"
 	"DOTA_AbilityTooltip_UpgradeLevel" "Próxima mejora en el nivel {d:upgradelevel} del héroe"
 	"DOTA_AbilityTooltip_BuildHeader" "Guía de la habilidad"
@@ -21442,6 +21448,11 @@ Para unirte como jugador experimentado, debes tener al menos {d:new_player_req_g
 	"DOTA_Chat_SuggestHero"			"sugiere elegir a <a class=\"SuggestedHero\" href=\"event:DOTASuggestedHeroActivated( {d:hero_id} )\">[{g:dota_hero_name:hero_id}]</a>."
 	"DOTA_Chat_SuggestHeroBan"		"sugiere vetar a <a class=\"SuggestedHero\" href=\"event:DOTASuggestedHeroActivated( {d:hero_id} )\">[{g:dota_hero_name:hero_id}]</a>."
 	"DOTA_Chat_SuggestHeroRole"		"sugiere elegir un héroe con <a class=\"SuggestedHeroRole\" href=\"event:DOTASuggestedHeroRoleActivated( {s:hero_role} )\">[{s:localized_hero_role}]</a>."
+	"DOTA_Chat_SuggestPlayerDraftPick"	"sugiere elegir a {g:dota_player_name:nh:target_player_id}."
+	"DOTA_Chat_PlayerDraftPick_Radiant"	"ha seleccionado a {g:dota_player_name:nh:target_player_id} para los <font color='#47C5AE'>Radiant</font>."
+	"DOTA_Chat_PlayerDraftPick_Dire"	"ha seleccionado a {g:dota_player_name:nh:target_player_id} para los <font color='#FE2142'>Dire</font>."
+
+
 	"DOTA_Chat_Ability_Draft_Start"    "<font color='#8FA7BB'>Mantén presionadas las teclas <font color='#C5D1DC'><b>Ctrl</b></font> y <font color='#C5D1DC'><b>Alt</b></font> a la vez para ver las mejoras de Aghanim.</font><br><font color='#8FA7BB'>Mantén presionada la tecla <font color='#C5D1DC'><b>Alt</b></font> y haz clic en una habilidad para que tu equipo sepa tus elecciones.<br>Mantén presionada la tecla <font color='#C5D1DC'><b>Ctrl</b></font> y haz clic en una habilidad para sugerir que se elija.</font>"
 	"DOTA_Chat_Ability_Draft_Randomed" "%s1 se ha asignado aleatoriamente <font color='#FAEAC9'><b>[%s2]</b></font>."
 	"DOTA_Chat_RequestAbility"		"me gustaría seleccionar <span class=\"RequestedAbility\" >[{g:dota_ability_name:ability_name}]</span>."
@@ -21582,6 +21593,8 @@ Para unirte como jugador experimentado, debes tener al menos {d:new_player_req_g
 	"DOTA_HeroSelectorCategory_PrimaryAttribute_Strength"		"Fuerza"
 	"DOTA_HeroSelectorCategory_PrimaryAttribute_Agility"		"Agilidad"
 	"DOTA_HeroSelectorCategory_PrimaryAttribute_Intelligence"	"Inteligencia"
+	"DOTA_HeroSelectorCategory_PrimaryAttribute_All"			"Universal"
+
 	"DOTA_DerivedStatsHelp_Tooltip_Damage"						"Daño"
 	"DOTA_DerivedStatsHelp_Tooltip_Damage_Desc"					"Cantidad de daño físico infligido con cada ataque."
 	"DOTA_DerivedStatsHelp_Tooltip_Armor"						"Armadura"
@@ -21660,6 +21673,7 @@ Para unirte como jugador experimentado, debes tener al menos {d:new_player_req_g
 	"DOTA_Lobby_Settings_Enable_Cheats"				"ACTIVAR TRUCOS"
 	"DOTA_Lobby_Settings_All_Chat"					"CHAT GENERAL"
 	"DOTA_Lobby_Settings_Fill_Bots"					"BOTS EN ESPACIOS VACÍOS"
+	"DOTA_Lobby_Settings_PlayerDraft"				"SELECCIÓN INMORTAL"
 	"DOTA_Lobby_Settings_Bot_Settings"				"OPCIONES DE BOT"
 	"DOTA_Lobby_Settings_Bots_Radiant"				"BOTS RADIANT"
 	"DOTA_Lobby_Settings_Bots_Radiant_Difficulty"	"DIFICULTAD RADIANT"
@@ -21898,6 +21912,8 @@ Para unirte como jugador experimentado, debes tener al menos {d:new_player_req_g
 
 	"LobbySetting_League"			"Liga"
 	"LobbySetting_League_Value"		"{s:lobbysetting_league}"
+
+	"LobbySetting_PlayerDraftEnabled"	"Seleccionar equipos"
 
 	"dota_lobby_lan_title"		"Servidor local"
 
@@ -23472,7 +23488,10 @@ Para unirte como jugador experimentado, debes tener al menos {d:new_player_req_g
 
 	"ranked_mmr_label"				"MMR"
 	"ranked_mmr_value"				"{i:mmr}"
+	"ranked_mmr_tbd"				"Sin calibrar"
+	"ranked_mmr_calibrating:p{calibrating_games}"		"- Queda {i:calibrating_games} partida#|#- Quedan {i:calibrating_games} partidas"
 	"ranked_mmr_no_data"			"Se necesitan {i:calibrating_required_games} partidas para calibrar"
+	"ranked_mmr_confidence_value"			"{d:rank_confidence} %"
 	"ranked_phone_status_none_button"		"GESTIONAR NÚM. DE TELÉFONO"
 	"ranked_phone_status_none_label"		"Debes asociar un número de teléfono a Steam para activar el emparejamiento clasificatorio."
 	"ranked_phone_status_steam_button"		"ASOCIAR TELÉFONO CON DOTA"
@@ -27908,6 +27927,9 @@ Para unirte como jugador experimentado, debes tener al menos {d:new_player_req_g
 	"FrontPage_ChestOfEndlessDays_Title"		"Cofre de los Días Infinitos"
 	"FrontPage_ChestOfEndlessDays_Text"			"13 nuevos sets de héroe. Recibe tesoros aleatoriamente mientras juegas, compra llaves para abrirlos o véndelos en el mercado."
 
+	"FrontPage_MapUpdate2023_Title" 		"Nuevas Fronteras"
+	"FrontPage_MapUpdate2023_GameplayTitle" 		"Actualización 7.33"
+
 	"dpc_event_spring21"							"Tour de primavera"
 	"dpc_event_springmajor22"						"El Major de Estocolmo"
 	"dpc_event_summer22"							"Tour de verano"
@@ -31418,11 +31440,14 @@ Con las apariciones de héroes de presión como Zeus y Death Prophet, el éxito 
 	"DOTA_HUD_StrengthGain"		" (Gana {s:strength_per_level} por nivel)"
 	"DOTA_HUD_AgilityGain"		" (Gana {s:agility_per_level} por nivel)"
 	"DOTA_HUD_IntelligenceGain"		" (Gana {s:intelligence_per_level} por nivel)"
+	"DOTA_HUD_AllGain"		" (Obtiene {s:all_per_level} de daño por nivel)"
 	"DOTA_HUD_PrimaryAttributeStrength"	"= {d:primary_attribute_damage} de daño (bonificación de atributo principal)"
 	"DOTA_HUD_PrimaryAttributeAgility"	"= {d:primary_attribute_damage} de daño (bonificación de atributo principal)"
 	"DOTA_HUD_PrimaryAttributeIntelligence"	"= {d:primary_attribute_damage} de daño (bonificación de atributo principal)"
 	"DOTA_HUD_StrengthDetails"  "= {d:strength_hp} de vida y {s:strength_hp_regen} de regeneración de vida."
 	"DOTA_HUD_AgilityDetails"  "= {s:agility_armor} de armadura y {d:agility_attack_speed} de velocidad de ataque."
+	"DOTA_HUD_IntelligenceDetails"	"= {d:intelligence_mana} de maná, {s:intelligence_mana_regen} de regeneración de maná y {s:intelligence_magic_resist} % de resistencia mágica base"
+
 	"DOTA_NewMusicPack"	"Nuevo lote de música"
 
 	"DOTA_TeamInvite_OpenQualifier"		"Clasificatoria abierta"
@@ -31884,6 +31909,8 @@ Con las apariciones de héroes de presión como Zeus y Death Prophet, el éxito 
 	"DOTA_SeasonRank_Tooltip_TitleSupport" "Medallas de rango de temporada - Medalla de apoyo"
 	"DOTA_SeasonRank_Tooltip_Text1" "Tu nivel de esta temporada se muestra en una medalla de rango."
 	"DOTA_SeasonRank_Tooltip_Text2" "Cada medalla tiene cinco estrellas de progreso antes de ascender a la siguiente medalla de rango."
+	"DOTA_SeasonRank_Tooltip_Text3" "Los jugadores ganan medallas jugando en partidas clasificatorias.\nLas medallas son visibles para todos los jugadores antes y durante cada partida."
+
 	"DOTA_SeasonRank_Tooltip_Text4"	"Los mejores jugadores de cada región muestran su posición numérica de la tabla de clasificación debajo de la medalla de rango."
 
     "DOTA_Click_Learn_More"     "Haz clic aquí para más información"
@@ -31980,6 +32007,8 @@ Con las apariciones de héroes de presión como Zeus y Death Prophet, el éxito 
 	"DOTA_732c_Update"	  "Actualización 7.32c"
 	"DOTA_732d_Update"	  "Actualización 7.32d"
 	"DOTA_732e_Update"	  "Actualización 7.32e"
+	"DOTA_733_Update"	  "Actualización 7.33"
+
 	"DOTA_Settings_Tooltip_NetworkLatency" "Si tienes una conexión de red con pérdida de paquetes, la opción BAJA aumentará la latencia pero mejorará la fluidez general."
 
 	"DOTA_Popup_RankCalibration_Congrats" "¡Enhorabuena!"
@@ -33720,6 +33749,8 @@ Con las apariciones de héroes de presión como Zeus y Death Prophet, el éxito 
     "DOTA_Play_RR_PartyQPEmpty"             "Algunos jugadores de tu grupo están fuera de las partidas en cola con roles. Selecciona todos los roles para ser elegible para la cola con roles."
     "DOTA_Play_RR_PartyGainingQP"           "Tu grupo tiene los 5 roles. Cada jugador ganará partidas en cola con roles."
 
+    "DOTA_Play_RR_SoloEarningQP:p{earn_amount}"		"Obtendrás {d:earn_amount} partida de la cola con roles.#|#Obtendrás {d:earn_amount} partidas de la cola con roles (la mitad por derrotas)."
+    "DOTA_Play_RR_PartyEarningQP:p{earn_amount}"	"Cada miembro del grupo obtendrá {d:earn_amount} partida de cola con roles.#|#Cada miembro del grupo obtendrá {d:earn_amount} partidas de cola con roles (la mitad por derrotas)."
     "DOTA_Play_RR_FiveStack"                "Los grupos completos siempre son aptos para la cola con roles."
     "DOTA_Play_RR_HighDemand"               "Todos los roles con mucha demanda están ya seleccionados. Elige todos los roles para conseguir más partidas de cola con roles."
 
@@ -33732,6 +33763,7 @@ Con las apariciones de héroes de presión como Zeus y Death Prophet, el éxito 
 	"DOTA_Play_RR_PartyMissingQP_Tooltip"	"Si tu grupo selecciona ambos roles de Apoyo, podréis jugar en el emparejamiento clasificatorio con roles. Seleccionar todos los roles te permitirá obtener partidas de cola con roles para usar con cualquier rol en el futuro."
 
     "DOTA_RR_NonEligibleWarningTitle"      "No tienes partidas de cola con roles"
+    "DOTA_RR_NonEligibleWarning"           "¿Te gustaría hacer cola para todos los roles?<br>El sistema de emparejamiento te asignará un rol para esta partida y obtendrás {d:earn_amount} partidas de cola con roles para usar en el futuro (la mitad por derrotas)."
     "DOTA_RR_QueueAllRoles"                "Cola para todos los roles"
 	"DOTA_RR_QueueAllRoles_Supplement1"	    "(Gana partidas en cola con roles para futuros enfrentamientos)"
     "DOTA_RR_QueueNormalPriority"          "Cola clasificatoria clásica"
@@ -35111,6 +35143,8 @@ Con las apariciones de héroes de presión como Zeus y Death Prophet, el éxito 
 	"DOTA_GameState_TeamShowcase"			"Pantalla de enfrentamiento"
 	"DOTA_GameState_CustomGameSetup"		"Ajustes de modo de juego personalizado"
 	"DOTA_GameState_WaitForMapToLoad"		"Esperando al mapa"
+	"DOTA_GameState_PlayerDraft"			"Eligiendo equipos"
+
 	// DPC
 	"DOTA_DPC_ShortDayOfWeek0"												"DOM"
 	"DOTA_DPC_ShortDayOfWeek1"												"LUN"
@@ -38314,6 +38348,7 @@ Si crees que no has podido dedicar el nivel de atención necesario para llegar a
 		"DOTA_Glossary_Map_Roshan_Cheese_Desc"		"La segunda vez que Roshan sea derrotado dejará caer Queso. También dejará caer un Fragmento de Aghanim, pero solo en esa ocasión."
 		"DOTA_Glossary_Map_Roshan_Shards_Desc"		"La tercera vez que sea derrotado, también dejará caer una Esquirla Revigorizante o una Bendición de Aghanim. En la cuarta derrota y en adelante, dejará caer ambas."
 
+		"DOTA_Glossary_Map_Tormentor"				"Torturador"
 		"DOTA_Glossary_Teamwork"				"Trabajo en equipo"
 		
 		"DOTA_Glossary_Teamwork_Communication"		"Comunicación"
@@ -44841,5 +44876,72 @@ Si crees que no has podido dedicar el nivel de atención necesario para llegar a
 
 		"DOTA_Muerta_PreText1"										" "
 		"DOTA_Muerta_PreText2"										"con"
-}
+"DOTA_MapUpdate2023Summary_FrontPageCell_Bullet1"						"Presentamos el atributo UNIVERSAL"
+		"DOTA_MapUpdate2023Additional_FrontPageCell_Title"						"Objetos nuevos y actualizados:"
+		"DOTA_MapUpdate2023Additional_FrontPageCell_Bullet1"					"Vara del Rey Negro"
+		"DOTA_MapUpdate2023Additional_FrontPageCell_Bullet3"					"Arpón"
+		"DOTA_MapUpdate2023Additional_FrontPageCell_Bullet5"					"Y muchos otros"
+		"DOTA_MapUpdate2023Additional_FrontPageCell_ActionLabel"				"Más información"
+
+		"DOTA_MapUpdate2023Tooltip_GlobalStatNumber_Watcher"						"{d:global_lanterns_lit}"
+		"DOTA_MapUpdate2023Tooltip_PersonalStatNumber_Watcher"						"{d:personal_lanterns_lit}"
+
+		"DOTA_MapUpdate2023Tooltip_Header_Sentinel"									"Torturadores"
+		"DOTA_MapUpdate2023Tooltip_GlobalStat_Sentinel"								"Torturadores globales derrotados"
+		"DOTA_MapUpdate2023Tooltip_GlobalStatNumber_Sentinel"						"{d:global_miniboss_kills}"
+		"DOTA_MapUpdate2023Tooltip_PersonalStat_Sentinel"							"Torturadores personales derrotados"
+		"DOTA_MapUpdate2023Tooltip_PersonalStatNumber_Sentinel"						"{d:personal_miniboss_kills}"
+
+		"DOTA_MapUpdate2023Tooltip_Header_Roshan"									"Foso de Roshan"
+		"DOTA_MapUpdate2023Tooltip_Description_Roshan"								"Uno de los dos nuevos fosos de Roshan que reemplazan su antigua guarida al lado del río."
+		"DOTA_MapUpdate2023Tooltip_GlobalStat_Roshan"								"Roshans globales asesinados"
+		"DOTA_MapUpdate2023Tooltip_GlobalStatNumber_Roshan"							"{d:global_roshan_kills}"
+		"DOTA_MapUpdate2023Tooltip_PersonalStat_Roshan"								"Roshans personales asesinados"
+		"DOTA_MapUpdate2023Tooltip_PersonalStatNumber_Roshan"						"{d:personal_roshan_kills}"
+
+		"DOTA_MapUpdate2023Tooltip_GlobalStatNumber_Outpost"						"{d:global_outposts_captured}"
+		"DOTA_MapUpdate2023Tooltip_PersonalStat_Outpost"							"Puestos avanzados personales capturados"
+		"DOTA_MapUpdate2023Tooltip_PersonalStatNumber_Outpost"						"{d:personal_outposts_captured}"
+
+		"DOTA_MapUpdate2023Tooltip_Header_Camp"									"Nuevos campamentos de creeps"
+		"DOTA_MapUpdate2023_NewMap"					"Nuevo mapa"
+		"DOTA_MapUpdate2023_NewMap_Roshan"			"1. Nuevas guaridas de Roshan"
+		"DOTA_MapUpdate2023_NewMap_CreepCamps"		"9. Nuevos campamentos de creeps"
+		"DOTA_MapUpdate2023_NewMap_Outposts"		"10. Nuevos puestos avanzados"
+		"DOTA_MapUpdate2023_MajorGameplay"		"Cambios importantes en la jugabilidad"
+		"DOTA_MapUpdate2023_Matchmaking"		"Emparejamiento"
+		"DOTA_MapUpdate2023_Matchmaking_Desc"	"Emparejamiento para el rango Inmortal, un nuevo sistema de clasificación de habilidad y mucho más."
+		"DOTA_MapUpdate2023_UserInterface"		"Interfaz de usuario"
+		"DOTA_NeutralItemPicker_Subtitle"	"Seleccionar uno"
+		"DOTA_Miniboss_Scepter"				"%s1 ha recibido un efecto positivo del Cetro de Aghanim"
+		"DOTA_Miniboss_Shard"				"%s1 ha recibido un Fragmento de Aghanim"
+
+		// Immortal Draft
+		"DOTA_PlayerDraft_Title"					"Selección Inmortal"
+		"DOTA_PlayerDraft_Intro_Captain_Title"		"Prepárate para elegir tu equipo inmortal"
+		"DOTA_PlayerDraft_Intro_Captain_Desc"		"<b>{s:local_player_name}</b>, te han elegido como capitán de equipo. Tendrás turnos para elegir a tu equipo entre los demás inmortales en la partida."
+		"DOTA_PlayerDraft_Intro_Player_Title"		"Capitanes de equipo"
+		"DOTA_PlayerDraft_YourPick"					"{s:local_player_name}, es tu turno de elegir"
+		"DOTA_PlayerDraft_RadiantPick"				"{s:radiant_captain_name} está eligiendo..."
+		"DOTA_PlayerDraft_DirePick"					"{s:dire_captain_name} está eligiendo..."
+
+		"DOTA_PlayerDraft_SelectPreferences"		"Define tu equipo y rol preferido (opcional)"
+		"DOTA_PlayerDraft_RadiantTeam"				"{s:radiant_team_name}"
+		"DOTA_PlayerDraft_DireTeam"					"{s:dire_team_name}"
+
+		"DOTA_PlayerDraft_RadiantTurn"				"{s:radiant_team_name}"
+		"DOTA_PlayerDraft_DireTurn"					"{s:dire_team_name}"
+
+		"DOTA_PlayerDraft_PreferredRole"			"Rol preferido"
+		"DOTA_PlayerDraft_PreferredTeam"			"Equipo preferido"
+		"DOTA_PlayerDraft_PickPlayer"				"Elegir"
+		"DOTA_PlayerDraft_SuggestPlayer"			"Recomendar"
+
+		"DOTA_PlayerDraft_PreferredRole_None"		"--"
+		"DOTA_PlayerDraft_PreferredTeam_None"		"--"
+
+		"DOTA_patch_note_creep_general"				"General"
+		"DOTA_patch_note_item_general"				"General"
+		"DOTA_patch_note_neutral_item_general"		"General"
+	}
 }
