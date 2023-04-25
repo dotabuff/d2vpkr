@@ -1019,7 +1019,6 @@
 		"DOTA_Chat_Rune_Neutral_Bounty_Spotted"	"<font color='#FF7800'>Ödül</font> rünü burada (%s1)."
 		"DOTA_Chat_Rune_Pumpkin_Spotted"		"Burada <font color='#FF7D40'>Balkabağı</font> rünü var!"
 		"DOTA_Chat_Rune_XP_Spotted"		"<font color='#FF7D40'>TP</font> rünü burada!"
-
 		"DOTA_Chat_Item_Spotted" "Burada <font color='%s1'>%s2</font> var."
 		"DOTA_Chat_Item_Alert" "<font color='%s1'>%s2</font> için burada toplanın."
 
@@ -2124,6 +2123,7 @@ As each stone's cultural influence spread, it eventually came in conflict with t
 		"npc_dota_beastmaster_greater_boar"				"Greater Boar"
 		"npc_dota_courier"								"Kurye"
 		"npc_dota_mango_tree"							"Nilüfer Havuzu"
+		"npc_dota_unit_twin_gate"						"İkiz Geçit"
 		"npc_dota_clinkz_skeleton_archer"				"İskelet Okçu"
 		"npc_dota_flying_courier"						"Uçan Kurye"
 		"npc_dota_furion_treant"						"Treant"
@@ -5231,6 +5231,9 @@ As each stone's cultural influence spread, it eventually came in conflict with t
 		"DOTA_AutomaticSelectionPriority_ChoiceConfirm_Dire"			"Bu oyun için Dire tarafını seçmek istediğinize emin misiniz?"
 		"DOTA_AutomaticSelectionPriority_ChoiceResponse_UnknownError"	"Taraf/seçim sırası belirlenirken bilinmeyen bir hata meydana geldi."
 
+		"DOTA_Lobby_PlayerDraft_Error"									"Ölümsüz Seçim Planı"
+		"DOTA_Lobby_PlayerDraft_Error_BadTeams"							"Ölümsüz Seçim'de her takım bir kaptanla başlar. Oyuncusu olmayan takımlara otomatik olarak bir kaptan atanır. Kalan atanmamış oyuncular seçilmek üzere bekler."
+
 		"DOTA_Lobby_MVP_Awarded_Title"									"EDO"
 		"DOTA_Lobby_MVP_Awarded_Message"								"EDO olarak ödüllendirildiniz"
 
@@ -6078,6 +6081,7 @@ As each stone's cultural influence spread, it eventually came in conflict with t
 		"DOTA_RP_COACHING"					"%s1: Koçluk Yapıyor"
 		"DOTA_RP_STRATEGY_TIME"				"%s1: Planlama Aşaması"
 		"DOTA_RP_WAIT_FOR_MAP_TO_LOAD"		"%s1: Oyunun yüklenmesi bekleniyor"
+		"DOTA_RP_PLAYER_DRAFT"				"%s1: Ölümsüz Seçim"
 		"DOTA_RP_PRE_GAME"					"%s1: Oyun Öncesi"
 		"DOTA_RP_GAME_IN_PROGRESS"			"%s1: Oyun Oynuyor"
 		"DOTA_RP_GAME_IN_PROGRESS_CUSTOM"	"%s1 Oynuyor"
@@ -20853,6 +20857,11 @@ Yeni Müzik Paketi
 	"DOTA_Chat_SuggestHero"			"<a class=\"SuggestedHero\" href=\"event:DOTASuggestedHeroActivated( {d:hero_id} )\">[{g:dota_hero_name:hero_id}]</a> seçilmesini öneriyor."
 	"DOTA_Chat_SuggestHeroBan"		"<a class=\"SuggestedHero\" href=\"event:DOTASuggestedHeroActivated( {d:hero_id} )\">[{g:dota_hero_name:hero_id}]</a> adlı kahramanın yasaklanmasını öneriyor."
 	"DOTA_Chat_SuggestHeroRole"		"<a class=\"SuggestedHeroRole\" href=\"event:DOTASuggestedHeroRoleActivated( {s:hero_role} )\">[{s:localized_hero_role}]</a> rolünde bir kahraman seçilmesini öneriyor."
+	"DOTA_Chat_SuggestPlayerDraftPick"	"{g:dota_player_name:nh:target_player_id} seçilmesini önerdi"
+	"DOTA_Chat_PlayerDraftPick_Radiant"	"<font color='#47C5AE'>Radiant</font> tarafına {g:dota_player_name:nh:target_player_id} seçti"
+	"DOTA_Chat_PlayerDraftPick_Dire"	"<font color='#FE2142'>Dire</font> tarafına {g:dota_player_name:nh:target_player_id} seçti"
+
+
 	"DOTA_Chat_Ability_Draft_Randomed" "%s1, <font color='#FAEAC9'><b>[%s2]</b></font> yeteneğini rastgele aldı."
 	"DOTA_Chat_RequestAbility"		", <span class=\"RequestedAbility\" >[{g:dota_ability_name:ability_name}]</span> seçmek istiyor."
 	"DOTA_ChatHelp_Targets"			"Hedefler"
@@ -21060,6 +21069,9 @@ Yeni Müzik Paketi
 	"DOTA_Lobby_Settings_Enable_Cheats"				"HİLELERİ ETKİNLEŞTİR"
 	"DOTA_Lobby_Settings_All_Chat"					"HERKESLE SOHBET"
 	"DOTA_Lobby_Settings_Fill_Bots"					"BOŞ YERLERİ BOTLARLA DOLDUR"
+	"DOTA_Lobby_Settings_PlayerDraft"				"ÖLÜMSÜZ SEÇİM"
+	"DOTA_Lobby_Settings_PlayerDraft_Tooltip"		"Her takımın <b>kaptanı</b> olmak üzere bir oyuncu seç veya kaderin kararına bırakmak için takımları boş bırak.<br><br>Bu kaptanlar, kahramanlar seçilmeden önce oyunun başında kalan oyuncular arasından kendi takımlarını seçeceklerdir."
+
 	"DOTA_Lobby_Settings_Bot_Settings"				"BOT AYARLARI"
 	"DOTA_Lobby_Settings_Bots_Radiant"				"RADIANT BOTLARI"
 	"DOTA_Lobby_Settings_Bots_Radiant_Difficulty"	"RADIANT ZORLUK DERECESİ"
@@ -21291,6 +21303,8 @@ Yeni Müzik Paketi
 
 	"LobbySetting_League"			"Lig"
 	"LobbySetting_League_Value"		"{s:lobbysetting_league}"
+
+	"LobbySetting_PlayerDraftEnabled"	"Takımları Seçimi"
 
 	"dota_lobby_lan_title"		"Yerel Sunucu"
 
@@ -23266,6 +23280,7 @@ Yeni Müzik Paketi
 	"DOTA_Settings_Tooltip_DoubleTap"							"Bir yetenek veya eşyaya çift tıklamak ya da kısayol tuşuna iki kez basmak, mümkün olduğunda kendi üstünüzde kullanmanızı sağlar."
 	"DOTA_Settings_Tooltip_Smart_Doubletap"				"Bir yeteneğe veya eşyaya basarken Alt'a basılı tutmak uygunsa çift tıklamayı tetikleyecektir."
 	"DOTA_Settings_Tooltip_UnifiedOrders"						"Bir emir verirken CTRL tuşuna basılı tutmak emri kontrol ettiğiniz tüm birimlere iletir."
+	"DOTA_Settings_Tooltip_TeleportStop"						"Hareket etmek veya büyü yapmak ışınlanma işlemini iptal etmeyecektir. Sadece Teleport Scroll, Boots of Travel veya İkiz Geçit için geçerlidir."
 	"DOTA_Settings_Tooltip_ChannelStop"						"Hareket etmek veya bir yetenek kullanmak halihazırda süren bir yönlendirmeyi iptal etmez. Town Portal Scroll ve Boots of Travel hariç bütün Yönlendirmeli Eşyalar ve Yeteneklere uygulanır."
 	"DOTA_Settings_Tooltip_Force_Right_Click_Attack_0"			"Dost bir birime sağ tıklamak kahramanının o birimi takip etmesini sağlar."
 	"DOTA_Settings_Tooltip_Force_Right_Click_Attack"			"Dost bir birime sağ tıklamak kahramanının o birime saldırma komutu vermesini sağlar."
@@ -32643,6 +32658,8 @@ Frosthaven erzakları, Frosthaven maçları esnasında hediye olarak düşebilir
 	"DOTA_GameState_TeamShowcase"			"Kapışma Ekranı"
 	"DOTA_GameState_CustomGameSetup"		"Özel Oyun Kurulumu"
 	"DOTA_GameState_WaitForMapToLoad"		"Harita bekleniyor"
+	"DOTA_GameState_PlayerDraft"			"Takım Seçimi"
+
 	// DPC
 	"DOTA_DPC_ShortDayOfWeek0"												"PAZ"
 	"DOTA_DPC_ShortDayOfWeek1"												"PZT"
@@ -36849,11 +36866,13 @@ Bir düşmanı gök taşının altında kıstırmak için bir yetenek veya eşya
 
 		"DOTA_MapUpdate2023Additional_FrontPageCell_Bullet1"					"Black King Bar"
 		"DOTA_MapUpdate2023Additional_FrontPageCell_Bullet2"					"Disperser"
+		"DOTA_MapUpdate2023Additional_FrontPageCell_Bullet3"					"Harpoon"
 		"DOTA_MapUpdate2023Additional_FrontPageCell_Bullet4"					"Phylactery"
 		"DOTA_MapUpdate2023Additional_FrontPageCell_ActionLabel"				"Daha fazlası"
 
 		"DOTA_MapUpdate2023Tooltip_Description_Watcher"								"Haritanın birçok noktasındaki Gözetleyicileri etkinleştirerek takımınıza fazladan görüş kazandırın. Düşmanın Gözetleyicilerini sabote ederek geçici olarak devre dışı bırakın."
 		"DOTA_MapUpdate2023Tooltip_Header_Sentinel"									"İşkenceciler"
+		"DOTA_MapUpdate2023Tooltip_Description_Sentinel"							"20. dakikadan sonra ortaya çıkan iki yeni işkenceciyle yüzleşin. Mega kalkanları vardır ve Aghanim's Shard düşürürler."
 		"DOTA_MapUpdate2023Tooltip_Header_Roshan"									"Roshan İni"
 		"DOTA_MapUpdate2023Tooltip_Description_Roshan"								"Roshan'ın eski yerinden taşındığı yeni iki Roshan ininden biri."
 		"DOTA_MapUpdate2023Tooltip_Header_Tree"										"Nilüfer Havuzu"
@@ -36867,9 +36886,11 @@ Bir düşmanı gök taşının altında kıstırmak için bir yetenek veya eşya
 	
 		"DOTA_MapUpdate2023Tooltip_Header_Gate"										"Savunma Kapıları"
 		"DOTA_MapUpdate2023Tooltip_Description_Gate"								"Takımınızın üyelerinin geçmesine izin veren, düşman takımının geçemediği üssünüzün arkasında bulunan kullanışlı bir güç alanı."
+		"DOTA_MapUpdate2023Tooltip_Header_Portal"									"İkiz Geçit"
 		"DOTA_MapUpdate2023Tooltip_Description_Portal"								"Güvenli kulvar kulelerinin yakınında bulunan iki geçit haritanın köşelerini birbirine bağlayarak oyuncuların haritanın bir ucundan diğerine yönlenerek ışınlanmasını sağlar."
 		"DOTA_MapUpdate2023Tooltip_Header_Outpost"									"İleri Karakol"
 		"DOTA_MapUpdate2023Tooltip_Description_Outpost"								"Yeni genişletilmiş harita iki yeni İleri Karakol içeriyor ve mevcut İleri Karakollar yeni yerlerine taşındı."
+		"DOTA_MapUpdate2023Tooltip_Description_Camp"								"Bazı yaratıklar, sürekli olarak ormanda katledilmekten artık bıktı ve genişletilmiş haritanın farklı yerlerinde bulunan 12 yeni kampı kurdu. Artık onları kendi kamplarında da katledebilirsiniz."
 		"DOTA_MapUpdate2023_NewMap"					"Yeni Harita"
 		"DOTA_MapUpdate2023_NewMap_Roshan"			"1. Roshan'ın Yeni İnleri"
 		"DOTA_MapUpdate2023_NewMap_TwinGates"		"2. İkiz Geçit"
@@ -36890,7 +36911,21 @@ Bir düşmanı gök taşının altında kıstırmak için bir yetenek veya eşya
 
 		"DOTA_NeutralItemPicker_Title"		"<span class=\"NeutralItemTier\">{d:neutral_item_tier}. Seviye</span> Tarafsız Eşyalar"
 		"DOTA_NeutralItemPicker_Subtitle"	"Birini Seç"
-"DOTA_PlayerDraft_LocalPlayerBadge_Label"	"Sen"
+		// Immortal Draft
+		"DOTA_PlayerDraft_Title"					"Ölümsüz Seçim"
+		"DOTA_PlayerDraft_ModeTitle"				"Takım Seçimi"
+		"DOTA_PlayerDraft_Intro_Captain_Title"		"Ölümsüz takımını seçmeye hazırlan"
+		"DOTA_PlayerDraft_Intro_Captain_Desc"		"<b>{s:local_player_name}</b>, takımına kaptan olarak seçildin. Maçtaki diğer Ölümsüz rütbeli oyuncular arasından takımınızı sırayla seçeceksiniz."
+		"DOTA_PlayerDraft_Intro_Player_Title"		"Takım Kaptanları"
+		"DOTA_PlayerDraft_Intro_Player_Desc"		"Radiant veya Dire tarafına seçileceksin. Kaptanlara hangi rolü oynamayı tercih ettiğinizi bildirmek için profilinizdeki butonları kullanın."
+		"DOTA_PlayerDraft_Intro_Versus"				"VS."
+		"DOTA_PlayerDraft_LocalPlayerBadge_Label"	"Sen"
+		"DOTA_PlayerDraft_RecommendInstructions"	"Oyuncu önermek için [Alt] tuşuna basılı tut"
+
+		"DOTA_PlayerDraft_RadiantPick"				"{s:radiant_captain_name} seçiyor..."
+		"DOTA_PlayerDraft_DirePick"					"{s:dire_captain_name} seçiyor..."
+
+		"DOTA_PlayerDraft_SelectPreferences"		"Tercih ettiğin takımı ve rolü seç (isteğe bağlı)"
 		"DOTA_PlayerDraft_RadiantTeam"				"{s:radiant_team_name}"
 		"DOTA_PlayerDraft_DireTeam"					"{s:dire_team_name}"
 
