@@ -51,8 +51,10 @@ class VDF
   def string
     if scan(/""/)
       ""
-    else scan(/"((\\"|[^"])+)"/)
+    elsif scan(/"((\\"|[^"])+)"/)
       scanner[1]
+    elsif scanner.check(/(\w+)\s+"/)
+      scan(/(\w+)\s+/)
     end
   end
 
@@ -124,7 +126,7 @@ class VDF
         # EOF
         break
       else
-        raise "expected key at pos: #{scanner.pos}"
+        raise "expected key at pos: #{scanner.pos} found: #{scanner.peek(100).inspect}"
       end
 
       ignorable
