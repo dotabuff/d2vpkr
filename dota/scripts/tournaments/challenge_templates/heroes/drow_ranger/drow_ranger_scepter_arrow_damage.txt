@@ -1,45 +1,57 @@
 "drow_ranger_scepter_arrow_damage"
 {
-	"desc"		"#DOTA_ChallengeDesc_DrowRanger_ScepterArrowDamage"
-	"status_text"		"#DOTA_ChallengeStatus_DrowRanger_ScepterArrowDamage"
-	"image"			"images/spellicons/drow_ranger_marksmanship.png"
+	"desc"		"#DOTA_ChallengeDesc_DrowRanger_KillsUnderHypothermia"
+	"status_text"		"#DOTA_ChallengeStatus_DrowRanger_KillsUnderHypothermia"
+	"image"			"images/spellicons/drow_ranger_frost_arrows.png"
 	"requiredhero"		"drow_ranger"
 	"events"
 	{
 		"matching_type"		"linear_series"
 		"query"
 		{
-			"find_damage"
+			"enemy_killed"
 			{
-				"event"			"damage"
-				"attack"		"drow_ranger_marksmanship"
-				"attacker"		"!hero"
-				"target_must_be_hero"		"1"
+				"event"		"death"
+				"target"	"!1"
+			}
+			"separator"		"0.6"
+			"hypothermia_remove"
+			{
+				"event"					"modifier_remove"
+				"caster"				"!hero"
+				"target_team"			"!enemyteam"
+				"modifier"				"modifier_drow_ranger_frost_arrows_hypothermia"
+				"target_must_be_hero"	"1"
 				"storage"
 				{
-					"1"
-					{
-						"key"		"value"
-						"aggregator"	"sum"
-					}
+					"1"		"target"
 				}
 			}
 		}
-		"clear_storage_per_query"		"0"
-		"progress_stored_in"		"1"
+		"progress_stored_in"		"2"
+		"postmatch_increments"
+		{
+			"storage"
+			{
+				"2"
+				{
+					"aggregator"		"increment"
+				}
+			}
+		}
 		"post_tests"
 		{
 			"test_value"
 			{
-				"storage"		"1"
+				"storage"		"2"
 				"compare"		">="
-				"amount"		"<scepter_arrow_damage>"
+				"amount"		"<kills_under_hypothermia>"
 			}
 		}
 	}
 	"variables"
 	{
-		"<scepter_arrow_damage>"
+		"<kills_under_hypothermia>"
 		{
 			"format"		"int"
 			"index"			"0"
