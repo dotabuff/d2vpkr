@@ -2114,7 +2114,7 @@
 
 		"random"							"随机"
 		"repick"							"重选"
-		"DOTA_Hud_Pregame_Random_Tooltip"	"从经常使用的英雄中随机选择一个。免费获得仙灵之火和魔法芒果。"
+		"DOTA_Hud_Pregame_Random_Tooltip"	"从经常使用的英雄中随机选择一个。在部分游戏模式中会免费获得仙灵之火和魔法芒果。"
 		
 		// Other Names
 		"ent_dota_halloffame"							"冠军之神盾"
@@ -5533,6 +5533,7 @@
 		"dota_hud_error_cant_cast_on_dominated"			"无法对被支配单位施放"
 		"dota_hud_error_cant_cast_enemy_hero"			"无法对敌方英雄施放"
 		"dota_hud_error_cant_cast_creep_level"			"目前等级无法对普通单位施放"
+		"dota_hud_error_cant_cast_debuff_immune"			"无法对减益免疫单位施放"
 		"dota_hud_error_target_magic_immune"			"目标免疫魔法"
 		"dota_hud_error_target_attack_immune"			"目标无法被攻击"
 		"dota_hud_error_target_cant_be_denied"			"目标无法被反补"
@@ -18102,6 +18103,10 @@
 		"DOTA_HUD_KilledRoshanBad"		"夜魇军团{s:killed_icon}{s:roshan_icon}肉山{s:gold}"
 		"DOTA_HUD_KilledHUDFlippedRoshanGood"		"天辉军团{s:killed_icon}{s:roshan_icon}肉山{s:gold}"
 		"DOTA_HUD_KilledHUDFlippedRoshanBad"		"夜魇军团{s:killed_icon}{s:roshan_icon}肉山{s:gold}"
+		"DOTA_HUD_KilledMinibossGood"			"天辉{s:killed_icon}痛苦魔方 {s:player_name}{s:shard_icon}"
+		"DOTA_HUD_KilledMinibossBad"			"夜魇{s:killed_icon}痛苦魔方 {s:player_name}{s:shard_icon}"
+		"DOTA_HUD_KilledMinibossNoShardGood"	"天辉{s:killed_icon}痛苦魔方{s:gold}"
+		"DOTA_HUD_KilledMinibossNoShardBad"		"夜魇{s:killed_icon}痛苦魔方{s:gold}"
 
 		"DOTA_HUD_ScanUsed"				"{s:team} {s:radar_icon}扫描"
 		"DOTA_HUD_PickedUpAegis"		"{s:player_name} {s:aegis_icon}不朽之守护"
@@ -19006,8 +19011,8 @@
 
 		"DOTA_ChallengeDesc_DrowRanger_Double_Silences"					"施放<font color='#ffffff'>狂风</font>同时沉默2名以上敌方英雄达到<font color='#ffffff'>%s1</font>次。"
 		"DOTA_ChallengeStatus_DrowRanger_Double_Silences"				"%s2我还需要施放狂风沉默2名以上敌方英雄达到%s1次！"
-		"DOTA_ChallengeDesc_DrowRanger_ScepterArrowDamage"				"<font color='#ffffff'>阿哈利姆神杖</font>给予的分裂箭矢对敌方英雄造成<font color='#ffffff'>%s1</font>点伤害。"
-		"DOTA_ChallengeStatus_DrowRanger_ScepterArrowDamage"			"%s2我还需要通过阿哈利姆神杖提供的分裂箭矢对敌方英雄造成%s1点伤害。"
+		"DOTA_ChallengeDesc_DrowRanger_KillsUnderHypothermia"			"击杀<font color='#ffffff'>阿哈利姆神杖</font>的<font color='#ffffff'>霜冻之箭低温效果</font>作用下敌方英雄达到<font color='#ffffff'>%s1</font>次。"
+		"DOTA_ChallengeStatus_DrowRanger_KillsUnderHypothermia"			"%s2我还需要击杀%s1名低温作用下的英雄！"
 		"DOTA_ChallengeDesc_DrowRangerKillsUnderFrostArrow"					"击杀被<font color='#ffffff'>霜冻之箭</font>减速的敌方英雄达到<font color='#ffffff'>%s1</font>次。"
 		"DOTA_ChallengeStatusText_DrowRangerKillsUnderFrostArrow"				"%s2我还需要击杀被霜冻之箭减速的敌人达到%s1次！"
 		"DOTA_ChallengeDesc_Drow_MarksmanshipProcDamage"				"通过射手天赋对敌方英雄造成<font color='#ffffff'>%s1</font>点伤害。"
@@ -19122,7 +19127,7 @@
 		"DOTA_ChallengeDesc_DiffusalManaDamage"							"通过<font color='#ffffff'>净魂之刃</font>燃烧敌方英雄<font color='#ffffff'>%s1</font>点魔法。"
 		"DOTA_ChallengeStatus_DiffusalManaDamage"						"%s2我还需要通过净魂之刃燃烧敌方英雄%s1点魔法！"
 
-		"KillEaterEvent_AncientApparition_MagicDamageUnderIceVortex"	"冰霜漩涡加深魔法伤害"
+		"KillEaterEvent_AncientApparition_MagicDamageUnderIceVortex"	"冰霜漩涡魔法伤害"
 
  		"KillEaterEvent_Antimage_SpellsBlockedWithAghanims"				"神杖护盾反弹技能数"
 		"KillEaterEvent_Antimage_ManaBurned"							"燃烧英雄魔法"
@@ -19506,7 +19511,7 @@
 
 		"DOTA_ChallengeDesc_Meepo_EarthbindDuration"			"施放<font color='#ffffff'>地之束缚</font>缠绕敌方英雄达到<font color='#ffffff'>%s1</font>秒。"
 
-		"DOTA_ChallengeDesc_ChaosKnight_StunsAboveFourSeconds"	"施放<font color='#ffffff'>混乱之箭</font>眩晕敌方英雄四秒以上达到<font color='#ffffff'>%s1</font>次。"
+		"DOTA_ChallengeDesc_ChaosKnight_StunsAboveThreeSeconds"	"施放<font color='#ffffff'>混乱之箭</font>眩晕敌方英雄三秒以上达到<font color='#ffffff'>%s1</font>次。"
 		"DOTA_ChallengeDesc_ChaosKnight_RealityRiftKills"		"击杀<font color='#ffffff'>实相裂隙</font>效果下敌方英雄达到<font color='#ffffff'>%s1</font>次。"
 
 		"DOTA_ChallengeDesc_Disruptor_GlimpseKill"				"敌方英雄受到<font color='#ffffff'>恶念瞥视</font>作用后4秒内被击杀达到<font color='#ffffff'>%s1</font>次。"
@@ -19652,9 +19657,9 @@
 		"DOTA_ChallengeDesc_OutworldDevourer_AstralDamage"  		 "施放<font color='#ffffff'>星体禁锢</font>对敌方英雄造成<font color='#ffffff'>%s1</font>点伤害。"
 		"DOTA_ChallengeDesc_ObsidianDestroyer_DamageDuringEquilibrium"   "在开启<font color='#ffffff'>衡势</font>后对敌方英雄造成<font color='#ffffff'>%s1</font>点伤害。"
 		"DOTA_ChallengeDesc_ObsidianDestroyer_KillsDuringEquilibrium"   "施放<font color='#ffffff'>衡势</font>后击杀<font color='#ffffff'>%s1</font>名敌方英雄或获得其助攻。"
+		"DOTA_ChallengeDesc_Zeus_Arc_Lightning_Damage"   "施放<font color='#ffffff'>弧形闪电</font>对敌方英雄造成<font color='#ffffff'>%s1</font>点伤害。"
 		"DOTA_ChallengeDesc_Zeus_Arc_Lightning_Triple_Hits"   "<font color='#ffffff'>弧形闪电</font>连续作用于3名或以上敌方英雄达到<font color='#ffffff'>%s1</font>次。"
 		"DOTA_ChallengeDesc_Zuus_ChannelsCancelled"   "施放<font color='#ffffff'>雷击</font>打断<font color='#ffffff'>%s1</font>次持续施法。"
-		"DOTA_ChallengeDesc_Zeus_Static_Field_Damage"   "通过<font color='#ffffff'>静电场</font>对敌方英雄造成<font color='#ffffff'>%s1</font>点伤害。"
 		"DOTA_ChallengeDesc_Tinker_Scepter_Laser_Damage"   "施放<font color='#ffffff'>阿哈利姆神杖</font>升级的<font color='#ffffff'>激光</font>对敌方英雄造成<font color='#ffffff'>%s1</font>点伤害。"
 		"DOTA_ChallengeDesc_Tinker_MarchDamage"   "施放<font color='#ffffff'>机械行军</font>对敌方英雄造成<font color='#ffffff'>%s1</font>点伤害。"
 		"DOTA_ChallengeDesc_Tinker_KillsAfterRearm"   "使用再装填后击杀<font color='#ffffff'>%s1</font>名敌方英雄。"
@@ -27854,6 +27859,11 @@
 	"FrontPage_DPC_SpringMajor2023_Dates1"			"4月26 - 30日"
 	"FrontPage_DPC_SpringMajor2023_Dates2"			"5月5 - 7日"
 
+	"FrontPage_DPC_SummerMajor2023_MajorTitle"		"巴厘岛甲级联赛"
+	"FrontPage_DPC_SummerMajor2023_PresentedBy"		"IO Esports 和 EPULZE 主办"
+	"FrontPage_DPC_SummerMajor2023_Dates1"			"6月29日-7月3日"
+	"FrontPage_DPC_SummerMajor2023_Dates2"			"7月5日-7月9日"
+
 	"FrontPage_ChestOfEndlessDays_Title"		"无尽时光的宝藏"
 	"FrontPage_ChestOfEndlessDays_Text"			"13套全新英雄套装。只有游玩比赛才能随机获得珍藏，可以购买符印来解封。"
 
@@ -31938,6 +31948,9 @@
 	"DOTA_732e_Update"	  "7.32e 游戏性更新"
 	"DOTA_733_Update"	  "7.33 游戏性更新"
 	"DOTA_733b_Update"	  "7.33b 游戏性更新"
+	"DOTA_733c_Update"	  "7.33c 游戏性更新"
+	"DOTA_733d_Update"	  "7.33d 游戏性更新"
+	"DOTA_733e_Update"	  "7.33e 游戏性更新"
 
 	"DOTA_Settings_Tooltip_NetworkLatency" "如果网络连接存在丢包现象，请将此项调至“低”，虽然这样会增加延迟，但可提升整体流畅度。"
 
@@ -33724,7 +33737,7 @@
 	"DOTA_RR_EarnGames:p{earn_amount}"		"获得{d:earn_amount}次使用次数#|#获得{d:earn_amount}次使用次数（负场获得次数减半）"
 	"DOTA_RR_SpendGames:p{spend_amount}"	"消耗{d:spend_amount}次使用次数#|#消耗{d:spend_amount}次使用次数"
 
-	"DOTA_RR_Reason"						"匹配时选择所有的定位会让系统能为所有人更快更好地匹配到比赛。"
+	"DOTA_RR_Reason"						"匹配时选择所有定位可以让系统更快速地为所有人匹配到质量更高的比赛。对于高分的冠绝一世玩家，定位匹配将被禁用。"
 
 	"DOTA_Achievement"	"成就"
 
@@ -35736,6 +35749,9 @@
 	"DOTA_Plus_Spring2023_Update_Title"						"2023年初春赛季更新"
 	"DOTA_Plus_Spring2023_Update_Desc"						"全新赛季的任务，刀塔Plus还有更多内容加入！"
 
+	"DOTA_Plus_Summer2023_Update_Title"						"2023年盛夏赛季更新"
+	"DOTA_Plus_Summer2023_Update_Desc"						"全新赛季的任务、限时珍藏，刀塔Plus还有更多内容加入！"
+
 	"DOTA_Plus_Autumn_Assitant_Title"						"全新助手功能"
 	"DOTA_Plus_Autumn_Assitant_Desc"						"Plus会员现在可以使用拉黑玩家功能，“战友与宿敌”选人建议，插眼建议以及其他助手功能。"
 
@@ -36009,6 +36025,7 @@
 	"DOTA_Guild_Result_RewardsDoesNotQualify"			"加入公会时间过短，还没有领取排行榜奖励的资格。"
 	"DOTA_Guild_Result_RewardsAlreadyClaimed"			"已经领取了本周的排行榜奖励。"
 	"DOTA_Guild_Result_InvalidUser"						"该玩家的邀请无效。"
+	"DOTA_Guild_Result_FreeTrialNotAllowed"				"在刀塔Plus免费使用期内无法创建公会。"
 
 	"DOTA_Guild_DemoteSelf_Header"						"让自己降级？"
 	"DOTA_Guild_DemoteSelf_Body"						"确定要给自己降级吗？这将导致你无法使用部分公会功能。"
@@ -36919,7 +36936,7 @@
 	"ascension_attack_speed_Description"					"所有敌人在低血量时短时间内提升攻击速度"
 	"ascension_extra_fast_Description"						"所有敌人的移动速度提升"
 	"ascension_chilling_touch_Description"					"所有敌人的攻击对目标造成减速"
-	"ascension_magic_immunity_Description"					"敌方头目偶尔获得技能免疫"
+	"ascension_magic_immunity_Description"					"敌方头目偶尔获得减益免疫"
 	"ascension_armor_sapping_Description"					"所有敌人对其击杀者的护甲产生负面效果"
 	"ascension_vampiric_Description"						"敌方头目在低血量时短时间内所有伤害均具有吸血效果"
 	"ascension_heal_suppression_Description"				"敌方头目降低附近玩家的治疗效果。"	
@@ -37057,6 +37074,11 @@
 		"DOTA_PlusSeason_SeasonSpring2023_Quests"				"2023年春季任务"
 		"DOTA_PlusSeason_SeasonSpring2023_Subtitle"				"2023年初春赛季将于2023年6月1日结束。"
 		"DOTA_PlusSeason_SeasonSpring2023_TreasureDescription"	"兑换截至2023年初春赛季结束，即2023年6月1日。"
+
+		"DOTA_PlusSeason_SeasonSummer2023_Name"					"2023年夏季"
+		"DOTA_PlusSeason_SeasonSummer2023_Quests"				"2023年夏季任务"
+		"DOTA_PlusSeason_SeasonSummer2023_Subtitle"				"2023年盛夏赛季将于2023年9月1日结束。"
+		"DOTA_PlusSeason_SeasonSummer2023_TreasureDescription"	"兑换截至2023年盛夏赛季结束，即2023年9月1日。"
 
 		"DOTA_MatchRewards"							"比赛奖励"
 		"DOTA_MatchRewards_YourShards"				"你的碎片"
@@ -37961,8 +37983,8 @@
 		"DOTA_Glossary_Advanced_CommonBuffs_Bash_Desc"		"使攻击拥有一定几率对目标造成眩晕（或在特定情况下触发）。"
 		"DOTA_Glossary_Advanced_CommonBuffs_ManaBreak"			"法力损毁"
 		"DOTA_Glossary_Advanced_CommonBuffs_ManaBreak_Desc"		"使每次攻击燃烧该单位的一部分魔法，并且根据燃烧的魔法造成一定伤害。"
-		"DOTA_Glossary_Advanced_CommonBuffs_SpellImmunity"			"技能免疫"
-		"DOTA_Glossary_Advanced_CommonBuffs_SpellImmunity_Desc"		"阻止单位受到魔法伤害，或成为所有敌方技能的目标。部分特殊技能（通常为英雄的终极技能）可以无视技能免疫，不过效果一般会被弱化。这些相互作用的效果都标注在技能描述详情中。"
+		"DOTA_Glossary_Advanced_CommonBuffs_SpellImmunity"			"减益免疫"
+		"DOTA_Glossary_Advanced_CommonBuffs_SpellImmunity_Desc"		"阻止所有敌方技能对单位施加负面效果。部分特殊技能（通常为英雄的终极技能）可以无视减益免疫。这些相互作用的效果都标注在技能描述详情中。"
 		"DOTA_Glossary_Advanced_CommonBuffs_Ethereal"			"虚灵"
 		"DOTA_Glossary_Advanced_CommonBuffs_Ethereal_Desc"		"阻止一个单位受到物理伤害。单位还被缴械，无法成为普通攻击的目标。"
 		"DOTA_Glossary_Advanced_CommonBuffs_Phased"				"相位状态"
@@ -38370,7 +38392,7 @@
 		"DOTA_Glossary_Teamwork_HeroItemChoice_Counters_Desc"		"克制是协同的反义词。某些英雄的技能或属性可以放大其它英雄的缺点或者无视他们的优点。与此相同，看到敌方队伍的英雄后挑选恰当的英雄可以大幅改变比赛的结果。深入理解队伍的优缺点、出装习惯、打法和策略就能在克制敌人时发挥重要作用。"
 		"DOTA_Glossary_Teamwork_HeroItemChoice_ItemCounters_Desc"					"下面的若干示例，是应对特定典型英雄时特别有效的物品。列表并不详尽，最好能了解每件道具的细微差别，明白效果最大的情况。"
 		"DOTA_Glossary_Teamwork_HeroItemChoice_ItemCounters_BlackKingBar"			"黑皇杖"
-		"DOTA_Glossary_Teamwork_HeroItemChoice_ItemCounters_BlackKingBar_Desc"		"黑皇杖提供技能免疫。选择完美的时机使用后，这件物品往往可以无视依赖技能或物品的英雄，对敌人造成伤害和控制效果。"
+		"DOTA_Glossary_Teamwork_HeroItemChoice_ItemCounters_BlackKingBar_Desc"		"黑皇杖提供减益免疫。选择完美的时机使用后，这件物品往往可以无视依赖技能或物品对敌人造成伤害和控制效果的英雄。"
 		"DOTA_Glossary_Teamwork_HeroItemChoice_ItemCounters_HeavensHalberd"				"天堂之戟"
 		"DOTA_Glossary_Teamwork_HeroItemChoice_ItemCounters_HeavensHalberd_Desc"		"天堂之戟在应对依赖基础攻击造成伤害的英雄时非常有效，尤其是远程英雄（对他们的缴械时间更长）。"
 		"DOTA_Glossary_Teamwork_HeroItemChoice_ItemCounters_BladeMail"			"刃甲"
@@ -38408,7 +38430,7 @@
 
 		"DOTA_ContextualTips_AbilityCounters_Rupture_Text"			"{s:string_param}的{s:string_param2}往往可以在使用回城卷轴后被化解。"
 
-		"DOTA_ContextualTips_AbilityCounters_Magic_Text"			"{s:string_param}能造成大量魔法伤害，选择提供魔法抗性或技能免疫的物品可以有效进行预防。"
+		"DOTA_ContextualTips_AbilityCounters_Magic_Text"			"{s:string_param}能造成大量魔法伤害，选择提供魔法抗性或减益免疫的物品可以有效进行预防。"
 
 		"DOTA_ContextualTips_AbilityCounters_Spam_Text"				"{s:string_param}的{s:string_param2}是频繁施放的技能，有魔棒的话能获得不少能量点数。"
 
@@ -39079,7 +39101,7 @@
 		"DOTA_Tooltip_ability_aghsfort_undying_tombstone"						"墓碑"
 		"DOTA_Tooltip_ability_aghsfort_undying_tombstone_Description"			"在目标位置召唤一座墓碑。墓碑会频繁产生僵尸，僵尸会攻击附近随机一个敌人。僵尸拥有死亡渴望技能，使他们的攻击带有减速效果，并且目标的生命值低于一定数值后，僵尸的攻击和移动速度都会提升。"
 		"DOTA_Tooltip_ability_aghsfort_undying_tombstone_Lore"					"挽歌召唤他倒下的战友为死亡之神作战。"
-		"DOTA_Tooltip_ability_aghsfort_undying_tombstone_Note0"					"墓碑为技能免疫状态，但是攻击会造成伤害。"
+		"DOTA_Tooltip_ability_aghsfort_undying_tombstone_Note0"					"墓碑免疫魔法，但是攻击会造成伤害。"
 		"DOTA_Tooltip_ability_aghsfort_undying_tombstone_Note1"					"僵尸对攻击免疫，但可能死于任何意外的魔法伤害。"
 		"DOTA_Tooltip_ability_aghsfort_undying_tombstone_Note2"					"如果目标死亡或丢失视野，僵尸将会死亡。"
 		"DOTA_Tooltip_ability_aghsfort_undying_tombstone_hits_to_destroy_tooltip"		"摧毁所需攻击次数："
@@ -39693,7 +39715,7 @@
 		"DOTA_Tooltip_ability_aghsfort_juggernaut_omni_slash_Description"						"主宰挥剑跃向敌人，随后再以更短的攻击频率斩击附近的其它敌方单位。主宰在无敌斩期间无敌。"
 		"DOTA_Tooltip_ability_aghsfort_juggernaut_omni_slash_Lore"								"“自律已有成果；勤练带来力量。”"
 		"DOTA_Tooltip_ability_aghsfort_juggernaut_omni_slash_Note0"								"无敌斩期间可以使用物品。"
-		"DOTA_Tooltip_ability_aghsfort_juggernaut_omni_slash_Note1"								"可以对技能免疫单位施放。"
+		"DOTA_Tooltip_ability_aghsfort_juggernaut_omni_slash_Note1"								"可以对减益免疫单位施放。"
 		"DOTA_Tooltip_ability_aghsfort_juggernaut_omni_slash_Note2"								"无敌斩在施放时对主宰施加弱驱散。"
 		"DOTA_Tooltip_ability_aghsfort_juggernaut_omni_slash_attack_rate_multiplier"				"斩击频率倍数："
 		"DOTA_Tooltip_ability_aghsfort_juggernaut_omni_slash_bonus_damage"				"攻击力加成："
@@ -39705,7 +39727,7 @@
 		"DOTA_Tooltip_ability_aghsfort_juggernaut_swift_slash_duration"		"持续时间："
 		
 		"DOTA_Tooltip_modifier_aghsfort_juggernaut_blade_fury"						"剑刃风暴"
-		"DOTA_Tooltip_modifier_aghsfort_juggernaut_blade_fury_Description"			"提供技能免疫并且每秒造成伤害"
+		"DOTA_Tooltip_modifier_aghsfort_juggernaut_blade_fury_Description"			"提供减益免疫并且每秒造成伤害"
 		"DOTA_Tooltip_modifier_aghsfort_juggernaut_healing_ward_primed"				"治疗守卫蓄势待发"
 		"DOTA_Tooltip_modifier_aghsfort_juggernaut_healing_ward_primed_Description"	"已准备好爆炸"
 		"DOTA_Tooltip_modifier_aghsfort_juggernaut_zen_ward"						"禅宗守卫"
@@ -40140,7 +40162,7 @@
 		"DOTA_Tooltip_ability_aghsfort_lich_frost_shield_range"									"作用范围："
 		"DOTA_Tooltip_ability_aghsfort_lich_frost_shield_slow_duration"							"减速持续时间："
 		"DOTA_Tooltip_ability_aghsfort_lich_frost_shield_duration"								"加成持续时间："
-		"DOTA_Tooltip_ability_aghsfort_lich_frost_shield_Note0"									"技能免疫下的敌人不会受到伤害或减速。"
+		"DOTA_Tooltip_ability_aghsfort_lich_frost_shield_Note0"									"减益免疫下的敌人不会受到伤害或减速。"
 		"DOTA_Tooltip_ability_aghsfort_lich_frost_shield_Note1"									"冰霜魔盾可以对友方建筑施放。"
 
 		"DOTA_Tooltip_ability_aghsfort_lich_chain_frost"											"连环霜冻"
@@ -40172,7 +40194,7 @@
 		"DOTA_Tooltip_ability_aghsfort_special_lich_frost_shield_frost_giant"					"冰霜巨人"
 		"DOTA_Tooltip_ability_aghsfort_special_lich_frost_shield_frost_giant_Description"		"冰霜魔盾作用下的友军体型变大，获得%movement_speed%移动速度，可以跨越任何地形，每秒对身下的敌人造成伤害，数值为巫妖智力的%pct_int_damage_per_second%%%。"
 		"DOTA_Tooltip_ability_aghsfort_special_lich_frost_shield_dispels"					"反魔法魔盾"
-		"DOTA_Tooltip_ability_aghsfort_special_lich_frost_shield_dispels_Description"		"冰霜魔盾施加给友军时会施加一个强驱散效果，并提供技能免疫状态，持续时间为魔盾持续时间的%immunity_duration_pct%%%。"
+		"DOTA_Tooltip_ability_aghsfort_special_lich_frost_shield_dispels_Description"		"冰霜魔盾施加给友军时会施加一个强驱散效果，并提供减益免疫状态，持续时间为魔盾持续时间的%immunity_duration_pct%%%。"
 		"DOTA_Tooltip_ability_aghsfort_special_lich_sinister_gaze_spawns_ice_spire"				"阴邪尖柱"
 		"DOTA_Tooltip_ability_aghsfort_special_lich_sinister_gaze_spawns_ice_spire_Description"		"阴邪凝视在效果中心创造一根寒冰尖柱，并吸引敌人靠近，而不是向巫妖移动。寒冰尖柱持续%duration%秒，并减缓周围敌人%bonus_movespeed%%%移动速度。"
 		"DOTA_Tooltip_ability_aghsfort_special_lich_sinister_gaze_drains_life"				"寄生凝视"
@@ -40334,7 +40356,7 @@
 		"DOTA_Tooltip_modifier_aghsfort_void_spirit_resonant_pulse_spell_cadence_Description"	"这个单位拥有额外技能增强。"
 
 		"DOTA_Tooltip_ability_aghsfort_special_void_spirit_resonant_pulse_suppression"				"抑制"
-		"DOTA_Tooltip_ability_aghsfort_special_void_spirit_resonant_pulse_suppression_Description"	"共鸣脉冲获得%value%点能量点数，并提供技能免疫，持续%value2%秒。"
+		"DOTA_Tooltip_ability_aghsfort_special_void_spirit_resonant_pulse_suppression_Description"	"共鸣脉冲获得%value%点能量点数，并提供减益免疫，持续%value2%秒。"
 
 		"DOTA_Tooltip_ability_aghsfort_special_void_spirit_astral_step_vacuum"				"动能真空"
 		"DOTA_Tooltip_ability_aghsfort_special_void_spirit_astral_step_vacuum_Description"	"太虚之径会将敌人向路径中央吸去，并造成%value2%秒眩晕。"
@@ -40442,7 +40464,7 @@
 		"DOTA_Tooltip_ability_aghsfort_lina_laguna_blade_Note0"									"神灭斩在技能施放到伤害生效有%damage_delay%秒延迟，因此有若干技能可以躲避该伤害。"
 		"DOTA_Tooltip_ability_aghsfort_lina_laguna_blade_damage"								"伤害："
 		"DOTA_Tooltip_ability_aghsfort_lina_laguna_blade_shard_description"					    "神灭斩的施法距离提升250，并且施法为全额距离，对沿途所有单位造成伤害。可以对地面施放。"
-		"DOTA_Tooltip_ability_aghsfort_lina_laguna_blade_scepter_description"					"伤害类型变为纯粹，并且可以对技能免疫状态下的单位施放神灭斩。"
+		"DOTA_Tooltip_ability_aghsfort_lina_laguna_blade_scepter_description"					"伤害类型变为纯粹，并且可以对减益免疫状态下的单位施放神灭斩。"
 
 		"DOTA_Tooltip_modifier_aghsfort_lina_fiery_soul"						"炽魂"
 		"DOTA_Tooltip_modifier_aghsfort_lina_fiery_soul_Description"			"攻击速度提升%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%，移动速度提升%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%。"
@@ -40672,7 +40694,7 @@
 		"DOTA_Tooltip_ability_aghsfort_dawnbreaker_fire_wreath_smash_radius"							"撞击作用范围："
 		"DOTA_Tooltip_ability_aghsfort_dawnbreaker_fire_wreath_smash_stun_duration"					"撞击眩晕时间："
 		"DOTA_Tooltip_ability_aghsfort_dawnbreaker_fire_wreath_sweep_stun_duration"					"挥击减速持续时间："
-		"DOTA_Tooltip_ability_aghsfort_dawnbreaker_fire_wreath_shard_description"					"破晓辰星在星破天惊期间为技能免疫状态。"
+		"DOTA_Tooltip_ability_aghsfort_dawnbreaker_fire_wreath_shard_description"					"破晓辰星在星破天惊期间为减益免疫状态。"
 		
 		"DOTA_Tooltip_ability_aghsfort_dawnbreaker_converge"							"会合"
 		"DOTA_Tooltip_ability_aghsfort_dawnbreaker_converge_Description"				"破晓辰星召回离目标地点最近的战锤，使二者在中点相遇。"
@@ -40724,7 +40746,7 @@
 		"DOTA_Tooltip_ability_aghsfort_special_dawnbreaker_starbreaker_counter_orbital"				"反击天惊"
 		"DOTA_Tooltip_ability_aghsfort_special_dawnbreaker_starbreaker_counter_orbital_Description"	"破晓辰星被攻击后拥有%trigger_chance%%%几率以一次星破天惊的挥击进行反击。熠熠生辉的致命一击拥有%trigger_smash_chance%%%几率变为星破天惊的撞击。"
 		"DOTA_Tooltip_ability_aghsfort_special_dawnbreaker_starbreaker_suncrusher"						"粉碎骄阳"
-		"DOTA_Tooltip_ability_aghsfort_special_dawnbreaker_starbreaker_suncrusher_Description"			"星破天惊可以转向，移动速度等于%move_speed_pct%%%当前移动速度，并且挥击速度加快%swing_speed_pct%%%。破晓辰星在持续时间内为技能免疫状态。"
+		"DOTA_Tooltip_ability_aghsfort_special_dawnbreaker_starbreaker_suncrusher_Description"			"星破天惊可以转向，移动速度等于%move_speed_pct%%%当前移动速度，并且挥击速度加快%swing_speed_pct%%%。破晓辰星在持续时间内为减益免疫状态。"
 
 		
 
@@ -40748,9 +40770,9 @@
 		"DOTA_Tooltip_ability_aghsfort_special_dawnbreaker_luminosity_light_bringer_Description"		"熠熠生辉可以主动施放，马上发动致命一击，持续%duration%秒。冷却时间：%cooldown%，魔法消耗：%mana_cost%。"
 
 		"DOTA_Tooltip_ability_aghsfort_special_dawnbreaker_solar_guardian_sun_sentinel"					"恒星哨卫"
-		"DOTA_Tooltip_ability_aghsfort_special_dawnbreaker_solar_guardian_sun_sentinel_Description"		"落地时破晓辰星和天光现世作用范围内所有友军获得%duration%秒技能免疫和熠熠生辉的强化攻击。"
+		"DOTA_Tooltip_ability_aghsfort_special_dawnbreaker_solar_guardian_sun_sentinel_Description"		"落地时破晓辰星和天光现世作用范围内所有友军获得%duration%秒减益免疫和熠熠生辉的强化攻击。"
 		"DOTA_Tooltip_modifier_aghsfort_dawnbreaker_sun_sentinel_luminosity_attack_buff"						"恒星哨卫"
-		"DOTA_Tooltip_modifier_aghsfort_dawnbreaker_sun_sentinel_luminosity_attack_buff_Description"			"技能免疫，并且熠熠生辉的攻击将发挥全面的威力。"
+		"DOTA_Tooltip_modifier_aghsfort_dawnbreaker_sun_sentinel_luminosity_attack_buff_Description"			"减益免疫，并且熠熠生辉的攻击将发挥全面的威力。"
 		"DOTA_Tooltip_ability_aghsfort_special_dawnbreaker_solar_guardian_death_of_a_star"				"星辰之死"
 		"DOTA_Tooltip_ability_aghsfort_special_dawnbreaker_solar_guardian_death_of_a_star_Description"	"脉冲治疗提升%bonus_heal%点。只要施放天光现世，所有非主要目标周围会产生%solar_guardian_pct%%%天光现世脉冲，直到破晓辰星落地。破晓辰星阵亡时会自动对血量最低的友军施放天光现世（如果无人存活就是她自己）。"
 		"DOTA_Tooltip_ability_aghsfort_special_dawnbreaker_solar_guardian_solar_flare"					"日晕"
@@ -40811,7 +40833,7 @@
 		"DOTA_Tooltip_ability_aghsfort_bane_fiends_grip_Description"								"持续施法 - 抓住一个敌方单位，使其失去行动能力并持续受到大量伤害，同时每%fiend_grip_tick_interval%秒按目标最大魔法值一定比例吸取魔法。"
 		"DOTA_Tooltip_ability_aghsfort_bane_fiends_grip_scepter_description"						"魔爪的冷却时间减少45秒。魔爪将产生两个不可控制的幻象，幻象也将对目标持续施放魔爪。幻象承受700%%伤害，并且被打断后立刻消失。伤害不会叠加。"
 		"DOTA_Tooltip_ability_aghsfort_bane_fiends_grip_Lore"									"阿特洛波斯的受害者经常因为噩梦中逼真的幻象痛不欲生。"
-		"DOTA_Tooltip_ability_aghsfort_bane_fiends_grip_Note0"									"魔爪的控制和吸魔效果对技能免疫单位有效，但是不造成伤害。"
+		"DOTA_Tooltip_ability_aghsfort_bane_fiends_grip_Note0"									"魔爪的控制和吸魔效果对减益免疫单位有效，但是不造成伤害。"
 		"DOTA_Tooltip_ability_aghsfort_bane_fiends_grip_fiend_grip_damage"						"伤害："
 		"DOTA_Tooltip_ability_aghsfort_bane_fiends_grip_channel_time"							"持续施法时间："
 		"DOTA_Tooltip_ability_aghsfort_bane_fiends_grip_fiend_grip_mana_drain"					"%魔法吸取："
@@ -41355,7 +41377,7 @@
 		"DOTA_Tooltip_ability_aghsfort_kunkka_tidebringer"										"潮汐使者"
 		"DOTA_Tooltip_ability_aghsfort_kunkka_tidebringer_Description"							"昆卡的传奇之剑使他的下一次攻击附加额外的攻击力并在前方造成大范围的分裂攻击伤害。"
 		"DOTA_Tooltip_ability_aghsfort_kunkka_tidebringer_Lore"									"迷失的铁帆海军灵魂依附在昆卡信赖的宝剑——潮汐使者之中，增强它对洪流恶魔的破坏力。"
-		"DOTA_Tooltip_ability_aghsfort_kunkka_tidebringer_Note0"								"分裂伤害无视技能免疫。"
+		"DOTA_Tooltip_ability_aghsfort_kunkka_tidebringer_Note0"								"分裂伤害无视减益免疫。"
 		"DOTA_Tooltip_ability_aghsfort_kunkka_tidebringer_damage_bonus"							"攻击力加成："
 		"DOTA_Tooltip_ability_aghsfort_kunkka_tidebringer_cleave_damage"						"%分裂伤害："
 		"DOTA_Tooltip_ability_aghsfort_kunkka_tidebringer_cleave_distance"						"分裂距离："
@@ -41366,7 +41388,7 @@
 		"DOTA_Tooltip_ability_aghsfort_special_kunkka_tidebringer_charges_Description"			"潮汐使者拥有%value%点能量点数。"
 		
 		"DOTA_Tooltip_ability_aghsfort_kunkka_x_marks_the_spot_Lore"							"舰队统帅诸多神秘能力中的一种，能用于战斗或娱乐。"
-		"DOTA_Tooltip_ability_aghsfort_kunkka_x_marks_the_spot_Note0"							"如果目标在技能施放后进入技能免疫状态，持续时间结束后目标将不会回到标记点。"
+		"DOTA_Tooltip_ability_aghsfort_kunkka_x_marks_the_spot_Note0"							"如果目标在技能施放后进入减益免疫状态，持续时间结束后目标将不会回到标记点。"
 		"DOTA_Tooltip_ability_aghsfort_kunkka_x_marks_the_spot_Note1"							"可以打断持续施法。"
 		"DOTA_Tooltip_ability_aghsfort_kunkka_x_marks_the_spot_abilitycastrange"				"施法距离："
 		"DOTA_Tooltip_ability_aghsfort_kunkka_return"											"送回"
@@ -41420,7 +41442,7 @@
 		"DOTA_Tooltip_ability_aghsfort_special_kunkka_sealegs_Description"						"X标记作用下的友军每移动%torrent_min_distance%距离都会放出一个威力为%torrent_scale_percentage%%%的洪流。"
 
 		"DOTA_Tooltip_ability_aghsfort_special_kunkka_rumboldened"								"朗姆酒壮胆"
-		"DOTA_Tooltip_ability_aghsfort_special_kunkka_rumboldened_Description"					"统帅的朗姆酒提供技能免疫状态，持续%duration%秒。"
+		"DOTA_Tooltip_ability_aghsfort_special_kunkka_rumboldened_Description"					"统帅的朗姆酒提供减益免疫状态，持续%duration%秒。"
 
 		"DOTA_Tooltip_ability_aghsfort_special_kunkka_man_the_helm"								"掌舵"
 		"DOTA_Tooltip_ability_aghsfort_special_kunkka_man_the_helm_Description"					"昆卡控制幽灵船，将其开到最终的撞击地点，会留下一个X标记，使自己在撞击后返回。"
@@ -41528,7 +41550,7 @@
 	"DOTA_Tooltip_ability_aghsfort_winter_wyvern_winters_curse_bonus_attack_speed"	"诅咒攻击速度："
 	"DOTA_Tooltip_ability_aghsfort_winter_wyvern_winters_curse_duration"			"诅咒持续时间："
 	"DOTA_Tooltip_ability_aghsfort_winter_wyvern_winters_curse_Note0"			"如果目标被其队友击杀，击杀者将仍是寒冰飞龙。"
-	"DOTA_Tooltip_ability_aghsfort_winter_wyvern_winters_curse_Note1"			"无视主目标的技能免疫状态，但是对目标周围的技能免疫队友无效。"
+	"DOTA_Tooltip_ability_aghsfort_winter_wyvern_winters_curse_Note1"			"无视主目标的减益免疫状态，但是对目标周围的减益免疫队友无效。"
 		
 	"DOTA_Tooltip_modifier_aghsfort_winter_wyvern_arctic_burn_flight"			"严寒烧灼飞行状态"
 	"DOTA_Tooltip_modifier_aghsfort_winter_wyvern_arctic_burn_flight_Description"			"飞行中。攻击射程更远，攻击弹道更快，使敌人减速，同时每秒烧灼他们一定百分比的当前生命值。"
@@ -41575,7 +41597,7 @@
 	"DOTA_Tooltip_ability_aghsfort_special_winter_wyvern_cold_embrace_blast_on_end_Description" "极寒之拥期间，目标每秒会散发出当前等级的碎裂冲击，造成%damage_mult%%%伤害。"
 
 	"DOTA_Tooltip_ability_aghsfort_special_winter_wyvern_cold_embrace_magic_damage_block" 			  "钻石化"
-	"DOTA_Tooltip_ability_aghsfort_special_winter_wyvern_cold_embrace_magic_damage_block_Description" "极寒之拥的目标现在还将获得技能免疫状态，可以以%max_movement_speed%移动速度进行移动。" 
+	"DOTA_Tooltip_ability_aghsfort_special_winter_wyvern_cold_embrace_magic_damage_block_Description" "极寒之拥的目标现在还将获得减益免疫状态，可以以%max_movement_speed%移动速度进行移动。" 
 
 	"DOTA_Tooltip_modifier_aghsfort_special_winter_wyvern_cold_embrace_magic_damage_block"				"钻石化"
 	"DOTA_Tooltip_modifier_aghsfort_special_winter_wyvern_cold_embrace_magic_damage_block_Description"	"极寒之拥期间免疫魔法伤害，并且可以缓慢移动。"
@@ -41633,7 +41655,7 @@
 	"DOTA_Tooltip_ability_aghsfort_magnataur_empower_Description"					"给予友方单位攻击力加成并且使其获得分裂攻击。对自身具有额外%self_multiplier%%%的效果。"
 	"DOTA_Tooltip_ability_aghsfort_magnataur_empower_Lore"							"随着一声怒吼，马格纳斯展示了他真正的力量。"
 	"DOTA_Tooltip_ability_aghsfort_magnataur_empower_Note0"							"攻击力加成根据基础攻击力和主属性加成计算。"
-	"DOTA_Tooltip_ability_aghsfort_magnataur_empower_Note1"							"分裂伤害无视技能免疫。"
+	"DOTA_Tooltip_ability_aghsfort_magnataur_empower_Note1"							"分裂伤害无视减益免疫。"
 	"DOTA_Tooltip_ability_aghsfort_magnataur_empower_Note2"							"远程单位的攻击没有分裂效果。"
 	"DOTA_Tooltip_ability_aghsfort_magnataur_empower_empower_duration"				"持续时间："
 	"DOTA_Tooltip_ability_aghsfort_magnataur_empower_bonus_damage_pct"				"%攻击力加成："
@@ -41643,7 +41665,7 @@
 	"DOTA_Tooltip_ability_aghsfort_magnataur_skewer"								"巨角冲撞"
 	"DOTA_Tooltip_ability_aghsfort_magnataur_skewer_Description"					"马格纳斯向前冲刺，用他巨大的犀角将敌人挑起。被击中的<font color='#70EA72'>单位</font>将被拽至终点，然后受到伤害并被减速。"
 	"DOTA_Tooltip_ability_aghsfort_magnataur_skewer_Lore"							"对潜在的商人来说，半人犀牛的犀角价值与犀角能够造成的破坏成正比。"
-	"DOTA_Tooltip_ability_aghsfort_magnataur_skewer_Note0"							"对技能免疫单位无效。"
+	"DOTA_Tooltip_ability_aghsfort_magnataur_skewer_Note0"							"对减益免疫单位无效。"
 	"DOTA_Tooltip_ability_aghsfort_magnataur_skewer_range"							"距离："
 	"DOTA_Tooltip_ability_aghsfort_magnataur_skewer_skewer_speed"					"速度："
 	"DOTA_Tooltip_ability_aghsfort_magnataur_skewer_slow_duration"					"减速持续时间："
@@ -41774,7 +41796,7 @@
 	"DOTA_Tooltip_ability_aghsfort_phantom_assassin_stifling_dagger"							"窒碍短匕"
 	"DOTA_Tooltip_ability_aghsfort_phantom_assassin_stifling_dagger_Description"				"掷出一把匕首，减缓敌方单位的移动速度，对其造成%base_damage%+%attack_factor_tooltip%%%幻影刺客攻击伤害的物理伤害，同时继承物品和技能的攻击效果。击中住目标后匕首会破碎，击中主目标身后锥形区域内的次级目标"
 	"DOTA_Tooltip_ability_aghsfort_phantom_assassin_stifling_dagger_Note0"								"如果攻击效果为几率触发，匕首的触发几率与原几率相同。"
-	"DOTA_Tooltip_ability_aghsfort_phantom_assassin_stifling_dagger_Note1"					"技能免疫下的敌人不会受到窒碍短匕的减速影响。"
+	"DOTA_Tooltip_ability_aghsfort_phantom_assassin_stifling_dagger_Note1"					"减益免疫下的敌人不会受到窒碍短匕的减速影响。"
 	"DOTA_Tooltip_ability_aghsfort_phantom_assassin_stifling_dagger_Lore"					"魅影之纱成员学习到的第一个技能，中招就意味着下一次攻击要来了。"
 	"DOTA_Tooltip_ability_aghsfort_phantom_assassin_stifling_dagger_move_slow"				"%移动速度减缓："
 	"DOTA_Tooltip_ability_aghsfort_phantom_assassin_stifling_dagger_duration"				"减速持续时间："
@@ -41909,7 +41931,7 @@
 	"DOTA_Tooltip_ability_aghsfort_disruptor_kinetic_field"							"动能力场"
 	"DOTA_Tooltip_ability_aghsfort_disruptor_kinetic_field_Description"				"在短暂的构造时间后，创造一个敌人无法通过的环形动能屏障。动能力场会使其中的友军得到智力加成。"
 	"DOTA_Tooltip_ability_aghsfort_disruptor_kinetic_field_Lore"						"干扰者的坐骑不会受到那摧残敌人的狂风的影响。"
-	"DOTA_Tooltip_ability_aghsfort_disruptor_kinetic_field_Note0"					"力场不能困住技能免疫单位。"
+	"DOTA_Tooltip_ability_aghsfort_disruptor_kinetic_field_Note0"					"力场不能困住减益免疫单位。"
 	"DOTA_Tooltip_ability_aghsfort_disruptor_kinetic_field_formation_time"			"成形延迟："
 	"DOTA_Tooltip_ability_aghsfort_disruptor_kinetic_field_duration"					"持续时间："
 	"DOTA_Tooltip_ability_aghsfort_disruptor_kinetic_field_radius"					"作用范围："
@@ -42458,7 +42480,7 @@
 	"DOTA_Tooltip_ability_aghsfort_special_ursa_fury_swipes_lifesteal_Description"	"怒意狂击的每个叠加效果向熊战士提供%value%%%吸血/技能吸血。"
 
 	"DOTA_Tooltip_ability_aghsfort_special_ursa_enrage_magic_immunity"				"保护幼崽"
-	"DOTA_Tooltip_ability_aghsfort_special_ursa_enrage_magic_immunity_Description"	"激怒为%value%范围内友军提供技能免疫。"
+	"DOTA_Tooltip_ability_aghsfort_special_ursa_enrage_magic_immunity_Description"	"激怒为%value%范围内友军提供减益免疫。"
 
 	"DOTA_Tooltip_ability_aghsfort_special_ursa_enrage_allies"						"保护幼崽"
 	"DOTA_Tooltip_ability_aghsfort_special_ursa_enrage_allies_Description"			"激怒为%value%范围内友方英雄提供所有激怒的加成效果。"
@@ -42551,7 +42573,7 @@
 	"DOTA_Tooltip_ability_aghsfort_sniper_assassinate_Lore"					"为了完成预言然后返回家乡，卡德尔必须和参加古老考验那天一样，做出完美的射击。"
 	"DOTA_Tooltip_ability_aghsfort_sniper_assassinate_Note0"				"准星效果只对队友可见。"
 	"DOTA_Tooltip_ability_aghsfort_sniper_assassinate_Note1"				"隐身不能躲避该技能弹道。"
-	"DOTA_Tooltip_ability_aghsfort_sniper_assassinate_Note2"				"能够打断持续施法技能，打断效果无视技能免疫。"
+	"DOTA_Tooltip_ability_aghsfort_sniper_assassinate_Note2"				"能够打断持续施法技能，打断效果无视减益免疫。"
 	"DOTA_Tooltip_ability_aghsfort_sniper_assassinate_damage"				"伤害："
 	"DOTA_Tooltip_ability_aghsfort_sniper_assassinate_projectile_speed"		"弹道速度："
 	"DOTA_Tooltip_ability_aghsfort_sniper_assassinate_abilitycastrange"		"施法距离："
@@ -43100,7 +43122,7 @@
 
 	"DOTA_Tooltip_ability_aghsfort_omniknight_degen_aura"									"退化光环"
 	"DOTA_Tooltip_ability_aghsfort_omniknight_degen_aura_Description"						"极大程度的减缓附近敌人的移动速度和攻击速度。"
-	"DOTA_Tooltip_ability_aghsfort_omniknight_degen_aura_Note0"						        "对技能免疫单位无效。"
+	"DOTA_Tooltip_ability_aghsfort_omniknight_degen_aura_Note0"						        "对减益免疫单位无效。"
 	"DOTA_Tooltip_ability_aghsfort_omniknight_degen_aura_Lore"								"作为神圣的化身，普利斯特·雷霆之怒足以削弱那些不忠之徒。"
 	"DOTA_Tooltip_ability_aghsfort_omniknight_degen_aura_radius"							"作用范围："
 	"DOTA_Tooltip_ability_aghsfort_omniknight_degen_aura_move_speed_bonus"					"%移动速度减缓："
@@ -43110,7 +43132,7 @@
 	"DOTA_Tooltip_ability_aghsfort_omniknight_guardian_angel"								"守护天使"
 	"DOTA_Tooltip_ability_aghsfort_omniknight_guardian_angel_Description"					"全能骑士召唤出守护天使，使附近的友方单位对物理伤害免疫，并在持续时间内提升生命恢复。"
 	"DOTA_Tooltip_ability_aghsfort_omniknight_guardian_angel_Lore"							"全知之主对那些被普利斯特称为“朋友”的人降下保护结界。"
-	"DOTA_Tooltip_ability_aghsfort_omniknight_guardian_angel_Note0"							"效果无视技能免疫。"
+	"DOTA_Tooltip_ability_aghsfort_omniknight_guardian_angel_Note0"							"效果无视减益免疫。"
 	"DOTA_Tooltip_ability_aghsfort_omniknight_guardian_angel_Note1"							"可以被驱散。"
 	"DOTA_Tooltip_ability_aghsfort_omniknight_guardian_angel_duration"						"持续时间："
 	"DOTA_Tooltip_ability_aghsfort_omniknight_guardian_angel_radius"							"作用范围："
@@ -43220,7 +43242,7 @@
 	"DOTA_Tooltip_ability_aghsfort_witch_doctor_voodoo_restoration_Description"				"巫医集中魔力治疗附近的友军单位，开启巫毒疗法后会持续消耗巫医的魔法。"
 	"DOTA_Tooltip_ability_aghsfort_witch_doctor_voodoo_restoration_Lore"						"扎瓦克的药酒不仅可以用来戏弄对手，用来治疗小伤也不错。"
 	"DOTA_Tooltip_ability_aghsfort_witch_doctor_voodoo_restoration_Note0"					"治疗间隔为%heal_interval%秒。"
-	"DOTA_Tooltip_ability_aghsfort_witch_doctor_voodoo_restoration_Note1"					"对技能免疫单位有效。"
+	"DOTA_Tooltip_ability_aghsfort_witch_doctor_voodoo_restoration_Note1"					"对减益免疫单位有效。"
 	"DOTA_Tooltip_ability_aghsfort_witch_doctor_voodoo_restoration_mana_per_second"			"每秒消耗魔法："
 	"DOTA_Tooltip_ability_aghsfort_witch_doctor_voodoo_restoration_heal"						"治疗量："
 	"DOTA_Tooltip_ability_aghsfort_witch_doctor_voodoo_restoration_radius"					"作用范围："
@@ -43500,7 +43522,7 @@
 		"DOTA_Tooltip_ability_aghsfort_slark_pounce_Description"							"斯拉克向前跳跃，对他碰到的每个敌人造成伤害，并且抓住第一个碰到的头目。该单位会被束缚，只能在斯拉克着地点附近的有限范围内移动。"
 		"DOTA_Tooltip_ability_aghsfort_slark_pounce_Lore"								"在暗黑之礁的服刑期间，斯拉克成长为危险的刺客；举止凶残，无所畏惧。"
 		"DOTA_Tooltip_ability_aghsfort_slark_pounce_Note0"								"施放后斯拉克以%pounce_speed%的速度向前跳跃，抓住敌方英雄或跳跃%pounce_distance%距离后停下，对他跃过的所有敌人造成伤害，并且对抓住的敌人造成%pounce_damage_multiplier%倍伤害。"
-		"DOTA_Tooltip_ability_aghsfort_slark_pounce_Note1"								"不能束缚技能免疫单位。"
+		"DOTA_Tooltip_ability_aghsfort_slark_pounce_Note1"								"不能束缚减益免疫单位。"
 		"DOTA_Tooltip_ability_aghsfort_slark_pounce_Note2"								"斯拉克落地点附近的树木将会被摧毁。"
 		"DOTA_Tooltip_ability_aghsfort_slark_pounce_pounce_distance"						"距离："
 		"DOTA_Tooltip_ability_aghsfort_slark_pounce_leash_duration"						"束缚持续时间："
@@ -44859,7 +44881,7 @@
 		"DOTA_MapUpdate2023Tooltip_PersonalStatNumber_Tree"							"{d:personal_famangos_gained}"
 
 		"DOTA_MapUpdate2023Tooltip_Header_WisdomRune"								"智慧神符"
-		"DOTA_MapUpdate2023Tooltip_Description_WisdomRune"							"探索地图的边界，发掘智慧神符，拾取的英雄都会获得经验的飞升。智慧神符会在基地附近产生，让大势已去的比赛还有机会力挽狂澜。"
+		"DOTA_MapUpdate2023Tooltip_Description_WisdomRune"							"探索地图的边界，发掘智慧神符，拾取的英雄以及队内另一个等级最低的英雄都会获得经验的飞升。智慧神符会在基地附近产生，让大势已去的比赛还有机会力挽狂澜。"
 		"DOTA_MapUpdate2023Tooltip_GlobalStat_WisdomRune"							"全球收集智慧神符"
 		"DOTA_MapUpdate2023Tooltip_GlobalStatNumber_WisdomRune"						"{d:global_wisdom_runes_gained}"
 		"DOTA_MapUpdate2023Tooltip_PersonalStat_WisdomRune"							"个人收集智慧神符"
