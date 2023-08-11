@@ -3479,7 +3479,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"10"
+		"AbilityCooldown"				"16 14 12 10"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -3545,7 +3545,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"10"
+		"AbilityCooldown"				"16 14 12 10"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -13386,7 +13386,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"85 105 125 145"
+		"AbilityManaCost"				"100 115 130 145"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -13865,14 +13865,14 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"crit_chance"				
-				{
-					"value"			"20"
-					"LinkedSpecialBonus"		"special_bonus_unique_phantom_assassin_2"
-				}
-				"dagger_crit_chance"		"40"
-				"crit_bonus"				"200 325 450"
-				"duration"				"6"
+			"crit_chance"				
+			{
+				"value"			"20"
+				"special_bonus_unique_phantom_assassin_2"	"+7"
+			}
+			"dagger_crit_chance"		"40"
+			"crit_bonus"				"200 325 450"
+			"duration"				"6"
 		}
 	}
 	
@@ -16650,21 +16650,19 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp_leech_percent"		"1.6 2.2 2.8 3.4"
-				"LinkedSpecialBonus"	"special_bonus_unique_lifestealer_3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp_damage_percent"		"0.8 1.1 1.4 1.7"
-				"LinkedSpecialBonus"	"special_bonus_unique_lifestealer_3"
-				"CalculateSpellDamageTooltip"	"0"
-			}
+				"hp_leech_percent"		
+				{
+					"value"		"1.6 2.2 2.8 3.4"
+					"special_bonus_unique_lifestealer_3"	"+1.2"
+				}
+				"hp_damage_percent"		
+				{
+					"value"		"0.8 1.1 1.4 1.7"
+					"special_bonus_unique_lifestealer_3"	"+1.2"
+					"CalculateSpellDamageTooltip"	"0"
+				}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -19180,7 +19178,7 @@
 		{
 			"movement_speed"			
 			{
-					"value"		"25 35 45 55"
+					"value"		"10 25 40 55"
 					"special_bonus_unique_broodmother_4"	"+35"
 			}
 			"aoe"
@@ -19263,8 +19261,8 @@
 		"AbilityCastPoint"				"0.2 0.2 0.2"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
-		"AbilityCooldown"				"40 35 30 25"
-		"AbilityManaCost"				"50 60 70 80"
+		"AbilityCooldown"				"45 40 35 30"
+		"AbilityManaCost"				"80"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -21178,7 +21176,7 @@
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"300 300 300 300"
-		"AbilityCooldown"				"60"
+		"AbilityCooldown"				"65"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -31575,7 +31573,7 @@
 				}
 				"damage_modifier_tooltip"		
 				{	
-					"value"			"55 65 75 85"
+					"value"			"35 50 65 80"
 					"special_bonus_unique_medusa_2"	"+10"
 				}
 				
@@ -33030,7 +33028,11 @@
 					"value"			"10"
 					"special_bonus_unique_timbersaw_5"	"+3"
 				}
-				"stat_loss_univ"			"5"
+				"stat_loss_univ"
+				{
+					"value"			"5"
+					"special_bonus_unique_timbersaw_5"	"+1"
+				}
 				"duration"					"12 13 14 15"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -33105,7 +33107,7 @@
 		"AbilityValues"
 		{
 			"bonus_armor"						"0.5 0.6 0.7 0.8"
-			"bonus_hp_regen"					"0.4 0.5 0.6 0.7"
+			"bonus_hp_regen"					"0.3 0.4 0.5 0.6"
 			"stack_limit"						
 			{
 				"value"			"10 20 30 40"
@@ -35277,7 +35279,7 @@
 				}
 				"absorb_amount"					
 				{
-					"value"					"65 145 225 305"
+					"value"					"60 135 210 285"
 					"LinkedSpecialBonus"			"special_bonus_unique_ember_spirit_1"
 				}				
 				"tick_interval"					"0.2"
@@ -71588,17 +71590,7 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"1.2"
-				"ad_linked_abilities"			"life_stealer_feast"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		
 	}
 
 	//=================================================================================================================
@@ -72719,18 +72711,8 @@
 		"ID"					"6847"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"7"
-				"ad_linked_abilities"			"phantom_assassin_coup_de_grace"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"		
+		"ad_linked_abilities"			"phantom_assassin_coup_de_grace"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 	}
 
 	//=================================================================================================================
