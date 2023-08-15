@@ -2219,6 +2219,8 @@
 		"npc_dota_lich_ice_spire"						"冰霜尖塔"
 		"npc_dota_unit_underlord_portal"				"魔門"
 		"npc_dota_item_wraith_pact_totem"				"怨靈契約圖騰"
+		"npc_dota_unit_tidehunter_anchor"				"巨錨"
+
 		"npc_dota_creep_badguys_melee"					"近戰小兵"
 		"npc_dota_creep_badguys_melee_upgraded"			"超級近戰小兵"
 		"npc_dota_creep_badguys_melee_upgraded_mega"	"究極近戰小兵"
@@ -5489,6 +5491,8 @@
 		"dota_hud_error_cant_cast_enemy_hero"			"無法對敵方英雄施放"
 		"dota_hud_error_cant_cast_creep_level"			"此技能在這個等級無法對小兵發動"
 		"dota_hud_error_cant_cast_debuff_immune"		"無法對減幅免疫單位施放"
+		"dota_hud_error_cant_cast_while_metamorphed"	"魔化金身期間無法施放技能"
+		"dota_hud_error_cant_cast_while_demon"			"惡魔熱生效期間無法施放技能"
 		"dota_hud_error_target_magic_immune"			"目標對魔法免疫"
 		"dota_hud_error_target_attack_immune"			"目標無法被攻擊"
 		"dota_hud_error_target_cant_be_denied"			"目標無法被反補"
@@ -18921,6 +18925,11 @@
 	"DOTA_BattleReport_CustomizeColumns"	"自訂欄位"
 	"DOTA_BattleReport_ChooseColumns"		"選擇要顯示的欄位"
 
+	"DOTA_BattleReport_Group_Game"			"比賽"
+	"DOTA_BattleReport_Group_Heroes"		"英雄"
+	"DOTA_BattleReport_Group_Map"			"地圖"
+	"DOTA_BattleReport_Group_Aghanims"		"阿哈利姆"
+
 	"DOTA_BattleReport_DefaultFilter"		"預設"
 	"DOTA_BattleReport_CreepsFilter"		"小兵"
 	"DOTA_BattleReport_DamageFilter"		"傷害量"
@@ -19404,12 +19413,12 @@
 
 	"DOTA_Profile_View_Background_Tooltip"		"檢視背景圖"
 
-	"DOTA_AHC_CurrentHero"		"目前英雄"
-	"DOTA_AHC_InProgress"		"進行中"
-	"DOTA_AHC_CurrentHeroAttempts"		"第{s:current_hero_attempts} 次挑戰"
-	"DOTA_AHC_CurrentHeroAverage"		"全球平均"
-	"DOTA_AHC_CurrentHeroAverageAttempts"		"第 {f:1:current_hero_average_attempts} 次挑戰"
-	"DOTA_AHC_NextHero"		"下一名英雄"
+	"DOTA_AHC_CurrentHero"														"目前英雄"
+	"DOTA_AHC_InProgress"														"進行中"
+	"DOTA_AHC_CurrentHeroAttempts:p{current_hero_num_attempts}"					"第 {d:current_hero_num_attempts} 次挑戰#|#第 {d:current_hero_num_attempts} 次挑戰"
+	"DOTA_AHC_CurrentHeroAverage"												"全球平均"
+	"DOTA_AHC_CurrentHeroAverageAttempts:p{current_hero_average_attempts:1}"	"第 {f:1:current_hero_average_attempts} 次挑戰#|#第 {f:1:current_hero_average_attempts} 次挑戰"
+	"DOTA_AHC_NextHero"															"下一名英雄"
 
 	"DOTA_AHC_ChallengeProgress"				"挑戰進度 ({d:challenge_progress_percent}%)"
 	"DOTA_AHC_HeroesCompleted"					"已完成英雄"
@@ -28040,6 +28049,7 @@
 	"DOTA_HUD_RespawnOutOfLives"			"命沒了，全隊無法重生"
 	"DOTA_HUD_GlyphCooldown"				"倒數：{s:cooldown_time}"
 	"DOTA_HUD_RadarCooldown"				"冷卻時間：{s:cooldown_time}"
+	"DOTA_HUD_RadarCharges"					"可用次數：{d:charges_available}"
 	"DOTA_HUD_ReliableGold"					"可靠金錢：{d:reliable_gold}"
 	"DOTA_HUD_UnreliableGold"				"不可靠金錢：{d:unreliable_gold}"
 	"DOTA_HUD_QuickbuyCost_Needed"			"快速購買還需 {d:quickbuy_gold_needed} 金錢"
@@ -29927,6 +29937,9 @@
 	"DOTA_733c_Update"	  "遊戲環節更新 7.33c 版"
 	"DOTA_733d_Update"	  "遊戲環節更新 7.33d 版"
 	"DOTA_733e_Update"	  "遊戲環節更新 7.33e 版"
+	"DOTA_734_Update"	  "遊戲環節更新 7.34 版"
+	"DOTA_734b_Update"	  "遊戲環節更新 7.34b 版"		
+
 	"DOTA_Settings_Tooltip_NetworkLatency" "如果您因為網路連線問題而遺失封包，將此選項設為「低」將增加延遲，但增進整體流暢度。"
 
 	"DOTA_Popup_RankCalibration_Congrats" "恭喜！"
@@ -32808,8 +32821,10 @@
 
 	"DOTA_NeutralItemTierToast_FoundLine"					"已掉 {d:tier_item_count} / {d:tier_item_max_count} 個"
 	"DOTA_OutpostName_Default"								"前哨站"
-	"DOTA_OutpostName_South"								"東南前哨站"
-	"DOTA_OutpostName_North"								"西北前哨站"
+	"DOTA_OutpostName_South"								"西南前哨站"
+	"DOTA_OutpostName_North"								"東北前哨站"
+	"DOTA_OutpostName_Top_Outer"							"宏偉礦場前哨站"
+	"DOTA_OutpostName_Bot_Outer"							"水井前哨站"
 
 	"DOTA_FrontPage_723_Header"								"新版本"
 	"DOTA_FrontPage_723_Title"								"遊戲環節更新 7.23 版"
@@ -34392,8 +34407,8 @@
 		"DOTA_Glossary_Advanced_CommonBuffs_Bash_Desc"		"使攻擊有一定機率（或於特定情況下）令目標暈眩。"
 		"DOTA_Glossary_Advanced_CommonBuffs_ManaBreak"			"破魔"
 		"DOTA_Glossary_Advanced_CommonBuffs_ManaBreak_Desc"		"使每次攻擊都會燃燒該單位的部分魔力，並造成相當於所移除魔力值一定百分比的傷害。"
-		"DOTA_Glossary_Advanced_CommonBuffs_SpellImmunity"			"技能免疫"
-		"DOTA_Glossary_Advanced_CommonBuffs_SpellImmunity_Desc"		"使單位無法受到魔法傷害，或成為任何敵方技能的目標。部分特殊法術（一般為英雄的終極技能）能穿透技能免疫，不過效果通常會被削減。此類互動關係在技能的詳細說明中皆有記載。"
+		"DOTA_Glossary_Advanced_CommonBuffs_SpellImmunity"			"減幅免疫"
+		"DOTA_Glossary_Advanced_CommonBuffs_SpellImmunity_Desc"		"為單位提供魔抗加成，使單位無法受到純粹和反射傷害。單位在減幅免疫期間不會受到來自敵人技能的負面效果影響。部分特殊技能（一般為英雄的終極技能）能穿透減幅免疫，不過效果通常會被削減。此類互動關係在技能的詳細說明中皆有記載。"
 		"DOTA_Glossary_Advanced_CommonBuffs_Ethereal"			"虛靈狀態"
 		"DOTA_Glossary_Advanced_CommonBuffs_Ethereal_Desc"		"免除單位的物理傷害。該單位也會受到繳械，且不會被普通攻擊視為目標。"
 		"DOTA_Glossary_Advanced_CommonBuffs_Phased"				"相位移動"
@@ -34545,7 +34560,6 @@
 		"DOTA_Glossary_Experience_Header"	"經驗值"
 		"DOTA_Glossary_Experience_Intro"	"經驗值，又稱 XP，會在附近有敵人或中立單位死亡時獲得，無論是誰對此單位進行致命一擊。"
 		"DOTA_Glossary_Experience_Hero"		"擊殺英雄時也能獲得經驗值，英雄的等級比您高越多，擊殺他們時獲得的經驗值也就越多。"
-		"DOTA_Glossary_Experience_Outposts"	"前哨站會持續為控制住它的隊伍提供經驗值。"
 		"DOTA_Glossary_Experience_GraphX"	"英雄等級"
 		"DOTA_Glossary_Experience_GraphY"	"所需經驗值"
 		"DOTA_Glossary_Experience_GraphY_Label"	"{d:xp_required_max_level}"
@@ -34593,6 +34607,8 @@
 		"DOTA_Glossary_Evasion_Desc"			"迴避是指對此英雄進行的攻擊會落空的機率百分比。"
 		"DOTA_Glossary_StatusResistance"		"狀態抗性"
 		"DOTA_Glossary_StatusResistance_Desc"	"狀態抗性會降低暈眩與沉默等負面狀態的持續時間。"
+		"DOTA_Glossary_SlowResistance"			"緩速抗性"
+		"DOTA_Glossary_SlowResistance_Desc"		"緩速抗性減低受到緩速的影響。"
 		"DOTA_Glossary_Units"				"單位"
 		"DOTA_Glossary_LaneCreeps"			"線兵"
 		"DOTA_Glossary_Structures"			"建築"
@@ -34668,11 +34684,10 @@
 
 		"DOTA_Glossary_Map_Structures_Outposts"		"前哨站"
 
-		"DOTA_Glossary_Map_Structures_Outposts_Desc1"	"聖輝與魔魘分別控制一座位於他們叢林中的特殊前哨站建築。"
+		"DOTA_Glossary_Map_Structures_Outposts_Desc1"	"聖輝與魔魘分別控制位於地圖上己方領域中的特殊前哨站建築。"
 		"DOTA_Glossary_Map_Structures_Outposts_Desc2"	"前哨站可作為傳送目的地，並且會提供 {d:DOTA_OUTPOST_VISION_RADIUS} 範圍內的真視視野。"
 		"DOTA_Glossary_Map_Structures_Outposts_Desc3"	"隊伍失去二塔後，敵隊能對前哨站施法來佔領此建築。"
 		"DOTA_Glossary_Map_Structures_Outposts_Desc4"	"多名玩家可同時對前哨站施法來降低佔領所需時間。"
-		"DOTA_Glossary_Map_Structures_Outposts_Desc5"	"如果隊伍至少控制一座前哨站，每控制一分鐘，<b>隊伍上的每一名玩家</b>都會獲得 {d:DOTA_OUTPOST_CONTINUOUS_XP_PER_MINUTE}*N 經驗值，而 N 代表遊戲經過的分鐘數。"
 		
 		"DOTA_Glossary_Map_Structures_Watchers"		"守衛者"
 
@@ -34799,7 +34814,7 @@
 		"DOTA_Glossary_Teamwork_HeroItemChoice_Counters_Desc"		"剋制是協同的相反。英雄的技能或屬性若能夠利用其他英雄弱點，或是能夠使其他英雄無法發揮，這就叫作剋制。因此，在看見敵隊挑選的英雄後選擇適當的英雄能夠對遊戲的結果有重大的影響。熟悉隊伍的長處、短處、道具、遊戲風格和策略都能大幅影響敵人的發揮。"
 		"DOTA_Glossary_Teamwork_HeroItemChoice_ItemCounters_Desc"					"以下是一些對特定英雄類型特別有效的道具範例。此列表並不包含所有道具，而且您最好能夠熟悉一下每件道具在哪種情況下可發揮最大的用處。"
 		"DOTA_Glossary_Teamwork_HeroItemChoice_ItemCounters_BlackKingBar"			"黑皇杖"
-		"DOTA_Glossary_Teamwork_HeroItemChoice_ItemCounters_BlackKingBar_Desc"		"黑皇杖能夠提供技能免疫。若能抓準時機使用此道具，仰賴技能或道具來傷害或控制對手的英雄們往往會完全無法發揮。"
+		"DOTA_Glossary_Teamwork_HeroItemChoice_ItemCounters_BlackKingBar_Desc"		"黑皇杖提供減幅免疫。若能抓準時機使用此道具，常常可以讓仰賴技能或道具來控制並傷害對手的英雄們完全無法發揮。"
 		"DOTA_Glossary_Teamwork_HeroItemChoice_ItemCounters_HeavensHalberd"				"天堂之戟"
 		"DOTA_Glossary_Teamwork_HeroItemChoice_ItemCounters_HeavensHalberd_Desc"		"天堂之戟能夠有效對付仰賴普通攻擊進行輸出的英雄，特別是遠程英雄（繳械效果持續較久）。"
 		"DOTA_Glossary_Teamwork_HeroItemChoice_ItemCounters_BladeMail"			"刃甲"
@@ -37458,5 +37473,6 @@
 		"DOTA_patch_note_creep_general"				"一般"
 		"DOTA_patch_note_item_general"				"一般"
 		"DOTA_patch_note_neutral_item_general"		"一般"
+
 	}
 }
