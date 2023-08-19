@@ -2282,6 +2282,8 @@
 		"npc_dota_lich_ice_spire"						"Spuntone di Ghiaccio"
 		"npc_dota_unit_underlord_portal"				"Passaggio Demoniaco"
 		"npc_dota_item_wraith_pact_totem"				"Totem del Patto Spettrale"
+		"npc_dota_unit_tidehunter_anchor"				"Ancora"
+
 		"npc_dota_creep_badguys_melee"					"Creep da Mischia"
 		"npc_dota_creep_badguys_melee_upgraded"			"Super Creep da Mischia"
 		"npc_dota_creep_badguys_melee_upgraded_mega"	"Mega Creep da Mischia"
@@ -5550,6 +5552,8 @@
 		"dota_hud_error_cant_cast_enemy_hero"			"L'abilità non può bersagliare gli Eroi nemici"
 		"dota_hud_error_cant_cast_creep_level"			"L'abilità non può bersagliare i creep di questo livello"
 		"dota_hud_error_cant_cast_debuff_immune"		"L'abilità non può bersagliare le Unità immuni agli effetti negativi"
+		"dota_hud_error_cant_cast_while_metamorphed"	"Impossibile usare l'abilità durante Metamorfosi"
+		"dota_hud_error_cant_cast_while_demon"			"Impossibile usare l'abilità con Fervore demoniaco attivo"
 		"dota_hud_error_target_magic_immune"			"Il bersaglio è dotato di immunità agli incantesimi"
 		"dota_hud_error_target_attack_immune"			"Il bersaglio non può essere attaccato"
 		"dota_hud_error_target_cant_be_denied"			"Il bersaglio non può essere negato"
@@ -29901,6 +29905,7 @@ Poiché l'influenza di Selemene era ridotta allo stremo e le deformate ombre dei
 	"DOTA_HUD_RespawnOutOfLives"			"Impossibile rientrare: la tua squadra ha finito le rinascite."
 	"DOTA_HUD_GlyphCooldown"				"Attesa: {s:cooldown_time}"
 	"DOTA_HUD_RadarCooldown"				"Attesa: {s:cooldown_time}"
+	"DOTA_HUD_RadarCharges"					"Cariche disponibili: {d:charges_available}"
 	"DOTA_HUD_ReliableGold"					"Oro affidabile: {d:reliable_gold}"
 	"DOTA_HUD_UnreliableGold"				"Oro inaffidabile: {d:unreliable_gold}"
 	"DOTA_HUD_QuickbuyCost_Needed"			"{d:quickbuy_gold_needed} per acquisto rapido"
@@ -32038,6 +32043,7 @@ Anche altri Eroi sono riusciti a distinguersi: Eroi specializzati nell'esercitar
 	"DOTA_733c_Update"	  "Aggiornamento 7.33c"
 	"DOTA_733d_Update"	  "Aggiornamento 7.33d"
 	"DOTA_733e_Update"	  "Aggiornamento 7.33e"
+	"DOTA_734_Update"	  "Aggiornamento 7.34"
 	"DOTA_Settings_Tooltip_NetworkLatency" "Se la tua connessione di rete è soggetta a perdite di pacchetti, scegliere l'impostazione per le reti di bassa qualità aumenterà la latenza ma migliorerà la fluidità generale."
 
 	"DOTA_Popup_RankCalibration_Congrats" "Congratulazioni!"
@@ -38072,8 +38078,8 @@ Se ritieni di non aver potuto dedicare l'attenzione necessaria al raggiungimento
 		"DOTA_Glossary_Advanced_CommonBuffs_Bash_Desc"		"Fa sì che gli attacchi abbiano una probabilità di stordire il bersaglio (questo effetto si attiva anche in determinate circostanze)."
 		"DOTA_Glossary_Advanced_CommonBuffs_ManaBreak"			"Infrangi mana"
 		"DOTA_Glossary_Advanced_CommonBuffs_ManaBreak_Desc"		"Questo effetto fa sì che ogni attacco bruci una porzione del mana dell'Unità colpita e infligga un danno pari alla percentuale del mana rimosso."
-		"DOTA_Glossary_Advanced_CommonBuffs_SpellImmunity"			"Immunità agli incantesimi"
-		"DOTA_Glossary_Advanced_CommonBuffs_SpellImmunity_Desc"		"Impedisce di subire danno magico o di essere bersagliati dalle abilità dei nemici. Alcuni incantesimi speciali (solitamente la Ultimate di un Eroe) possono ignorare l'immunità agli incantesimi, ma spesso la loro efficacia si riduce. Queste interazioni vengono menzionate nelle descrizioni dettagliate delle abilità."
+		"DOTA_Glossary_Advanced_CommonBuffs_SpellImmunity"			"Immunità agli effetti (negativi)"
+		"DOTA_Glossary_Advanced_CommonBuffs_SpellImmunity_Desc"		"Aumenta la resistenza alla magia di un'Unità e annulla completamente il danno puro e riflesso. Questo tipo di immunità consente di ignorare qualsiasi effetto negativo applicato sull'Unità dalle abilità nemiche. Alcuni incantesimi speciali (solitamente la Ultimate di un Eroe) possono ignorare l'immunità agli effetti, ma spesso la loro efficacia si riduce. Queste interazioni vengono menzionate nelle descrizioni dettagliate delle abilità."
 		"DOTA_Glossary_Advanced_CommonBuffs_Ethereal"			"Forma eterea"
 		"DOTA_Glossary_Advanced_CommonBuffs_Ethereal_Desc"		"Impedisce a un'Unità di subire danno fisico. L'Unità è inoltre disarmata e non può essere colpita da attacchi di base."
 		"DOTA_Glossary_Advanced_CommonBuffs_Phased"				"In fase"
@@ -38350,7 +38356,7 @@ Se ritieni di non aver potuto dedicare l'attenzione necessaria al raggiungimento
 
 		"DOTA_Glossary_Map_Structures_Outposts"		"Avamposti"
 
-		"DOTA_Glossary_Map_Structures_Outposts_Desc1"	"I Radiant e i Dire controllano un avamposto speciale situato nella rispettiva giungla."
+		"DOTA_Glossary_Map_Structures_Outposts_Desc1"	"I Radiant e i Dire controllano un Avamposto speciale situato nella rispettiva parte della mappa."
 		"DOTA_Glossary_Map_Structures_Outposts_Desc2"	"Oltre a potercisi teletrasportare, gli avamposti forniscono Vera visione in un raggio di {d:DOTA_OUTPOST_VISION_RADIUS} unità."
 		"DOTA_Glossary_Map_Structures_Outposts_Desc3"	"Quando una squadra perde una torre di livello 2, il rispettivo avamposto può essere conquistato dagli avversari canalizzando la struttura."
 		"DOTA_Glossary_Map_Structures_Outposts_Desc4"	"Diversi giocatori possono canalizzare l'avamposto per ridurre il tempo necessario alla conquista."
@@ -38480,7 +38486,7 @@ Se ritieni di non aver potuto dedicare l'attenzione necessaria al raggiungimento
 		"DOTA_Glossary_Teamwork_HeroItemChoice_Counters_Desc"		"Un neutralizzatore (o \"Counter\" in inglese) è un Eroe con abilità o attributi che fanno leva sulle debolezze o che annullano l'efficacia di altri Eroi. Scegliere gli Eroi più adatti dopo aver visto le scelte della squadra avversaria può essere determinante per il risultato della partita. La conoscenza dei punti di forza, dei punti deboli, degli oggetti, degli stili di gioco e della strategia di una squadra è fondamentale per contrastare l'efficacia dei nemici."
 		"DOTA_Glossary_Teamwork_HeroItemChoice_ItemCounters_Desc"					"Ecco alcuni esempi di oggetti particolarmente efficaci contro determinati tipi di Eroi. Questa lista non è esaustiva ed è meglio imparare le sfumature di ogni oggetto per capire quando la sua efficacia è massima."
 		"DOTA_Glossary_Teamwork_HeroItemChoice_ItemCounters_BlackKingBar"			"Bastone del Re Nero"
-		"DOTA_Glossary_Teamwork_HeroItemChoice_ItemCounters_BlackKingBar_Desc"		"Il Bastone del Re Nero rende il tuo Eroe immune agli incantesimi. Se abbinato ad un tempismo perfetto, spesso questo oggetto può annullare completamente l'efficacia degli Eroi che fanno uso di abilità od oggetti per danneggiare e disabilitare gli avversari."
+		"DOTA_Glossary_Teamwork_HeroItemChoice_ItemCounters_BlackKingBar_Desc"		"Il Bastone del Re Nero rende il tuo Eroe immune agli effetti negativi. Se abbinato ad un tempismo perfetto, spesso questo oggetto può annullare completamente l'efficacia degli Eroi che fanno uso di abilità od oggetti per danneggiare e disabilitare gli avversari."
 		"DOTA_Glossary_Teamwork_HeroItemChoice_ItemCounters_HeavensHalberd"				"Alabarda del Cielo"
 		"DOTA_Glossary_Teamwork_HeroItemChoice_ItemCounters_HeavensHalberd_Desc"		"L'Alabarda del Cielo è efficace contro gli Eroi che si affidano maggiormente ai loro attacchi di base, specialmente quelli che attaccano a distanza (vengono disarmati per un periodo maggiore)."
 		"DOTA_Glossary_Teamwork_HeroItemChoice_ItemCounters_BladeMail"			"Cotta di Lame"
@@ -45061,8 +45067,8 @@ Se ritieni di non aver potuto dedicare l'attenzione necessaria al raggiungimento
 		// 10-Year Anniversary
 		"DOTA_10thAnniversary_EventName"			"Decimo anniversario"
 
-		"DOTA_10thAnniversary_MainLogo_10"						"10º"
-		"DOTA_10thAnniversary_MainLogo_YearLabel"				"Tesoro del"
+		"DOTA_10thAnniversary_MainLogo_10"						"10"
+		"DOTA_10thAnniversary_MainLogo_YearLabel"				"Tesoro del decimo"
 		"DOTA_10thAnniversary_MainLogo_AnniversaryLabel"		"Anniversario"
 		"DOTA_10thAnniversary_MainLogo_TreasureLabel"			" "
 
@@ -45122,7 +45128,6 @@ Se ritieni di non aver potuto dedicare l'attenzione necessaria al raggiungimento
 
 		"DOTA_Style_10th_anniversary"					"Decimo anniversario"
 		"DOTA_Style_legacy"								"Classico"
-		"DOTA_Style_default"							"Predefinito"
 
 		"DOTA_Style_Deep_Magma"							"Nucleo magmatico"
 		"DOTA_Style_Deep_Magma_Celestial"				"Celestiale"
