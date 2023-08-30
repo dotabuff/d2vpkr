@@ -117,28 +117,12 @@
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
 				"attribute_bonus_all"		"4"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
 				"movement_speed"			"0 5"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
 				"attack_speed"				"0 0 20"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
 				"bonus_armor"				"0 0 0 5"
-			}
 		}
 	}
 
@@ -156,13 +140,9 @@
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
 				"value"		"2 4 6 8 10 12 14"
-			}
 		}
 	}
 
@@ -342,18 +322,10 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"						"FIELD_INTEGER"
 				"spell_shield_resistance"		"20 30 40 50"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"scepter_cooldown"		"12"
-			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -1090,37 +1062,29 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
 				"duration"					"8"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"attack_speed"				"60 90 120 150"
-				"LinkedSpecialBonus"		"special_bonus_unique_bloodseeker_5"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"spell_amp"				"15 20 25 30"
-				"LinkedSpecialBonus"		"special_bonus_unique_bloodseeker_6"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"damage_pct"				"1.8"
-				"DamageTypeTooltip"			"DAMAGE_TYPE_PURE"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"shard_max_health_dmg_pct"	"1.8"
-				"RequiresShard"				"1"
-			}
+				"attack_speed"				
+				{
+					"value"		"60 90 120 150"
+					"special_bonus_unique_bloodseeker_5" "+25"
+				}
+				"spell_amp"				
+				{
+					"value"		"15 20 25 30"
+					"special_bonus_unique_bloodseeker_6"	"+8"
+				}
+				"damage_pct"				
+				{
+					"value"		"1.8"
+					"DamageTypeTooltip"			"DAMAGE_TYPE_PURE"
+				}
+				"shard_max_health_dmg_pct"	
+				{
+					"value"			"1.8"
+					"RequiresShard"				"1"
+				}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityCastGestureSlot"		"DEFAULT"
@@ -1147,7 +1111,6 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"15 14 13 12"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -1158,6 +1121,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+				"AbilityCooldown"				
+				{
+					"value"			"15 14 13 12"
+					"special_bonus_unique_bloodseeker"	"-2.5"
+				}
 				"radius"
 				{
 					"value"		"600"
@@ -1167,7 +1135,7 @@
 				"damage"					
 				{
 					"value"			"90 140 190 240"
-					"LinkedSpecialBonus"		"special_bonus_unique_bloodseeker_2"
+					"special_bonus_unique_bloodseeker_2"	"+85"
 				}
 				"delay"						"2.6"
 				"delay_plus_castpoint_tooltip"						"2.9"
@@ -1194,7 +1162,7 @@
 			"bonus_movement_speed"		
 			{
 				"value"	"16 24 32 40"
-				"LinkedSpecialBonus"		"special_bonus_unique_bloodseeker_4"
+				"special_bonus_unique_bloodseeker_4"	"+18"
 			}			
 			"hero_kill_heal"		"10 15 20 25"
 			"creep_kill_heal"		"8 12 16 20"
@@ -1236,7 +1204,6 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"75 70 65"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -1277,6 +1244,16 @@
 			{
 				"value"	"0"
 				"special_bonus_unique_bloodseeker_rupture_charges"	"+2"
+			}
+			"AbilityCooldown"				
+			{
+				"value"			"75 70 65"
+				"special_bonus_unique_bloodseeker_rupture_charges"	"=0.25"
+			}
+			"AbilityChargeRestoreTime"		
+			{
+				"value"			"0"
+				"special_bonus_unique_bloodseeker_rupture_charges"	"=65"
 			}
 		}
 	}
@@ -1521,13 +1498,9 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
 				"silence_radius"			"300"
-			}
 		}
 	}
 
@@ -1587,6 +1560,11 @@
 					"value"					"0"
 					"special_bonus_unique_drow_ranger_5"			"+50"
 				}
+				"gust_reveals_invis"
+				{
+					"value"											"0"
+					"special_bonus_unique_drow_ranger_gust_invis"	"=1"
+				}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -1616,18 +1594,10 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
 				"trueshot_ranged_damage"	"10 20 30 40"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
 				"radius"						"1200"
-			}
 		}
 	}
 
@@ -76518,17 +76488,7 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-			"value"
-			{
-				"value" "2.5"
-				"ad_linked_abilities"			"bloodseeker_blood_bath"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-			
-		}
+		
 	}
 
 	//=================================================================================================================
@@ -76542,17 +76502,7 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"85"
-				"ad_linked_abilities"			"bloodseeker_blood_bath"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		
 	}
 
 	//=================================================================================================================
@@ -76579,17 +76529,7 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"18"
-				"ad_linked_abilities"			"bloodseeker_thirst"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		
 	}
 
 	//=================================================================================================================
@@ -76603,17 +76543,7 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"25"
-				"ad_linked_abilities"			"bloodseeker_bloodrage"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+	
 	}
 
 	//=================================================================================================================
@@ -76627,17 +76557,7 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"8"
-				"ad_linked_abilities"			"bloodseeker_bloodrage"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		
 	}
 
 		//=================================================================================================================

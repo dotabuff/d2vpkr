@@ -1,0 +1,55 @@
+"twin_gate_kill"
+{
+	"challengetype"		"37"
+	"desc"		""
+	"image"		""
+	"events"
+	{
+		"matching_type"		"linear_series"
+		"query"
+		{
+			"teleport_finished"
+			{
+				"event"		"modifier_add"
+				"modifier"		"modifier_twin_gate_warp_channel"
+				"caster"		"!hero"
+			}
+			"separator"		"20.000000"
+			"enemy_hero_kill"
+			{
+				"event"		"death"
+				"target_must_be_hero"		"1"
+				"target_team"		"!enemyteam"
+				"assist_player_id"		"!playerid"
+			}
+		}
+		"progress_stored_in"		"1"
+		"postmatch_increments"
+		{
+			"storage"
+			{
+				"1"
+				{
+					"aggregator"		"increment"
+				}
+			}
+		}
+		"post_tests"
+		{
+			"kills"
+			{
+				"storage"		"1"
+				"compare"		">="
+				"amount"		"<kills>"
+			}
+		}
+	}
+	"variables"
+	{
+		"<kills>"
+		{
+			"format"		"int"
+			"index"		"0"
+		}
+	}
+}
