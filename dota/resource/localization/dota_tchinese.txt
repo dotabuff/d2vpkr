@@ -4423,8 +4423,8 @@
 		"report_mm_manipulation"								"遊戲配對濫用"
 		"report_smurfing"										"使用分身帳戶或購買帳戶"
 		"report_cheating_desc"									"作弊包括人工操作配對或積分、自動施放指令碼、開圖或其它類似行為。"
-		"report_mm_manipulation_desc"							"玩家在操縱配對結果、洗分或進行類似行為。本次檢舉將不會顯示在操行摘要中或降低操行分數。"
-		"report_smurfing_desc"									"此玩家建立了或購買了一個帳號以在其真正所屬技術層級之外比賽。本次檢舉將不會顯示在操行摘要中或降低操行分數。"
+		"report_mm_manipulation_desc"							"玩家在操縱配對結果、洗分或進行類似行為。本次檢舉將不會顯示在操行摘要中或降低行為分數。"
+		"report_smurfing_desc"									"此玩家建立了或購買了一個帳號以在其真正所屬技術層級之外比賽。本次檢舉將不會顯示在操行摘要中或降低行為分數。"
 		"report_disruptive"										"擾亂他人的遊戲行為"
 		"report_disruptive_desc"								"擾亂他人的遊戲行為包括濫用技能、蓄意送死、掛機或類似行為。"
 		"report_avoid_pending"									"提交封鎖要求"
@@ -5264,6 +5264,8 @@
 		"DOTA_MatchmakingNeedsInitialSkill_Header"						"配對技術層級"
 		"DOTA_MatchmakingNeedsInitialSkill_Description"					"為了協助遊戲將和您有著類似經驗和技巧的玩家配對在一起進行遊戲，我們想知道更多您在 Dota 這方面的經驗。"
 		"DOTA_MatchmakingNeedsInitialSkillForParty_Description"			"您團隊中的其中一名成員需要讓我們知道他在 Dota 這方面的經驗水平為何，否則我們無法為您的團隊進行配對。"
+		"DOTA_MatchmakingRestrictedFromRanked_Description"				"您的團隊中的一員的行為分數過低，使您無法進入積分比賽佇列。"
+
 		"DOTA_AutomaticSelectionPriority"								"選擇優先系統"
 		"DOTA_AutomaticSelectionPriority_Error_NeedTeams"				"選擇優先系統需要大廳中的隊伍均設置完成才能使用。"
 		"DOTA_AutomaticSelectionPriority_Error_UnknownPrevious"			"選擇優先系統不知上場遊戲的獲勝者為何故無法繼續。"
@@ -12645,11 +12647,14 @@
 		"DOTA_CoachingRequest_FailedToLoadMatchDetails"		"無法載入比賽詳細資料"
 
 		"DOTA_BecomeCoach_Title"					"擔任教練"
+		"DOTA_BecomeCoach_BehaviorScore"			"行為 / 交流分數"
+		"DOTA_BecomeCoach_BehaviorScoreValues"		"{s:behav_score} / {s:comm_score}"
 		"DOTA_BecomeCoach_BehaviorScoreUnknown"		"新手"
 		"DOTA_BecomeCoach_Rank"						"段位"
 		"DOTA_BecomeCoach_StatEligible"				"符合"
 		"DOTA_BecomeCoach_StatTooLow"				"過低"
 		"DOTA_BecomeCoach_RankRequired"				"教練在積分配對所校準出的段位必須至少是「{s:required_coach_rank}」。"
+		"DOTA_BecomeCoach_BehaviorScoreRequired"	"教練的行為分數和交流分數必須至少是 {d:required_coach_behavior_score} 分。"
 		"DOTA_BecomeCoach_PlayerRankTooHigh:p{required_coach_higher_stars}"		"教練的段位必須比學員高至少 {d:required_coach_higher_stars} 星階。段位達「永垂不朽」的玩家可指導任何人。#|#教練的段位必須比學員高至少 {d:required_coach_higher_stars} 星階。段位達「永垂不朽」的玩家可指導任何人。"
 
 		"DOTA_AboutCoaching_Title"			"關於教練功能"
@@ -19360,6 +19365,7 @@
 	"DOTA_Profile_ConductSummary"			"操行摘要"
 	"DOTA_Profile_ConductSummary_Date"		"更新於 {s:conduct_summary_date}"
 	"DOTA_Profile_ConductSummary_ShowLatestButton"	"顯示摘要"
+	"DOTA_Profile_ConductSummary_Behavior" "行為"
 	"dota_profile_teammate_stats_header_teammate" "隊友"
 	"dota_profile_teammate_stats_header_games" "場數"
 	"dota_profile_teammate_stats_header_wins_losses" "勝 - 負"
@@ -19803,6 +19809,10 @@
 	"DOTA_JoinChatChannel_PrivateJoinFailed"	"您沒有加入此私人聊天室的權限。"
 	"DOTA_JoinChatChannel_Kicked"	"您已被移出私人頻道「{s:private_channel_name}」。"
 	"DOTA_JoinChatChannel_NewPlayerBanned" "您要等到 {t:s:ban_until_timestamp} {t:t:ban_until_timestamp} 才能加入新手聊天。"
+
+	"DOTA_JoinChatChannel_NewPlayer_Description" "新手頻道是個受管理的聊天頻道，供已完成新手目標的新玩家使用，可在其中向經驗較豐富的玩家提問。
+
+若要以經驗豐富的玩家身分加入頻道，您必須至少進行過 {d:new_player_req_games_played} 場比賽，並獲得至少 {d:new_player_req_behavior_score} 分的交流分數。"
 
 	"DOTA_Chat_ChannelName"			"{g:dota_filtered_string:channel_name}"
 	"DOTA_Chat_ChannelMemberCount"	"{d:channel_member_count}"
@@ -21905,6 +21915,9 @@
 	"matchmaking_match_disabled_local_long"		"由於您被檢舉的次數過多、未於時限內參與比賽或放棄比賽，將暫時無法進行配對。停止配對直到：{t:r:e:match_denied_time}"
 	"matchmaking_match_disabled_permanent"		"因為使用第三方程式，違反 Steam 服務條款、使用分身、濫用遊戲配對機制或其它極端使用不當問題，已永久停用遊戲配對。"
 	"matchmaking_match_disabled_ranked_long"	"由於洗分、共用帳戶或其它濫用遊戲配對之行為，積分遊戲配對已停用。{t:r:e:match_denied_time} 前禁止進行積分。"
+	"matchmaking_match_disabled_behavior_too_low_for_ranked_local"	"因行為分數過低而停用了積分配對。"
+	"matchmaking_match_disabled_behavior_too_low_for_ranked_party"	"{s:low_behavior_for_ranked_player_name} 會使積分配對無法進行，因其行為分數過低。"
+
 	"custom_game_disabled_local"				"您因為先前未及時就緒或離棄了一場啟用有中離懲罰的自訂遊戲而正面臨遊樂場懲罰，使您在受罰期間無法進行自訂遊戲。距懲罰結束還有：{t:r:e:match_denied_time}"
 
 	"dota_ready_up_count"						"{s:ready_up_ready} / {s:ready_up_lobby_members}"
@@ -23365,7 +23378,7 @@
 	"dota_page_match_details_header_game_mode"	"遊戲模式"
 	"dota_page_match_details_header_duration"	"長度"
 	"dota_page_match_details_header_timestamp"	"場次日期 / 時間"
-	"dota_page_match_details_header_behavior_score_variance"	"玩家操行成績："
+	"dota_page_match_details_header_behavior_score_variance"	"玩家行為分數： "
 	"dota_page_match_details_header_queue_time"	"配對耗時：平均"
 	"dota_page_match_details_header_queue_time_max"	"最久"
 	"dota_page_match_details_discarded"			"比賽遺棄："
@@ -23373,6 +23386,9 @@
 
 	"dota_behavior_score_variance_low"		"近似"
 	"dota_behavior_score_variance_medium"	"中度分歧"
+	"dota_behavior_score_variance_high"		"高度分歧"
+	"dota_behavior_score_variance_unknown"	"未知"
+
 	"dota_page_match_details_header_total"	"總計"
 
 	"dota_page_match_details_leave"		"離開比賽"
@@ -28295,6 +28311,7 @@
 	"DOTA_ConductScorecard_GreatJobOverall"					"感謝您保持良好的言行舉止"
 	"DOTA_ConductScorecard_OldDataWarning"					"您在本摘要產出後已至少進行過了一場遊戲。<br/>您的操行摘要將在每 10 場遊戲後更新一次。"
 	"DOTA_ConductScorecard_Grade"							"整體行為"
+	"DOTA_ConductScorecard_LifetimeBehaviorScore"			"生涯行為分數"
 	"DOTA_ConductScorecard_FriendID"						"好友 ID：{s:account_id}"
 	"DOTA_ConductScorecard_Abandons_desc"					"您在比賽結束或被判為可安全離場前就退出比賽的次數。"
 	"DOTA_ConductScorecard_CommsReports_desc"				"隊友或對手檢舉您進行辱罵或擾亂性通訊的次數。"
@@ -28307,7 +28324,10 @@
 	"DOTA_ConductScorecard_CommsReports_GoodPct"			"所有玩家中，{d:comms_reports_good_pctile}% 的人受檢舉的頻率和您一樣低。"
 	"DOTA_ConductScorecard_CommsReports_BadPct"				"您受檢舉的頻率比 {d:comms_reports_percentile}% 的玩家都還要高。"
 
-	"DOTA_ConductScorecard_CommsWarning_Info"				"通訊警告會在您比 95 % 左右的玩家收到更多的檢舉報告時向您發送。若您持續受到檢舉，則會將您停權，玩家將必須先為您取消靜音，才能看到您的聊天訊息。除此之外，每次檢舉可能對導致您的操行分數下降。通訊檢舉包含來自友方和敵方的檢舉。如果對方未曾和您在遊戲內通訊過，將無法檢舉您濫用通訊。<br><br>通訊濫用的檢舉會在 15 次遊戲期間內進行累積。"
+	"DOTA_ConductScorecard_Gameplay_Info"					"遊戲行為檢舉包含友方檢舉的「擾亂他人的遊戲行為」和「作弊或濫用積分」行為，這些檢舉可能會導致行為分數下降。<br><br>如果您在任何時候的 15 場比賽期間內，收到比約 95% 的玩家更多的檢舉次數，您將會受到低優先配對懲罰。受到低優先配對懲罰的玩家有一段時間會晉用遊戲配對，也需要贏得特定次數的徵召模式遊戲後，才可回到配對佇列中。<br><br>建立您的操行摘要時不會包含敵方檢舉的「作弊或濫用積分」行為，也不會導致低優先配對懲罰。"
+	"DOTA_ConductScorecard_Comms_Info"						"通訊濫用檢舉包含來自友方和敵方的檢舉。如果對方未曾和您在遊戲內通訊過，將無法檢舉您濫用通訊。<br><br>通訊濫用檢舉會在 15 場遊戲的期間內進行累積，如果您在任何時候收到比約 95% 的玩家更多的檢舉次數，您將會受到禁止通訊的懲罰。此外，每次檢舉也可能會導致您的行為分數下降。"
+	"DOTA_ConductScorecard_Behavior_Info"					"行為分數代表著您的整體操行。遊玩遊戲且未受到檢舉將可提升您的行為分數。"
+	"DOTA_ConductScorecard_CommsWarning_Info"				"通訊警告會在您比 95 % 左右的玩家收到更多的檢舉報告時向您發送。若您持續受到檢舉，則會將您停權，玩家將必須先為您取消靜音，才能看到您的聊天訊息。除此之外，每次檢舉可能對導致您的行為分數下降。通訊檢舉包含來自友方和敵方的檢舉。如果對方未曾和您在遊戲內通訊過，將無法檢舉您濫用通訊。<br><br>通訊濫用的檢舉會在 15 次遊戲期間內進行累積。"
 
 
 	"DOTA_DB_SeasonPass_TierTooltipBronze"			"下列本季戰鬥通行證持有者的好禮已添加至您的帳戶中：<br>戰鬥通行證徽章<br>戰鬥通行證個人檔案狀態"
@@ -30438,6 +30458,7 @@
 	"DOTA_CoachesChallenge_GenericRequirementsNotMet"	"玩家未達到教練挑戰的進行門檻。"	
 	"DOTA_CoachesChallenge_RequirementsNotMetHeader"	"未達教練挑戰進行門檻"	
 	"DOTA_CoachesChallenge_RequirementsNotMet" 			"您需達下列門檻才能進行教練挑戰："
+	"DOTA_CoachesChallenge_Requirements_BehaviorScore"	"行為和交流分數需達到 8000 或以上。"
 	"DOTA_CoachesChallenge_Requirements_MMR"			"配對積分（MMR）達 1000 以上。"
 	"DOTA_CoachesChallenge_Requirements_GamesPlayed"	"已進行並完成至少 50 場正規場比賽。"
 
@@ -34945,6 +34966,7 @@
 		"DOTA_CoachingError_eAlreadyInSession" "已在指導時段中。"
 		"DOTA_CoachingError_eAlreadyLeft" "已離開。"
 		"DOTA_CoachingError_eAlreadySubmitted" "已送出。"
+		"DOTA_CoachingError_eBehaviorScoreTooLow" "行為 / 交流分數過低。"
 		"DOTA_CoachingError_eCoachInALobby" "教練已在大廳。"
 		"DOTA_CoachingError_eCoachInThisLobby" "教練在此大廳。"
 		"DOTA_CoachingError_eCoachNotSubscriber" "教練不是訂閱者。"
@@ -34981,6 +35003,7 @@
 		"DOTA_CoachingError_eTooBusy" "過於忙碌。"
 		"DOTA_CoachingError_eTooManyCoaches" "太多教練。"
 		"DOTA_CoachingError_eUnknownSession" "未知的指導時段。"
+		"DOTA_CoachingError_eCoachBehaviorScoreTooLow" "教練的行為 / 交流分數過低。"
 		"DOTA_CoachingError_eCoachRankNotCalibrated" "教練的段位未經校準。"
 		"DOTA_CoachingError_eCoachRankNotEligible" "教練段位過低。"
 		"DOTA_CoachingError_eCoachRankTooLow" "教練段位過低，不適合指導這名玩家。"
@@ -37714,15 +37737,14 @@
 
 		"DOTA_PlayerReportPopup_SendOverwatchReport"		"發送監督檢舉"
 
-		"DOTA_PlayerBehaviorSummary_Popup_Title"						"玩家操行摘要"
+		"DOTA_PlayerBehaviorSummary_Popup_Title"						"玩家行為摘要"
 		"DOTA_PlayerBehaviorSummary_Popup_LastUpdated"					"更新時間："
 		"DOTA_PlayerBehaviorSummary_Popup_NextUpdate"					"下次更新："
 		"DOTA_PlayerBehaviorSummary_Popup_NextUpdateValue:p{games_to_next_update}"		"{d:games_to_next_update} 場比賽#|#{d:games_to_next_update} 場比賽"
 
 		"DOTA_PlayerBehaviorSummary_Popup_CommunicationScoreTitle"		"交流分數"
-		"DOTA_PlayerBehaviorSummary_Popup_CommunicationScoreInfo"		"交流分數反映您在遊戲內聊天和語音互動的素質。若交流分數過低，您的文字和語音將被設為靜音，而所有其它通訊方式使用時會有 30 秒的冷卻<br><br>您的交流分數不會超越目前的操行分數。"
-		"DOTA_PlayerBehaviorSummary_Popup_BehaviorScoreTitle"			"操行分數"
-		"DOTA_PlayerBehaviorSummary_Popup_BehaviorScoreInfo"			"操行分數反映您在遊戲內行為的素質，並決定您能使用哪些功能，如打賞、賽後物品掉落、遊戲暫停和積分遊戲等"
+		"DOTA_PlayerBehaviorSummary_Popup_CommunicationScoreInfo"		"交流分數反映您在遊戲內聊天和語音互動的素質。若交流分數過低，您的文字和語音將被設為靜音，而所有其它通訊方式使用時會有 30 秒的冷卻<br><br>您的交流分數不會超越目前的行為分數。"
+		"DOTA_PlayerBehaviorSummary_Popup_BehaviorScoreTitle"			"行為分數"
 		"DOTA_PlayerBehaviorSummary_Popup_SuccessfulReport_Date"		"已檢舉：{s:successful_report_date}"
 		"DOTA_PlayerBehaviorSummary_Popup_SuccessfulReport_Reason"		"{s:successful_report_reason}"
 		"DOTA_PlayerBehaviorSummary_Popup_SuccessfulReport_ActionTaken"	"已採取的行動"
@@ -37732,11 +37754,12 @@
 
 
 		"DOTA_PlayerBehaviorSummary_Tooltip_Communication_Title"				"交流分數：{d:pip_score}"
-		"DOTA_PlayerBehaviorSummary_Tooltip_Behavior_Title"						"操行分數：{d:pip_score}"
+		"DOTA_PlayerBehaviorSummary_Tooltip_Behavior_Title"						"行為分數：{d:pip_score}"
 		"DOTA_PlayerBehaviorSummary_Tooltip_FeaturesEnabled"					"可使用功能："
 		"DOTA_PlayerBehaviorSummary_Tooltip_Communication_Unthrottled"			"<b>不受限制的通訊</b><br>（低於此分數時所有信號、提示和聊天輪盤均需有 30 秒的共同冷卻）。"
 		"DOTA_PlayerBehaviorSummary_Tooltip_Communication_TextChat"				"文字聊天"
 		"DOTA_PlayerBehaviorSummary_Tooltip_Communication_VoiceChat"			"語音聊天"
+		"DOTA_PlayerBehaviorSummary_Tooltip_Communication_Coaching"				"成為教練（行為分數要求：10k+）"
 		"DOTA_PlayerBehaviorSummary_Tooltip_Communication_PingAllies"			"發出針對隊友技能的信號"
 		
 		"DOTA_PlayerBehaviorSummary_Tooltip_Behavior_Ranked"		"參與積分比賽"
@@ -37763,11 +37786,11 @@
 		"DOTA_PlayerBehavior_Restricion_CommType4"						"您的交流分數不足，無法聊天"
 		"DOTA_PlayerBehavior_Restricion_CommType5"						"您的交流分數不足，無法使用語音"
 		"DOTA_PlayerBehavior_Restricion_CommType6"						"您的交流分數不足，無法針對隊友的技能發出信號"
-		"DOTA_PlayerBehavior_Restricion_CommType7"						"您的操行分數不足，無法暫停遊戲"
-		"DOTA_PlayerBehavior_Restricion_CommType8"						"您的交流 / 操行分數不足，無法成為教練"
+		"DOTA_PlayerBehavior_Restricion_CommType7"						"您的行為分數不足，無法暫停遊戲"
+		"DOTA_PlayerBehavior_Restricion_CommType8"						"您的交流 / 行為分數不足，無法成為教練"
 		"DOTA_PlayerBehavior_Restricion_CommType9"						"您的交流分數不足，因此發出信號後需要冷卻"
-		"DOTA_PlayerBehavior_Restricion_CommType10"						"您的操行分數不足，無法進入積分配對"
-		"DOTA_PlayerBehavior_Restricion_CommType11"						"您的操行分數不足，無法獲得賽後掉落"
+		"DOTA_PlayerBehavior_Restricion_CommType10"						"您的行為分數不足，無法進入積分配對"
+		"DOTA_PlayerBehavior_Restricion_CommType11"						"您的行為分數不足，無法獲得賽後掉落"
 		"DOTA_PlayerBehavior_Restricion_CommType12"						"您的交流分數不足，無法成為新手指導"
 }
 }
