@@ -862,6 +862,8 @@
 		"DOTAUI_Fullscreen"				"Tam Ekran"
 		"DOTAUI_Window"					"Pencere"
 		"DOTAUI_BorderlessWindow"		"Çerçevesiz Pencere"
+		"DOTAUI_FullscreenHero"			"Kahramanı tam ekrana yerleştir"
+
 		"DOTA_UpcomingMaintenance"			"Gelecek Sunucu Bakımı"
 		"DOTA_UpcomingMaintenance_Details"	"Detaylar için Tıkla"
 
@@ -909,6 +911,8 @@
 		"DOTA_Chat_QuintupleKill"		"%s1 %s2 KATLİAM YAPTI!"
 		"DOTA_Chat_BeastKilledPlayer" 	"%s1, %s2'nin kellesini aldı!"
 		"DOTA_Chat_PenguinKilledPlayer"	"%s1 oyuncusunun pengueni %s2 oyuncusunu devirdi!"
+		"DOTA_Chat_PlayerInGameBanText"	"%s1 oyuncusun sesi maçın geri kalanında sessize alındı."
+		
 		"DOTA_Chat_DoubleKill_noname"	"ve iki kişi öldürdü!"
 		"DOTA_Chat_TripleKill_noname"	"ve ÜÇ KİŞİ öldürdü!"
 		"DOTA_Chat_QuadKill_noname"		"ve DÖRT KİŞİ ÖLDÜRDÜ!"
@@ -1044,6 +1048,9 @@
 		"DOTA_Chat_Rune_Water_Spotted"			"<font color='#74A7F7'>Su</font> rünü burada (%s1)."
 		"DOTA_Chat_Rune_Neutral_Bounty_Spotted"	"<font color='#FF7800'>Ödül</font> rünü burada (%s1)."
 		"DOTA_Chat_Rune_Pumpkin_Spotted"		"Burada <font color='#FF7D40'>Balkabağı</font> rünü var!"
+		"DOTA_Chat_Rune_XP_Spotted"		"<font color='#FFC0CB'>Bilgelik</font> rünü burada! (%s1)"
+		"DOTA_Chat_Rune_Shield_Spotted"		"<font color='#555555'>Kalkan</font> rünü burada! (%s1)"
+
 		"DOTA_Chat_Item_Spotted" "Burada <font color='%s1'>%s2</font> var."
 		"DOTA_Chat_Item_Alert" "<font color='%s1'>%s2</font> için burada toplanın."
 
@@ -1863,6 +1870,8 @@ As each stone's cultural influence spread, it eventually came in conflict with t
 		"npc_dota_hero_kunkka:n"						"Kunkka"
 		"npc_dota_hero_lina:n"							"Lina"
 		"npc_dota_hero_mirana:n"						"Mirana"
+		"npc_dota_hero_mirana_persona1:n"				"Mirana (Dragon's Blood)"
+		"npc_dota_hero_mirana_persona1__en:n"			"Mirana (Dragon's Blood)"
 		"npc_dota_hero_slardar:n"						"Slardar"
 		"npc_dota_hero_lion:n"							"Lion"
 		"npc_dota_hero_phantom_assassin:n"				"Phantom Assassin"
@@ -23106,8 +23115,12 @@ Deneyimli bir oyuncu olarak katılmak için en az {d:new_player_req_games_played
 
 	"matchmaking_match_disabled_party"			"{s:match_denied_player_name} son oyununda hazır olmadığı ya da oyundan çıktığı için eşleşmesi engellenecek. Kalan süre: {t:r:e:match_denied_time}"
 	"matchmaking_match_disabled_local"			"Son oyunu kabul etmekte geciktiğiniz, terk ettiğiniz ya da olumsuz davranışlarda bulunduğunuz için eşleşmeye katılmanız engellendi. Kalan süre: {t:r:e:match_denied_time}"
+	"matchmaking_low_priority_local"			"Oyunları terk etmen veya birçok kez rapor edilmen nedeniyle sadece Tekli Seçim maçı oynayabileceksin.\nKalan tekli seçim zaferi: {d:match_denied_games}"
 	"matchmaking_match_disabled_permanent"		"Üçüncü taraf programlar kullandığınızdan, Steam Kullanım Koşullarını ihlâl ettiğinizden, Smurf'lük yaptığınızdan, eşleştirme suistimali yaptığınızdan veya diğer ağır ihlâlleri gerçekleştirdiğinizden eşleştirmeniz kalıcı olarak devre dışı bırakıldı."
 	"matchmaking_match_disabled_ranked_long"	"Dereceli eşleştime; hesap kasma, hesap paylaşımı veya diğer eşleştirme suistimalleri sebebiyle devre dışı bırakıldı. Kalan süre: {t:r:e:match_denied_time}"
+	"matchmaking_match_disabled_behavior_too_low_for_ranked_local"	"Dereceli eşleştirme düşük davranış puanı nedeniyle devre dışı bırakıldı."
+	"matchmaking_match_disabled_behavior_too_low_for_ranked_party"	"{s:low_behavior_for_ranked_player_name}, düşük davranış puanına sahip olduğundan dereceli eşleştirmeye katılamaz."
+
 	"custom_game_disabled_local"				"Hazır olmadığınızdan veya özel oyunu terk ettiğinizden terk etme cezası etkin olan özel oyunları oynamanız engellendi. Kalan süre: {t:r:e:match_denied_time}"
 
 	"dota_ready_up_count"						"{s:ready_up_ready} / {s:ready_up_lobby_members}"
@@ -23368,6 +23381,7 @@ Deneyimli bir oyuncu olarak katılmak için en az {d:new_player_req_games_played
 	"dota_settings_console"						"Konsol"
 	"dota_settings_death_summary"				"Ölüm Özeti"
 	"dota_settings_dota_alt"					"Alt Tuşu Değiştiricisi"
+	"dota_settings_dota_alternative_cast_switch"	"Alternatif Kullanım Tuşu"
 	"dota_settings_controlgroups"				"Kontrol Grupları"
 	"dota_settings_controlgroupsadditional"		"Daha Fazla Kontrol Grubu"
 	"dota_settings_controlgroupcycle"			"Sonraki Birim"
@@ -23455,6 +23469,7 @@ Deneyimli bir oyuncu olarak katılmak için en az {d:new_player_req_games_played
 	"dota_settings_force_right_click_attack_0"	"Takip Eder"
 	"dota_settings_force_right_click_attack_1"	"Saldırır"
 	"dota_settings_force_right_click_attack_2"	"Reddeder"
+	"dota_settings_englishheronames"			"Klasik Kahraman İsimleri"
 	"dota_settings_herofinder"					"ALT'a Basılı Tutmak Kahramanı Gösterir"
 	"dota_alt_shows_neutral_spawn_boxes"		"ALT'a Basılı Tutmak Tarafsız Canlanma Alanlarını Gösterir"
 	"dota_alt_shows_tower_attack_range"			"ALT'a Basılı Tutmak Kulenin Saldırı Menzilini Gösterir"
@@ -23943,6 +23958,7 @@ Deneyimli bir oyuncu olarak katılmak için en az {d:new_player_req_games_played
 	"DOTA_EconItemSet_TestItem"		 "Öğeyi Dene"
 	"DOTA_EconItemSet_Tooltip_IsBundle" "Bu diğer eşyaları içeren bir pakettir"
 	"DOTA_EconItemSet_Tooltip_IsTreasure" "Bu bir hazine"
+	"DOTA_EconItemSet_Tooltip_RequiresKey" "Bu hazineyi açmak için bir anahtar gerekir."
 	"DOTA_EconItemSet_Tooltip_MultipleStyles" "Birden çok stile sahip"
 	"DOTA_EconItemSet_Tooltip_AutoStyle" "Etkin stil oynanış tarafından belirlenir"
 	"DOTA_EconItemSet_Tooltip_MultipleTeams" "Radiant ve Dire için farklı stillere sahip"
@@ -23951,6 +23967,8 @@ Deneyimli bir oyuncu olarak katılmak için en az {d:new_player_req_games_played
 	"DOTA_EconItemSet_Tooltip_HasRareGem" "Bir ya da daha fazla nadir taşa sahip"
 	"DOTA_EconItemSet_Tooltip_BattlePass" "{g:dota_event_name:event_id} etkinliğinin bir parçası"
 	"DOTA_EconItemSet_Tooltip_DotaPlus" "Dota Plus'ın parçası olarak"
+	"DOTA_EconItemSet_Tooltip_EquipAbilityEffect"		"Sadece yetenek etkisini kuşan"
+
 	"DOTA_EconItemSet_Tooltip_RaresTradeableImmediately" "Ultra-Nadir hemen takaslanabilir veya pazarlanabilir"
 	"DOTA_EconItemSet_Tooltip_RaresTradeableJuly" "Ultra-Nadir öğeler 30 Temmuz'dan sonra takas edilebilir ve pazarlanabilir"
 	"DOTA_EconItemSet_Tooltip_RaresTradeableAugust" "Ultra-Nadir öğeler 1 Ağustos'tan sonra takas ediilebilir ve pazarlanabilir"
@@ -24008,6 +24026,8 @@ Deneyimli bir oyuncu olarak katılmak için en az {d:new_player_req_games_played
 	"DOTA_HeroGrid_OptionCategory_Role"			"Roller:"
 	"DOTA_HeroGrid_OptionCategory_Attributes"	"Özellikler:"
 	"DOTA_HeroGrid_OptionCategory_AttackType"	"Saldırı Tipi:"
+	"DOTA_HeroGrid_OptionCategory_Tags"			"Etiketler:"
+
 	"DOTA_HeroGrid_CustomLayoutDefaultName"		"Özel Düzen"
 	"DOTA_HeroGrid_DeleteCustomLayout_Btn"	    "Düzeni Sil"
 	"DOTA_HeroGrid_DeleteCustomLayout_Title"	"Özel Düzeni Sil"
@@ -24071,6 +24091,18 @@ Deneyimli bir oyuncu olarak katılmak için en az {d:new_player_req_games_played
 	"DOTA_HeroLoadout_StrengthAttribute"		"{s:base_str} + seviye başına {s:str_per_level}"
 	"DOTA_HeroLoadout_AgilityAttribute"			"{s:base_agi} + seviye başına {s:agi_per_level}"
 	"DOTA_HeroLoadout_IntelligenceAttribute"	"{s:base_int} + seviye başına {s:int_per_level}"
+
+	"DOTA_HeroLoadout_StrengthAttributeShort"		"{s:base_str} + {s:str_per_level}"
+	"DOTA_HeroLoadout_AgilityAttributeShort"		"{s:base_agi} + {s:agi_per_level}"
+	"DOTA_HeroLoadout_IntelligenceAttributeShort"	"{s:base_int} + {s:int_per_level}"
+
+	"DOTA_HeroLoadout_StrengthAttributeBase"			"{s:base_str}"
+	"DOTA_HeroLoadout_AgilityAttributeBase"				"{s:base_agi}"
+	"DOTA_HeroLoadout_IntelligenceAttributeBase"		"{s:base_int}"
+
+	"DOTA_HeroLoadout_StrengthAttributePerLevel"		"seviye başına +{s:str_per_level}"
+	"DOTA_HeroLoadout_AgilityAttributePerLevel"			"seviye başına +{s:agi_per_level}"
+	"DOTA_HeroLoadout_IntelligenceAttributePerLevel"	"seviye başına +{s:int_per_level}"
 
 	"DOTA_HeroCustomize_Title"				"Kahramanı Özelleştir"
 	"DOTA_HeroCustomize_OwnedItems"			"Sahip Olunan Eşyalar"
@@ -24212,6 +24244,8 @@ Deneyimli bir oyuncu olarak katılmak için en az {d:new_player_req_games_played
 
 	"DOTAPartyOpenMicMuteTooltip"      "Parti Açık Mikrofonu Sustur"
 	"DOTAPartyOpenMicUnMuteTooltip"    "Parti Açık Mikrofonu Susturma"
+	"DOTAPartyOpenMicRestrictedTooltip"    "İletişim puanı çok düşük"
+
 	"DOTA_Feed_Timestamp_Recently"		"Az önce"
 	"DOTA_Feed_Timestamp_MinutesAgo:p{value}"	"{i:value} dakika önce#|#{i:value} dakika önce"
 	"DOTA_Feed_Timestamp_HoursAgo:p{value}"		"{i:value} saat önce#|#{i:value} saat önce"
@@ -24382,6 +24416,8 @@ Deneyimli bir oyuncu olarak katılmak için en az {d:new_player_req_games_played
 	"DOTA_Armory_Collection_Info" 		"Favori öğelerini hızlıca bulabileceğin özelleştirilebilir bir görünüm oluşturmak için \"Koleksiyon\" sekmesini kullanabilirsin.<br><br>Öğeleri koleksiyon görünümüne eklemek için arzu ettiklerini bu panele sürükleyip ve bırakabilirsin. Bir öğeyi koleksiyon görünümünün dışına taşıyarak koleksiyondan çıkarabilirsin.<br><br>Koleksiyon sekmesindeki öğeleriniz \"Cephanelik\" ve \"Koleksiyon\" sekmesinde görünür."
 	"DOTA_Armory_Capacity_Info" 		"Eğer Cephane alanınızın %100'ünden fazlasını kullanırsanız, Cephaneniz Taşacaktır.<br><br>Cephaneniz Taşmış vaziyetteyken şu eylemleri yapamayacaksınız:<br><br>- Eşya düşürmek<br>- Eşya paketlerini açmak<br>- Yeni eşyalar satın almak<br><br>Cephanenizde alan açmak için eşyalarınızı Adayabilir, Silebilir veya artık ihtiyacınız olmayan eşyaları arkadaşlarınıza hediye edebilirsiniz ve bunların hepsini sadece eşyaların simgelerinin üzerine sağ tıklayarak erişebilirsiniz."
 	"DOTA_Armory_Stickers_Title"		"Çıkartmalar"
+	"DOTA_Armory_Stickers_Description"	"2022 Mücadele Bileti çıkartma koleksiyonunuzu görüntüleyin."
+	"DOTA_Armory_Emoticons_Description"	"Açılmış ifadeleriniz:"
 	"DOTA_Armory_ImportToCollection"		"Koleksiyonuma Tüm Öğeleri Ekle"
 
 	"DOTA_Armory_Category_View"			"Türe göre grupla"
@@ -24419,6 +24455,7 @@ Deneyimli bir oyuncu olarak katılmak için en az {d:new_player_req_games_played
 	"DOTA_Armory_ContextMenu_EffigyPose"		"Poz..."
 	"DOTA_Armory_ContextMenu_EffigyReforge"		"Düzenle..."
 
+	"DOTA_Armory_ContextMenu_RebundleItem"		"Yeniden Paketle"
 	"DOTA_Armory_Filter_Tradeable"				"TAKAS EDİLEBİLİR"
 	"DOTA_Armory_Filter_Equipped"				"KUŞANILAN"
 	"DOTA_Armory_Filter_Duplicate"				"KOPYA"
@@ -24817,6 +24854,7 @@ Deneyimli bir oyuncu olarak katılmak için en az {d:new_player_req_games_played
 	"DOTA_econ_item_details_original_item_name"	"{s:original_item_name}"
 	"DOTA_econ_item_details_item_name"			"{s:item_name}	"
 	"DOTA_econ_item_details_item_creation_date" 	"Oluşturulma tarihi: {t:l:creation_date}"
+	"DOTA_econ_item_details_item_treasure_name" 	"Hazinede: {s:treasure_name}"
 	"DOTA_econ_item_details_set_includes"		"Şunları içerir:"
 	"DOTA_econ_item_details_item_set"			"Parçası: <font color='#dddddd'>{s:item_set}</font>"
 	"DOTA_econ_item_details_rarity_label"	"Nadirlik: "
@@ -30716,7 +30754,10 @@ Zeus ve Death Prophet gibi erken baskı kahramanlarının ortaya çıkması, Nat
 	"DOTA_HeroStats_ProjectileSpeed_Desc"	"Menzilli kahramanların saldırılarının hedefe ulaşma hızı"
 
 	"DOTA_HeroStats_Armor_Name"				"Zırh"
+	"DOTA_HeroStats_Armor_Desc"				"Zırh, bir kahramanın <font color=\"#FC6A62\">Fiziksel</font> saldırılardan ne kadar hasar alacağını belirler."
 	"DOTA_HeroStats_MagicResistance_Name"	"Büyü Direnci"
+	"DOTA_HeroStats_MagicResistance_Desc"	"Büyü direnci, bir kahramanın <font color=\"#80BDFF\">Büyüsel</font> saldırılardan ne kadar hasar alacağını belirler."
+
 	"DOTA_HeroStats_MovementSpeed_Name"		"Hareket Hızı"
 	"DOTA_HeroStats_MovementSpeed_Desc"		"Bir kahramanın harita boyunca hareket ettiği hız"
 	"DOTA_HeroStats_TurnRate_Name"			"Dönüş Oranı"
@@ -31187,7 +31228,9 @@ Zeus ve Death Prophet gibi erken baskı kahramanlarının ortaya çıkması, Nat
 	"DOTA_Plus_PurchaseDialog_FirstTimeBonus_Line2" "Parçayla Plus ödüllerini alabilirler"
 
 	"DOTA_PlusStore_MyShards"	"PARÇALARIM"
+	"DOTA_PlusStore_ExclusiveSets_Title"	"Premium Setler"
 	"DOTA_PlusStore_ExclusiveSets_Subtitle"	"YENİ KAHRAMAN SETLERİ"
+	"DOTA_PlusStore_LegacySets_Title"	"Eski Setler"
 	"DOTA_PlusStore_LegacySets_Subtitle"	"ESKİ KAHRAMAN SETLERİ"
 	"DOTA_PlusStore_HeroRelics_Title"	"YADİGÂRLAR"
 	"DOTA_PlusStore_HeroRelics_Subtitle"	"İstatistiklerinize Seviye Atlatın"
@@ -31251,6 +31294,8 @@ Zeus ve Death Prophet gibi erken baskı kahramanlarının ortaya çıkması, Nat
 	"DOTA_Plus_MaximumLevel" 			"En Yüksek Seviye"
 	"DOTA_Plus_LevelProgress" 			"Seviye İLERLEMESİ"
 	"DOTA_Plus_XPProgress" 				"{d:current_level_xp} / {d:xp_to_next_level} TP"
+	"DOTA_Plus_CurrentLevelXP"			"{d:current_level_xp} TP"
+	"DOTA_Plus_ToNextLevelXP"			"{d:xp_to_next_level} TP"
 	"DOTA_Plus_XP" 						"TP"
 	"DOTA_Plus_Currency"				"Parça"
 	"DOTA_Plus_HeroBadgeInfo"			"Dota Plus etkin değilken kahraman seviyelendirmesi seviye 6'ya kadardır. Dota Plus aboneliğinizi yeniden başlattığınızda, Kahraman Seviyelendirmenize kaldığınız yerden devam edebilirsiniz."
@@ -33959,6 +34004,9 @@ Frosthaven erzakları, Frosthaven maçları esnasında hediye olarak düşebilir
 	"DOTA_Plus_Summer2023_Update_Title"						"2023 Yaz Sezonu Güncellemesi"
 	"DOTA_Plus_Summer2023_Update_Desc"						"Yeni sezonun görevleri, sınırlı süreli hazine ve daha fazlası Dota Plus'a eklendi."
 
+	"DOTA_Plus_Fall2023_Update_Title"						"2023 Sonbahar Sezon Güncellemesi"
+	"DOTA_Plus_Fall2023_Update_Desc"						"Yeni görevler Dota Plus'ın yeni sezonuna eklendi."
+
 	"DOTA_Plus_Autumn_Assitant_Title"						"Yeni Asistan Özellikleri"
 	"DOTA_Plus_Autumn_Assitant_Desc"						"Plus aboneleri \"Oyuncudan Kaçın\", \"Dost ve Düşman Tavsiyeleri\", \"Göz Tavsiyeleri\" gibi asistan özelliklerini kullanabilecek."
 
@@ -35093,6 +35141,12 @@ Her bölge kendine ait canlı bir sıralama listesine sahiptir ve haftanın sonu
 		"DOTA_PlusSeason_SeasonSummer2023_Quests"				"2023 Yaz Görevleri"
 		"DOTA_PlusSeason_SeasonSummer2023_Subtitle"				"2023 Yaz Sezonu 1 Eylül 2023'te sona erecek."
 		"DOTA_PlusSeason_SeasonSummer2023_TreasureDescription"	"1 Eylül 2023 tarihinde Yaz sezonunun sonuna kadar özel olarak erişilebilir."
+		"DOTA_PlusSeason_SeasonSummer2023_Treasure"				"2023 Yaz Hazinesi"
+
+		"DOTA_PlusSeason_SeasonFall2023_Name"					"2023 Sonbahar"
+		"DOTA_PlusSeason_SeasonFall2023_Quests"					"2023 Sonbahar Görevleri"
+		"DOTA_PlusSeason_SeasonFall2023_Subtitle"				"2023 Sonbahar Sezonu 1 Aralık 2023'te sona erecek."
+
 		"DOTA_MatchRewards"							"Maç Ödülleri"
 		"DOTA_MatchRewards_YourShards"				"Parçanız"
 		"DOTA_MatchRewards_TotalShards"				"Toplam Parçanız"
@@ -36115,6 +36169,7 @@ Her bölge kendine ait canlı bir sıralama listesine sahiptir ve haftanın sonu
 		"DOTA_CoachingError_eAlreadyInSession" "Zaten bir oturumda."
 		"DOTA_CoachingError_eAlreadyLeft" "Zaten terk etti."
 		"DOTA_CoachingError_eAlreadySubmitted" "Zaten gönderildi."
+		"DOTA_CoachingError_eBehaviorScoreTooLow" "Davranış/iletişim puanı çok düşük."
 		"DOTA_CoachingError_eCoachInALobby" "Koç bir lobide."
 		"DOTA_CoachingError_eCoachInThisLobby" "Koç bu lobide."
 		"DOTA_CoachingError_eCoachNotSubscriber" "Koç abone değil."
@@ -36151,6 +36206,7 @@ Her bölge kendine ait canlı bir sıralama listesine sahiptir ve haftanın sonu
 		"DOTA_CoachingError_eTooBusy" "Çok meşgul."
 		"DOTA_CoachingError_eTooManyCoaches" "Çok fazla koç var."
 		"DOTA_CoachingError_eUnknownSession" "Bilinmeyen oturum."
+		"DOTA_CoachingError_eCoachBehaviorScoreTooLow" "Koçun davranış/iletişim puanı çok düşük."
 		"DOTA_CoachingError_eCoachRankNotCalibrated" "Koç dereceli rütbesini etkinleştirmemiş."
 		"DOTA_CoachingError_eCoachRankNotEligible" "Koçun rütbesi çok düşük."
 		"DOTA_CoachingError_eCoachRankTooLow" "Koçun rütbesi bu oyuncuya koçluk yapabilmek için çok düşük."
@@ -37907,6 +37963,7 @@ Bir düşmanı gök taşının altında kıstırmak için bir yetenek veya eşya
 		"DOTA_Collection_Heroes_ViewLoadout"		"Kahraman ayrıntıları"
 		"DOTA_Collection_Multistyle_Mix_Label"		"Çeşitli Tarzlar"
 		"DOTA_Collection_NothingToDisplay_Message"	"Gösterilecek bir şey yok"
+		"DOTA_Collection_ShuffleToggleLabel"		"Karıştırmayı Aç/Kapat"
 		"DOTA_Collection_Featured_FeaturedSets_Title"			"Yeni Çıkanlar"
 		"DOTA_Collection_Featured_FeaturedSets_Subtitle"		"2023 Koleksiyoncunun Zulası'ndan Setler"
 		"DOTA_Collection_Featured_PremiumShardsSets_Title"		"Premium Setler"
@@ -37932,6 +37989,8 @@ Bir düşmanı gök taşının altında kıstırmak için bir yetenek veya eşya
 		"DOTA_Collection_ShowAllOwnedItems_TooltipLabel"	"Bu türde sahip olunan tüm öğeleri göster"
 		"DOTA_Collection_ViewItemDetails_TooltipLabel"		"Sahip olunan öğe ayrıntılarını görüntüle"
 		"DOTA_Collection_OwnedCount_TooltipLabel"			"{d:owned_count}"
+		"DOTA_Collection_ToggleShuffle_TooltipLabel"		"Karıştıra Ekle/Çıkar"
+
 		"DOTA_SetBundle_Tooltip_HasCommonGem"				"Bir veya daha fazla taş içeren öğeler içerir"
 		"DOTA_SetBundle_Tooltip_HasRareGem"					"Bir veya daha fazla nadir taş içeren öğeler içerir"
 		"DOTA_SetBundle_Tooltip_MarketableToolip"			"Öğe pazarlanabilir"
@@ -38106,6 +38165,15 @@ Bir düşmanı gök taşının altında kıstırmak için bir yetenek veya eşya
 		"DOTA_PlayerBehavior_Restricion_CommType3"						"İletişim puanınız bahşiş vermenizi engellemektedir."
 		"DOTA_PlayerBehavior_Restricion_CommType4"						"İletişim puanınız sohbet etmenizi engellemektedir."
 		"DOTA_PlayerBehavior_Restricion_CommType5"						"İletişim puanınız sesli sohbeti kullanmanızı engellemektedir."
+		"DOTA_PlayerBehavior_Restricion_CommType6"						"İletişim puanınız dostlarınızın yeteneklerini pinglemenizi engellemektedir."
+		"DOTA_PlayerBehavior_Restricion_CommType7"						"Davranış puanınız oyunu duraklatmanızı engellemektedir."
+		"DOTA_PlayerBehavior_Restricion_CommType8"						"İletişim/davranış puanlarınız koçluk yapmanızı engellemektedir."
+		"DOTA_PlayerBehavior_Restricion_CommType9"						"İletişim puanınız dolum süresi olmadan pinglemenizi engellemektedir."
+		"DOTA_PlayerBehavior_Restricion_CommType10"						"Davranış puanınız dereceli eşleştirmeye girmenizi engellemektedir."
+		"DOTA_PlayerBehavior_Restricion_CommType11"						"Davranış puanınız oyun sonrası eşya düşmelerini almanızı engellemektedir."
+		"DOTA_PlayerBehavior_Restricion_CommType12"						"İletişim puanınız Yeni Oyuncu Rehberi olarak görev yapmanızı engellemektedir."
+		
+
 		// End New Behavior Score strings
 
 
