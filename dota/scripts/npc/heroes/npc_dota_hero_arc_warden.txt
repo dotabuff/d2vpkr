@@ -1,0 +1,464 @@
+// Abilities for arc_warden
+"DOTAAbilities"
+{
+    "Version"       "1"
+
+	//=================================================================================================================
+	// Arc Warden: Scepter
+	//=================================================================================================================
+	"arc_warden_scepter"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.15"
+		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_4"
+		"AbilityCastGestureSlot"		"DEFAULT"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"60"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_scepter_cooldown"	"60"
+				"RequiresScepter"			"1"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_scepter_manacost"	"100"
+				"RequiresScepter"			"1"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Arc Warden: Flux
+	//=================================================================================================================
+	"arc_warden_flux"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_ArcWarden.Flux.Target"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"16.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"duration"						
+				{
+					"value"			"6.0"
+					"special_bonus_unique_arc_warden_4"	"+1.5"
+				}
+				
+				"damage_per_second"				
+				{
+					"value"		"15 30 45 60"
+					"special_bonus_unique_arc_warden_2"		"+40"
+				}
+				"tempest_damage_per_second"				
+				{
+					"value"		"20 45 70 95"
+					"special_bonus_unique_arc_warden_2"		"+40"
+				}
+				"search_radius"					"225"
+				"think_interval"				"0.5"
+				"move_speed_slow_pct"				"14 21 28 35"
+				"tempest_move_speed_slow_pct"		"6 10 14 18"
+				"AbilityCastRange"			
+				{
+					"value"				"500 600 700 800"
+					"special_bonus_unique_arc_warden_5"	"+175"
+				}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+
+	//=================================================================================================================
+	// Arc Warden: Magnetic Field
+	//=================================================================================================================
+	"arc_warden_magnetic_field"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_ArcWarden.MagneticField.Cast"
+
+        "HasShardUpgrade"               "1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"			"ACT_DOTA_AW_MAGNETIC_FIELD"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastPoint"				"0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50 70 90 110"
+		
+		// Cast Range
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"900"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"radius"					
+			{
+				"value"		"300"
+				"affected_by_aoe_increase"	"1"	
+			}
+			"duration"					"3.5 4.5 5.5 6.5"
+			"tempest_duration"			"5 6 7 8"
+			"attack_speed_bonus"		
+			{
+				"value" 				"50 60 70 80"
+				"special_bonus_unique_arc_warden_3" 		"+25"
+			}
+			"evasion_chance"			"100"
+			"shard_magic_resist"
+			{
+
+				"value"						"40"
+				"RequiresShard"				"1"
+			}
+			"shard_slow_pct"
+			{
+				"value"						"30"
+				"RequiresShard"				"1"
+			}
+			"attack_range_bonus"				"150"
+			"attack_magic_damage"				
+			{
+				"value"								"20 40 60 80"
+				"special_bonus_unique_arc_warden_3" 		"+25"
+			}
+			"AbilityCooldown"
+			{
+				"value"						"20 19 18 17"
+				"special_bonus_unique_arc_warden_9"		"-8"
+			}
+			"attack_damage_bonus"
+			{
+				"value"								"20 40 60 80"
+				"special_bonus_unique_arc_warden_3" 		"+25"
+			}
+		}
+	}
+		
+	//=================================================================================================================
+	// Arc Warden: Spark Wraith
+	//=================================================================================================================
+	"arc_warden_spark_wraith"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_ArcWarden.SparkWraith.Activate"
+
+		"AbilityCastRange"				"2000"
+		"AbilityCastPoint"				"0.3"
+
+		"HasScepterUpgrade"               "1"
+
+		
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"4.0 4.0 4.0 4.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"80"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"radius"									
+			{
+				"value"			"375"
+				"affected_by_aoe_increase"	"1"	
+			}
+			"spark_damage_base"
+			{
+			
+				"value"									"100 180 260 340"
+				"special_bonus_unique_arc_warden"		"+35%"
+			}
+			"base_activation_delay"							"2.0"
+			"wraith_speed_base"							"400"
+			"duration"									"45"
+			"spark_damage_tempest"
+			{
+			
+				"value"									"75 140 205 270"
+				"special_bonus_unique_arc_warden"		"+35%"
+			}			
+			"tempest_activation_delay"							"1.0"
+			"wraith_speed_tempest"						"725"
+			"think_interval"							"0.2"
+			"wraith_vision_radius"						
+			{
+				"value"			"300"
+				"affected_by_aoe_increase"	"1"	
+			}
+			"wraith_vision_duration"					"3.34"
+			"ministun_duration"							"0.4 0.5 0.6 0.7"
+			"ministun_duration_tempest"					"0.6 0.8 1.0 1.2"
+			"move_speed_slow_pct"						"100"
+			"scepter_activation_delay"
+			{
+				"value"									"2.0"
+				"RequiresScepter"						"1"
+			}
+			"scepter_duration"
+			{
+				"value"									"15"
+				"RequiresScepter"						"1"
+			}				
+			"scepter_radius"
+			{
+				"value"									"225"
+				"RequiresScepter"						"1"
+				"affected_by_aoe_increase"	"1"	
+			}
+			"creep_damage_bonus_pct"					"40"
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+
+	//=================================================================================================================
+	// Arc warden: Tempest Double
+	//=================================================================================================================
+	"arc_warden_tempest_double"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_ArcWarden.TempestDouble"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.15"
+		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_4"
+		"AbilityCastGestureSlot"		"DEFAULT"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"70 60 50"
+		"AbilityCastRange"				"700"
+
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"duration"
+			{
+				"value"				"18 22 26"
+				"special_bonus_unique_arc_warden_6"		"+12"
+			}
+			"bounty"				"180 240 300"
+			"penalty_distance"			
+			{
+				"value"	"2000"
+				"affected_by_aoe_increase"	"1"	
+			}
+			"ignore_penalty_distance"		
+			{
+				"value"						"0"
+				"special_bonus_unique_arc_warden_8"		"+1"
+			}
+			"attack_damage_penalty"				"50"
+			"tempest_double_cooldown_reduction"
+			{
+				"value"							"0"
+				"special_bonus_unique_arc_warden_7"		"+40"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Arc warden: Tempest Recall
+	//=================================================================================================================
+	"arc_warden_tempest_recall"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"FightRecapLevel"				"2"
+		"IsGrantedByScepter"			"1"
+		"AbilitySound"					"Hero_ArcWarden.TempestDouble"
+		"MaxLevel"						"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"50"
+		"AbilityManaCost"				"125"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"restore_pct"			"50"
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_arc_warden"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_arc_warden_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_arc_warden_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_arc_warden_4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+		
+	}
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_arc_warden_5"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_arc_warden_6"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"		
+	}
+		//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_arc_warden_7"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_arc_warden_8"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}	
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_arc_warden_9"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}	
+}

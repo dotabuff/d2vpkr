@@ -1,0 +1,437 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	id = "custom_wearable.invoker.summon_persona_1"
+	name = "#LoadoutSlot_Invoker_ForgeSpirit_Invoker_Kid"
+	directory = "invoker_kid"
+	template_group = "#DOTA_Workshop_SubmissionType_CustomWearable"
+	template_subgroup = "#npc_dota_hero_invoker"
+	models = 
+	[
+		{
+			id = "model_wearable"
+			lod_list = 
+			[
+				{
+					id = "mesh_portrait"
+					name = "#DOTA_Workshop_LOD0Title"
+					desc = "#DOTA_Workshop_LOD0Desc"
+					optional = true
+					max_polygons = 3000
+				},
+				{
+					id = "mesh_world"
+					name = "#DOTA_Workshop_LOD1Title"
+					desc = "#DOTA_Workshop_LOD1Desc"
+					max_polygons = 1800
+				},
+			]
+			material_list = 
+			[
+				{
+					id = "material_wearable"
+					name = "#DOTA_Workshop_Mat0Title"
+					desc = "#DOTA_Workshop_Mat0Desc"
+					template_vmat = "materials/models/heroes/invoker_kid/invoker_trainer_dragon.vmat"
+					material_group_name = "0"
+					s1_legacy_name = "vmt0"
+					max_tex_width = 512
+					max_tex_height = 512
+				},
+			]
+			anim_list =
+			[
+				{
+					id				= "forge_spirit_idle"
+					name			= "#DOTA_Workshop_Animation_Idle"
+					suffix			= "_anim_idle"
+					sequence_name	= "forge_spirit_idle"
+					activity_name	= "ACT_DOTA_IDLE"
+					default			= "scripts/workshop_import_templates/default_content/invoker_kid/dragon_idle.dmx"
+				},
+				{
+					id				= "forge_spirit_attack"
+					name			= "#DOTA_Workshop_Animation_Attack"
+					suffix			= "_anim_attack"
+					sequence_name	= "forge_spirit_attack"
+					activity_name	= "ACT_DOTA_ATTACK"
+					default			= "scripts/workshop_import_templates/default_content/invoker_kid/dragon_attack.dmx"
+				},
+				{
+					id				= "forge_spirit_death"
+					name			= "#DOTA_Workshop_Animation_Death"
+					suffix			= "_anim_death"
+					sequence_name	= "forge_spirit_death"
+					activity_name	= "ACT_DOTA_DIE"
+					default			= "scripts/workshop_import_templates/default_content/invoker_kid/dragon_death.dmx"
+				},
+				{
+					id				= "forge_spirit_spawn"
+					name			= "#DOTA_Workshop_Animation_Spawn"
+					suffix			= "_anim_spawn"
+					sequence_name	= "forge_spirit_spawn"
+					activity_name	= "ACT_DOTA_SPAWN"
+					default			= "scripts/workshop_import_templates/default_content/invoker_kid/dragon_spawn.dmx"
+				},
+				{
+					id				= "forge_spirit_flail"
+					name			= "#DOTA_Workshop_Animation_Flail"
+					suffix			= "_anim_flail"
+					sequence_name	= "forge_spirit_flail"
+					activity_name	= "ACT_DOTA_FLAIL"
+					default			= "scripts/workshop_import_templates/default_content/invoker_kid/dragon_flail.dmx"
+				},
+				{
+					id				= "forge_spirit_stun"
+					name			= "#DOTA_Workshop_Animation_Stun"
+					suffix			= "_anim_stun"
+					sequence_name	= "forge_spirit_stun"
+					activity_name	= "ACT_DOTA_DISABLED"
+					default			= "scripts/workshop_import_templates/default_content/invoker_kid/dragon_stun.dmx"
+				},
+			]
+			anim_bundle_list =
+			[
+				{
+					id						= "run_anims"
+					name					= "#DOTA_Workshop_Animation_Run"
+					bundle_type				= "run_anim_bundle"
+					compound_sequence_name	= "forge_spirit_turns"
+					anim_list =
+					[
+						{
+							id				= "run_anim_base"
+							name			= "#DOTA_Workshop_Animation_Run"
+							desc			= "#DOTA_Workshop_Animation_HeroSummons_Run_Desc"
+							suffix			= "_run"
+							sequence_name	= "forge_spirit_run"
+							activity_name	= "ACT_DOTA_RUN"
+							looping			= true
+							default			= "scripts/workshop_import_templates/default_content/invoker_kid/dragon_fly.dmx"
+							always_use_default_anim = true
+						},
+						{
+							id				= "run_anim_turnpose_center"
+							name			= "#DOTA_Workshop_Animation_TurnPoseCenter"
+							desc			= "#DOTA_Workshop_Animation_TurnPoseCenter_Desc"
+							suffix			= "_turn_center"
+							sequence_name	= "forge_spirit_turn_center"
+							default			= "scripts/workshop_import_templates/default_content/invoker_kid/dragon_turns_center.dmx"
+							always_use_default_anim = true
+						},
+						{
+							id				= "run_anim_turnpose_left"
+							name			= "#DOTA_Workshop_Animation_TurnPoseLeft"
+							desc			= "#DOTA_Workshop_Animation_TurnPoseLeft_Desc"
+							suffix			= "_turn_left"
+							sequence_name	= "forge_spirit_turn_left"
+							default			= "scripts/workshop_import_templates/default_content/invoker_kid/dragon_turns_left.dmx"
+							always_use_default_anim = true
+						},
+						{
+							id				= "run_anim_turnpose_right"
+							name			= "#DOTA_Workshop_Animation_TurnPoseRight"
+							desc			= "#DOTA_Workshop_Animation_TurnPoseRight_Desc"
+							suffix			= "_turn_right"
+							sequence_name	= "forge_spirit_turn_right"
+							default			= "scripts/workshop_import_templates/default_content/invoker_kid/dragon_turns_right.dmx"
+							always_use_default_anim = true
+						},
+					]
+				},
+			]
+			attach_list =
+			[
+				{
+					id				= "attachment_hitlocation"
+					s1_legacy_name	= "attachment0"
+					name			= "#DOTA_Workshop_Attachment_HitLocation"
+					desc			= "#DOTA_Workshop_Attachment_HitLocation_Autofill_Desc"
+					attach_name		= "attach_hitloc"
+					attach_joint	= "spine_2"
+					default_offset 	= [ 0.0, 0.0, 0.0 ]
+					default_rotation= [ 0.0, 30.0, 90.0 ]
+				},
+				{
+					id				= "attachment_attackpoint"
+					s1_legacy_name	= "attachment1"
+					name			= "#DOTA_Workshop_Attachment_AttackPoint"
+					desc			= "#DOTA_Workshop_Attachment_AttackPoint_Autofill_Desc"
+					attach_name		= "attach_attack1"
+					attach_joint	= "head"
+					default_offset 	= [ 0.0, 0.0, 0.0 ]
+					default_rotation= [ 0.0, 60.0, 90.0 ]
+				},
+			]
+			hitbox_list = 
+			[
+				{
+					set_name = "default"
+					box_name = "pelvis"
+					bone_name = "pelvis"
+					min_bounds = [-16.7425, -24.927568, -19.826397]
+					max_bounds = [16.769556, 18.887802, 19.826403]
+				},
+				{
+					set_name = "default"
+					box_name = "spine_0"
+					bone_name = "spine_0"
+					min_bounds = [-15.0, -22.6924, -16.804314]
+					max_bounds = [28.787453, 30.534836, 16.804296]
+				},
+				{
+					set_name = "default"
+					box_name = "spine_2"
+					bone_name = "spine_2"
+					min_bounds = [-14.175461, -25.768017, -15.438934]
+					max_bounds = [15.0, 20.4181, 15.4389]
+				},
+				{
+					set_name = "default"
+					box_name = "arm_upper_R"
+					bone_name = "arm_upper_R"
+					min_bounds = [-15.303787, -5.054598, -4.989113]
+					max_bounds = [1.921654, 4.553493, 3.901665]
+				},
+				{
+					set_name = "default"
+					box_name = "tail_0"
+					bone_name = "tail_0"
+					min_bounds = [-2.568425, -9.317142, -12.62249]
+					max_bounds = [24.569084, 17.187744, 12.62249]
+				},
+				{
+					set_name = "default"
+					box_name = "arm_lower_L"
+					bone_name = "arm_lower_L"
+					min_bounds = [-3.250355, -3.473167, -3.863892]
+					max_bounds = [8.396603, 4.160503, 4.690994]
+				},
+				{
+					set_name = "default"
+					box_name = "arm_lower_R"
+					bone_name = "arm_lower_R"
+					min_bounds = [-8.396603, -4.160515, -4.690994]
+					max_bounds = [3.250347, 3.47316, 3.863876]
+				},
+				{
+					set_name = "default"
+					box_name = "tail_1"
+					bone_name = "tail_1"
+					min_bounds = [-2.208809, -8.01358, -7.620022]
+					max_bounds = [27.942226, 11.86676, 7.620022]
+				},
+				{
+					set_name = "default"
+					box_name = "hand_L"
+					bone_name = "hand_L"
+					min_bounds = [0.531618, -2.458176, -7.149742]
+					max_bounds = [11.726997, 4.037285, 5.557053]
+				},
+				{
+					set_name = "default"
+					box_name = "hand_R"
+					bone_name = "hand_R"
+					min_bounds = [-11.726992, -4.037285, -5.557011]
+					max_bounds = [-0.531628, 2.458176, 7.149765]
+				},
+				{
+					set_name = "default"
+					box_name = "leg_upper_R"
+					bone_name = "leg_upper_R"
+					min_bounds = [-25.0, -9.0, -8.0]
+					max_bounds = [4.0, 8.0, 8.0]
+				},
+				{
+					set_name = "default"
+					box_name = "leg_upper_L"
+					bone_name = "leg_upper_L"
+					min_bounds = [-4.0, -8.0, -8.0]
+					max_bounds = [25.0, 9.0, 8.0]
+				},
+				{
+					set_name = "default"
+					box_name = "tail_2"
+					bone_name = "tail_2"
+					min_bounds = [1.233727, -5.063057, -8.223955]
+					max_bounds = [22.021294, 7.352684, 8.223955]
+				},
+				{
+					set_name = "default"
+					box_name = "leg_lower_R"
+					bone_name = "leg_lower_R"
+					min_bounds = [-22.0, -10.0, -6.0]
+					max_bounds = [0.0, 6.0, 9.0]
+				},
+				{
+					set_name = "default"
+					box_name = "leg_lower_L"
+					bone_name = "leg_lower_L"
+					min_bounds = [0.0, -6.0, -9.0]
+					max_bounds = [22.0, 10.0, 6.0]
+				},
+				{
+					set_name = "default"
+					box_name = "tail_3"
+					bone_name = "tail_3"
+					min_bounds = [-1.0, -4.81579, -9.33298]
+					max_bounds = [28.284876, 9.189023, 9.332979]
+				},
+				{
+					set_name = "default"
+					box_name = "head"
+					bone_name = "head"
+					min_bounds = [-25.0, -36.986198, -27.8757]
+					max_bounds = [27.068176, 55.942986, 27.875696]
+				},
+				{
+					set_name = "default"
+					box_name = "wing_0_L"
+					bone_name = "wing_0_L"
+					min_bounds = [-3.617737, -4.864334, -4.929329]
+					max_bounds = [15.0, 18.2766, 4.59719]
+				},
+				{
+					set_name = "default"
+					box_name = "wing_0_R"
+					bone_name = "wing_0_R"
+					min_bounds = [-21.788589, -18.27663, -4.597168]
+					max_bounds = [3.617744, 4.8643, 4.929344]
+				},
+				{
+					set_name = "default"
+					box_name = "ankle_R"
+					bone_name = "ankle_R"
+					min_bounds = [-12.0, -8.0, -5.0]
+					max_bounds = [1.0, 5.0, 6.0]
+				},
+				{
+					set_name = "default"
+					box_name = "ankle_L"
+					bone_name = "ankle_L"
+					min_bounds = [-1.0, -5.0, -6.0]
+					max_bounds = [12.0, 8.0, 5.0]
+				},
+				{
+					set_name = "default"
+					box_name = "tail_4"
+					bone_name = "tail_4"
+					min_bounds = [0.65535, -1.647427, -4.764064]
+					max_bounds = [18.109497, 1.234932, 4.764065]
+				},
+				{
+					set_name = "default"
+					box_name = "wing_1_L"
+					bone_name = "wing_1_L"
+					min_bounds = [-5.0, -10.5, -4.0]
+					max_bounds = [38.0, 10.0, 3.0]
+				},
+				{
+					set_name = "default"
+					box_name = "wing_1_R"
+					bone_name = "wing_1_R"
+					min_bounds = [-38.0, -10.0, 0.3]
+					max_bounds = [5.0, 10.5, 4.0]
+				},
+				{
+					set_name = "default"
+					box_name = "ball_R"
+					bone_name = "ball_R"
+					min_bounds = [-24.0, -6.0, -9.0]
+					max_bounds = [0.0, 10.0, 11.0]
+				},
+				{
+					set_name = "default"
+					box_name = "ball_L"
+					bone_name = "ball_L"
+					min_bounds = [0.0, -10.0, -11.0]
+					max_bounds = [24.0, 6.0, 9.0]
+				},
+				{
+					set_name = "default"
+					box_name = "arm_upper_L"
+					bone_name = "arm_upper_L"
+					min_bounds = [-1.921661, -4.553492, -3.901672]
+					max_bounds = [15.303802, 5.054602, 4.989113]
+				},
+				{
+					set_name = "head"
+					box_name = "head1"
+					bone_name = "head"
+					min_bounds = [-25.0, -36.986198, -27.8757]
+					max_bounds = [27.068176, 55.942986, 27.875696]
+				},
+				{
+					set_name = "hands"
+					box_name = "hand_L1"
+					bone_name = "hand_L"
+					min_bounds = [0.531618, -2.458176, -7.149742]
+					max_bounds = [11.726997, 4.037285, 5.557053]
+				},
+				{
+					set_name = "hands"
+					box_name = "hand_R1"
+					bone_name = "hand_R"
+					min_bounds = [-11.726992, -4.037285, -5.557011]
+					max_bounds = [-0.531628, 2.458176, 7.149765]
+				},
+				{
+					set_name = "feet"
+					box_name = "ball_R1"
+					bone_name = "ball_R"
+					min_bounds = [-24.0, -6.0, -9.0]
+					max_bounds = [0.0, 10.0, 11.0]
+				},
+				{
+					set_name = "feet"
+					box_name = "ball_L1"
+					bone_name = "ball_L"
+					min_bounds = [0.0, -10.0, -11.0]
+					max_bounds = [24.0, 6.0, 9.0]
+				},
+				{
+					set_name = "select_high"
+					box_name = "pelvis1"
+					bone_name = "pelvis"
+					min_bounds = [-60.0, -30.0, -30.0]
+					max_bounds = [104.348, 30.0, 30.0]
+				},
+				{
+					set_name = "select_low"
+					box_name = "pelvis2"
+					bone_name = "pelvis"
+					min_bounds = [-60.0, -110.0, -70.0]
+					max_bounds = [113.556999, 110.0, 70.0]
+				},
+			]
+			s1_legacy_name = "model0"
+			preview_offset = [ 0.0, 0.0, 0.0 ]
+		},
+	]
+	item_defs = 
+	[
+		{
+			hero_name = "npc_dota_hero_invoker"
+			loadout_slot = "summon_persona_1"
+			prefab_type = "wearable"
+			localization_prefix = "InvokerKid_"
+			localization_suffix = "_ForgeSpirit"
+			item_type_name = "summon_persona_1"
+			//model_player_expr = "$(model_wearable:vmdl_name)"
+			//has_portrait = true
+			visuals =
+			[
+				{
+					type = "hero_model_change"
+					asset_expr = "models/heroes/invoker_kid/invoker_kid_trainer_dragon.vmdl"
+					modifier_expr = "$(model_wearable:vmdl_name)"
+				}
+			]
+		},
+	]
+	workshop_tags = 
+	[
+		"Wearable",
+		"Invoker",
+		"summon_persona_1",
+	]
+}

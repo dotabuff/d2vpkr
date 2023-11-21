@@ -1,0 +1,429 @@
+// Abilities for death_prophet
+"DOTAAbilities"
+{
+    "Version"       "1"
+	
+	//=================================================================================================================
+	// Death Prophet: Carrion Swarm ( Crypt Swarm )
+	//=================================================================================================================
+	"death_prophet_carrion_swarm"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_DeathProphet.CarrionSwarm"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.2"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"9 8 7 6"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"85 165 245 325"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"80 90 100 110"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"start_radius"				
+			{
+				"value"			"110"
+				"affected_by_aoe_increase"	"1"
+			}
+			"end_radius"				
+			{
+				"value"			"300"
+				"affected_by_aoe_increase"	"1"
+			}
+			"range"						"810 810 810 810"
+			"speed"						"1100 1100 1100 1100"
+			"slow_percent"
+			{
+				"value"				"0"
+				"special_bonus_unique_death_prophet_crypt_swarm_slow"	"-50"
+			}
+			"slow_duration"
+			{
+				"value"				"0"
+				"special_bonus_unique_death_prophet_crypt_swarm_slow"	"+1"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	
+	//=================================================================================================================
+	// Death Prophet: Silence
+	//=================================================================================================================
+	"death_prophet_silence"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Hero_DeathProphet.Silence"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"900"
+		"AbilityCastPoint"				"0.2"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"15 14 13 12"
+		"AbilityDuration"				"3 4 5 6"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"80 90 100 110"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"radius"					
+			{
+				"value"	"450"
+				"affected_by_aoe_increase"	"1"
+			}
+			"duration"					"3.0 4.0 5.0 6.0"
+			"projectile_speed"					"1200"
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}	
+	
+	//=================================================================================================================
+	// Death Prophet: Witchcraft 
+	//=================================================================================================================
+	"death_prophet_witchcraft"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movement_speed"	"5 10 15 20"
+			}			
+			"02"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"carrion_swarm_mana_cost_adjust"	"-10 -15 -20 -25"
+			}
+			"03"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"carrion_swarm_cooldown_adjust"		"-1.0 -2.0 -3.0 -4.0"
+			}
+			"04"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"silence_mana_cost_adjust"			"-10 -15 -20 -25"
+			}
+			"05"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"silence_cooldown_adjust"			"-1.0 -2.0 -3.0 -4.0"
+			}
+			"06"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"exorcism_1_extra_spirits"			"3 4 5 6"
+			}
+			"07"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"exorcism_2_extra_spirits"			"3 4 5 6"
+			}
+			"08"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"exorcism_3_extra_spirits"			"3 4 5 6"
+			}
+		}
+	}
+	 
+	//=================================================================================================================
+	// Death Prophet: Spirit Siphon
+	//=================================================================================================================
+	"death_prophet_spirit_siphon"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_DeathProphet.SpiritSiphon.Cast"
+
+        "HasShardUpgrade"               "1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"			"ACT_DOTA_DP_SPIRIT_SIPHON"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"
+		"AbilityCharges"				"1 2 3 4"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"80"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"damage"					
+				{
+					"value"				"25 50 75 100"
+					"special_bonus_unique_death_prophet_3"	"+30"
+				}
+
+				"damage_pct"				"0"
+				"haunt_duration"				"6"
+				"siphon_buffer"			"250"
+				"AbilityChargeRestoreTime"		
+				{
+					"value"					"38"
+					"special_bonus_unique_death_prophet_5" "-22"
+				}
+				"shard_bonus_charges"			
+				{
+					"value"	"1"
+					"RequiresShard"				"1"
+				}
+				"shard_fear_duration"			
+				{
+					"value"		"1.2"
+					"RequiresShard"				"1"
+				}
+				"shard_consecutive_siphon_duration"			
+				{
+					"value"		"3"
+					"RequiresShard"				"1"
+				}
+		}
+	}
+	
+	//=================================================================================================================
+	// Death Prophet: Exorcism
+	//=================================================================================================================
+	"death_prophet_exorcism"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_DeathProphet.Exorcism.Cast"
+        "HasScepterUpgrade"			"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.5 0.5 0.5"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"150.0"
+		"AbilityDuration"				"40"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"200 300 400"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"radius"				
+				{
+					"value"	"700 700 700"
+					"affected_by_aoe_increase"	"1"
+				}
+				"spirits"				
+				{
+					"value"					"8 16 24"
+					"LinkedSpecialBonus"	"special_bonus_unique_death_prophet"
+				}
+				"spirit_speed"			"525"
+				"max_distance"			"2000 2000 2000"
+				"give_up_distance"		"1200 1200 1200"
+				"min_damage"			"62"
+				"max_damage"			"67"
+				"heal_percent"			"25"
+				"average_damage"		"64"
+				"ghost_spawn_rate"	"0.35"
+				"scepter_movespeed_slow"
+				{
+					"value"				"100"
+					"RequiresScepter"			"1"
+				}
+				"scepter_movespeed_debuff_duration"	
+				{
+					"value"				"0.3"
+					"RequiresScepter"			"1"
+				}
+				"scepter_spirit_life_duration"	
+				{
+					"value"				"20"
+					"RequiresScepter"			"1"
+				}
+				"scepter_spirit_bonus_damage"	
+				{	
+					"value"					"50"
+					"RequiresScepter"			"1"
+					"CalculateSpellDamageTooltip"	"0"
+				}	
+				"movement_base"					"12 16 20"
+				"movement_bonus"				"8 12 16"
+		}
+	}	
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_death_prophet"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"8"
+				"ad_linked_abilities"			"death_prophet_exorcism"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_death_prophet_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"				"2.5"
+				"ad_linked_abilities"			"death_prophet_carrion_swarm"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_death_prophet_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+	}
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_death_prophet_4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"				"-25"
+				"ad_linked_abilities"			"death_prophet_spirit_siphon"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_death_prophet_5"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"				"22.0"
+				"ad_linked_abilities"			"death_prophet_spirit_siphon"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_death_prophet_crypt_swarm_slow"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ad_linked_abilities"			"death_prophet_carrion_swarm"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+		"BaseClass"						"special_bonus_base"
+	}
+}
