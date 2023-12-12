@@ -8,7 +8,8 @@ require_relative "./vdf"
 DOTA = File.expand_path(ENV["DOTA"] || "~/Steam/steamapps/common/dota 2 beta/game")
 TEMP = File.expand_path(ENV["TEMP"] || "/tmp/paks")
 
-CONVERT_TO_JSON = %w[
+CONVERT_TO_JSON = []
+CONVERT_TO_JSON_OLD = %w[
   dota/resource/{items,dota}_*.txt
   dota/resource/localization/{abilities,dota,items}_*.txt
   dota/scripts/items/items_game.txt
