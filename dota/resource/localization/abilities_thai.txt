@@ -36,7 +36,9 @@
 		"dota_ability_variable_cooldown_reduction"	"ลดคูลดาวน์"		// $cooldown_reduction 
 		"dota_ability_variable_max_mana_percentage"	"เพิ่มมานาสูงสุด"			// $max_mana_percentage
 		"dota_ability_variable_slow_resistance"		"ความต้านทานลดความเร็ว"			// $slow_resistance
-"dota_ability_variable_damage_int_hero"	"พลังโจมตี (ฮีโร่ Intelligence)"
+		"dota_ability_variable_aoe_bonus"			"เพิ่มพื้นที่"					// $aoe_bonus
+
+		"dota_ability_variable_damage_int_hero"	"พลังโจมตี (ฮีโร่ Intelligence)"
 		"dota_ability_variable_damage_agi_hero"	"พลังโจมตี (ฮีโร่ Agility)"
 		"dota_ability_variable_damage_str_hero"	"พลังโจมตี (ฮีโร่ Strength)"
 
@@ -587,6 +589,7 @@
 		"DOTA_Tooltip_ability_windrunner_powershot_Note0"								"Powershot จะทำลายต้นไม้ที่อยู่ในพื้นที่ๆสกิลส่งผล"
 		"DOTA_Tooltip_ability_windrunner_powershot_arrow_range"							"ระยะทาง:"
 		"DOTA_Tooltip_ability_windrunner_powershot_powershot_damage"					"ความเสียหาย:"
+		"DOTA_Tooltip_ability_windrunner_powershot_slow"								"%ช้าลง:"
 		"DOTA_Tooltip_ability_windrunner_powershot_damage_reduction"					"%ลดความเสียหายต่อยูนิต:"
 		
 		"DOTA_Tooltip_ability_windrunner_shackleshot"									"Shackleshot"
@@ -620,6 +623,9 @@
 		"DOTA_Tooltip_modifier_windrunner_windrun_charge_counter_Description"	"ได้รับจาก Aghanim's Scepter"
 		"DOTA_Tooltip_modifier_windrunner_gale_force"			"Gale Force"
 		"DOTA_Tooltip_modifier_windrunner_gale_force_Description"			"ถูกเพพัดโดยพลังแห่งลม"
+		"DOTA_Tooltip_modifier_windrunner_powershot_slow"					"Powershot"
+		"DOTA_Tooltip_modifier_windrunner_powershot_slow_Description"					"ความเร็วในการเคลื่อนที่ลดลง %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
+
 		"DOTA_Tooltip_ability_windrunner_gale_force"				"Gale Force"
 		"DOTA_Tooltip_ability_windrunner_gale_force_Lore"				"ในที่สุด Lyralei ก็ได้เรียนรู้วิธีการเรียกใช้พลังแห่งสิทธิโดยกำเนิดที่แท้จริงของเธอ"
 		"DOTA_Tooltip_ability_windrunner_gale_force_Description"	"คลิกและลากกำหนดทิศทาง - อัญเชิญสายลมพัดกระโชก ผลักศัตรูทั้งหมดในพื้นที่ไปในทิศทางเป้าหมาย"
@@ -708,7 +714,9 @@
 		"DOTA_Tooltip_ability_vengefulspirit_nether_swap_Note1"							"ต้นไม้ที่อยู่ใกล้ Vengeful Spirit และเป้าหมายจะถูกทำลายเมื่อร่ายมนตร์"
 		"DOTA_Tooltip_ability_vengefulspirit_nether_swap_Note2"							"สกิลยืนร่ายถูกขัดขวางด้วย Nether Swap ได้"
 		"DOTA_Tooltip_ability_vengefulspirit_nether_swap_abilitycastrange"					"ระยะร่าย:"
-//"DOTA_Tooltip_ability_vengefulspirit_nether_swap_scepter_radius"		"SCEPTER FEAR RADIUS:"
+		//"DOTA_Tooltip_ability_vengefulspirit_nether_swap_damage_reduction"					"%DAMAGE REDUCTION:"
+		"DOTA_Tooltip_ability_vengefulspirit_nether_swap_damage_reduction_duration"			"ระยะเวลาโล่ป้องกัน:"
+		//"DOTA_Tooltip_ability_vengefulspirit_nether_swap_scepter_radius"		"SCEPTER FEAR RADIUS:"
 		//"DOTA_Tooltip_ability_vengefulspirit_nether_swap_scepter_duration"		"SCEPTER FEAR DURATION:"
 		
 		
@@ -724,6 +732,7 @@
 		"DOTA_Tooltip_modifier_vengefulspirit_wave_of_terror_buff"				"Wave of Terror"
 		"DOTA_Tooltip_modifier_vengefulspirit_wave_of_terror_buff_Description"	"ได้ขโมยพลังโจมตีพื้นฐานศัตรู"
 		"DOTA_Tooltip_modifier_vengefulspirit_nether_swap_damage_reduction"				"Nether Swap"
+		"DOTA_Tooltip_modifier_vengefulspirit_nether_swap_damage_reduction_Description"	"ดูดซับความเสียหาย"
 		//WITCHDOCTOR
 		"DOTA_Tooltip_ability_witch_doctor_paralyzing_cask"								"Paralyzing Cask"
 		"DOTA_Tooltip_ability_witch_doctor_paralyzing_cask_Description"					"ปล่อยกล่องที่บรรจุด้วยผงที่ทำให้เป็นอัมพาตซึ่งจะกระดอน ระหว่างยูนิตศัตรู สตันและสร้างความเสียหายในแต่ละครั้งที่โดน การชิ่งแต่ละครั้งจะสร้างความเสียหายเพิ่มมากขึ้น สร้างความเสียหายแก่ครีป %creep_damage_pct%%%"
@@ -736,9 +745,12 @@
 		"DOTA_Tooltip_ability_witch_doctor_paralyzing_cask_bounce_bonus_damage"			"เพิ่มความเสียหายต่อการชิ่ง:"
 
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration"							"Voodoo Restoration"
+		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_Description"				"Witch Doctor ใช้พลังเวทของเขาฟื้นฟูพลังชีวิตของยูนิตใกล้เคียง Witch Doctor สูญเสียมานาทุกวินาทีเมื่อเปิดใช้งาน Voodoo Restoration"
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_Lore"						"คาถาวูดูของ Zharvakko ไม่ได้มีไว้ใช้แค่สาปคนอื่นเพียงอย่างเดียว แต่เอามาใช้รักษาโรคได้ค่อนข้างดีเช่นกัน"
+		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_Note0"					"การรักษาจะทำงานทุก ๆ %heal_interval% วินาที"
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_Note1"					"สามารถรักษาพลังชีวิตให้กับยูนิตที่ป้องกันเวทโดยสมบูรณ์ได้"
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_mana_per_second"			"มานาต่อวินาที:"
+		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_heal"						"รักษา:"
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_radius"					"รัศมี:"
 		"DOTA_Tooltip_ability_witch_doctor_maledict"									"Maledict"
 		"DOTA_Tooltip_ability_witch_doctor_maledict_Description"						"สาปฮีโร่ศัตรูทั้งหมดในพื้นที่ขนาดเล็ก ทำให้พวกเขาได้รับความเสียหายต่อวินาที นอกจากนี้ความเสียหายทุก ๆ 4 วินาทีจะขึ้นอยู่กับพลังชีวิตที่หายไปของพวกเขา นับตั้งแต่ตอนที่ถูกสาป"
@@ -764,6 +776,7 @@
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_switcheroo_attack_speed_reduction"	    			"ลดความเร็วในการโจมตี:"
 
 		"DOTA_Tooltip_modifier_voodoo_restoration_heal"					"Voodoo Restoration"
+		"DOTA_Tooltip_modifier_voodoo_restoration_heal_Description"		"Witch Doctor กำลังรักษาคุณอยู่!"
 		"DOTA_Tooltip_modifier_maledict"								"Maledict"
 		"DOTA_Tooltip_modifier_maledict_Description"					"โดนสาป ได้รับความเสียหายในระยะเวลาหนึ่ง และความเสียหายจะเพิ่มขึ้นเมื่อครบทุกๆ 4 วินาทีขึ้นอยู่กับจำนวนพลังชีวิตที่เสียไปตั้งแต่เริ่มคำสาป"
 
@@ -788,6 +801,7 @@
 		"DOTA_Tooltip_ability_leshrac_lightning_storm_Lore"								"ความสามารถในการควบคุมธาตุของ The Tormented Soul แสดงออกมาในรูปของพายุมหึมาที่สยบศัตรูลงตรงหน้าเขา"
 		"DOTA_Tooltip_ability_leshrac_lightning_storm_damage"						"ความเสียหาย:"
 		"DOTA_Tooltip_ability_leshrac_lightning_storm_jump_count"						"จำนวนสายฟ้า:"
+		"DOTA_Tooltip_ability_leshrac_lightning_storm_attackspeed_slow"			        "โจมตีช้าลง:"
 		"DOTA_Tooltip_ability_leshrac_lightning_storm_slow_duration"					"ระยะเวลาที่ช้าลง:"
 		"DOTA_Tooltip_ability_leshrac_lightning_storm_radius"							"รัศมีสายฟ้าชิ่ง:"
 		"DOTA_Tooltip_ability_leshrac_greater_lightning_storm"							"Nihilism"
@@ -1307,6 +1321,9 @@
 		"DOTA_Tooltip_ability_skeleton_king_reincarnation_scepter_attack_speed"			"เพิ่มความเร็วในการโจมตี:"
 		"DOTA_Tooltip_ability_skeleton_king_reincarnation_scepter_move_speed_pct"		"%เพิ่มความเร็วในการเคลื่อนที่:"
 		"DOTA_Tooltip_ability_skeleton_king_reincarnation_scepter_respawn_pct"			"%ลดเวลาเกิดใหม่:"
+		"DOTA_Tooltip_ability_skeleton_king_reincarnation_AbilityCooldown"				"คูลดาวน์:"
+		
+		
 		"DOTA_Tooltip_modifier_skeleton_king_hellfire_blast"				"Wraithfire Blast"
 		"DOTA_Tooltip_modifier_skeleton_king_hellfire_blast_Description"	"เคลื่อนที่ช้าลง %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% และได้รับความเสียหายต่อเนื่อง"
 		"DOTA_Tooltip_modifier_skeleton_king_vampiric_aura_buff"				"Vampiric Aura"
@@ -1610,6 +1627,7 @@
 		"DOTA_Tooltip_ability_axe_culling_blade_Lore"									"Mogul Khan เป็นดั่งการรวมกันของการต่อสู้และความรุนแรง ใครก็ตามที่กล้าต่อสู้กับ Axe มีแต่จะตายอย่างน่าสยดสยอง"
 		"DOTA_Tooltip_ability_axe_culling_blade_damage"									"ความเสียหาย:"
 		"DOTA_Tooltip_ability_axe_culling_blade_speed_bonus"							"%เพิ่มความเร็วจากการสังหาร:"
+		"DOTA_Tooltip_ability_axe_culling_blade_armor_bonus"							"เพิ่มเกราะป้องกัน:"
 		"DOTA_Tooltip_ability_axe_culling_blade_speed_aoe"								"รัศมีในการเพิ่มความเร็วเมื่อสังหาร:"
 		"DOTA_Tooltip_ability_axe_culling_blade_speed_duration"							"ระยะเวลาที่เพิ่มความเร็วจากการสังหาร:"
 		"DOTA_Tooltip_ability_axe_culling_blade_armor_per_stack"						"เพิ่มเกราะป้องกันต่อการสังหาร:"
@@ -4190,7 +4208,9 @@
 		"DOTA_Tooltip_ability_chen_penitence_self_attack_range_bonus"		"เพิ่มระยะการโจมตีให้ตนเอง:"
 		"DOTA_Tooltip_ability_chen_divine_favor"							"Divine Favor"
 		"DOTA_Tooltip_ability_chen_divine_favor_Lore"						"ความคลั่งศรัทธาของ Chen ลุกลามดั่งเชื้อ ให้เป็นพรแก่พันธมิตรของเขาด้วยพลังชีวิตและบีบบังคับให้พวกมันมาอยู่ข้างเดียวกับเขา"
+		"DOTA_Tooltip_ability_chen_divine_favor_bonus_armor"					"เกราะป้องกัน:"
 		"DOTA_Tooltip_ability_chen_divine_favor_heal_rate"					"อัตราการฟื้นฟูต่อวินาที:"
+		"DOTA_Tooltip_ability_chen_divine_favor_teleport_delay"					"ระยะเวลา:"
 		"DOTA_Tooltip_ability_chen_test_of_faith"							"Test of Faith"
 		"DOTA_Tooltip_ability_chen_test_of_faith_Description"				"สร้างความเสียหายแบบสุ่มตามพลังศรัทธาของศัตรู รักษาพลังชีวิตเป็นจำนวนสุ่มแก่เพื่อนร่วมทีม หากร่ายใส่ตนเองจะมีผลเป็นจำนวนสูงสุดเสมอ"
 		"DOTA_Tooltip_ability_chen_test_of_faith_Lore"						"อัศวินแห่ง Fold ครอบครองรูปแบบอันบ้าคลั่งของเวทมนตร์ที่ถูกกล่าวขานว่าใช้ยากมากโดยผู้ใช้มนต์ลี้ลับคนอื่นๆ"
@@ -10456,6 +10476,7 @@
 		"DOTA_Tooltip_Ability_item_blight_stone"			"Blight Stone"
 		"DOTA_Tooltip_Ability_item_dragon_lance"				"Dragon Lance"
 		"DOTA_Tooltip_Ability_item_aether_lens"				"Aether Lens"
+		"DOTA_Tooltip_Ability_item_aetherial_halo"			"Aetherial Hammer"
 		"DOTA_Tooltip_Ability_item_halo"					"Halo"
 		"DOTA_Tooltip_Ability_item_serenity_charm"			"Serenity Charm"
 		"DOTA_Tooltip_Ability_item_claymore"				"Claymore"
@@ -10584,6 +10605,7 @@
 		"DOTA_Tooltip_Ability_item_quelling_blade"			"Quelling Blade"
 		"DOTA_Tooltip_Ability_item_radiance"				"Radiance"
 		"DOTA_Tooltip_Ability_item_rapier"				"Divine Rapier"
+		"DOTA_Tooltip_Ability_item_caster_rapier"				"Caster Rapier"
 		"DOTA_Tooltip_Ability_item_reaver"				"Reaver"
 		"DOTA_Tooltip_Ability_item_refresher"				"Refresher Orb"
 		"DOTA_Tooltip_Ability_item_aegis"			"Aegis of the Immortal"
@@ -10635,6 +10657,7 @@
 		"DOTA_Tooltip_Ability_item_ultimate_scepter_roshan"			"Aghanim's Blessing - Roshan"
 		"DOTA_Tooltip_Ability_item_recipe_ultimate_scepter_2"			"ใบผสม Aghanim's Blessing"
 		"DOTA_Tooltip_Ability_item_aghanims_shard"			"Aghanim's Shard"
+		"DOTA_Tooltip_Ability_item_aghanims_shard_roshan"			"Aghanim's Shard - ไอเท็มกดใช้"
 		"DOTA_Tooltip_Ability_item_aghanims_shard_2"			"Aghanim's Shard ที่ถูกใช้"
 		"DOTA_Tooltip_Ability_item_recipe_aghanims_shard"			"ใบผสม Aghanim's Shard"
 		"DOTA_Tooltip_Ability_item_recipe_aghanims_shard_2"			"ใบผสม Aghanim's Shard ที่ถูกใช้"
@@ -10666,6 +10689,7 @@
 		"DOTA_Tooltip_Ability_item_wraith_pact"					"Wraith Pact"
 		"DOTA_Tooltip_Ability_item_recipe_wraith_pact"			"ใบผสม Wraith Pact"
 		"DOTA_Tooltip_Ability_item_void_stone"				"Void Stone"
+		"DOTA_Tooltip_Ability_item_tiara_of_selemene"		"Tiara of Selemene"
 		"DOTA_Tooltip_Ability_item_ward_observer"			"Observer Ward"
 		"DOTA_Tooltip_Ability_item_ward_sentry"			"Sentry Ward"
 		"DOTA_Tooltip_Ability_item_wraith_band"			"Wraith Band"
@@ -10679,6 +10703,7 @@
 		"DOTA_Tooltip_Ability_item_smoke_of_deceit"			"Smoke of Deceit"
 		"DOTA_Tooltip_Ability_item_veil_of_discord"			"Veil of Discord"
 		"DOTA_Tooltip_Ability_item_revenants_brooch"			"Revenant's Brooch"
+		"DOTA_Tooltip_Ability_item_devastator"				"Parasma"
 		"DOTA_Tooltip_Ability_item_ring_of_aquila"			"Ring of Aquila"
 		"DOTA_Tooltip_Ability_item_shadow_amulet"			"Shadow Amulet"
 		"DOTA_Tooltip_Ability_item_river_painter"			"ขวดแม่น้ำ: โครเมียม"
@@ -10818,6 +10843,7 @@
 		"DOTA_Tooltip_Ability_item_witches_switch"				"Witches Switch"
 		"DOTA_Tooltip_Ability_item_harpoon"						"Harpoon"
 		"DOTA_Tooltip_Ability_item_phylactery"						"Phylactery"
+		"DOTA_Tooltip_Ability_item_angels_demise"				"Khanda"
 		"DOTA_Tooltip_Ability_item_diadem"							"Diadem"
 		"DOTA_Tooltip_Ability_item_defiant_shell"						"Defiant Shell"
 		"DOTA_Tooltip_Ability_item_blood_grenade"						"Blood Grenade"
@@ -10825,8 +10851,14 @@
 		"DOTA_Tooltip_ability_item_blighted_spirit"						"Blighted Spirit"
 		"DOTA_Tooltip_ability_item_turtle_shell"						"Turtle Shell"
 		"DOTA_Tooltip_ability_item_duelist_gloves"						"Duelist Gloves"
+		"DOTA_Tooltip_ability_item_ancient_guardian"					"Ancient Guardian"
 		"DOTA_Tooltip_ability_item_horizons_equilibrium"				"Horizon's Equilibrium"
 		"DOTA_Tooltip_ability_item_dandelion_amulet"					"Dandelion Amulet"
+		"DOTA_Tooltip_ability_item_safety_bubble"						"Safety Bubble"
+		"DOTA_Tooltip_ability_item_whisper_of_the_dread"				"Whisper of the Dread"
+		"DOTA_Tooltip_ability_item_nemesis_curse"						"Nemesis Curse"
+		"DOTA_Tooltip_ability_item_avianas_feather"						"Aviana's Feather"
+		"DOTA_Tooltip_ability_item_unwavering_condition"				"Unwavering Condition"
 		"DOTA_Tooltip_ability_item_vindicators_axe"						"Vindicator's Axe"
 		"DOTA_Tooltip_ability_item_martyrs_plate"						"Martyr's Plate"
 		"DOTA_Tooltip_ability_item_cornucopia"						"Cornucopia"
@@ -10837,7 +10869,15 @@
 		"DOTA_Tooltip_ability_item_tier5_token"						"เหรียญระดับ 5"
 		"DOTA_Tooltip_ability_item_pavise"							"Pavise"
 		"DOTA_Tooltip_ability_item_gossamer_cape"					"Gossamer Cape"
-// Recipes
+		//7.35
+		"DOTA_Tooltip_ability_item_light_collector"				"Light Collector"
+		"DOTA_Tooltip_ability_item_rattlecage"					"Rattlecage"
+		"DOTA_Tooltip_ability_item_doubloon"					"Doubloon"
+		"DOTA_Tooltip_ability_item_roshans_banner"					"Roshan's Banner"
+
+
+		
+		// Recipes
 		"DOTA_Tooltip_Ability_item_recipe_aeon_disk"			"ใบผสม Aeon Disk"
 		"DOTA_Tooltip_Ability_item_recipe_bracer"					"ใบผสม Bracer"
 		"DOTA_Tooltip_Ability_item_recipe_wind_waker"					"ใบผสม Wind Waker"
@@ -10883,6 +10923,7 @@
 		"DOTA_Tooltip_Ability_item_recipe_serenity_charm"			"ใบผสม Serenity Charm"
 		"DOTA_Tooltip_Ability_item_recipe_veil_of_discord"			"ใบผสม Veil of Discord"
 		"DOTA_Tooltip_Ability_item_recipe_revenants_brooch"			"ใบผสม Revenant's Brooch"
+		"DOTA_Tooltip_Ability_item_recipe_devastator"				"ใบผสม Parasma"
 		"DOTA_Tooltip_Ability_item_recipe_buckler"					"ใบผสม Buckler"
 		"DOTA_Tooltip_Ability_item_recipe_dragon_lance"				"ใบผสม Dragon Lance"
 		"DOTA_Tooltip_Ability_item_recipe_lesser_crit"				"ใบผสม Crystalys"
@@ -11678,6 +11719,7 @@
 		"DOTA_Tooltip_ability_item_bloodstone_Description"						"<h1>เรียกใช้: Bloodpact</h1> เพิ่มอัตราสกิลดูดพลังชีวิตของ Bloodstone เป็น %lifesteal_multiplier% เท่าและแปลงความเสียหายที่สร้างทั้งหมดเป็นมานา มีผล %buff_duration% วินาที"
 		"DOTA_Tooltip_ability_item_bloodstone_Lore"								"แสงสว่างสีทับทิมสุกสกาวจาก Bloodstone แม้อยู่ในสนามรบก็ไม่สามารถทำให้มีตำหนิได้ เฉกเช่นเดียวกับเจ้าของซึ่งดูจะมีพลังกายและพลังใจอันไร้ขีดจำกัด"
 		"DOTA_Tooltip_ability_item_bloodstone_Note0"							"เมื่อใช้ Bloodpact คุณจะติดดีบัฟ \"หมดพลัง\" เป็นเวลา 40 วินาที ทำให้ไม่สามารถรับประโยชน์จาก Bloodpact ได้อีกในช่วงเวลาดังกล่าว"
+		"DOTA_Tooltip_ability_item_bloodstone_bonus_aoe"						"+$aoe_bonus"
 		"DOTA_Tooltip_ability_item_bloodstone_bonus_health"						"+$health"
 		"DOTA_Tooltip_ability_item_bloodstone_bonus_mana"						"+$mana"
 		"DOTA_Tooltip_ability_item_bloodstone_spell_lifesteal"					"%+$spell_lifesteal"
@@ -11736,6 +11778,7 @@
 		"DOTA_Tooltip_ability_item_butterfly_Lore"								"เฉพาะนักรบที่แข็งแกร่งและมากประสบการณ์ที่สุดเท่านั้นที่สามารถใช้ Butterfly ได้ โดยอาวุธนี้จะเพิ่มความคล่องแคล่วในการต่อสู้อย่างยิ่งยวด"
 		"DOTA_Tooltip_ability_item_butterfly_bonus_agility"						"+$agi"
 		"DOTA_Tooltip_ability_item_butterfly_bonus_evasion"						"%+$evasion"
+		"DOTA_Tooltip_ability_item_butterfly_bonus_attack_speed_pct"				"%+$attack_pct"		
 		"DOTA_Tooltip_ability_item_butterfly_bonus_damage"				"+$damage"		
 		
 		
@@ -11896,6 +11939,19 @@
 		"DOTA_Tooltip_ability_item_aether_lens_bonus_mana_regen"                "+$mana_regen"
 		"DOTA_Tooltip_ability_item_aether_lens_cast_range_bonus"                "+$cast_range"	                     
 		"DOTA_Tooltip_ability_item_aether_lens_Lore"                            "ขัดเกลาด้วยมนตร์จากลมหายใจสุดท้ายของเขา ของขวัญจากที่นักเวทที่กำลังสิ้นลมหายใจมอบให้แก่บุตรชายของเขา"
+
+		"DOTA_Tooltip_ability_item_aetherial_halo_lore"                   "ค้อนที่ถูกเสริมด้วยมนต์ซึ่งหลอมมาจากโลหะที่ค้นพบในซากปรักหักพัง ของหมู่บ้านที่ถูกทำลายโดยพายุดาวฤกษ์อันยิ่งใหญ่"		
+		"DOTA_Tooltip_ability_item_aetherial_halo_bonus_aoe"						"+$aoe_bonus"	
+		"DOTA_Tooltip_ability_item_aetherial_halo_bonus_strength"						"+$str"	
+		"DOTA_Tooltip_ability_item_aetherial_halo_bonus_agility"						"+$agi"	
+		"DOTA_Tooltip_ability_item_aetherial_halo_bonus_intellect"					"+$int"
+		"DOTA_Tooltip_ability_item_aetherial_halo_spell_amp"						"%+เพิ่มความเสียหายสกิล"
+		"DOTA_Tooltip_ability_item_aetherial_halo_mana_regen_multiplier"				"%+เพิ่มอัตราฟื้นฟูมานา"
+		"DOTA_Tooltip_ability_item_aetherial_halo_spell_lifesteal_amp"				"%+เพิ่มอัตราสกิลดูดพลังชีวิต"
+
+		
+
+
 
 		"DOTA_Tooltip_ability_item_serenity_charm_Description"                     "<h1>ติดตัว: Aethereal Focus</h1> เพิ่มระยะร่ายสกิลและไอเท็ม %cast_range_bonus% หน่วย \n<h1>ติดตัว: Protection Charm</h1> หากคุณไม่ได้รับความเสียหายในช่วง %cooldown% วินาทีที่ผ่านมาจะสร้างโล่รอบตัวคุณ ซึ่งป้องกันความเสียหายครั้งถัดไป %damage_block% หน่วยและเพิ่มระยะร่ายของคุณอีก %cast_range_bonus_extra% หน่วย"
 		"DOTA_Tooltip_ability_item_serenity_charm_Note0"                           "ไม่ทับซ้อนกับแหล่งเพิ่มระยะร่ายอื่น ๆ"
@@ -12093,6 +12149,18 @@
 		"DOTA_Tooltip_modifier_item_phylactery_slow"						"Phylactery"
 		"DOTA_Tooltip_modifier_item_phylactery_slow_Description"			"เคลื่อนที่ช้าลง %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
 
+		"DOTA_Tooltip_ability_item_angels_demise_Note0" 							"Critical Strike จะไม่ทำงานเมื่อโจมตีสิ่งก่อสร้าง"
+		"DOTA_Tooltip_Ability_item_angels_demise_bonus_damage"					"+$damage"
+		"DOTA_Tooltip_Ability_item_angels_demise_bonus_health"					"+$health"
+		"DOTA_Tooltip_Ability_item_angels_demise_bonus_mana"					"+$mana"
+		"DOTA_Tooltip_ability_item_angels_demise_bonus_all_stats"				"+$all"
+		"DOTA_Tooltip_ability_item_angels_demise_bonus_mana_regen"				"+$mana_regen"
+		"DOTA_Tooltip_modifier_item_angels_demise_slow_Description"			"เคลื่อนที่ช้าลง %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
+
+
+
+		
+		
 		"DOTA_Tooltip_ability_item_dust_Description"							"<h1>ใช้: Reveal</h1>สร้างพื้นที่ซึ่งเปิดเผยและลดความเร็วยูนิตล่องหน %movespeed%%% เป็นรัศมี %radius% หน่วยจากตำแหน่งที่ผู้ร่ายยืนอยู่ ยูนิตล่องหนที่ถูกเปิดเผยด้วย Dust จะได้รับความเสียหาย %damage% หน่วย พื้นที่มีผล %duration% วินาที<br><br> ดีบัฟมีผลค้างต่อศัตรูเพิ่มอีก %linger_duration% วินาทีหลังออกจากพื้นที่"
 		"DOTA_Tooltip_ability_item_dust_Note0"									"สร้างดีบัฟต่อยูนิตศัตรูที่อยู่ในพื้นที่ซึ่งจะเปิดเผยพวกมันหากล่องหน"
 		//"DOTA_Tooltip_ability_item_dust_duration"								"DURATION:"
@@ -12115,6 +12183,10 @@
 		"DOTA_Tooltip_ability_item_ethereal_blade_Note1"						"ยูนิตที่อยู่ในสถานะ Ethereal จะได้รับความเสียหายเวทมนตร์เพิ่มขึ้น %ethereal_damage_bonus%%%"
 		"DOTA_Tooltip_ability_item_ethereal_blade_Note2"						"สำหรับฮีโร่ Universal ค่าสถานะหลักจะเท่ากับ 60%% ของผลรวมค่าสถานะทั้งหมด"
 		"DOTA_Tooltip_ability_item_ethereal_blade_Note3"						"การใช้ Town Portal Scroll หรือ Boots of Travel จะไม่ทำให้หลุดจากร่าง Ethereal"
+		"DOTA_Tooltip_ability_item_ethereal_blade_bonus_agility"				"+$all"
+		"DOTA_Tooltip_ability_item_ethereal_blade_bonus_mana"                      "+$mana"
+		"DOTA_Tooltip_ability_item_ethereal_blade_bonus_mana_regen"                "+$mana_regen"
+		"DOTA_Tooltip_ability_item_ethereal_blade_bonus_cast_range"                "+$cast_range"	 
 		//"DOTA_Tooltip_ability_item_ethereal_blade_spell_amp"					"%+Spell Amplification"
 		//"DOTA_Tooltip_ability_item_ethereal_blade_spell_lifesteal_amp"			"%+Spell Lifesteal Amplification"
 				
@@ -12241,6 +12313,10 @@
 		"DOTA_Tooltip_ability_item_eternal_shroud_bonus_spell_resist"		"%+$spell_resist"
 		"DOTA_Tooltip_ability_item_eternal_shroud_bonus_strength"				"+$str"
 		"DOTA_Tooltip_ability_item_eternal_shroud_bonus_armor"				"+$armor"
+		"DOTA_Tooltip_ability_item_eternal_shroud_bonus_health"		"+$health"
+
+
+
 		"DOTA_Tooltip_modifier_item_eternal_shroud_aura"				"Shroud Aura"
 		"DOTA_Tooltip_modifier_item_eternal_shroud_aura_Description"				"เพิ่มอัตราฟื้นฟูมานาและอัตราสกิลดูดพลังชีวิต"
 
@@ -12349,6 +12425,12 @@
 		"DOTA_Tooltip_ability_item_tier5_token_Description"					"กดใช้เพื่อแลกไอเท็มครีปป่าระดับ 5 ไอเท็มครีปป่าที่ได้จะไม่สามารถแบ่งปันได้ และฮีโร่สามารถแลกได้ระดับละหนึ่งเหรียญเท่านั้น"
 
 		"DOTA_Tooltip_ability_item_spark_of_courage_Description"					"<h1>ติดตัว: Courage</h1> มอบพลังโจมตี %damage% หน่วยหากฮีโร่มีพลังชีวิตมากกว่า %health_pct%%% และมอบเกราะป้องกัน %armor% หน่วยหากพลังชีวิตต่ำกว่าค่าดังกล่าว"
+		"DOTA_Tooltip_ability_item_safety_bubble_bonus_hp"					"+$hp_regen"
+		"DOTA_Tooltip_ability_item_whisper_of_the_dread_bonus_mana"		"+$mana"
+		"DOTA_Tooltip_ability_item_nemesis_curse_bonus_damage"					"+$damage"
+		"DOTA_Tooltip_ability_item_avianas_feather_evasion"					"%+$evasion"
+		"DOTA_Tooltip_ability_item_avianas_feather_move_speed"				"+$move_speed"
+		"DOTA_Tooltip_ability_item_unwavering_condition_magic_resist"				"%+$spell_resist"
 		"DOTA_Tooltip_ability_item_dandelion_amulet_Description"					"<h1>ติดตัว: Magical Damage Block</h1> บล็อกความเสียหายเวทมนตร์สูงสุด %magic_block% หน่วยจากความเสียหายที่มากกว่า %min_damage% หน่วย ในทุก %AbilityCooldown% วินาที"
 		"DOTA_Tooltip_ability_item_dandelion_amulet_mana"							"+$mana"
 		"DOTA_Tooltip_ability_item_dandelion_amulet_move_speed"						"+$move_speed"
@@ -12362,6 +12444,7 @@
 		"DOTA_Tooltip_ability_item_turtle_shell_armor"								"เพิ่มเกราะป้องกัน:"
 		"DOTA_Tooltip_ability_item_duelist_gloves_Description"						"<h1>ติดตัว: Boldness</h1> มอบความเร็วในการโจมตี %bonus_attack_speed% หน่วยตราบใดที่มีฮีโร่ศัตรูในระยะ %radius% หน่วย"
 		"DOTA_Tooltip_ability_item_duelist_gloves_bonus_damage"						"+$damage"
+		"DOTA_Tooltip_ability_item_ancient_guardian_bonus_damage"						"+$damage"
 		"DOTA_Tooltip_ability_item_vindicators_axe_Description"						"<h1>ติดตัว: Vengeance</h1> มอบพลังโจมตี %bonus_damage% หน่วยหากฮีโร่ที่สวมใส่ถูกใบ้ และมอบเกราะป้องกัน %bonus_armor% หน่วยหากฮีโร่ที่สวมใส่ถูกสตัน"
 		"DOTA_Tooltip_ability_item_vindicators_axe_bonus_attack_speed"				"+$attack"
 		"DOTA_Tooltip_ability_item_vindicators_axe_bonus_slow_resist"				"%+$slow_resistance"
