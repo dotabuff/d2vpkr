@@ -14,7 +14,8 @@
 		"dota_ability_variable_all"					"alle attributter"			// $all
 		"dota_ability_variable_primary_attribute"	"primært attributt"			// $primary_attribute
 		"dota_ability_variable_attack"				"angrepshastighet"				// $attack
-"dota_ability_variable_hp_regen"			"helseregenerasjon"		// $hp_regen
+		"dota_ability_variable_attack_pct"			"grunnleggende angrepshastighet"	// $attack_pct
+		"dota_ability_variable_hp_regen"			"helseregenerasjon"		// $hp_regen
 		"dota_ability_variable_lifesteal"			"helseran"					// $lifesteal
 		"dota_ability_variable_mana_regen"			"manaregenerasjon"			// $mana_regen
 		"dota_ability_variable_mana_regen_aura"		"manaregenerasjonsaura"	// $mana_regen_aura
@@ -36,7 +37,9 @@
 		"dota_ability_variable_cooldown_reduction"	"nedkjølingsreduksjon"		// $cooldown_reduction 
 		"dota_ability_variable_max_mana_percentage"	"ekstra maks mana"			// $max_mana_percentage
 		"dota_ability_variable_slow_resistance"		"hemmingsresistens"			// $slow_resistance
-"dota_ability_variable_damage_int_hero"	"skade (intelligenshelter)"
+		"dota_ability_variable_aoe_bonus"			"ekstra virkeområde"					// $aoe_bonus
+
+		"dota_ability_variable_damage_int_hero"	"skade (intelligenshelter)"
 		"dota_ability_variable_damage_agi_hero"	"skade (smidighetshelter)"
 		"dota_ability_variable_damage_str_hero"	"skade (styrkehelter)"
 
@@ -579,6 +582,8 @@
 		"DOTA_Tooltip_ability_windrunner_powershot_Note0"								"Powershot ødelegger trær innenfor virkeområdet."
 		"DOTA_Tooltip_ability_windrunner_powershot_arrow_range"							"REKKEVIDDE:"
 		"DOTA_Tooltip_ability_windrunner_powershot_powershot_damage"					"SKADE:"
+		"DOTA_Tooltip_ability_windrunner_powershot_slow"								"%HEMMING:"
+		"DOTA_Tooltip_ability_windrunner_powershot_slow_duration"					"HEMMINGSVARIGHET:"
 		"DOTA_Tooltip_ability_windrunner_powershot_damage_reduction"					"%REDUKSJON PER ENHET:"
 		
 		"DOTA_Tooltip_ability_windrunner_shackleshot"									"Shackleshot"
@@ -705,7 +710,10 @@
 		"DOTA_Tooltip_ability_vengefulspirit_nether_swap_Note1"							"Trær nær Vengeful Spirit og målet vil ødelegges når formelen kastes."
 		"DOTA_Tooltip_ability_vengefulspirit_nether_swap_Note2"							"Kanalisering av formler avbrytes av Nether Swap."
 		"DOTA_Tooltip_ability_vengefulspirit_nether_swap_abilitycastrange"					"BRUKSREKKEVIDDE:"
-//"DOTA_Tooltip_ability_vengefulspirit_nether_swap_scepter_radius"		"SCEPTER FEAR RADIUS:"
+		//"DOTA_Tooltip_ability_vengefulspirit_nether_swap_damage_reduction"					"%DAMAGE REDUCTION:"
+		"DOTA_Tooltip_ability_vengefulspirit_nether_swap_damage_reduction_duration"			"SKJOLDVARIGHET:"
+		"DOTA_Tooltip_ability_vengefulspirit_nether_swap_damage"			"SKADE/SKJOLD:"
+		//"DOTA_Tooltip_ability_vengefulspirit_nether_swap_scepter_radius"		"SCEPTER FEAR RADIUS:"
 		//"DOTA_Tooltip_ability_vengefulspirit_nether_swap_scepter_duration"		"SCEPTER FEAR DURATION:"
 		
 		
@@ -737,6 +745,7 @@
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_Lore"						"Zharvakkos hokuspokus er ikke begrenset til å forhekse motstandere, og er utmerket til å kurere plager."
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_Note1"					"Kan helbrede formelimmune enheter."
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_mana_per_second"			"MANA PER SEKUND:"
+		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_heal"						"HELBREDELSE:"
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_radius"					"RADIUS:"
 		"DOTA_Tooltip_ability_witch_doctor_maledict"									"Maledict"
 		"DOTA_Tooltip_ability_witch_doctor_maledict_Description"						"Forbanner alle fiendtlige helter innenfor et lite område, som gjør at de tar en viss mengde skade hvert sekund, samt skadeutbrudd hvert 4. sekund basert på hvor mye helse de har mistet siden forbannelsen begynte."
@@ -787,6 +796,8 @@
 		"DOTA_Tooltip_ability_leshrac_lightning_storm_Lore"								"Leshracs mestring av elementene åpenbarer seg i tordenværet som slår ned hærstyrkene foran ham."
 		"DOTA_Tooltip_ability_leshrac_lightning_storm_damage"						"SKADE:"
 		"DOTA_Tooltip_ability_leshrac_lightning_storm_jump_count"						"LYNNEDSLAG:"
+		"DOTA_Tooltip_ability_leshrac_lightning_storm_movespeed_slow"			        "%BEVEGELSESHEMMING:"
+		"DOTA_Tooltip_ability_leshrac_lightning_storm_attackspeed_slow"			        "ANGREPSHEMMING:"
 		"DOTA_Tooltip_ability_leshrac_lightning_storm_slow_duration"					"HEMMINGSVARIGHET:"
 		"DOTA_Tooltip_ability_leshrac_lightning_storm_radius"							"SPREDNINGSRADIUS:"
 		"DOTA_Tooltip_ability_leshrac_greater_lightning_storm"							"Nihilism"
@@ -821,6 +832,7 @@
 		"DOTA_Tooltip_ability_juggernaut_blade_fury_Note0"								"Du kan bruke gjenstander under Blade Fury."
 		"DOTA_Tooltip_ability_juggernaut_blade_fury_Note1"								"Juggernaut kan fremdeles utføre angrep under Blade Fury. Men kun enheter som ikke påvirkes av Blade Fury, slik som varder eller bygninger, tar skade fra disse angrepene."
 		"DOTA_Tooltip_ability_juggernaut_blade_fury_blade_fury_radius"					"RADIUS:"
+		"DOTA_Tooltip_ability_juggernaut_blade_fury_blade_fury_damage_per_tick"					"SKADE PER TIKK:"
 		"DOTA_Tooltip_ability_juggernaut_blade_fury_duration"					"VARIGHET:"
 		"DOTA_Tooltip_ability_juggernaut_blade_fury_shard_bonus_move_speed"			"EKSTRA BEVEGELSESHASTIGHET:"
 		"DOTA_Tooltip_ability_juggernaut_blade_fury_shard_attack_rate"			"ANGREPSFREKVENS:"
@@ -946,6 +958,7 @@
 		"DOTA_Tooltip_ability_bane_brain_sap_Description"								"Sluker de vitale energiene til en fiendtlig enhet, helbreder Bane og gjør skade."
 		"DOTA_Tooltip_ability_bane_brain_sap_brain_sap_damage"							"HELBREDELSE/SKADE:"
 		"DOTA_Tooltip_ability_bane_brain_sap_Lore"										"Atropos føler ingen større glede enn når han høster frykten han skaper."
+		"DOTA_Tooltip_ability_bane_brain_sap_shard_description"							"Reduserer nedkjølingen med %bonus_AbilityCooldown%. Gjør at Brain Sap får et virkeområde på %shard_radius%. Sekundære mål helbredes bare for %shard_secondary_target_heal_pct% %%."
 		"DOTA_Tooltip_ability_bane_nightmare"											"Nightmare"
 		"DOTA_Tooltip_ability_bane_nightmare_abilitydraft_note"							"Helter som velger Nightmare, kan fortsatt angripe enheter påvirket av evnen. Bane kan også angripe selv om han ikke valgte denne evnen."
 		"DOTA_Tooltip_ability_bane_nightmare_Description"								"Får en valgt fiendtlig eller alliert helt til å sovne. Sovende enheter vekkes når de tar skade. Hvis enheten ble angrepet direkte, går Nightmare-effekten over på den angripende enheten. Bane kan fritt angripe og skade mål påvirket av Nightmare med ekstra angrepshastighet."
@@ -1306,6 +1319,9 @@
 		"DOTA_Tooltip_ability_skeleton_king_reincarnation_scepter_attack_speed"			"EKSTRA ANGREPSHASTIGHET:"
 		"DOTA_Tooltip_ability_skeleton_king_reincarnation_scepter_move_speed_pct"		"%EKSTRA BEVEGELSESHASTIGHET:"
 		"DOTA_Tooltip_ability_skeleton_king_reincarnation_scepter_respawn_pct"			"%REDUSERT GJENOPPLIVINGSTID:"
+		"DOTA_Tooltip_ability_skeleton_king_reincarnation_AbilityCooldown"				"NEDKJØLING:"
+		
+		
 		"DOTA_Tooltip_modifier_skeleton_king_hellfire_blast"				"Wraithfire Blast"
 		"DOTA_Tooltip_modifier_skeleton_king_hellfire_blast_Description"	"Bevegelseshastighet hemmet med %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %% og tar skade over tid."
 		"DOTA_Tooltip_modifier_skeleton_king_vampiric_aura_buff"				"Vampiric Aura"
@@ -2625,6 +2641,7 @@
 		"DOTA_Tooltip_ability_enigma_midnight_pulse_Note0"								"Denne evnen ødelegger trær i området."
 		"DOTA_Tooltip_ability_enigma_midnight_pulse_Note1"								"Flere forekomster av Midnight Pulse stables ikke."
 		"DOTA_Tooltip_ability_enigma_midnight_pulse_duration"							"VARIGHET:"
+		"DOTA_Tooltip_ability_enigma_midnight_pulse_damage_percent"						"%GJELDENDE HELSE SOM SKADE:"
 		"DOTA_Tooltip_ability_enigma_midnight_pulse_radius"								"RADIUS:"
 		"DOTA_Tooltip_ability_enigma_black_hole"										"Black Hole"
 		"DOTA_Tooltip_ability_enigma_black_hole_Description"							"KANALISERT – Tilkaller en malstrøm som suger inn fiendtlige enheter i nærheten. Fiender påvirket av Black Hole kan ikke bevege seg, angripe eller bruke formler."
@@ -3129,6 +3146,8 @@
 		"DOTA_Tooltip_ability_death_prophet_silence_Note0"								"Forhindrer ikke bruk av gjenstander."
 		"DOTA_Tooltip_ability_death_prophet_silence_radius"								"RADIUS:"
 		"DOTA_Tooltip_ability_death_prophet_silence_duration"							"VARIGHET:"
+		"DOTA_Tooltip_ability_death_prophet_silence_movement_slow"							"%BEVEGELSESHEMMING:"
+
 		"DOTA_Tooltip_ability_death_prophet_spirit_siphon"								"Spirit Siphon"
 		"DOTA_Tooltip_ability_death_prophet_spirit_siphon_Description"					"Oppretter en åndelenke mellom Death Prophet og en fiendtlig enhet som tapper helse fra fienden."
         "DOTA_Tooltip_ability_death_prophet_spirit_siphon_shard_description"		    "Øker ladninger av Spirit Siphon med %shard_bonus_charges% og setter frykt i fiender i %shard_fear_duration% sekunder hvis de utsettes for Spirit Siphon i %shard_consecutive_siphon_duration% sammenhengende sekunder."
@@ -3305,6 +3324,7 @@
 		"DOTA_Tooltip_ability_viper_poison_attack_shard_bonus_max_stacks"			"EKSTRA MAKS STABLER:"
 		"DOTA_Tooltip_ability_viper_nethertoxin"										"Nethertoxin"
 		"DOTA_Tooltip_ability_viper_nethertoxin_Lore"									"Gift fra underjorden gjør om sår til utmattelse, og utmattelse til døden."
+		"DOTA_Tooltip_ability_viper_nethertoxin_attack_slow"							"ANGREPSHEMMING:"
 		"DOTA_Tooltip_ability_viper_nethertoxin_min_damage"								"MIN. SKADE PER SEKUND:"
 		"DOTA_Tooltip_ability_viper_nethertoxin_max_damage"								"MAKS SKADE PER SEKUND:"
 		"DOTA_Tooltip_ability_viper_nethertoxin_max_duration"							"VARIGHET MED MAKS SKADE:"
@@ -3876,6 +3896,7 @@
 		"DOTA_Tooltip_ability_broodmother_spin_web_Note0"								"Påvirker også Spiderlings og Spiderites."
 		"DOTA_Tooltip_ability_broodmother_spin_web_Note1"								"Gir full bevegelsesbonus ved 100 % helse og 0 % bevegelsesbonus ved 1 helse."
 		"DOTA_Tooltip_ability_broodmother_spin_web_count"								"MAKS SAMTIDIGE SPINDELVEV:"
+		"DOTA_Tooltip_ability_broodmother_spin_web_health_regen"						"HELSEREGENERASJON:"
 		"DOTA_Tooltip_ability_broodmother_spin_web_bonus_movespeed"						"%MAKS EKSTRA BEVEGELSESHASTIGHET:"
 		"DOTA_Tooltip_ability_broodmother_spin_web_max_charges"						    "MAKS SPINDELVEVLADNINGER:"
 		"DOTA_Tooltip_ability_broodmother_spin_web_charge_restore_time"					"GRUNNLEGGENDE LADETID:"		
@@ -4194,7 +4215,10 @@
 		"DOTA_Tooltip_ability_chen_penitence_self_attack_range_bonus"		"EGEN EKSTRA ANGREPSREKKEVIDDE:"
 		"DOTA_Tooltip_ability_chen_divine_favor"							"Divine Favor"
 		"DOTA_Tooltip_ability_chen_divine_favor_Lore"						"Chens nidkjærhet er smittende. Den skjenker hans allierte livskraft og overbeviser dem om å stå ved hans side."
+		"DOTA_Tooltip_ability_chen_divine_favor_bonus_armor"					"RUSTNING:"
 		"DOTA_Tooltip_ability_chen_divine_favor_heal_rate"					"REGENERASJON:"
+		"DOTA_Tooltip_ability_chen_divine_favor_teleport_delay"					"VARIGHET:"
+		"DOTA_Tooltip_ability_chen_divine_favor_heal_amp"					"%HELBREDELSESSTYRKELSE:"
 		"DOTA_Tooltip_ability_chen_test_of_faith"							"Test of Faith"
 		"DOTA_Tooltip_ability_chen_test_of_faith_Description"				"Gjør tilfeldig skade for å teste troen til en fiendtlig enhet. Helbreder en tilfeldig mengde på allierte enheter. Gir alltid maks effekt når den brukes på deg selv."
 		"DOTA_Tooltip_ability_chen_test_of_faith_Lore"						"Menighetens riddere innehar en fanatisk form for magi som regnes for å være uhåndterlig av de fleste andre brukere av de mystiske kunster."
@@ -4253,6 +4277,8 @@
 		"DOTA_Tooltip_modifier_chen_divine_favor"	"Divine Favor"
 		"DOTA_Tooltip_modifier_chen_divine_favor_Description"	"Får %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% helseregenerasjon."
 		"DOTA_Tooltip_modifier_chen_divine_favor_armor_buff"			"Divine Favor – rustning"
+		"DOTA_Tooltip_modifier_chen_divine_favor_armor_buff_Description"			"Rustning økt med %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%, og innkommende helbredelse økt med %dMODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE_TARGET% %%."
+
 		//SPECTRE
 		"DOTA_Tooltip_ability_spectre_spectral_dagger"						"Spectral Dagger"
 		"DOTA_Tooltip_ability_spectre_spectral_dagger_Description"			"Spectre kaster en dolk som tegner en skyggesti og gjør skade. Stien hemmer bevegelseshastigheten til fiender langs veien. Enheter som treffes av dolken, legger også en skyggesti etter seg. Når Spectre følger stien, kan hun bevege seg gjennom ellers ufremkommelig terreng. Spectral Dagger påfører Desolate på mål som ikke har allierte enheter innenfor en radius på 400 rundt seg."
@@ -4512,6 +4538,9 @@
 		"DOTA_Tooltip_ability_gyrocopter_call_down"									"Call Down"
 		"DOTA_Tooltip_ability_gyrocopter_call_down_Lore"							"«Bomber slippes!»"
 		"DOTA_Tooltip_ability_gyrocopter_call_down_Note0"							"Den visuelle indikatoren er kun synlig for allierte."
+		"DOTA_Tooltip_ability_gyrocopter_call_down_damage"					"RAKETTSKADE:"
+		"DOTA_Tooltip_ability_gyrocopter_call_down_slow"						"%RAKETTHEMMING:"
+		"DOTA_Tooltip_ability_gyrocopter_call_down_slow_duration"						"HEMMINGSVARIGHET:"
 		"DOTA_Tooltip_ability_gyrocopter_call_down_radius"							"RADIUS:"
 		
 		
@@ -6277,6 +6306,7 @@
 		"DOTA_Tooltip_ability_wisp_tether_tether_heal_amp"						"%OVERFØRT HELSE/MANA:"
 		"DOTA_Tooltip_ability_wisp_tether_slow"									"%BEVEGELSES-/ANGREPSHEMMING (FIENDE):"
 		"DOTA_Tooltip_ability_wisp_tether_break"								"Break Tether"
+		"DOTA_Tooltip_ability_wisp_tether_damage"								"SKADE PER SEKUND:"
 		"DOTA_Tooltip_ability_wisp_tether_break_Description"					"Bryter forbindelsen med den forbundne enheten."
 		
 
@@ -6656,6 +6686,7 @@
 		"DOTA_Tooltip_ability_magnataur_empower_bonus_damage_pct"				"%BONUSSKADE:"
 		"DOTA_Tooltip_ability_magnataur_empower_cleave_damage_pct"				"%KLØYVESKADE:"
 		"DOTA_Tooltip_ability_magnataur_skewer"									"Skewer"
+		"DOTA_Tooltip_ability_magnataur_skewer_Description"						"Magnus styrter fremover og stanger fiendtlige enheter med sitt enorme horn. Helter som treffes på veien, slepes med til destinasjonen, tar deretter skade og påvirkes av hemmet bevegelse og angrepshastighet. Skaden økes basert på reiseavstand."
 		"DOTA_Tooltip_ability_magnataur_skewer_Lore"							"Hornet til et storhorn måles i forhold til hvor farlige de er for håpefulle kjøpmenn."
 		"DOTA_Tooltip_ability_magnataur_skewer_range"							"DISTANSE:"
 		"DOTA_Tooltip_ability_magnataur_skewer_skewer_speed"					"HASTIGHET:"
@@ -6904,6 +6935,7 @@
 		"DOTA_Tooltip_ability_tusk_walrus_punch_Lore"					"Hvem som slår først har ingen betydning. Det er hvem som slår sist som teller."
 		"DOTA_Tooltip_ability_tusk_walrus_punch_Note0"					"Walrus PUNCH har fulltreff."
 		"DOTA_Tooltip_ability_tusk_walrus_punch_crit_multiplier"		"%KRITISK SKADE:"
+		"DOTA_Tooltip_ability_tusk_walrus_punch_bonus_damage"			"EKSTRA SKADE:"
 		"DOTA_Tooltip_ability_tusk_walrus_punch_air_time"				"TID I LUFTEN:"
 		"DOTA_Tooltip_ability_tusk_walrus_punch_slow_duration"			"HEMMINGSVARIGHET:"
 		"DOTA_Tooltip_ability_tusk_walrus_punch_move_slow"			"%BEVEGELSESHEMMING:"
@@ -7047,6 +7079,7 @@
 		"DOTA_Tooltip_modifier_abaddon_frostmourne_debuff"				"Curse of Avernus"
 		"DOTA_Tooltip_modifier_abaddon_frostmourne_debuff_bonus"				"Curse of Avernus"
 		"DOTA_Tooltip_modifier_abaddon_frostmourne_debuff_Description"	"Hemmet med %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %%."
+		"DOTA_Tooltip_modifier_abaddon_frostmourne_debuff_bonus_Description"	"Tar skade, stilnet og hemmet med %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %%. Alle angripende enheter får ekstra angrepshastighet."
 		"DOTA_Tooltip_modifier_abaddon_frostmourne_buff"				"Curse of Avernus"
 		"DOTA_Tooltip_modifier_abaddon_frostmourne_buff_Description"	"Får %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% ekstra angrepshastighet."
 		"DOTA_Tooltip_modifier_abaddon_borrowed_time_immolate_damage"	"Borrowed Time – brann"
@@ -9329,6 +9362,7 @@
 		"DOTA_Tooltip_modifier_stacking_exp_rate_boost"					"Erfaringsbonus"
 		"DOTA_Tooltip_modifier_stacking_exp_rate_boost_Description"		"Får +%dMODIFIER_PROPERTY_TOOLTIP% %% ekstra erfaring."
 		"DOTA_Tooltip_ability_special_bonus_20_bash_2"			"+{s:value2} % {s:value} s Bash"
+		"DOTA_Tooltip_ability_special_bonus_20_crit_2"			"+{s:crit_chance} % kritisk treff ({s:crit_multiplier} %)"
 		"DOTA_Tooltip_ability_special_bonus_24_crit_2"			"+{s:crit_chance} % kritisk treff ({s:crit_multiplier} %)"
 		"DOTA_Tooltip_ability_special_bonus_30_crit_2"			"+{s:crit_chance} % kritisk treff ({s:crit_multiplier} %)"
 		"DOTA_Tooltip_ability_special_bonus_20_crit_15"			"+{s:crit_chance} % kritisk treff ({s:crit_multiplier} %)"
@@ -9393,6 +9427,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_centaur_6"		"Stampede: +{s:value} % skadereduksjon"
 		"DOTA_Tooltip_ability_special_bonus_unique_centaur_7"		"Stampede: +{s:value} s varighet"
 		"DOTA_Tooltip_ability_special_bonus_unique_witch_doctor_1""Death Ward: +{s:value} angrepsrekkevidde"
+		"DOTA_Tooltip_ability_special_bonus_unique_witch_doctor_2""Voodoo Restoration: +{s:value} % maks helse som helbredelse"
 		"DOTA_Tooltip_ability_special_bonus_unique_witch_doctor_3""Paralyzing Cask: +{s:bonus_bounces} hopp"
 		"DOTA_Tooltip_ability_special_bonus_unique_witch_doctor_4""Voodoo Restoration: -{s:value2} % mana per sekund"
 		"DOTA_Tooltip_ability_special_bonus_unique_witch_doctor_5""Death Ward: +{s:value} skade"
@@ -9414,6 +9449,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_queen_of_pain_5_Description"	 	"Fiender skadet av Sonic Wave tvinges til å løpe fra Queen of Pain i {s:value} sekunder."
 		"DOTA_Tooltip_ability_special_bonus_unique_queen_of_pain_6"	"Blink: -{s:value} s nedkjøling"
 		"DOTA_Tooltip_ability_special_bonus_unique_queen_of_pain_7"	"Sonic Wave: +{s:bonus_damage} skade"
+		"DOTA_Tooltip_ability_special_bonus_unique_queen_of_pain_strike_heal"		"Shadow Strike: +{s:bonus_duration_heal} helbredelse per tikk"
 		"DOTA_Tooltip_ability_special_bonus_unique_antimage"	"Blink: -{s:bonus_AbilityCooldown} s nedkjøling"
 		"DOTA_Tooltip_ability_special_bonus_unique_antimage_2"	"Mana Void: -{s:bonus_AbilityCooldown} s nedkjøling"
 		"DOTA_Tooltip_ability_special_bonus_unique_antimage_3"	"Blink: +{s:bonus_AbilityCastRange} bruksrekkevidde"
@@ -9425,6 +9461,8 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_antimage_8"	"Mana Void: +{s:bonus_mana_void_ministun} s lammelsesvarighet"
 		"DOTA_Tooltip_ability_special_bonus_unique_antimage_manavoid_aoe"		"Mana Void: +{s:bonus_mana_void_aoe_radius} radius"
 		"DOTA_Tooltip_ability_special_bonus_unique_mirana_1"		"Leap: +{s:bonus_leap_speedbonus_as} angrepshastighet"
+		"DOTA_Tooltip_ability_special_bonus_unique_mirana_2"		"Sacred Arrows: +{s:bonus_extra_arrows} skudd"
+		"DOTA_Tooltip_ability_special_bonus_unique_mirana_2_Description"	"De ekstra pilene avfyres i en kjegleform, {s:bonus_extra_arrows_angle} grader til venstre og høyre for den opprinnelige pilen, og kan ikke treffe det samme målet."
 		"DOTA_Tooltip_ability_special_bonus_unique_mirana_3"		"Sacred Arrow: -{s:value} s nedkjøling"
 		"DOTA_Tooltip_ability_special_bonus_unique_mirana_4"		"Moonlight Shadow: -{s:value} s nedkjøling"
 		"DOTA_Tooltip_ability_special_bonus_unique_mirana_5"		"Moonlight Shadow gir +{s:value} % unnvikelse"
@@ -9433,12 +9471,14 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_mirana_7"		"Starstorm: +{s:bonus_damage} skade"
 		"DOTA_Tooltip_ability_special_bonus_unique_bounty_hunter"	"Jinada: +{s:bonus_gold_steal} gullran"
 		"DOTA_Tooltip_ability_special_bonus_unique_bounty_hunter_2"	"Shuriken Toss: +{s:bonus_bonus_damage} skade"
+		"DOTA_Tooltip_ability_special_bonus_unique_bounty_hunter_3"	"Track: +{s:bonus_bonus_gold} gull"
 		"DOTA_Tooltip_ability_special_bonus_unique_bounty_hunter_4"	"Jinada: +{s:bonus_bonus_damage} skade"
 		"DOTA_Tooltip_ability_special_bonus_unique_bounty_hunter_5"	"Shuriken Toss: +{s:bonus_slow_duration} s hemming"
 		"DOTA_Tooltip_ability_special_bonus_unique_bounty_hunter_6"	"Track: Halv bonushastighet til allierte"
 		"DOTA_Tooltip_ability_special_bonus_unique_bounty_hunter_7"	"Shuriken Toss: {s:value} ladninger"
 		"DOTA_Tooltip_ability_special_bonus_unique_bounty_hunter_8"	"Track gir delt sikt"
 		"DOTA_Tooltip_ability_special_bonus_unique_bounty_hunter_9"	"Shadow Walk: -{s:bonus_damage_reduction_pct} % skade tatt"
+		"DOTA_Tooltip_ability_special_bonus_unique_bounty_hunter_jinada_no_cooldown"			"Ingen nedkjøling på Jinada"
 		"DOTA_Tooltip_ability_special_bonus_unique_underlord"	"Pit of Malice: +{s:bonus_ensnare_duration} s rotfeste"
 		"DOTA_Tooltip_ability_special_bonus_unique_underlord_2"	"Firestorm: +{s:value} bølgeskade"
 		"DOTA_Tooltip_ability_special_bonus_unique_underlord_3"	"Atrophy Aura: +{s:bonus_damage_reduction_pct} % skadereduksjon"
@@ -9504,13 +9544,16 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_lich_6"	"Frost Blast: +{s:bonus_radius} radius og skade"
 		"DOTA_Tooltip_ability_special_bonus_unique_lich_7"	"Chain Frost ved dødsfall"
 		"DOTA_Tooltip_ability_special_bonus_unique_lich_8"	"Frost Shield: +{s:bonus_damage_reduction} % skadereduksjon"
+		"DOTA_Tooltip_ability_special_bonus_unique_rubick"	"Telekinesis Land: +{s:bonus_max_land_distance} kasterekkevidde"
 		"DOTA_Tooltip_ability_special_bonus_unique_rubick_2"	"Fade Bolt: -{s:value} % skadereduksjon"
 		"DOTA_Tooltip_ability_special_bonus_unique_rubick_3"	"Fade Bolt: -{s:value} s nedkjøling"
+		"DOTA_Tooltip_ability_special_bonus_unique_rubick_4"	"Telekinesis: -{s:bonus_AbilityCooldown} s nedkjøling"
 		"DOTA_Tooltip_ability_special_bonus_unique_rubick_5"	"+{s:value}% formelstyrkelse på stjålne formler"
 		"DOTA_Tooltip_ability_special_bonus_unique_rubick_6"	"-{s:value} % nedkjøling på stjålne formler"
 		"DOTA_Tooltip_ability_special_bonus_unique_rubick_7"	"Telekinesis: +{s:bonus_lift_duration} s løfte-/lammelsesvarighet"
 		"DOTA_Tooltip_ability_special_bonus_unique_rubick_8"	"Telekinesis: +{s:value} landingsskade"
 		"DOTA_Tooltip_ability_special_bonus_unique_sven"	"Storm Hammer: -{s:value} s nedkjøling"
+		"DOTA_Tooltip_ability_special_bonus_unique_sven_2"	"God's Strength: +{s:bonus_gods_strength_damage} % skade"
 		"DOTA_Tooltip_ability_special_bonus_unique_sven_3"	"God's Strength: -{s:value} s nedkjøling"
 		"DOTA_Tooltip_ability_special_bonus_unique_sven_4"	"Storm Hammer: +{s:value} s lammelsesvarighet"
 		"DOTA_Tooltip_ability_special_bonus_unique_sven_5"	"Warcry: +{s:value} s varighet"
@@ -9549,6 +9592,8 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_shadow_shaman_6""Shackles: +{s:value} samlet skade"
 		"DOTA_Tooltip_ability_special_bonus_unique_shadow_shaman_7""Hex påfører avbrudd"
 		"DOTA_Tooltip_ability_special_bonus_unique_shadow_shaman_8""Serpent Wards: +{s:value} angrepsrekkevidde"
+		"DOTA_Tooltip_ability_special_bonus_unique_shadow_shaman_hex_damage_amp""Hex: +{s:bonus_damage_amp} skadestyrkelse"
+		
 		"DOTA_Tooltip_ability_special_bonus_unique_warlock_1""Chaotic Offering: Golems har 80 % magiresistens"
 		"DOTA_Tooltip_ability_special_bonus_unique_warlock_2""Chaotic Offering: Golems får +{s:value} rustning"
 		"DOTA_Tooltip_ability_special_bonus_unique_warlock_3""Shadow Word: +{s:bonus_spell_aoe} virkeområde"
@@ -9708,6 +9753,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_phoenix_6"	"Icarus Dive: +{s:value}% hemming"
 		"DOTA_Tooltip_ability_special_bonus_unique_phoenix_7"	"Sun Ray under Supernova"
 		"DOTA_Tooltip_ability_special_bonus_unique_phoenix_8"	"Sun Ray: +{s:value} % hemming"
+		"DOTA_Tooltip_ability_special_bonus_unique_phoenix_dive_damage"				"Icarus Dive: +{s:bonus_damage_per_second} skade per sekund"
 		"DOTA_Tooltip_ability_special_bonus_unique_enchantress_1"	"Enchant påvirker ancient-enheter"
 		"DOTA_Tooltip_ability_special_bonus_unique_enchantress_2"	"Nature's Attendants: +{s:value} feer"
 		"DOTA_Tooltip_ability_special_bonus_unique_enchantress_3"	"Untouchable: +{s:value} angrepshemming"
@@ -9715,6 +9761,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_enchantress_5"	"Nature's Attendants: +{s:value} helbredelse"
 		"DOTA_Tooltip_ability_special_bonus_unique_enchantress_6"	"+{s:bonus_movespeed} bevegelseshastighet under Nature's Attendants"
 		"DOTA_Tooltip_ability_special_bonus_unique_enchantress_enchant_health_damage"			"Fortryllede kryp: +{s:bonus_enchant_health} % helse/skade"
+		"DOTA_Tooltip_ability_special_bonus_unique_enchantress_enchant_armor"			"Fortryllede kryp: +{s:bonus_enchant_armor} rustning"
 		"DOTA_Tooltip_ability_special_bonus_unique_batrider_1"	"Firefly: +{s:bonus_duration} s varighet"
 		"DOTA_Tooltip_ability_special_bonus_unique_batrider_2"	"Flamebreak påfører {s:bonus_napalm_stacks} stabler av Sticky Napalm"
 		"DOTA_Tooltip_ability_special_bonus_unique_batrider_3"	"Flamebreak: +{s:bonus_knockback_distance} tilbakeslagsavstand"
@@ -9744,13 +9791,17 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_kunkka_5"	"Tidebringer: -{s:bonus_AbilityCooldown} s nedkjøling"
 		"DOTA_Tooltip_ability_special_bonus_unique_kunkka_6"	"X Marks the Spot: +{s:bonus_ally_ms} % bevegelseshastighet"
 		"DOTA_Tooltip_ability_special_bonus_unique_kunkka_6_Description"	"Påvirker allierte positivt og fiender negativt."
+		"DOTA_Tooltip_ability_special_bonus_unique_kunkka_7"	"Torrent: +{s:bonus_stun_duration} % skade/lammelsesvarighet"
 		"DOTA_Tooltip_ability_special_bonus_unique_kunkka_tidebringer_slow"		"Tidebringer hemmer med {s:bonus_movespeed_slow} % i {s:bonus_movespeed_slow_duration} s"
+		"DOTA_Tooltip_ability_special_bonus_unique_kunkka_torrent_cooldown"		"Torrent: -{s:bonus_AbilityCooldown} s nedkjøling"
 		"DOTA_Tooltip_ability_special_bonus_unique_dragon_knight"	"Dragon Blood: +{s:value} helseregenerasjon/rustning"
+		"DOTA_Tooltip_ability_special_bonus_unique_dragon_knight_2"	"Dragon Tail: +{s:bonus_stun_duration} s lammelsesvarighet"
 		"DOTA_Tooltip_ability_special_bonus_unique_dragon_knight_3"	"Breathe Fire: {s:value} % skadereduksjon"
 		"DOTA_Tooltip_ability_special_bonus_unique_dragon_knight_4"	"Dragon Blood får en aura"
 		"DOTA_Tooltip_ability_special_bonus_unique_dragon_knight_5"	"Frost Breath: +{s:value} % hemming"
 		"DOTA_Tooltip_ability_special_bonus_unique_dragon_knight_6"	"Splash Attack: +{s:value} % skade"
 		"DOTA_Tooltip_ability_special_bonus_unique_dragon_knight_7"	"Elder Dragon Form: +{s:value} angrepsrekkevidde"
+		"DOTA_Tooltip_ability_special_bonus_unique_dragon_knight_8"	"Dragon Tail: +{s:bonus_dragon_aoe} virkeområde i drageform"
 		"DOTA_Tooltip_ability_special_bonus_unique_dragon_knight_9"	"Breathe Fire: +{s:bonus_dragon_form_bonus_pct} % skade/bruksrekkevidde i drageform"
 		"DOTA_Tooltip_ability_special_bonus_unique_invoker_1"	"{s:bonus_spirit_count} tilkalt Forged Spirit"
 		"DOTA_Tooltip_ability_special_bonus_unique_invoker_2"	"Deafening Blast i alle retninger"
@@ -9774,7 +9825,9 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_abaddon_2"	"Mist Coil: +{s:bonus_target_damage} helbredelse/skade"
 		"DOTA_Tooltip_ability_special_bonus_unique_abaddon_3"	"Curse of Avernus: -{s:bonus_hit_count} angrep nødvendig"
 		"DOTA_Tooltip_ability_special_bonus_unique_abaddon_4"	"Mist Coil: {s:bonus_effect_radius} virkeområde"
+		"DOTA_Tooltip_ability_special_bonus_unique_abaddon_5"	"Curse of Avernus: +{s:bonus_curse_dps} skade per sekund"
 		"DOTA_Tooltip_ability_special_bonus_unique_abaddon_6"	"Curse of Avernus: -{s:bonus_curse_slow} % bevegelseshemming"
+		"DOTA_Tooltip_ability_special_bonus_unique_abaddon_7"	"Aphotic Shield gir +{s:bonus_regen} helseregenerasjon"
 		"DOTA_Tooltip_ability_special_bonus_unique_abaddon_immolation"	"Borrowed Time: {s:bonus_immolate_damage} skade per sekund"
 		"DOTA_Tooltip_ability_special_bonus_unique_abaddon_immolation_Description"	"Påvirker Abaddon og alle fiender i et virkeområde på {s:bonus_immolate_aoe}."
 		"DOTA_Tooltip_ability_special_bonus_unique_alchemist"	"Unstable Concoction: +{s:bonus_radius} radius"
@@ -9793,7 +9846,10 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_axe_6"	"Battle Hunger: +{s:bonus_slow} % hemming"
 		"DOTA_Tooltip_ability_special_bonus_unique_axe_7"	"Berserker's Call: +{s:bonus_bonus_armor} rustning"
 		"DOTA_Tooltip_ability_special_bonus_unique_axe_8"	"+{s:bonus_speed_bonus} % bevegelseshastighet per aktive Battle Hunger"
+		"DOTA_Tooltip_ability_special_bonus_unique_axe_culling_blade_speed_duration"	"Culling Blade: +{s:bonus_speed_duration} s hastighetsvarighet"
+		
 		"DOTA_Tooltip_ability_special_bonus_unique_beastmaster"	"Wild Axes: +{s:bonus_axe_damage} skade"
+		"DOTA_Tooltip_ability_special_bonus_unique_beastmaster_2"	"Boar og Hawk: +{s:bonus_boar_bonus_damage} skade"
 		"DOTA_Tooltip_ability_special_bonus_unique_beastmaster_3"	"Hauker: -{s:bonus_AbilityCooldown} s nedkjøling"
 		"DOTA_Tooltip_ability_special_bonus_unique_beastmaster_4"	"Inner Beast: +{s:bonus_bonus_attack_speed} angrepshastighet"
 		"DOTA_Tooltip_ability_special_bonus_unique_beastmaster_5"	"Beastmaster og enheter: +{s:bonus_ms} bevegelseshastighet (aura)"
@@ -9821,12 +9877,14 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_juggernaut"	"Blade Fury: +{s:bonus_blade_fury_radius} radius"
 		"DOTA_Tooltip_ability_special_bonus_unique_juggernaut_2"	"Healing Ward: +{s:bonus_healing_ward_bonus_health} treffpoeng"
 		"DOTA_Tooltip_ability_special_bonus_unique_juggernaut_3"	"Healing Ward: +{s:bonus_healing_ward_aura_radius} radius"
+		"DOTA_Tooltip_ability_special_bonus_unique_juggernaut_4"	"Blade Dance: +{s:bonus_blade_dance_crit_mult} % kritisk skade"
 		"DOTA_Tooltip_ability_special_bonus_unique_juggernaut_5"	"Healing Ward: -{s:value} s nedkjøling"
 		"DOTA_Tooltip_ability_special_bonus_unique_juggernaut_blade_dance_lifesteal"	"Blade Dance: +{s:bonus_blade_dance_lifesteal} % helseran"
 		"DOTA_Tooltip_ability_special_bonus_unique_juggernaut_omnislash_dispel"	"Omnislash fordriver fienden ved hvert treff"
 		"DOTA_Tooltip_ability_special_bonus_unique_juggernaut_omnislash_duration"	"Omnislash: +{s:bonus_duration} s varighet"
 		"DOTA_Tooltip_ability_special_bonus_unique_juggernaut_omnislash_cast_range"	"Omnislash: +{s:bonus_AbilityCastRange} bruksrekkevidde"
 		"DOTA_Tooltip_ability_special_bonus_unique_juggernaut_blade_fury_cooldown"	"Blade Fury: -{s:bonus_AbilityCooldown} s nedkjøling"
+		"DOTA_Tooltip_ability_special_bonus_unique_juggernaut_blade_fury_movespeed"				"Blade Fury: +{s:bonus_bonus_movespeed} ekstra bevegelseshastighet"
 		"DOTA_Tooltip_ability_special_bonus_unique_winter_wyvern_1"	"Arctic Burn: +{s:value} % hemming"
 		"DOTA_Tooltip_ability_special_bonus_unique_winter_wyvern_2"	"Splinter Blast: +{s:value} splintradius"
 		"DOTA_Tooltip_ability_special_bonus_unique_winter_wyvern_3"	"Winter's Curse: +{s:value} s varighet"
@@ -9837,9 +9895,11 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_winter_wyvern_7"	"Splinter Blast: +{s:value} skade"
 		"DOTA_Tooltip_ability_special_bonus_unique_terrorblade"	"Sunder: -{s:value} s nedkjøling"
 		"DOTA_Tooltip_ability_special_bonus_unique_terrorblade_2"	"Reflection: -{s:bonus_AbilityCooldown} s nedkjøling"
+		"DOTA_Tooltip_ability_special_bonus_unique_terrorblade_3"	"Metamorphosis: +{s:bonus_duration} s varighet"
 		"DOTA_Tooltip_ability_special_bonus_unique_terrorblade_4"	"Conjure Image: +{s:bonus_illusion_outgoing_damage} % skade"
 		"DOTA_Tooltip_ability_special_bonus_unique_terrorblade_5"	"Conjure Image: +{s:bonus_illusion_duration} s varighet"
 		"DOTA_Tooltip_ability_special_bonus_unique_terrorblade_6"	"Reflection: +{s:bonus_move_slow} % hemming/skade"
+		"DOTA_Tooltip_ability_special_bonus_unique_terrorblade_metamorphosis_cooldown"	"Metamorphosis: -{s:bonus_AbilityCooldown} s nedkjøling"
 		"DOTA_Tooltip_ability_special_bonus_unique_luna_1"	"Lucent Beam: +{s:bonus_beam_damage} skade"
 		"DOTA_Tooltip_ability_special_bonus_unique_luna_2"	"Lucent Beam: -{s:bonus_AbilityCooldown} s nedkjøling"
 		"DOTA_Tooltip_ability_special_bonus_unique_luna_3"	"Lunar Blessing: +{s:bonus_bonus_damage} skade"
@@ -9854,6 +9914,9 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_faceless_void_3"	"Time Lock: +{s:value} skade"
 		"DOTA_Tooltip_ability_special_bonus_unique_faceless_void_4"	"+{s:dodge_chance_pct} % annullering"
 		"DOTA_Tooltip_ability_special_bonus_unique_faceless_void_4_Description"		"Gir {s:dodge_chance_pct} % sjanse til å fullstendig unngå skade. Deaktiveres av avbrudd."
+		"DOTA_Tooltip_ability_special_bonus_unique_faceless_void_5"	"Time Walk: -{s:bonus_AbilityCooldown} s nedkjøling"
+		"DOTA_Tooltip_ability_special_bonus_unique_faceless_void_6"	"Time Dilation: +{s:bonus_damage_per_stack} skade per sekund, per nedkjøling"
+		"DOTA_Tooltip_ability_special_bonus_unique_faceless_void_7"	"Time Walk: +{s:bonus_backtrack_duration} s annulleringsvarighet"
 		"DOTA_Tooltip_ability_special_bonus_unique_faceless_void_8"	"Time Dilation: +{s:bonus_slow} % hemming per nedkjøling"
 		"DOTA_Tooltip_ability_special_bonus_unique_night_stalker"	"Dark Ascension: -{s:value} s nedkjøling"
 		"DOTA_Tooltip_ability_special_bonus_unique_night_stalker_2"	"Hunter In The Night: +{s:bonus_bonus_attack_speed_night} angrepshastighet"
@@ -9870,6 +9933,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_nyx_5"	"Mind Flare: +{s:bonus_float_multiplier} intelligensmultiplikator"
 		"DOTA_Tooltip_ability_special_bonus_unique_nyx_6"	"Spiked Carapace: +{s:bonus_stun_duration} s lammelsesvarighet"
 		"DOTA_Tooltip_ability_special_bonus_unique_nyx_carapace_reflect_duration"		"Spiked Carapace: +{s:bonus_reflect_duration} s speilet varighet"
+		"DOTA_Tooltip_ability_special_bonus_unique_nyx_vendetta_damage"					"Vendetta: +{s:bonus_bonus_damage} skade"
 		"DOTA_Tooltip_ability_special_bonus_unique_weaver_1"	"Shukuchi: +{s:bonus_damage} skade"
 		"DOTA_Tooltip_ability_special_bonus_unique_weaver_2"	"Geminate Attack: +{s:value} skade"
 		"DOTA_Tooltip_ability_special_bonus_unique_weaver_3"	"The Swarm: +{s:value} rustningsreduksjon"
@@ -9907,6 +9971,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_windranger"	"Windrun: +{s:bonus_radius} radius"
 		"DOTA_Tooltip_ability_special_bonus_unique_windranger_2"	"Drap med Focus Fire fremskynder nedkjølingen med {s:value} s"
 		"DOTA_Tooltip_ability_special_bonus_unique_windranger_2_Description"	"Utløses hvis enheten Focus Fire er brukt på dør, uavhengig av hvem som dreper den."
+		"DOTA_Tooltip_ability_special_bonus_unique_windranger_3"	"Powershot: -{s:bonus_damage_reduction} % reduksjon"
 		"DOTA_Tooltip_ability_special_bonus_unique_windranger_4"	"Windrun: -{s:value} s nedkjøling"
 		"DOTA_Tooltip_ability_special_bonus_unique_windranger_5"	"Shackleshot: +{s:value} mål"
 		"DOTA_Tooltip_ability_special_bonus_unique_windranger_6"	"Shackleshot: +{s:value} s varighet"
@@ -9915,6 +9980,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_windranger_9"	"Shackleshot: -{s:value} s nedkjøling"
 		"DOTA_Tooltip_ability_special_bonus_unique_windranger_10"	"Windrun: +{s:value} helseregenerasjon"
 		"DOTA_Tooltip_ability_special_bonus_unique_windranger_windrun_undispellable"		"Windrun kan ikke fordrives"
+		"DOTA_Tooltip_ability_special_bonus_unique_windranger_powershot_slow"				"Powershot: +{s:bonus_slow} % hemming"
 		"DOTA_Tooltip_ability_special_bonus_unique_phantom_lancer"	"Phantom Rush: +{s:value} rekkevidde"
 		"DOTA_Tooltip_ability_special_bonus_unique_phantom_lancer_2"	"Phantom Rush: +{s:bonus_agility_duration} s varighet for ekstra smidighet"
 		"DOTA_Tooltip_ability_special_bonus_unique_phantom_lancer_3"	"Juxtapose: +{s:value} maks illusjoner"
@@ -10174,6 +10240,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_oracle_8"	"Purifying Flames: +{s:value} % skade på fiender"
 		"DOTA_Tooltip_ability_special_bonus_unique_oracle_9"	"False Promise: +{s:bonus_bonus_armor} rustning"
 		"DOTA_Tooltip_ability_special_bonus_unique_oracle_fortunes_end_damage"	"Fortune's End: +{s:bonus_damage} skade"
+		"DOTA_Tooltip_ability_special_bonus_unique_oracle_damage_per_purge"		"Fortune's End helbreder/skader for {s:bonus_damage_per_buff} per effekt fordrevet"
 		"DOTA_Tooltip_ability_special_bonus_unique_sand_king"	"Epicenter: +{s:bonus_epicenter_pulses} pulser"
 		"DOTA_Tooltip_ability_special_bonus_unique_sand_king_2"	"Sand Storm: +{s:bonus_sand_storm_damage} skade per sekund"
 		"DOTA_Tooltip_ability_special_bonus_unique_sand_king_3"	"Sand Storm: +{s:bonus_sand_storm_move_speed} bevegelseshastighet"
@@ -10232,6 +10299,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_ancient_apparition_6"	"Cold Feet: {s:bonus_area_of_effect} virkeområde"
 		"DOTA_Tooltip_ability_special_bonus_unique_ancient_apparition_7"	"Chilling Touch: +{s:bonus_attack_range_bonus} angrepsrekkevidde"
 		"DOTA_Tooltip_ability_special_bonus_unique_ancient_apparition_8"	"Cold Feet: +{s:bonus_damage} skade per sekund"
+		"DOTA_Tooltip_ability_special_bonus_unique_ancient_apparition_ice_vortex_duration"			"Ice Blast: +{s:bonus_frostbite_duration} s forfrysningsvarighet"
 		"DOTA_Tooltip_ability_special_bonus_unique_disruptor"	"Thunder Strike: +{s:bonus_slow_duration} s hemmingsvarighet"
 		"DOTA_Tooltip_ability_special_bonus_unique_disruptor_2"	"Kinetic Field: -{s:value} s nedkjøling"
 		"DOTA_Tooltip_ability_special_bonus_unique_disruptor_3"	"Thunder Strike: +{s:bonus_radius} radius"
@@ -10247,6 +10315,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_gyrocopter_2"	"Flak Cannon: +{s:bonus_max_attacks} angrep"
 		"DOTA_Tooltip_ability_special_bonus_unique_gyrocopter_3"	"Rocket Barrage: +{s:value} skade"
 		"DOTA_Tooltip_ability_special_bonus_unique_gyrocopter_4"	"+{s:bonus_bonus_movement_speed} bevegelseshastighet under Rocket Barrage"
+		"DOTA_Tooltip_ability_special_bonus_unique_gyrocopter_5"	"Call Down: -{s:bonus_AbilityCooldown} s nedkjøling og global rekkevidde"		
 		"DOTA_Tooltip_ability_special_bonus_unique_gyrocopter_6"	"Homing Missile: +{s:value} s lammelsesvarighet"
 		"DOTA_Tooltip_ability_special_bonus_unique_gyrocopter_flak_cannon_bonus_damage"			"Flak Cannon: +{s:bonus_bonus_damage} skade"
 		"DOTA_Tooltip_ability_special_bonus_unique_keeper_of_the_light"	"Illuminate: +{s:bonus_total_damage} skade"
@@ -10463,6 +10532,7 @@
 		"DOTA_Tooltip_Ability_item_blight_stone"			"Blight Stone"
 		"DOTA_Tooltip_Ability_item_dragon_lance"				"Dragon Lance"
 		"DOTA_Tooltip_Ability_item_aether_lens"				"Aether Lens"
+		"DOTA_Tooltip_Ability_item_aetherial_halo"			"Aetherial Hammer"
 		"DOTA_Tooltip_Ability_item_halo"					"Halo"
 		"DOTA_Tooltip_Ability_item_serenity_charm"			"Serenity Charm"
 		"DOTA_Tooltip_Ability_item_claymore"				"Claymore"
@@ -10591,6 +10661,7 @@
 		"DOTA_Tooltip_Ability_item_quelling_blade"			"Quelling Blade"
 		"DOTA_Tooltip_Ability_item_radiance"				"Radiance"
 		"DOTA_Tooltip_Ability_item_rapier"				"Divine Rapier"
+		"DOTA_Tooltip_Ability_item_caster_rapier"				"Caster Rapier"
 		"DOTA_Tooltip_Ability_item_reaver"				"Reaver"
 		"DOTA_Tooltip_Ability_item_refresher"				"Refresher Orb"
 		"DOTA_Tooltip_Ability_item_aegis"			"Aegis of the Immortal"
@@ -10642,6 +10713,7 @@
 		"DOTA_Tooltip_Ability_item_ultimate_scepter_roshan"			"Aghanim's Blessing – Roshan"
 		"DOTA_Tooltip_Ability_item_recipe_ultimate_scepter_2"			"Oppskrift: Aghanim's Blessing"
 		"DOTA_Tooltip_Ability_item_aghanims_shard"			"Aghanim's Shard"
+		"DOTA_Tooltip_Ability_item_aghanims_shard_roshan"			"Aghanim's Shard (forbruksvare)"
 		"DOTA_Tooltip_Ability_item_aghanims_shard_2"			"Aghanim's Shard (brukt)"
 		"DOTA_Tooltip_Ability_item_recipe_aghanims_shard"			"Oppskrift: Aghanim's Shard"
 		"DOTA_Tooltip_Ability_item_recipe_aghanims_shard_2"			"Oppskrift: Aghanim's Shard (brukt)"
@@ -10673,6 +10745,7 @@
 		"DOTA_Tooltip_Ability_item_wraith_pact"					"Wraith Pact"
 		"DOTA_Tooltip_Ability_item_recipe_wraith_pact"			"Oppskrift: Wraith Pact"
 		"DOTA_Tooltip_Ability_item_void_stone"				"Void Stone"
+		"DOTA_Tooltip_Ability_item_tiara_of_selemene"		"Tiara of Selemene"
 		"DOTA_Tooltip_Ability_item_ward_observer"			"Observer Ward"
 		"DOTA_Tooltip_Ability_item_ward_sentry"			"Sentry Ward"
 		"DOTA_Tooltip_Ability_item_wraith_band"			"Wraith Band"
@@ -10686,6 +10759,7 @@
 		"DOTA_Tooltip_Ability_item_smoke_of_deceit"			"Smoke of Deceit"
 		"DOTA_Tooltip_Ability_item_veil_of_discord"			"Veil of Discord"
 		"DOTA_Tooltip_Ability_item_revenants_brooch"			"Revenant's Brooch"
+		"DOTA_Tooltip_Ability_item_devastator"				"Parasma"
 		"DOTA_Tooltip_Ability_item_ring_of_aquila"			"Ring of Aquila"
 		"DOTA_Tooltip_Ability_item_shadow_amulet"			"Shadow Amulet"
 		"DOTA_Tooltip_Ability_item_river_painter"			"Elveflaske: Krom"
@@ -10825,6 +10899,7 @@
 		"DOTA_Tooltip_Ability_item_witches_switch"				"Witches Switch"
 		"DOTA_Tooltip_Ability_item_harpoon"						"Harpoon"
 		"DOTA_Tooltip_Ability_item_phylactery"						"Phylactery"
+		"DOTA_Tooltip_Ability_item_angels_demise"				"Khanda"
 		"DOTA_Tooltip_Ability_item_diadem"							"Diadem"
 		"DOTA_Tooltip_Ability_item_defiant_shell"						"Defiant Shell"
 		"DOTA_Tooltip_Ability_item_blood_grenade"						"Blood Grenade"
@@ -10832,8 +10907,14 @@
 		"DOTA_Tooltip_ability_item_blighted_spirit"						"Blighted Spirit"
 		"DOTA_Tooltip_ability_item_turtle_shell"						"Turtle Shell"
 		"DOTA_Tooltip_ability_item_duelist_gloves"						"Duelist Gloves"
+		"DOTA_Tooltip_ability_item_ancient_guardian"					"Ancient Guardian"
 		"DOTA_Tooltip_ability_item_horizons_equilibrium"				"Horizon's Equilibrium"
 		"DOTA_Tooltip_ability_item_dandelion_amulet"					"Dandelion Amulet"
+		"DOTA_Tooltip_ability_item_safety_bubble"						"Safety Bubble"
+		"DOTA_Tooltip_ability_item_whisper_of_the_dread"				"Whisper of the Dread"
+		"DOTA_Tooltip_ability_item_nemesis_curse"						"Nemesis Curse"
+		"DOTA_Tooltip_ability_item_avianas_feather"						"Aviana's Feather"
+		"DOTA_Tooltip_ability_item_unwavering_condition"				"Unwavering Condition"
 		"DOTA_Tooltip_ability_item_vindicators_axe"						"Vindicator's Axe"
 		"DOTA_Tooltip_ability_item_martyrs_plate"						"Martyr's Plate"
 		"DOTA_Tooltip_ability_item_cornucopia"						"Cornucopia"
@@ -10844,7 +10925,15 @@
 		"DOTA_Tooltip_ability_item_tier5_token"						"Mynt i kategori 5"
 		"DOTA_Tooltip_ability_item_pavise"							"Pavise"
 		"DOTA_Tooltip_ability_item_gossamer_cape"					"Gossamer Cape"
-// Recipes
+		//7.35
+		"DOTA_Tooltip_ability_item_light_collector"				"Light Collector"
+		"DOTA_Tooltip_ability_item_rattlecage"					"Rattlecage"
+		"DOTA_Tooltip_ability_item_doubloon"					"Doubloon"
+		"DOTA_Tooltip_ability_item_roshans_banner"					"Roshan's Banner"
+
+
+		
+		// Recipes
 		"DOTA_Tooltip_Ability_item_recipe_aeon_disk"			"Oppskrift: Aeon Disk"
 		"DOTA_Tooltip_Ability_item_recipe_bracer"					"Oppskrift: Bracer"
 		"DOTA_Tooltip_Ability_item_recipe_wind_waker"					"Oppskrift: Wind Waker"
@@ -10887,9 +10976,11 @@
 		"DOTA_Tooltip_Ability_item_recipe_basher"					"Oppskrift: Skull Basher"
 		"DOTA_Tooltip_Ability_item_recipe_tenderizer"				"Oppskrift: Bruiser's Maul"
 		"DOTA_Tooltip_Ability_item_recipe_aether_lens"				"Oppskrift: Aether Lens"
+		"DOTA_Tooltip_Ability_item_recipe_aetherial_halo"			"Oppskrift: Aetherial Hammer"
 		"DOTA_Tooltip_Ability_item_recipe_serenity_charm"			"Oppskrift: Serenity Charm"
 		"DOTA_Tooltip_Ability_item_recipe_veil_of_discord"			"Oppskrift: Veil of Discord"
 		"DOTA_Tooltip_Ability_item_recipe_revenants_brooch"			"Oppskrift: Revenant's Brooch"
+		"DOTA_Tooltip_Ability_item_recipe_devastator"				"Oppskrift: Parasma"
 		"DOTA_Tooltip_Ability_item_recipe_buckler"					"Oppskrift: Buckler"
 		"DOTA_Tooltip_Ability_item_recipe_dragon_lance"				"Oppskrift: Dragon Lance"
 		"DOTA_Tooltip_Ability_item_recipe_lesser_crit"				"Oppskrift: Crystalys"
@@ -10918,6 +11009,7 @@
 		"DOTA_Tooltip_Ability_item_recipe_witches_switch"			"Oppskrift: Witches Switch"
 		"DOTA_Tooltip_Ability_item_harpoon_recipe"					"Oppskrift: Harpoon"
 		"DOTA_Tooltip_Ability_item_phylactery_recipe"				"Oppskrift: Phylactery"
+		"DOTA_Tooltip_Ability_item_angels_demise_recipe"			"Oppskrift: Khanda"
 		"DOTA_Tooltip_ability_item_recipe_pavise"							"Oppskrift: Pavise"
 		"DOTA_Tooltip_ability_item_recipe_lotus_orb"				"Oppskrift: Lotus Orb"
 		"DOTA_Tooltip_Ability_item_recipe_harpoon"					"Oppskrift: Harpoon"
@@ -11788,6 +11880,7 @@
 		"DOTA_Tooltip_ability_item_voidwalker_scythe_Lore"						"Lore lore lorem ipsum."
 		"DOTA_Tooltip_ability_item_voidwalker_scythe_bonus_agility"						"+$agi"
 
+		"DOTA_Tooltip_ability_item_mage_slayer_Description"				"<h1>Passiv: Mage Slayer</h1>Påfører fiendene du angriper en svekkelse, som gjør %dps% skade per sekund og at de gjør %spell_amp_debuff% %% mindre formelskade i %duration% sekunder."
 		"DOTA_Tooltip_ability_item_mage_slayer_Lore"			"Smidd av en hemmelig orden i Praxa'cias tredje tidsalder for å styrte den falske kongen."
 		"DOTA_Tooltip_ability_item_mage_slayer_bonus_magical_armor"			"%+$spell_resist"
 		
@@ -11824,6 +11917,7 @@
 		//"DOTA_Tooltip_ability_item_infused_raindrop_initial_charges"            "INITIAL CHARGES:"
 		"DOTA_Tooltip_ability_item_infused_raindrop_Lore"                       "Elementær beskyttelse mot magiske angrep."
 
+		"DOTA_Tooltip_ability_item_bloodthorn_Description"                      "<h1>Aktiv: Soul Rend</h1> Stilner en valgt enhet i %silence_duration% sekunder. %silence_damage_percent% %% av skaden som tas under varigheten, påføres som magisk skade når varigheten er slutt.<br><br>Alle angrep på det stilnede målet gjør %proc_damage% ekstra skade og har fulltreff.<br><br>Rekkevidde: %abilitycastrange%\n\n<h1>Passiv: Pierce</h1>Gir hvert angrep %proc_chance% %% sjanse til å ignorere unnvikelse og gjøre %proc_damage% ekstra magisk skade."
 		"DOTA_Tooltip_ability_item_bloodthorn_Lore"                             "Et forhatt sverd som biter dypere for hver og en av offerets siste krampetrekninger."
 		"DOTA_Tooltip_ability_item_bloodthorn_bonus_intellect"                  "+$int"
 		"DOTA_Tooltip_ability_item_bloodthorn_bonus_attack_speed"               "+$attack"
@@ -11840,6 +11934,8 @@
 		"DOTA_Tooltip_ability_item_bloodthorn_upgrade_description"			"Bruk Soul Rend på 10 fiendtlige helter."
 
 		"DOTA_Tooltip_modifier_bloodthorn_debuff"                       "Bloodthorn"
+		"DOTA_Tooltip_modifier_bloodthorn_debuff_Description"           "Stilnet og tar 60 %% økt skade, som gjøres som magisk skade når svekkelsen løper ut.\nGjør at alle innkommende angrep gjør ekstra skade og har fulltreff."
+
 		"DOTA_Tooltip_Ability_item_echo_sabre_Description"			        "<h1>Passiv: Echo Strike</h1> Gjør at nærangrep skjer to ganger i rask rekkefølge. De doble angrepene hemmer bevegelseshastigheten med %movement_slow% %% i %slow_duration% sekunder ved hvert slag."
 		"DOTA_Tooltip_Ability_item_echo_sabre_Lore"			                "Et overraskende raskt sverd mettet med magisk gjenlyd."
 		"DOTA_Tooltip_Ability_item_echo_sabre_bonus_strength"                "+$str"
@@ -11911,10 +12007,20 @@
 		"DOTA_Tooltip_ability_item_aether_lens_cast_range_bonus"                "+$cast_range"	                     
 		"DOTA_Tooltip_ability_item_aether_lens_Lore"                            "En gave fra en døende trollmann til hans sykelige sønn, polert med besvergelsen fra hans siste åndedrag."
 
+		"DOTA_Tooltip_ability_item_aetherial_halo_Description"                   "<h1>Aktiv: Aetherial Hammer</h1> KANALISERT – Etter en hel kanalisering tilkalles en meteor som slår ned i et område på %impact_radius%, noe som lammer fiender i %stun_duration% sekunder og gjør skade ved nedslag. Fortsetter å gjøre skade over tid på fiendtlige enheter og bygninger i %burn_duration% sekunder. Enheter hemmes også med %burn_slow% %% mens de tar skade over tid. <BR><BR>Bygningsskade ved nedslag: %impact_damage_buildings% <BR>Bygningsskade over tid: %burn_dps_buildings% <BR><BR>Enhetsskade ved nedslag: %impact_damage_units% <BR>Enhetsskade over tid: %burn_dps_units% <BR><BR>Kanaliseringstid: %max_duration% sekunder<BR>Nedslagstid: %land_time% sekunder\n\n<h1>Passiv: Foci</h1> Øker den målrettede formelens og gjenstandens virkeområde med %bonus_aoe%."		
+		"DOTA_Tooltip_ability_item_aetherial_halo_lore"                   "En fortryllet hammer smidd av metaller funnet i ruinene av en landsby som ble ødelagt av en stor meteorittsverm."		
 		"DOTA_Tooltip_ability_item_aetherial_halo_bonus_aoe"						"+$aoe_bonus"	
 		"DOTA_Tooltip_ability_item_aetherial_halo_bonus_strength"						"+$str"	
 		"DOTA_Tooltip_ability_item_aetherial_halo_bonus_agility"						"+$agi"	
 		"DOTA_Tooltip_ability_item_aetherial_halo_bonus_intellect"					"+$int"
+		"DOTA_Tooltip_ability_item_aetherial_halo_spell_amp"						"%+formelstyrkelse"
+		"DOTA_Tooltip_ability_item_aetherial_halo_mana_regen_multiplier"				"%+styrket manaregenerasjon"
+		"DOTA_Tooltip_ability_item_aetherial_halo_spell_lifesteal_amp"				"%+styrket formelhelseran"
+
+		
+
+
+
 		"DOTA_Tooltip_ability_item_serenity_charm_Description"                     "<h1>Passiv: Aethereal Focus</h1> Øker bruksrekkevidden på formler og gjenstander mot valgte mål med %cast_range_bonus%.\n<h1>Passiv: Protection Charm</h1> Hvis du ikke har tatt skade på %cooldown% sekunder, får du et skjold rundt deg som forhindrer %damage_block% skade og øker bruksrekkevidde med ytterligere %cast_range_bonus_extra%."
 		"DOTA_Tooltip_ability_item_serenity_charm_Note0"                           "Stables ikke med andre kilder til bruksrekkevidde."
 		"DOTA_Tooltip_ability_item_serenity_charm_bonus_mana"                      "+$mana"
@@ -12111,11 +12217,20 @@
 		"DOTA_Tooltip_modifier_item_phylactery_slow"						"Phylactery"
 		"DOTA_Tooltip_modifier_item_phylactery_slow_Description"			"Bevegelse hemmet med %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %%."
 
+		"DOTA_Tooltip_Ability_item_angels_demise_Description"						"<h1>Passiv: Empower Spell</h1> Den neste evnen med enhetsvalg du bruker på en fiende, gjør %spell_crit_flat% + %spell_crit_multiplier% %% av angrepsskaden din som ekstra skade på målet, og hemmer den med %slow% %% i %slow_duration% s.\n\n<h1>Passiv: Critical Strike</h1>Gir hvert angrep %crit_chance% %% sjanse til å gjøre %crit_multiplier% %% skade."
+		"DOTA_Tooltip_ability_item_angels_demise_Note0" 							"Critical Strike fungerer ikke mot bygninger."
 		"DOTA_Tooltip_Ability_item_angels_demise_bonus_damage"					"+$damage"
 		"DOTA_Tooltip_Ability_item_angels_demise_bonus_health"					"+$health"
 		"DOTA_Tooltip_Ability_item_angels_demise_bonus_mana"					"+$mana"
 		"DOTA_Tooltip_ability_item_angels_demise_bonus_all_stats"				"+$all"
 		"DOTA_Tooltip_ability_item_angels_demise_bonus_mana_regen"				"+$mana_regen"
+		"DOTA_Tooltip_modifier_item_angels_demise_slow"						"Angel's Demise"
+		"DOTA_Tooltip_modifier_item_angels_demise_slow_Description"			"Bevegelse hemmet med %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %%."
+
+
+
+		
+		
 		"DOTA_Tooltip_ability_item_dust_Description"							"<h1>Bruk: Reveal</h1>Skaper et område der brukeren står som avslører og hemmer usynlige helter med %movespeed% %%. Området har en radius på %radius% og varer i %duration% sekunder. Avslørte usynlige enheter tar %damage% skade.<br><br> Svekkelsen henger igjen på fiender i %linger_duration% s etter at de forlater området."
 		"DOTA_Tooltip_ability_item_dust_Note0"									"Plasserer en svekkelseseffekt på fiendtlige enheter i området, som avslører dem når de er usynlige."
 		//"DOTA_Tooltip_ability_item_dust_duration"								"DURATION:"
@@ -12247,6 +12362,7 @@
 		"DOTA_Tooltip_ability_item_helm_of_the_dominator_bonus_armor"				"+$armor"
 		"DOTA_Tooltip_ability_item_helm_of_the_dominator_bonus_regen"				"+$hp_regen"
 		
+		"DOTA_Tooltip_ability_item_helm_of_the_overlord_Description"			"<h1>Aktiv: Dominate</h1>Tar kontroll over en valgt nøytral enhet og setter bevegelseshastigheten dens til %speed_base% og maks helse til minst %health_min%. Gir også enheten +%creep_bonus_damage% grunnangrepsskade, +%creep_bonus_hp_regen% helseregenerasjon, +%creep_bonus_mp_regen% manaregenerasjon, +%creep_bonus_armor% rustning og øker nivået på noen av målets evner med 1 nivå.<br><br>Dominerte enheter med en maks helse høyere enn %health_min% beholder deres opprinnelige maks helse. Dusøren for dominerte enheter settes til %bounty_gold% gull.<br><br>Rekkevidde: %abilitycastrange%\n\n"
 		"DOTA_Tooltip_ability_item_helm_of_the_overlord_Lore"					"En avdød åndemaners kraftige hjelm."
 		"DOTA_Tooltip_ability_item_helm_of_the_overlord_Note0"					"Kan også dominere fiendtlige kryp og tilkalte enheter."
 		"DOTA_Tooltip_ability_item_helm_of_the_overlord_Note1"					"Dominerte enheter dør hvis gjenstanden selges."
@@ -12385,13 +12501,19 @@
 		"DOTA_Tooltip_ability_item_tier5_token_Description"					"Aktiver for å bytte mot en nøytral gjenstand i kategori 5. Denne nøytrale gjenstanden kan ikke deles, og en helt kan kun bytte inn én enkelt mynt per kategori."
 
 		"DOTA_Tooltip_ability_item_spark_of_courage_Description"					"<h1>Passiv: Courage</h1> Gir %damage% skade når helten har over %health_pct% %% helse, og %armor% rustning når helten har under denne grensen."
+		"DOTA_Tooltip_ability_item_safety_bubble_Description"				"<h1>Passiv: Bubbled Up</h1> Brukeren har en helsebarriere på %shield%. Barrieren regenereres fullstendig etter å ikke ha tatt noe skade på %restore_time% sekunder."
 		"DOTA_Tooltip_ability_item_safety_bubble_bonus_hp"					"+$hp_regen"
+		"DOTA_Tooltip_ability_item_whisper_of_the_dread_Description"		"<h1>Passiv: Tunnel Vision</h1> Utrustet helt får sikten om dagen redusert med %vision_penalty% %%, men får %bonus_spell_damage% %% økt formelskade."
 		"DOTA_Tooltip_ability_item_whisper_of_the_dread_bonus_mana"		"+$mana"
+		"DOTA_Tooltip_ability_item_nemesis_curse_Description"				"<h1>Passiv: Glass Cannon</h1> Helten tar %debuff_self% %% mer skade fra alle kilder.\n<h1>Passiv: Glassify</h1> Når du angriper en helt, påføres en svekkelse som øker skaden helten tar, med %debuff_enemy% %% i %debuff_enemy_duration% sekunder. Kun ett mål kan være påvirket av Glassify på samme tid."
 		"DOTA_Tooltip_ability_item_nemesis_curse_bonus_damage"					"+$damage"
+		"DOTA_Tooltip_modifier_item_nemesis_curse_debuff"						"Glassify"
 		"DOTA_Tooltip_modifier_item_nemesis_curse_debuff_Description"			"Innkommende skade økt med %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE% %%."
 
+		"DOTA_Tooltip_ability_item_avianas_feather_Description"				"<h1>Passiv: Free Bird</h1> Når utrustet helt har under %flight_threshold% %% helse, får de flygende bevegelse."
 		"DOTA_Tooltip_ability_item_avianas_feather_evasion"					"%+$evasion"
 		"DOTA_Tooltip_ability_item_avianas_feather_move_speed"				"+$move_speed"
+		"DOTA_Tooltip_ability_item_unwavering_condition_Description"				"<h1>Passiv: Unwavering</h1> Heltens maks helse settes til %max_health% og kan ikke påvirkes av andre effekter eller attributter."
 		"DOTA_Tooltip_ability_item_unwavering_condition_magic_resist"				"%+$spell_resist"
 		"DOTA_Tooltip_ability_item_dandelion_amulet_Description"					"<h1>Passiv: Magical Damage Block</h1> Hvert %AbilityCooldown%. s blokkeres opptil %magic_block% magisk skade fra skadeforekomster på over %min_damage% skade."
 		"DOTA_Tooltip_ability_item_dandelion_amulet_mana"							"+$mana"
@@ -12411,11 +12533,13 @@
 		"DOTA_Tooltip_ability_item_vindicators_axe_bonus_attack_speed"				"+$attack"
 		"DOTA_Tooltip_ability_item_vindicators_axe_bonus_slow_resist"				"%+$slow_resistance"
 
+		"Dota_Tooltip_ability_item_light_collector_Description"						"<h1>Aktiv: Lightbreak</h1> Produserer et strålende lysglimt som ødelegger trær i et virkeområde på %tree_destruction_radius%. \n\n<h1>Passiv: Unclouded</h1> Gir brukeren helseregenerasjon om dagen og manaregenerasjon om natten. Helse- og manaregenerasjon halveres når man er innenfor en radius på %radius% fra trær."
+		"Dota_Tooltip_ability_item_light_collector_movespeed_pct"						"%BEVEGELSESHASTIGHET:"
+		"Dota_Tooltip_ability_item_light_collector_health_regen"						"HELSEREGENERASJON OM DAGEN:"
 		"Dota_Tooltip_ability_item_light_collector_mana_regen"						"MANAREGENERASJON OM NATTEN:"
 		"DOTA_Tooltip_modifier_item_light_collector"								"Unclouded"
 		"DOTA_Tooltip_modifier_item_light_collector_Description"					"Får full helseregenerasjon om dagen og manaregenerasjon om natten ved å holde seg borte fra trær." 
 
-		"DOTA_Tooltip_ability_item_doubloon_Description"								"<h1>Veksle: Flip</h1> Veksle for å konvertere %conversion_pct% %% av maks helse til maks mana, eller %conversion_pct% %% av maks mana til maks helse."
 		"DOTA_Tooltip_ability_item_doubloon_bonus_health_regen"							"+$hp_regen"
 		"DOTA_Tooltip_ability_item_doubloon_bonus_mana_regen"							"+$mana_regen"
 		"Dota_Doubloon_Maxmana_Tooltip"								"Modus: mana"
@@ -12427,6 +12551,7 @@
 		"DOTA_Tooltip_modifier_item_rattlecage_slow_Description"					"Hemmet av Rattlecage."
 
 
+		"DOTA_Tooltip_ability_item_roshans_banner_Description"					"<h1>Bruk: Place Banner</h1> Oppretter et banner hvor som helst på kartet. Stikryp som passerer nær banneret får %buff_linger_duration%s økt skade og helbredelse. Varer i %duration% sekunder. Kan ødelegges. "
 		"DOTA_Tooltip_ability_item_roshans_banner_hp_bonus"					"%EKSTRA HELSE:"
 		"DOTA_Tooltip_ability_item_roshans_banner_damage_bonus"					"%EKSTRA SKADE:"
 		"DOTA_Tooltip_modifier_roshans_banner_effect"							"Roshan's Banner"
@@ -12966,6 +13091,7 @@
 		"DOTA_Tooltip_ability_item_ring_of_basilius_mana_regen"						"+$mana_regen"
 
 		
+		"DOTA_Tooltip_ability_item_holy_locket_Description"				"<h1>Aktiv: Energy Charge</h1>Velg en alliert enhet for å øyeblikkelig gjenopprette %restore_per_charge% helse og mana per oppbevarte ladning. <br><br>Får automatisk en ladning hvert %AbilityChargeRestoreTime%. sekund og når en synlig fiende bruker en evne innen en radius på %charge_radius%.\n\n<h1>Passiv: Holy Blessing</h1>Styrker helbredelser fra deg med %heal_increase% %%."
 		//"DOTA_Tooltip_ability_item_holy_locket_bonus_health"					"+$health"
 		//"DOTA_Tooltip_ability_item_holy_locket_bonus_mana"					"+$mana"
 		"DOTA_Tooltip_ability_item_holy_locket_bonus_all_stats"					"+$all"
@@ -13095,6 +13221,7 @@
 		"DOTA_Tooltip_modifier_sheepstick_debuff"				"Din gris"
 		"DOTA_Tooltip_modifier_sheepstick_debuff_Description"	"Du er en gris. Kan ikke angripe eller bruke formler."
 
+		"DOTA_Tooltip_ability_item_shivas_guard_Description"					"<h1>Aktiv: Arctic Blast</h1> Sender ut en frostbølge som gjør at fiender tar %spell_amp% %% mer skade fra formler i %resist_debuff_duration% sekunder, og gjør %blast_damage% magisk skade og hemmer bevegelseshastigheten med %blast_movement_speed% %% i %blast_debuff_duration% sekunder. Gjør %illusion_multiplier_pct% %% skade mot illusjoner.<br><br>Radius: %blast_radius%\n\n<h1>Passiv: Freezing Aura</h1> Reduserer fienders angrepshastighet med %aura_attack_speed% og all helbredelse, regenerasjon og helseran med %hp_regen_degen_aura% %%. <br><br>Radius: %aura_radius%"
 		"DOTA_Tooltip_ability_item_shivas_guard_Lore"							"Den sies å ha tilhørt en gudinne, og beholder det meste av sin tidligere kraft den dag i dag."
 		"DOTA_Tooltip_ability_item_shivas_guard_Note0"							"Bølgen utvider seg med en hastighet på %blast_speed% til en maks størrelse på %blast_radius%."
 		"DOTA_Tooltip_ability_item_shivas_guard_Note1"							"Arctic Blast følger brukeren."
@@ -13321,6 +13448,7 @@
 		"DOTA_Tooltip_ability_item_void_stone_Lore"								"Smykke som en gang ble brukt til å kanalisere magi fra underverden. Denne ringen pulserer med energi."
 		"DOTA_Tooltip_ability_item_void_stone_bonus_mana_regen"					"+$mana_regen"
 
+		"DOTA_Tooltip_ability_item_tiara_of_selemene_Lore"								"Tiara!"
 		"DOTA_Tooltip_ability_item_tiara_of_selemene_bonus_mana_regen"					"+$mana_regen"
 
 		"DOTA_Tooltip_ability_item_ward_observer_Description"					"<h1>Bruk: Plant</h1>Plasserer en Observer Ward, en usynlig vokter som gir sikt i en radius på %vision_range_tooltip% til laget ditt. Varer i %duration_minutes_tooltip% minutter.<br><br>Hold nede Control for å gi én Observer Ward til en alliert helt.<br><br>Rekkevidde: %abilitycastrange%"
@@ -13355,6 +13483,7 @@
 		"DOTA_Tooltip_ability_item_yasha_bonus_attack_speed"					"+$attack"
 		"DOTA_Tooltip_ability_item_yasha_movement_speed_percent_bonus"			"%+$move_speed"
 		
+		"DOTA_Tooltip_ability_item_arcane_boots_Description"					"<h1>Aktiv: Replenish Mana</h1>Gjenoppretter %replenish_amount% mana for alle allierte i nærheten.<br><br>Radius: %replenish_radius%\nEkstra bevegelseshastighet fra flere par støvler stables ikke.\n\n<h1>Passiv: Basilius Aura</h1>Gir %aura_mana_regen% manaregenerasjon til allierte. <br><br>Radius: %aura_radius%"
 		"DOTA_Tooltip_ability_item_arcane_boots_Lore"						"Magikere med disse støvlene blir høyt verdsatt i kamp."
 		"DOTA_Tooltip_ability_item_arcane_boots_Note0"							"Fungerer ikke på Meepo-kloner."
 		"DOTA_Tooltip_ability_item_arcane_boots_bonus_movement"					"+$move_speed"
@@ -13440,6 +13569,8 @@
 		"DOTA_Tooltip_modifier_smoke_of_deceit"				"Smoke of Deceit"
 		"DOTA_Tooltip_modifier_smoke_of_deceit_Description"	"Usynlig, beveger seg %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %% raskere og er skjult fra minikartet. Usynligheten blir brutt ved angrep, eller om en fiendtlig helt eller et fiendtlig tårn befinner seg innenfor en avstand på %dMODIFIER_PROPERTY_TOOLTIP%."
 
+		"DOTA_Tooltip_ability_item_devastator_Description"				"<h1>Passiv: Witch Blade</h1> Gjør at det neste angrepet har fulltreff og påfører gift i %slow_duration% sekunder, noe som hemmer med %slow% %% og gjør %int_damage_multiplier%x intelligensen din som skade hvert sekund.\n\n<h1>Passiv: Magic Corruption</h1> Angrepene dine reduserer fiendens magiresistens med %active_mres_reduction% %% i %passive_cooldown% sekunder."
+		"DOTA_Tooltip_ability_item_devastator_Lore"						"Ødeleggende."
 		"DOTA_Tooltip_ability_item_devastator_bonus_attack_speed"				"+$attack"
 		"DOTA_Tooltip_ability_item_devastator_bonus_armor"					"+$armor"
 		"DOTA_Tooltip_ability_item_devastator_bonus_intellect"				"+$int"
@@ -13451,6 +13582,8 @@
 		"DOTA_Tooltip_ability_item_revenants_brooch_Description"				"<h1>Veksle: Phantom Province</h1>Når aktiv koster angrep %manacost_per_hit% mana og gjør magisk skade."
 		"DOTA_Tooltip_ability_item_revenants_brooch_Lore"						"Den forbannede brosjen til en fallen vokter som for alltid vandrer mellom livets og dødens forheng."
 		"DOTA_Tooltip_ability_item_revenants_brooch_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_revenants_brooch_spell_lifesteal"		"+$spell_lifesteal"
+		
 		"DOTA_Tooltip_modifier_item_revenants_brooch_internal_cd"				"Witch Blade – nedkjøling"
 		"DOTA_Tooltip_modifier_item_revenants_brooch_internal_cd_Description"	"Forsinkelse inntil det neste angrepet utløser Witch Blade."
 
@@ -13460,6 +13593,7 @@
 		"DOTA_Tooltip_modifier_misery_debuff"									"Revenant's Wail"
 		"DOTA_Tooltip_modifier_misery_debuff_Description"						"Magiresistens redusert med %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS% %."
 
+		"DOTA_Tooltip_ability_item_veil_of_discord_Description"					"<h1>Aktiv: Magic Weakness</h1> Skaper en trykkbølge i en radius på %debuff_radius% som gjør at fiendtlige helter tar %spell_amp% %% økt skade fra formler.<br><br>Varighet: %resist_debuff_duration% sekunder"
 		"DOTA_Tooltip_ability_item_veil_of_discord_Lore"						"En fordervet magikers hodeplagg."
 		"DOTA_Tooltip_ability_item_veil_of_discord_bonus_all_stats"			"+$all"
 		"DOTA_Tooltip_ability_item_veil_of_discord_bonus_hp_regen"			"+$hp_regen"
@@ -13495,6 +13629,10 @@
 		"DOTA_Tooltip_ability_item_meteor_hammer_bonus_strength"						"+$str"	
 		"DOTA_Tooltip_ability_item_meteor_hammer_bonus_agility"						"+$agi"	
 		"DOTA_Tooltip_ability_item_meteor_hammer_bonus_intellect"					"+$int"
+		"DOTA_Tooltip_ability_item_meteor_hammer_spell_amp"						"%+formelstyrkelse"
+		"DOTA_Tooltip_ability_item_meteor_hammer_mana_regen_multiplier"				"%+styrket manaregenerasjon"
+		"DOTA_Tooltip_ability_item_meteor_hammer_spell_lifesteal_amp"				"%+styrket formelhelseran"
+
 		"DOTA_Tooltip_modifier_item_meteor_hammer_burn"						"Meteor Hammer – brannskade"
 		"DOTA_Tooltip_modifier_item_meteor_hammer_burn_Description"			"Hemmet og tar %dMODIFIER_PROPERTY_TOOLTIP% skade hvert %dMODIFIER_PROPERTY_TOOLTIP2%. sekund."
 
@@ -13601,6 +13739,7 @@
 		"DOTA_Tooltip_ability_item_vampire_fangs_night_vision"				"+nattsyn"		
 		"DOTA_Tooltip_ability_item_vampire_fangs_creep_lifesteal_reduction_pct"			"%HELSERANSREDUKSJON PÅ KRYP:"
 		
+		"DOTA_Tooltip_ability_item_craggy_coat_Description"		"<h1>Aktiv: Toughen Up</h1> Gir deg ytterligere %active_armor% ekstra rustning på bekostningav -%move_speed% bevegelseshastighet. Varer i %active_duration% sekunder."		
 		"DOTA_Tooltip_ability_item_craggy_coat_armor_bonus"					"+$armor"		
 		"DOTA_Tooltip_ability_item_craggy_coat_bonus_health"					"+$health"
 
@@ -13880,6 +14019,8 @@
 		"DOTA_Tooltip_Ability_item_orb_of_corrosion_attack_speed"		"+$attack"
 
 		"DOTA_Tooltip_modifier_orb_of_corrosion_debuff"		            "Orb of Corrosion"
+		"DOTA_Tooltip_modifier_orb_of_corrosion_debuff_Description"		"Innkommende helbredelse redusert med %dMODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE_TARGET% %%. Tar %dMODIFIER_PROPERTY_TOOLTIP% giftskade per sekund og beveger seg %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %% saktere."
+
 		"DOTA_Tooltip_Ability_item_wizard_glass_Description"		"<h1>Aktiv</h1>Gjør %damage% skade på opptil %count% tilfeldige fiendtlige enheter innenfor en radius på %radius%."
         "DOTA_Tooltip_Ability_item_wizard_glass_debuff_amp"		    "%+$debuff_amp"
         "DOTA_Tooltip_Ability_item_wizard_glass_cooldown_reduction"		    "%+nedkjølingsreduksjon"
@@ -14215,15 +14356,20 @@
 		"DOTA_Tooltip_modifier_watch_tower_allied_aura_tracker_Description"		"Denne enheten gir 8 %% mer gull og erfaring."	
 	
 
+		"DOTA_Tooltip_rune_doubledamage"				"Skadelyst"
+		"DOTA_Tooltip_rune_doubledamage_description"	"Øker grunnskade med 80 % og gir 15 % formelstyrkelse."
 		"DOTA_Tooltip_rune_water"						"Vann"
 		"DOTA_Tooltip_rune_water_description"			"Gjenoppretter umiddelbart 40 helse og 80 mana."
 		"DOTA_Tooltip_rune_arcane"						"Mystisk"
 		"DOTA_Tooltip_rune_arcane_description"			"Reduserer nedkjølinger og manakostnader med 25 %."
 		"DOTA_Tooltip_rune_haste"						"Hastverk"
+		"DOTA_Tooltip_rune_haste_description"			"Øker bevegelseshastighet til maks. Varer i 22 sekunder + 3 sekunder for hver runesyklus."
 		"DOTA_Tooltip_rune_illusion"					"Illusjon"
 		"DOTA_Tooltip_rune_illusion_description"		"Tilkaller 2 illusjoner av helten din som gjør 35 % skade. Nærkampillusjoner tar 200 % skade. Fjernkampillusjoner tar 300 % skade. Illusjoner varer i 75 sekunder."
 		"DOTA_Tooltip_rune_invisibility"				"Usynlighet"
+		"DOTA_Tooltip_rune_invisibility_description"	"Blir usynlig i 45 sekunder. Denne usynligheten brytes ved å angripe eller ved å bruke en evne eller gjenstand. Når den er aktiv, gir den 25 % skadereduksjon mens usynlig + 5 % for hver fullstendige runesyklus."
 		"DOTA_Tooltip_rune_regeneration"				"Regenerasjon"
+		"DOTA_Tooltip_rune_regeneration_description"	"Regenerer helse og mana til maks. Hvis man tar skade fra en fiendtlig helt, reduseres regenerasjonen til 1 % helse/mana per sekund."
 		"DOTA_Tooltip_rune_bounty"						"Dusør"
 		"DOTA_Tooltip_rune_bounty_description"			"Gir ekstra gull."
 		"DOTA_Tooltip_rune_shield"						"Skjold"
@@ -14233,6 +14379,7 @@
 		"DOTA_Tooltip_rune_unknown"						"Ukjent"
 		"DOTA_Tooltip_rune_unknown_description"			"Ukjent rune"
 		
+		"DOTA_Tooltip_modifier_rune_doubledamage"				"Skadelyst"
 		"DOTA_Tooltip_modifier_rune_doubledamage_Description"	"Grunnskade økt med %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE% %%."
 		"DOTA_Tooltip_modifier_rune_regen"						"Regenerasjonsrune"
 		"DOTA_Tooltip_modifier_rune_regen_Description"			"Regenererer %dMODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE% %% helse og %dMODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE% %% mana per sekund."
