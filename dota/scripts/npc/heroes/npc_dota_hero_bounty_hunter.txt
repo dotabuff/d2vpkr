@@ -47,7 +47,6 @@
 			"bounce_aoe"			
 			{
 				"value"		"1200"
-					"affected_by_aoe_increase"	"1"
 			}
 			"slow_duration"			
 			{
@@ -83,7 +82,7 @@
 		//"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"		
 		"AbilitySound"					"Hero_BountyHunter.Jinada"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK | DOTA_ABILITY_BEHAVIOR_BREAK_DISABLES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -91,11 +90,11 @@
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 
 		"AbilityCastRange"				"150"
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"		
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"	
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"9 7 5 3"
+
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -111,6 +110,12 @@
 				"value"			"12 20 28 36"
 				"special_bonus_unique_bounty_hunter"		"+50"
 			}
+			"AbilityCooldown"				
+			{
+				"value"			"9 7 5 3"
+				"special_bonus_unique_bounty_hunter_jinada_no_cooldown"			"-100%"
+			}
+			
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}	
@@ -255,12 +260,12 @@
 				"bonus_gold_self"		
 				{
 					"value"		"130 225 320"
-					"LinkedSpecialBonus"	"special_bonus_unique_bounty_hunter_3"
+					"special_bonus_unique_bounty_hunter_3"	"+45"
 				}
 				"bonus_gold"			
 				{
 					"value"		"40 80 120"
-					"LinkedSpecialBonus"	"special_bonus_unique_bounty_hunter_3"
+					"special_bonus_unique_bounty_hunter_3"	"+45"
 				}
 				"duration"				"30.0 30.0 30.0"
 				"gold_steal"			"0.3 0.4 0.5"
@@ -340,18 +345,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"250"
-				"ad_linked_abilities"			"bounty_hunter_track"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -457,4 +451,17 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"special_bonus_base"
 	}
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_bounty_hunter_jinada_no_cooldown"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
+
+	
 }

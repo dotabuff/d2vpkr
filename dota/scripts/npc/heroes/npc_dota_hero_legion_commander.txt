@@ -74,6 +74,12 @@
 					"value"						"15"
 					"special_bonus_unique_legion_commander_9"		"-2"
 				}
+				"duel_radius_bonus"
+				{
+					"value"					"0"
+					"special_bonus_shard"	"+250"
+				}
+				
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -114,23 +120,24 @@
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"duration"				"5.0"
+			"move_speed"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"5.0"
+				"value"			"10 14 18 22"
+				"special_bonus_unique_legion_commander_pta_movespeed"	"+8"
 			}
-			"02"
+			"hp_regen"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"move_speed"			"10 14 18 22"
+				"value"				"24 36 48 60"
+				"special_bonus_unique_legion_commander_6"	"+30"
 			}
-			"03"
+			"radius"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"hp_regen"				"24 36 48 60"
-				"LinkedSpecialBonus"	"special_bonus_unique_legion_commander_6"
+				"value"						"0"
+				"special_bonus_unique_legion_commander_5"			"+250"
+				"affected_by_aoe_increase"							"1"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -186,7 +193,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_LegionCommander.Duel"
-
+		"HasShardUpgrade"			"1"
 		"HasScepterUpgrade"			"1"
 
 
@@ -221,7 +228,7 @@
 			"reward_damage"			
 			{
 				"value"			"10 20 30"
-				"LinkedSpecialBonus"	"special_bonus_unique_legion_commander"
+				"special_bonus_shard"	"+8"
 			}
 			"victory_range"			"600"
 			"scepter_damage_reduction_pct"			
@@ -233,6 +240,11 @@
 			{
 				"value"					"60 55 50"
 				"special_bonus_scepter"			"-20"
+			}
+			"shard_duel_damage_bonus"
+			{
+				"value"			"8"
+				"RequiresShard"	"1"
 			}
 
 		}
@@ -328,18 +340,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"250"
-				"ad_linked_abilities"			"legion_commander_press_the_attack"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -351,18 +352,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"30"
-				"ad_linked_abilities"			"legion_commander_press_the_attack"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -405,6 +395,18 @@
 	// Ability: Special Bonus
 	//=================================================================================================================
 	"special_bonus_unique_legion_commander_9"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
+	
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_legion_commander_pta_movespeed"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------

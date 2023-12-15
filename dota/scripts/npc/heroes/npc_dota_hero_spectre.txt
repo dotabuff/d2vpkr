@@ -87,18 +87,17 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"bonus_damage"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"21 34 47 60"
-				"LinkedSpecialBonus"		"special_bonus_unique_spectre_2"
+				"value"									"21 34 47 60"
+				"special_bonus_unique_spectre_2"		"+12"
 			}
-			"02"
+			"radius"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"400"
+				"value"				"400"
+				"special_bonus_unique_spectre_desolate_radius"			"-100"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -125,7 +124,7 @@
 				"value"		"8 12 16 20"
 				"special_bonus_unique_spectre_5"		"+5"
 			}
-			"min_radius"			"400"
+			"min_radius"			"300"
 			"max_radius"			"800"
 			"activation_cooldown"
 			{
@@ -174,7 +173,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"180"
+		"AbilityCooldown"				"160"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -293,18 +292,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"12"
-				"ad_linked_abilities"			"spectre_desolate"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -397,5 +385,16 @@
 				"ad_linked_abilities"			"spectre_spectral_dagger"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 			}
 		}
+	}
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_spectre_desolate_radius"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
 	}
 }

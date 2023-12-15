@@ -17,7 +17,11 @@
 		"AbilityValues"
 		{
 				"blade_dance_crit_chance"	"20 25 30 35"
-				"blade_dance_crit_mult"		"190"
+				"blade_dance_crit_mult"		
+				{
+					"value"		"190"
+					"special_bonus_unique_juggernaut_4"	"+10"
+				}
 				"blade_dance_lifesteal"
 				{
 					"value"	"0"
@@ -58,49 +62,42 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"blade_fury_damage_tick"	
+
+			"blade_fury_aspd_multiplier"
 			{
-				"value"					"0.2"
-				"CalculateSpellDamageTooltip"	"0"
+				"value"		"2.0"
 			}
 			"blade_fury_radius"			
 			{
 				"value"						"260"
 				"special_bonus_unique_juggernaut"		"+100"
+				"special_bonus_shard"		"+100"
 				"affected_by_aoe_increase"	"1"
 			}
-			"blade_fury_damage"			
+
+			"blade_fury_damage_per_tick"			
 			{
-				"value"				"90 115 140 165"
-				"special_bonus_unique_juggernaut_3"		"+100"
+				"value"				"35 40 45 50"
 			}
 			"duration"					
 			{
 				"value"				"5.0"
-				"special_bonus_unique_juggernaut_4"	"+1.5"
 			}
 			"AbilityCooldown"
 			{
 				"value"					"42 34 26 18"
 				"special_bonus_unique_juggernaut_blade_fury_cooldown"		"-3"
 			}
-
-			"shard_bonus_move_speed"			
-			{	
-				"value"				"75"
-				"RequiresShard"					"1"
+			"bonus_movespeed"
+			{
+				"value"			"0"
+				"special_bonus_unique_juggernaut_blade_fury_movespeed"		"+30"
 			}
-			"shard_attack_rate"			
-			{	
-				"value"				"1.4"
-				"RequiresShard"					"1"
+			"movement_slow"			
+			{
+				"value"					"0"
+				"special_bonus_shard"		"+35"
 			}
-			"shard_damage_pct"			
-			{	
-				"value"				"75"
-				"RequiresShard"					"1"
-			}
-		
 	
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -140,6 +137,8 @@
 				{
 					"value"		"400"
 					"affected_by_aoe_increase"	"1"
+				"special_bonus_unique_juggernaut_3"		"+150"
+
 				}
 				"healing_ward_movespeed_tooltip"	
 				{
@@ -379,4 +378,13 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"special_bonus_base"
 	}
+	"special_bonus_unique_juggernaut_blade_fury_movespeed"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
+	
 }

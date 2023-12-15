@@ -50,7 +50,11 @@
 			}
 			"movespeed_bonus"				"15 20 25 30"
 			"attackspeed_bonus"				"25 40 55 70"
-			"radius"						"900"
+			"radius"
+			{
+				"value"			"900"
+				"affected_by_aoe_increase"	"1"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}	
@@ -365,38 +369,18 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"stun_radius"
 			{
-				"var_type"							"FIELD_INTEGER"
-				"stun_radius"						"375"
+				"value"						"375"
+				"affected_by_aoe_increase"	"1"		// stun_radius will pull from owner's visage_stone_form_self_cast
 			}
-			"02"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"stun_delay"						"0.55"
-			}			
-			"03"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"stun_damage"						"60 100 140"
-			}
-			"04"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"stun_duration"						"0.8 1.0 1.2"
-			}
-			"05"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"stone_duration"					"6.0"
-			}
-			"06"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"hp_regen"							"150 175 200"
-			}
+			"stun_delay"						"0.55"		
+			"stun_damage"						"60 100 140"
+			"stun_duration"						"0.8 1.0 1.2"
+			"stone_duration"					"6.0"
+			"hp_regen"							"150.0 175.0 200.0"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_5"
 	}
@@ -463,7 +447,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"2"
+				"value"				"3"
 				"ad_linked_abilities"			"visage_soul_assumption"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 			}
 		}

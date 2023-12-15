@@ -77,14 +77,18 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"static_remnant_radius"		"235"		
+				"static_remnant_radius"
+				{
+					"value" "235"
+					"affected_by_aoe_increase"	"1"	
+				}	
 				"static_remnant_damage_radius"	
 				{
 					"value"			"300"
 					"DamageTypeTooltip"			"DAMAGE_TYPE_NONE"
 					"affected_by_aoe_increase"	"1"
 				}
-				"static_remnant_delay"		"1.0"
+				"static_remnant_delay"		"0.75"
 				"static_remnant_damage"			
 				{
 					"value"		"120 180 240 300"
@@ -168,65 +172,56 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"overload_aoe"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"overload_aoe"					"300"
-			}			
-			"02"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"overload_move_slow"			"-80"
-			}			
-			"03"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"overload_attack_slow"			"-80"
+				"value"			"300"		
+				"affected_by_aoe_increase"	"1"
 			}
-			"04"
+			"overload_move_slow"			"-80"
+			"overload_attack_slow"			"-80"
+			"overload_damage"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"overload_damage"			"25 50 75 100"
-				"LinkedSpecialBonus"	"special_bonus_unique_storm_spirit_6"
+				"value"			"25 50 75 100"
+				"special_bonus_unique_storm_spirit_6"	"+24"
 			}
-			"05"
+			"shard_activation_radius"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"shard_activation_radius"					"750"
+				"value"							"750"
 				"RequiresShard"						"1"
 			}	
-			"06"
+			"shard_activation_charges"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"shard_activation_charges"					"3"
+				"value"								"3"
 				"RequiresShard"						"1"
 			}	
-			"07"
+			"shard_activation_duration"
 			{
-				"var_type"						"FIELD_FLOAT"
-				"shard_activation_duration"					"12"
+				"value"								"12"
 				"RequiresShard"						"1"
 			}	
-			"08"
+			"shard_manacost"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"shard_manacost"					"150"
+				"value"								"150"
 				"RequiresShard"						"1"
 			}
-			"09"
+			"shard_cooldown"
 			{
-				"var_type"						"FIELD_FLOAT"
-				"shard_cooldown"					"30"
+				"value"								"30"
 				"RequiresShard"						"1"
 			}	
-			"10"
+			"shard_attack_speed_bonus"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"shard_attack_speed_bonus"					"40"
+				"value"								"40"
 				"RequiresShard"						"1"
 			}																	
+			"overload_cast_range"
+			{
+				"value"					"0"
+				"special_bonus_unique_storm_spirit_overload_aspd"		"+150.0"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -270,7 +265,11 @@
 				}
 				"ball_lightning_travel_cost_base"	"10"		
 				"ball_lightning_travel_cost_percent"	"0.65"		
-				"ball_lightning_vision_radius"			"400"		
+				"ball_lightning_vision_radius"
+				{
+					"value"			"400"		
+					"affected_by_aoe_increase"	"1"
+				}		
 				"blocker_duration"			"5"		
 				"scepter_remnant_interval"			"300"		
 		}
@@ -391,18 +390,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"24"
-				"ad_linked_abilities"			"storm_spirit_overload"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -450,4 +438,17 @@
 			}
 		}
 	}
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_storm_spirit_overload_aspd"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
+	
 }

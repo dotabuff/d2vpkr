@@ -311,8 +311,10 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"2"
@@ -323,34 +325,35 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"160 140 120"
+		"AbilityCooldown"				"0.5"
+
 		"AbilityCastPoint"				"0.4"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"150 200 250"
+		"AbilityManaCost"				"100 150 200"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"duration"					"5 6 7"
-				"radius"					
-				{
-					"value"			"1200"
-					"affected_by_aoe_increase"	"1"
-				}
-				"duration_scepter"
-				{
-					"value"		"6 7 8"
-					"RequiresScepter"		"1"
-				}
-				"scepter_status_resist"					
-				{
-					"value"			"40"
-					"RequiresScepter"		"1"
-				}
+			"duration"					"5 6 7"
+			"AbilityCharges"				
+			{
+				"value"		"2"	
+				"special_bonus_scepter"		"+1"
+			}
+			"AbilityChargeRestoreTime"		
+			{
+				"value"					"80 70 60"
+				"special_bonus_unique_omniknight_7"			"-15"		
+			}
+			"AbilityCastRange"				
+			{
+				"value"		"900"	
+				"special_bonus_scepter"		"=0"
+			}
 		}
 	}
 
@@ -550,17 +553,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"30"
-				"ad_linked_abilities"			"omniknight_guardian_angel"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
+
 	}
 }

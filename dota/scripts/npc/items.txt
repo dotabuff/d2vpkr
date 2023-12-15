@@ -418,7 +418,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1100"
+		"ItemCost"						"900"
 		"ItemShopTags"					"damage"
 		"ItemQuality"					"component"
 		"ItemAliases"					"javelin"
@@ -428,7 +428,7 @@
 		"AbilityValues"
 		{
 				"bonus_chance"			"30"
-				"bonus_chance_damage"	"70"
+				"bonus_chance_damage"	"60"
 		}
 	}
 	
@@ -497,6 +497,7 @@
 		"ItemShopTags"					"damage;attack_speed"
 		"ItemQuality"					"component"
 		"ItemAliases"					"quarterstaff"
+		"IsObsolete"					"1"
 
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -1135,7 +1136,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2050"
+		"ItemCost"						"2800"
 		"ItemShopTags"					"agi;int;str"
 		"ItemQuality"					"secret_shop"
 		"ItemAliases"					"ultimate orb"
@@ -1145,7 +1146,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_all_stats"		"10"
+				"bonus_all_stats"		"15"
 		}
 	}
 	
@@ -1284,41 +1285,7 @@
 		
 	}
 	
-	//=================================================================================================================
-	// Ring of Tarrasque
-	//=================================================================================================================
-	"item_ring_of_tarrasque"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"650"
-		"ItemShopTags"					"regen_health"
-		"ItemQuality"					"component"
-		"ItemAliases"					"rot"
-		"ShouldBeInitiallySuggested"	"1"
-
-		"ItemPurchasable"				"0"
-        "IsObsolete"                    "1"
-
-		// Sound
-		//-------------------------------------------------------------------------------------------------------------			
-		"UIPickupSound"					"Item.PickUpRingShop"
-		"UIDropSound"					"Item.DropRingShop"
-		"WorldDropSound"				"Item.DropRingWorld"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-				"bonus_health"			"150"
-				"bonus_health_regen"	"4"
-		}
-		
-	}
+	
 
 	//=================================================================================================================
 	// Sobi Mask
@@ -1417,7 +1384,11 @@
 		"AbilityValues"
 		{
 			"radius"				"900"
-			"active_radius"			"300"
+			"active_radius"
+			{
+				"value"						"300"
+				"affected_by_aoe_increase"	"1"
+			}
 			"duration"			"4"
 		}
 	}
@@ -2811,7 +2782,6 @@
 		"ItemShopTags"					"regen_health"
 		"ItemQuality"					"component"
 		"ItemAliases"					"roh;ring of health"
-		"SecretShop"					"1"		
 		
 		// Sound
 		//-------------------------------------------------------------------------------------------------------------			
@@ -2827,6 +2797,38 @@
 		}
 	}
 	
+
+		//=================================================================================================================
+	// Ring of Health
+	//=================================================================================================================
+	"item_ring_of_tarrasque"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1800"
+		"ItemShopTags"					"regen_health"
+		"ItemQuality"					"component"
+		"ItemAliases"					"rot;ring of tarrasque"
+		"SecretShop"					"1"		
+		
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpRingShop"
+		"UIDropSound"					"Item.DropRingShop"
+		"WorldDropSound"				"Item.DropRingWorld"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_health_regen"	"12"
+		}
+	}
+
 	//=================================================================================================================
 	// Void Stone
 	//=================================================================================================================
@@ -2842,7 +2844,6 @@
 		"ItemShopTags"					"regen_mana"
 		"ItemQuality"					"component"
 		"ItemAliases"					"void stone"
-		"SecretShop"					"1"		
 		//"SideShop"						"1"
 
 		// Special	
@@ -2853,6 +2854,31 @@
 		}
 	}
 	
+	//=================================================================================================================
+	// Void Stone
+	//=================================================================================================================
+	"item_tiara_of_selemene"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1800"
+		"ItemShopTags"					"regen_mana"
+		"ItemQuality"					"component"
+		"ItemAliases"					"tiara of selemene"
+		"SecretShop"					"1"		
+		//"SideShop"						"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_mana_regen"		"6"
+		}
+	}
 	//=================================================================================================================
 	// Mystic Staff
 	//=================================================================================================================
@@ -3078,7 +3104,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"4500"
+		"ItemCost"						"5250"
 		"ItemShopTags"					"attack_speed;move_speed;int;agi;str"
 		"ItemQuality"					"common"
 		"ItemAliases"					"tabi"
@@ -3349,7 +3375,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
+		"ItemCost"						"200"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -3358,7 +3384,7 @@
 		"ItemResult"					"item_phylactery"
 		"ItemRequirements"
 		{
-			"01"						"item_point_booster;item_diadem;item_sobi_mask"
+			"01"						"item_point_booster;item_diadem"
 		}
 	}
 	
@@ -3379,7 +3405,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2375"
+		"ItemCost"						"2400"
 		"ItemShopTags"					"hard_to_tag"
 		"ItemQuality"					"common"
 		"ItemAliases"					"phylactery"
@@ -3392,14 +3418,76 @@
 			"bonus_health"		"200"
 			"bonus_mana"		"200"			
 			"bonus_all_stats"	"7"
-			"bonus_mana_regen"	".7"	
 			"slow"						"50"
 			"bonus_spell_damage"		"150"
 			"slow_duration"				"1.5"
 		}
 	}
 
+	//=================================================================================================================
+	// Recipe: Khanda
+	//=================================================================================================================
+	"item_recipe_angels_demise"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"600"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_angels_demise"
+		"ItemRequirements"
+		{
+			"01"						"item_phylactery;item_lesser_crit"
+		}
+	}
+	
+	//=================================================================================================================
+	// Khanda
+	//=================================================================================================================
+	"item_angels_demise"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"6.0"
 
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5000"
+		"ItemShopTags"					"hard_to_tag"
+		"ItemQuality"					"common"
+		"ItemAliases"					"angel;demise"
+		"ShouldBeSuggested"				"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_damage"			"50"
+			"crit_chance"			"30"
+			"spell_crit_multiplier"		"75"
+			"spell_crit_flat"			"100"
+			"crit_multiplier"		"160"
+			"tooltip_crit_damage"	"60"
+			"bonus_health"		"200"
+			"bonus_mana"		"200"			
+			"bonus_all_stats"	"8"
+			"slow"						"50"
+			"slow_duration"				"1.5"
+		}
+	}
 
 
 	//=================================================================================================================
@@ -3524,6 +3612,99 @@
 		}
 	}
 
+	
+	//=================================================================================================================
+	// Recipe: Phylactery
+	//=================================================================================================================
+	"item_recipe_aetherial_halo"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+				"IsObsolete"					"1"
+
+
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_aetherial_halo"
+		"ItemRequirements"
+		{
+			"01"						"item_ultimate_orb;item_meteor_hammer"
+		}
+	}
+	
+	//=================================================================================================================
+	// Phylactery
+	//=================================================================================================================
+	"item_aetherial_halo"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+				"IsObsolete"					"1"
+
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityChannelTime"			"1.5"
+
+		
+		
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCooldown"				"24"
+		"AbilityManaCost"				"100"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5900"
+		"ItemShopTags"					"hard_to_tag"
+		"ItemQuality"					"common"
+		"ItemAliases"					"aetherial halo"
+		"ShouldBeSuggested"				"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_strength"		"25"
+				"bonus_agility"		"25"
+				"bonus_intellect"			"40"
+				"spell_amp"			"12"
+				"mana_regen_multiplier"		"100"
+				"spell_lifesteal_amp"	"36"
+
+				"burn_dps_buildings"		"60"
+				"burn_dps_units"		"60"
+				"burn_slow"			"20"
+				"burn_duration"		"6"
+				"stun_duration"		"0.5"
+				"burn_interval"				"1.0"
+				"land_time"				".5"
+				"impact_radius"		
+				{
+					"value"		"400"
+					"affected_by_aoe_increase"	"1"
+				}
+				"max_duration"		"1.5"
+				"impact_damage_buildings"		"95"
+				"impact_damage_units"		"150"
+				"enemy_particles_visible"		"0"
+		}
+	}
+
 	//=================================================================================================================
 	// Recipe: Oblivion Staff
 	//=================================================================================================================
@@ -3544,7 +3725,7 @@
 		"ItemResult"					"item_oblivion_staff"
 		"ItemRequirements"
 		{
-			"01"						"item_quarterstaff;item_sobi_mask;item_robe"
+			"01"						"item_blitz_knuckles;item_sobi_mask;item_robe"
 		}
 	}
 	
@@ -3559,7 +3740,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1500"
+		"ItemCost"						"1625"
 		"ItemShopTags"					"damage;int;attack_speed;regen_mana"
 		"ItemQuality"					"common"
 		"ItemAliases"					"oblivion staff"
@@ -3568,9 +3749,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_damage"	"15"
 				"bonus_intellect"		"10"
-				"bonus_attack_speed"	"10"
+				"bonus_attack_speed"	"35"
 				"bonus_mana_regen"		"1.25"
 		}
 	}
@@ -3595,7 +3775,7 @@
 		"ItemResult"					"item_witch_blade"
 		"ItemRequirements"
 		{
-			"01"						"item_blitz_knuckles;item_robe;item_chainmail"
+			"01"						"item_oblivion_staff;item_chainmail"
 		}
 	}
 	
@@ -3614,7 +3794,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2600"
+		"ItemCost"						"2775"
 		"ItemShopTags"					"damage;int;attack_speed;regen_mana"
 		"ItemQuality"					"common"
 		"ItemAliases"					"witch blade;wb"
@@ -3623,8 +3803,9 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_attack_speed"	"35"
+				"bonus_attack_speed"	"40"
 				"bonus_intellect"		"12"
+				"bonus_mana_regen"		"1.5"
 				"bonus_armor"			"6"
 				"int_damage_multiplier"	"0.75"
 				"slow"	"25"
@@ -4319,7 +4500,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"525"	
+		"ItemCost"						"900"	
 		"ItemShopTags"					""
 		
 		// Sound
@@ -4334,7 +4515,7 @@
 		"ItemResult"					"item_holy_locket"
 		"ItemRequirements"
 		{
-			"01"						"item_diadem;item_headdress;item_magic_wand"
+			"01"						"item_diadem;item_magic_wand"
 		}
 	}
 	
@@ -4356,7 +4537,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2400"
+		"ItemCost"						"2350"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"hl;holy locket"
 		"ShouldBeInitiallySuggested"	"1"
@@ -4369,7 +4550,7 @@
 
 			
 		"AbilityCharges"				"20"
-		"AbilityChargeRestoreTime"		"10"
+		"AbilityChargeRestoreTime"		"8"
 		"ItemInitialCharges"			"1"
 		"ItemRequiresCharges"			"1"
 		"ItemDisplayCharges"			"1"
@@ -4389,13 +4570,11 @@
 		{
 				"bonus_health"			"0"
 				"bonus_mana"			"0"
-				"aura_health_regen"	"3"
-				"aura_radius"	"1200"
 				"heal_increase"		"30"
 				"max_charges"			"20"
 				"charge_radius"			"1200"
-				"bonus_all_stats"		"10"
-				"restore_per_charge"	"15"
+				"bonus_all_stats"		"9"
+				"restore_per_charge"	"17"
 				"charge_gain_timer"		"10"
 				"use_cooldown"			"13"
 		}
@@ -4412,7 +4591,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1450"	
+		"ItemCost"						"700"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -4421,7 +4600,7 @@
 		"ItemResult"					"item_pipe"
 		"ItemRequirements"
 		{
-			"01"						"item_cloak*;item_headdress;item_ring_of_health"
+			"01"						"item_cloak*;item_headdress;item_ring_of_tarrasque"
 		}
 	}
 	
@@ -4443,7 +4622,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"3375"
+		"ItemCost"						"3725"
 		"ItemShopTags"					"regen_health;boost_magic_resist"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"pipe of insight"
@@ -4455,7 +4634,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"health_regen"			"6.0"
+			"health_regen"			"14.0"
 			"magic_resistance"		"20"
 			"barrier_debuff_duration"	"50.0"
 			"tooltip_resist"			"20"
@@ -4617,7 +4796,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
+		"ItemCost"						"600"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -4626,7 +4805,7 @@
 		"ItemResult"					"item_sheepstick"
 		"ItemRequirements"
 		{
-			"01"						"item_mystic_staff;item_ultimate_orb;item_void_stone"
+			"01"						"item_mystic_staff;item_tiara_of_selemene"
 		}
 	}
 	
@@ -4653,7 +4832,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"250"
-		"ItemCost"						"5550"
+		"ItemCost"						"5200"
 		"ItemShopTags"					"int;regen_mana;agi;hard_to_tag"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"hex;sheepstick;scythe of vyse"
@@ -4664,9 +4843,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_strength"		"10"
-			"bonus_agility"			"10"
-			"bonus_intellect"		"35"
+			"bonus_intellect"		"30"
 			"bonus_mana_regen"		"8.5"
 			"sheep_duration"		"2.8"
 			"sheep_movement_speed"	"140"
@@ -4674,6 +4851,75 @@
 		}
 	}
 
+	//=================================================================================================================
+	// Recipe: Caster Rapier
+	//=================================================================================================================
+	"item_recipe_caster_rapier"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+        "IsObsolete"                    "1"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_caster_rapier"
+		"ItemRequirements"
+		{
+			"01"						"item_mystic_staff;item_ultimate_orb"
+		}
+	}
+	
+	//=================================================================================================================
+	// Caster Rapier
+	//=================================================================================================================
+	"item_caster_rapier"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"FightRecapLevel"				"2"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+
+        "IsObsolete"                    "1"
+
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5600"
+		"ItemShopTags"					"int;regen_mana;agi;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"caster_rapier"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemSellable"					"0"
+		"ItemKillable"					"0"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+		"ItemContributesToNetWorthWhenDropped"	"0"
+		"AllowedInBackpack"				"0"
+		"IsTempestDoubleClonable"		"0"
+		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ShouldBeSuggested"				"1"
+
+		"AbilityCooldown"			"9"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_spell_amp"		"50"
+			"cast_range_limit"		"2000"
+			"backstab_duration"		"3"
+			
+		}
+	}
 	//=================================================================================================================
 	// Recipe: Orchid
 	//=================================================================================================================
@@ -4685,7 +4931,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"275"	
+		"ItemCost"						"650"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -4694,7 +4940,7 @@
 		"ItemResult"					"item_orchid"
 		"ItemRequirements"
 		{
-			"01"						"item_blitz_knuckles;item_staff_of_wizardry;item_cornucopia"
+			"01"						"item_oblivion_staff;item_cornucopia"
 		}
 	}
 	
@@ -4735,7 +4981,7 @@
 		{
 				"bonus_attack_speed"	"40"
 				"bonus_damage"			"10"
-				"bonus_mana_regen"		"2.5"
+				"bonus_mana_regen"		"3.5"
 				"bonus_health_regen"	"6.0"
 				"bonus_intellect"		"12"
 				"silence_damage_percent"	"30"
@@ -4755,7 +5001,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"825"	
+		"ItemCost"						"450"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -4764,7 +5010,7 @@
 		"ItemResult"					"item_bloodthorn"
 		"ItemRequirements"
 		{
-			"01"						"item_orchid*;item_mage_slayer"
+			"01"						"item_orchid*;item_javelin;item_hyperstone"
 		}
 	}
 	
@@ -4777,6 +5023,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"FightRecapLevel"				"1"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
@@ -4792,7 +5039,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100"
-		"ItemCost"						"6800"
+		"ItemCost"						"6825"
 		"ItemShopTags"					"int;attack_speed;damage;regen_mana;damage;hard_to_tag"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"orchid malevolence"
@@ -4803,17 +5050,17 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_intellect"			"32"
-				"bonus_attack_speed"		"60"
-				"bonus_damage"				"35"
-				"bonus_mana_regen"			"5"
-				"bonus_magic_resist"		"25"	
-				"bonus_health_regen"		"6.25"	
+				"bonus_intellect"			"15"
+				"bonus_attack_speed"		"100"
+				"bonus_mana_regen"			"3"
+				"bonus_health_regen"		"6.5"	
 				"silence_duration"			"5"
 				"silence_damage_percent"	"60"
-
+				"bonus_damage"				"10"
 				"duration"					"6"			
 				"spell_amp_debuff"			"35"
+				"proc_damage"				"60"
+				"proc_chance"				"40"
 		}
 	}
 	
@@ -4837,7 +5084,7 @@
 		"ItemResult"					"item_echo_sabre"
 		"ItemRequirements"
 		{
-			"01"						"item_ogre_axe;item_oblivion_staff"
+			"01"						"item_ogre_axe;item_broadsword;item_void_stone"
 		}
 	}
 	
@@ -4855,14 +5102,14 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"6.0"
+		"AbilityCooldown"				"5"
 		"AbilitySharedCooldown"			"echo_sabre"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
-		"ItemCost"						"2500"
-		"ItemShopTags"					"int;attack_speed;damage;regen_mana;damage;hard_to_tag"
+		"ItemCost"						"2700"
+		"ItemShopTags"					"attack_speed;damage;regen_mana;damage;hard_to_tag"
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"echo sabre"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
@@ -4873,13 +5120,10 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_damage"			"15"
-				"bonus_strength"		"13"
-				"bonus_intellect"			"10"
-				"bonus_attack_speed"			"10"
+				"bonus_damage"			"20"
+				"bonus_strength"		"15"
 				"bonus_mana_regen"		"1.75"
 				"movement_slow"			"100"
-				"attack_speed_slow"			"0"
 				"slow_duration"			"0.8"
 		}
 	}
@@ -5988,7 +6232,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2600"	
+		"ItemCost"						"200"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -5997,7 +6241,7 @@
 		"ItemResult"					"item_refresher"
 		"ItemRequirements"
 		{
-			"01"						"item_cornucopia;item_cornucopia"
+			"01"						"item_cornucopia;item_ring_of_tarrasque;item_tiara_of_selemene"
 		}
 	}
 	
@@ -6029,9 +6273,9 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_health_regen"	"12"
-			"bonus_mana_regen"		"6.0"
-			"bonus_damage"			"20"
+			"bonus_health_regen"	"18"
+			"bonus_mana_regen"		"8.0"
+			"bonus_damage"			"10"
 		}
 	}
 
@@ -6103,7 +6347,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1400"	
+		"ItemCost"						"600"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -6112,7 +6356,7 @@
 		"ItemResult"					"item_heart"
 		"ItemRequirements"
 		{
-			"01"						"item_vitality_booster;item_reaver"
+			"01"						"item_ring_of_tarrasque;item_reaver"
 		}
 	}
 	
@@ -6139,7 +6383,6 @@
 		"AbilityValues"
 		{
 			"bonus_strength"		"35"
-			"bonus_health"			"250"
 			"health_regen_pct"		"1.6"
 		}
 	}
@@ -6255,7 +6498,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"650"	
+		"ItemCost"						"1700"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -6264,7 +6507,7 @@
 		"ItemResult"					"item_shivas_guard"
 		"ItemRequirements"
 		{
-			"01"						"item_platemail;item_mystic_staff"
+			"01"						"item_veil_of_discord;item_platemail"
 		}
 	}
 	
@@ -6285,8 +6528,8 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100"
-		"ItemCost"						"4850"
+		"AbilityManaCost"				"75"
+		"ItemCost"						"4825"
 		"ItemShopTags"					"int;armor;hard_to_tag"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"shiva's guard;shivas"
@@ -6297,8 +6540,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_intellect"		"30"
-				"bonus_armor"			"15"
+				"bonus_intellect"		"8"
+				"bonus_strength"		"8"
+				"bonus_agility"			"8"
+				"bonus_hp_regen"		"8"
+				"bonus_armor"			"20"
 				"aura_radius"			"1200"
 				"aura_attack_speed"		"-45"
 				"blast_damage"			"200"
@@ -6312,6 +6558,8 @@
 				"blast_speed"			"400"
 				"hp_regen_degen_aura"	"25"
 				"illusion_multiplier_pct"	"150"
+				"spell_amp"			"15"				
+				"resist_debuff_duration"	"16.0"
 		}
 	}
 
@@ -6370,6 +6618,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+				"bonus_aoe"				"75"
 				"bonus_health"			"500"
 				"bonus_mana"			"500"
 				"spell_lifesteal"		"30"
@@ -6390,7 +6639,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1350"	
+		"ItemCost"						"600"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -6399,7 +6648,7 @@
 		"ItemResult"					"item_sphere"
 		"ItemRequirements"
 		{
-			"01"						"item_ultimate_orb;item_cornucopia"
+			"01"						"item_ultimate_orb;item_pers"
 		}
 	}
 	
@@ -6422,7 +6671,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"4600"
+		"ItemCost"						"4800"
 		"ItemShopTags"					"regen_health;regen_mana;str;agi;int;hard_to_tag"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"ls;linken's sphere"
@@ -6440,7 +6689,6 @@
 				"block_cooldown"		"14.0"
 				"upgrade_absorb_duration"		"10.0"
 				"damage_absorb"		"300"
-				"bonus_damage"			"10"
 		}
 	}
 
@@ -6518,7 +6766,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"550"	
+		"ItemCost"						"800"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -6527,7 +6775,7 @@
 		"ItemResult"					"item_meteor_hammer"
 		"ItemRequirements"
 		{
-			"01"						"item_pers;item_crown"
+			"01"						"item_crown;item_kaya"
 		}
 	}
 	
@@ -6543,6 +6791,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
 		
 		
 		// Time		
@@ -6558,7 +6807,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2400"
+		"ItemCost"						"3300"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"mh;meteor hammer"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
@@ -6568,11 +6817,15 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_all_stats"		"8"
-				"bonus_health_regen"	"6.5"
-				"bonus_mana_regen"		"2.5"
-				"burn_dps_buildings"		"60"
-				"burn_dps_units"		"60"
+				"bonus_strength"		"6"
+				"bonus_agility"		"6"
+				"bonus_intellect"			"24"
+				"spell_amp"			"10"
+				"mana_regen_multiplier"		"75"
+				"spell_lifesteal_amp"	"24"
+
+				"burn_dps_buildings"		"50"
+				"burn_dps_units"		"50"
 				"burn_slow"			"20"
 				"burn_duration"		"6"
 				"stun_duration"		"0.5"
@@ -6584,8 +6837,8 @@
 					"affected_by_aoe_increase"	"1"
 				}
 				"max_duration"		"2"
-				"impact_damage_buildings"		"95"
-				"impact_damage_units"		"150"
+				"impact_damage_buildings"		"90"
+				"impact_damage_units"		"130"
 				"enemy_particles_visible"		"0"
 
 
@@ -7224,16 +7477,15 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"600"	
+		"ItemCost"						"800"	
 		"ItemShopTags"					""
-		
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_eternal_shroud"
 		"ItemRequirements"
 		{
-			"01"						"item_cloak;item_ogre_axe;item_ring_of_health"
+			"01"						"item_cloak;item_ogre_axe;item_vitality_booster"
 		}
 	}
 	
@@ -7252,7 +7504,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"3100"
+		"ItemCost"						"3600"
 		"ItemShopTags"					"regen_health;magic_resist"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"eternal shroud;es"
@@ -7263,10 +7515,15 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_spell_resist"					"35"
+			"bonus_spell_resist"					"25"
 			"bonus_strength"						"14"
-			"bonus_health_regen"					"7.0"
-			"mana_restore_pct"						"30"
+			"bonus_health"							"300"
+			"stack_threshold"						"300"
+			"stack_duration"						"8"
+			"stack_resist"							"4"
+			"mana_restore_pct"						"20"
+			"max_stacks"							"6"
+
 		}
 	}
 
@@ -7324,6 +7581,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+				"bonus_spell_amp"		"25"
 				"bonus_damage"			"350"
 		}
 	}
@@ -7338,7 +7596,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"600"	
+		"ItemCost"						"800"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -7460,7 +7718,7 @@
 		"ItemResult"					"item_butterfly"
 		"ItemRequirements"
 		{
-			"01"						"item_eagle;item_talisman_of_evasion;item_quarterstaff"
+			"01"						"item_eagle;item_talisman_of_evasion;item_claymore"
 		}
 	}
 	
@@ -7476,7 +7734,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"4975"
+		"ItemCost"						"5450"
 		"ItemShopTags"					"agi;damage;evasion;attack_speed"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"bfly;butterfly"
@@ -7489,7 +7747,7 @@
 		{
 			"bonus_agility"			"35"
 			"bonus_evasion"			"35"
-			"bonus_attack_speed"	"30"
+			"bonus_attack_speed_pct"	"20"
 			"bonus_damage"	"25"
 		}
 	}
@@ -7505,7 +7763,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1000"	
+		"ItemCost"						"900"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -7688,7 +7946,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"500"	
+		"ItemCost"						"1550"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -7697,7 +7955,7 @@
 		"ItemResult"					"item_manta"
 		"ItemRequirements"
 		{
-			"01"						"item_yasha;item_ultimate_orb"
+			"01"						"item_yasha;item_diadem"
 		}
 	}
 	
@@ -7759,7 +8017,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"450"	
+		"ItemCost"						"200"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -7768,7 +8026,7 @@
 		"ItemResult"					"item_lesser_crit"
 		"ItemRequirements"
 		{
-			"01"						"item_broadsword;item_blades_of_attack"
+			"01"						"item_claymore;item_blades_of_attack"
 		}
 	}
 	
@@ -7783,7 +8041,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1900"
+		"ItemCost"						"2000"
 		"ItemShopTags"					"damage;crit"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"crystalys"
@@ -7988,7 +8246,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"550"	
+		"ItemCost"						"250"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -7997,7 +8255,7 @@
 		"ItemResult"					"item_silver_edge"
 		"ItemRequirements"
 		{
-			"01"						"item_invis_sword*;item_lesser_crit"
+			"01"						"item_invis_sword*;item_demon_edge"
 		}
 	}
 	
@@ -8031,7 +8289,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_damage" "52"
+			"bonus_damage" "60"
 			"bonus_attack_speed"	"35"
 			"bonus_strength"		"0"
 			"bonus_intellect"			"0"
@@ -8039,11 +8297,9 @@
 			"windwalk_duration"		"14.0"
 			"windwalk_movement_speed"	"25"
 			"windwalk_fade_time"	"0.3"
-			"windwalk_bonus_damage"	"175"
-			"backstab_duration"		"4"
-			"crit_chance"			"30"
-			"crit_multiplier"		"160"
-			"tooltip_crit_damage"	"60"
+			"windwalk_bonus_damage"	"300"
+			"backstab_duration"		"5"
+			"visibility_radius"		"1025"
 		}
 	}
 
@@ -8289,7 +8545,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"800"	
+		"ItemCost"						"550"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -8335,7 +8591,7 @@
 		"AbilityValues"
 		{
 			"bonus_damage"			"25"
-			"bonus_attack_speed"	"70"
+			"bonus_attack_speed"	"90"
 			"static_duration"		"15.0"
 			"static_chance"			"20"
 			"static_strikes"		"4"
@@ -8365,7 +8621,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
+		"ItemCost"						"1300"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -8374,7 +8630,7 @@
 		"ItemResult"					"item_skadi"
 		"ItemRequirements"
 		{
-			"01"						"item_ultimate_orb;item_ultimate_orb;item_point_booster"
+			"01"						"item_ultimate_orb;item_point_booster"
 		}
 	}
 	
@@ -8404,9 +8660,9 @@
 				"bonus_health"			"220"
 				"bonus_mana"			"220"
 				"cold_slow_melee"	"-20"
-				"cold_attack_slow_melee"	"-30"
+				"cold_attack_slow_melee"	"-10"
 				"cold_slow_ranged"	"-50"
-				"cold_attack_slow_ranged"	"-60"
+				"cold_attack_slow_ranged"	"-20"
 				"cold_duration"	"3.0"
 				"heal_reduction"	"40"
 		}
@@ -8546,7 +8802,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1325"	
+		"ItemCost"						"775"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -8555,7 +8811,7 @@
 		"ItemResult"					"item_helm_of_the_overlord"
 		"ItemRequirements"
 		{
-			"01"						"item_helm_of_the_dominator;item_vladmir"
+			"01"						"item_helm_of_the_dominator;item_ultimate_orb"
 		}
 	}
 
@@ -8581,7 +8837,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
-		"ItemCost"						"6400"
+		"ItemCost"						"6200"
 		"ItemShopTags"					"damage;armor;unique;hard_to_tag"
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"hoto;helm of the overlord"
@@ -8591,7 +8847,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_stats"			"7"
+				"bonus_stats"			"21"
 				"bonus_armor"			"7"
 				"bonus_regen"			"7"
 				"health_min"			"1800"
@@ -8603,12 +8859,6 @@
 				"creep_bonus_armor"			"7"
 				"model_scale"			"20"
 				"count_limit"			"1"
-				"armor_aura"		"4.0"
-				"mana_regen_aura"		"2"
-				"lifesteal_aura"			"20"
-				"creep_lifesteal_reduction_pct"	"40"
-				"damage_aura"			"18"
-				"aura_radius"	"1200"
 				"creep_ability_level_increase"			"1"
 		}
 	}
@@ -8633,7 +8883,7 @@
 		"ItemResult"					"item_maelstrom"
 		"ItemRequirements"
 		{
-			"01"						"item_mithril_hammer;item_javelin"
+			"01"						"item_mithril_hammer;item_javelin;item_gloves"
 		}
 	}
 	
@@ -8648,7 +8898,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2700"
+		"ItemCost"						"2950"
 		"ItemShopTags"					"damage;attack_speed;unique"
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"maelstrom"
@@ -8659,9 +8909,10 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_damage"			"24"
+				"bonus_damage"			"25"
+				"bonus_attack_speed"	"25"
 				"chain_chance"			"30"
-				"chain_damage"			"135"
+				"chain_damage"			"120"
 				"chain_strikes"			"4"
 				"chain_radius"			"650"
 				"chain_delay"			"0.25"
@@ -8681,7 +8932,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"700"	
+		"ItemCost"						"450"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -8730,6 +8981,7 @@
 		"AbilityValues"
 		{
 				"bonus_damage"			"30"
+				"bonus_attack_speed"	"30"
 				"chain_chance"			"30"
 				"chain_damage"			"160"
 				"chain_strikes"			"4"
@@ -8876,7 +9128,7 @@
 		"ItemResult"					"item_mask_of_madness"
 		"ItemRequirements"
 		{
-			"01"						"item_lifesteal;item_quarterstaff"
+			"01"						"item_lifesteal;item_broadsword"
 		}
 	}
 	
@@ -8898,7 +9150,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"25"
-		"ItemCost"						"1775"
+		"ItemCost"						"1900"
 		"ItemShopTags"					"unique;hard_to_tag"
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"mom;mask of madness"
@@ -8910,8 +9162,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_damage"	"10"
-				"bonus_attack_speed"	"10"
+				"bonus_damage"	"20"
 				"lifesteal_percent"		"24"
 				"creep_lifesteal_reduction_pct"	"40"
 				"berserk_bonus_attack_speed"	"110"
@@ -9009,7 +9260,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1000"	
+		"ItemCost"						"400"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -9018,7 +9269,7 @@
 		"ItemResult"					"item_disperser"
 		"ItemRequirements"
 		{
-			"01"						"item_diffusal_blade;item_demon_edge"
+			"01"						"item_diffusal_blade;item_eagle"
 		}
 	}
 
@@ -9061,7 +9312,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_agility"			"20"
+			"bonus_agility"			"40"
 			"bonus_intellect"		"10"
 			"feedback_mana_burn"	"40"
 			"feedback_mana_burn_illusion_melee"	"8"
@@ -9069,12 +9320,13 @@
 			"purge_rate"			"5"
 			"purge_root_duration"	"3.0"
 			"damage_per_burn"		"1.0"
-			"enemy_effect_duration"	"4.0"
-			"ally_effect_duration"	"4.0"
-			"bonus_damage"	"45"
-			"radius"				"350"
-			"attack_speed_slow"		"80"		
-			"phase_movement_speed"	"100"
+			"enemy_effect_duration"	"5.0"
+			"ally_effect_duration"	"5.0"
+			"radius"				
+			{
+				"value"						"350"
+				"affected_by_aoe_increase"	"1"
+			}
 			"movement_speed_buff_rate"	"5"
 		}
 	}
@@ -9089,7 +9341,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1100"	
+		"ItemCost"						"1600"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -9098,7 +9350,7 @@
 		"ItemResult"					"item_ethereal_blade"
 		"ItemRequirements"
 		{
-			"01"						"item_kaya;item_ghost*"
+			"01"						"item_aether_lens;item_ghost*"
 		}
 	}	
 
@@ -9125,7 +9377,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100"
-		"ItemCost"						"4650"
+		"ItemCost"						"5375"
 		"ItemShopTags"					"agi;str;int;hard_to_tag"
 		"ItemQuality"					"epic"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
@@ -9137,12 +9389,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_agility"			"5"
-				"bonus_strength"		"5"
-				"bonus_intellect"		"25"
-				"spell_amp"			"12"
-				"spell_lifesteal_amp"			"24"
-				"mana_regen_multiplier"		"75"
+				"bonus_agility"			"8"
+				"bonus_strength"		"8"
+				"bonus_intellect"		"8"
+				"bonus_mana"			"300"
+				"bonus_cast_range"		"250"
+				"bonus_mana_regen"		"3"
 				"blast_movement_slow"	"-80"
 				"duration"				"4.0"
 				"blast_agility_multiplier"			"1.5"
@@ -9229,7 +9481,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
+		"ItemCost"						"375"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -9238,7 +9490,7 @@
 		"ItemResult"					"item_arcane_boots"
 		"ItemRequirements"
 		{
-			"01"						"item_boots*;item_energy_booster"
+			"01"						"item_boots*;item_ring_of_basilius"
 		}
 	}
 	
@@ -9264,7 +9516,7 @@
 		"ItemQuality"					"rare"
 		"ItemAliases"					"mana;mb;arcane boots"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
 		"ItemAlertable"					"1"
 		"ShouldBeSuggested"				"1"
 		
@@ -9273,7 +9525,9 @@
 		"AbilityValues"
 		{
 				"bonus_movement"		"45"
-				"bonus_mana"			"250"
+				"mana_regen"			"0.75"
+				"aura_mana_regen"		"1"
+				"aura_radius"			"1200"
 				"replenish_amount"		"175"
 				"replenish_radius"		
 				{
@@ -9293,7 +9547,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"200"	
+		"ItemCost"						"0"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -9302,7 +9556,7 @@
 		"ItemResult"					"item_octarine_core"
 		"ItemRequirements"
 		{
-			"01"						"item_void_stone;item_void_stone;item_soul_booster"
+			"01"						"item_tiara_of_selemene;item_soul_booster"
 		}
 	}
 	
@@ -9317,7 +9571,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"4600"
+		"ItemCost"						"4800"
 		"ItemShopTags"					"move_speed;boost_mana;mana_pool"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"mana;mb;octarine core"
@@ -9333,7 +9587,7 @@
 			"bonus_health"			"625"
 			"bonus_mana"			"625"
 			"bonus_health_regen"	"0"
-			"bonus_mana_regen"		"5"
+			"bonus_mana_regen"		"6"
 		}
 	}
 	
@@ -9407,7 +9661,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"100"	
+		"ItemCost"						"0"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -9416,7 +9670,7 @@
 		"ItemResult"					"item_orb_of_corrosion"
 		"ItemRequirements"
 		{
-			"01"						"item_orb_of_venom;item_blight_stone;item_fluffy_hat"
+			"01"						"item_orb_of_venom;item_ring_of_protection;item_gloves"
 		}
 	}
 	
@@ -9431,7 +9685,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
-		"ItemCost"						"925"
+		"ItemCost"						"900"
 		"ItemShopTags"					"hard_to_tag"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"ooc;orb of corrosion;corosion;corossion"
@@ -9444,9 +9698,10 @@
 				"armor"			"3"
 				"slow_melee"			"13"
 				"slow_range"			"4"
-				"damage"			"3"
+				"damage"			"5"
 				"duration"			"3"
-				"health_bonus"			"150"
+				"attack_speed"		"25"
+				"heal_reduction"	"20"
 		}
 	}
 	
@@ -9545,13 +9800,14 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2500"
+		"ItemCost"						"2625"
 		"ItemShopTags"					"hard_to_tag"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"mage slayer;ms"
@@ -9562,12 +9818,12 @@
 		"AbilityValues"
 		{
 				"bonus_magical_armor"	"25"
-				"bonus_attack_speed"	"20"
-				"bonus_damage"			"20"
+				"bonus_attack_speed"	"45"
 				"spell_amp_debuff"		"35"
 				"bonus_mana_regen"		"2"
 				"duration"		"6"
 				"bonus_intellect"		"10"
+				"dps"	"20"
 		}
 	}
 
@@ -9724,7 +9980,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"	
 		"ItemShopTags"					""
-		
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemRecipe"					"1"
@@ -9748,7 +10005,8 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1000"
@@ -9786,7 +10044,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"700"	
+		"ItemCost"						"600"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -9795,7 +10053,7 @@
 		"ItemResult"					"item_solar_crest"
 		"ItemRequirements"
 		{
-			"01"						"item_medallion_of_courage*;item_crown;item_wind_lace"
+			"01"						"item_pavise*;item_crown;item_wind_lace"
 		}
 	}
 
@@ -9807,7 +10065,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"FightRecapLevel"				"1"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -9817,11 +10075,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1000"
 		"AbilityCooldown"				"16.0"
-		"AbilitySharedCooldown"			"medallion"
+		"AbilitySharedCooldown"			"pavise"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2425"
+		"ItemCost"						"2700"
 		"ItemShopTags"					"armor;regen_mana;hard_to_tag"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"solar crest"
@@ -9835,11 +10093,13 @@
 			"bonus_armor"			"6"
 			"bonus_all_stats"		"6"
 			"self_movement_speed"	"25"
-			"bonus_mana_regen_pct"	"1.75"
+			"bonus_mana"			"300"
+			"bonus_health"			"200"
 			"target_movement_speed"	"15"
 			"target_attack_speed"	"70"
 			"target_armor"			"7"
 			"duration"				"8"
+			"absorb_amount"			"400"
 		}
 	}
 
@@ -9855,7 +10115,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"275"	
+		"ItemCost"						"175"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -9864,7 +10124,7 @@
 		"ItemResult"					"item_pavise"
 		"ItemRequirements"
 		{
-			"01"						"item_void_stone;item_ring_of_protection;item_fluffy_hat"
+			"01"						"item_energy_booster;item_ring_of_protection;item_fluffy_hat"
 		}
 	}
 
@@ -9887,7 +10147,7 @@
 		"AbilityCastRange"				"1000"
 		"AbilityCooldown"				"16.0"
 		"AbilityManaCost"				"75"
-		
+		"AbilitySharedCooldown"			"pavise"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -9903,7 +10163,7 @@
 		"AbilityValues"
 		{
 			"bonus_armor"			"3"
-			"bonus_mana_regen"		"2.5"
+			"bonus_mana"			"250"
 			"bonus_health"			"175"
 			"duration"				"8"
 			"absorb_amount"				"300"
@@ -10018,7 +10278,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"650"	
+		"ItemCost"						"300"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -10027,7 +10287,7 @@
 		"ItemResult"					"item_veil_of_discord"
 		"ItemRequirements"
 		{
-			"01"						"item_ring_of_basilius;item_crown"
+			"01"						"item_helm_of_iron_will;item_crown"
 		}
 	}
 	
@@ -10038,20 +10298,20 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"16"
-		"AbilityCastRange"				"1200"
+		"AbilityCastRange"				"900"
 		"AbilityCastPoint"				"0.0"
+		"AbilityManaCost"				"50"
 
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"50"
-		"ItemCost"						"1525"
+		"ItemCost"						"1725"
 		"ItemShopTags"					"int;armor;regen_health;hard_to_tag"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"vod;veil of discord"
@@ -10063,16 +10323,15 @@
 		"AbilityValues"
 		{
 			"bonus_all_stats"		"5"
-			"aura_mana_regen"		"1.75"
-			"aura_radius"			"1200"
-			"spell_amp"			"18"
+			"bonus_armor"		"6"
+			"bonus_hp_regen"		"5"
+			"spell_amp"			"10"
 			"debuff_radius"			
 			{
-				"value"		"600"
+				"value"		"900"
 				"affected_by_aoe_increase"	"1"
 			}
 			"resist_debuff_duration"	"16.0"
-			"shield_damage"	"200"
 		}
 	}
 	
@@ -10096,7 +10355,7 @@
 		"ItemResult"					"item_revenants_brooch"
 		"ItemRequirements"
 		{
-			"01"						"item_witch_blade;item_mystic_staff"
+			"01"						"item_relic;item_voodoo_mask"
 		}
 	}
 	
@@ -10107,18 +10366,75 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"25"
-		"AbilityCastPoint"				"0.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"4900"
+		"ItemShopTags"					"int;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"staff;misery;sm"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{				
+				"bonus_damage"			"70"				
+				"spell_lifesteal"		"20"	
+				"manacost_per_hit"		"75"
+				
+		}
+	}
+
+	
+	//=================================================================================================================
+	// Recipe: Parasma
+	//=================================================================================================================
+	"item_recipe_devastator"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_devastator"
+		"ItemRequirements"
+		{
+			"01"						"item_witch_blade;item_mystic_staff"
+		}
+	}
+	
+	//=================================================================================================================
+	// Parasma
+	//=================================================================================================================
+	"item_devastator"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"7"
 
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"300"
-		"ItemCost"						"6200"
+		"ItemCost"						"5575"
 		"ItemShopTags"					"int;hard_to_tag"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"staff;misery;sm"
@@ -10136,17 +10452,10 @@
 				"int_damage_multiplier"	"1"
 				"slow"	"25"
 				"slow_duration"	"4"
-				"mana_cost"				"100"
-				"damage_penalty"		"0"
-				"passive_cooldown"		"9"
-				"number_of_attacks"		"5"
-				"active_duration"		"15"
-				"active_attack_speed"	"0"
-				"active_mres_reduction"	"20"
-				"spell_amp_duration"	"3"
+				"active_mres_reduction"		"20"
+				"passive_cooldown"		"4"
 		}
 	}
-
 	//=================================================================================================================
 	// Recipe: Guardian Greaves
 	//=================================================================================================================
@@ -10202,14 +10511,16 @@
 		"AbilityValues"
 		{				
 			"bonus_movement"		"50"
-			"bonus_mana"			"250"
 			"bonus_armor"		"4"
+			"mana_regen"		"1.5"
 			"aura_health_regen"		"2.5"
 			"aura_armor"		"3"
+			"aura_mana_regen"		"1.5"
+			"aura_radius"			"1200"
 			"aura_health_regen_bonus"		"14.5"
+			"aura_mana_regen_bonus"		"5"
 			"aura_armor_bonus"			"8"
 			"aura_bonus_threshold"	"25"
-			"aura_radius"			"1200"
 			"replenish_health"		"350"
 			"replenish_mana"		"200"
 			"replenish_radius"		
@@ -10355,8 +10666,6 @@
 				"alternative_cooldown"	"4"
 		}
 	}
-
-
 	//=================================================================================================================
 	// Recipe: Abyssal Blade
 	//=================================================================================================================
@@ -10433,7 +10742,7 @@
 				"stun_duration"				"1.6"
 		}
 	}
-	
+
 
 	//=================================================================================================================
 	// Recipe: Heaven's Halberd
@@ -11591,8 +11900,9 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCooldown"				"12"
+
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
@@ -11606,8 +11916,10 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"armor_bonus"			"12"
-				"attack_speed"				"-35"
+				"armor_bonus"			"6"
+				"move_speed"			"30"
+				"active_armor"			"12"
+				"active_duration"		"8"
 				"bonus_health"			"150"
 		}
 	}
@@ -11813,34 +12125,50 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
-			
-		// Item Info
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+
+		// Stats
 		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"300"
+		"AbilityCastPoint"				"0.0"	
+
+
+		// Stats	
+		//-------------------------------------------------------------------------------------------------------------
+
 		"ItemCost"						"0"
 		"ItemIsNeutralDrop"				"1"
 		"ItemQuality"					"consumable"
 		"ItemPurchasable"				"0"
-		"ItemInitialCharges"			"2"
+	
+		"AbilityCharges"				"10"
+		"AbilityChargeRestoreTime"		"8"
+		"ItemInitialCharges"			"5"
+		"ItemRequiresCharges"			"1"
+		"ItemDisplayCharges"			"1"
+		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
 		"IsTempestDoubleClonable"		"0"
 		"ItemSellable"				"0"
+	
 
-		"Model"							"models/props_gameplay/neutral_box.vmdl"
-				
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"0"
 
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"health_regen"			"2.25"
-				"mana_regen"			"1.25"
+				"bonus_health"			"50"
+				"bonus_mana"			"50"
+				"max_charges"			"10"
+
+				"use_cooldown"			"12"
+				
+				"health_regen"			"2.0"
+				"mana_regen"			"1.0"
+				"regen_duration"		"10"
 		}
 	}
 
@@ -12792,7 +13120,11 @@
 		{
 				"bonus_damage"			"16"
 				"bonus_strength"		"16"
-				"range"		"400"
+				"range"	
+				{
+					"value"						"400"
+					"affected_by_aoe_increase"	"1"
+				}
 				"slow"		"50"
 				"slow_duration"		"3"
 				"angle"						"360"
@@ -12831,7 +13163,7 @@
 		"AbilityValues"
 		{
 				"bonus_health"			"300"
-				"heal"		"300"
+				"heal"		"1000"
 				"health_threshold"		"20"
 		}
 	}
@@ -13390,7 +13722,11 @@
 				"bonus_intelligence"	"7"
 				"bonus_armor"			"2"
 				"mana_restore"			"75"
-				"radius"				"1200"
+				"radius"				
+				{
+					"value"						"1200"
+					"affected_by_aoe_increase"	"1"
+				}
 		}
 	}
 	
@@ -14898,9 +15234,8 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"4500"
 		"ItemPurchasable"				"1"
-
+		"ItemCost"						"4700"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
 		
 		// Stats
@@ -14911,17 +15246,16 @@
 		"AbilityValues"
 		{
 
-			"bonus_attack_speed"	"15"
-			"bonus_damage"			"15"
+			"bonus_damage"			"25"
 
 
 
-			"bonus_strength"		"20"
+			"bonus_strength"		"25"
 			"bonus_agility"			"10"
-			"bonus_intellect"		"16"
+			"bonus_intellect"		"10"
 			"bonus_mana_regen"		"2.0"
 			
-			"passive_cooldown"		"6"
+			"passive_cooldown"		"5"
 			"movement_slow"			"100"
 			"slow_duration"			"1.0"
 
@@ -15563,6 +15897,150 @@
 			"radius"				"1200"
 		}
 	}
+	"item_ancient_guardian"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemIsNeutralDrop"				"1"
+		"ItemPurchasable"				"0"
+		"ItemSellable"				"0"
+
+
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"extra_bonus_damage"	"50"
+			"bonus_damage"			"50"
+			"radius"				"2000"
+		}
+	}
+	"item_safety_bubble"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemIsNeutralDrop"				"1"
+		"ItemPurchasable"				"0"
+		"ItemSellable"				"0"
+
+
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"shield"	"100"
+			"restore_time"			"5"
+			"bonus_hp_regen"	"5"
+		}
+	}
+	"item_whisper_of_the_dread"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemIsNeutralDrop"				"1"
+		"ItemPurchasable"				"0"
+		"ItemSellable"				"0"
+
+
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"vision_penalty"	"15"
+			"bonus_spell_damage"		"10"
+			"bonus_mana"			"150"
+		}
+	}
+	"item_nemesis_curse"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemIsNeutralDrop"				"1"
+		"ItemPurchasable"				"0"
+		"ItemSellable"				"0"
+
+
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"debuff_self"	"8"
+			"debuff_enemy"	"12"
+			"debuff_enemy_duration"	"5"
+			"bonus_damage"			"35"
+		}
+	}
+	"item_avianas_feather"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemIsNeutralDrop"				"1"
+		"ItemPurchasable"				"0"
+		"ItemSellable"				"0"
+
+
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"evasion"	"25"
+			"move_speed"	"30"
+			"flight_threshold"			"30"
+		}
+	}
+	"item_unwavering_condition"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemIsNeutralDrop"				"1"
+		"ItemPurchasable"				"0"
+		"ItemSellable"				"0"
+
+
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"max_health"			"1500"
+			"magic_resist"			"95"
+		}
+	}
 	"item_horizons_equilibrium"
 	{
 		// General
@@ -15721,9 +16199,142 @@
 			"movement_speed"			"20"
 		}
 	}
+	"item_light_collector"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+			
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemIsNeutralDrop"				"1"
+		"ItemPurchasable"				"0"
+		"ItemSellable"				"0"
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+		"AbilityCooldown"				"30"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"health_regen"			"12"
+			"mana_regen"			"6"
+			"penalty"				"0.5"
+			"movespeed_pct"				"10"
+			"radius"					"200"
+			"tree_destruction_radius"	
+			{
+				"value"						"325"
+				"affected_by_aoe_increase"	"1"
+			}
+			"miss_rate"					"30"
+			"duration"					"2.5"
+		}
+	}
+
+	"item_rattlecage"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemIsNeutralDrop"				"1"
+		"ItemPurchasable"				"0"
+		"ItemSellable"				"0"
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"radius"					"600"
+			"slow_duration"			"0.2"
+			"damage_reset_interval"		"7"
+			"damage_threshold"			"180"
+			"slow"			"100"
+			"projectile_speed"				"1000"
+			"projectile_damage"				"125"
+			"target_count"					"2"
+			"bonus_armor"					"12"
+		}
+	}
+	
+	"item_doubloon"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+			
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemIsNeutralDrop"				"1"
+		"ItemPurchasable"				"0"
+		"ItemSellable"				"0"
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+		"AbilityCooldown"	"5"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"conversion_pct"					"20"
+			"bonus_health_regen"					"5"
+			"bonus_mana_regen"					"2.5"
+		}
+	}
+
+	//=================================================================================================================
+	// Roshan's Banner
+	//=================================================================================================================
+	"item_roshans_banner"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE "
+
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+		
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"99999"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"1.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemSellable"					"0"
+		"ItemPurchasable"				"0"
+		"ItemQuality"					"artifact"
+		"ItemDroppable"					"1"
+		"ItemKillable"					"1"
+		"ItemContributesToNetWorthWhenDropped"	"0"
+		"AllowedInBackpack"				"1"
+		"IsTempestDoubleClonable"		"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"duration"				"300"
+			"radius"				"750"
+			"health"				"24"
+			"hp_bonus"				"75"
+			"damage_bonus"			"50"
+			"model_scale"			"25"
+			"buff_linger_duration"		"45"
+		}
+	}
 }
 
 
-		
+
+
 		
  

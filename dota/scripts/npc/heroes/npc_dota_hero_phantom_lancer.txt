@@ -52,7 +52,6 @@
 			"movement_speed_pct"
 			{
 				"value"				"-14 -21 -28 -35"
-				"special_bonus_scepter" "-10"
 			}
 			"illusion_duration"			"2.0 4.0 6.0 8.0"
 			"illusion_damage_out_pct"	"-80"
@@ -112,7 +111,11 @@
 			"illusion_1_damage_in_pct"	"0"
 			"illusion_2_damage_out_pct"	"-80"
 			"illusion_2_damage_in_pct"	"500"
-			"target_aoe"	"325"
+			"target_aoe"
+			{
+				"value"						"325"
+				"affected_by_aoe_increase"	"1"
+			}
 			"search_radius"	
 			{
 				"value"		"900"
@@ -255,7 +258,12 @@
 					"LinkedSpecialBonus"		"special_bonus_unique_phantom_lancer"
 				}
 				"bonus_speed"		"800"
-				"bonus_agility"		"10 20 30 40"
+				"bonus_agility"		
+				{
+					"value"				"10 20 30 40"
+					"special_bonus_unique_phantom_lancer_phantom_rush_agility"			"10"
+
+				}
 				"agility_duration"		
 				{
 					"value"			"1.5"
@@ -373,7 +381,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"value"				"1.5"
+				"value"				"1.0"
 				"ad_linked_abilities"			"phantom_lancer_spirit_lance"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 			}
 		}
@@ -447,4 +455,17 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"special_bonus_base"
 	}
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_phantom_lancer_phantom_rush_agility"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
+	
 }

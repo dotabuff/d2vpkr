@@ -64,6 +64,7 @@
 					"value"		"350"		
 					"RequiresScepter"			"1"
 				}
+				"scepter_bonus_damage"			"180"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -80,34 +81,29 @@
 				
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{						
-			"01"
+		"AbilityValues"
+		{
+			"cleave_starting_width"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"cleave_starting_width"			"150"
-			}			
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cleave_ending_width"			"360"
-			}			
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cleave_distance"			"700"
+				"value"			"150"
+				// intentionally omitted affected_by_aoe_increase here because it warps the cleave box too much
 			}
-			"04"
+			"cleave_ending_width"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"great_cleave_damage"	"40 60 80 100"
-				"LinkedSpecialBonus"		"special_bonus_unique_sven_8"
+				"value"			"360"
+				"affected_by_aoe_increase"	"1"
 			}
-			"05"
+			"cleave_distance"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"strength_bonus"		"2 4 6 8"
+				"value"			"700"
+				"affected_by_aoe_increase"	"1"
 			}
+			"great_cleave_damage"
+			{
+				"value"				"40 60 80 100"
+				"LinkedSpecialBonus"	"special_bonus_unique_sven_8"
+			}
+			"strength_bonus"		"2 4 6 8"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -168,6 +164,11 @@
 					"value"		"6"
 					"RequiresShard"			"1"
 				}
+				"shard_passive_movespeed"	
+				{
+					"value"		"3"
+					"RequiresShard"			"1"
+				}
 				"shard_radius"			
 				{
 					"value"	"1200"
@@ -206,18 +207,17 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"gods_strength_damage"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"gods_strength_damage"		"100 140 180"	
-				"LinkedSpecialBonus"		"special_bonus_unique_sven_2"	
+				"value"		"100 140 180"	
+				"special_bonus_unique_sven_2"		"+50"	
 			}
-			"02"
+			"bonus_slow_resistance"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_slow_resistance"		"30"	
+				"value"		"30"	
+				"special_bonus_unique_sven_gods_strength_slow_resist"		"+20"	
 			}
 		}	
 	}
@@ -254,18 +254,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"50"
-				"ad_linked_abilities"			"sven_gods_strength"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -331,7 +320,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"value"						"3"
+				"value"						"4"
 				"ad_linked_abilities"			"sven_warcry"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 			}
 		}
@@ -405,4 +394,17 @@
 			}
 		}
 	}
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_sven_gods_strength_slow_resist"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
+
+
 }

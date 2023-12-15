@@ -24,7 +24,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"28 26 24 22"
+
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -57,13 +57,12 @@
 				"max_land_distance"			
 				{
 					"value"			"375 375 375 375"
-					"LinkedSpecialBonus"		"special_bonus_unique_rubick"
-					"affected_by_aoe_increase"	"1"
+					"special_bonus_unique_rubick"		"+400"
 				}
 				"fall_duration"				"0.3 0.3 0.3 0.3"  // the portion of the lift that is falling
 				"shard_max_land_distance_bonus_pct"			
 				{
-					"value"				"50"
+					"value"				"35"
 					"RequiresShard"				"1"
 				}			
 				"shard_cooldown_reduction_pct"			
@@ -76,6 +75,11 @@
 					"value"			"0.5"
 					"RequiresShard"				"1"
 				}
+				"AbilityCooldown"				
+				{
+					"value"		"24 21 18 15"
+					"special_bonus_unique_rubick_4"			"-4"
+				}	
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}	
@@ -120,7 +124,7 @@
 		{
 				"radius"					
 				{
-					"value"		"325 325 325 325"
+					"value"		"300 325 350 375"
 					"affected_by_aoe_increase"	"1"
 				}
 		}
@@ -301,7 +305,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"projectile_speed"			"1200"
+				"projectile_speed"			"1500"
 			}
 			"03"
 			{
@@ -386,18 +390,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"240"
-				"ad_linked_abilities"			"rubick_telekinesis"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -455,18 +448,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"12"
-				"ad_linked_abilities"			"rubick_telekinesis"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"	
+
 	}
 
 	//=================================================================================================================

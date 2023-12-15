@@ -239,8 +239,9 @@
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 		"AbilityCastAnimation"			"ACT_DOTA_GENERIC_CHANNEL_1"
 		"AbilityChannelTime"			"4.0"
+		"AbilityManaCost"				"75"
+		
 		"MaxLevel"						"1"
-
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"200"
@@ -1027,6 +1028,39 @@
 	}
 
 	//=================================================================================================================
+	// Roshan: Slam
+	//=================================================================================================================
+	"roshan_revengeroar"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20.0"
+		"AbilityCastPoint"				"0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"radius"			"900"
+			"damage"			"50"
+			"damage_pct"		"25"
+			"duration"			"8"
+			"damage_growth"		"10"
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+
+	//=================================================================================================================
 	// Roshan: Inherent Buffs
 	//=================================================================================================================
 	"roshan_inherent_buffs"
@@ -1109,7 +1143,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"radius"						"200 210 220 230"
+				"radius"						
+				{
+
+					"value"			"200 210 220 230"
+					"affected_by_aoe_increase"		"1"
+				}
+
 				"damage"						"200 250 300 400"
 				"damage_pct"					"8"
 				"hero_stun_duration"			"2.4"
@@ -1135,23 +1175,15 @@
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"radius"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"radius"						"300 350 400 500"
+				"value"						"300 350 400 500"
+				"affected_by_aoe_increase"		"1"
 			}
-			"02"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"damage_reduction"				"50"
-			}
-			"03"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"duration"			"4.0"
-			}
+			"damage_reduction"				"50"
+			"duration"			"4.0"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -1599,6 +1631,71 @@
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
 
+
+	//=================================================================================================================
+	// Centaur Khan: Endurance Aura
+	//=================================================================================================================
+	"centaur_khan_endurance_aura"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"				"1"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"15 18 21 27"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"1200"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+
+	//=================================================================================================================
+	// Centaur Khan: War Stomp
+	//=================================================================================================================
+	"centaur_khan_war_stomp"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.4"
+		"AbilityCooldown"				"12.0"
+		"AbilityDamage"					"25 50 75 150"
+		"AbilityManaCost"				"50"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"radius"
+			{
+				"value"						"250"
+				"affected_by_aoe_increase"		"1"
+			}
+			"non_hero_stun_duration"		"3.0"
+			"hero_stun_duration"			"1.6"
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+
+
+
 	"ice_shaman_incendiary_bomb"
 	{
 		// General
@@ -1809,6 +1906,24 @@
 		{
 				"passive_reflection_pct"			"90"
 				"passive_reflection_bonus_per_death"		"20"
+		}
+	}
+
+	"miniboss_radiance"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"aura_radius"			"1200"
+				"aura_damage"			"30"
+				"aura_interval"			"0.2"
 		}
 	}
 
@@ -2190,8 +2305,16 @@
 		"AbilityValues"
 		{
 			"speed"					"900"
-			"radius_start"			"180"
-			"radius_end"			"200"
+			"radius_start"			
+			{
+				"value"								"180"
+				"affected_by_aoe_increase"			"1"
+			}
+			"radius_end"		
+			{
+				"value"								"200"
+				"affected_by_aoe_increase"			"1"
+			}
 			"distance"				"1380"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -2417,6 +2540,40 @@
 			}
 		}
 	}
+	//=================================================================================================================
+	// Polar Furbolg Ursa Warrior: Thunder Clap
+	//=================================================================================================================
+	"polar_furbolg_ursa_warrior_thunder_clap"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.4"
+		"AbilityCooldown"				"12.0 11.0 10.0 9.0"
+		"AbilityDamage"					"150 200 250 350"
+		"AbilityManaCost"				"50"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"radius"						
+			{
+				"value"			"300"
+				"affected_by_aoe_increase"		"1"
+			}
+			"movespeed_slow"		"-25"
+			"attackspeed_slow"		"-25"
+			"duration"				"3.0"
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
 
 	//=================================================================================================================
 	// Kobold Tunneler: Prospecting
@@ -2501,7 +2658,6 @@
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
 
-	
 
 	//=================================================================================================================
 	// Ability: Thunder Lizard Wardrums Aura
@@ -2596,28 +2752,16 @@
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"radius"						
 			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"300"
+				"value"			"300"
+				"affected_by_aoe_increase"		"1"
 			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"85"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"8.0 9 10 12"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"burn_interval"			"0.5"
-			}
+			"damage"			"85"
+			"duration"			"8.0 9 10 12"
+			"burn_interval"			"0.5"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}	
@@ -2668,16 +2812,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
-			"01"
+			"range"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"range"			"250"
+				"value"			"250"
+				"affected_by_aoe_increase"		"1"
 			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_percent"			"100"
-			}
+			"damage_percent"			"100"
+
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -2839,33 +2980,17 @@
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"radius"						
 			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"350"
+				"value"			"350"
+				"affected_by_aoe_increase"		"1"
 			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"movespeed_slow"		"-60"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"attack_slow_tooltip"	"-60"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"non_hero_duration"		"4.0"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hero_duration"			"2.0 2.25 2.5 3.0"
-			}
+			"movespeed_slow"		"-60"
+			"attack_slow_tooltip"	"-60"
+			"non_hero_duration"		"4.0"
+			"hero_duration"			"2.0 2.25 2.5 3.0"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -14896,6 +15021,32 @@
 	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================
+	"special_bonus_20_crit_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"crit_chance"				"20"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"crit_multiplier"				"200" 
+			}
+		}
+	}
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
 	"special_bonus_24_crit_2"
 	{
 		// General
@@ -15345,12 +15496,13 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_ITEM"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityCastAnimation"			"ACT_INVALID"
 		"MaxLevel"						"1"
-		"AssociatedConsumable"			"17433"
+		//"AssociatedConsumable"			"17433"
+		"AbilityTextureName"			"consumables/seasonal_throw_snowball"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -15359,7 +15511,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"0.5"
+		"AbilityCooldown"				"2"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
@@ -15389,10 +15541,11 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_ITEM"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityCastAnimation"			"ACT_INVALID"
 		"MaxLevel"						"1"
-		"AssociatedConsumable"			"17437"
+		//"AssociatedConsumable"			"17437"
+		"AbilityTextureName"			"consumables/seasonal_summon_snowman"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -15401,7 +15554,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"10"
+		"AbilityCooldown"				"30"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
@@ -15446,10 +15599,11 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		//"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_ITEM"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityCastAnimation"			"ACT_INVALID"
 		"MaxLevel"						"1"
-		"AssociatedConsumable"			"17527"
+		//"AssociatedConsumable"			"17527"
+		"AbilityTextureName"			"consumables/seasonal_summon_penguin"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -15458,7 +15612,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"30"
+		"AbilityCooldown"				"60"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
@@ -15573,6 +15727,7 @@
 		"AbilityCastAnimation"			"ACT_INVALID"
 		"MaxLevel"						"1"
 		"AssociatedConsumable"			"17440"
+		"AbilityTextureName"			"consumables/seasonal_decorate_tree"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -15603,10 +15758,11 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_ITEM"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityCastAnimation"			"ACT_INVALID"
 		"MaxLevel"						"1"
-		"AssociatedConsumable"			"17469"
+		//"AssociatedConsumable"			"17469"
+		"AbilityTextureName"			"consumables/seasonal_festive_firework"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -15615,7 +15771,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"0.5"
+		"AbilityCooldown"				"40"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
@@ -15661,6 +15817,7 @@
 		"AbilityCastAnimation"			"ACT_INVALID"
 		"MaxLevel"						"1"
 		"AssociatedConsumable"			"17465"
+		"AbilityTextureName"			"consumables/frostivus2018_throw_snowball"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -15714,6 +15871,7 @@
 		"AbilityCastAnimation"			"ACT_INVALID"
 		"MaxLevel"						"1"
 		"AssociatedConsumable"			"17472"
+		"AbilityTextureName"			"consumables/frostivus2018_summon_snowman"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -15773,6 +15931,7 @@
 		"AbilityCastAnimation"			"ACT_INVALID"
 		"MaxLevel"						"1"
 		"AssociatedConsumable"			"17471"
+		"AbilityTextureName"			"consumables/frostivus2018_decorate_tree"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -15823,6 +15982,7 @@
 		"AbilityCastAnimation"			"ACT_INVALID"
 		"MaxLevel"						"1"
 		"AssociatedConsumable"			"17473"
+		"AbilityTextureName"			"consumables/frostivus2018_festive_firework"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -15892,6 +16052,7 @@
 		"AbilityCastAnimation"			"ACT_INVALID"
 		"MaxLevel"						"1"
 		"AssociatedConsumable"			"17537"
+		"AbilityTextureName"			"consumables/seasonal_summon_cny_balloon"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -15974,6 +16135,7 @@
 		"AbilityCastAnimation"			"ACT_INVALID"
 		"MaxLevel"						"1"
 		"AssociatedConsumable"			"17476"
+		"AbilityTextureName"			"consumables/seasonal_summon_dragon"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -16032,6 +16194,7 @@
 		"AbilityCastAnimation"			"ACT_INVALID"
 		"MaxLevel"						"1"
 		"AssociatedConsumable"			"17477"
+		"AbilityTextureName"			"consumables/seasonal_summon_cny_tree"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -16066,6 +16229,7 @@
 		"AbilityCastAnimation"			"ACT_INVALID"
 		"MaxLevel"						"1"
 		"AssociatedConsumable"			"17478"
+		"AbilityTextureName"			"consumables/seasonal_firecrackers"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -16116,6 +16280,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_SILENCE"
 		"AbilityCastAnimation"			"ACT_INVALID"
 		"MaxLevel"						"1"
+		"AbilityTextureName"			"consumables/high_five"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -16178,6 +16343,7 @@
 		"AbilityCastAnimation"			"ACT_INVALID"
 		"MaxLevel"						"1"
 		"AssociatedConsumable"			"17495"
+		"AbilityTextureName"			"consumables/seasonal_summon_ti9_balloon"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -16262,6 +16428,7 @@
   		"UnlockMinEffectIndex"			"24"
   		"UnlockMaxEffectIndex"			"25"
 		"EventID"						"25"
+		"AbilityTextureName"			"consumables/seasonal_ti9_banner"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -16314,6 +16481,7 @@
 		"AbilityCastAnimation"			"ACT_DOTA_GENERIC_CHANNEL_1"
 		"MaxLevel"						"1"
  		"AssociatedConsumable"			"17494"
+		"AbilityTextureName"			"consumables/seasonal_ti9_shovel"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -16345,6 +16513,7 @@
 		"AbilityCastAnimation"			"ACT_INVALID"
 		"MaxLevel"						"1"
 		"AssociatedConsumable"			"17496"
+		"AbilityTextureName"			"consumables/seasonal_ti9_instruments"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -16391,6 +16560,7 @@
 		"AbilityCastAnimation"			"ACT_INVALID"
 		"MaxLevel"						"1"
 		"AssociatedConsumable"			"17505"
+		"AbilityTextureName"			"consumables/seasonal_ti9_monkey"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -16478,6 +16648,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_SILENCE"
 		"AbilityCastAnimation"			"ACT_INVALID"
 		"MaxLevel"						"1"
+		"AbilityTextureName"			"consumables/seasonal_ti10_high_five"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -16538,6 +16709,7 @@
 		"AbilityCastAnimation"			"ACT_INVALID"
 		"MaxLevel"						"1"
 		"EventID"						"25"
+		"AbilityTextureName"			"consumables/seasonal_ti10_guild_banner"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -16590,6 +16762,7 @@
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 		"MaxLevel"						"1"
 		"AssociatedConsumable"			"17548"
+		"AbilityTextureName"			"consumables/seasonal_ti10_portal"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -16629,6 +16802,7 @@
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"	
 		"MaxLevel"						"1"
 		"AssociatedConsumable"			"17549"
+		"AbilityTextureName"			"consumables/seasonal_ti10_disco_ball"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -16675,6 +16849,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityCastAnimation"			"ACT_INVALID"	
 		"MaxLevel"						"1"
+		"AbilityTextureName"			"consumables/seasonal_ti10_disco_ball_channel"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -16717,6 +16892,7 @@
 		"AbilityCastAnimation"			"ACT_INVALID"
 		"MaxLevel"						"1"
 		"AssociatedConsumable"			"17550"
+		"AbilityTextureName"			"consumables/seasonal_ti10_soccer_ball"
 
 		"AbilityCastRange"				"1000"
 		"AbilityCastPoint"				"0.1"
@@ -16786,6 +16962,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_NONE"
 		"MaxLevel"						"1"
 		"AssociatedConsumable"			"17551"
+		"AbilityTextureName"			"consumables/seasonal_ti10_hot_potato"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -16837,6 +17014,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_NONE"
 		"MaxLevel"						"1"
+		"AbilityTextureName"			"consumables/seasonal_ti10_hot_potato_throw_existing_potato"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -16885,6 +17063,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_SILENCE"
 		"AbilityCastAnimation"			"ACT_INVALID"
 		"MaxLevel"						"1"
+		"AbilityTextureName"			"consumables/seasonal_diretide2020_high_five"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -16935,15 +17114,16 @@
 	}
 
 	//=================================================================================================================
-	// 10th Anniversay Party Hat
+	// Party Hats
 	//=================================================================================================================
-	"seasonal_10th_anniversary_party_hat"
+	"seasonal_party_hat"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_SILENCE"
 		"AbilityCastAnimation"			"ACT_INVALID"
 		"MaxLevel"						"1"
+		"AbilityTextureName"			"consumables/seasonal_party_hat"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -16986,6 +17166,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_SILENCE"
 		"AbilityCastAnimation"			"ACT_INVALID"
 		"MaxLevel"						"1"
+		"AbilityTextureName"			"consumables/plus_high_five"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -17046,6 +17227,7 @@
 		"AbilityCastAnimation"			"ACT_INVALID"
 		"MaxLevel"						"1"
 		"EventID"						"25"
+		"AbilityTextureName"			"consumables/plus_guild_banner"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -17117,6 +17299,7 @@
 		"AbilityManaCost"				"0"
 		"AbilityChannelTime"			"2.0"
 		"AssociatedConsumable"			"23681"
+		"AbilityTextureName"			"consumables/seasonal_ti11_balloon"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -17152,6 +17335,7 @@
 		"AbilityManaCost"				"0"
 		// "AbilityCharges"				"125"
 		"AssociatedConsumable"			"23784"
+		"AbilityTextureName"			"consumables/seasonal_ti11_bubble_gun"
 
 		"AbilityValues"
 		{
@@ -17175,6 +17359,7 @@
 		"AbilityCastAnimation"			"ACT_INVALID"
 		"MaxLevel"						"1"
 		"AssociatedConsumable"			"23574"
+		"AbilityTextureName"			"consumables/seasonal_ti11_duel"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -17214,6 +17399,7 @@
 		"AbilityDamage"					"0"
 		"AbilityManaCost"				"0"
 		"AssociatedConsumable"			"23572"
+		"AbilityTextureName"			"consumables/seasonal_ti11_conga_line"
 
 		"AbilityValues"
 		{
