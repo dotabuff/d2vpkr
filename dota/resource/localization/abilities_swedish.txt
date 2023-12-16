@@ -14,7 +14,8 @@
 		"dota_ability_variable_all"					"Alla attribut"			// $all
 		"dota_ability_variable_primary_attribute"	"Primärt attribut"			// $primary_attribute
 		"dota_ability_variable_attack"				"Attackhastighet"				// $attack
-"dota_ability_variable_hp_regen"			"HP-regeneration"		// $hp_regen
+		"dota_ability_variable_attack_pct"			"Grundläggande attackhastighet"	// $attack_pct
+		"dota_ability_variable_hp_regen"			"HP-regeneration"		// $hp_regen
 		"dota_ability_variable_lifesteal"			"Livstjälande"					// $lifesteal
 		"dota_ability_variable_mana_regen"			"Manaregeneration"			// $mana_regen
 		"dota_ability_variable_mana_regen_aura"		"Manaregeneration (aura)"	// $mana_regen_aura
@@ -34,7 +35,9 @@
 		"dota_ability_variable_projectile_speed"	"Projektilhastighet"			// $projectile_speed
 		"dota_ability_variable_manacost_reduction"	"Minskning av manakostnad"		// $manacost_reduction
 		"dota_ability_variable_cooldown_reduction"	"Reducerad Cooldown"		// $cooldown_reduction 
-"dota_ability_variable_damage_int_hero"	"skada (intelligenshjältar)"
+"dota_ability_variable_aoe_bonus"			"Extra radie"					// $aoe_bonus
+
+		"dota_ability_variable_damage_int_hero"	"skada (intelligenshjältar)"
 		"dota_ability_variable_damage_agi_hero"	"skada (agilityhjältar)"
 		"dota_ability_variable_damage_str_hero"	"skada (styrkehjältar)"
 
@@ -324,6 +327,7 @@
 		"DOTA_Tooltip_ability_mirana_invis_bonus_movement_speed"						"%FÖRFLYTTNINGSHASTIGHET:"
 		"DOTA_Tooltip_ability_mirana_leap"												"Leap"
 		"DOTA_Tooltip_ability_mirana_leap_Description"									"Mirana tar ett språng in i striden med ett rovlystet vrål, som ger henne extra attack- och förflyttningshastighet. Bonusen varar i %leap_bonus_duration% sekunder."
+		"DOTA_Tooltip_ability_mirana_leap_shard_description"							"Vid landning avfyras en projektil längs Sagans hoppriktning som skadar och saktar ned enheter som träffas och garanterar att de träffas av en sekundär Starstorm om den förmågan används. Leap avbryter inte osynligheten från Moonlight Shadow.<br><br> Kan alt-användas för att välja längd och riktning på hoppet. <br><br>Ger %shard_bonus_charges% extra laddning(ar)."
 		"DOTA_Tooltip_ability_mirana_leap_shard_radius"									"STARTRADIE:"
 		"DOTA_Tooltip_ability_mirana_leap_shard_radius_end"									"SLUTRADIE:"
 		"DOTA_Tooltip_ability_mirana_leap_shard_damage"									"SKADA:"
@@ -523,10 +527,13 @@
 		"DOTA_Tooltip_ability_windrunner_focusfire_cancel_Description" 						"Avbryt Focus Fire i förtid."
 
 		"DOTA_Tooltip_ability_windrunner_powershot"										"Powershot"
+		"DOTA_Tooltip_ability_windrunner_powershot_Description"							"KANALISERAD – Windranger spänner sin båge i upp till %abilitychanneltime% sekund för att avfyra ett kraftfullt skott som saktar ned och gör mer skada ju längre bågen spänns. Pilen skadar alla fiender i dess väg. För varje fiende som Powershot träffar, minskar dess skada och nedsaktning."
 		"DOTA_Tooltip_ability_windrunner_powershot_Lore"								"Under hennes tidiga år av träning, lärde sig Lyralei att skjuta kraftfulla pilar som till och med kunde klyva träd för att nå sina mål."
 		"DOTA_Tooltip_ability_windrunner_powershot_Note0"								"Powershot kommer att förstöra träd runt träffområdet."
 		"DOTA_Tooltip_ability_windrunner_powershot_arrow_range"							"RÄCKVIDD:"
 		"DOTA_Tooltip_ability_windrunner_powershot_powershot_damage"					"SKADA:"
+		"DOTA_Tooltip_ability_windrunner_powershot_slow"								"%NEDSAKTNING:"
+		"DOTA_Tooltip_ability_windrunner_powershot_slow_duration"					"NEDSAKTNING – VARAKTIGHET:"
 		"DOTA_Tooltip_ability_windrunner_powershot_damage_reduction"					"%SKADEREDUCERING PER ENHET:"
 		
 		"DOTA_Tooltip_ability_windrunner_shackleshot"									"Shackleshot"
@@ -537,6 +544,8 @@
 		"DOTA_Tooltip_ability_windrunner_shackleshot_Note2"								"Shackleshot kan undvikas."
 		"DOTA_Tooltip_ability_windrunner_shackleshot_stun_duration"						"FJÄTTRING - VARAKTIGHET:"
 		"DOTA_Tooltip_ability_windrunner_windrun"										"Windrun"
+		"DOTA_Tooltip_ability_windrunner_windrun_Description" 							"Ökar förflyttningshastighet och lägger till undvikande från alla fysiska attacker."
+		"DOTA_Tooltip_ability_windrunner_windrun_scepter_description"                   "Windrun reducerar fysisk skada tagen med %physical_damage_pct% %%, och ger osynlighet som inte avbryts vid attack eller användning av förmågor."
 		"DOTA_Tooltip_ability_windrunner_windrun_Lore"									"Lyralei förtrollar vinden för att fly undan inkommande attacker."
 		"DOTA_Tooltip_ability_windrunner_windrun_Note0"									"Aktivering av Windrun kommer att undvika inkommande projektiler."
 		"DOTA_Tooltip_ability_windrunner_windrun_evasion_pct_tooltip"					"%UNDVIKANDE:"
@@ -560,6 +569,9 @@
 		"DOTA_Tooltip_modifier_windrunner_windrun_charge_counter_Description"	"Erhållits från Aghanim's Scepter."
 		"DOTA_Tooltip_modifier_windrunner_gale_force"			"Gale Force"
 		"DOTA_Tooltip_modifier_windrunner_gale_force_Description"			"Kämpar i motvind."
+		"DOTA_Tooltip_modifier_windrunner_powershot_slow"					"Powershot"
+		"DOTA_Tooltip_modifier_windrunner_powershot_slow_Description"					"Förflyttningshastighet minskas med %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %%."
+
 		"DOTA_Tooltip_ability_windrunner_gale_force"				"Gale Force"
 		"DOTA_Tooltip_ability_windrunner_gale_force_Lore"				"Lyralei har till slut lärt sig att åkalla kraften av sitt sanna arv."
 		"DOTA_Tooltip_ability_windrunner_gale_force_Description"	"Vektorinriktad. Framkallar en stark vind som knuffar alla fiender i målområdet mot målriktningen."
@@ -581,6 +593,7 @@
 		"DOTA_Tooltip_ability_lion_voodoo_Note1"										"Målet kommer att ha en grundhastighet på %movespeed%, men buffs som ger maximal förflyttningshastighet inaktiveras inte."
 		"DOTA_Tooltip_ability_lion_voodoo_duration"										"VARAKTIGHET:"
 		"DOTA_Tooltip_ability_lion_mana_drain"											"Mana Drain"
+		"DOTA_Tooltip_ability_lion_mana_drain_Description"								"KANALISERAD – Kanaliserar magisk energi, som tar mana, saktar ned fiender över tid och gör skada som motsvarar %damage_pct% %% av stulen mana. Kan användas på allierade för att ge dem mana och förflyttningshastighet med en effekt på %ally_pct% %%."
 		"DOTA_Tooltip_ability_lion_mana_drain_Lore"										"Lägre stående magi är ingenting mer än en källa för magisk återställning för Häxdemonen."
 		"DOTA_Tooltip_ability_lion_mana_drain_Note0"									"Förstör illusioner omedelbart och förhindrar fiendehjältar från att bli osynliga."
 		"DOTA_Tooltip_ability_lion_mana_drain_duration"									"KANALISERINGSTID:"
@@ -627,6 +640,8 @@
 		"DOTA_Tooltip_ability_vengefulspirit_wave_of_terror_armor_reduction"			"SKYDDSREDUCERING:"
 		"DOTA_Tooltip_ability_vengefulspirit_wave_of_terror_abilityduration"			"DEBUFF – VARAKTIGHET:"
 		"DOTA_Tooltip_ability_vengefulspirit_wave_of_terror_vision_duration"			"SIKT – VARAKTIGHET:"
+		"DOTA_Tooltip_ability_vengefulspirit_wave_of_terror_damage"						"SKADA:"
+		
 		"DOTA_Tooltip_ability_vengefulspirit_command_aura"								"Vengeance Aura"
 		"DOTA_Tooltip_ability_vengefulspirit_command_aura_Description"					"Vengeful Spirits närvaro ökar skadan för allierade hjältar i närheten."
 		"DOTA_Tooltip_ability_vengefulspirit_command_aura_scepter_description"  		"Vid dödsfall skapas en stark illusion av Vengeful Spirit som utdelar och tar full skada och kan använda alla hennes förmågor. Illusionen har %scepter_illusion_ms_bonus_pct% %% extra förflyttningshastighet. Om illusionen lever när Vengeful Spirit återskapas, tar hon illusionens plats. Hon får all XP som illusionen har tjänat in. Starka illusioner förstörs inte omedelbart av förmågor."
@@ -634,12 +649,16 @@
 		"DOTA_Tooltip_ability_vengefulspirit_command_aura_bonus_base_damage"			"%EXTRA GRUNDSKADA:"
 		"DOTA_Tooltip_ability_vengefulspirit_command_aura_aura_radius"					"RADIE:"
 		"DOTA_Tooltip_ability_vengefulspirit_nether_swap"								"Nether Swap"
+		"DOTA_Tooltip_ability_vengefulspirit_nether_swap_Description"					"Byter ögonblickligen plats med en vald hjälte, vän eller fiende. Nether Swap avbryter kanaliserade förmågor hos målet. Fiendemål tar skada. Vengeful Spirit och allierade mål får en barriär som är lika med skadan."
 		"DOTA_Tooltip_ability_vengefulspirit_nether_swap_Lore"							"Martyrskap är ett litet pris att betala för hämnd."
 		"DOTA_Tooltip_ability_vengefulspirit_nether_swap_Note0"							"Fungerar på förmågeimmuna enheter."
 		"DOTA_Tooltip_ability_vengefulspirit_nether_swap_Note1"							"Träd nära Vengeful Spirit och målet kommer att förstöras när trollformeln läggs."
 		"DOTA_Tooltip_ability_vengefulspirit_nether_swap_Note2"							"Kanaliserade förmågor avbryts av Nether Swap."
 		"DOTA_Tooltip_ability_vengefulspirit_nether_swap_abilitycastrange"					"RÄCKVIDD:"
-//"DOTA_Tooltip_ability_vengefulspirit_nether_swap_scepter_radius"		"SCEPTER FEAR RADIUS:"
+		//"DOTA_Tooltip_ability_vengefulspirit_nether_swap_damage_reduction"					"%DAMAGE REDUCTION:"
+		"DOTA_Tooltip_ability_vengefulspirit_nether_swap_damage_reduction_duration"			"SKÖLD – VARAKTIGHET:"
+		"DOTA_Tooltip_ability_vengefulspirit_nether_swap_damage"			"SKADA/SKÖLD:"
+		//"DOTA_Tooltip_ability_vengefulspirit_nether_swap_scepter_radius"		"SCEPTER FEAR RADIUS:"
 		//"DOTA_Tooltip_ability_vengefulspirit_nether_swap_scepter_duration"		"SCEPTER FEAR DURATION:"
 		
 		
@@ -654,6 +673,7 @@
 		"DOTA_Tooltip_modifier_vengefulspirit_wave_of_terror_buff"				"Wave of Terror"
 		"DOTA_Tooltip_modifier_vengefulspirit_wave_of_terror_buff_Description"	"Har stulit grundskada från fienden."
 		"DOTA_Tooltip_modifier_vengefulspirit_nether_swap_damage_reduction"				"Nether Swap"
+		"DOTA_Tooltip_modifier_vengefulspirit_nether_swap_damage_reduction_Description"	"Absorberar skada."
 		//WITCHDOCTOR
 		"DOTA_Tooltip_ability_witch_doctor_paralyzing_cask"								"Paralyzing Cask"
 		"DOTA_Tooltip_ability_witch_doctor_paralyzing_cask_Description"					"Kastar en behållare med paralyserande pulver som rikoschetterar mellan varje fiende, bedövar och skadar dem den träffar. Skadan ökar med varje studs. Utdelar %creep_damage_pct% %% skada på creeps."
@@ -666,9 +686,12 @@
 		"DOTA_Tooltip_ability_witch_doctor_paralyzing_cask_bounce_bonus_damage"			"BONUSSKADA PER STUDS:"
 
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration"							"Voodoo Restoration"
+		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_Description"				"Witch Doctor fokuserar sin magi på att hela allierade i närheten, vilket kostar Witch Doctor mana varje sekund som Voodoo Restoration är aktiv."
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_Lore"						"Zharvakkos hokus pokus är inte begränsad till att förhäxa sina motståndare, utan är även mycket skicklig på att bota krämpor."
+		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_Note0"					"Helandet görs i intervaller på %heal_interval% sekunder."
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_Note1"					"Kan hela förmågeimmuna enheter."
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_mana_per_second"			"MANA PER SEKUND:"
+		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_heal"						"HELA:"
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_radius"					"RADIE:"
 		"DOTA_Tooltip_ability_witch_doctor_maledict"									"Maledict"
 		"DOTA_Tooltip_ability_witch_doctor_maledict_Description"						"Förbannar ett område så att fiendehjältar inom det tar bestämd skada varje sekund, samt skadar dem var 4:e sekund baserat på hur mycket hälsa de förlorat sedan förbannelsen börjat."
@@ -694,6 +717,7 @@
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_switcheroo_attack_speed_reduction"	    			"REDUCERAD ATTACKHASTIGHET:"
 
 		"DOTA_Tooltip_modifier_voodoo_restoration_heal"					"Voodoo Restoration"
+		"DOTA_Tooltip_modifier_voodoo_restoration_heal_Description"		"Witch Doctor läker dig!"
 		"DOTA_Tooltip_modifier_maledict"								"Maledict"
 		"DOTA_Tooltip_modifier_maledict_Description"					"Förbannad. Tar skada över tid, och tar bonusskada var 4:e sekund baserat på HP som förlorats sedan början av förbannelsen."
 
@@ -715,9 +739,12 @@
 		"DOTA_Tooltip_ability_leshrac_diabolic_edict_radius"							"RADIE:"
 		"DOTA_Tooltip_ability_leshrac_diabolic_edict_num_explosions"					"EXPLOSIONER:"
 		"DOTA_Tooltip_ability_leshrac_lightning_storm"									"Lightning Storm"
+		"DOTA_Tooltip_ability_leshrac_lightning_storm_Description"						"Framkallar ett åskväder som spränger den inriktade fiendeenheten och sedan fiender i närheten. Träffade fiender får minskad förflyttningshastighet och attackhastighet."
 		"DOTA_Tooltip_ability_leshrac_lightning_storm_Lore"								"Den Plågade Själens behärskning av elementen framgår tydligt i de massiva åskväder som slår ner arméer inför honom."
 		"DOTA_Tooltip_ability_leshrac_lightning_storm_damage"						"SKADA:"
 		"DOTA_Tooltip_ability_leshrac_lightning_storm_jump_count"						"BLIXTNEDSLAG:"
+		"DOTA_Tooltip_ability_leshrac_lightning_storm_movespeed_slow"			        "%NEDSAKTNING:"
+		"DOTA_Tooltip_ability_leshrac_lightning_storm_attackspeed_slow"			        "NEDSAKTNING ATTACK:"
 		"DOTA_Tooltip_ability_leshrac_lightning_storm_slow_duration"					"NEDSAKTNING – VARAKTIGHET:"
 		"DOTA_Tooltip_ability_leshrac_lightning_storm_radius"							"RADIE FÖR BLIXTHOPP:"
 		"DOTA_Tooltip_ability_leshrac_greater_lightning_storm"							"Nihilism"
@@ -734,6 +761,7 @@
 		"DOTA_Tooltip_ability_leshrac_pulse_nova_damage"								"SKADA:"
 
 		"DOTA_Tooltip_modifier_leshrac_lightning_storm_slow" "Saktas ned av Lightning Storm"
+		"DOTA_Tooltip_modifier_leshrac_lightning_storm_slow_Description" "Förflyttningshastighet minskas med %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %%. Attackhastighet minskas med %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 		"DOTA_Tooltip_modifier_leshrac_pulse_nova" "Pulse Nova"
 		"DOTA_Tooltip_modifier_leshrac_pulse_nova_Description" "Åsamkar skada till fiender i närheten"
 		"DOTA_Tooltip_modifier_leshrac_diabolic_edict" "Diabolic Edict"
@@ -747,10 +775,13 @@
 		
 		//JUGGERNAUT
 		"DOTA_Tooltip_ability_juggernaut_blade_fury"									"Blade Fury"
+		"DOTA_Tooltip_ability_juggernaut_blade_fury_Description"						"Juggernaut orsakar en svärdstorm omkring sig med förödande kraft, som gör honom immun mot debuff, ökar hans magiresistens med 80 %% och skadar fiender i närheten. Juggernaut utdelar skada i intervaller som är lika med %blade_fury_aspd_multiplier% gånger Juggernauts attackhastighet.\n\nDISPEL: Grundläggande"
+		"DOTA_Tooltip_ability_juggernaut_blade_fury_shard_description"					"Blade Fury får större radie och saktar ned fiender med %bonus_movement_slow% %%."
 		"DOTA_Tooltip_ability_juggernaut_blade_fury_Lore"								"Yurnero's berömda katanatekniker fruktas av både krigare och magiker."
 		"DOTA_Tooltip_ability_juggernaut_blade_fury_Note0"								"Du kan använda föremål under Blade Fury."
 		"DOTA_Tooltip_ability_juggernaut_blade_fury_Note1"								"Juggernaut kan fortfarande utföra normala attacker under Blade Fury. Men bara enheter som inte påverkas av Blade Fury, som t.ex. wards eller byggnader, kommer att ta skada från dessa attacker."
 		"DOTA_Tooltip_ability_juggernaut_blade_fury_blade_fury_radius"					"RADIE:"
+		"DOTA_Tooltip_ability_juggernaut_blade_fury_blade_fury_damage_per_tick"					"SKADA PER TICK:"
 		"DOTA_Tooltip_ability_juggernaut_blade_fury_duration"					"VARAKTIGHET:"
 		"DOTA_Tooltip_ability_juggernaut_blade_fury_shard_bonus_move_speed"			"EXTRA FÖRFLYTTNINGSHASTIGHET:"
 		"DOTA_Tooltip_ability_juggernaut_blade_fury_shard_attack_rate"			"ATTACKFREKVENS:"
@@ -797,6 +828,7 @@
 
 		//PUDGE
 		"DOTA_Tooltip_ability_pudge_meat_hook"											"Meat Hook"
+		"DOTA_Tooltip_ability_pudge_meat_hook_Description"								"Kastar iväg en blodig krok mot en enhet eller plats. Kroken hakar i den första enheten som träffas och drar den tillbaka till Pudge, och gör skada om målet är en fiende. Dödar creeps omedelbart (ej ancients)."
 		"DOTA_Tooltip_ability_pudge_meat_hook_Lore"										"Slaktarens krok är en symbolisk mardröm, dess böjda blad en skrämmande påminnelse om hans slaktfulla meningar."
 
 		"DOTA_Tooltip_ability_pudge_meat_hook_Note0"									"Avbryter kanaliserade förmågor hos det primära målet om det är en fiende."
@@ -871,6 +903,7 @@
 		"DOTA_Tooltip_ability_bane_brain_sap_Description"								"Slukar livskrafterna hos en fiendeenhet, vilket helar Bane och gör skada."
 		"DOTA_Tooltip_ability_bane_brain_sap_brain_sap_damage"							"HELANDE/SKADA:"
 		"DOTA_Tooltip_ability_bane_brain_sap_Lore"										"Atropos finner ingen bättre njutning än av att skörda den fruktan han skapar."
+		"DOTA_Tooltip_ability_bane_brain_sap_shard_description"							"Reducerar cooldown med %bonus_AbilityCooldown%. Gör att Brain Sap blir en områdesförmåga med %shard_radius% enheters radie. Sekundära mål helar endast med %shard_secondary_target_heal_pct% %%."
 		"DOTA_Tooltip_ability_bane_nightmare"											"Nightmare"
 		"DOTA_Tooltip_ability_bane_nightmare_abilitydraft_note"							"Hjältar som draftar Nightmare kan fortsätta att attackera sövda enheter. Bane kan också attackera sövda enheter, även om han inte draftade den här förmågan."
 		"DOTA_Tooltip_ability_bane_nightmare_Lore"										"En förmåga som stulits från gudinnan Nyctasha är att sätta sitt byte i en evig sömn."
@@ -1072,6 +1105,7 @@
 		//SVEN
 		"DOTA_Tooltip_ability_sven_storm_bolt"											"Storm Hammer"
 		"DOTA_Tooltip_ability_sven_storm_bolt_Description"								"Sven frigör sin magiska stridshandske som gör skada och lamslår fiender inom ett litet område kring målet."
+		"DOTA_Tooltip_ability_sven_storm_bolt_scepter_description"						"Ökar räckvidd och applicerar en grundläggande dispel på målet. Kan användas på osårbara mål. Vid alt-användning utdelas ytterligare %scepter_bonus_damage% skada och Sven förflyttas med Storm Hammer."
 		"DOTA_Tooltip_ability_sven_storm_bolt_Lore"										"Den vildsinta riddarens järnhandske, som är tagen från hans fars skola, förgör hans fiender."
 		"DOTA_Tooltip_ability_sven_storm_bolt_bolt_aoe"									"RADIE:"
 		"DOTA_Tooltip_ability_sven_storm_bolt_cast_range_bonus_scepter"					"EXTRA RÄCKVIDD:"
@@ -1079,6 +1113,7 @@
 		"DOTA_Tooltip_ability_sven_great_cleave_Lore"									"De Vakande riddarna söker fortfarande efter att få tillbaka det stulna Kastlösa svärdet från Sven, ett vapen kapabelt till att skära djupa sår i understående krigare."
 		"DOTA_Tooltip_ability_sven_great_cleave_great_cleave_damage"					"%KLYVSKADA:"
 		"DOTA_Tooltip_ability_sven_warcry"												"Warcry"
+		"DOTA_Tooltip_ability_sven_warcry_shard_description"							"Warcry kan inte tas bort med dispel och ger passivt %shard_passive_armor% skydd och %shard_passive_movespeed% %% förflyttningshastighet till alla allierade nära Sven."
 		"DOTA_Tooltip_ability_sven_warcry_Description"									"Svens stridsrop repar sina allierades mod inför strid, vilket ökar deras skydd och förflyttningshastighet. Varar i %duration% sekunder."
 		"DOTA_Tooltip_ability_sven_warcry_Lore"											"Genom att läsa några rader från den Vakande kodexen förstärks Svens lydnad till hans vildsinta lagar. Väldigt poetiskt!"
 		"DOTA_Tooltip_ability_sven_warcry_radius"										"RADIE:"
@@ -2848,7 +2883,6 @@
 		"DOTA_Tooltip_ability_viper_nethertoxin_radius"									"RADIE:"
 		"DOTA_Tooltip_ability_viper_nethertoxin_duration"								"VARAKTIGHET:"
 		"DOTA_Tooltip_ability_viper_corrosive_skin"										"Corrosive Skin"
-		"DOTA_Tooltip_ability_viper_corrosive_skin_Description"							"Viper utsöndrar ett smittsamt gift som skadar och saktar ned attackhastigheten hos fiender som skadar Viper inom en radie av %max_range_tooltop%. Den utsöndrade syran ökar även Vipers magiresistens."
 		"DOTA_Tooltip_ability_viper_corrosive_skin_Lore"								"Det är inte ovanligt att svärd och sköldar fräter sönder i händerna på de som attackerar Nederdraken."
 		
 		"DOTA_Tooltip_ability_viper_corrosive_skin_Note0"								"Stackar multiplikativt med andra källor av magiresistens."
