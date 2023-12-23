@@ -14,7 +14,8 @@
 		"dota_ability_variable_all"					"kaikkia piirteitä"			// $all
 		"dota_ability_variable_primary_attribute"	"pääpiirrettä"			// $primary_attribute
 		"dota_ability_variable_attack"				"hyökkäysnopeutta"				// $attack
-"dota_ability_variable_hp_regen"			"terveydenpalautumista"		// $hp_regen
+		"dota_ability_variable_attack_pct"			"perushyökkäysnopeutta"	// $attack_pct
+		"dota_ability_variable_hp_regen"			"terveydenpalautumista"		// $hp_regen
 		"dota_ability_variable_lifesteal"			"vampirismia"					// $lifesteal
 		"dota_ability_variable_mana_regen"			"mananpalautumista"			// $mana_regen
 		"dota_ability_variable_mana_regen_aura"		"mananpalautumisaura"	// $mana_regen_aura
@@ -36,7 +37,9 @@
 		"dota_ability_variable_cooldown_reduction"	"latausaikojen lyhennystä"		// $cooldown_reduction 
 		"dota_ability_variable_max_mana_percentage"	"maksimimanaa"			// $max_mana_percentage
 		"dota_ability_variable_slow_resistance"		"hidastusvastustusta"			// $slow_resistance
-"dota_ability_variable_damage_int_hero"	"vahinkoa älykkyyssankareille"
+		"dota_ability_variable_aoe_bonus"			"vaikutusaluelisää"					// $aoe_bonus
+
+		"dota_ability_variable_damage_int_hero"	"vahinkoa älykkyyssankareille"
 		"dota_ability_variable_damage_agi_hero"	"vahinkoa ketteryyssankareille"
 		"dota_ability_variable_damage_str_hero"	"vahinkoa voimasankareille"
 
@@ -588,6 +591,8 @@
 		"DOTA_Tooltip_ability_windrunner_powershot_Note0"								"Powershot tuhoaa puut vaikutusalueeltaan."
 		"DOTA_Tooltip_ability_windrunner_powershot_arrow_range"							"KANTAMA:"
 		"DOTA_Tooltip_ability_windrunner_powershot_powershot_damage"					"VAHINKO:"
+		"DOTA_Tooltip_ability_windrunner_powershot_slow"								"%HIDASTUS:"
+		"DOTA_Tooltip_ability_windrunner_powershot_slow_duration"					"HIDASTUKSEN KESTO:"
 		"DOTA_Tooltip_ability_windrunner_powershot_damage_reduction"					"%OSUMAVÄHENNYS:"
 		
 		"DOTA_Tooltip_ability_windrunner_shackleshot"									"Shackleshot"
@@ -598,6 +603,8 @@
 		"DOTA_Tooltip_ability_windrunner_shackleshot_Note2"								"Shackleshotin voi väistää."
 		"DOTA_Tooltip_ability_windrunner_shackleshot_stun_duration"						"TAINNUTUKSEN KESTO:"
 		"DOTA_Tooltip_ability_windrunner_windrun"										"Windrun"
+		"DOTA_Tooltip_ability_windrunner_windrun_Description" 							"Nostaa liikenopeutta ja antaa väistökykyä kaikkia hyökkäyksiä vastaan."
+		"DOTA_Tooltip_ability_windrunner_windrun_scepter_description"                   "Windrun vähentää Windrangerin ottamaa fyysistä vahinkoa %physical_damage_pct% %%:lla ja antaa hänelle näkymättömyyden, joka ei rikkoudu hyökkäyksistä tai kyvyistä."
 		"DOTA_Tooltip_ability_windrunner_windrun_Lore"									"Lyralei juoksee tuulen lailla vältelläkseen hyökkäyksiä."
 		"DOTA_Tooltip_ability_windrunner_windrun_Note0"									"Windrunilla voi väistää ammuksia, jotka luotiin ennen sen aktivoimista."
 		"DOTA_Tooltip_ability_windrunner_windrun_evasion_pct_tooltip"					"%VÄISTÖLISÄ:"
@@ -621,6 +628,9 @@
 		"DOTA_Tooltip_modifier_windrunner_windrun_charge_counter_Description"	"Aghanim's Scepterin myöntämä."
 		"DOTA_Tooltip_modifier_windrunner_gale_force"			"Gale Force"
 		"DOTA_Tooltip_modifier_windrunner_gale_force_Description"			"Kovien tuulien työntämä."
+		"DOTA_Tooltip_modifier_windrunner_powershot_slow"					"Powershot"
+		"DOTA_Tooltip_modifier_windrunner_powershot_slow_Description"					"-%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %% liikenopeutta."
+
 		"DOTA_Tooltip_ability_windrunner_gale_force"				"Gale Force"
 		"DOTA_Tooltip_ability_windrunner_gale_force_Lore"				"Lyralei voi viimeinkin kanavoida todellisen alkuperänsä voimat."
 		"DOTA_Tooltip_ability_windrunner_gale_force_Description"	"VEKTORIKOHDISTETTU – Luo vahvan tuulen työntämään kaikkia kohdealueen vihollisia kohdesuuntaan."
@@ -724,6 +734,7 @@
 		"DOTA_Tooltip_modifier_vengefulspirit_wave_of_terror_buff"				"Wave of Terror"
 		"DOTA_Tooltip_modifier_vengefulspirit_wave_of_terror_buff_Description"	"Varastettu vihollisen perusvahinkoa."
 		"DOTA_Tooltip_modifier_vengefulspirit_nether_swap_damage_reduction"				"Nether Swap -vahinkovähennys"
+		"DOTA_Tooltip_modifier_vengefulspirit_nether_swap_damage_reduction_Description"	"Torjuu vahinkoa."
 		//WITCHDOCTOR
 		"DOTA_Tooltip_ability_witch_doctor_paralyzing_cask"								"Paralyzing Cask"
 		"DOTA_Tooltip_ability_witch_doctor_paralyzing_cask_Description"					"Sinkoaa kohteen päälle pääkallollisen lamauttavaa jauhetta, joka kimpoilee vihollisesta toiseen, tainnuttaen ja vahingoittaen osuneita vihollisia. Jokainen pomppu aiheuttaa edellistä enemmän vahinkoa. Tekee %creep_damage_pct%%% vahinkoa kätyreihin."
@@ -736,6 +747,7 @@
 		"DOTA_Tooltip_ability_witch_doctor_paralyzing_cask_bounce_bonus_damage"			"LISÄVAHINKO/KIMPOAMINEN:"
 
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration"							"Voodoo Restoration"
+		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_Description"				"Witch Doctor käyttää taikaansa parantaakseen lähellä olevia liittolaisia. Taika kuluttaa Witch Doctorin manaa jatkuvasti Voodoo Restorationin aikana."
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_Lore"						"Zharvakkon silmänkääntötemput eivät ole käteviä ainoastaan vastustajien kiroamiseen, vaan myös sairauksien parantamiseen."
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_Note1"					"Parannus läpäisee loitsuimmuniteetin."
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_mana_per_second"			"MANAA/S:"
@@ -764,6 +776,7 @@
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_switcheroo_attack_speed_reduction"	    			"HYÖKKÄYSNOPEUDEN VÄHENNYS:"
 
 		"DOTA_Tooltip_modifier_voodoo_restoration_heal"					"Voodoo Restoration"
+		"DOTA_Tooltip_modifier_voodoo_restoration_heal_Description"		"Poppatohtorin pappisparannus!"
 		"DOTA_Tooltip_modifier_maledict"								"Maledict"
 		"DOTA_Tooltip_modifier_maledict_Description"					"Kirottu. Ottaa vahinkoa sekunnin välein. Lisäksi ottaa lisävahinkoa 4 sekunnin välein sen perusteella, kuinka paljon terveyttä on menetetty kirouksen alusta lähtien."
 
@@ -804,6 +817,7 @@
 		"DOTA_Tooltip_ability_leshrac_pulse_nova_damage"								"VAHINKO:"
 
 		"DOTA_Tooltip_modifier_leshrac_lightning_storm_slow" "Lightning Storm -hidastus"
+		"DOTA_Tooltip_modifier_leshrac_lightning_storm_slow_Description" "-%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %% liikenopeutta, -%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% hyökkäysnopeutta."
 		"DOTA_Tooltip_modifier_leshrac_pulse_nova" "Pulse Nova"
 		"DOTA_Tooltip_modifier_leshrac_pulse_nova_Description" "Aiheuttaa vahinkoa lähellä oleviin vihollisiin"
 		"DOTA_Tooltip_modifier_leshrac_diabolic_edict" "Diabolic Edict"
@@ -868,6 +882,7 @@
 
 		//PUDGE
 		"DOTA_Tooltip_ability_pudge_meat_hook"											"Meat Hook"
+		"DOTA_Tooltip_ability_pudge_meat_hook_Description"								"Heittää verisen koukun kohdesuuntaan. Ensimmäinen hahmo, johon koukku osuu, vedetään Pudgen luokse. Viholliset ottavat koukusta vahinkoa ja ei-muinaiskätyrit kuolevat välittömästi."
 		"DOTA_Tooltip_ability_pudge_meat_hook_Lore"										"Teurastajan koukku on todellinen painajaisten symboli. Sen kaareva terä on karmea muistutus hänen hirvittävistä aikeistaan."
 
 		"DOTA_Tooltip_ability_pudge_meat_hook_Note0"									"Keskeyttää viholliskohteen kanavoinnin, mutta ei liittolaisen kanavointia."
@@ -1511,6 +1526,7 @@
 		"DOTA_Tooltip_ability_bloodseeker_bloodrage_spell_amp"							"%KYKYVAHINKO:"
 		"DOTA_Tooltip_ability_bloodseeker_bloodrage_damage_pct"							"%ENIMMÄISTERVEYDEN MENETYS/SEKUNTI:"
 
+		"DOTA_Tooltip_ability_bloodseeker_bloodrage_shard_description"				    "Bloodseekerin hyökkäykset tekevät Bloodragen vaikutuksen alaisena %shard_max_health_dmg% puhdasta vahinkoa kohteen enimmäisterveydestä ja parantavat häntä saman verran. Ei toimi liittolaisilla."
 		"DOTA_Tooltip_ability_bloodseeker_blood_bath"									"Blood Rite"
 		"DOTA_Tooltip_ability_bloodseeker_blood_bath_Description"						"Bloodseeker kastaa kohdealueen pyhään vereen. %delay_plus_castpoint_tooltip% sekunnin kuluttua rituaali on valmis, jolloin kaikki alueella olevat viholliset vahingoittuvat ja hiljentyvät."
 		"DOTA_Tooltip_ability_bloodseeker_blood_bath_Lore"								"Nyljetyt kaksoset auttavat mielellään heitä, jotka roiskivat taistelutantereen veren peittoon."
@@ -2330,6 +2346,7 @@
 		"DOTA_Tooltip_modifier_rattletrap_hookshot"						"Hookshot"
 		"DOTA_Tooltip_modifier_rattletrap_hookshot_Description"			"Lentää linnun lailla koukun luokse."
 		"DOTA_Tooltip_modifier_rattletrap_overclocking"					"Overclocking"
+		"DOTA_Tooltip_modifier_rattletrap_overclocking_Description"					"Ylikellotetut kyvyt! <br><br> Hidastaa itseään kyvyn päätyttyä."
 		"DOTA_Tooltip_modifier_rattletrap_cog_armor"					"Power Cogs"
 		"DOTA_Tooltip_modifier_rattletrap_cog_immune"					"Power Cogs"
 		"DOTA_Tooltip_modifier_rattletrap_cog_immune_description"		"Heikennysimmuniteetti Power Cogsin sisällä."
@@ -2341,6 +2358,9 @@
 		"DOTA_Tooltip_modifier_rattletrap_jetpack_description"			"+%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %% liikenopeutta ja lentokyky."
 		"DOTA_Tooltip_modifier_rattletrap_rocket_flare_slow"			"Rocket Flare"
 		"DOTA_Tooltip_modifier_rattletrap_rocket_flare_slow_Description" "Liikenopeutta vähennetty."
+		"DOTA_Tooltip_modifier_rattletrap_overheated"					"Ylikuumentunut"
+		"DOTA_Tooltip_modifier_rattletrap_overheated_Description"					"Jäähdyttää itseään Overclockin jälkeen. Liike- ja hyökkäysnopeutta vähennetty."
+
 		//LICH
 		"DOTA_Tooltip_ability_lich_frost_nova"											"Frost Blast"
 		"DOTA_Tooltip_ability_lich_frost_nova_Description"								"Iskee vihollisyksikköä jäällä, aiheuttaa aluevahinkoa ja hidastaa liike- ja hyökkäysnopeutta %abilityduration% sekunnin ajaksi. Ensisijainen kohde ottaa sekä perus- että aluevahinkoa."
@@ -2702,9 +2722,12 @@
 		"DOTA_Tooltip_modifier_tinker_laser_blind_Description"		"%dMODIFIER_PROPERTY_MISS_PERCENTAGE% %% hyökkäyksistä menee ohi."
 		"DOTA_Tooltip_modifier_tinker_rearm"						"Rearm"
 		"DOTA_Tooltip_modifier_tinker_rearm_Description"			"Nollataan kykyjen latausaikoja."
+		"DOTA_Tooltip_modifier_tinker_rearmor"						"Rearm-loitsunvastustus"
+		"DOTA_Tooltip_modifier_tinker_rearmor_Description"						"+%dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS% %% loitsunvastustusta."
 		"DOTA_Tooltip_modifier_tinker_defense_matrix"				"Defense Matrix"
 		"DOTA_Tooltip_modifier_tinker_defense_matrix_Description"	"Imee tulevaa vahinkoa ja antaa %dMODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING% %% heikennysvastustusta."
 		"DOTA_Tooltip_modifier_tinker_warp_grenade"					"Warp Flare"
+		"DOTA_Tooltip_modifier_tinker_warp_grenade_Description"		"Juurrutettu.<br>-%dMODIFIER_PROPERTY_CAST_RANGE_BONUS_PERCENTAGE% %% käyttöetäisyyttä, -%dMODIFIER_PROPERTY_ATTACK_RANGE_BONUS_PERCENTAGE% %% hyökkäysetäisyyttä siirtohämmennyksestä."
 		"DOTA_Tooltip_modifier_tinker_heat_seeking_missile_vision"	"Heat-Seeking Missile"
 		"DOTA_Tooltip_modifier_tinker_heat_seeking_missile_vision_Description" "Olet paljastunut!"
 
@@ -3160,6 +3183,7 @@
 		"DOTA_Tooltip_modifier_death_prophet_spirit_siphon_slow"						"Spirit Siphon"
 		"DOTA_Tooltip_modifier_death_prophet_spirit_siphon_slow_Description"			"&nbsp;"
 		"DOTA_Tooltip_modifier_death_prophet_silence"			"Hiljennetty"
+		"DOTA_Tooltip_modifier_death_prophet_silence_Descritipn"			"-%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %% liikenopeutta, hiljennetty."
 		"DOTA_Tooltip_modifier_death_prophet_spirit_siphon"								"Spirit Siphon"
 		"DOTA_Tooltip_modifier_death_prophet_spirit_siphon_Description"					"&nbsp;"
 		"DOTA_Tooltip_modifier_death_prophet_spirit_siphon_buff"						"Siphoned Armor"
@@ -3272,6 +3296,7 @@
 		"DOTA_Tooltip_ability_templar_assassin_self_trap_Description"					"Laukaisee ansan ja hidastaa lähellä olevia vihollisia."
 
         "DOTA_Tooltip_ability_templar_assassin_trap_teleport"                   "Psionic Projection"
+		"DOTA_Tooltip_ability_templar_assassin_trap_teleport_Description"       "KANAVOITU – Templar Assassin voi teleportata minkä tahansa Psionic Trapin luo %abilitychanneltime% sekunnin kanavoinnin jälkeen ja räjäyttää sen täysitehoisena siirtyessään. Ansan räjähdys tekee %extra_damage% lisävahinkoa. Psionic Projectionin kanavoiminen ei keskeytä Meldiä."
 		"DOTA_Tooltip_ability_templar_assassin_trap_teleport_Lore"       "Palkkioksi uskollisuudestaan Lanaya sai oppia lisää psionisten lahjojensa salaisuuksia."
 		"DOTA_Tooltip_ability_templar_assassin_trap_teleport_trap_duration"       "HIDASTUKSEN KESTO:"
 		"DOTA_Tooltip_ability_templar_assassin_trap_teleport_trap_radius"       "ANSAN SÄDE:"
@@ -3311,6 +3336,7 @@
 		"DOTA_Tooltip_ability_viper_nethertoxin_radius"									"SÄDE:"
 		"DOTA_Tooltip_ability_viper_nethertoxin_duration"								"KESTO:"
 		"DOTA_Tooltip_ability_viper_corrosive_skin"										"Corrosive Skin"
+		"DOTA_Tooltip_ability_viper_corrosive_skin_Description"							"Viper erittää tarttuvaa myrkkyä, joka vahingoittaa ja hidastaa jokaista vihollista, joka tekee siihen vahinkoa %max_range% yksikön etäisyydeltä. Myrkkyseos lisää myös Viperin loitsuvahingon vastustuskykyä."
 		"DOTA_Tooltip_ability_viper_corrosive_skin_scepter_Description"							"Corrosive Skin tekee kaksinkertaista vahinkoa ja hyökkäysnopeushidastusta %effect_multiplier_distance% yksikön säteellä oleviin vihollisiin."
 		"DOTA_Tooltip_ability_viper_corrosive_skin_Lore"								"Ei ole epänormaalia, että miekka ja kilpi kuluvat pois Alakäärmettä hyökkäävien käsistä."
 		
@@ -3319,6 +3345,7 @@
 		"DOTA_Tooltip_ability_viper_corrosive_skin_damage"								"VAHINKO/S:"
 		"DOTA_Tooltip_ability_viper_corrosive_skin_bonus_attack_speed"					"HYÖKKÄYSHIDASTUS:"
 		"DOTA_Tooltip_ability_viper_corrosive_skin_bonus_magic_resistance"				"%LOITSUNVASTUSTUS:"
+		"DOTA_Tooltip_ability_viper_corrosive_skin_max_range"							"SUURIN TOIMINTASÄDE:"
 		"DOTA_Tooltip_ability_viper_viper_strike"										"Viper Strike"
 		"DOTA_Tooltip_ability_viper_viper_strike_Lore"									"Viperin voimakkain Alakäärme-tulehdus on kerran tappanut sen sadistisen kutsujan ja leviää häntä uhmaavien verisuonissa."
 		"DOTA_Tooltip_ability_viper_viper_strike_duration"								"KESTO:"
@@ -3342,7 +3369,10 @@
 		"DOTA_Tooltip_modifier_viper_corrosive_skin_slow"						"Corrosive Skin -hidastus"
 		"DOTA_Tooltip_modifier_viper_corrosive_skin_slow_Description"			"-%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% %% hyökkäysnopeutta, ottaa jatkuvaa vahinkoa."
 		"DOTA_Tooltip_modifier_viper_viper_strike_slow"							"Viper Strike -hidastus"
+		"DOTA_Tooltip_modifier_viper_viper_strike_slow_Description"				"Passiiviset kyvyt murrettu.<br>-%fMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %% liikenopeutta, -%fMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% hyökkäysnopeutta."
 		"DOTA_Tooltip_modifier_viper_nethertoxin" 								"Nethertoxin"
+		"DOTA_Tooltip_modifier_viper_nethertoxin_Description" 					"-%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% hyökkäysnopeutta, ottaa jatkuvaa vahinkoa."
+
 		//LUNA
 		"DOTA_Tooltip_ability_luna_lucent_beam"											"Lucent Beam"
 		"DOTA_Tooltip_ability_luna_lucent_beam_Description"								"Luna iskee vihollista kuuenergian säteellä, joka tekee vahinkoa ja tainnuttaa hetkeksi."
@@ -4248,6 +4278,10 @@
 		"DOTA_Tooltip_modifier_chen_penitence_attack_speed_buff_Description"	"+%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% hyökkäysnopeutta."
 		
 		"DOTA_Tooltip_modifier_chen_divine_favor"	"Divine Favor"
+		"DOTA_Tooltip_modifier_chen_divine_favor_Description"	"+%dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% terveydenpalautumista."
+		"DOTA_Tooltip_modifier_chen_divine_favor_armor_buff"			"Divine Favorin panssari"
+		"DOTA_Tooltip_modifier_chen_divine_favor_armor_buff_Description"			"+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% panssaria, +%dMODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE_TARGET% %% vastaanotettua parannusta."
+
 		//SPECTRE
 		"DOTA_Tooltip_ability_spectre_spectral_dagger"						"Spectral Dagger"
 		"DOTA_Tooltip_ability_spectre_spectral_dagger_Description"			"Spectre piirtää pimeän polun vahinkoa tekevällä tikarilla ja hidastaa polkua koskevien vihollisten liikenopeutta. Tikarilla osutut viholliset jättävät jälkeensä oman varjopolkunsa. Spectre voi vapaasti kulkea maaston lävitse kulkiessaan varjopolulla. Tikari tekee Desolate-iskun vihollisiin, joilla ei ole liittolaista 400 yksikön läheisyydellä."
@@ -4516,6 +4550,7 @@
 		"DOTA_Tooltip_modifier_gyrocopter_flak_cannon"					"Flak Cannon"
 		"DOTA_Tooltip_modifier_gyrocopter_flak_cannon_Description"			"Hyökätään kaikkiin lähellä oleviin vihollisiin."
 		"DOTA_Tooltip_modifier_gyrocopter_call_down_slow"				"Call Down"
+		"DOTA_Tooltip_modifier_gyrocopter_call_down_slow_Description"			"-%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %% liikenopeutta Gyrocopterin ohjuksesta."
 		"DOTA_Tooltip_modifier_gyrocopter_homing_rocket_barrage"		"Homing Missile"
 		"DOTA_Tooltip_modifier_gyrocopter_homing_rocket_barrage_Description"	"Ammutaan rakettipattereita."
 
@@ -4682,16 +4717,23 @@
 
 		//INVOKER
 		"DOTA_Tooltip_ability_invoker_quas"											"<font color='#97d9ff'>Quas</font>"
+		"DOTA_Tooltip_ability_invoker_quas_Description"								"Mahdollistaa jääelementtien manipuloinnin ja <font color='#0577e8'>tehostaa Invokerin jääloitsuja</font>. Antaa passiivisesti %strength_bonus% voimapisteen tasoa kohden. Jokainen aktiivinen <font color='#0577e8'>Quas</font> antaa Invokerin loitsuille loitsuvampirismia."
 		"DOTA_Tooltip_ability_invoker_quas_Lore"									" "
 		"DOTA_Tooltip_ability_invoker_quas_Note0"									"Invokerilla voi olla vain 3 elementtiä aktiivisena."
 		"DOTA_Tooltip_ability_invoker_quas_Note1"									"Loitsun loitsuvampirismi lasketaan käyttöhetkellä: elementtien vaihto loitsun aikana ei tee mitään."
+		"DOTA_Tooltip_ability_invoker_quas_spell_lifesteal"							"%LOITSUVAMPIRISMI PER QUAS:"
 		"DOTA_Tooltip_ability_invoker_wex"											"<font color='#faadf6'>Wex</font>"
+		"DOTA_Tooltip_ability_invoker_wex_Description"								"Mahdollistaa myrskyelementtien manipuloinnin ja <font color='#d671a9'>tehostaa Invokerin myrskyloitsuja</font>. Antaa passiivisesti %agility_bonus% ketteryyspisteen tasoa kohden. Jokainen aktiivinen <font color='#d671a9'>Wex</font> lyhentää Invokerin latausaikoja ja nostaa hänen liikenopeuttaan."
 		"DOTA_Tooltip_ability_invoker_wex_Lore"										" "
 		"DOTA_Tooltip_ability_invoker_wex_Note0"									"Invokerilla voi olla vain 3 elementtiä aktiivisena."
 		"DOTA_Tooltip_ability_invoker_wex_move_speed_per_instance"					"%LIIKENOPEUS PER KAPPALE:"
+		"DOTA_Tooltip_ability_invoker_wex_cooldown_reduction"						"%LATAUSAIKOJEN LYHENNYS PER WEX:"
 		"DOTA_Tooltip_ability_invoker_exort"										"<font color='#fdd237'>Exort</font>"
+		"DOTA_Tooltip_ability_invoker_exort_Description"							"Mahdollistaa tulielementtien manipuloinnin ja <font color='#cabe68'>tehostaa Invokerin tuliloitsuja</font>. Antaa passiivisesti %intelligence_bonus% älykkyyspisteen tasoa kohden. Jokainen aktiivinen <font color='#cabe68'>Exort</font> antaa Invokerin loitsuille kykyvahinkoa."
 		"DOTA_Tooltip_ability_invoker_exort_Lore"									" "
 		"DOTA_Tooltip_ability_invoker_exort_Note0"									"Invokerilla voi olla vain 3 elementtiä aktiivisena."
+		"DOTA_Tooltip_ability_invoker_exort_Note1"									"Loitsun kykyvahinko lasketaan käyttöhetkellä: elementtien vaihto loitsun aikana ei tee mitään."
+		"DOTA_Tooltip_ability_invoker_exort_spell_amp"								"%KYKYVAHINKO PER EXORT:"
 		"DOTA_Tooltip_ability_invoker_empty1"										"Invoked Spell"
 		"DOTA_Tooltip_ability_invoker_empty1_Description"							"Invoken käyttäminen tuo tähän ruutuun yhden kymmenestä loitsusta sen perusteella, kuinka monta <font color='#0577e8'>Quas</font>-, <font color='#d671a9'>Wex</font>- tai <font color='#cabe68'>Exort</font>-elementtiä Invokerilla on käyttöhetkellä aktiivisena."
 		"DOTA_Tooltip_ability_invoker_empty2"										"Invoked Spell"
@@ -5408,6 +5450,7 @@
 		"DOTA_Tooltip_ability_shadow_demon_disruption_disruption_duration"			"KARKOTUKSEN KESTO:"
 		"DOTA_Tooltip_ability_shadow_demon_disruption_illusion_duration"			"HARHOJEN KESTO:"
 		"DOTA_Tooltip_ability_shadow_demon_disruption_illusion_outgoing_tooltip"	"%HARHOJEN TEKEMÄ VAHINKO:"
+		"DOTA_Tooltip_ability_shadow_demon_disruption_illusion_flat_damage"			"PERUSVAHINKOLISÄ:"
 		"DOTA_Tooltip_ability_shadow_demon_disruption_tooltip_total_illusion_incoming_damage"		"%HARHOJEN OTTAMA VAHINKO:"		
 		"DOTA_Tooltip_ability_shadow_demon_soul_catcher"							"Soul Catcher"
 		"DOTA_Tooltip_ability_shadow_demon_soul_catcher_Description"				"Kaappaa kohdealueella olevien vihollisten sielut vieden heiltä osan senhetkisestä terveydestä. Shadow Demon saa väliaikaisesti lisää kykyvahinkoa jokaisesta vihollissankarin sielusta. Heikennyksen päätyttyä viholliset saavat puolet menettämästään terveydestä takaisin. Disruptionin vaikutuksen alla olevat viholliset voivat silti menettää sielunsa Soul Catcherille."
@@ -6307,6 +6350,7 @@
 		"DOTA_Tooltip_modifier_wisp_tether_haste"							"Sidoksissa"
 		"DOTA_Tooltip_modifier_wisp_tether_haste_Description"				"+%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %% liikenopeutta, saa terveyden- ja mananpalautumista Iolta."
 		"DOTA_Tooltip_modifier_wisp_tether_slow"							"Tether"
+		"DOTA_Tooltip_modifier_wisp_tether_slow_description"				"-%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %% liikenopeutta, -%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% hyökkäysnopeutta. Ottaa jatkuvaa vahinkoa."
 		"DOTA_Tooltip_modifier_wisp_spirits_slow"							"Spirits-hidastus"
 		"DOTA_Tooltip_modifier_wisp_spirits_slow_Description"				"-%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %% liikenopeutta."
 		"DOTA_Tooltip_modifier_wisp_overcharge"								"Overcharge"
@@ -6642,6 +6686,7 @@
 		"DOTA_Tooltip_ability_magnataur_skewer_slow_duration"					"HIDASTUKSEN KESTO:" 
 		"DOTA_Tooltip_ability_magnataur_skewer_slow_pct"						"%HIDASTUS:"
 		"DOTA_Tooltip_ability_magnataur_skewer_skewer_damage"					"VAHINKO:"
+		"DOTA_Tooltip_ability_magnataur_skewer_damage_distance_pct"				"%ETÄISYYSVAHINKO:"
 		"DOTA_Tooltip_ability_magnataur_skewer_tool_attack_slow"				"HYÖKKÄYSHIDASTUS:"
 		
 		"DOTA_Tooltip_ability_magnataur_reverse_polarity"						"Reverse Polarity"
@@ -6993,6 +7038,7 @@
 		"DOTA_Tooltip_ability_abaddon_aphotic_shield_Note0"			"Suoja tekee aina enimmäismäärän vahinkoa, tuhoutui se miten tahansa."
 		"DOTA_Tooltip_ability_abaddon_aphotic_shield_Note1"			"Räjähdys ei vahingoita näkymättömiä tai sumun peittämiä yksiköitä."
 		"DOTA_Tooltip_ability_abaddon_frostmourne"					"Curse of Avernus"
+		"DOTA_Tooltip_ability_abaddon_frostmourne_Description"		"Abaddon hidastaa vihollisten liikenopeutta jokaisella hyökkäyksellään. Jos hän hyökkää samaan kohteeseen %hit_count% kertaa, hyytävä kirous hiljentää ja hidastaa kohteen sekä tekee siihen jatkuvaa vahinkoa, ja lisäksi kaikki siihen hyökkäävät liittolaiset saavat lisää hyökkäysnopeutta. Rakennukset ottavat %tower_dps_pct% %% vähemmän vahinkoa."
 		"DOTA_Tooltip_ability_abaddon_frostmourne_shard_description" "Abaddon hyökkää jokaiseen Mist Coilin osumaan viholliseen. Nostaa Curse of Avernuksen pohjahidastusta."
 		"DOTA_Tooltip_ability_abaddon_frostmourne_abilitydraft_note" "<span class=\"ADWarning\">Shard-päivitys vaatii <b>Mist Coilin</b> toimiakseen.</span>"
 		"DOTA_Tooltip_ability_abaddon_frostmourne_Lore"		"Vaikka kastetut saavatkin voimansa Kastemaljasta, Avernuksen lahjat vievät voimia kastamattomilta."
@@ -7024,6 +7070,7 @@
 		"DOTA_Tooltip_modifier_abaddon_frostmourne_debuff"				"Curse of Avernus"
 		"DOTA_Tooltip_modifier_abaddon_frostmourne_debuff_bonus"				"Curse of Avernus"
 		"DOTA_Tooltip_modifier_abaddon_frostmourne_debuff_Description"	"-%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %% liikenopeutta."
+		"DOTA_Tooltip_modifier_abaddon_frostmourne_debuff_bonus_Description"	"-%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %% liikenopeutta. Hiljennetty. Ottaa jatkuvaa vahinkoa. Kaikki hyökkäävät yksiköt saavat lisähyökkäysnopeutta."
 		"DOTA_Tooltip_modifier_abaddon_frostmourne_buff"				"Curse of Avernus"
 		"DOTA_Tooltip_modifier_abaddon_frostmourne_buff_Description"	"+%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% hyökkäysnopeutta."
 		"DOTA_Tooltip_modifier_abaddon_borrowed_time_immolate_damage"	"Avernuksen rappio"
@@ -7936,6 +7983,8 @@
 		"DOTA_Tooltip_ability_dark_willow_shadow_realm_duration"						"KESTO:"
 		"DOTA_Tooltip_ability_dark_willow_shadow_realm_damage"							"ENIMMÄISVAHINKO:"
 		"DOTA_Tooltip_ability_dark_willow_shadow_realm_attack_range_bonus"				"HYÖKKÄYSETÄISYYSLISÄ:"
+		"DOTA_Tooltip_ability_dark_willow_shadow_realm_max_damage_duration"				"ENIMMÄISVAHINGON VIIVE:"
+
 		"DOTA_Tooltip_ability_dark_willow_cursed_crown"					"Cursed Crown"
 		"DOTA_Tooltip_ability_dark_willow_cursed_crown_Description"		"Dark Willow langettaa muinaisen keijuloitsun kohteen ylle. Viiveen jälkeen kohde ja tämän ympärillä olevat viholliset tainnuttuvat."
         "DOTA_Tooltip_ability_dark_willow_cursed_crown_shard_description" "Cursen Crown luo %shard_bramble_amount% piikkipensasta %shard_spawn_radius% yksikön säteellä kohteen ympärille viiveen päätyttyä. Tapahtuu myös loitsun puhdistuttua. Vähentää tainnutuksen viivettä %shard_delay_reduction% sekunnilla."
@@ -8176,7 +8225,8 @@
 		"DOTA_Tooltip_modifier_mars_gods_rebuke_slow_Description"					"-%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %% liikenopeutta."
 		
 		"DOTA_Tooltip_ability_mars_bulwark"								"Bulwark"
-		"DOTA_Tooltip_ability_mars_bulwark_scepter_description"		    "Luo %soldier_count% haavoittumatonta sotilasta Marsin rinnalle Bulwarkin ollessa aktiivisena. Sotilasrykmentti liikkuu Marsin mukana hyökäten lisävahinkoa, hidastusta ja tönäisyä aiheuttavilla Marsin hyökkäyksillä lähestyviin vihollisiin. Kuhunkin viholliseen voi hyökätä vain yksi sotilas kerrallaan."
+		"DOTA_Tooltip_ability_mars_bulwark_Description"					"Mars torjuu osan edestä ja sivuilta tulevien hyökkäysten vahingosta jättimäisellä kilvellään.<br><br>Päälle kytkettäessä Mars lukitsee katsesuuntansa ja voi kulkea hahmojen lävitse, mutta hidastuu ja menettää hyökkäyskykynsä. Aktiivisena Mars ohjaa %redirect_chance% %% takanaan oleviin liittolaisiin kohdistuvista hyökkäyksistä itseensä."
+        "DOTA_Tooltip_ability_mars_bulwark_scepter_description"		    "Luo %soldier_count% haavoittumatonta sotilasta Marsin rinnalle Bulwarkin ollessa aktiivisena. Sotilasrykmentti liikkuu Marsin mukana hyökäten lisävahinkoa, hidastusta ja tönäisyä aiheuttavilla Marsin hyökkäyksillä lähestyviin vihollisiin. Kuhunkin viholliseen voi hyökätä vain yksi sotilas kerrallaan."
 		"DOTA_Tooltip_ability_mars_bulwark_Lore"						"Ainoastaan ymmärtämättömät uskaltavat haastaa sodan jumalan."
 		"DOTA_Tooltip_ability_mars_bulwark_Note0"						"Ohjaa hyökkäykset Marsiin vain, jos hyökkäyksen kohde on Marsin takana tai enintään 100 yksikön päässä hänestä."
 		"DOTA_Tooltip_ability_mars_bulwark_physical_damage_reduction"	"%VÄHENNYS EDESSÄ:"
@@ -9551,6 +9601,9 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_vengeful_spirit_swap_damage"				"+{s:bonus_damage} Nether Swapin vahinkoa"
 		"DOTA_Tooltip_ability_special_bonus_unique_vengeful_spirit_missile_castrange"		"+{s:bonus_AbilityCastRange} Magic Missilen käyttöetäisyyttä"
 		"DOTA_Tooltip_ability_special_bonus_unique_vengeful_spirit_swap_damage_reduction"	"+{s:bonus_damage_reduction} % Nether Swapin vahinkovähennystä"
+		"DOTA_Tooltip_ability_special_bonus_unique_vengeful_spirit_wave_of_terror_steal"	"Wave of Terror varastaa {s:bonus_steal_pct} % vähennetystä vahingosta ja panssarista"
+
+
 		"DOTA_Tooltip_ability_special_bonus_unique_venomancer""{s:value} × Plague Wardin terveyttä/vahinkoa"
 		"DOTA_Tooltip_ability_special_bonus_unique_venomancer_2""+{s:bonus_movement_speed} % Poison Stingin hidastusta"
 		"DOTA_Tooltip_ability_special_bonus_unique_venomancer_3""-{s:bonus_AbilityCooldown} s Venomous Galen latausaikaa"
@@ -9687,6 +9740,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_phoenix_6"	"+{s:value} % Icarus Diven hidastusta"
 		"DOTA_Tooltip_ability_special_bonus_unique_phoenix_7"	"Sun Raytä voi käyttää Supernovan aikana"
 		"DOTA_Tooltip_ability_special_bonus_unique_phoenix_8"	"+{s:value} % Sun Rayn hidastusta"
+		"DOTA_Tooltip_ability_special_bonus_unique_phoenix_dive_damage"				"+{s:bonus_damage_per_second} Icarus Diven vahinkoa"
 		"DOTA_Tooltip_ability_special_bonus_unique_enchantress_1"	"Enchantia voi käyttää muinaiskätyreihin"
 		"DOTA_Tooltip_ability_special_bonus_unique_enchantress_2"	"+{s:value} Nature's Attendantsin virvatulta"
 		"DOTA_Tooltip_ability_special_bonus_unique_enchantress_3"	"+{s:value} Untouchablen hyökkäyshidastusta"
@@ -9800,6 +9854,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_clinkz_12"	"+{s:value} s Burning Barragen nuolta"
 		"DOTA_Tooltip_ability_special_bonus_unique_juggernaut"	"+{s:bonus_blade_fury_radius} Blade Furyn vaikutusaluetta"
 		"DOTA_Tooltip_ability_special_bonus_unique_juggernaut_2"	"+{s:bonus_healing_ward_bonus_health} Healing Wardin osumavaatimusta"
+		"DOTA_Tooltip_ability_special_bonus_unique_juggernaut_3"	"+{s:bonus_healing_ward_aura_radius} Healing Wardin vaikutusaluetta"
 		"DOTA_Tooltip_ability_special_bonus_unique_juggernaut_5"	"-{s:value} s Healing Wardin latausaikaa"
 		"DOTA_Tooltip_ability_special_bonus_unique_juggernaut_blade_dance_lifesteal"	"+{s:bonus_blade_dance_lifesteal} % Blade Dancen vampirismia"
 		"DOTA_Tooltip_ability_special_bonus_unique_juggernaut_omnislash_dispel"	"Omnislash puhdistaa jokaisella osumalla"
@@ -9989,6 +10044,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_zeus_2"	"+{s:bonus_damage_health_pct} % Arc Lightningin terveysvahinkoa"
 		"DOTA_Tooltip_ability_special_bonus_unique_zeus_3"	"+{s:value} s Lightning Boltin tainnutusta"
 		"DOTA_Tooltip_ability_special_bonus_unique_zeus_4"	"+{s:bonus_damage} Thundergod's Wrathin vahinkoa"
+		"DOTA_Tooltip_ability_special_bonus_unique_zeus_5"	"Lightning Bolt saa {s:value} yksikön vaikutusalueen"
 		"DOTA_Tooltip_ability_special_bonus_unique_zeus_jump_cooldown"			"-{s:bonus_AbilityCooldown} s Heavenly Jumpin latausaikaa"
 		"DOTA_Tooltip_ability_special_bonus_unique_zeus_jump_postjump_movespeed"	"Heavenly Jump antaa {s:bonus_postjump_movespeed} liikenopeutta"
 		"DOTA_Tooltip_ability_special_bonus_unique_elder_titan"	"+{s:bonus_damage_heroes} Astral Spiritin lisävahinkoa sankareista"
@@ -9997,9 +10053,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_elder_titan_4"	"+{s:bonus_wake_damage_limit} Echo Stompin herätysvahinkoa"
 		"DOTA_Tooltip_ability_special_bonus_unique_elder_titan_5"	"+{s:bonus_radius} Natural Orderin vaikutusaluetta"
 		"DOTA_Tooltip_ability_special_bonus_unique_elder_titan_bonus_spirit_speed"	"+{s:bonus_move_pct_heroes} % Astral Spiritin liikenopeutta sankareista"
-		"DOTA_Tooltip_ability_special_bonus_unique_ember_spirit_1"	"+{s:value} Flame Guardin suojan kestävyyttä"
 		"DOTA_Tooltip_ability_special_bonus_unique_ember_spirit_2"	"+{s:value} s Searing Chainsin kestoa"
-		"DOTA_Tooltip_ability_special_bonus_unique_ember_spirit_3"	"+{s:value} Flame Guardin vahinkoa/s"
 		"DOTA_Tooltip_ability_special_bonus_unique_ember_spirit_4"	"{s:value} Sleight of Fistin latausta"
 		"DOTA_Tooltip_ability_special_bonus_unique_ember_spirit_5"	"-{s:bonus_AbilityChargeRestoreTime} s Fire Remnantin latausten palautumisaikaa"
 		"DOTA_Tooltip_ability_special_bonus_unique_ember_spirit_6"	"+{s:value} Sleight of Fist -sankarivahinkoa"
@@ -10229,6 +10283,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_gyrocopter_2"	"+{s:bonus_max_attacks} Flak Cannonin hyökkäystä"
 		"DOTA_Tooltip_ability_special_bonus_unique_gyrocopter_3"	"+{s:value} Rocket Barragen vahinkoa"
 		"DOTA_Tooltip_ability_special_bonus_unique_gyrocopter_4"	"Rocket Barrage antaa {s:bonus_bonus_movement_speed} liikenopeutta"
+		"DOTA_Tooltip_ability_special_bonus_unique_gyrocopter_5"	"-{s:bonus_AbilityCooldown} s Call Downin latausaikaa + kartanlaajuinen käyttöetäisyys"		
 		"DOTA_Tooltip_ability_special_bonus_unique_gyrocopter_6"	"+{s:value} s Homing Missilen tainnutuksen kestoa"
 		"DOTA_Tooltip_ability_special_bonus_unique_gyrocopter_flak_cannon_bonus_damage"			"+{s:bonus_bonus_damage} Flak Cannonin vahinkoa"
 		"DOTA_Tooltip_ability_special_bonus_unique_keeper_of_the_light"	"+{s:bonus_total_damage} Illuminaten vahinkoa"
@@ -10236,6 +10291,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_keeper_of_the_light_3"	"+{s:value} Will-O-Wisp-välkkymistä"
 		"DOTA_Tooltip_ability_special_bonus_unique_keeper_of_the_light_4"	"+{s:value} Will-O-Wispin terveyspistettä"
 		"DOTA_Tooltip_ability_special_bonus_unique_keeper_of_the_light_5"	"-{s:value} s Blinding Lightin latausaikaa"
+		"DOTA_Tooltip_ability_special_bonus_unique_keeper_of_the_light_6"	"+{s:value} Will-O-Wispin vaikutusaluetta"
 		"DOTA_Tooltip_ability_special_bonus_unique_keeper_of_the_light_7"	"-{s:bonus_AbilityCooldown} s Chakra Magicin latausaikaa"
 		"DOTA_Tooltip_ability_special_bonus_unique_keeper_of_the_light_8"	"+{s:value} % Blinding Lightin sokaisua"
 		"DOTA_Tooltip_ability_special_bonus_unique_keeper_of_the_light_9"	"+{s:value} % Illuminaten päiväparannusta"
@@ -10925,6 +10981,7 @@
 		"DOTA_Tooltip_Ability_roshan_devotion"				"Strength of the Immortal"
 		"DOTA_Tooltip_Ability_roshan_devotion_Description"	"Roshanilla on lukuisia suojaavia ominaisuuksia, kuten 55 %% loitsunvastustus, vahingonvähennys harhoja vastaan ja kehittyvä panssarilisä, joka nousee ajan myötä."
 		
+		"DOTA_Tooltip_Ability_roshan_revengeroar"				"Roar of Retribution"
 		"DOTA_Tooltip_modifier_roshan_spell_block"		"Spell Block"
 		"DOTA_Tooltip_modifier_roshan_spell_block_Description"			"Roshan torjuu yhden kohdistetun loitsun kerran 15 sekunnissa."
 		"DOTA_Tooltip_modifier_roshan_bash"				"Bash"
@@ -10938,6 +10995,9 @@
 		"DOTA_Tooltip_modifier_miniboss_unyielding_shield_Description"	"%dMODIFIER_PROPERTY_TOOLTIP% suojaa kaikelta vahingolta ja palauttaa %dMODIFIER_PROPERTY_TOOLTIP2% terveyttä sekunnissa."
 		"DOTA_Tooltip_modifier_miniboss_reflect"				"Reflect"
 		"DOTA_Tooltip_modifier_miniboss_reflect_Description"	"Heijastaa %dMODIFIER_PROPERTY_TOOLTIP% %% vastaanotetusta vahingosta kaikkien lähellä olevien sankarien kesken."
+		"DOTA_Tooltip_modifier_miniboss_radiance_debuff"		"Palovahinko"
+		"DOTA_Tooltip_modifier_miniboss_radiance_debuff_Description"	"Ottaa 30 vahinkoa sekunnissa."
+
 		// NEUTRAL UNIT TOOLTIPS
 		
 		// Kobold: Steal Weapon
@@ -12353,6 +12413,7 @@
 		"DOTA_Tooltip_ability_item_vindicators_axe_bonus_attack_speed"				"+$attack"
 		"DOTA_Tooltip_ability_item_vindicators_axe_bonus_slow_resist"				"%+$slow_resistance"
 
+		"DOTA_Tooltip_ability_item_rattlecage_Description"							"<h1>Passiivinen kyky: Reverberate</h1> Otettuaan %damage_threshold% vahinkoa mistä tahansa lähteestä käyttäjä laukaisee ammuksen %target_count% viholliseen (priorisoi sankareita), jotka ovat enintään %radius% yksikön sisällä. Ammus tekee %projectile_damage% fyysistä vahinkoa ja hidastaa kohteiden liike- ja hyökkäysnopeutta  %slow% %:lla %slow_duration% sekunniksi."
 		"DOTA_Tooltip_modifier_roshans_banner_effect"							"Roshan's Banner"
 		"DOTA_Tooltip_ability_item_martyrs_plate_Description"						"<h1>Aktiivinen kyky: Martyrdom</h1> Ohjaa %damage_redirection% %% kaikkien %aura_radius% yksikön sisällä olevien liittolaisten ottamasta loitsuvahingosta sinuun %duration% sekunnin ajan."
 		"DOTA_Tooltip_ability_item_martyrs_plate_magic_resist"						"%+$spell_resist"
@@ -13009,6 +13070,7 @@
 		"DOTA_Tooltip_modifier_item_shivas_guard_blast"				"Arctic Blast"
 		"DOTA_Tooltip_modifier_item_shivas_guard_blast_Description"	"-%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %% liikenopeutta"
 
+		"DOTA_Tooltip_ability_item_skadi_Description"							"<h1>Passiivinen kyky: Cold Attack</h1>Hyökkäyksesi hidastavat vihollisten liike- ja hyökkäysnopeutta sekä vähentävät heidän saamaansa parantamista, terveydenpalautumista ja vampirismia %heal_reduction% %%:lla %cold_duration% sekunnin ajan. Hidastaa kaukotaistelijoiden liikenopeutta %cold_slow_ranged% %%:lla ja hyökkäysnopeutta %cold_attack_slow_ranged% %%:lla, lähitaistelijoiden liikenopeutta %cold_slow_melee% %%:lla ja hyökkäysnopeutta %cold_attack_slow_melee% %%:lla."
 		"DOTA_Tooltip_ability_item_skadi_Lore"									"Taivaansinisten lohikäärmeiden suojelema harvinainen muinaisesine."
 		"DOTA_Tooltip_ability_item_skadi_bonus_all_stats"						"+$all"
 		"DOTA_Tooltip_ability_item_skadi_bonus_health"							"+$health"
@@ -13334,7 +13396,10 @@
 		"DOTA_Tooltip_modifier_smoke_of_deceit"				"Smoke of Deceit"
 		"DOTA_Tooltip_modifier_smoke_of_deceit_Description"	"Näkymätön, %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %% nopeampi ja piilotettu kartalta. Hyökkääminen tai liikkuminen %dMODIFIER_PROPERTY_TOOLTIP% etäisyydelle vihollisen sankarista tai tornista rikkoo näkymättömyyden."
 
+		"DOTA_Tooltip_ability_item_revenants_brooch_Description"				"<h1>Tilan vaihto: Phantom Province</h1> Kun käytössä, hyökkäykset maksavat %manacost_per_hit% manaa ja tekevät loitsuvahinkoa."
 		"DOTA_Tooltip_ability_item_revenants_brooch_Lore"						"Elämän ja kuoleman rajalla vaanivan vartijan kirottu koru."
+		"DOTA_Tooltip_ability_item_revenants_brooch_spell_lifesteal"		"%+$spell_lifesteal"
+		
 		"DOTA_Tooltip_modifier_item_revenants_brooch_internal_cd"				"Witch Blade -latausaika"
 		"DOTA_Tooltip_modifier_item_revenants_brooch_internal_cd_Description"	"Seuraavan Witch Blade -hyökkäyksen viive."
 
@@ -13493,6 +13558,7 @@
 		"DOTA_Tooltip_ability_item_ironwood_tree_Lore"					"Kantaminen vahvistaa kehoa, ja istuttaminen vahvistaa mieltä."
 		"DOTA_Tooltip_ability_item_ironwood_tree_bonus_all_stats"					"+$all"
 
+		"DOTA_Tooltip_ability_item_royal_jelly_Description"							"<h1>Aktiivinen kyky: Consume</h1> Käyttää kaikki lataukset ja antaa kohdeliittolaiselle %regen_duration% sekuntia kestävän vahvistuksen, joka antaa +%health_regen% terveydenpalautumista ja +%mana_regen% mananpalautumista latausta kohden.<br><br>Jos vihollissankari tai Roshan hyökkää kohteeseen, vaikutus päättyy."
 		"DOTA_Tooltip_ability_item_royal_jelly_Lore"							"Olgru-mehiläisten emomaidon kerääjät eivät tee työtään vain rahasta, vaan rakkaudesta. Rakkaudesta omaan elämään, sillä se on ainoa parannuskeino jättipesien asukkaiden tuottamien pistoksien jälkivaikutuksiin."
 		"DOTA_Tooltip_modifier_royal_jelly"			"Royal Jelly"
 		"DOTA_Tooltip_modifier_royal_jelly_Description"			"+%fMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% terveydenpalautumista, +%fMODIFIER_PROPERTY_MANA_REGEN_CONSTANT% mananpalautumista."

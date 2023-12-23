@@ -14,7 +14,8 @@
 		"dota_ability_variable_all"					"Alle Attribute"			// $all
 		"dota_ability_variable_primary_attribute"	"Primärattribut"			// $primary_attribute
 		"dota_ability_variable_attack"				"Angriffstempo"				// $attack
-"dota_ability_variable_hp_regen"			"Lebensregeneration"		// $hp_regen
+		"dota_ability_variable_attack_pct"			"Prozentsatz des Grundangriffstempos"	// $attack_pct
+		"dota_ability_variable_hp_regen"			"Lebensregeneration"		// $hp_regen
 		"dota_ability_variable_lifesteal"			"Lebensraub"					// $lifesteal
 		"dota_ability_variable_mana_regen"			"Manaregeneration"			// $mana_regen
 		"dota_ability_variable_mana_regen_aura"		"Manaregeneration (Aura)"	// $mana_regen_aura
@@ -36,7 +37,9 @@
 		"dota_ability_variable_cooldown_reduction"	"Abklingzeitreduzierung"		// $cooldown_reduction 
 		"dota_ability_variable_max_mana_percentage"	"Max. Manabonus"			// $max_mana_percentage
 		"dota_ability_variable_slow_resistance"		"Verlangsamungsresistenz"			// $slow_resistance
-"dota_ability_variable_damage_int_hero"	"Schaden (Intelligenzheld)"
+		"dota_ability_variable_aoe_bonus"			"Wirkungsbereichsbonus"					// $aoe_bonus
+
+		"dota_ability_variable_damage_int_hero"	"Schaden (Intelligenzheld)"
 		"dota_ability_variable_damage_agi_hero"	"Schaden (Agilitätsheld)"
 		"dota_ability_variable_damage_str_hero"	"Schaden (Stärkeheld)"
 
@@ -622,6 +625,9 @@
 		"DOTA_Tooltip_modifier_windrunner_windrun_charge_counter_Description"	"Von Aghanims Zepter gewährt."
 		"DOTA_Tooltip_modifier_windrunner_gale_force"			"Gale Force"
 		"DOTA_Tooltip_modifier_windrunner_gale_force_Description"			"Von orkanartigen Winden hinfort gefegt."
+		"DOTA_Tooltip_modifier_windrunner_powershot_slow"					"Powershot"
+		"DOTA_Tooltip_modifier_windrunner_powershot_slow_Description"					"Bewegungstempo um %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %% verringert."
+
 		"DOTA_Tooltip_ability_windrunner_gale_force"				"Gale Force"
 		"DOTA_Tooltip_ability_windrunner_gale_force_Lore"				"Lyralei hat endlich gelernt, die Macht ihres wahren Geburtsrechts zu entfesseln."
 		"DOTA_Tooltip_ability_windrunner_gale_force_Description"	"Vektorzielmodus. Beschwört einen starken Wind, der alle Gegner im Wirkungsbereich in Zielrichtung schiebt."
@@ -702,7 +708,7 @@
 		
 		"DOTA_Tooltip_ability_vengefulspirit_command_aura"								"Vengeance Aura"
 		"DOTA_Tooltip_ability_vengefulspirit_command_aura_Description"					"Vengeful Spirits Anwesenheit erhöht den Schaden verbündeter Helden in ihrer Nähe."
-		"DOTA_Tooltip_ability_vengefulspirit_command_aura_scepter_description"  		"Erschafft beim Tod eine starke Illusion, die alle Fähigkeiten einsetzen kann und normalen Schaden verursacht/erleidet. Die Illusion bewegt sich %scepter_illusion_ms_bonus_pct% %% schneller. Falls die Illusion noch besteht, wenn Vengeful Spirit wieder einsteigt, nimmt sie deren Platz ein. Von der Illusion erlangte EP werden Vengeful Spirit gutgeschrieben. Starke Illusionen werden von Zaubern nicht sofort zerstört."
+		"DOTA_Tooltip_ability_vengefulspirit_command_aura_scepter_description"  		"Erschafft beim Tod eine starke Illusion von Vengeful Spirit, die alle Fähigkeiten einsetzen kann und normalen Schaden verursacht/erleidet. Falls die Illusion noch lebt, wenn Vengeful Spirit wieder einsteigt, nimmt sie deren Platz ein. Von der Illusion erlangte EP werden Vengeful Spirit gutgeschrieben. Starke Illusionen werden von Zaubern nicht sofort zerstört."
 		"DOTA_Tooltip_ability_vengefulspirit_command_aura_Lore"							"Obwohl sie nicht unbedingt ihre endlose Leidenschaft für Rache teilen, stützen sich ihre Verbündeten im Kampf auf ihren Fanatismus."
 		"DOTA_Tooltip_ability_vengefulspirit_command_aura_bonus_base_damage"			"%GRUNDSCHADENBONUS:"
 		"DOTA_Tooltip_ability_vengefulspirit_command_aura_aura_radius"					"RADIUS:"
@@ -712,7 +718,10 @@
 		"DOTA_Tooltip_ability_vengefulspirit_nether_swap_Note1"							"Bäume in der Nähe von Vengeful Spirit und dem Ziel werden zerstört, wenn die Fähigkeit gewirkt wird."
 		"DOTA_Tooltip_ability_vengefulspirit_nether_swap_Note2"							"Kanalisierende Fähigkeiten werden durch Nether Swap unterbrochen."
 		"DOTA_Tooltip_ability_vengefulspirit_nether_swap_abilitycastrange"					"ZAUBERREICHWEITE:"
-//"DOTA_Tooltip_ability_vengefulspirit_nether_swap_scepter_radius"		"SCEPTER FEAR RADIUS:"
+		//"DOTA_Tooltip_ability_vengefulspirit_nether_swap_damage_reduction"					"%DAMAGE REDUCTION:"
+		"DOTA_Tooltip_ability_vengefulspirit_nether_swap_damage_reduction_duration"			"SCHILDDAUER:"
+		"DOTA_Tooltip_ability_vengefulspirit_nether_swap_damage"			"SCHADEN/SCHILD:"
+		//"DOTA_Tooltip_ability_vengefulspirit_nether_swap_scepter_radius"		"SCEPTER FEAR RADIUS:"
 		//"DOTA_Tooltip_ability_vengefulspirit_nether_swap_scepter_duration"		"SCEPTER FEAR DURATION:"
 		
 		
@@ -741,7 +750,9 @@
 		"DOTA_Tooltip_ability_witch_doctor_paralyzing_cask_bounce_bonus_damage"			"BONUSSCHADEN PRO SPRUNG:"
 
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration"							"Voodoo Restoration"
+		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_Description"				"Witch Doctor fokussiert seine Voodoo-Magie, um nahestehende Verbündete zu heilen. Verbraucht pro Sekunde Mana."
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_Lore"						"Zharvakkos Hokuspokus beschränkt sich nicht auf das Verhexen seiner Gegner, er ist auch sehr erfahren darin, das Leiden seiner Verbündeten zu lindern."
+		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_Note0"					"Die Heilung erfolgt in Abständen von %heal_interval% Sekunden."
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_Note1"					"Kann zauberimmune Einheiten heilen."
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_mana_per_second"			"MANA PRO SEK:"
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_heal"						"HEILUNG:"
@@ -831,6 +842,7 @@
 		"DOTA_Tooltip_ability_juggernaut_blade_fury_Note0"								"Während Blade Fury können Gegenstände benutzt werden."
 		"DOTA_Tooltip_ability_juggernaut_blade_fury_Note1"								"Juggernaut kann während Blade Fury immer noch normal angreifen. Allerdings erleiden dadurch nur solche Einheiten Schaden, die von Blade Fury nicht betroffen sind, etwa Wards oder Gebäude."
 		"DOTA_Tooltip_ability_juggernaut_blade_fury_blade_fury_radius"					"RADIUS:"
+		"DOTA_Tooltip_ability_juggernaut_blade_fury_blade_fury_damage_per_tick"					"SCHADEN PRO INSTANZ:"
 		"DOTA_Tooltip_ability_juggernaut_blade_fury_duration"					"DAUER:"
 		"DOTA_Tooltip_ability_juggernaut_blade_fury_shard_bonus_move_speed"			"BONUSBEWEGUNGSTEMPO:"
 		"DOTA_Tooltip_ability_juggernaut_blade_fury_shard_attack_rate"			"ANGRIFFSINTERVALL:"
@@ -1623,6 +1635,7 @@
 		"DOTA_Tooltip_ability_axe_culling_blade_Lore"									"Mogul Khan ist die Verkörperung von Kampf und Raserei, was all jenen zum Verhängnis wird, die es wagen sich Axe im Kampf zu stellen."
 		"DOTA_Tooltip_ability_axe_culling_blade_damage"									"SCHADEN:"
 		"DOTA_Tooltip_ability_axe_culling_blade_speed_bonus"							"%KILL-BEWEGUNGSTEMPOBONUS:"
+		"DOTA_Tooltip_ability_axe_culling_blade_armor_bonus"							"RÜSTUNGSBONUS:"
 		"DOTA_Tooltip_ability_axe_culling_blade_speed_aoe"								"KILL-BONUSRADIUS:"
 		"DOTA_Tooltip_ability_axe_culling_blade_speed_duration"							"KILL-BONUSDAUER:"
 		"DOTA_Tooltip_ability_axe_culling_blade_armor_per_stack"						"RÜSTUNG PRO KILL:"
@@ -2033,6 +2046,7 @@
 		"DOTA_Tooltip_ability_zuus_arc_lightning_arc_damage"							"GRUNDSCHADEN:"
 		"DOTA_Tooltip_ability_zuus_arc_lightning_damage_health_pct"						"%AKTUELLE LP ALS SCHADEN:"
 		"DOTA_Tooltip_ability_zuus_lightning_bolt"										"Lightning Bolt"
+		"DOTA_Tooltip_ability_zuus_lightning_bolt_Description"							"Lässt einen Blitz vom Himmel fahren, der eine gegnerische Einheit trifft, ihr Schaden zufügt und sie kurz betäubt. Bei Anwendung gewährt Lightning Bolt außerdem ungehinderte Sicht und Klarsicht in einem Radius von %sight_radius_night% um den Zielort. Kann auf den Boden angewendet werden und trifft den nächsten Helden innerhalb einer Reichweite von %spread_aoe%. Fügt Dienern und neutralen Einheiten %creep_damage_bonus_pct% %% mehr Schaden zu."
 		"DOTA_Tooltip_ability_zuus_lightning_bolt_abilitycastrange"					"ZAUBERREICHWEITE:"
 		"DOTA_Tooltip_ability_zuus_lightning_bolt_sight_radius_day"						"SICHTRADIUS:"
 		"DOTA_Tooltip_ability_zuus_lightning_bolt_sight_duration"						"SICHTDAUER:"
@@ -2318,6 +2332,7 @@
 		"DOTA_Tooltip_ability_rattletrap_hookshot_abilitycastrange"						"ZAUBERREICHWEITE:"
 		"DOTA_Tooltip_ability_rattletrap_hookshot_damage"								"SCHADEN:"
 		"DOTA_Tooltip_ability_rattletrap_overclocking"									"Overclocking"
+		"DOTA_Tooltip_ability_rattletrap_overclocking_Description"						"Überlädt Clockwerks Fähigkeiten: Battery Assault trifft alle Gegner in Reichweite, Power Cogs erhöhen Clockwerks Angriffstempo im Inneren der Zahnräder, Rocket Flare profitiert von reduzierter Abklingzeit und feuert zusätzliche Raketen auf beide Seiten des Zielpunkts, Hookshot betäubt länger und erhält einen erhöhten Wirkungsradius, Jetpack bewegt sich schneller. Nach Ablauf der Dauer wird Clockwerks Bewegung und Angriffsgeschwindigkeit beträchtlich verlangsamt."
 		"DOTA_Tooltip_ability_rattletrap_overclocking_Lore"						"Rattletrap kennt die Grenzen seiner Rüstung. Genau wie die Risiken, wenn er in Zeiten der Not über diese Grenzen hinausgeht."
 		"DOTA_Tooltip_ability_rattletrap_overclocking_buff_duration"					"DAUER:"
 		//"DOTA_Tooltip_ability_rattletrap_overclocking_bonus_movement_speed"				"%BATTERY ASSAULT BONUS MOVEMENT SPEED:"
@@ -2342,6 +2357,7 @@
 		"DOTA_Tooltip_modifier_rattletrap_hookshot"						"Hookshot"
 		"DOTA_Tooltip_modifier_rattletrap_hookshot_Description"			"Wird von Clockwerks Haken gezogen."
 		"DOTA_Tooltip_modifier_rattletrap_overclocking"					"Overclocking"
+		"DOTA_Tooltip_modifier_rattletrap_overclocking_Description"					"Fähigkeiten sind überladen. <br><br> Wird nach Ablauf des Effekts verlangsamt."
 		"DOTA_Tooltip_modifier_rattletrap_cog_armor"					"Zahnräder"
 		"DOTA_Tooltip_modifier_rattletrap_cog_armor_description"		""
 		"DOTA_Tooltip_modifier_rattletrap_cog_immune"					"Zahnräder"
@@ -2607,6 +2623,8 @@
 		"DOTA_Tooltip_ability_riki_tricks_of_the_trade_scepter_cast_range"		        "ZAUBERREICHWEITE:"
 		"DOTA_Tooltip_ability_riki_tricks_of_the_trade_scepter_attacks"					"ANGRIFFE:"
 		"DOTA_Tooltip_ability_riki_tricks_of_the_trade_scepter_targets"					"ZIELE PRO ANGRIFF:"
+		"DOTA_Tooltip_ability_riki_tricks_of_the_trade_damage_multiplier"							"BONUSSCHADEN PRO AGI.:"
+
 		"DOTA_Tooltip_modifier_riki_smoke_screen"				"Smoke Screen"
 		"DOTA_Tooltip_modifier_riki_smoke_screen_Description"	"Verstummt. Verfehlt %dMODIFIER_PROPERTY_MISS_PERCENTAGE% %% aller Angriffe."
 		"DOTA_Tooltip_modifier_riki_blink_strike_charge_counter"	"Blink Strikes"
@@ -2641,6 +2659,7 @@
 		"DOTA_Tooltip_ability_enigma_midnight_pulse_Note0"								"Diese Fähigkeit zerstört Bäume im Wirkungsbereich."
 		"DOTA_Tooltip_ability_enigma_midnight_pulse_Note1"								"Mehrere Instanzen von Midnight Pulse summieren sich nicht auf."
 		"DOTA_Tooltip_ability_enigma_midnight_pulse_duration"							"DAUER:"
+		"DOTA_Tooltip_ability_enigma_midnight_pulse_damage_percent"						"%AKTUELLE LP ALS SCHADEN:"
 		"DOTA_Tooltip_ability_enigma_midnight_pulse_radius"								"RADIUS:"
 		"DOTA_Tooltip_ability_enigma_black_hole"										"Black Hole"
 		"DOTA_Tooltip_ability_enigma_black_hole_Description"							"KANALISIEREND – Beschwört einen Vortex, der in der Nähe befindliche gegnerische Einheiten einsaugt und ihnen Schaden zufügt. Von Black Hole betroffene Gegner können sich nicht bewegen, angreifen oder Zauber wirken."
@@ -2685,6 +2704,7 @@
 		"DOTA_Tooltip_ability_tinker_heat_seeking_missile_targets"						"ZIELE:"
 		"DOTA_Tooltip_ability_tinker_heat_seeking_missile_speed"						"RAKETENTEMPO:"
 		"DOTA_Tooltip_ability_tinker_warp_grenade"										"Warp Flare"
+		"DOTA_Tooltip_ability_tinker_warp_grenade_Description"							"Schießt eine Rakete auf einen Gegner, die Schaden zufügt, das Ziel wegteleportiert, festsetzt und dessen Zauber- sowie Angriffsreichweite %debuff_duration% Sekunden lang reduziert."
 		"DOTA_Tooltip_ability_tinker_warp_grenade_damage"								"SCHADEN:"
 		"DOTA_Tooltip_ability_tinker_warp_grenade_knockback_distance"					"TELEPORTATIONSDISTANZ:"		
 		"DOTA_Tooltip_ability_tinker_warp_grenade_range_reduction"						"%ZAUBER-/ANGRIFFSEICHWEITENMALUS:"
@@ -2700,6 +2720,7 @@
 		"DOTA_Tooltip_ability_tinker_rearm_Lore"										"Eine neue Batterie hier und noch ein paar Raketen hier. Boush verbessert kontinuierlich existierende Technologien."
 		"DOTA_Tooltip_ability_tinker_rearm_Note0"										"Rearm funktioniert mit allen Gegenständen außer Aeon Disk, Arcane Boots, Black King Bar, Hand of Midas, Helm of the Dominator, Helm of the Overlord, Linken's Sphere, Meteor Hammer, Pipe of Insight, Refresher Orb, Revenant's Brooch (passive Komponente) sowie allen neutralen Gegenständen."
 		"DOTA_Tooltip_ability_tinker_rearm_abilitychanneltime"								"DAUER:"
+		"DOTA_Tooltip_ability_tinker_rearm_magic_resistance"										"%BONUSMAGIERESISTENZ:"
 		"DOTA_Tooltip_ability_tinker_defense_matrix"					"Defense Matrix"
 		"DOTA_Tooltip_ability_tinker_defense_matrix_damage_absorb"		"SCHADENSBARRIERE:"
 		"DOTA_Tooltip_ability_tinker_defense_matrix_status_resistance"		"%STATUSRESISTENZ:"
@@ -2714,9 +2735,11 @@
 		"DOTA_Tooltip_modifier_tinker_laser_blind_Description"		"Verfehlt %dMODIFIER_PROPERTY_MISS_PERCENTAGE% %% aller Angriffe."
 		"DOTA_Tooltip_modifier_tinker_rearm"						"Rearm"
 		"DOTA_Tooltip_modifier_tinker_rearm_Description"			"Setzt die Abklingzeiten der Fähigkeiten zurück."
+		"DOTA_Tooltip_modifier_tinker_rearmor_Description"						"Magieresistenz um %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS% %% erhöht."
 		"DOTA_Tooltip_modifier_tinker_defense_matrix"				"Defense Matrix"
 		"DOTA_Tooltip_modifier_tinker_defense_matrix_Description"	"Absorbiert erlittenen Schaden und gewährt %dMODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING% %% Statusresistenz."
 		"DOTA_Tooltip_modifier_tinker_warp_grenade"					"Warpfeuer"
+		"DOTA_Tooltip_modifier_tinker_warp_grenade_Description"		"Festgesetzt. Zauberreichweite um %dMODIFIER_PROPERTY_CAST_RANGE_BONUS_PERCENTAGE% %% und Angriffsreichweite um%dMODIFIER_PROPERTY_ATTACK_RANGE_BONUS_PERCENTAGE% %% aufgrund von Teleportationsdesorientierung reduziert."
 		"DOTA_Tooltip_modifier_tinker_heat_seeking_missile_vision"	"Wärmesuchende Rakete"
 		"DOTA_Tooltip_modifier_tinker_heat_seeking_missile_vision_Description" "Sie wurden aufgedeckt!"
 
@@ -3088,10 +3111,12 @@
 		"DOTA_Tooltip_ability_faceless_void_time_walk"									"Time Walk"
 		"DOTA_Tooltip_ability_faceless_void_time_walk_Description"						"Stürmt zum Zielort und negiert allen in den letzten %backtrack_duration% Sekunden erlittenen Schaden."
 		"DOTA_Tooltip_ability_faceless_void_time_walk_scepter_description"				"Wendet bei der Landung am Zielort Time Lock auf alle nahen Einheiten an."
+		"DOTA_Tooltip_ability_faceless_void_time_walk_shard_description"				"Erhöht Reichweite"
 		"DOTA_Tooltip_ability_faceless_void_time_walk_Lore"								"Darkterror reißt ein Loch in die Zeit, reist durch Claszureme und erscheint sofort wieder."
 		"DOTA_Tooltip_ability_faceless_void_time_walk_Note0"							"Faceless Void ist unverwundbar, während er Time Walk benutzt."
 		"DOTA_Tooltip_ability_faceless_void_time_walk_range"					        "REICHWEITE:"
 		"DOTA_Tooltip_ability_faceless_void_time_walk_backtrack_duration"				"BACKTRACK-ZEITRAUM:"
+		"DOTA_Tooltip_ability_faceless_void_time_walk_radius"							"RADIUS (TIME LOCK):"
 		"DOTA_Tooltip_ability_faceless_void_time_walk_reverse"							"Reverse Time Walk"
 		"DOTA_Tooltip_ability_faceless_void_time_walk_reverse_Description"				"Kann nach dem Wirken von Time Walk und Ladung am Zielort 1,5 Sekunden lang aktiviert werden, um an den Ursprungsort zurückzukehren. Beeinflusst weder die Lebenspunkte noch löst es Time Lock durch die Zepter-Verbesserung aus."
 		"DOTA_Tooltip_ability_faceless_void_time_dilation"								"Time Dilation"
@@ -3142,6 +3167,8 @@
 		"DOTA_Tooltip_ability_death_prophet_silence_Note0"								"Verhindert nicht den Gebrauch von Gegenständen."
 		"DOTA_Tooltip_ability_death_prophet_silence_radius"								"RADIUS:"
 		"DOTA_Tooltip_ability_death_prophet_silence_duration"							"DAUER:"
+		"DOTA_Tooltip_ability_death_prophet_silence_movement_slow"							"%BEWEGUNGSVERLANGSAMUNG:"
+
 		"DOTA_Tooltip_ability_death_prophet_spirit_siphon"								"Spirit Siphon"
 		"DOTA_Tooltip_ability_death_prophet_spirit_siphon_Description"					"Death Prophet stellt eine geisterhafte Verbindung mit einer gegnerischen Einheit her, was dieser Lebenspunkte entzieht."
         "DOTA_Tooltip_ability_death_prophet_spirit_siphon_shard_description"		    "Erhöht Aufladungen von Spirit Siphon um %shard_bonus_charges%. Nach %shard_consecutive_siphon_duration% Sekunden durchgehendem Lebensentzug werden Gegner außerdem %shard_fear_duration% Sekunden lang in Furcht versetzt."
@@ -3173,6 +3200,7 @@
 		"DOTA_Tooltip_modifier_death_prophet_spirit_siphon_slow"						"Spirit Siphon"
 		"DOTA_Tooltip_modifier_death_prophet_spirit_siphon_slow_Description"			""
 		"DOTA_Tooltip_modifier_death_prophet_silence"			"Verstummt"
+		"DOTA_Tooltip_modifier_death_prophet_silence_Descritipn"			"Verstummt und um %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %% verlangsamt."
 		"DOTA_Tooltip_modifier_death_prophet_spirit_siphon"								"Spirit Siphon"
 		"DOTA_Tooltip_modifier_death_prophet_spirit_siphon_Description"					""
 		"DOTA_Tooltip_modifier_death_prophet_spirit_siphon_buff"						"Entzogene Rüstung"
@@ -3318,6 +3346,7 @@
 		"DOTA_Tooltip_ability_viper_poison_attack_shard_bonus_max_stacks"			"BONUSAUFLADUNGEN:"
 		"DOTA_Tooltip_ability_viper_nethertoxin"										"Nethertoxin"
 		"DOTA_Tooltip_ability_viper_nethertoxin_Lore"									"Gift aus den Flüssen der Unterwelt verwandelt kleine Wunden in tödliche Verletzungen und Erschöpfung in Tod."
+		"DOTA_Tooltip_ability_viper_nethertoxin_attack_slow"							"ANGRIFFSVERLANGSAMUNG:"
 		"DOTA_Tooltip_ability_viper_nethertoxin_min_damage"								"MIN. SCHADEN PRO SEKUNDE:"
 		"DOTA_Tooltip_ability_viper_nethertoxin_max_damage"								"MAX. SCHADEN PRO SEKUNDE:"
 		"DOTA_Tooltip_ability_viper_nethertoxin_max_duration"							"MAX. SCHADEN NACH:"
@@ -3333,6 +3362,7 @@
 		"DOTA_Tooltip_ability_viper_corrosive_skin_damage"								"SCHADEN PRO SEKUNDE:"
 		"DOTA_Tooltip_ability_viper_corrosive_skin_bonus_attack_speed"					"ANGRIFFSVERLANGSAMUNG:"
 		"DOTA_Tooltip_ability_viper_corrosive_skin_bonus_magic_resistance"				"%MAGIERESISTENZ:"
+		"DOTA_Tooltip_ability_viper_corrosive_skin_max_range"							"MAX. REICHWEITE:"
 		"DOTA_Tooltip_ability_viper_viper_strike"										"Viper Strike"
 		"DOTA_Tooltip_ability_viper_viper_strike_Lore"									"Einst benutzt um seinen sadistischen Beschwörer zu töten, fließen die stärksten Niflgifte nun durch die Venen derer, die dumm genug sind Vipers Weg zu kreuzen."
 		"DOTA_Tooltip_ability_viper_viper_strike_duration"								"DAUER:"
@@ -5045,13 +5075,13 @@
 		//"DOTA_Tooltip_ability_obsidian_destroyer_equilibrium_mana_capacity_steal"		"%MANA CAPACITY STEAL:"
 		//"DOTA_Tooltip_ability_obsidian_destroyer_equilibrium_mana_capacity_duration"		"MANA CAPACITY DURATION:"
 		"DOTA_Tooltip_ability_obsidian_destroyer_sanity_eclipse"					"Sanity's Eclipse"
-		"DOTA_Tooltip_ability_obsidian_destroyer_sanity_eclipse_Description"		"Entfesselt eine übersinnliche Druckwelle, die basierend auf der Differenz zwischen Outworld Destroyers Manavorrat und dem der Ziele Schaden verursacht. Sanity's Eclipse trifft auch in Astral Imprisonment gefangene Einheiten. Illusionen erleiden Bonusschaden. Fügt betroffenen Helden für %debuff_duration% Sekunden den Schwächungseffekt „Manaallergie“ zu, der ihnen jedes Mal, wenn sie einen Zauber wirken, Schaden zufügt und Outworld Destroyer heilt."
+		"DOTA_Tooltip_ability_obsidian_destroyer_sanity_eclipse_Description"		"Entfesselt eine übersinnliche Druckwelle, die basierend auf der Differenz zwischen Outworld Destroyers max. Mana und dem der Ziele Schaden verursacht. Sanity's Eclipse trifft auch in Astral Imprisonment gefangene Einheiten. Illusionen erleiden Bonusschaden. Fügt betroffenen Helden für %debuff_duration% Sekunden den Schwächungseffekt „Mana-Allergie“ zu, der Outworld Destroyer jedes Mal, wenn sie einen Zauber wirken, heilt."
 		"DOTA_Tooltip_ability_obsidian_destroyer_sanity_eclipse_Lore"				"Wenn ein Outworld-Kristall bricht, werden verheerende Energien freigesetzt, weshalb man den Nachhall sogar in anderen Dimensionen spüren kann."
 		"DOTA_Tooltip_ability_obsidian_destroyer_sanity_eclipse_base_damage"		"GRUNDSCHADEN:"
 		"DOTA_Tooltip_ability_obsidian_destroyer_sanity_eclipse_damage_multiplier"	"MANADIFFERENZ-MULTIPLIKATOR:"
 		"DOTA_Tooltip_ability_obsidian_destroyer_sanity_eclipse_radius"				"RADIUS:"
 		"DOTA_Tooltip_ability_obsidian_destroyer_sanity_eclipse_cast_range"			"ZAUBERREICHWEITE:"
-		"DOTA_Tooltip_ability_obsidian_destroyer_sanity_eclipse_percentage_damage"	"%MANA ALS SCHADEN:"
+//		"DOTA_Tooltip_ability_obsidian_destroyer_sanity_eclipse_percentage_damage"	"%MANA AS DAMAGE:"
 		"DOTA_Tooltip_ability_obsidian_destroyer_sanity_eclipse_percentage_heal"	"%MANA ALS HEILUNG:"
 		"DOTA_Tooltip_ability_obsidian_destroyer_sanity_eclipse_illusion_bonus_damage" "%BONUSSCHADEN AN ILLUSIONEN:"
 		"DOTA_Tooltip_ability_obsidian_destroyer_sanity_eclipse_Note0"				"Fügt Dienern und neutralen Einheiten keinen Schaden zu."
@@ -5070,8 +5100,8 @@
 		"DOTA_Tooltip_modifier_obsidian_destroyer_astral_imprisonment_charge_counter_Description"	"Sie können Astral Imprisonment jederzeit einsetzen, wenn eine Aufladung verfügbar ist."
 		"DOTA_Tooltip_modifier_obsidian_destroyer_sanity_eclipse_charge"	"Aufladungszähler von Sanity's Eclipse"
 		"DOTA_Tooltip_modifier_obsidian_destroyer_sanity_eclipse_charge_Description"	"Max. Mana um %dMODIFIER_PROPERTY_MANA_BONUS% erhöht."
-		"DOTA_Tooltip_modifier_obsidian_destroyer_mana_allergy"				"Manaallergie"
-		"DOTA_Tooltip_modifier_obsidian_destroyer_mana_allergy_Description"	"Das Wirken eines Zaubers oder die Verwendung eines Gegenstands verursacht Schaden in Höhe der Manakosten und heilt Outworld Destroyer."
+		"DOTA_Tooltip_modifier_obsidian_destroyer_mana_allergy"				"Mana-Allergie"
+		"DOTA_Tooltip_modifier_obsidian_destroyer_mana_allergy_Description"	"Das Wirken eines Zaubers oder die Verwendung eines Gegenstands heilt Outworld Destroyer."
 		
 		"DOTA_Tooltip_modifier_obsidian_destroyer_arcane_orb_buff_counter"	"Arcane Orb"
 		"DOTA_Tooltip_modifier_obsidian_destroyer_arcane_orb_buff_counter_Description"	"%dMODIFIER_PROPERTY_STATS_INTELLECT_BONUS% Intelligenzpunkte geraubt."
@@ -7187,6 +7217,8 @@
 		"DOTA_Tooltip_ability_legion_commander_duel_reward_damage"				"BONUSSCHADEN:"
 		"DOTA_Tooltip_ability_legion_commander_duel_duration_scepter"			"DAUER:"
 		"DOTA_Tooltip_ability_legion_commander_duel_scepter_description"		"Erhöht die Duelldauer und reduziert die Abklingzeit. Legion Commander und ihr Gegner erleiden reduzierten Schaden von Nicht-Kombattanten."
+		"DOTA_Tooltip_ability_legion_commander_duel_shard_description"			"Erhöht den Schaden um %shard_duel_damage_bonus% pro gewonnenem Duell. Zählt rückwirkend."
+		
 		"DOTA_Tooltip_ability_legion_commander_duel_Note0"		                "Duelle werden beendet, wenn die beiden Kontrahenten mehr als 2000 Einheiten voneinander entfernt sind."
 		"DOTA_Tooltip_ability_legion_commander_duel_Note1"		                "Bei einem Duellsieg wird automatisch Press the Attack als Selbstzauber gewirkt."
 		"DOTA_Tooltip_ability_legion_commander_duel_Lore"						"Einem Soldaten von Stonehall im Einzelkampf gegenüberzutreten ist eine Herausforderung, der nur wenige widerstehen können."
@@ -8925,7 +8957,7 @@
 		"DOTA_Tooltip_Ability_muerta_pierce_the_veil_transform_duration"		"VERWANDLUNGSDAUER:"
 		"DOTA_Tooltip_Ability_muerta_pierce_the_veil_duration"					"DAUER:"
 		"DOTA_Tooltip_Ability_muerta_pierce_the_veil_bonus_damage"				"BONUSANGRIFFSSCHADEN:"
-		"DOTA_Tooltip_ability_muerta_pierce_the_veil_shard_description"			"Muerta erhält %spell_lifesteal% %% Zauberlebensraub während Pierce the Veil.<br>Während Pierce the Veil aktiv ist, erhält Muerta dauerhaft %spell_amp_steal% %% Zauberverstärkung für jeden von ihr getöteten oder in ihrer Nähe gestorbenen gegnerischen Helden."
+		"DOTA_Tooltip_ability_muerta_pierce_the_veil_shard_description"			"Muerta erhält %spell_lifesteal% %% Zauberlebensraub während Pierce the Veil.<br>Während Pierce the Veil aktiv ist, erhält Muerta dauerhaft %spell_amp_steal% %% Zauberverstärkung für jeden von ihr getöteten oder in ihrer Nähe gestorbenen gegnerischen Helden. Bonus zählt rückwirkend."
 		"DOTA_Tooltip_ability_muerta_pierce_the_veil_Note0"						"Muertas Verwandlung lässt bereits auf sie abgefeuerte Projektile verfehlen."
 		"DOTA_Tooltip_ability_muerta_pierce_the_veil_Note1"						"Während Muerta ihre wahre Gestalt angenommen hat, kann sie keine Gebäude angreifen."
 		"DOTA_Tooltip_ability_muerta_pierce_the_veil_Note2"						"Andere ätherische Effekte halten Muerta nicht davon ab, anzugreifen."
@@ -9822,6 +9854,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_axe_7"	"+{s:bonus_bonus_armor} Rüstung während Berserker's Call"
 		"DOTA_Tooltip_ability_special_bonus_unique_axe_8"	"+{s:bonus_speed_bonus} % Bewegungstempo pro aktiver Battle-Hunger-Instanz"
 		"DOTA_Tooltip_ability_special_bonus_unique_beastmaster"	"+{s:bonus_axe_damage} Schaden mit Wild Axes"
+		"DOTA_Tooltip_ability_special_bonus_unique_beastmaster_2"	"+{s:bonus_boar_bonus_damage} Schaden für Keiler und Falke"
 		"DOTA_Tooltip_ability_special_bonus_unique_beastmaster_3"	"−{s:bonus_AbilityCooldown} s Abklingzeit für Falken"
 		"DOTA_Tooltip_ability_special_bonus_unique_beastmaster_4"	"+{s:bonus_bonus_attack_speed} Angriffstempo durch Inner Beast"
 		"DOTA_Tooltip_ability_special_bonus_unique_beastmaster_5"	"+{s:bonus_ms} Bewegungstempoaura für BM und seine Einheiten"
@@ -9854,6 +9887,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_juggernaut_omnislash_duration"	"+{s:bonus_duration} s Dauer für Omnislash"
 		"DOTA_Tooltip_ability_special_bonus_unique_juggernaut_omnislash_cast_range"	"+{s:bonus_AbilityCastRange} Zauberreichweite für Omnislash"
 		"DOTA_Tooltip_ability_special_bonus_unique_juggernaut_blade_fury_cooldown"	"−{s:bonus_AbilityCooldown} s Abklingzeit für Blade Fury"
+		"DOTA_Tooltip_ability_special_bonus_unique_juggernaut_blade_fury_movespeed"				"+{s:bonus_bonus_movespeed} Bewegungstempo während Blade Fury"
 		"DOTA_Tooltip_ability_special_bonus_unique_winter_wyvern_1"	"+{s:value} % Verlangsamung mit Arctic Burn"
 		"DOTA_Tooltip_ability_special_bonus_unique_winter_wyvern_2"	"+{s:value} Splitterradius für Splinter Blast"
 		"DOTA_Tooltip_ability_special_bonus_unique_winter_wyvern_3"	"+{s:value} s Dauer für Winter's Curse"
@@ -9864,9 +9898,11 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_winter_wyvern_7"	"+{s:value} Schaden mit Splinter Blast"
 		"DOTA_Tooltip_ability_special_bonus_unique_terrorblade"	"−{s:value} s Abklingzeit für Sunder"
 		"DOTA_Tooltip_ability_special_bonus_unique_terrorblade_2"	"−{s:bonus_AbilityCooldown} s Abklingzeit für Reflection"
+		"DOTA_Tooltip_ability_special_bonus_unique_terrorblade_3"	"+{s:bonus_duration} s Dauer für Metamorphosis"
 		"DOTA_Tooltip_ability_special_bonus_unique_terrorblade_4"	"+{s:bonus_illusion_outgoing_damage} % Angriffsschaden für Conjure Image"
 		"DOTA_Tooltip_ability_special_bonus_unique_terrorblade_5"	"+{s:bonus_illusion_duration} s Dauer für Conjure Image"
 		"DOTA_Tooltip_ability_special_bonus_unique_terrorblade_6"	"+{s:bonus_move_slow} % Verlangsamung/Schaden für Reflection-Illusionen"
+		"DOTA_Tooltip_ability_special_bonus_unique_terrorblade_metamorphosis_cooldown"	"−{s:bonus_AbilityCooldown} s Abklingzeit für Metamorphosis"
 		"DOTA_Tooltip_ability_special_bonus_unique_luna_1"	"+{s:bonus_beam_damage} Schaden mit Lucent Beam"
 		"DOTA_Tooltip_ability_special_bonus_unique_luna_2"	"−{s:bonus_AbilityCooldown} s Abklingzeit für Lucent Beam"
 		"DOTA_Tooltip_ability_special_bonus_unique_luna_3"	"+{s:bonus_bonus_damage} Schaden durch Lunar Blessing"
@@ -9881,6 +9917,8 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_faceless_void_3"	"+{s:value} Schaden mit Time Lock"
 		"DOTA_Tooltip_ability_special_bonus_unique_faceless_void_4"	"+{s:dodge_chance_pct} % Backtrack"
 		"DOTA_Tooltip_ability_special_bonus_unique_faceless_void_4_Description"		"Gewährt eine {s:dodge_chance_pct}%ige Chance, Schaden komplett auszuweichen. Deaktiviert, wenn Faceless Void unterbrochen wird."
+		"DOTA_Tooltip_ability_special_bonus_unique_faceless_void_5"	"−{s:bonus_AbilityCooldown} s Abklingzeit für Time Walk"
+		"DOTA_Tooltip_ability_special_bonus_unique_faceless_void_6"	"+{s:bonus_damage_per_stack} Schaden pro Sekunde und Abklingzeit für Time Dilation"
 		"DOTA_Tooltip_ability_special_bonus_unique_faceless_void_8"	"+{s:bonus_slow} % Verlangsamung pro Abklingzeit durch Time Dilation"
 		"DOTA_Tooltip_ability_special_bonus_unique_night_stalker"	"−{s:value} s Abklingzeit für Dark Ascension"
 		"DOTA_Tooltip_ability_special_bonus_unique_night_stalker_2"	"+{s:bonus_bonus_attack_speed_night} Angriffstempo durch Hunter in the Night"
@@ -9897,6 +9935,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_nyx_5"	"+{s:bonus_float_multiplier}× Intelligenz-Multiplikator für Mind Flare"
 		"DOTA_Tooltip_ability_special_bonus_unique_nyx_6"	"+{s:bonus_stun_duration} s Betäubungsdauer für Spiked Carapace"
 		"DOTA_Tooltip_ability_special_bonus_unique_nyx_carapace_reflect_duration"		"+{s:bonus_reflect_duration} s Reflexionsdauer für Spiked Carapace"
+		"DOTA_Tooltip_ability_special_bonus_unique_nyx_vendetta_damage"					"+{s:bonus_bonus_damage} Schaden mit Vendetta"
 		"DOTA_Tooltip_ability_special_bonus_unique_weaver_1"	"+{s:bonus_damage} Schaden mit Shukuchi"
 		"DOTA_Tooltip_ability_special_bonus_unique_weaver_2"	"+{s:value} Schaden mit Geminate Attack"
 		"DOTA_Tooltip_ability_special_bonus_unique_weaver_3"	"+{s:value} Rüstungsreduzierung durch The Swarm"
@@ -10043,9 +10082,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_elder_titan_4"	"+{s:bonus_wake_damage_limit} Aufwachschwellenwert nach Echo Stomp"
 		"DOTA_Tooltip_ability_special_bonus_unique_elder_titan_5"	"+{s:bonus_radius} Radius für Natural Order"
 		"DOTA_Tooltip_ability_special_bonus_unique_elder_titan_bonus_spirit_speed"	"+{s:bonus_move_pct_heroes} % Bewegungstempo pro Held für Astralgeist"
-		"DOTA_Tooltip_ability_special_bonus_unique_ember_spirit_1"	"+{s:value} Barrierenpunkte für Flame Guard"
 		"DOTA_Tooltip_ability_special_bonus_unique_ember_spirit_2"	"+{s:value} s Dauer für Searing Chains"
-		"DOTA_Tooltip_ability_special_bonus_unique_ember_spirit_3"	"+{s:value} Schaden pro Sekunde mit Flame Guard"
 		"DOTA_Tooltip_ability_special_bonus_unique_ember_spirit_4"	"{s:value} Aufladungen für Sleight of Fist"
 		"DOTA_Tooltip_ability_special_bonus_unique_ember_spirit_5"	"−{s:bonus_AbilityChargeRestoreTime} s Wiederaufladezeit für Feuerabbild"
 		"DOTA_Tooltip_ability_special_bonus_unique_ember_spirit_6"	"+{s:value} Heldenschaden mit Sleight of Fist"
@@ -10991,6 +11028,7 @@
 		"DOTA_Tooltip_Ability_roshan_devotion"				"Strength of the Immortal"
 		"DOTA_Tooltip_Ability_roshan_devotion_Description"	"Roshan besitzt unzählige magische Schutzzauber, unter anderem 55 %% Magieresistenz, Widerstandsfähigkeit gegen Schaden durch Illusionen und einen Rüstungsbonus, der mit der Zeit stärker wird."
 		
+		"DOTA_Tooltip_Ability_roshan_revengeroar"				"Brüllen der Vergeltung"
 		"DOTA_Tooltip_Ability_roshan_revengeroar_damage"	"SCHADEN:"
 
 		"DOTA_Tooltip_modifier_roshan_spell_block"		"Spell Block"
@@ -10999,13 +11037,18 @@
 		"DOTA_Tooltip_modifier_roshan_slam"				"Slam"
 		"DOTA_Tooltip_modifier_roshan_devotion"			"Devotion"
 		"DOTA_Tooltip_modifier_roshan_devotion_Description"			"55 %% Magieresistenz, %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Bonusrüstung und Widerstandsfähigkeit gegen Schaden durch Illusionen. Die Bonusrüstung nimmt im Laufe des Spiels zu."
+		"DOTA_Tooltip_modifier_roshan_revengeroar_Description"			"Erleidet erhöhten Schaden."
+
 		"DOTA_Tooltip_Ability_miniboss_unyielding_shield"		"Unbeugsame Barriere"
+		"DOTA_Tooltip_Ability_miniboss_unyielding_shield_Description"		"Gewährt passiv eine sich konstant regenerierende Barriere gegen Schaden aller Art. Rüstungswert kann nicht unter 0 fallen."
 		"DOTA_Tooltip_Ability_miniboss_reflect"					"Schadensreflexion"
 		"DOTA_Tooltip_Ability_miniboss_reflect_Description"		"Reflektiert erlittenen Schaden gleichmäßig auf den Angreifer und alle anderen Helden in einem Radius von 1200."
+		"DOTA_Tooltip_Ability_miniboss_radiance_Description"		"Fügt jede Sekunde allen Einheiten im Umkreis von %aura_radius% Einheiten %aura_damage% Schaden zu."
 		"DOTA_Tooltip_modifier_miniboss_unyielding_shield"		"Unbeugsame Barriere"
 		"DOTA_Tooltip_modifier_miniboss_unyielding_shield_Description"	"Geschützt von einer Barriere mit %dMODIFIER_PROPERTY_TOOLTIP% Punkten gegen Schaden aller Art, die sich konstant mit %dMODIFIER_PROPERTY_TOOLTIP2% Punkten pro Sekunde regeneriert."
 		"DOTA_Tooltip_modifier_miniboss_reflect"				"Schadensreflexion"
 		"DOTA_Tooltip_modifier_miniboss_reflect_Description"	"Reflektiert %dMODIFIER_PROPERTY_TOOLTIP% %% des erlittenen Schadens auf alle in der Nähe befindlichen Helden."
+		"DOTA_Tooltip_modifier_miniboss_radiance_Description"	"Fügt allen in der Nähe befindlichen Einheiten Schaden zu."
 		"DOTA_Tooltip_modifier_miniboss_radiance_debuff"		"Brandschaden"
 		"DOTA_Tooltip_modifier_miniboss_radiance_debuff_Description"	"Erleidet 30 Schaden pro Sekunde."
 
@@ -11366,7 +11409,7 @@
 		"DOTA_Tooltip_ability_granite_golem_hp_aura_bonus_hp"					"BONUSLEBENSPUNKTE:"
 		"DOTA_Tooltip_ability_granite_golem_hp_aura_radius"						"RADIUS:"
 
-		"DOTA_Tooltip_modifier_granite_golem_hp_aura_bonus"						"Granite Aura"
+		"DOTA_Tooltip_modifier_granite_golem_hp_aura_bonus"						"Granitaura"
 		"DOTA_Tooltip_modifier_granite_golem_hp_aura_bonus_Description"			"Lebenspunkte um %dMODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE% % erhöht."
 
 		// Prowler Acolyte (Spawnlord): Prowler Aura
@@ -11736,7 +11779,7 @@
 		"DOTA_Tooltip_ability_item_super_blink_Description"						"<h1>Aktiv: Blinzeln</h1>Teleportiert Sie zu einem bis zu %blink_range% Einheiten entfernten Zielpunkt."
 		"DOTA_Tooltip_ability_item_super_blink_Lore"							"Ein sagenhafter Dolch, der vom schnellsten Attentäter der Welt verwendet wurde."
 
-		"DOTA_Tooltip_ability_item_bloodstone_Description"						"<h1>Aktiv: Blutpakt</h1> Erhöht den Zauberlebensraub durch Bloodstone um das %lifesteal_multiplier%-fache und wandelt außerdem denselben Anteil des verursachten Schadens in Mana um. Hält %buff_duration% Sekunden an."
+		"DOTA_Tooltip_ability_item_bloodstone_Description"						"<h1>Aktiv: Blutpakt</h1> Erhöht den Zauberlebensraub durch Bloodstone um das %lifesteal_multiplier%-fache. Hält %buff_duration% Sekunden an."
 		"DOTA_Tooltip_ability_item_bloodstone_Lore"								"Die rubinrot strahlende Farbe des Bloodstones ist unverwechselbar auf dem Schlachtfeld, da der Besitzer über unendliche Lebens- und Geisteskraft zu verfügen scheint."
 		"DOTA_Tooltip_ability_item_bloodstone_Note0"							"Nach Aktivierung von Blutpakt steht der Träger 40 Sekunden lang unter dem Effekt „Blutleer“ und kann Blutpakt währenddessen nicht erneut einsetzen."
 		"DOTA_Tooltip_ability_item_bloodstone_bonus_aoe"						"+$aoe_bonus"
@@ -12141,6 +12184,7 @@
 		"DOTA_Tooltip_modifier_item_witches_switch_aura_effect"				"Hexenapparatur"
 		"DOTA_Tooltip_modifier_item_witches_switch_aura_effect_Description"	"Lebensregeneration um %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT%, Manaregeneration um %dMODIFIER_PROPERTY_MANA_REGEN_CONSTANT% und Rüstung um %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% geändert."
 
+		"DOTA_Tooltip_Ability_item_harpoon_Description"					"<h1>Aktiv: Widerhaken</h1> Feuert eine Harpune auf einen Gegner ab, der nicht ausgewichen werden kann, und zieht den Träger und das Ziel um bis zu %pull_distance_pct% %% der zwischen ihnen liegenden Distanz näher aneinander. Nahkampfhelden ziehen das Ziel immer in ihre Angriffsreichweite.\n\n<h1>Passiv: Echohieb</h1> Gewährt Nahkampfhelden in regelmäßigen Abständen einen doppelten Angriff. Der doppelte Angriff verlangsamt das Bewegungstempo des Ziels bei jedem Treffer für %slow_duration% Sekunden um %movement_slow% %%. Abklingzeit: %passive_cooldown% s."
 		"DOTA_Tooltip_Ability_item_harpoon_bonus_health"					"+$health"
 		"DOTA_Tooltip_Ability_item_harpoon_bonus_agility"					"+$agi"
 		"DOTA_Tooltip_Ability_item_harpoon_bonus_intellect"					"+$int"
@@ -12164,6 +12208,7 @@
 		"DOTA_Tooltip_Ability_item_phylactery_bonus_mana"						"+$mana"
 		"DOTA_Tooltip_ability_item_phylactery_bonus_all_stats"						"+$all"
 		"DOTA_Tooltip_ability_item_phylactery_bonus_mana_regen"				"+$mana_regen"
+		"DOTA_Tooltip_modifier_item_phylactery_slow"						"Phylactery"
 		"DOTA_Tooltip_modifier_item_phylactery_slow_Description"			"Bewegungstempo um %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %% reduziert."
 
 		"DOTA_Tooltip_Ability_item_angels_demise_bonus_damage"					"+$damage"
@@ -12438,6 +12483,7 @@
 		"DOTA_Tooltip_ability_item_safety_bubble_bonus_hp_regen"					"+$hp_regen"
 		"DOTA_Tooltip_ability_item_whisper_of_the_dread_bonus_mana"		"+$mana"
 		"DOTA_Tooltip_ability_item_nemesis_curse_bonus_damage"					"+$damage"
+		"DOTA_Tooltip_ability_item_avianas_feather_Description"				"<h1>Passiv: Frei wie ein Vogel</h1> Wenn die Lebenspunkte des Trägers unter %flight_threshold% %% fallen, kann er sich fliegend fortbewegen."
 		"DOTA_Tooltip_ability_item_avianas_feather_evasion"					"%+$evasion"
 		"DOTA_Tooltip_ability_item_avianas_feather_move_speed"				"+$move_speed"
 		"DOTA_Tooltip_ability_item_unwavering_condition_magic_resist"				"%+$spell_resist"
@@ -12454,6 +12500,7 @@
 		"DOTA_Tooltip_ability_item_turtle_shell_armor"								"BONUSRÜSTUNG:"
 		"DOTA_Tooltip_ability_item_duelist_gloves_Description"						"<h1>Passiv: Kühnheit</h1> Gewährt %bonus_attack_speed% Angriffstempo, solange sich gegenerische Helden im Umkreis von %radius% Einheiten befinden."
 		"DOTA_Tooltip_ability_item_duelist_gloves_bonus_damage"						"+$damage"
+		"DOTA_Tooltip_ability_item_ancient_guardian_Description"						"<h1>Passiv: Antike Macht</h1> Gewährt zusätzlich %extra_bonus_damage% Schaden, falls sich der Träger im Umkreis von %radius% Einheiten um einen Ancient befindet."
 		"DOTA_Tooltip_ability_item_ancient_guardian_bonus_damage"						"+$damage"
 		"DOTA_Tooltip_ability_item_vindicators_axe_Description"						"<h1>Passiv: Rache</h1> Gewährt +%bonus_damage% Schaden, falls der Träger verstummt wird, und +%bonus_armor% Rüstung, falls der Träger betäubt wird."
 		"DOTA_Tooltip_ability_item_vindicators_axe_bonus_attack_speed"				"+$attack"
@@ -12523,6 +12570,7 @@
 		"DOTA_Tooltip_ability_item_bounty_pact_Description"						"Text."
 		"DOTA_Tooltip_ability_item_bounty_pact_Lore"						"Hintergrundgeschichte."
 		
+		"DOTA_Tooltip_ability_item_solar_crest_Description"					"<h1>Aktiv: Glanz</h1>Erhöht die Rüstung eines Verbündeten um %target_armor%, das Angriffstempo um %target_attack_speed%, das Bewegungstempo um %target_movement_speed% %% und gewährt eine Barriere gegen physischen Schaden mit %absorb_amount% Punkten.<br><br>Gewährt bei Eigenzauber keine Boni auf Rüstung, Bewegungs- oder Angriffstempo.<br><br>Reichweite: %abilitycastrange%<br><br>Dauer: %duration% s"	
 		"DOTA_Tooltip_ability_item_solar_crest_bonus_armor"					"+$armor"
 		"DOTA_Tooltip_ability_item_solar_crest_bonus_health"				"+$health"
 		"DOTA_Tooltip_ability_item_solar_crest_bonus_all_stats"				"+$all"
@@ -12958,7 +13006,7 @@
 		"DOTA_Tooltip_ability_item_rapier_Note0"								"Falls das Divine Rapier fallen gelassen und von einem Gegner des ursprünglichen Besitzers aufgehoben wird, so kann es nur noch durch Tod fallen gelassen werden."
 		"DOTA_Tooltip_ability_item_rapier_Lore"									"So mächtig, dass es nicht von einer Person allein besessen werden kann."
 		"DOTA_Tooltip_ability_item_rapier_bonus_damage"							"+$damage"
-		"DOTA_Tooltip_ability_item_rapier_bonus_spell_amp"							"%+$spell_amp"
+		"DOTA_Tooltip_ability_item_rapier_bonus_spell_amp"							"%+Zauberverstärkung"
 		
 		"DOTA_Tooltip_ability_item_caster_rapier_bonus_spell_amp"							"%+Zauberverstärkung"
 		"DOTA_Tooltip_ability_item_caster_rapier_bonus_cast_range"							"+$cast_range"
@@ -13480,6 +13528,8 @@
 		"DOTA_Tooltip_ability_item_devastator_bonus_mana_regen"				"+$mana_regen"
 		"DOTA_Tooltip_ability_item_devastator_projectile_speed"			"+$projectile_speed"
 		
+		"DOTA_Tooltip_modifier_devastator_debuff_Description"  			"Magieresistenz um %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS% %% reduziert."
+
 		"DOTA_Tooltip_ability_item_revenants_brooch_Lore"						"Die verfluchte Brosche eines gefallenen Wächters, dazu verdammt, auf ewig im Schleier zwischen Leben und Tod zu wandeln."
 		"DOTA_Tooltip_ability_item_revenants_brooch_bonus_damage"				"+$damage"
 		"DOTA_Tooltip_ability_item_revenants_brooch_spell_lifesteal"		"%+$spell_lifesteal"
@@ -13647,7 +13697,7 @@
 		"DOTA_Tooltip_ability_item_timeless_relic_Description"				"Erhöht ausgehenden Zauberschaden und Dauer von Schwächungseffekten."
 		"DOTA_Tooltip_ability_item_timeless_relic_Lore"				"Eine unversehrte Entdeckung aus den ausgegrabenen Ruinen einer alten Zaubererakademie."
 		"DOTA_Tooltip_ability_item_timeless_relic_debuff_amp"				"%+$debuff_amp"
-		"DOTA_Tooltip_ability_item_timeless_relic_spell_amp"				"%+$spell_amp"		
+		"DOTA_Tooltip_ability_item_timeless_relic_spell_amp"				"%+Zauberverstärkung"		
 		
 		"DOTA_Tooltip_ability_item_mirror_shield_Description"		"<h1>Passiv: Echoschild</h1> Blockiert und reflektiert die meisten zielgerichteten Zauber zurück auf den Anwender. Dieser Effekt kann einmal alle %block_cooldown% Sekunden auftreten."
 		"DOTA_Tooltip_ability_item_mirror_shield_Lore"				"Der Schild, der vor langer Zeit den Alten seiner ersten Erinnerungen beraubte."		
@@ -13757,7 +13807,7 @@
 		
 		"DOTA_Tooltip_Ability_item_nether_shawl_Lore"		"Ein Kleidungsstück aus einer anderen Welt, von unbekannten Kräften an unsere Ebene gebunden."
 		"DOTA_Tooltip_Ability_item_nether_shawl_bonus_magic_resistance"		"%+$spell_resist"
-		"DOTA_Tooltip_Ability_item_nether_shawl_bonus_spell_amp"			"%+$spell_amp"
+		"DOTA_Tooltip_Ability_item_nether_shawl_bonus_spell_amp"			"%+Zauberverstärkung"
 		"DOTA_Tooltip_Ability_item_nether_shawl_bonus_armor"		"−<font color='#e03e2e'>Rüstung</font>"
 		
 		"DOTA_Tooltip_Ability_item_dragon_scale_Description"		"<h1>Passiv: Nachbrennen</h1> Angriffe stecken den Gegner in Brand und verursachen %duration% Sekunden lang %damage_per_sec% Schaden pro Sekunde. Wirkt auch gegen Gebäude."
@@ -14096,7 +14146,7 @@
 
 		"DOTA_Tooltip_Ability_item_mysterious_hat_Lore"			"Ein kleines Schmuckstück, das mit dem Glück der Feen durchtränkt ist, als Anerkennung für eine verblüffende Darbietung von Großzügigkeit der Sterblichen."
 		"DOTA_Tooltip_Ability_item_mysterious_hat_bonus_health"			"+$health"
-		"DOTA_Tooltip_Ability_item_mysterious_hat_spell_amp"			"%+$spell_amp"
+		"DOTA_Tooltip_Ability_item_mysterious_hat_spell_amp"			"%+Zauberverstärkung"
 		"DOTA_Tooltip_Ability_item_mysterious_hat_manacost_reduction"	"%+$manacost_reduction"
 		//"DOTA_Tooltip_Ability_item_mysterious_hat_Description"		"Increases the cast range of your next spell by %cast_range%, then goes into cooldown."
 
