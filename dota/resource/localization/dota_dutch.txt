@@ -6582,8 +6582,6 @@ Terwijl de invloed van beide stenen spreidde, kwamen ze uiteindelijk in conflict
 		"Notification_FantasyMatchupResultsTie"		"Je bent erin geslaagd om deze week gelijk te spelen tegen %s1 met een score van %s2 tegen %s3 in Fantasy-league %s4."
 		"Notification_AllHeroChallenge:p{attempts}"	"Je hebt de heldenuitdaging voor {g:dota_hero_name:completed_hero_id} voltooid in {d:attempts} spel! Je volgende held is {g:dota_hero_name:next_hero_id}.#|#Je hebt de heldenuitdaging voor {g:dota_hero_name:completed_hero_id} voltooid in {d:attempts} spellen! Je volgende held is {g:dota_hero_name:next_hero_id}."
 		"Notification_SmurfAssociationWarning"	"Dit account wordt geassocieerd met een smurfaccount. Het wordt daarom nauwlettend in de gaten gehouden. Verdere overtredingen zullen resulteren in een permanente spelverbanning."
-		"Notification_AccountSharingBan"		"Je account is permanent verbannen vanwege het delen met derden."
-
 		//-------------------------------------------------------------------------------------------
 		// Economy
 		"ItemTypeDesc"						"Level %s1 %s2"			// s1 is the level number, s2 is the item type. Example: "Level 4 Medigun"
@@ -11799,6 +11797,7 @@ Terwijl de invloed van beide stenen spreidde, kwamen ze uiteindelijk in conflict
 
 		"DOTA_CoachControls_TeamCoach"				"Teamcoach"
 		"DOTA_CoachControls_PrivateCoach"			"Privécoach"
+		"DOTA_CoachControls_CoachingTeam"			"{s:coaching_team_name} aan het coachen"
 		"DOTA_CoachControls_PrivateCoaching"		"Privécoaching"
 		"DOTA_CoachControls_RedirectVoiceToCoach"	"Coach"
 		"DOTA_CoachControls_RedirectVoiceToAllies"	"Bondgenoten"
@@ -17118,6 +17117,7 @@ Speciale Techies-bespotting"
 		"DOTA_ChatWheelPhraseLocked_ShardUnlock"	"Te ontgrendelen als Plus-beloning voor {g:dota_shards_value:unlock_point_cost}."
 		"DOTA_ChatWheelPhraseLocked_PlusSubscription"	"Voor {g:dota_shards_value:unlock_point_cost} verkrijgbaar voor Dota Plus-leden."
 		"DOTA_ChatWheelPhraseLocked_PlusSubscriptionExpired"	"Hernieuw je Dota Plus-abonnement om de toegang te behouden."
+		"DOTA_ChatWheelPhraseLocked_GuildLevel"		"Niveau {s:required_guild_tier}"
 		"DOTA_ChatWheelPurchase_Name"			"Chatwiel gekocht"
 		"DOTA_ChatWheelPurchase_Description"	"Chatwielbericht '{s:chat_wheel_label}' gekocht"
 
@@ -18743,6 +18743,7 @@ Als je nog nooit een spel als Dota hebt gespeeld, begin dan hier."
 	"DOTA_ChatTarget_Format_BattleCup"		"Battle Cup ({g:dota_battlecup_division:division} {i:skill_level})"
 	"DOTA_ChatTarget_Prompt_Trivia"			"Aan Trivia ({s:language}):"
 	"DOTA_ChatTarget_Format_Trivia"			"Trivia ({s:language})"
+	"DOTA_ChatTarget_Prompt_NewPlayer"		"Aan Nieuwe spelers ({s:language}):"
 	"DOTA_ChatTarget_Format_NewPlayer"		"Nieuwe spelers ({s:language})"
 	"DOTA_ChatTarget_Party"				"Groep"
 	"DOTA_ChatTarget_Lobby"				"Lobby"
@@ -18891,7 +18892,6 @@ Als je nog nooit een spel als Dota hebt gespeeld, begin dan hier."
 	"DOTA_Chat_Lobby_MVP_Self_Vote"								"Je hebt op jezelf gestemd voor beste speler van dit spel"
 	"DOTA_Chat_Lobby_MVP_Vote_Notify_Generic"					"%s heeft een stem ontvangen voor beste speler van het spel"
 	"DOTA_Chat_Tip_Toast:p{amount}"								"{s:tipper} heeft {s:recipient} {i:amount} gevechtspunt fooi gegeven!#|#{s:tipper} heeft {s:recipient} {i:amount} gevechtspunten fooi gegeven!"
-	"DOTA_Chat_Commend_Toast"									"{s:commender} heeft je aanbevolen!"
 	"DOTA_Chat_UnknownCommandMessage" "Onbekend chatcommando '{s:chat_command}'"
 
 	"DOTA_CoinFlip_Heads"	"heeft een munt opgegooid: <span class=\"CoinFlipResult\">KOP</span>"
@@ -21410,6 +21410,7 @@ Als je nog nooit een spel als Dota hebt gespeeld, begin dan hier."
 	"DOTA_EquippedItem_Item"			"Item"
 
 	"DOTA_OwnedItemDetails_Rarity"		"{s:item_rarity}"
+	"DOTA_OwnedItemDetails_ItemName"	"{g:dota_filtered_string:item_name}"
 	"DOTA_OwnedItemDetails_DefaultSet"	"Standaardset"
 	"DOTA_OwnedItemDetails_Style:p{item_style_count}"	"{i:item_style_count} stijl#|#{i:item_style_count} stijlen"
 	"DOTA_OwnedItemDetails_BundleName"	"In bundel \"{s:item_bundle}\""
@@ -22810,7 +22811,9 @@ Als je nog nooit een spel als Dota hebt gespeeld, begin dan hier."
 	"DOTA_AntiAddiction_Label_Green"		"Speeltijd: {s:playtime} (gezond)"
 	"DOTA_AntiAddiction_Label_Yellow"		"Speeltijd: {s:playtime} (ongezond)"
 	"DOTA_AntiAddiction_Label_Red"			"Speeltijd: {s:playtime} (overschreden)"
-    "DOTA_Workshop_Browse"                              "Bladeren"
+    "DOTA_AntiAddiction_Label_Remaining"    "Resterende tijd van vandaag: {s:playtime}"
+
+	"DOTA_Workshop_Browse"                              "Bladeren"
 
 	"DOTA_Workshop_TextureName_color"					"Kleur"
 	"DOTA_Workshop_TextureName_trans"			        "Transparantie"
@@ -28878,6 +28881,8 @@ Nu vroege, druk uitoefenende helden als Zeus en Death Prophet meer voorkomen, sp
 
 
 	"DOTA_Style_Orbuculum_Equinox_0"	"Dire Delight"
+	"DOTA_Style_Orbuculum_Equinox_1"	"Radiant Wrap"
+	"DOTA_Style_Orbuculum_Equinox_2"	"Warden's Wish"
 "npc_dota_seasonal_ti10_disco_ball"														"Discobol"
 	"DOTA_Tooltip_ability_seasonal_ti10_disco_ball"											"Discobol"
 	"DOTA_Tooltip_ability_seasonal_ti10_high_five"											"High Five"
@@ -29072,6 +29077,9 @@ Nu vroege, druk uitoefenende helden als Zeus en Death Prophet meer voorkomen, sp
 	"DOTACavernCrawl_Title_TI2020"									"Grottentocht"
 	"DOTACavernCrawl_MapLogoTitle_TI2020"							"Grottentocht"
 
+	"DOTACavernCrawl_Cavern_ToggleMapVariant"						"{s:other_map_variant_name} betreden"
+	"DOTACavernCrawl_Cavern_PreviewMapVariant"						"{s:other_map_variant_name} weergeven"
+	"DOTACavernCrawl_Cavern_ClaimMapVariant"						"{s:other_map_variant_name} opeisen"
 	"DOTACavernCrawl_Cavern_RewardSmall"							"Puntenbundel"
 	"DOTACavernCrawl_Cavern_RewardXL"								"XL-bundel"
 
@@ -29126,6 +29134,7 @@ Nu vroege, druk uitoefenende helden als Zeus en Death Prophet meer voorkomen, sp
 	"DOTA_Spring2021PostGame_Complete"							"Voltooid"	
 	"DOTA_WeeklyStarRewardPipLabel"			"{d:point_reward}"
 
+	"DOTA_WeeklyQuest_Progress_Label"		"Voortgang week {d:week_number}:"
 	"DOTA_WeeklyQuest_Week1_Name"			"1"
 	"DOTA_WeeklyQuest_Week2_Name"			"2"
 	"DOTA_WeeklyQuest_Week3_Name"			"3"
@@ -29171,6 +29180,8 @@ Nu vroege, druk uitoefenende helden als Zeus en Death Prophet meer voorkomen, sp
 	"DOTA_Spring2021_Quest_Wins_Name_Week8"							"Ik doe wat ik wil"
 	"DOTA_Spring2021_Quest_Wins_Description"						"Win {s:current_tier_score} spel(len)"
 "DOTA_WeeklyQuest_Last_Hits_Name"								"Creepslachting"
+	"DOTA_WeeklyQuest_Denies_Description"							"Wijs {s:current_tier_score} creeps af"
+
 	// End Weekly Quest Names
 
 
@@ -29493,6 +29504,7 @@ Nu vroege, druk uitoefenende helden als Zeus en Death Prophet meer voorkomen, sp
 	"DOTA_Frontpage_DPCLive_Live"		"Live"
 	"DOTA_Frontpage_DPCLive_GameInfo"	"Spel {d:game_number} - {s:game_state}"
 
+	"DOTA_Frontpage_TI10Upcoming_StartsIn"	"Begint over {t:d:t:T:countdown_time}"
 	"DOTA_Frontpage_TI10Upcoming_GroupStage"	"Groepsfase"
 	"DOTA_Frontpage_TI10Upcoming_Playoff"	"Play-off"
 
@@ -30120,6 +30132,7 @@ Nu vroege, druk uitoefenende helden als Zeus en Death Prophet meer voorkomen, sp
 	"DOTA_Guilds_Members_Player"						"Speler"
 	"DOTA_Guilds_Members_Role"							"Rol"
 	"DOTA_Guilds_Members_LastActive"					"Laatst actief"
+	"DOTA_Guilds_Members_PendingInvites"				"{d:pending_count} openstaande uitnodigingen"
 	"DOTA_Guilds_Members_PendingInviteSent"				"Verzonden"
 	"DOTA_Guilds_Members_KickMember"					"Kicken"
 	"DOTA_Guilds_Members_Roles"							"Rollen"
@@ -30161,6 +30174,7 @@ Nu vroege, druk uitoefenende helden als Zeus en Death Prophet meer voorkomen, sp
 	"DOTA_Guilds_Report_Logo"							"Logo rapporteren"
 
 	"DOTA_GuildPerk_BonusArcanaVotes:p{perk_value}"		"{d:perk_value} extra stem voor Arcana per week#|#{d:perk_value} extra stemmen voor Arcana per week"
+	"DOTA_GuildPerk_Emoticon"							"Emoticon {s:emoticon_text}"
 	"DOTA_GuildPerk_BonusTips:p{perk_value}"						"{d:perk_value} extra fooi per week#|#{d:perk_value} extra fooien per week"
 	"DOTA_GuildPerk_BonusChallenges:p{perk_value}"					"{d:perk_value} extra guilduitdaging per week#|#{d:perk_value} extra guilduitdagingen per week"
 	"DOTA_GuildPerk_WagerTokensPerWeek:p{perk_value}"				"{d:perk_value} extra weddenschapsfiche per week#|#{d:perk_value} extra weddenschapsfiches per week"
@@ -30289,6 +30303,7 @@ Nu vroege, druk uitoefenende helden als Zeus en Death Prophet meer voorkomen, sp
 
 	"DOTA_TI10_EventGame_ChallengeMode"								"Aghanims beproevingen"
 	"DOTA_TI10_EventGame_ChallengeModeCountdownTimerShort"			"Over {t:d:t:T:countdown_time}"
+	"DOTA_TI10_EventGame_ChallengeModeActiveTimerShort"				"{t:d:t:T:countdown_time} resterend"
 	"DOTA_TI10_EventGame_Lore"										"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
 					   
 	"DOTA_TI10_EventGame_Duration"									"Duur: {T:d:duration}"
@@ -30401,6 +30416,7 @@ Nu vroege, druk uitoefenende helden als Zeus en Death Prophet meer voorkomen, sp
 		"GuildsLeaderboard_LeaderboardColumn_Percentile"		"Percentiel"
 		"GuildsLeaderboard_LeaderboardColumn_PercentileDelta"	"Sinds vorige week"
 
+		"DOTA_UnshownRewardsMore"	"+{d:num_unshown_rewards} MEER"
 		"DOTA_LearnViolator_New_Player" "Aanbevolen"
 
 		"DOTA_ManageProInfo_Header"	"Gegevens en teams voor pro's"
@@ -30480,6 +30496,7 @@ Nu vroege, druk uitoefenende helden als Zeus en Death Prophet meer voorkomen, sp
         "diretide2020_game_info_score_candy_header"						"VUL JE EMMER"
         "diretide2020_game_info_feed_roshan_header"						"VERZADIG HET BEEST"
         "diretide2020_game_info_dont_show_again"						"Niet opnieuw tonen"
+		"diretide2020_game_daily_bonus_timer"							"Reset over {t:d:t:T:countdown_time}"
 		"diretide2020_show_event_details"								"Evenementdetails weergeven"
 
 		"dota_page_overview_nemestice_meteor_shards"					"Totaal"
@@ -31501,6 +31518,7 @@ Nu vroege, druk uitoefenende helden als Zeus en Death Prophet meer voorkomen, sp
 		"DOTA_TeamFanContent_HPBarBadge"	"Badge bij HP-balk"
 		"DOTA_TeamFanContent_Tier2Includes"		"Bevat alle voordelen van brons."
 		"DOTA_TeamFanContent_Tier3Includes"		"Bevat alle voordelen van brons en zilver."
+		"DOTA_TeamFanContent_ChatSample"		"Hup {g:dota_team_name:t:team_id}!"
 		"DOTA_DPCFanContent_FeaturedTeam"		"Uitgelicht team"
 		"DOTA_TeamFanContent_Sale"				"50% korting"
 		"DOTA_TeamFanContent_Sale75"			"75% korting"
@@ -31610,6 +31628,7 @@ Nu vroege, druk uitoefenende helden als Zeus en Death Prophet meer voorkomen, sp
 		"DOTA_CompendiumSummary_PlayerCards_DailyWinPack"			"Pakket voor dagelijkse winst"
 		"DOTA_CompendiumSummary_PlayerCards_DailyWinPackCount:p"	"{d:daily_pack_count} pakket voor dagelijkse winst#|#{d:daily_pack_count} pakketten voor dagelijkse winst"
 		"DOTA_CompendiumSummary_PlayerCards_DailyWinPackAvailable"	"Beschikbaar"
+		"DOTA_CompendiumSummary_PlayerCards_DailyWinPack_Next"		"Volgende over {t:d:t:T:countdown_time}"
 		"DOTA_CompendiumSummary_PlayerCards_PacksAvailable:p"		"{d:owned_packs_count} ongeopend pakket#|#{d:owned_packs_count} ongeopende pakketten"
 		"DOTA_CompendiumSummary_PlayerCards_ClaimPacks:p"			"Pakket opeisen#|#Pakketten opeisen"
 		"DOTA_CompendiumSummary_PlayerCards_UnopenedPacks:p"		"Ongeopend pakket#|#Ongeopende pakketten"
@@ -31756,6 +31775,8 @@ Nu vroege, druk uitoefenende helden als Zeus en Death Prophet meer voorkomen, sp
 		"DOTA_International2022_WeeklyStarClaimRewardLabel"				"Opeisen"
 		"DOTA_International2022_WeeklyStarRewardPipLabel"				"{d:point_reward}"
 
+		"DOTA_International2022_Quest_Plays_Description"				"Speel {s:current_tier_score} spellen"
+
 		"DOTA_International2022_LastChanceQualifierStage2"				"Play-offs"
 "DOTA_International2022_OpenShop"								"Winkel openen"
 "npc_dota_feedable_roshan"										"Roshan"
@@ -31788,6 +31809,7 @@ Nu vroege, druk uitoefenende helden als Zeus en Death Prophet meer voorkomen, sp
 		"aghsfort_juggernaut_healing_ward_aura_radius"			"+{s:value} straal {s:ability_name}"
 		"aghsfort_juggernaut_healing_ward_detonate_damage_percent" "+{s:value}% schade {s:ability_name}"
 		"aghsfort_juggernaut_zen_ward_damage_reduction"			"+{s:value}% schadevermindering {s:ability_name}"
+		"aghsfort_juggernaut_blade_dance_teleport_charges"		"+{s:value} ladingen {s:ability_name}"
 		"aghsfort_juggernaut_omni_slash_bonus_damage"			"+{s:value} bonusschade {s:ability_name}"
 		"aghsfort_juggernaut_omni_slash_bonus_attack_speed"		"+{s:value} bonusaanvalssnelheid {s:ability_name}"
 		"aghsfort_juggernaut_omni_slash_duration"				"+{s:value}s duur {s:ability_name}"
@@ -31819,6 +31841,8 @@ Nu vroege, druk uitoefenende helden als Zeus en Death Prophet meer voorkomen, sp
 		"aghsfort2_drow_ranger_frost_arrows_damage"							"+{s:value} bonusschade {s:ability_name}"
 		"aghsfort2_drow_ranger_frost_arrows_frost_arrows_movement_speed"	"+{s:value}% bewegingsvertraging {s:ability_name}"
 		"aghsfort2_drow_ranger_frost_arrows_mana_cost"						"-{s:value} manakosten {s:ability_name}"
+		"aghsfort2_special_drow_ranger_frost_arrows_split_bonus_arrow_count" "+{s:value} pijlen {s:ability_name}"
+		"aghsfort2_drow_ranger_wave_of_silence_blind_percent"				"+{s:value}% verblinding {s:ability_name}"
 		"aghsfort2_drow_ranger_marksmanship_bonus_damage"					"+{s:value} bonusschade {s:ability_name}"
 		// Luna
 		//LUNA
@@ -31942,6 +31966,8 @@ Nu vroege, druk uitoefenende helden als Zeus en Death Prophet meer voorkomen, sp
 		"DOTA_Tooltip_modifier_aghsfort_void_spirit_resonant_pulse_physical_buff"				"Resonant Pulse"
 		"DOTA_Tooltip_modifier_aghsfort_void_spirit_resonant_pulse_buff"					"Resonant Pulse"
 		"DOTA_Tooltip_ability_aghsfort_talent_void_spirit_astral_step_restore_time"	"{s:value} hersteltijd lading Astral Step"
+		"DOTA_Tooltip_ability_aghsfort_talent_void_spirit_aether_remnant_damage"	"+{s:value} schade Aether Remnant"
+		"DOTA_Tooltip_ability_aghsfort_talent_void_spirit_resonant_pulse_damage"	"+{s:value} schade Resonant Pulse"
 		"aghsfort_void_spirit_aether_remnant_damage"			"+{s:value} schade {s:ability_name}"
 		"aghsfort_void_spirit_dissimilate_damage"				"+{s:value} schade {s:ability_name}"
 		"aghsfort_void_spirit_resonant_pulse_damage"			"+{s:value} schade {s:ability_name}"
@@ -32190,9 +32216,12 @@ Nu vroege, druk uitoefenende helden als Zeus en Death Prophet meer voorkomen, sp
 		"aghsfort_clinkz_skeleton_walk_magic_resist"		"+{s:value}% magieweerstand {s:ability_name}"
 
 		"aghsfort_clinkz_burning_army_duration"				"+{s:value}s duur {s:ability_name}"
-		"DOTA_Tooltip_ability_aghsfort_talent_clinkz_2"    "+{s:value}s duur aanvalssnelheid Skeleton Walk"
+		"DOTA_Tooltip_ability_aghsfort_talent_clinkz_1"    "+{s:value} schade Searing Arrows"
+        "DOTA_Tooltip_ability_aghsfort_talent_clinkz_2"    "+{s:value}s duur aanvalssnelheid Skeleton Walk"
         "DOTA_Tooltip_ability_aghsfort_talent_clinkz_3"    "Searing Arrows raakt twee doelen"
         "DOTA_Tooltip_ability_aghsfort_talent_clinkz_5"    "-{s:value}s afkoeltijd Burning Army"
+        "DOTA_Tooltip_ability_aghsfort_talent_clinkz_6"    "+{s:value} gezondheid Death Pact"
+        "DOTA_Tooltip_ability_aghsfort_talent_clinkz_7"    "+{s:value} aanvalssnelheid Strafe"
         "DOTA_Tooltip_ability_aghsfort_talent_clinkz_8"    "+{s:value}/{s:value2}% gezondheid/schade Death Pact"
         "DOTA_Tooltip_ability_aghsfort_talent_clinkz_10"   "-{s:value}s afkoeltijd Skeleton Walk"
         "DOTA_Tooltip_ability_aghsfort_talent_clinkz_12"   "+{s:value} pijlen Burning Barrage"
@@ -32234,9 +32263,11 @@ Nu vroege, druk uitoefenende helden als Zeus en Death Prophet meer voorkomen, sp
 		 "aghsfort_sand_king_caustic_finale_duration"				"+{s:value}s duur {s:ability_name}"
 		 "aghsfort_sand_king_caustic_finale_radius"					"+{s:value} straal {s:ability_name}"
 		 "aghsfort_sand_king_epicenter_damage"						"+{s:value} schade {s:ability_name}"
+		 "aghsfort_sand_king_epicenter_pulses"					"+{s:value} pulsen {s:ability_name}"
 		 "aghsfort_sand_king_epicenter_radius"					"+{s:value} straal {s:ability_name}"
 		 "aghsfort_sand_king_sand_storm_damage"					"+{s:value} schade {s:ability_name}"
 		 "aghsfort_sand_king_sand_storm_radius"					"+{s:value} straal {s:ability_name}"
+		 "aghsfort_sand_king_sandstorm_blind"					"+{s:value}% verblinding {s:ability_name}"
 		 "aghsfort_sand_king_sandstorm_duration"					"+{s:value}s duur {s:ability_name}"
 		 "aghsfort_sand_king_sandstorm_slow"					"+{s:value}% vertraging {s:ability_name}"
 
@@ -32275,6 +32306,7 @@ Nu vroege, druk uitoefenende helden als Zeus en Death Prophet meer voorkomen, sp
 		"DOTA_Tooltip_ability_aghsfort_kunkka_x_marks_the_spot_duration"						"DUUR:"
 		"DOTA_Tooltip_ability_aghsfort_kunkka_x_marks_the_spot_speed_increase_pct"				"%SNELHEIDSVERANDERING:"
 
+		"aghsfort_kunkka_ghost_ship_speed"						"+{s:value} snelheid {s:ability_name}"
 		"aghsfort_kunkka_torrent_damage"						"+{s:value} schade {s:ability_name}"
 		"aghsfort_kunkka_tidebringer_damage"					"+{s:value} schade {s:ability_name}"
 		"aghsfort_kunkka_x_marks_the_spot_ally_duration"		"+{s:value}s duur {s:ability_name}"
@@ -32834,6 +32866,7 @@ Nu vroege, druk uitoefenende helden als Zeus en Death Prophet meer voorkomen, sp
 	"aghsfort_mars_bulwark_active_duration"			"+{s:value}s duur {s:ability_name} (actief)"
 
 	"aghsfort_mars_gods_rebuke_radius"					"+{s:value} afstand {s:ability_name}"
+	"aghsfort_mars_bulwark_speed_penalty"				"-{s:value}% snelheidsstraf Bulwark (actief)"
 	//--------------------------------------------------------------------------------------------------------------
 	// MARS ABILITY UPGRADES END
 	//--------------------------------------------------------------------------------------------------------------		
@@ -33343,6 +33376,8 @@ Nu vroege, druk uitoefenende helden als Zeus en Death Prophet meer voorkomen, sp
 		"DOTA_Tooltip_ability_item_aghsfort_bloodstone_spell_lifesteal_amp"		"%+Versterking levensdiefstal spreuken"
 "DOTA_Matchmaking_LongWait_Title" "Lange wachttijd voor matchmaking gedetecteerd"
 		"DOTA_Matchmaking_LongWait_Text" "De matchmaker heeft niet veel compatibele spelers voor je groep gevonden. Selecteer meer regio's of schakel meer spelmodi in om het zoeken te versnellen."
+"DOTA_FacelessVoidArcana_Score"									"{s:current_score}/{d:unlock_value}"
+"DOTA_RazorArcana_Score"						"{s:current_score}/{d:unlock_value}"
 "DOTA_BattlePass2022_Schedule_RegionalQualifiers_Heading"				"Regionale kwalificaties"
 		"DOTA_BattlePass2022_Schedule_RegionalQualifiers_Action"				"Nu kijken"
 
@@ -33356,7 +33391,8 @@ Nu vroege, druk uitoefenende helden als Zeus en Death Prophet meer voorkomen, sp
 "DOTA_BattlePass2022_CandyPoints_PlusOne"								"+1"
 "DOTA_Duel_Toast_AcceptDuel"				"Accepteren"
 		"DOTA_Duel_Toast_RejectDuel"				"Afwijzen"
-"DOTA_StickerDetails_Sell"										"Verkopen"
+"DOTA_econ_item_details_auto_quality_reason"					"Actief wanneer {s:auto_style_reason}"
+		"DOTA_StickerDetails_Sell"										"Verkopen"
 		"DOTA_TabName_StickerStash_Short"								"Voorraad"
 		"DOTA_TabName_StickerStore_Short"								"Winkel"
 		"DOTA_Sticker_Done"												"Gereed"
