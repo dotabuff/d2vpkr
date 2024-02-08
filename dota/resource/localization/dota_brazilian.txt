@@ -7194,6 +7194,7 @@ Os Ancestrais, tanto Iluminado como Temido, traziam muitas vantagens: energia ci
 		"Notification_Compendium2023IncorrectRewards"		"Recentemente, descobrimos um problema que permitiu a alguns jogadores aplicar mais níveis do que o esperado às suas recompensas do Compêndio. Como a sua conta foi uma das afetadas, removemos as eventuais recompensas resgatadas incorretamente e reiniciamos as suas progressões para onde deveriam estar. Você pode continuar resgatando as suas recompensas corretas normalmente no compêndio."
 		"Notification_Compendium2023ExploitedRewards"		"Recentemente, descobrimos um problema que permitiu a alguns jogadores aplicar mais níveis do que o esperado às suas recompensas do Compêndio. Embora a maioria dos jogadores tenha resgatado apenas uma pequena quantidade de recompensas adicionais, percebemos que a sua conta abusou intencionalmente desse erro. Portanto, a sua conta foi banida do jogo, impedindo que jogue on-line e acesse o inventário."
 		"Notification_AccountSharingBan"		"A sua conta foi banida permanentemente por compartilhamento de conta e/ou jogar em várias contas."
+		"Notification_GiftOpened"				"{g:dota_persona:target_accountid} abriu um(a) {g:dota_item_name:result_item_def} do seu presente ({g:dota_item_name:gift_item_def})!"
 
 		//-------------------------------------------------------------------------------------------
 		// Economy
@@ -8983,6 +8984,7 @@ Os Ancestrais, tanto Iluminado como Temido, traziam muitas vantagens: energia ci
 		"Attrib_LowLevelPurchase"					"Não é possível trocar este item até que o seu Perfil Dota alcance o nível 3."
 		"Attrib_ExpirationDate"						"Este item expirará em %s1."
 		"Attrib_ExpirationDate_Usable"				"Este item expirará se não usado até %s1."
+		"Attrib_ExpirationDate_Transform"			"Este item se transformará em %s1."
 		"Attrib_SeasonalExpirationDate"				"Item disponível até %s1."
 		"AttribFormat_AdditionalNote"				"(%s1)"
 		"Attrib_CollectionReward"					"Recompensa de coleção"
@@ -9081,6 +9083,10 @@ Os Ancestrais, tanto Iluminado como Temido, traziam muitas vantagens: energia ci
 		"Attrib_Particle826"						"Florescer congelado"
 		"Attrib_Particle827"						"Magia açucarada"
 		"Attrib_Particle828"						"Monte de neve"
+		"Attrib_Particle833"						"Chuva de ouro"
+		"Attrib_Particle834"						"Brilho dourado"
+		"Attrib_Particle835"						"Fumaça"
+
 
 
 		// Rarity Names
@@ -9487,6 +9493,8 @@ Os Ancestrais, tanto Iluminado como Temido, traziam muitas vantagens: energia ci
 		"KillEaterEventType_Muerta_PierceTheVeilKills"				"Vítimas enquanto Além do Véu"
 		"KillEaterEventType_Muerta_NoVisionDeadShotHits"			"Inimigos não visíveis amedrontados pelo Rebatiro"
 		"KillEaterEventType_Muerta_DeadShotKills"					"Vítimas da rebatida do Rebatiro"
+
+		"KillEaterEvent_NewBloom2024_GiftsGiven"		"Presentes do Dragão concedidos"
 
 		"KillEaterRank0"			"Insculpido"
 		"KillEaterRank1"			"Insignificante"
@@ -19732,6 +19740,7 @@ Provocação especial para os Techies"
 
 		"DOTA_PlayerSalute_ChatMessage"	"doou para %s1. Bem jogado!"
 		"DOTA_PartyNotValidLaneSelections"	"As trilhas selecionadas pelo grupo são incompatíveis."
+		"DOTA_PlayerGift_ChatMessage"	"presenteou %s1 com um(a) %s2!"
 
 		"DOTA_BattleLevels"	"Níveis de batalha"
 
@@ -23655,6 +23664,7 @@ Para participar como um jogador experiente, você precisa ter jogado {d:new_play
 	"dota_settings_combatlogtoggle"				"Histórico do combate"
 	"dota_settings_pause"						"Pausar"
 	"dota_settings_screenshot"					"Captura de tela"
+	"dota_settings_show_overlay_map"			"Exibir sobreposição do mapa"
 	"dota_settings_console"						"Console"
 	"dota_settings_death_summary"				"Resumo da morte"
 	"dota_settings_dota_alt"					"Modificador Alt"
@@ -23802,6 +23812,7 @@ Para participar como um jogador experiente, você precisa ter jogado {d:new_play
 	"dota_settings_camerascreenshake"			"Ativar tremida de tela"
 	"dota_settings_cameraresetonspawn"			"Centralizar a câmera no herói ao renascer"
 	"dota_settings_cameradeadcolorshift"		"Alterar cor da câmera enquanto morto"
+	"dota_settings_free_cam_override"			"Ultrapassar câmera"
 	"dota_settings_profile"						"Perfil"
 	"dota_settings_social"						"Social"
 	"dota_settings_hideprofile"					"Ocultar perfis Dota e Steam"
@@ -24039,6 +24050,8 @@ Para participar como um jogador experiente, você precisa ter jogado {d:new_play
 	"DOTA_Hotkeys_Tooltip_CombatLogToggle"  "Abre o histórico do combate."
 	"DOTA_Hotkeys_Tooltip_Pause"  "Pausar e retomar uma partida em andamento."
 	"DOTA_Hotkeys_Tooltip_ScreenshotSettings"  "Capturar a tela atual da partida."
+	"DOTA_Hotkeys_Tooltip_OverlayMapSettings"  "Exibe a sobreposição do mapa quando pressionado."
+	
 	"DOTA_Hotkeys_Tooltip_Console"  "Abrir o console. (Somente para usuários avançados)"
 	"DOTA_Hotkeys_Tooltip_DeathSummary"  "Exibir resumo da morte"
 	"DOTA_Hotkeys_Tooltip_DotaAlt"	"Revincular modificador Alt"
@@ -24086,7 +24099,8 @@ Para participar como um jogador experiente, você precisa ter jogado {d:new_play
 	"DOTA_Settings_Tooltip_Screenshake"						"Algumas magias e atordoamentos tremerão a câmera."
 	"DOTA_Settings_Tooltip_CameraRespawn"					"Refocar a câmera no seu herói assim que ele renascer."
 	"DOTA_Settings_Tooltip_Camera_Hold_Select_To_Follow"	"Segure a tecla de \"Selecionar herói\" para segui-lo."
-	"DOTA_Settings_Tooltip_HideProfile"							"O seu perfil do Dota 2 não será acessível. O seu Perfil Steam não será acessível pelo Dota 2."
+	"DOTA_Settings_Tooltip_FreeCamOverride"					"Quantidade de segundos em que a câmera fica livre ao assistir a uma partida. É desativada caso o valor seja zerado."
+	"DOTA_Settings_Tooltip_HideProfile"						"O seu perfil do Dota 2 não será acessível. O seu Perfil Steam não será acessível pelo Dota 2."
 	"DOTA_Settings_Tooltip_ShareMatchData"				"Expõe dados das suas partidas públicas para entidades externas."
 	"DOTA_Settings_Tooltip_NetworkQuality"					"Caso tenha uma conexão de rede de baixa qualidade, marcar \"BAIXA\" pode ajudar no desempenho da sua rede."
 	"DOTA_Settings_Tooltip_MinimapSimple"					"Cores do minimapa são determinados pela sua equipe e não pelos jogadores."
@@ -25127,6 +25141,7 @@ Para participar como um jogador experiente, você precisa ter jogado {d:new_play
 	"DOTA_tooltip_econ_item_gift_dedication"	"{g:dota_filtered_string:gift_dedication}"
 	"DOTA_tooltip_econ_item_delete_restriction" "Não excluível"
 	"DOTA_tooltip_econ_item_expiry_restriction" "Validade: {t:T:expires_after_date_time} {t:s:expires_after_date_time}"
+	"DOTA_tooltip_econ_item_transform_restriction" "Será transformado em: {t:T:expires_after_date_time} {t:s:expires_after_date_time}"
 	"DOTA_tooltip_econ_item_trade_restriction_permanent" "Não pode ser trocado ou anunciado"
 	"DOTA_tooltip_econ_item_battle_pass_accessible" "Disponível durante a temporada atual"
 	"DOTA_tooltip_econ_item_seasonal_accessible" "Disponível até o final da temporada"
@@ -26693,6 +26708,7 @@ Para participar como um jogador experiente, você precisa ter jogado {d:new_play
 	"DOTA_Popup_Item_Received_Header_SeasonalItemGrant"			"Você recebeu um item sazonal!"
 	"DOTA_Popup_Item_Received_Header_FrostivusReward"			"Você recebeu uma recompensa sazonal!"
 	"DOTA_Popup_Item_Received_Header_PlusReward"				"Você recebeu uma recompensa do Dota+!"
+	"DOTA_Popup_Item_Received_Header_Transmuted"				"O seu item foi transformado!"
 
 	"DOTA_Popup_Item_Received_Header_DefaultSeason"				"Passe de Batalha"
 
@@ -27069,6 +27085,29 @@ Para participar como um jogador experiente, você precisa ter jogado {d:new_play
 	"DOTA_EventName_International2022"			"Passe de batalha de 2022"
 	"DOTA_EventNameShort_International2022"		"Passe de batalha de 2022"
 
+	"DashboardBackground_NewBloom2024_Treasure_Name"              	"Tesouro do Dragão"
+	"DashboardBackground_NewBloom2024_Treasure_Year"              	"2024"
+	"DashboardBackground_NewBloom2024_Treasure_Desc"              	"Comemore o Ano Novo Lunar com 17 conjuntos inéditos para os seus heróis favoritos, incluindo Marci, Abaddon, Fera Primal e outros."
+	"DashboardBackground_NewBloom2024_Treasure_SubDesc"        	    "Tesouro do Ano Novo Lunar"
+
+	"FrontPage_NewBloom2024_Title"        	    					"Tesouro do Dragão"
+	"FrontPage_NewBloom2024_RedEnvelopes_Title"     				"Envelopes vermelhos"
+	"FrontPage_NewBloom2024_RedEnvelopes_Desc"     					"Compre um Presente do Dragão para enviar tesouros aos seus amigos."	
+	"FrontPage_NewBloom2024_DragonCourier_Title"     				"Entregador Serpacote"
+	"FrontPage_NewBloom2024_DragonCourier_Desc"     				"Dê UM PRESENTE para obter o entregador \"Pandora, a Serpacote\". Dê OITO PRESENTES para destravar o estilo alternativo dourado."
+	"FrontPage_NewBloom2024_BuyTreasureButtonLabel"        	   		"Comprar tesouro R$ x"
+	"FrontPage_NewBloom2024_BuyGiftButtonLabel"        	    		"Comprar presentes"
+	"FrontPage_NewBloom2024_SendGiftButtonLabel"        	    	"Enviar presente"
+	"FrontPage_NewBloom2024_EnvelopesOwnedCountLabel"          		"Possui: {d:owned_gift_count}"
+	"FrontPage_NewBloom2024_UnlockedRewardLabel"	          		"Abriu"
+	"FrontPage_NewBloom2024_GiftedLabel"	      		    		"Presenteou"
+	"FrontPage_NewBloom2024_RewardCount"	      		    		"{s:unlock_progress}/1"
+	"FrontPage_NewBloom2024_PremiumRewardCount"	      		    	"{s:unlock_progress}/8"
+
+	"NewBloom2024_GiftAllButtonLabel"             				 	"Presentear todos (x9)"
+
+	"DOTA_Style_NewBloom2024_Courier_0"								"Serpacote Ancestral"
+	"DOTA_Style_NewBloom2024_Courier_1"								"Serpacote Dourada"
 
 	"DOTA_DB_SeasonPass_International_2017" "Passe de batalha do International 2017"
 	"DOTA_EventName_PlusSubscription" "Dota+"
@@ -29788,6 +29827,11 @@ Com a influência de Selemene cada vez mais fraca, e sombras de inimigos familia
 	"DOTA_HUD_rune_spawned_top"				"Runa nasceu em cima"
 	"DOTA_HUD_rune_spawned_bottom"			"Runa nasceu embaixo"
 
+	"DOTA_HUD_stat_branch_10"				"10"
+	"DOTA_HUD_stat_branch_15"				"15"
+	"DOTA_HUD_stat_branch_20"				"20"
+	"DOTA_HUD_stat_branch_25"				"25"
+
 	"DOTA_Compendium_Wagering_RemainingTokens"		"Fichas restantes"
 	"DOTA_Compendium_Wagering_TokensResetIn"		"Novo lote de fichas em "
 	"DOTA_Compendium_Wagering_PeriodicTokens:p{periodic_coins}"		"({i:periodic_coins} ficha)#|#({i:periodic_coins} fichas)"
@@ -31530,6 +31574,62 @@ Com heróis de pressão, como Zeus e a Death Prophet, dando as caras, \"ratos\" 
 	"DOTA_GameMode_AbilityDraft_ChangeLog_Title"  "Atualizações"
 	"DOTA_GameMode_AbilityDraft_ChangeLog_Tooltip"  "Veja as últimas atualizações da Seleção de Habilidades"
 
+	"DOTA_GameMode_AbilityDraft_ChangeLog_Latest_Feb_08_2024" "
+	<b><font color='#ffffff'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8 de fevereiro de 2024</font></b>
+	<br>• Agora, diversas habilidades de Cetro e Fragmento anteriormente indisponíveis são concedidas. Algumas habilidades são acessadas ao alternar o uso automático da habilidade base:
+	<br>&nbsp;&nbsp;&nbsp;→ Geleira concedida com Pontaria.
+	<br>&nbsp;&nbsp;&nbsp;→ Clone Cristalino concedido com Congelamento.
+	<br>&nbsp;&nbsp;&nbsp;→ Disparo Desalmado concedido com Além do Véu.
+	<br>&nbsp;&nbsp;&nbsp;→ Carroça concedida com Debandada.
+	<br>&nbsp;&nbsp;&nbsp;→ Rajada Ardente concedida com Andar do Esqueleto.
+	<br>&nbsp;&nbsp;&nbsp;→ Sombra Aliada concedida com Andar das Sombras.
+	<br>&nbsp;&nbsp;&nbsp;→ Contrafeitiço Aliado concedido com Contrafeitiço.
+	<br>&nbsp;&nbsp;&nbsp;→ Mãos Eletrizantes concedida com Arco Elétrico.
+	<br>&nbsp;&nbsp;&nbsp;→ Exército Ardente concedido com Pacto de Morte.
+	<br>&nbsp;&nbsp;&nbsp;→ Rajada de Fogo Bruto concedida com Rajada de Fogo.
+	<br>&nbsp;&nbsp;&nbsp;→ Onda Venenosa concedida com Praga Nociva (a habilidade passiva da Onda Venenosa é ocultada).
+	<br>• Fúria Química: agora, concede Ganância de Greevil. Será exibida como um efeito em vez de na barra de habilidades.
+	<br>• Espírito Urso: correção da ausência de habilidades.
+	<br>• Luz Cegante: correção do não aparecimento como uma habilidade selecionável.
+	<br>• Alchemist: correção da exibição de quatro habilidades básicas, &quot;empurrando&quot; as demais habilidades em uma unidade.
+	<br>• Manto e Adaga: agora, o Fragmento não concede mais Dardo Tranquilizante.
+	<br>• Devastar: agora, o Fragmento concede Mar Morto em vez de Tentáculos das Profundezas.
+	<br>• Invoker: agora, o Fragmento concede o novo aprimoramento (Pulso Eletromagnético) em vez do antigo (Meteoro do Caos).
+	<br>• Minas de Proximidade: agora, concede Placa de Campo Minado como uma habilidade adicional.
+	<br>• Espiral dos Sonhos/Onda Sombria: correção dos ataques do Cetro não funcionarem em heróis corpo a corpo.
+	<br>• Espíritos: correção do funcionamento em ilusões quando aprimorada pelo Cetro.
+	<br>• Ogre Magi: correção da obtenção de Multilançamento em vez de Sorte Besta como uma habilidade nativa.
+	<br>• Lâmina Infernal/Podridão/Pulso de Nova/Salto Primal (e diversas outras habilidades): correção da não concessão de acúmulos de Alma Ardente.
+	<br>• Água Ardente/Engrenagens Elétricas/Investida Fantasma/Quebra-Estrelas: correção do não funcionamento dos talentos quando a habilidade é selecionada no herói original.
+	<br>• Busca Mortal: correção de problema que impedia alternar o uso com atalhos.
+	<br>• Chamado da Selva: correção da impossibilidade de alternar entre Falcão e Javali.
+	<br>• Bola de Pelos: correção da exibição sem um atalho enquanto não fosse alternada.
+	<br>• Fúria Química: correção do não recebimento de dano e amplificação arcana adicionais com o Cetro.
+	<br>• Lançamento Chifrudo: agora, é corretamente concedida pelo Cetro, em vez de pelo Fragmento.
+	<br>• Chuva do Destino: agora, é corretamente concedida pelo Fragmento, em vez de pelo Cetro.
+	<br>• Bumerangue/Chamariz: agora, são concedidas pelo Fragmento/Cetro apropriado.
+	<br>• Timbersaw: correção da obtenção de Chakram Secundário com o Cetro. Agora, ele só é concedido com o talento se o Timbersaw selecionar o Chakram."
+	
+
+
+	"DOTA_GameMode_AbilityDraft_ChangeLog_Latest_Oct_06_2022" "
+	<b><font color='#ffffff'>7 de outubro de 2022</font></b>
+	<br>• Comando de Wukong: correção da possibilidade de usar apenas uma vez.
+	<br>• Shadow Demon: substituição do Capturador de Almas por Disseminar.
+	<br>• Lutador Bêbado: agora, o Cetro concede Companhia Primordial, que pode ser acessada ao alternar o uso automático. O nível dos Elementais é igual ao da habilidade Ultimate do herói que a selecionou.
+	<br>• Enredar: agora, o Cetro concede Fisgar, que pode ser acessada ao alternar o uso automático.
+	<br>• Rugido Primitivo: agora, o Cetro concede Tambor de Slom.
+	<br>• Debandada: agora, o Cetro concede Carona.
+	<br>• Lâmina Laguna: agora, o Cetro concede Capa Ardente.
+	<br>• Picada da Víbora: agora, o Cetro concede Queda Livre.
+	<br>• Encantar: agora, o Fragmento concede Coleguinhas, que pode ser acessada ao alternar o uso automático.
+	<br>• Fúria da Natureza: agora, o fragmento concede Maldição da Floresta Nativa.
+	<br>• Golpe das Profundezas: agora, o Fragmento concede Bolsão Planar.
+	<br>• Devastar: agora, o Fragmento concede Tentáculos das Profundezas.
+	<br>• Onda Venenosa: agora, o Fragmento concede Toxidez Latente.
+	<br>• Correção de vários Talentos ausentes desde o lançamento da atualização 7.32.
+	<br>&nbsp;&nbsp;&nbsp;<b>OBSERVAÇÃO:</b> para o Talento nível 20 da direita de Luna funcionar, você deve ter as habilidades Glaives Lunares e Raio Lunar."
+
 	"DOTA_GameMode_AbilityDraft_ChangeLog_Latest_Jun_01_2022" "
 	<b><font color='#ffffff'>8 de junho de 2022</font></b>
 	<br>• Agora, o mapa de estratégia e itens iniciais são visíveis durante o tempo de estratégia.
@@ -32889,6 +32989,11 @@ Com heróis de pressão, como Zeus e a Death Prophet, dando as caras, \"ratos\" 
 	"DOTA_Armory_Category_Tormentor"							"Tormenta"
 	"LoadoutSlot_Tormentor"										"Tormenta"
 	"tormentor"													"Tormenta"
+
+	"DOTA_GlobalItems_Ancient"									"Ancestral"
+	"DOTA_Armory_Category_Ancient"								"Ancestral"
+	"LoadoutSlot_Ancient"										"Ancestral"
+	"ancient"													"Ancestral"
 
 	//Diretide Cosmetics equip page
 	"DOTA_GlobalItems_Diretide"										"Efeitos sazonais do Diretide"
@@ -34296,6 +34401,11 @@ Com heróis de pressão, como Zeus e a Death Prophet, dando as caras, \"ratos\" 
 	"DOTA_Scoreboard_Tip"		"Doar"
 	"DOTA_Scoreboard_TipsAvailable"		"{d:tips_available} disponíveis"
 	"DOTA_Scoreboard_TipCooldown"		"Aguarde {s:tip_cooldown}"
+
+	"DOTA_Scoreboard_Gifting"	"Presentes"
+	"DOTA_Scoreboard_Gift"		"Presentear"
+	"DOTA_Scoreboard_GiftsAvailable"	"Disponível: {d:gifts_available}"
+	"DOTA_Scoreboard_GiftCooldown"		"Aguarde {s:gift_cooldown}"
 
 	"DOTA_Scoreboard_Bounties"				"Caças"
 	"DOTA_Scoreboard_SetBounty"				"Marcar alvo"
@@ -43185,7 +43295,6 @@ Em seções de <b>antijogo</b>, fique de olho em ações negativas em direção 
 		// END Faceless Void Arcana
 
 		// RAZOR ARCANA
-
 		"KillEaterEvent_Razor_ArcanaProgress"			"Inimigos abatidos com 100 ou mais de dano roubado pelo Elo Elástico."
 		"DOTA_Hud_Razor_Arcana_EmpoweredKills"			"Vítimas enquanto fortalecido"
 		"DOTA_Hud_Razor_Arcana_EmpoweredKillsValue"		"{d:empowered_kills}/{d:max_empowered_kills_per_game}"
@@ -43193,8 +43302,6 @@ Em seções de <b>antijogo</b>, fique de olho em ações negativas em direção 
 		"DOTA_RazorArcana_Title"						"Advento Fantasma"
 		"DOTA_RazorArcana_Score"						"{s:current_score}/{d:unlock_value}"
 		"DOTA_RazorArcana_Label"						"Progressão do Arcano"
-		
-
 		// END Razor Arcana
 
 		"DOTA_Profile_Tooltip_LifetimeGames"							"{d:lifetime_games} partidas jogadas"
@@ -45504,5 +45611,9 @@ Em seções de <b>antijogo</b>, fique de olho em ações negativas em direção 
 		"DOTA_Frostivus2023Event_Tooltip_Emoticon"				"Emoticon"
 		"DOTA_Frostivus2023Event_Tooltip_ChatWheel"				"Pintura e adesivo"
 		"DOTA_Frostivus2023Event_Tooltip_HighFive"				"Toca aqui!"
+
+		"DOTA_Gift_Title"			"Presentear"
+		"DOTA_Gift_Prompt"			"Tem certeza de que deseja presentear este item?"
+		"DOTA_Gift_Everyone_Prompt"	"Tem certeza de que deseja presentear este item a todos os jogadores da partida?"
 	}
 }

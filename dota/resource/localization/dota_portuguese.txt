@@ -7221,6 +7221,7 @@
 		"Notification_Compendium2023IncorrectRewards"		"Detetámos recentemente que um pequeno número de jogadores conseguiu aplicar mais níveis do que o pretendido a recompensas do Compêndio. Por seres um dos jogadores afetados, removemos todas as recompensas concedidas incorretamente da tua conta e reiniciámos o progresso nessas recompensas. Podes reclamar as recompensas corretas na respetiva página no Compêndio."
 		"Notification_Compendium2023ExploitedRewards"		"Detetámos recentemente que um pequeno número de jogadores conseguiu aplicar mais níveis do que o pretendido a recompensas do Compêndio. Embora a maioria dos jogadores tenha reclamado apenas algumas recompensas adicionais, descobrimos que a tua conta abusou desta falha propositadamente. Por este motivo, a tua conta foi banida do jogo, o que te impede de jogar online e de aceder ao inventário."
 		"Notification_AccountSharingBan"		"A tua conta foi banida permanentemente por teres partilhado a tua conta e/ou jogado em várias contas."
+		"Notification_GiftOpened"				"{g:dota_persona:target_accountid} abriu o item {g:dota_item_name:result_item_def} do teu presente ({g:dota_item_name:gift_item_def})!"
 
 		//-------------------------------------------------------------------------------------------
 		// Economy
@@ -9015,6 +9016,7 @@
 		"Attrib_LowLevelPurchase"					"O teu perfil do Dota 2 precisa de ser de pelo menos nível 3 para poderes trocar este item."
 		"Attrib_ExpirationDate"						"Este item vai expirar em %s1."
 		"Attrib_ExpirationDate_Usable"				"Este item irá expirar se não for usado até %s1."
+		"Attrib_ExpirationDate_Transform"			"Este item irá transformar-se em %s1."
 		"Attrib_SeasonalExpirationDate"				"O acesso a este item vai expirar em %s1."
 		"AttribFormat_AdditionalNote"				"( %s1 )"
 		"Attrib_CollectionReward"					"Recompensa de Coleção"
@@ -9113,6 +9115,10 @@
 		"Attrib_Particle826"						"Frostbloom"
 		"Attrib_Particle827"						"Candy Caster"
 		"Attrib_Particle828"						"Snowdrift"
+		"Attrib_Particle833"						"Gold Drop"
+		"Attrib_Particle834"						"Gold Glow"
+		"Attrib_Particle835"						"Smoke"
+
 
 
 		// Rarity Names
@@ -9519,6 +9525,8 @@
 		"KillEaterEventType_Muerta_PierceTheVeilKills"				"Mortos durante Pierce the Veil"
 		"KillEaterEventType_Muerta_NoVisionDeadShotHits"			"Inimigos não visíveis aterrorizados por Dead Shot"
 		"KillEaterEventType_Muerta_DeadShotKills"					"Mortos por ricochete de Dead Shot"
+
+		"KillEaterEvent_NewBloom2024_GiftsGiven"		"Dragon's Gifts oferecidos"
 
 		"KillEaterRank0"			"Gravado"
 		"KillEaterRank1"			"Pouco Notável"
@@ -19882,6 +19890,7 @@ Provocação especial para os Techies"
 
 		"DOTA_PlayerSalute_ChatMessage"	"deu uma gorjeta a %s1. Bem jogado!"
 		"DOTA_PartyNotValidLaneSelections"	"As lanes selecionadas pelo grupo são incompatíveis."
+		"DOTA_PlayerGift_ChatMessage"	"ofereceu %s2 a %s1!"
 
 		"DOTA_BattleLevels"	"Níveis de Batalha"
 
@@ -23993,6 +24002,7 @@ Jogadores experientes que queiram entrar terão de ter jogado pelo menos {d:new_
 	"dota_settings_combatlogtoggle"				"Histórico de combate"
 	"dota_settings_pause"						"Pausar"
 	"dota_settings_screenshot"					"Capturar ecrã"
+	"dota_settings_show_overlay_map"			"Mostrar sobreposição no mapa"
 	"dota_settings_console"						"Consola"
 	"dota_settings_death_summary"				"Resumo de morte"
 	"dota_settings_dota_alt"					"Modificador de Alt"
@@ -24140,6 +24150,7 @@ Jogadores experientes que queiram entrar terão de ter jogado pelo menos {d:new_
 	"dota_settings_camerascreenshake"			"Permitir estremecimento do ecrã"
 	"dota_settings_cameraresetonspawn"			"Centrar câmara no herói ao reentrar"
 	"dota_settings_cameradeadcolorshift"		"Mudar cor da câmara enquanto morto"
+	"dota_settings_free_cam_override"			"Duração de câmara livre"
 	"dota_settings_profile"						"Perfil"
 	"dota_settings_social"						"Social"
 	"dota_settings_hideprofile"					"Ocultar perfis do Dota e do Steam"
@@ -24379,6 +24390,8 @@ Jogadores experientes que queiram entrar terão de ter jogado pelo menos {d:new_
 	"DOTA_Hotkeys_Tooltip_CombatLogToggle"  "Abre o histórico de combate."
 	"DOTA_Hotkeys_Tooltip_Pause"  "Pausa ou retoma uma partida a decorrer."
 	"DOTA_Hotkeys_Tooltip_ScreenshotSettings"  "Tira uma captura de ecrã do momento atual da partida."
+	"DOTA_Hotkeys_Tooltip_OverlayMapSettings"  "Mostra a sobreposição no mapa enquanto pressionado."
+	
 	"DOTA_Hotkeys_Tooltip_Console"  "Abre a consola. (Apenas para utilizadores avançados)"
 	"DOTA_Hotkeys_Tooltip_DeathSummary"  "Mostra o resumo de morte de um herói que tenha morrido."
 	"DOTA_Hotkeys_Tooltip_DotaAlt"	"Define outra tecla para desempenhar as funções habituais da tecla Alt"
@@ -24426,7 +24439,8 @@ Jogadores experientes que queiram entrar terão de ter jogado pelo menos {d:new_
 	"DOTA_Settings_Tooltip_Screenshake"						"Alguns feitiços e stuns agitam a câmara."
 	"DOTA_Settings_Tooltip_CameraRespawn"					"Foca a câmara no teu Herói assim que ele reentrar em jogo."
 	"DOTA_Settings_Tooltip_Camera_Hold_Select_To_Follow"	"Manter premida a tecla para \"Selecionar herói\" fará com que a câmara siga o teu herói."
-	"DOTA_Settings_Tooltip_HideProfile"							"O teu perfil do Dota 2 não será acessível a ninguém. O teu Perfil Steam não será acessível a partir do Dota 2."
+	"DOTA_Settings_Tooltip_FreeCamOverride"					"O número de segundos em que a câmara livre fica ativa enquanto assistes a uma partida. Desativada se o valor for zero."
+	"DOTA_Settings_Tooltip_HideProfile"						"O teu perfil do Dota 2 não será acessível a ninguém. O teu Perfil Steam não será acessível a partir do Dota 2."
 	"DOTA_Settings_Tooltip_ShareMatchData"				"Esta opção expõe dados das tuas partidas públicas a entidades de terceiros."
 	"DOTA_Settings_Tooltip_NetworkQuality"					"Se tiveres uma ligação à rede fraca, definir isto como \"Baixa\" pode melhorar o desempenho da tua rede."
 	"DOTA_Settings_Tooltip_MinimapSimple"					"As cores do minimapa são determinadas pela equipa em vez de individualmente."
@@ -25471,6 +25485,7 @@ Jogadores experientes que queiram entrar terão de ter jogado pelo menos {d:new_
 	"DOTA_tooltip_econ_item_gift_dedication"	"{g:dota_filtered_string:gift_dedication}"
 	"DOTA_tooltip_econ_item_delete_restriction" "Não eliminável"
 	"DOTA_tooltip_econ_item_expiry_restriction" "Válido até: {t:T:expires_after_date_time} {t:s:expires_after_date_time}"
+	"DOTA_tooltip_econ_item_transform_restriction" "Transforma-se em: {t:T:expires_after_date_time} {t:s:expires_after_date_time}"
 	"DOTA_tooltip_econ_item_trade_restriction_permanent" "Não trocável nem utilizável no Mercado"
 	"DOTA_tooltip_econ_item_battle_pass_accessible" "Disponível durante a temporada deste Passe de Batalha"
 	"DOTA_tooltip_econ_item_seasonal_accessible" "Disponível até ao final da temporada"
@@ -27048,6 +27063,7 @@ Jogadores experientes que queiram entrar terão de ter jogado pelo menos {d:new_
 	"DOTA_Popup_Item_Received_Header_SeasonalItemGrant"			"Recebeste um item sazonal!"
 	"DOTA_Popup_Item_Received_Header_FrostivusReward"			"Recebeste uma recompensa sazonal!"
 	"DOTA_Popup_Item_Received_Header_PlusReward"				"Recebeste uma recompensa do Dota Plus!"
+	"DOTA_Popup_Item_Received_Header_Transmuted"				"O teu item transformou-se!"
 
 	"DOTA_Popup_Item_Received_Header_DefaultSeason"				"Passe de Batalha"
 
@@ -27434,6 +27450,29 @@ Jogadores experientes que queiram entrar terão de ter jogado pelo menos {d:new_
 	"DOTA_EventName_International2022"			"Passe de Batalha de 2022"
 	"DOTA_EventNameShort_International2022"		"Passe de Batalha de 2022"
 
+	"DashboardBackground_NewBloom2024_Treasure_Name"              	"Dragon's Hoard"
+	"DashboardBackground_NewBloom2024_Treasure_Year"              	"2024"
+	"DashboardBackground_NewBloom2024_Treasure_Desc"              	"Comemora o Ano Novo Lunar com 17 conjuntos novos para os teus heróis favoritos, como Marci, Abaddon, Primal Beast e muitos mais."
+	"DashboardBackground_NewBloom2024_Treasure_SubDesc"        	    "Tesouro do Ano Novo Lunar"
+
+	"FrontPage_NewBloom2024_Title"        	    					"Tesouro: Dragon's Hoard"
+	"FrontPage_NewBloom2024_RedEnvelopes_Title"     				"Envelopes vermelhos"
+	"FrontPage_NewBloom2024_RedEnvelopes_Desc"     					"Compra um Dragon's Gift para enviares tesouros a amigos."	
+	"FrontPage_NewBloom2024_DragonCourier_Title"     				"Packwyrm Courier"
+	"FrontPage_NewBloom2024_DragonCourier_Desc"     				"Oferece UM PRESENTE para ganhares o estafeta \"Pandora the Packwyrm\". Oferece OITO para ganhares o estilo dourado."
+	"FrontPage_NewBloom2024_BuyTreasureButtonLabel"        	   		"Comprar tesouro $x.00"
+	"FrontPage_NewBloom2024_BuyGiftButtonLabel"        	    		"Comprar presentes"
+	"FrontPage_NewBloom2024_SendGiftButtonLabel"        	    	"Enviar presente"
+	"FrontPage_NewBloom2024_EnvelopesOwnedCountLabel"          		"Tens {d:owned_gift_count}"
+	"FrontPage_NewBloom2024_UnlockedRewardLabel"	          		"Adquirido"
+	"FrontPage_NewBloom2024_GiftedLabel"	      		    		"Presentes"
+	"FrontPage_NewBloom2024_RewardCount"	      		    		"{s:unlock_progress} / 1"
+	"FrontPage_NewBloom2024_PremiumRewardCount"	      		    	"{s:unlock_progress} / 8"
+
+	"NewBloom2024_GiftAllButtonLabel"             				 	"Oferecer a todos (x9)"
+
+	"DOTA_Style_NewBloom2024_Courier_0"								"Ancient Packwyrm"
+	"DOTA_Style_NewBloom2024_Courier_1"								"Golden Packwyrm"
 
 	"DOTA_DB_SeasonPass_International_2017" "Passe de Batalha do International 2017"
 	"DOTA_EventName_PlusSubscription" "Dota Plus"
@@ -30208,6 +30247,11 @@ Estando a influência de Selemene mais fraca do que nunca, e ao ver sombras mali
 	"DOTA_HUD_rune_spawned_top"				"Runa apareceu em cima"
 	"DOTA_HUD_rune_spawned_bottom"			"Runa apareceu em baixo"
 
+	"DOTA_HUD_stat_branch_10"				"10"
+	"DOTA_HUD_stat_branch_15"				"15"
+	"DOTA_HUD_stat_branch_20"				"20"
+	"DOTA_HUD_stat_branch_25"				"25"
+
 	"DOTA_Compendium_Wagering_RemainingTokens"		"Fichas restantes"
 	"DOTA_Compendium_Wagering_TokensResetIn"		"Reiniciam em "
 	"DOTA_Compendium_Wagering_PeriodicTokens:p{periodic_coins}"		"({i:periodic_coins} ficha)#|#({i:periodic_coins} fichas)"
@@ -31955,8 +31999,46 @@ Outros heróis também ficaram em destaque: heróis que fazem pressão no iníci
 	"DOTA_GameMode_AbilityDraft_ChangeLog_Title"  "Notas de alterações"
 	"DOTA_GameMode_AbilityDraft_ChangeLog_Tooltip"  "Vê as últimas atualizações do modo de Seleção de Habilidades"
 
+	"DOTA_GameMode_AbilityDraft_ChangeLog_Latest_Feb_08_2024" "
+	<b><font color='#ffffff'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8 de fevereiro de 2024</font></b>
+	<br>• Diversas habilidades concedidas por Aghanim's Scepter/Shard anteriormente indisponíveis são agora concedidas. É possível aceder a algumas habilidades ao alternar o uso automático da habilidade base:
+	<br>&nbsp;&nbsp;&nbsp;→ Glacier concedido com Marksmanship.
+	<br>&nbsp;&nbsp;&nbsp;→ Crystal Clone concedido com Frostbite.
+	<br>&nbsp;&nbsp;&nbsp;→ Parting Shot concedido com Pierce the Veil.
+	<br>&nbsp;&nbsp;&nbsp;→ Work Horse concedido com Stampede.
+	<br>&nbsp;&nbsp;&nbsp;→ Burning Barrage concedido com Skeleton Walk.
+	<br>&nbsp;&nbsp;&nbsp;→ Friendly Shadow concedido com Shadow Walk.
+	<br>&nbsp;&nbsp;&nbsp;→ Counterspell Ally concedido com Counterspell.
+	<br>&nbsp;&nbsp;&nbsp;→ Lightning Hands concedido com Arc Lightning.
+	<br>&nbsp;&nbsp;&nbsp;→ Burning Army concedido com Death Pact.
+	<br>&nbsp;&nbsp;&nbsp;→ Unrefined Fireblast concedido com Fireblast.
+	<br>&nbsp;&nbsp;&nbsp;→ Poison Nova concedido com Noxious Plague (a habilidade passiva de Poison Nova é ocultada).
+	<br>• Chemical Rage agora concede Greevil's Greed. Irá aparecer como um buff em vez de na barra de habilidades.
+	<br>• Foi corrigido um problema que impedia o Spirit Bear de ter habilidades.
+	<br>• Foi corrigido um problema que impedia Blinding Light de aparecer como uma habilidade selecionável.
+	<br>• Foi corrigido um problema que fazia com que o Alchemist tivesse quatro habilidades básicas à escolha, o que podia ocultar outras habilidades.
+	<br>• Agora, escolher Cloak and Dagger e adquirir Aghanim's Shard já não concede Sleeping Dart.
+	<br>• Agora, escolher Ravage e adquirir Aghanim's Shard concede Dead in the Water em vez de Tendrils of the Deep.
+	<br>• Aghanim's Shard agora tem a nova interação com E.M.P. em vez da antiga com Chaos Meteor.
+	<br>• Proximity Mines agora concede Minefield Sign como uma habilidade adicional.
+	<br>• Foi corrigido um bug que impedia os ataques de Shadow Wave e Dream Coil (com Aghanim's Scepter) de funcionarem em heróis Melee.
+	<br>• Foi corrigido um bug que permitia o funcionamento de Spirits em ilusões enquanto o utilizador tivesse um Aghanim's Scepter.
+	<br>• Ogre Magi agora tem Dumb Luck como habilidade nativa em vez de Multicast.
+	<br>• Foram corrigidos casos em que algumas habilidades (Primal Spring, Pulse Nova, Rot, Infernal Blade, entre outras) não concediam acumulações de Fiery Soul.
+	<br>• Foram corrigidos casos em que talentos referentes a Starbreaker, Cinder Brew, Phantom Rush e Power Cogs não apareciam se essas habilidades tivessem sido selecionadas no respetivo herói original.
+	<br>• Foi corrigido um caso onde não era possível alternar o uso de Death Seeker com atalhos.
+	<br>• Foi corrigido um caso onde não era possível alternar Call of the Wild Hawk para trocar entre falcão e javali.
+	<br>• Foi corrigido um caso em que a habilidade Hairball aparecia sem um atalho enquanto não fosse alternada.
+	<br>• Foi corrigido um problema com a habilidade Chemical Rage com Aghanim's Scepter, que não estava a conceder um bónus de dano e amplificação de feitiços.
+	<br>• A habilidade Horn Toss é agora concedida corretamente por Aghanim's Scepter em vez de Aghanim's Shard.
+	<br>• A habilidade Rain of Destiny é agora concedida corretamente por Aghanim's Shard em vez de Aghanim's Scepter.
+	<br>• As habilidades Hunter's Boomerang e Decoy são agora concedidas respetivamente por Aghanim's Shard e Aghanim's Scepter, em vez de qualquer um dos dois.
+	<br>• Foi corrigido um caso em que Timbersaw recebia Second Chakram ao adquirir Aghanim's Scepter. Agora, a habilidade só é concedida através do respetivo talento se Timbersaw tiver escolhido Chakram na fase de seleção de habilidades."
+	
+
+
 	"DOTA_GameMode_AbilityDraft_ChangeLog_Latest_Oct_06_2022" "
-	<b><font color='#ffffff'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7 de outubro de 2022</font></b>
+	<b><font color='#ffffff'>7 de outubro de 2022</font></b>
 	<br>• Foi corrigido um problema com a habilidade Wukong's Command, que só podia ser usada uma vez.
 	<br>• A habilidade Soul Catcher, do Shadow Demon, foi substituída por Disseminate.
 	<br>• Agora, escolher Drunken Brawler e adquirir Aghanim's Scepter concede Primal Companion (ativa o uso automático de modo a trocares para Primal Companion). O nível do guerreiro elementar é igual ao da habilidade Ultimate que selecionares para o teu herói.
@@ -33487,6 +33569,11 @@ Outros heróis também ficaram em destaque: heróis que fazem pressão no iníci
 	"LoadoutSlot_Tormentor"										"Tormentor"
 	"tormentor"													"Tormentor"
 
+	"DOTA_GlobalItems_Ancient"									"Ancient"
+	"DOTA_Armory_Category_Ancient"								"Ancient"
+	"LoadoutSlot_Ancient"										"Ancient"
+	"ancient"													"Ancient"
+
 	//Diretide Cosmetics equip page
 	"DOTA_GlobalItems_Diretide"										"Efeitos do Diretide"
 	"DOTA_Armory_Category_Diretide_2020"							"Diretide 2020"
@@ -34934,6 +35021,11 @@ Outros heróis também ficaram em destaque: heróis que fazem pressão no iníci
 	"DOTA_Scoreboard_Tip"		"Dar"
 	"DOTA_Scoreboard_TipsAvailable"		"{d:tips_available} dispon."
 	"DOTA_Scoreboard_TipCooldown"		"(Espera {s:tip_cooldown})"
+
+	"DOTA_Scoreboard_Gifting"	"Presentes"
+	"DOTA_Scoreboard_Gift"		"Presentear"
+	"DOTA_Scoreboard_GiftsAvailable"	"Disponíveis: {d:gifts_available}"
+	"DOTA_Scoreboard_GiftCooldown"		"(Espera {s:gift_cooldown})"
 
 	"DOTA_Scoreboard_Bounties"				"Alvos"
 	"DOTA_Scoreboard_SetBounty"				"Pôr cabeça a prémio"
@@ -44655,7 +44747,6 @@ Contudo, se achares que não conseguiste dedicar o nível de atenção apropriad
 		// END Faceless Void Arcana
 
 		// RAZOR ARCANA
-
 		"KillEaterEvent_Razor_ArcanaProgress"			"Mortes causadas com 100+ de dano roubado via Static Link."
 		"DOTA_Hud_Razor_Arcana_EmpoweredKills"			"Mortos com bónus de Static Link"
 		"DOTA_Hud_Razor_Arcana_EmpoweredKillsValue"		"{d:empowered_kills}/{d:max_empowered_kills_per_game}"
@@ -44663,8 +44754,6 @@ Contudo, se achares que não conseguiste dedicar o nível de atenção apropriad
 		"DOTA_RazorArcana_Title"						"Phantom Advent"
 		"DOTA_RazorArcana_Score"						"{s:current_score}/{d:unlock_value}"
 		"DOTA_RazorArcana_Label"						"Progresso Arcano"
-		
-
 		// END Razor Arcana
 
 		"DOTA_Profile_Tooltip_LifetimeGames"							"{d:lifetime_games} partidas jogadas"
@@ -46979,5 +47068,9 @@ Contudo, se achares que não conseguiste dedicar o nível de atenção apropriad
 		"DOTA_Frostivus2023Event_Tooltip_Emoticon"				"Emoticon"
 		"DOTA_Frostivus2023Event_Tooltip_ChatWheel"				"Spray e autocolante"
 		"DOTA_Frostivus2023Event_Tooltip_HighFive"				"\"Dá mais cinco\""
+
+		"DOTA_Gift_Title"			"Oferecer presente"
+		"DOTA_Gift_Prompt"			"Tens a certeza de que queres presentear este item?"
+		"DOTA_Gift_Everyone_Prompt"	"Tens a certeza de que queres presentear este item a todos os jogadores na partida?"
 	}
 }

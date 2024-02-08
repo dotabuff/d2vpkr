@@ -3832,7 +3832,7 @@ Jak se kulturní vliv obou kamenů šířil, došlo k nevyhnutelnému rozporu me
 		
 		"DOTA_Giftwrap_Confirm"			"Opravdu chceš zabalit tento předmět? Předmět zmizí a stane se z něj zabalený dárek."
 		"DOTA_OpenGift_Confirm"			"Opravdu chceš rozbalit tento dárek?"
-		"dota_select_friend_title"		"Vyber hráče, kterému chceš poslat tento dárek."
+		"dota_select_friend_title"		"Vyber, komu chceš odeslat tento dárek."
 		"dota_gift_popup_footer"		"Nevidíš tu nějakého přítele? Přečti si více o <a href=\"event:DOTAShowGiftRestrictionsPopup()\">omezeních darování</a>."
 		"DOTA_DeliverGift_Confirm"		"Opravdu chceš poslat tento dárek hráči %s1?"
 		"DOTA_DeliverGift_Send"		"Odeslat dárek"
@@ -7223,6 +7223,7 @@ Jak se kulturní vliv obou kamenů šířil, došlo k nevyhnutelnému rozporu me
 		"Notification_Compendium2023IncorrectRewards"		"Nedávno jsme objevili problém, kvůli kterému bylo malé množství hráčů schopno navýšit úrovně svých odměn Přehledu o víc, než mělo být možné. Protože jsi jedním z těchto hráčů, odstranili jsme z tvého účtu všechny chybně nabyté odměny a jejich úrovně resetovali na výchozí. Odměny, na které máš skutečně nárok, si můžeš vyzvednout klasicky přímo z Přehledu."
 		"Notification_Compendium2023ExploitedRewards"		"Nedávno jsme objevili problém, kvůli kterému bylo malé množství hráčů schopno navýšit úrovně svých odměn Přehledu o víc, než mělo být možné. Ale zatímco většina těchto hráčů si navíc vyzvedla pouze několik odměn, ty jsi problému úmyslně zneužil. Z toho důvodu na tebe byl uvalen herní ban zabraňující v hraní online a také v přístupu do inventáře."
 		"Notification_AccountSharingBan"		"Tvůj účet byl permanentně zabanován za sdílení účtu a/nebo hraní na více účtech."
+		"Notification_GiftOpened"				"{g:dota_persona:target_accountid} získal z tvého dárku {g:dota_item_name:gift_item_def} předmět {g:dota_item_name:result_item_def}!"
 
 		//-------------------------------------------------------------------------------------------
 		// Economy
@@ -9013,6 +9014,7 @@ Jak se kulturní vliv obou kamenů šířil, došlo k nevyhnutelnému rozporu me
 		"Attrib_LowLevelPurchase"					"Tento předmět nemůžeš použít při obchodování, dokud tvůj Dota profil nedosáhne 3. úrovně."
 		"Attrib_ExpirationDate"						"Tento předmět přestane fungovat %s1."
 		"Attrib_ExpirationDate_Usable"				"Tento předmět zmizí, pokud nebude použit do: %s1."
+		"Attrib_ExpirationDate_Transform"			"Tento předmět se přemění %s1."
 		"Attrib_SeasonalExpirationDate"				"Tento předmět vyprší dne %s1."
 		"AttribFormat_AdditionalNote"				"( %s1 )"
 		"Attrib_CollectionReward"					"Sběratelská odměna"
@@ -9111,6 +9113,10 @@ Jak se kulturní vliv obou kamenů šířil, došlo k nevyhnutelnému rozporu me
 		"Attrib_Particle826"						"Frostbloom"
 		"Attrib_Particle827"						"Candy Caster"
 		"Attrib_Particle828"						"Snowdrift"
+		"Attrib_Particle833"						"Gold Drop"
+		"Attrib_Particle834"						"Gold Glow"
+		"Attrib_Particle835"						"Smoke"
+
 
 
 		// Rarity Names
@@ -9255,7 +9261,7 @@ Jak se kulturní vliv obou kamenů šířil, došlo k nevyhnutelnému rozporu me
 		"KillEaterEventType_DragonKnight_KillsInDragonForm"		"Zabití při používání Dragon Form"
 		"KillEaterEventType_DragonKnight_BreatheFireKills"		"Zabití pomocí Breathe Fire"
 		"KillEaterEventType_DragonKnight_DragonTails"			"Omráčení pomocí Dragon Tail"
-		"KillEaterEventType_DragonKnight_SplashKills"			"Zabití okolním poškozením"
+		"KillEaterEventType_DragonKnight_SplashKills"			"Zabití plošným poškozením"
 
 		"KillEaterEventType_Morphling_MorphReplicates"			"Použitelné repliky"
 		"KillEaterEventType_Morphling_HeroesReplicated"			"Replikovaní hrdinové"
@@ -9517,6 +9523,8 @@ Jak se kulturní vliv obou kamenů šířil, došlo k nevyhnutelnému rozporu me
 		"KillEaterEventType_Muerta_PierceTheVeilKills"				"Zabití během Pierce the Veil"
 		"KillEaterEventType_Muerta_NoVisionDeadShotHits"			"Vystrašení Dead Shot naslepo"
 		"KillEaterEventType_Muerta_DeadShotKills"					"Zabití odrazem Dead Shot"
+
+		"KillEaterEvent_NewBloom2024_GiftsGiven"		"Rozdané červené obálky"
 
 		"KillEaterRank0"			"Inscribed"
 		"KillEaterRank1"			"Unremarkable"
@@ -16132,7 +16140,7 @@ Speciální taunt pro hrdinu Techies"
 		"SocialFeed_MatchEvent_MatchMVP" "[name:%s1]%s2[/name] byl zvolen nejlepším hráčem při hraní za hrdinu [hero:%s3]%s4[/hero]."
 		"SocialFeed_MatchEvent_Button" "[match:%s1]Zobrazit detaily zápasu[/match]"
 
-		"SocialFeed_EconomyEvent_UnwrapGift" "[name:%s1]%s2[/name] získal předmět [item:%s3]%s4[/item] z dárku od hráče [name:%s5]%s6[/name]."
+		"SocialFeed_EconomyEvent_UnwrapGift" "[name:%s1]%s2[/name] získal z dárku od hráče [name:%s5]%s6[/name] předmět [item:%s3]%s4[/item]."
 
 		"SocialFeed_TrophyLevelEvent_New" "[name:%s1]%s2[/name] získal novou trofej: [trophy:%s3]%s4[/trophy]"
 		"SocialFeed_TrophyLevelEvent_New_Level" "[name:%s1]%s2[/name] získal novou trofej: [trophy:%s3]%s4 – %s5[/trophy]"
@@ -16155,7 +16163,7 @@ Speciální taunt pro hrdinu Techies"
 		"SocialFeed2_MatchEvent_MatchMVP" "{g:dota_persona:account_id} byl zvolen nejlepším hráčem při hraní za hrdinu <a class=\"FeedHeroName\" href=\"event:DOTAGoToHeroPage({d:hero_id})\">{g:dota_hero_name:hero_id}</a>."
 		"SocialFeed2_MatchEvent_Button" "Zobrazit detaily zápasu"
 
-		"SocialFeed2_EconomyEvent_UnwrapGift" "{g:dota_persona:receiver_account_id} získal předmět {g:dota_item_name:item_def} z dárku od hráče {g:dota_persona:sender_account_id}."
+		"SocialFeed2_EconomyEvent_UnwrapGift" "{g:dota_persona:receiver_account_id} získal z dárku od hráče {g:dota_persona:sender_account_id} předmět {g:dota_item_name:item_def}."
 		"SocialFeed2_EconomyEvent_ReceivedGift" "{g:dota_persona:receiver_account_id} obdržel od hráče {g:dota_persona:sender_account_id} dárek {g:dota_item_name:item_def}."
 
 		"SocialFeed2_TrophyLevelEvent_New" "{g:dota_persona:account_id} získal novou trofej: <b class=\"FeedTrophyName\">{g:trophy_name:trophy_id}</b>"
@@ -19877,6 +19885,7 @@ Speciální taunt pro hrdinu Techies"
 
 		"DOTA_PlayerSalute_ChatMessage"	"dal dýško hráči %s1. Zaslouženě!"
 		"DOTA_PartyNotValidLaneSelections"	"Role vybrané členy tvojí skupiny nejsou kompatibilní."
+		"DOTA_PlayerGift_ChatMessage"	"daroval hráči %s1 předmět %s2!"
 
 		"DOTA_BattleLevels"	"Úrovně Deníku"
 
@@ -23988,6 +23997,7 @@ Aby se mohl připojit zkušenější hráč, musí mít odehráno nejméně {d:n
 	"dota_settings_combatlogtoggle"				"Záznam boje"
 	"dota_settings_pause"						"Pozastavení hry"
 	"dota_settings_screenshot"					"Snímek obrazovky"
+	"dota_settings_show_overlay_map"			"Zobrazení průhledné mapy"
 	"dota_settings_console"						"Otevření konzole"
 	"dota_settings_death_summary"				"Rozbor úmrtí"
 	"dota_settings_dota_alt"					"Náhrada za klávesu ALT"
@@ -24135,6 +24145,7 @@ Aby se mohl připojit zkušenější hráč, musí mít odehráno nejméně {d:n
 	"dota_settings_camerascreenshake"			"Otřesy obrazu"
 	"dota_settings_cameraresetonspawn"			"Vycentrování kamery na místo oživení"
 	"dota_settings_cameradeadcolorshift"		"Zabarvení obrazu po smrti"
+	"dota_settings_free_cam_override"			"Vynucení volné kamery"
 	"dota_settings_profile"						"Profil"
 	"dota_settings_social"						"Interakce s hráči"
 	"dota_settings_hideprofile"					"Skrýt Dota profil a profil ve službě Steam"
@@ -24374,6 +24385,8 @@ Aby se mohl připojit zkušenější hráč, musí mít odehráno nejméně {d:n
 	"DOTA_Hotkeys_Tooltip_CombatLogToggle"  "Otevře záznam boje."
 	"DOTA_Hotkeys_Tooltip_Pause"  "Pozastaví, nebo opětovně spustí probíhající zápas."
 	"DOTA_Hotkeys_Tooltip_ScreenshotSettings"  "Pořídí snímek obrazovky z tvého momentálního pohledu."
+	"DOTA_Hotkeys_Tooltip_OverlayMapSettings"  "Při držení této klávesy je zobrazena velká průhledná mapa."
+	
 	"DOTA_Hotkeys_Tooltip_Console"  "Otevře konzoli (pouze pro pokročilé uživatele)."
 	"DOTA_Hotkeys_Tooltip_DeathSummary"  "Zobrazí okno s rozborem úmrtí."
 	"DOTA_Hotkeys_Tooltip_DotaAlt"	"Pokud potřebuješ, můžeš funkci klávesy ALT přiřadit jiné klávese."
@@ -24421,7 +24434,8 @@ Aby se mohl připojit zkušenější hráč, musí mít odehráno nejméně {d:n
 	"DOTA_Settings_Tooltip_Screenshake"						"Některá kouzla a omráčení zatřesou kamerou."
 	"DOTA_Settings_Tooltip_CameraRespawn"					"Znovu zaměří kameru na tvého hrdinu poté, co oživne."
 	"DOTA_Settings_Tooltip_Camera_Hold_Select_To_Follow"	"Akce „Výběr hrdiny“ ho bude při držení dané klávesy následovat (resp. bude ho následovat kamera)."
-	"DOTA_Settings_Tooltip_HideProfile"							"Tvůj Dota 2 profil nebude nikým dostupný a tvůj profil ve službě Steam nebude dostupný ze hry Dota 2."
+	"DOTA_Settings_Tooltip_FreeCamOverride"					"Počet sekund, po který je při sledování aktivní vynucení volné kamery. Nulová hodnota vynucení zakáže."
+	"DOTA_Settings_Tooltip_HideProfile"						"Tvůj Dota 2 profil nebude nikým dostupný a tvůj profil ve službě Steam nebude dostupný ze hry Dota 2."
 	"DOTA_Settings_Tooltip_ShareMatchData"				"Umožní třetím stranám nahlížet do dat z tvých veřejných zápasů."
 	"DOTA_Settings_Tooltip_NetworkQuality"					"Pokud máš špatné internetové připojení, nastavení této hodnoty na „Nízká“ by mohlo pomoci."
 	"DOTA_Settings_Tooltip_MinimapSimple"					"Barvy na minimapě budou určeny podle týmu, ne podle jednotlivých hráčů."
@@ -25466,6 +25480,7 @@ Aby se mohl připojit zkušenější hráč, musí mít odehráno nejméně {d:n
 	"DOTA_tooltip_econ_item_gift_dedication"	"{g:dota_filtered_string:gift_dedication}"
 	"DOTA_tooltip_econ_item_delete_restriction" "Nelze odstranit"
 	"DOTA_tooltip_econ_item_expiry_restriction" "Vyprší: {t:T:expires_after_date_time} {t:s:expires_after_date_time}"
+	"DOTA_tooltip_econ_item_transform_restriction" "Přemění se: {t:T:expires_after_date_time} {t:s:expires_after_date_time}"
 	"DOTA_tooltip_econ_item_trade_restriction_permanent" "Nelze vyměnit nebo prodat"
 	"DOTA_tooltip_econ_item_battle_pass_accessible" "Dostupné během trvání současného Bitevního deníku"
 	"DOTA_tooltip_econ_item_seasonal_accessible" "Dostupné do konce tohoto ročního období"
@@ -27043,6 +27058,7 @@ Aby se mohl připojit zkušenější hráč, musí mít odehráno nejméně {d:n
 	"DOTA_Popup_Item_Received_Header_SeasonalItemGrant"			"Získal jsi předmět ročního období!"
 	"DOTA_Popup_Item_Received_Header_FrostivusReward"			"Získal jsi sezónní odměnu!"
 	"DOTA_Popup_Item_Received_Header_PlusReward"				"Získal jsi odměnu programu Dota Plus!"
+	"DOTA_Popup_Item_Received_Header_Transmuted"				"Tvůj předmět se přeměnil!"
 
 	"DOTA_Popup_Item_Received_Header_DefaultSeason"				"Bitevní deník"
 
@@ -27432,6 +27448,29 @@ Aby se mohl připojit zkušenější hráč, musí mít odehráno nejméně {d:n
 	"DOTA_EventName_International2022"			"Bitevní deník roku 2022"
 	"DOTA_EventNameShort_International2022"		"Deník roku 2022"
 
+	"DashboardBackground_NewBloom2024_Treasure_Name"              	"Dragon's Hoard"
+	"DashboardBackground_NewBloom2024_Treasure_Year"              	"2024"
+	"DashboardBackground_NewBloom2024_Treasure_Desc"              	"Oslav příchod nového lunárního roku se 17 sety pro oblíbené hrdiny včetně Marci, Abaddona, Primal Beasta a dalších."
+	"DashboardBackground_NewBloom2024_Treasure_SubDesc"        	    "Truhla lunárního nového roku"
+
+	"FrontPage_NewBloom2024_Title"        	    					"Truhla Dragon's Hoard"
+	"FrontPage_NewBloom2024_RedEnvelopes_Title"     				"Červené obálky"
+	"FrontPage_NewBloom2024_RedEnvelopes_Desc"     					"Obdaruj své přátele červenými obálkami s truhlou."	
+	"FrontPage_NewBloom2024_DragonCourier_Title"     				"Kurýr Packwyrm"
+	"FrontPage_NewBloom2024_DragonCourier_Desc"     				"JEDEN DÁREK ti zajistí kurýra Pandora the Packwyrm. OSM DÁRKŮ pak odemkne zlatý styl tohoto kurýra."
+	"FrontPage_NewBloom2024_BuyTreasureButtonLabel"        	   		"Zakoupit truhlu – $x,00"
+	"FrontPage_NewBloom2024_BuyGiftButtonLabel"        	    		"Zakoupit"
+	"FrontPage_NewBloom2024_SendGiftButtonLabel"        	    	"Darovat"
+	"FrontPage_NewBloom2024_EnvelopesOwnedCountLabel"          		"Vlastníš: {d:owned_gift_count}"
+	"FrontPage_NewBloom2024_UnlockedRewardLabel"	          		"Odemčeno"
+	"FrontPage_NewBloom2024_GiftedLabel"	      		    		"Darováno"
+	"FrontPage_NewBloom2024_RewardCount"	      		    		"{s:unlock_progress} / 1"
+	"FrontPage_NewBloom2024_PremiumRewardCount"	      		    	"{s:unlock_progress} / 8"
+
+	"NewBloom2024_GiftAllButtonLabel"             				 	"Obdarovat všechny (×9)"
+
+	"DOTA_Style_NewBloom2024_Courier_0"								"Ancient Packwyrm"
+	"DOTA_Style_NewBloom2024_Courier_1"								"Golden Packwyrm"
 
 	"DOTA_DB_SeasonPass_International_2017" "Bitevní deník – The International 2017"
 	"DOTA_EventName_PlusSubscription" "Dota Plus"
@@ -30203,6 +30242,11 @@ Ta proto nyní hledá pět nových ochránců, kteří jí pomohou v nouzi a odr
 	"DOTA_HUD_rune_spawned_top"				"Runa se objevila nahoře"
 	"DOTA_HUD_rune_spawned_bottom"			"Runa se objevila dole"
 
+	"DOTA_HUD_stat_branch_10"				"10"
+	"DOTA_HUD_stat_branch_15"				"15"
+	"DOTA_HUD_stat_branch_20"				"20"
+	"DOTA_HUD_stat_branch_25"				"25"
+
 	"DOTA_Compendium_Wagering_RemainingTokens"		"Zbývající žetony"
 	"DOTA_Compendium_Wagering_TokensResetIn"		"Reset žetonů za"
 	"DOTA_Compendium_Wagering_PeriodicTokens:p{periodic_coins}"		"({i:periodic_coins} žeton)#|#({i:periodic_coins} žetony)#|#({i:periodic_coins} žetonů)#|#({i:periodic_coins} žetonu)"
@@ -31949,8 +31993,45 @@ Oblíbenosti se těší také pusheři prvních fází hry (jmenovitě Zeus a De
 	"DOTA_GameMode_AbilityDraft_ChangeLog_Title"  "Seznam změn"
 	"DOTA_GameMode_AbilityDraft_ChangeLog_Tooltip"  "Prohlédni si poslední změny Výběru schopností"
 
+	"DOTA_GameMode_AbilityDraft_ChangeLog_Latest_Feb_08_2024" "	<b><font color='#ffffff'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8. února 2024</font></b>
+	<br>• Následující schopnosti nově poskytují také dříve nedostupné schopnosti spojené se Scepterem/Shardem, přičemž na ně lze přepnout zapnutím automatického (příp. alternativního) sesílání základní schopnosti:
+	<br>&nbsp;&nbsp;&nbsp;→ Marksmanship poskytuje Glacier
+	<br>&nbsp;&nbsp;&nbsp;→ Frostbite poskytuje Crystal Clone
+	<br>&nbsp;&nbsp;&nbsp;→ Pierce the Veil poskytuje Parting Shot
+	<br>&nbsp;&nbsp;&nbsp;→ Stampede poskytuje Work Horse
+	<br>&nbsp;&nbsp;&nbsp;→ Skeleton Walk poskytuje Burning Barrage
+	<br>&nbsp;&nbsp;&nbsp;→ Shadow Walk poskytuje Friendly Shadow
+	<br>&nbsp;&nbsp;&nbsp;→ Counterspell poskytuje Counterspell Ally
+	<br>&nbsp;&nbsp;&nbsp;→ Arc Lightning poskytuje Lightning Hands
+	<br>&nbsp;&nbsp;&nbsp;→ Death Pact poskytuje Burning Army
+	<br>&nbsp;&nbsp;&nbsp;→ Fireblast poskytuje Unrefined Fireblast
+	<br>&nbsp;&nbsp;&nbsp;→ Noxious Plague poskytuje Poison Nova (ale protože je pasivní, je skrytá)
+	<br>• Schopnost Chemical Rage nově poskytuje schopnost Greevil's Greed (nezobrazuje se mezi schopnostmi, ale jako buff)
+	<br>• Byl opraven Spirit Bear, který neměl žádné schopnosti
+	<br>• Byla opravena nemožnost vybrat schopnost Blinding Light
+	<br>• Byl opraven Alchemist, který měl po výběru 4 základní schopnosti, což vyústilo v posunutí dalších schopností
+	<br>• Shard už nově ve spojení se schopností Cloak and Dagger neposkytuje schopnost Sleeping Dart
+	<br>• Shard nově ve spojení se schopností Ravage poskytuje schopnost Dead in the Water namísto Tendrils of the Deep
+	<br>• Shard pro Invokera byl aktualizován na vylepšení schopnosti E.M.P. (dříve vylepšení schopnosti Chaos Meteor)
+	<br>• Schopnost Proximity Mines nově poskytuje Minefield Sign jako dodatečnou schopnost
+	<br>• Byly opraveny útoky schopností Shadow Wave a Dream Coil se Scepterem, které nefungovaly pro hrdiny s útoky na blízko
+	<br>• Byla opravena schopnost Spirits, která se Scepterem fungovala i na iluzích
+	<br>• Byl opraven Ogre Magi, který měl jako vrozenou schopnost Multicast namísto Dumb Luck
+	<br>• Byly opraveny schopnosti Primal Spring, Pulse Nova, Rot, Infernal Blade a řada dalších, které neposkytovaly sečtení schopnosti Fiery Soul
+	<br>• Byly opraveny talenty spojené se schopnostmi Starbreaker, Cinder Brew, Phantom Rush a Power Cogs, které se nezobrazovaly, když byly schopnosti vybrány na původních hrdinech
+	<br>• Byla opravena schopnost Death Seeker, kterou nešlo přepnout přes klávesovou zkratku
+	<br>• Byla opravena nemožnost přepnout pomocí schopnosti Call of the Wild Hawk mezi Hawkem a Boarem
+	<br>• Byla opravena schopnost Hairball, která se do přepnutí zobrazovala bez klávesové zkratky
+	<br>• Byl opraven Scepter ve spojení se schopností Chemical Rage, který neposkytoval bonus k poškození a síle kouzel
+	<br>• Byla opravena schopnost Horn Toss, kterou poskytoval Shard namísto Scepteru
+	<br>• Byla opravena schopnost Rain of Destiny, kterou poskytoval Scepter namísto Shardu
+	<br>• Byly opraveny schopnosti Hunter’s Boomerang a Decoy, které byly obě poskytovány Shardem i Scepterem
+	<br>• Byl opraven Timbersaw, který se Scepterem získával schopnost Second Chakram. Nově je poskytována s talentem, když má Timbersaw schopnost Chakram"
+	
+
+
 	"DOTA_GameMode_AbilityDraft_ChangeLog_Latest_Oct_06_2022" "
-	<b><font color='#ffffff'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7. října 2022</font></b>
+	<b><font color='#ffffff'>7. října 2022</font></b>
 	<br>• Byla opravena schopnost Wukong's Command, kterou šlo použít jenom jednou za zápas
 	<br>• Shadow Demonova Schopnost Soul Catcher byla nahrazena schopností Disseminate
 	<br>• Scepter nově ve spojení se schopností Drunken Brawler poskytuje schopnost Primal Companion, na kterou lze přepnout zapnutím automatického sesílání. Úroveň elementálního bojovníka je rovna úrovni vybrané ultimátní schopnosti
@@ -33477,6 +33558,11 @@ Oblíbenosti se těší také pusheři prvních fází hry (jmenovitě Zeus a De
 	"LoadoutSlot_Tormentor"										"Tormentor"
 	"tormentor"													"Tormentor"
 
+	"DOTA_GlobalItems_Ancient"									"Ancient"
+	"DOTA_Armory_Category_Ancient"								"Ancient"
+	"LoadoutSlot_Ancient"										"Ancient"
+	"ancient"													"Ancient"
+
 	//Diretide Cosmetics equip page
 	"DOTA_GlobalItems_Diretide"										"Sezónní efekty (Diretide)"
 	"DOTA_Armory_Category_Diretide_2020"							"Diretide 2020"
@@ -34924,6 +35010,11 @@ Oblíbenosti se těší také pusheři prvních fází hry (jmenovitě Zeus a De
 	"DOTA_Scoreboard_Tip"		"DÁT"
 	"DOTA_Scoreboard_TipsAvailable"		"Dostupná – {d:tips_available}"
 	"DOTA_Scoreboard_TipCooldown"		"Cooldown – {s:tip_cooldown}"
+
+	"DOTA_Scoreboard_Gifting"	"Dárky"
+	"DOTA_Scoreboard_Gift"		"Dát"
+	"DOTA_Scoreboard_GiftsAvailable"	"Dostupné – {d:gifts_available}"
+	"DOTA_Scoreboard_GiftCooldown"		"Cooldown – {s:gift_cooldown}"
 
 	"DOTA_Scoreboard_Bounties"				"Odměny"
 	"DOTA_Scoreboard_SetBounty"				"Vypsat"
@@ -44644,7 +44735,6 @@ Jestli ses ale dostatečně nesoustředil a nemůžeš zaručit, že o tomto př
 		// END Faceless Void Arcana
 
 		// RAZOR ARCANA
-
 		"KillEaterEvent_Razor_ArcanaProgress"			"Zabití se 100+ poškozením od Static Link"
 		"DOTA_Hud_Razor_Arcana_EmpoweredKills"			"Nabitá zabití"
 		"DOTA_Hud_Razor_Arcana_EmpoweredKillsValue"		"{d:empowered_kills}/{d:max_empowered_kills_per_game}"
@@ -44652,8 +44742,6 @@ Jestli ses ale dostatečně nesoustředil a nemůžeš zaručit, že o tomto př
 		"DOTA_RazorArcana_Title"						"Fantomovo zjevení"
 		"DOTA_RazorArcana_Score"						"{s:current_score}/{d:unlock_value}"
 		"DOTA_RazorArcana_Label"						"Postup Arcany"
-		
-
 		// END Razor Arcana
 
 		"DOTA_Profile_Tooltip_LifetimeGames"							"Celkový počet zápasů: {d:lifetime_games}"
@@ -46968,5 +47056,9 @@ Jestli ses ale dostatečně nesoustředil a nemůžeš zaručit, že o tomto př
 		"DOTA_Frostivus2023Event_Tooltip_Emoticon"				"Emotikon"
 		"DOTA_Frostivus2023Event_Tooltip_ChatWheel"				"Sprej a samolepka"
 		"DOTA_Frostivus2023Event_Tooltip_HighFive"				"Plácnutí"
+
+		"DOTA_Gift_Title"			"Dát dárek"
+		"DOTA_Gift_Prompt"			"Opravdu chceš darovat tento předmět?"
+		"DOTA_Gift_Everyone_Prompt"	"Opravdu chceš darovat tento předmět všem hráčům v zápase?"
 	}
 }

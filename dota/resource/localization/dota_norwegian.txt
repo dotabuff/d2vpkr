@@ -6289,6 +6289,7 @@
 		"Notification_Compendium2023IncorrectRewards"		"Vi oppdaget nylig et problem der et lite antall spillere var i stand til å bruke flere nivå enn tiltenkt mot belønninger i kompendiet. Siden du var en av de berørte spillerne, har vi fjernet eventuelle feilaktige tildelte belønninger fra kontoen din og tilbakestilt belønningene dine. Du kan nå gjøre krav på de riktige belønningene på belønningssiden i kompendiet som vanlig."
 		"Notification_Compendium2023ExploitedRewards"		"Vi oppdaget nylig et problem der et lite antall spillere var i stand til å bruke flere nivå enn tiltenkt mot belønninger i kompendiet. De fleste spillere gjorde bare krav på et lite antall ekstra belønninger, men det er oppdaget at kontoen din har utnyttet dette problemet med vilje. Kontoen din har derfor fått en spillutestengelse, som hindrer spilling på nett og tilgang til lageret."
 		"Notification_AccountSharingBan"		"Kontoen din er blitt permanent utestengt på grunn av kontodeling og/eller spilling på flere kontoer."
+		"Notification_GiftOpened"				"{g:dota_persona:target_accountid} åpnet opp {g:dota_item_name:result_item_def}, som kom fra en {g:dota_item_name:gift_item_def} du gav dem!"
 
 		//-------------------------------------------------------------------------------------------
 		// Economy
@@ -7042,6 +7043,7 @@
 		"dota_title_pennant"				"DOTA-lagvimpel"
 "Attrib_ExpirationDate"						"Denne gjenstanden utløper %s1."
 		"Attrib_ExpirationDate_Usable"				"Denne gjenstanden utløper om den ikke brukes før %s1."
+		"Attrib_ExpirationDate_Transform"			"Denne gjenstanden forvandles %s1."
 		"Attrib_SeasonalExpirationDate"				"Tilgang til denne gjenstanden utløper %s1."
 		"AttribFormat_AdditionalNote"				"( %s1 )"
 		"Attrib_CollectionReward"					"Samlingsbelønning"
@@ -7105,6 +7107,10 @@
 		"Attrib_Particle826"						"Froststøv"
 		"Attrib_Particle827"						"Godtebøsse"
 		"Attrib_Particle828"						"Snøfokk"
+		"Attrib_Particle833"						"Gullfall"
+		"Attrib_Particle834"						"Gullglød"
+		"Attrib_Particle835"						"Røyk"
+
 
 
 		// Rarity Names
@@ -7358,6 +7364,8 @@
 		"KillEaterEventType_Muerta_PierceTheVeilKills"				"Drap under Pierce the Veil"
 		"KillEaterEventType_Muerta_NoVisionDeadShotHits"			"Frykt fra Dead Shot uten sikt"
 		"KillEaterEventType_Muerta_DeadShotKills"					"Drap med rikosjettskudd fra Dead Shot"
+
+		"KillEaterEvent_NewBloom2024_GiftsGiven"		"Dragens gaver gitt"
 
 		"KillEaterRank0"			"Inngravert"
 		"KillEaterRank1"			"Alminnelig"
@@ -10830,6 +10838,8 @@
 		"DOTA_HeroLevelBadgeTier_Grandmaster"	"Stormester"
 
 		"DOTA_PlayerSalute_ChatMessage"	"tipset %s1. Bra spilt!"
+		"DOTA_PlayerGift_ChatMessage"	"gav %s1 en %s2!"
+
 		"DOTA_BattleLevels"	"Battlenivå"
 
 		"DOTA_PlusPostGame_DamageTableHeader"	"Skade"
@@ -14163,6 +14173,7 @@ Du må ha minst {d:new_player_req_games_played} spilte kamper og en kommunikasjo
 	"dota_settings_combatlogtoggle"				"Kamplogg"
 	"dota_settings_pause"						"Pause"
 	"dota_settings_screenshot"					"Skjermbilde"
+	"dota_settings_show_overlay_map"			"Vis overleggskart"
 	"dota_settings_console"						"Konsoll"
 	"dota_settings_death_summary"				"Dødsoversikt"
 	"dota_settings_dota_alt"					"Alt-endringstast"
@@ -14310,6 +14321,7 @@ Du må ha minst {d:new_player_req_games_played} spilte kamper og en kommunikasjo
 	"dota_settings_camerascreenshake"			"Slå på skjermristing"
 	"dota_settings_cameraresetonspawn"			"Sentrer kamera på helt ved gjenoppliving"
 	"dota_settings_cameradeadcolorshift"		"Endret kamerafarge mens død"
+	"dota_settings_free_cam_override"			"Overstyring som fritt kamera"
 	"dota_settings_profile"						"Profil"
 	"dota_settings_social"						"Sosialt"
 	"dota_settings_hideprofile"					"Skjul Dota- og Steam-profil"
@@ -14549,6 +14561,8 @@ Du må ha minst {d:new_player_req_games_played} spilte kamper og en kommunikasjo
 	"DOTA_Hotkeys_Tooltip_CombatLogToggle"  "Åpne kamploggen."
 	"DOTA_Hotkeys_Tooltip_Pause"  "Sett en pågående kamp på pause eller gjenoppta det."
 	"DOTA_Hotkeys_Tooltip_ScreenshotSettings"  "Ta et skjermbilde av spillet."
+	"DOTA_Hotkeys_Tooltip_OverlayMapSettings"  "Vis overleggskartet mens tasten holdes."
+	
 	"DOTA_Hotkeys_Tooltip_Console"  "Åpne konsollen (kun for avanserte brukere)."
 	"DOTA_Hotkeys_Tooltip_DeathSummary"  "Vis dødsoversikten."
 	"DOTA_Hotkeys_Tooltip_DotaAlt"	"Bind Alt-endringstasten til noe annet."
@@ -14596,7 +14610,8 @@ Du må ha minst {d:new_player_req_games_played} spilte kamper og en kommunikasjo
 	"DOTA_Settings_Tooltip_Screenshake"						"Visse formler og lammelser rister kameraet."
 	"DOTA_Settings_Tooltip_CameraRespawn"					"Kameraet fokuserer på helten din så snart den gjenopplives."
 	"DOTA_Settings_Tooltip_Camera_Hold_Select_To_Follow"	"Hold nede «Velg helt» for å følge helten."
-	"DOTA_Settings_Tooltip_HideProfile"							"Dota 2-profilen blir ikke tilgjengelig for noen. Steam-profilen blir ikke tilgjengelig fra Dota 2."
+	"DOTA_Settings_Tooltip_FreeCamOverride"					"Antall sekunder overstyring som fritt kamera er aktivt som tilskuer. Null slår overstyringen av."
+	"DOTA_Settings_Tooltip_HideProfile"						"Dota 2-profilen blir ikke tilgjengelig for noen. Steam-profilen blir ikke tilgjengelig fra Dota 2."
 	"DOTA_Settings_Tooltip_ShareMatchData"				"Åpner kampdata fra de offentlige kampene dine til tredjepartsenheter."
 	"DOTA_Settings_Tooltip_NetworkQuality"					"Hvis du har en dårlig nettverksforbindelse, kan du få bedre nettverksytelse ved å velge «LAV»."
 	"DOTA_Settings_Tooltip_MinimapSimple"					"Fargene på minikartet bestemmes av laget i stedet for individuelle spillere."
@@ -15464,6 +15479,7 @@ Du må ha minst {d:new_player_req_games_played} spilte kamper og en kommunikasjo
 	"DOTA_tooltip_econ_item_gift_dedication"	"{g:dota_filtered_string:gift_dedication}"
 	"DOTA_tooltip_econ_item_delete_restriction" "Kan ikke slettes"
 	"DOTA_tooltip_econ_item_expiry_restriction" "Utløper: {t:T:expires_after_date_time} {t:s:expires_after_date_time}"
+	"DOTA_tooltip_econ_item_transform_restriction" "Forvandles: {t:T:expires_after_date_time} {t:s:expires_after_date_time}"
 	"DOTA_tooltip_econ_item_trade_restriction_permanent" "Kan ikke byttes eller selges"
 	"DOTA_tooltip_econ_item_seasonal_accessible" "Tilgjengelig resten av sesongen"
 	"DOTA_tooltip_econ_item_trade_restriction_date" "Kan byttes og selges etter: {t:s:tradable_after_date_time}"
@@ -16330,6 +16346,7 @@ Du må ha minst {d:new_player_req_games_played} spilte kamper og en kommunikasjo
 	"DOTA_Popup_Item_Received_Header_SeasonalItemGrant"			"Du har mottatt en sesonggjenstand!"
 	"DOTA_Popup_Item_Received_Header_FrostivusReward"			"Du har mottatt en sesongbelønning!"
 	"DOTA_Popup_Item_Received_Header_PlusReward"				"Du har mottatt en Dota Plus-belønning!"
+	"DOTA_Popup_Item_Received_Header_Transmuted"				"Gjenstanden ble forvandlet!"
 
 	"DOTA_Popup_Item_Received_Header_DefaultSeason"				"Battlepass"
 
@@ -16676,6 +16693,27 @@ Du må ha minst {d:new_player_req_games_played} spilte kamper og en kommunikasjo
 	"DOTA_EventName_International2022"			"Battlepasset 2022"
 	"DOTA_EventNameShort_International2022"		"Battlepasset 2022"
 
+	"DashboardBackground_NewBloom2024_Treasure_Name"              	"Dragens skatt"
+	"DashboardBackground_NewBloom2024_Treasure_Year"              	"2024"
+	"DashboardBackground_NewBloom2024_Treasure_Desc"              	"Feir kinesisk nyttår med 17 nye sett til helter som Marci, Abaddon, Primal Beast og flere."
+	"DashboardBackground_NewBloom2024_Treasure_SubDesc"        	    "Kinesisk nyttårsskatt"
+
+	"FrontPage_NewBloom2024_RedEnvelopes_Title"     				"Røde konvolutter"
+	"FrontPage_NewBloom2024_RedEnvelopes_Desc"     					"Kjøp Dragens gave for å sende skatter til venner."	
+	"FrontPage_NewBloom2024_DragonCourier_Title"     				"Packwyrm-kurer"
+	"FrontPage_NewBloom2024_DragonCourier_Desc"     				"Send ÉN GAVE for å få kureren Pandora the Packwyrm. Send ÅTTE GAVER for å låse opp den gylne stilen."
+	"FrontPage_NewBloom2024_BuyGiftButtonLabel"        	    		"Kjøp gaver"
+	"FrontPage_NewBloom2024_SendGiftButtonLabel"        	    	"Send gave"
+	"FrontPage_NewBloom2024_EnvelopesOwnedCountLabel"          		"({d:owned_gift_count}) Eid"
+	"FrontPage_NewBloom2024_UnlockedRewardLabel"	          		"Låst opp"
+	"FrontPage_NewBloom2024_GiftedLabel"	      		    		"Gitt som gave"
+	"FrontPage_NewBloom2024_RewardCount"	      		    		"{s:unlock_progress} / 1"
+	"FrontPage_NewBloom2024_PremiumRewardCount"	      		    	"{s:unlock_progress} / 8"
+
+	"NewBloom2024_GiftAllButtonLabel"             				 	"Gi gave til alle (x9)"
+
+	"DOTA_Style_NewBloom2024_Courier_0"								"Ancient Packwyrm"
+	"DOTA_Style_NewBloom2024_Courier_1"								"Golden Packwyrm"
 
 	"DOTA_Event_PlusSubscription_RarityName" "Dota Plus-tilgang"
 	"DOTA_Event_PlusSubscription_RestrictionDesc" "Tilgjengelig med Dota Plus"
@@ -17867,6 +17905,11 @@ Du må ha minst {d:new_player_req_games_played} spilte kamper og en kommunikasjo
 	"DOTA_HUD_rune_spawned_top"				"Øvre rune dukket opp"
 	"DOTA_HUD_rune_spawned_bottom"			"Nedre rune dukket opp"
 
+	"DOTA_HUD_stat_branch_10"				"10"
+	"DOTA_HUD_stat_branch_15"				"15"
+	"DOTA_HUD_stat_branch_20"				"20"
+	"DOTA_HUD_stat_branch_25"				"25"
+
 	"DOTA_Compendium_Wagering_PeriodicTokens:p{periodic_coins}"		"({i:periodic_coins} pollett)#|#({i:periodic_coins} polletter)"
 	"DOTA_Compendium_Wagering_TeamBonusTokens"		"Bidragspolletter igjen"
 	"DOTA_Compendium_Wagering_Details"				"Detaljer"
@@ -18677,7 +18720,7 @@ Du må ha minst {d:new_player_req_games_played} spilte kamper og en kommunikasjo
 	"DOTA_GameMode_AbilityDraft_ChangeLog_Tooltip"  "Se de siste oppdateringene til Ability Draft"
 
 	"DOTA_GameMode_AbilityDraft_ChangeLog_Latest_Oct_06_2022" "
-	<b><font color='#ffffff'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7. oktober 2022</font></b>
+	<b><font color='#ffffff'>7. oktober 2022</font></b>
 	<br>• Fikset at Wukong's Command bare kunne brukes én gang.
 	<br>• Erstattet Soul Catcher med Disseminate for Shadow Demon.
 	<br>• Scepter på Drunken Brawler gir nå Primal Companion, veksle automatisk bruk for å bytte til Primal Companion. Brewlingenes nivå er lik nivået på valgt ultimat.
@@ -19842,6 +19885,11 @@ Du må ha minst {d:new_player_req_games_played} spilte kamper og en kommunikasjo
 	"LoadoutSlot_Tormentor"										"Plageånd"
 	"tormentor"													"Plageånd"
 
+	"DOTA_GlobalItems_Ancient"									"Ancient"
+	"DOTA_Armory_Category_Ancient"								"Ancient"
+	"LoadoutSlot_Ancient"										"Ancient"
+	"ancient"													"Ancient"
+
 	//Diretide Cosmetics equip page
 	"DOTA_GlobalItems_Diretide"										"Diretide – Sesongeffekter"
 	"DOTA_Armory_Category_Diretide_2020"							"Diretide 2020"
@@ -20955,6 +21003,11 @@ Du må ha minst {d:new_player_req_games_played} spilte kamper og en kommunikasjo
 	"DOTA_Scoreboard_Tip"		"Tips"
 	"DOTA_Scoreboard_TipsAvailable"		"Tilgjengelig: {d:tips_available}"
 	"DOTA_Scoreboard_TipCooldown"		"{s:tip_cooldown} nedkjøling"
+
+	"DOTA_Scoreboard_Gifting"	"Gavegivning"
+	"DOTA_Scoreboard_Gift"		"Gave"
+	"DOTA_Scoreboard_GiftsAvailable"	"Tilgjengelig: {d:gifts_available}"
+	"DOTA_Scoreboard_GiftCooldown"		"Nedkjøling: {s:gift_cooldown}"
 
 	"DOTA_Scoreboard_Bounties"				"Dusører"
 	"DOTA_Scoreboard_CancelBounty"			"Avbryt"
@@ -29892,7 +29945,6 @@ Hvis du føler du ikke var i stand til å vie nok oppmerksomhet til saken for å
 		// END Faceless Void Arcana
 
 		// RAZOR ARCANA
-
 		"KillEaterEvent_Razor_ArcanaProgress"			"Drap med 100 eller mer skade stjålet fra Static Link."
 		"DOTA_Hud_Razor_Arcana_EmpoweredKills"			"Styrkede drap"
 		"DOTA_Hud_Razor_Arcana_EmpoweredKillsValue"		"{d:empowered_kills}/{d:max_empowered_kills_per_game}"
@@ -29900,8 +29952,6 @@ Hvis du føler du ikke var i stand til å vie nok oppmerksomhet til saken for å
 		"DOTA_RazorArcana_Title"						"Phantom Advent"
 		"DOTA_RazorArcana_Score"						"{s:current_score}/{d:unlock_value}"
 		"DOTA_RazorArcana_Label"						"Arkanafremdrift"
-		
-
 		// END Razor Arcana
 
 		"DOTA_Profile_Tooltip_LifetimeGames"							"{d:lifetime_games} kamper totalt"
@@ -32217,5 +32267,9 @@ Drap av målet i Dead Reckoning gir 2 poeng. Medvirkninger gir 1 poeng."
 		"DOTA_Frostivus2023Event_Tooltip_Emoticon"				"Uttrykksikon"
 		"DOTA_Frostivus2023Event_Tooltip_ChatWheel"				"Graffiti og klistremerke"
 		"DOTA_Frostivus2023Event_Tooltip_HighFive"				"High five"
+
+		"DOTA_Gift_Title"			"Gi en gave"
+		"DOTA_Gift_Prompt"			"Er du sikker på at du vil gi denne gjenstanden som gave?"
+		"DOTA_Gift_Everyone_Prompt"	"Er du sikker på at du vil gi denne gjenstanden som gave til alle i kampen?"
 	}
 }

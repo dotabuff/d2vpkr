@@ -7235,6 +7235,7 @@ As each stone's cultural influence spread, it eventually came in conflict with t
 		"Notification_Compendium2023IncorrectRewards"		"We recently discovered an issue where a small number of players were able to apply more levels than intended towards their Compendium rewards. As one of the affected players, we have removed any incorrectly granted rewards from your account and reset your rewards to their default. You can claim your correct rewards as normal on the Compendium rewards page."
 		"Notification_Compendium2023ExploitedRewards"		"We recently discovered an issue where a small number of players were able to apply more levels than intended towards their Compendium rewards. While most players only claimed a small amount of extra rewards, your account was discovered to have intentionally exploited this issue. Your account has therefore been game banned preventing online play and inventory access."
 		"Notification_AccountSharingBan"		"Your account has been permanently banned for account sharing and/or playing on multiple accounts."
+		"Notification_GiftOpened"				"{g:dota_persona:target_accountid} opened a {g:dota_item_name:result_item_def} from your gift of a {g:dota_item_name:gift_item_def}!"
 
 		//-------------------------------------------------------------------------------------------
 		// Economy
@@ -9032,6 +9033,7 @@ As each stone's cultural influence spread, it eventually came in conflict with t
 		"Attrib_LowLevelPurchase"					"This item cannot be traded until you reach Dota profile level 3."
 		"Attrib_ExpirationDate"						"This item will expire on %s1."
 		"Attrib_ExpirationDate_Usable"				"This item will expire if not used by %s1."
+		"Attrib_ExpirationDate_Transform"			"This item will transform on %s1."
 		"Attrib_SeasonalExpirationDate"				"Access to this item will expire on %s1."
 		"AttribFormat_AdditionalNote"				"( %s1 )"
 		"Attrib_CollectionReward"					"Collection Reward"
@@ -9130,6 +9132,10 @@ As each stone's cultural influence spread, it eventually came in conflict with t
 		"Attrib_Particle826"						"Frostbloom"
 		"Attrib_Particle827"						"Candy Caster"
 		"Attrib_Particle828"						"Snowdrift"
+		"Attrib_Particle833"						"Gold Drop"
+		"Attrib_Particle834"						"Gold Glow"
+		"Attrib_Particle835"						"Smoke"
+
 
 
 		// Rarity Names
@@ -9536,6 +9542,8 @@ As each stone's cultural influence spread, it eventually came in conflict with t
 		"KillEaterEventType_Muerta_PierceTheVeilKills"				"Kills During Pierce the Veil"
 		"KillEaterEventType_Muerta_NoVisionDeadShotHits"			"No Vision Dead Shot Fears"
 		"KillEaterEventType_Muerta_DeadShotKills"					"Dead Shot Ricochet Kills"
+
+		"KillEaterEvent_NewBloom2024_GiftsGiven"		"Dragon's Gifts Given"
 
 		"KillEaterRank0"			"Inscribed"
 		"KillEaterRank1"			"Unremarkable"
@@ -20088,6 +20096,7 @@ Special Techies Taunt"
 
 		"DOTA_PlayerSalute_ChatMessage"	"tipped %s1. Well Played!"
 		"DOTA_PartyNotValidLaneSelections"	"Your party has incompatible lane selections."
+		"DOTA_PlayerGift_ChatMessage"	"gifted %s1 a %s2!"
 
 		"DOTA_BattleLevels"	"Battle Levels"
 
@@ -24201,6 +24210,7 @@ To join as an experienced player, you must have at least {d:new_player_req_games
 	"dota_settings_combatlogtoggle"				"Combat Log"
 	"dota_settings_pause"						"Pause"
 	"dota_settings_screenshot"					"Screenshot"
+	"dota_settings_show_overlay_map"			"Show Overlay Map"
 	"dota_settings_console"						"Console"
 	"dota_settings_death_summary"				"Death Summary"
 	"dota_settings_dota_alt"					"Alt Modifier"
@@ -24348,6 +24358,7 @@ To join as an experienced player, you must have at least {d:new_player_req_games
 	"dota_settings_camerascreenshake"			"Enable Screen Shake"
 	"dota_settings_cameraresetonspawn"			"Center Camera on Hero on Respawn"
 	"dota_settings_cameradeadcolorshift"		"Camera Color-shift when Dead"
+	"dota_settings_free_cam_override"			"Free Camera Override"
 	"dota_settings_profile"						"Profile"
 	"dota_settings_social"						"Social"
 	"dota_settings_hideprofile"					"Hide Dota and Steam Profile"
@@ -24587,6 +24598,8 @@ To join as an experienced player, you must have at least {d:new_player_req_games
 	"DOTA_Hotkeys_Tooltip_CombatLogToggle"  "Open the Combat Log."
 	"DOTA_Hotkeys_Tooltip_Pause"  "Pause and Unpause a game in progress."
 	"DOTA_Hotkeys_Tooltip_ScreenshotSettings"  "Take a screenshot of the current game view."
+	"DOTA_Hotkeys_Tooltip_OverlayMapSettings"  "Show the overlay map while held."
+	
 	"DOTA_Hotkeys_Tooltip_Console"  "Open the console. (For advanced users only)"
 	"DOTA_Hotkeys_Tooltip_DeathSummary"  "Show the Death Summary"
 	"DOTA_Hotkeys_Tooltip_DotaAlt"	"Rebind the Alt modifier"
@@ -24634,7 +24647,8 @@ To join as an experienced player, you must have at least {d:new_player_req_games
 	"DOTA_Settings_Tooltip_Screenshake"						"Some spells and stuns shake the camera."
 	"DOTA_Settings_Tooltip_CameraRespawn"					"Refocus the camera on your Hero as soon as it has respawned."
 	"DOTA_Settings_Tooltip_Camera_Hold_Select_To_Follow"	"Hold select hero to follow your hero."
-	"DOTA_Settings_Tooltip_HideProfile"							"Your Dota 2 Profile will not be accessible by anyone. Your Steam Profile will not be accessible from Dota 2."
+	"DOTA_Settings_Tooltip_FreeCamOverride"					"Number of seconds in which Free Camera Override is active while spectating.  Zero will disable."
+	"DOTA_Settings_Tooltip_HideProfile"						"Your Dota 2 Profile will not be accessible by anyone. Your Steam Profile will not be accessible from Dota 2."
 	"DOTA_Settings_Tooltip_ShareMatchData"				"Exposes match data from your public games to third party entities."
 	"DOTA_Settings_Tooltip_NetworkQuality"					"If you have a low end network connection, setting this to 'LOW' may help your network performance."
 	"DOTA_Settings_Tooltip_MinimapSimple"					"Minimap colors are determined by team rather than individual players."
@@ -25680,6 +25694,7 @@ To join as an experienced player, you must have at least {d:new_player_req_games
 	"DOTA_tooltip_econ_item_gift_dedication"	"{g:dota_filtered_string:gift_dedication}"
 	"DOTA_tooltip_econ_item_delete_restriction" "Not deletable"
 	"DOTA_tooltip_econ_item_expiry_restriction" "Expires: {t:T:expires_after_date_time} {t:s:expires_after_date_time}"
+	"DOTA_tooltip_econ_item_transform_restriction" "Transforms on: {t:T:expires_after_date_time} {t:s:expires_after_date_time}"
 	"DOTA_tooltip_econ_item_trade_restriction_permanent" "Not Tradeable or Marketable"
 	"DOTA_tooltip_econ_item_battle_pass_accessible" "Available During This Battle Pass Season"
 	"DOTA_tooltip_econ_item_seasonal_accessible" "Available until the end of the season"
@@ -27257,6 +27272,7 @@ To join as an experienced player, you must have at least {d:new_player_req_games
 	"DOTA_Popup_Item_Received_Header_SeasonalItemGrant"			"You have received a seasonal item!"
 	"DOTA_Popup_Item_Received_Header_FrostivusReward"			"You have received a Seasonal Reward!"
 	"DOTA_Popup_Item_Received_Header_PlusReward"				"You have received a Dota Plus reward!"
+	"DOTA_Popup_Item_Received_Header_Transmuted"				"Your item has transformed!"
 
 	"DOTA_Popup_Item_Received_Header_DefaultSeason"				"Battle Pass"
 
@@ -27643,6 +27659,29 @@ To join as an experienced player, you must have at least {d:new_player_req_games
 	"DOTA_EventName_International2022"			"The 2022 Battle Pass"
 	"DOTA_EventNameShort_International2022"		"The 2022 Battle Pass"
 
+	"DashboardBackground_NewBloom2024_Treasure_Name"              	"Dragon's Hoard"
+	"DashboardBackground_NewBloom2024_Treasure_Year"              	"2024"
+	"DashboardBackground_NewBloom2024_Treasure_Desc"              	"Celebrate Lunar New Year with 17 new sets for your favorite heroes including Marci, Abaddon, Primal Beast and more."
+	"DashboardBackground_NewBloom2024_Treasure_SubDesc"        	    "Lunar New Year Treasure"
+
+	"FrontPage_NewBloom2024_Title"        	    					"Dragon's Hoard Treasure"
+	"FrontPage_NewBloom2024_RedEnvelopes_Title"     				"Red Envelopes"
+	"FrontPage_NewBloom2024_RedEnvelopes_Desc"     					"Purchase a Dragon's Gift to send treasures to friends."	
+	"FrontPage_NewBloom2024_DragonCourier_Title"     				"Packwyrm Courier"
+	"FrontPage_NewBloom2024_DragonCourier_Desc"     				"Send ONE GIFT to earn the Pandora the Packwyrm Courier. Send EIGHT GIFTS to unlock the golden second style."
+	"FrontPage_NewBloom2024_BuyTreasureButtonLabel"        	   		"Buy Treasure $x.00"
+	"FrontPage_NewBloom2024_BuyGiftButtonLabel"        	    		"Buy Gifts"
+	"FrontPage_NewBloom2024_SendGiftButtonLabel"        	    	"Send Gift"
+	"FrontPage_NewBloom2024_EnvelopesOwnedCountLabel"          		"({d:owned_gift_count}) Owned"
+	"FrontPage_NewBloom2024_UnlockedRewardLabel"	          		"Unlocked"
+	"FrontPage_NewBloom2024_GiftedLabel"	      		    		"Gifted"
+	"FrontPage_NewBloom2024_RewardCount"	      		    		"{s:unlock_progress} / 1"
+	"FrontPage_NewBloom2024_PremiumRewardCount"	      		    	"{s:unlock_progress} / 8"
+
+	"NewBloom2024_GiftAllButtonLabel"             				 	"Gift Everyone (x9)"
+
+	"DOTA_Style_NewBloom2024_Courier_0"								"Ancient Packwyrm"
+	"DOTA_Style_NewBloom2024_Courier_1"								"Golden Packwyrm"
 
 	"DOTA_DB_SeasonPass_International_2017" "The International 2017 Battle Pass"
 	"DOTA_EventName_PlusSubscription" "Dota Plus"
@@ -30421,6 +30460,11 @@ With Selemene's influence at its weakest, and twisted shades of the familiar cre
 	"DOTA_HUD_rune_spawned_top"				"Rune Spawned Top"
 	"DOTA_HUD_rune_spawned_bottom"			"Rune Spawned Bottom"
 
+	"DOTA_HUD_stat_branch_10"				"10"
+	"DOTA_HUD_stat_branch_15"				"15"
+	"DOTA_HUD_stat_branch_20"				"20"
+	"DOTA_HUD_stat_branch_25"				"25"
+
 	"DOTA_Compendium_Wagering_RemainingTokens"		"Remaining Tokens"
 	"DOTA_Compendium_Wagering_TokensResetIn"		"Tokens Reset In "
 	"DOTA_Compendium_Wagering_TokensResetIn_End"	""
@@ -32174,8 +32218,46 @@ With early pressure heroes like Zeus and Death Prophet making appearances, split
 	"DOTA_GameMode_AbilityDraft_ChangeLog_Title"  "Change Log"
 	"DOTA_GameMode_AbilityDraft_ChangeLog_Tooltip"  "View the latest updates to Ability Draft"
 
+	"DOTA_GameMode_AbilityDraft_ChangeLog_Latest_Feb_08_2024" "
+	<b><font color='#ffffff'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;February 8, 2024</font></b>
+	<br>• A number of previously unavailable Scepter/Shard abilities are now granted, some abilities are accessed by toggling auto-cast on the base spell:
+	<br>&nbsp;&nbsp;&nbsp;→ Glacier granted with Marksmanship
+	<br>&nbsp;&nbsp;&nbsp;→ Crystal Clone granted with Frostbite
+	<br>&nbsp;&nbsp;&nbsp;→ Parting Shot granted with Pierce the Veil
+	<br>&nbsp;&nbsp;&nbsp;→ Work Horse granted with Stampede
+	<br>&nbsp;&nbsp;&nbsp;→ Burning Barrage granted with Skeleton Walk
+	<br>&nbsp;&nbsp;&nbsp;→ Friendly Shadow granted with Shadow Walk
+	<br>&nbsp;&nbsp;&nbsp;→ Counterspell Ally granted with Counterspell
+	<br>&nbsp;&nbsp;&nbsp;→ Lightning Hands granted with Arc Lightning
+	<br>&nbsp;&nbsp;&nbsp;→ Burning Army granted with Death Pact
+	<br>&nbsp;&nbsp;&nbsp;→ Unrefined Fireblast granted with Fireblast
+	<br>&nbsp;&nbsp;&nbsp;→ Poison Nova granted with Noxious Plague (Poison Nova passive ability is hidden)
+	<br>• Chemical Rage now grants Greevil's Greed. It will appear as a buff instead of on the ability bar.
+	<br>• Fixed Spirit Bear not having any abilities.
+	<br>• Fixed Blinding Light not appearing as a draftable ability.
+	<br>• Fixed Alchemist have 4 basic abilities at draft, which would push other abilities off by one.
+	<br>• Cloak and Dagger Shard no longer grants Sleeping Dart.
+	<br>• Ravage Shard now grants Dead in the Water instead of Tendrils of the Deep.
+	<br>• Invoker Ability Draft Shard updated to the new EMP Shard instead of the old Meteor Shard.
+	<br>• Proximity Mines now grants Minefield Sign as an additional ability.
+	<br>• Fixed Shadow Wave and Dream Coil's Scepter attacks not working on melee heroes.
+	<br>• Fixed Spirits working on illusions when you have a Scepter.
+	<br>• Fixed Ogre Magi getting Multicast instead of Dumb Luck as an innate.
+	<br>• Fixed Primal Spring, Pulse Nova, Rot, Infernal Blade, and a number of other abilities not granting stacks of Fiery Soul.
+	<br>• Fixed Talents not appearing for Starbreaker, Cinder Brew, Phantom Rush, and Power Cogs when the ability is drafted on their original hero.
+	<br>• Fixed Death Seeker not being togglable with hotkey.
+	<br>• Fixed not being able to toggle Call of the Wild Hawk to switch between Hawk and Boar.
+	<br>• Fixed Hairball appearing without a hotkey until it is toggled.
+	<br>• Fixed Chemical Rage Scepter not giving bonus damage and spell amplification.
+	<br>• Fixed Horn Toss being given by Shard instead of Scepter.
+	<br>• Fixed Rain of Destiny being given by Scepter instead of Shard.
+	<br>• Fixed Hunter's Boomerang and Decoy being given with either Shard or Scepter.
+	<br>• Fixed Timbersaw getting Second Chakram with Scepter. It now is only granted with the talent if Timbersaw drafts Chakram."
+	
+
+
 	"DOTA_GameMode_AbilityDraft_ChangeLog_Latest_Oct_06_2022" "
-	<b><font color='#ffffff'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;October 7, 2022</font></b>
+	<b><font color='#ffffff'>October 7, 2022</font></b>
 	<br>• Fixed Wukong's Command only being castable once.
 	<br>• Replaced Soul Catcher with Disseminate for Shadow Demon.
 	<br>• Scepter on Drunken Brawler now grants Primal Companion, toggle auto-cast to switch to Primal Companion. Brewlings level is equal to the level of the drafted ultimate.
@@ -33707,6 +33789,11 @@ With early pressure heroes like Zeus and Death Prophet making appearances, split
 	"LoadoutSlot_Tormentor"										"Tormentor"
 	"tormentor"													"Tormentor"
 
+	"DOTA_GlobalItems_Ancient"									"Ancient"
+	"DOTA_Armory_Category_Ancient"								"Ancient"
+	"LoadoutSlot_Ancient"										"Ancient"
+	"ancient"													"Ancient"
+
 	//Diretide Cosmetics equip page
 	"DOTA_GlobalItems_Diretide"										"Diretide Seasonal Effects"
 	"DOTA_Armory_Category_Diretide_2020"							"Diretide 2020"
@@ -35161,6 +35248,11 @@ With early pressure heroes like Zeus and Death Prophet making appearances, split
 	"DOTA_Scoreboard_Tip"		"Tip"
 	"DOTA_Scoreboard_TipsAvailable"		"{d:tips_available} Available"
 	"DOTA_Scoreboard_TipCooldown"		"{s:tip_cooldown} Cooldown"
+
+	"DOTA_Scoreboard_Gifting"	"Gifting"
+	"DOTA_Scoreboard_Gift"		"Gift"
+	"DOTA_Scoreboard_GiftsAvailable"	"{d:gifts_available} Available"
+	"DOTA_Scoreboard_GiftCooldown"		"{s:gift_cooldown} Cooldown"
 
 	"DOTA_Scoreboard_Bounties"				"Bounties"
 	"DOTA_Scoreboard_SetBounty"				"Set Bounty"
@@ -44906,7 +44998,6 @@ If you don't feel that you were able to dedicate the appropriate attention level
 		// END Faceless Void Arcana
 
 		// RAZOR ARCANA
-
 		"KillEaterEvent_Razor_ArcanaProgress"			"Kills with 100 or more damage stolen from Static Link."
 		"DOTA_Hud_Razor_Arcana_EmpoweredKills"			"Empowered Kills"
 		"DOTA_Hud_Razor_Arcana_EmpoweredKillsValue"		"{d:empowered_kills}/{d:max_empowered_kills_per_game}"
@@ -44914,8 +45005,6 @@ If you don't feel that you were able to dedicate the appropriate attention level
 		"DOTA_RazorArcana_Title"						"Phantom Advent"
 		"DOTA_RazorArcana_Score"						"{s:current_score}/{d:unlock_value}"
 		"DOTA_RazorArcana_Label"						"Arcana Progress"
-		
-
 		// END Razor Arcana
 
 		"DOTA_Profile_Tooltip_LifetimeGames"							"{d:lifetime_games} Lifetime Games"
@@ -47241,5 +47330,9 @@ If you don't feel that you were able to dedicate the appropriate attention level
 		"DOTA_Frostivus2023Event_Tooltip_Emoticon"				"Emoticon"
 		"DOTA_Frostivus2023Event_Tooltip_ChatWheel"				"Spray & Sticker"
 		"DOTA_Frostivus2023Event_Tooltip_HighFive"				"High Five"
+
+		"DOTA_Gift_Title"			"Give a Gift"
+		"DOTA_Gift_Prompt"			"Are you sure you want to gift this item?"
+		"DOTA_Gift_Everyone_Prompt"	"Are you sure you want to gift this item to everyone in the game?"
 	}
 }

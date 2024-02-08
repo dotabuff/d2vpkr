@@ -1042,6 +1042,7 @@
 		"HotKeyOverride"				"C"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilitySound"					"Hero_Invoker.EMP.Charge"
+		"HasShardUpgrade"				"1"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -1056,18 +1057,31 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"delay"					"2.9"
+			"delay"
+			{
+				"value"					"2.9"
+			}
 			"area_of_effect"		
 			{
-				"value"		"675"
+				"value"			"675"
 				"affected_by_aoe_increase"	"1"
 			}
-			"mana_burned"			"175 300 425 550"
-			"damage_per_mana_pct"	
+			"mana_burned"
 			{
-				"value"		"60"
-				"special_bonus_unique_invoker_10"	"+20"				
+				"value"			"100 250 400 550"
 			}
+			"damage_per_mana_pct"					
+			{
+				"value"			"60"
+				"special_bonus_shard"	"+50%"
+			}
+			
+			"shard_drag_speed"
+			{
+				"value"					"175"
+				"RequiresShard"			"1"
+			}
+			"self_mana_restore_pct"			"25"
 		}
 	}
 
@@ -1237,8 +1251,6 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Invoker.ChaosMeteor.Impact"
-		"HasShardUpgrade"				"1"
-
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700"
@@ -1254,10 +1266,10 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+
 			"AbilityCooldown"
 			{
 				"value"					"55"
-				"special_bonus_shard"	"-15"
 			}
 			"land_time"					"1.3"
 			"area_of_effect"			
@@ -1265,16 +1277,20 @@
 				"value"		"275"
 				"affected_by_aoe_increase"	"1"
 			}
-			"travel_distance"			"615 880 1145 1410"
+			"travel_distance"
+			{
+				"value"					"615 880 1145 1410"
+			}
 			"travel_speed"				"300"
 			"damage_interval"
 			{
 				"value"					"0.5"
 				"CalculateSpellDamageTooltip"	"0"
+				"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
 			}
 			"vision_distance"			
 			{
-				"value"		"500"
+				"value"			"500"
 				"affected_by_aoe_increase"	"1"
 			}
 			"end_vision_duration"		"3.0"
@@ -1289,11 +1305,12 @@
 				"value"					"14 20 26.5 32.5"
 				"CalculateSpellDamageTooltip"	"1"
 				"special_bonus_unique_invoker_6"	"+80%"
+				"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
 			}
 			"meteor_count"
 			{
 				"value"					"1"
-				"special_bonus_shard"	"+2"
+				"special_bonus_unique_invoker_additional_chaos_meteors"	"+2"
 			}
 		}
 	}
@@ -1414,6 +1431,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ad_linked_abilities"			"invoker_forge_spirit_ad"
 	}
 
 	//=================================================================================================================
@@ -1436,6 +1454,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ad_linked_abilities"			"invoker_tornado_ad"
 	}
 
 	//=================================================================================================================
@@ -1485,6 +1504,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ad_linked_abilities"			"invoker_alacrity_ad"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 	}
 
 	//=================================================================================================================
@@ -1496,6 +1516,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ad_linked_abilities"			"invoker_chaos_meteor_ad"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 	}
 
 	//=================================================================================================================
@@ -1520,6 +1541,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ad_linked_abilities"			"invoker_tornado_ad"
 	}
 
 	//=================================================================================================================
@@ -1555,6 +1577,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ad_linked_abilities"			"invoker_forge_spirit_ad"
 	}
 
 	//=================================================================================================================
@@ -1566,6 +1589,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ad_linked_abilities"			"invoker_ice_wall_ad"
 	}
 
 	//=================================================================================================================
@@ -1588,7 +1612,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ad_linked_abilities"			"invoker_ice_wall"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+		"ad_linked_abilities"			"invoker_ice_wall_ad"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 		"BaseClass"						"special_bonus_base"
 	}
 
@@ -1601,7 +1625,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ad_linked_abilities"			"invoker_chaos_meteor"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+		"ad_linked_abilities"			"invoker_chaos_meteor_ad"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 		"BaseClass"						"special_bonus_base"
 	}
 }

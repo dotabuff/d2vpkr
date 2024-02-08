@@ -1,0 +1,28 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	m_BasicEncodings =
+	[
+		// dota
+		{ m_Name = "PingConfirmationIconType"				m_VarType = "NET_DATA_TYPE_UINT64" }, // int but no negative values
+		{ m_Name = "DOTA_SHOP_TYPE"							m_VarType = "NET_DATA_TYPE_UINT64" },	// uint32 ?
+		{ m_Name = "DOTATeam_t"								m_VarType = "NET_DATA_TYPE_UINT64" },	// uint32 ?
+		{ m_Name = "CourierState_t"							m_VarType = "NET_DATA_TYPE_INT64" },	// int32  ?
+		{ m_Name = "DOTA_HeroPickState"						m_VarType = "NET_DATA_TYPE_UINT64" },
+		{ m_Name = "ERoshanSpawnPhase"						m_VarType = "NET_DATA_TYPE_UINT64" },
+   		{ m_Name = "ShopItemViewMode_t"						m_VarType = "NET_DATA_TYPE_UINT64" },
+		{ m_Name = "DOTACustomHeroPickRulesPhase_t"			m_VarType = "NET_DATA_TYPE_UINT64" },
+		{ m_Name = "AbilityBarType_t"						m_VarType = "NET_DATA_TYPE_UINT64" },
+	  	{ m_Name = "FowBlockerShape_t"						m_VarType = "NET_DATA_TYPE_UINT64" },
+	]
+	
+	// these were all pulled from grep'ing the code on 1/14/2021 and fixing up, probably will add more over time. This should be in a config file...
+	m_Aliases =
+	[
+		{ m_TypeAlias = "DOTA_CombatLogQueryProgress"			m_UnderlyingType = "CUtlVector< CDOTA_CombatLogQueryProgress >" },
+		// found these by trying out some replays
+		// this was renamed in CL#4586922 on 6/26/2018
+		{ m_TypeAlias = "DOTATurboHeroPickRulesPhase_t"			m_UnderlyingType = "DOTACustomHeroPickRulesPhase_t" }, 
+		 // this was renamed from fixed array CL#2110239 on 2/10/2014
+		{ m_TypeAlias = "CDOTA_AbilityDraftAbilityState[MAX_ABILITY_DRAFT_ABILITIES]" m_UnderlyingType = "CUtlVector< CDOTA_AbilityDraftAbilityState >" },
+	]
+}

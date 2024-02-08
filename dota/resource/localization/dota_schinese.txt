@@ -7221,6 +7221,7 @@
 		"Notification_Compendium2023IncorrectRewards"		"我们近期发现了一个问题，有少数玩家应用等级获得互动指南奖励时等级数值会超过预期。因此我们移除了你的账号上因这个问题多获得的奖励，并且把奖励状态设为默认。你可以在互动指南奖励页面正常领取应得的奖励。"
 		"Notification_Compendium2023ExploitedRewards"		"我们近期发现了一个问题，有少数玩家应用等级获得互动指南奖励时等级数值会超过预期。虽然大部分玩家只是领取了少数量的额外奖励，但是我们发现你的账号有意利用了这个漏洞。因此你的账号已被永久禁止线上游戏和库存使用。"
 		"Notification_AccountSharingBan"		"由于共享账号和/或使用多个账号进行游戏，你的账号已被永久封禁。"
+		"Notification_GiftOpened"				"{g:dota_persona:target_accountid}从你赠送的{g:dota_item_name:gift_item_def}中开出了{g:dota_item_name:result_item_def}！"
 
 		//-------------------------------------------------------------------------------------------
 		// Economy
@@ -9015,6 +9016,7 @@
 		"Attrib_LowLevelPurchase"					"这件物品在你的Dota战斗等级达到3级后才能交易。"
 		"Attrib_ExpirationDate"						"此物品将于%s1到期。"
 		"Attrib_ExpirationDate_Usable"				"如果在%s1前没有使用，本物品将会过期并消失。"
+		"Attrib_ExpirationDate_Transform"			"此物品将于%s1变为珍藏。"
 		"Attrib_SeasonalExpirationDate"				"这件物品将于%s1过期时不可用。"
 		"AttribFormat_AdditionalNote"				"（%s1）"
 		"Attrib_CollectionReward"					"收藏奖励"
@@ -9113,6 +9115,10 @@
 		"Attrib_Particle826"						"寒冬霜华"
 		"Attrib_Particle827"						"糖果遍地"
 		"Attrib_Particle828"						"冰雪漫天"
+		"Attrib_Particle833"						"财源滚滚"
+		"Attrib_Particle834"						"金光闪耀"
+		"Attrib_Particle835"						"云雾缭绕"
+
 
 
 		// Rarity Names
@@ -9519,6 +9525,8 @@
 		"KillEaterEventType_Muerta_PierceTheVeilKills"				"越界期间击杀数"
 		"KillEaterEventType_Muerta_NoVisionDeadShotHits"			"弹无虚发无视野恐惧次数"
 		"KillEaterEventType_Muerta_DeadShotKills"					"弹无虚发跳弹击杀次数"
+
+		"KillEaterEvent_NewBloom2024_GiftsGiven"		"金龙之礼送出数量"
 
 		"KillEaterRank0"			"铭刻"
 		"KillEaterRank1"			"默默无闻"
@@ -19934,6 +19942,7 @@
 
 		"DOTA_PlayerSalute_ChatMessage"	"已打赏%s1。漂亮！"
 		"DOTA_PartyNotValidLaneSelections"	"队伍中的分路选择存在矛盾。"
+		"DOTA_PlayerGift_ChatMessage"	"给%s1送出了%s2！"
 
 		"DOTA_BattleLevels"	"勇士等级"
 
@@ -24047,6 +24056,7 @@
 	"dota_settings_combatlogtoggle"				"战斗日志"
 	"dota_settings_pause"						"暂停"
 	"dota_settings_screenshot"					"截图"
+	"dota_settings_show_overlay_map"			"显示地图叠层"
 	"dota_settings_console"						"控制台"
 	"dota_settings_death_summary"				"阵亡总结"
 	"dota_settings_dota_alt"					"替换Alt键"
@@ -24194,6 +24204,7 @@
 	"dota_settings_camerascreenshake"			"启用画面晃动"
 	"dota_settings_cameraresetonspawn"			"重生时视角居中到英雄"
 	"dota_settings_cameradeadcolorshift"		"死亡后视角颜色改变"
+	"dota_settings_free_cam_override"			"自由视角覆盖"
 	"dota_settings_profile"						"个人资料"
 	"dota_settings_social"						"社交"
 	"dota_settings_hideprofile"					"隐藏Dota个人资料"
@@ -24433,6 +24444,8 @@
 	"DOTA_Hotkeys_Tooltip_CombatLogToggle"  "打开战斗日志。"
 	"DOTA_Hotkeys_Tooltip_Pause"  "在比赛过程中暂停或继续游戏。"
 	"DOTA_Hotkeys_Tooltip_ScreenshotSettings"  "将游戏的当前画面进行截图保存。"
+	"DOTA_Hotkeys_Tooltip_OverlayMapSettings"  "按住时显示地图叠层。"
+	
 	"DOTA_Hotkeys_Tooltip_Console"  "打开控制台。（只对资深用户开放）"
 	"DOTA_Hotkeys_Tooltip_DeathSummary"  "显示阵亡总结"
 	"DOTA_Hotkeys_Tooltip_DotaAlt"	"原本用Alt键实现相关功能改为使用所选按键"
@@ -24480,7 +24493,8 @@
 	"DOTA_Settings_Tooltip_Screenshake"						"部分技能和眩晕技能具有晃动镜头的效果。"
 	"DOTA_Settings_Tooltip_CameraRespawn"					"英雄复活后视角将自动回到英雄身上。"
 	"DOTA_Settings_Tooltip_Camera_Hold_Select_To_Follow"	"按住“选中英雄”键可以使镜头跟随英雄。"
-	"DOTA_Settings_Tooltip_HideProfile"							"所有人都不能进入你的Dota 2个人资料。也不能通过Dota 2进入你的Steam个人资料。"
+	"DOTA_Settings_Tooltip_FreeCamOverride"					"观战时自由视角覆盖生效的秒数时间。设为0则禁用。"
+	"DOTA_Settings_Tooltip_HideProfile"						"所有人都不能进入你的Dota 2个人资料。也不能通过Dota 2进入你的Steam个人资料。"
 	"DOTA_Settings_Tooltip_ShareMatchData"				"将你的比赛数据对第三方公开。"
 	"DOTA_Settings_Tooltip_NetworkQuality"					"如果网络条件不佳，在设置中选择“低”能优化网络延迟和丢包率。"
 	"DOTA_Settings_Tooltip_MinimapSimple"					"勾选后小地图上英雄的颜色将根据所在队伍显示。"
@@ -25525,6 +25539,7 @@
 	"DOTA_tooltip_econ_item_gift_dedication"	"{g:dota_filtered_string:gift_dedication}"
 	"DOTA_tooltip_econ_item_delete_restriction" "不可删除"
 	"DOTA_tooltip_econ_item_expiry_restriction" "过期：{t:T:expires_after_date_time} {t:s:expires_after_date_time}"
+	"DOTA_tooltip_econ_item_transform_restriction" "转变时间：{t:T:expires_after_date_time}{t:s:expires_after_date_time}"
 	"DOTA_tooltip_econ_item_trade_restriction_permanent" "不可交易或买卖"
 	"DOTA_tooltip_econ_item_battle_pass_accessible" "本勇士令状活动期间开放"
 	"DOTA_tooltip_econ_item_seasonal_accessible" "赛季结束前可用"
@@ -27102,6 +27117,7 @@
 	"DOTA_Popup_Item_Received_Header_SeasonalItemGrant"			"已获得一件季节物品！"
 	"DOTA_Popup_Item_Received_Header_FrostivusReward"			"已收到一件活动奖励！"
 	"DOTA_Popup_Item_Received_Header_PlusReward"				"已收到一件刀塔Plus奖励！"
+	"DOTA_Popup_Item_Received_Header_Transmuted"				"你的物品已经转变！"
 
 	"DOTA_Popup_Item_Received_Header_DefaultSeason"				"勇士令状"
 
@@ -27488,6 +27504,29 @@
 	"DOTA_EventName_International2022"			"2022年勇士令状"
 	"DOTA_EventNameShort_International2022"		"2022年勇士令状"
 
+	"DashboardBackground_NewBloom2024_Treasure_Name"              	"金  龙  献  瑞"
+	"DashboardBackground_NewBloom2024_Treasure_Year"              	"2024"
+	"DashboardBackground_NewBloom2024_Treasure_Desc"              	"为玛西、亚巴顿、獸等等最爱英雄穿上全新套装，庆祝龙年的到来。"
+	"DashboardBackground_NewBloom2024_Treasure_SubDesc"        	    "春节珍藏"
+
+	"FrontPage_NewBloom2024_Title"        	    					"金龙宝藏"
+	"FrontPage_NewBloom2024_RedEnvelopes_Title"     				"红包"
+	"FrontPage_NewBloom2024_RedEnvelopes_Desc"     					"购买金龙之礼，向好友送出珍藏。"	
+	"FrontPage_NewBloom2024_DragonCourier_Title"     				"龙小宝信使"
+	"FrontPage_NewBloom2024_DragonCourier_Desc"     				"送出一份礼物即可获得信使”龙小宝“。送出八份礼物可以解锁金色的第二款式。"
+	"FrontPage_NewBloom2024_BuyTreasureButtonLabel"        	   		"购买宝藏 $x.00"
+	"FrontPage_NewBloom2024_BuyGiftButtonLabel"        	    		"购买礼物"
+	"FrontPage_NewBloom2024_SendGiftButtonLabel"        	    	"送出礼物"
+	"FrontPage_NewBloom2024_EnvelopesOwnedCountLabel"          		"已拥有（{d:owned_gift_count}）封"
+	"FrontPage_NewBloom2024_UnlockedRewardLabel"	          		"已解锁"
+	"FrontPage_NewBloom2024_GiftedLabel"	      		    		"已赠送"
+	"FrontPage_NewBloom2024_RewardCount"	      		    		"{s:unlock_progress} / 1"
+	"FrontPage_NewBloom2024_PremiumRewardCount"	      		    	"{s:unlock_progress} / 8"
+
+	"NewBloom2024_GiftAllButtonLabel"             				 	"送给所有人（x9）"
+
+	"DOTA_Style_NewBloom2024_Courier_0"								"远古龙小宝"
+	"DOTA_Style_NewBloom2024_Courier_1"								"金色龙小宝"
 
 	"DOTA_DB_SeasonPass_International_2017" "2017年国际邀请赛勇士令状"
 	"DOTA_EventName_PlusSubscription" "刀塔Plus"
@@ -30259,6 +30298,11 @@
 	"DOTA_HUD_rune_spawned_top"				"神符产生于上路"
 	"DOTA_HUD_rune_spawned_bottom"			"神符产生于下路"
 
+	"DOTA_HUD_stat_branch_10"				"10"
+	"DOTA_HUD_stat_branch_15"				"15"
+	"DOTA_HUD_stat_branch_20"				"20"
+	"DOTA_HUD_stat_branch_25"				"25"
+
 	"DOTA_Compendium_Wagering_RemainingTokens"		"剩余代币"
 	"DOTA_Compendium_Wagering_TokensResetIn"		"距离代币重置还有"
 	"DOTA_Compendium_Wagering_PeriodicTokens:p{periodic_coins}"		"（{i:periodic_coins}枚代币）#|#（{i:periodic_coins}枚代币）"
@@ -32009,8 +32053,45 @@
 	"DOTA_GameMode_AbilityDraft_ChangeLog_Title"  "更新日志"
 	"DOTA_GameMode_AbilityDraft_ChangeLog_Tooltip"  "查看技能征召的最新改动"
 
+	"DOTA_GameMode_AbilityDraft_ChangeLog_Latest_Feb_08_2024" "	<b><font color='#ffffff'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2024年2月9日</font></b>
+	<br>• 先前无法获得的若干神杖/魔晶技能现在可以获得，部分技能需通过基础技能的自动施放切换来施法：
+	<br>&nbsp;&nbsp;&nbsp;→ 射手天赋会提供冰川
+	<br>&nbsp;&nbsp;&nbsp;→ 冰封禁制会提供冰晶克隆
+	<br>&nbsp;&nbsp;&nbsp;→ 越界会提供临别一枪
+	<br>&nbsp;&nbsp;&nbsp;→ 奔袭冲撞会提供马到成功
+	<br>&nbsp;&nbsp;&nbsp;→ 骨隐步会提供炽烈火雨
+	<br>&nbsp;&nbsp;&nbsp;→ 暗影步会提供暗影情谊
+	<br>&nbsp;&nbsp;&nbsp;→ 法术反制会提供友军法术反制
+	<br>&nbsp;&nbsp;&nbsp;→ 弧形闪电会提供霹雳之手
+	<br>&nbsp;&nbsp;&nbsp;→ 死亡契约会提供燃烧之军
+	<br>&nbsp;&nbsp;&nbsp;→ 火焰爆轰会提供未精通的火焰爆轰
+	<br>&nbsp;&nbsp;&nbsp;→ 恶性瘟疫会提供剧毒新星（剧毒新星的被动技能为隐藏状态）
+	<br>• 化学狂暴现在会提供贪魔的贪婪。会显示为状态图标，而不是技能栏中的技能。
+	<br>• 修复熊灵没有任何技能的问题。
+	<br>• 修复致盲之光没有显示为可选技能的问题
+	<br>• 修复炼金术士在选技能时拥有4个基础技能，导致其他技能会被推后一格的问题
+	<br>• 刀光谍影不再提供昏睡飞镖。
+	<br>• 毁灭的魔晶现在会提供重如铁锚，而不是深海触须。
+	<br>• 祈求者的魔晶从原来的升级混沌陨石更新至升级电磁脉冲。
+	<br>• 感应地雷现在会提供雷区标识作为额外技能。
+	<br>• 修复近战英雄不会继承暗影波和梦境缠绕的神杖攻击效果的问题
+	<br>• 修复拥有神杖时幻象会继承幽魂的问题。
+	<br>• 修复食人魔魔法师的内置技能为多重施法而不是傻福的问题。
+	<br>• 修复乾坤之跃、脉冲新星、腐烂、阎刃和若干其他技能不会提供炽魂叠加效果的问题。
+	<br>• 修复选择了星破天惊、余烬佳酿、幻影冲锋和能量齿轮后相应的原英雄不会显示相应天赋的问题。
+	<br>• 修复了死亡搜寻不能通过快捷键来切换的问题。
+	<br>• 修复了无法通过切换野性呼唤战鹰在战鹰和豪猪之间切换的问题。
+	<br>• 修复了毛团在切换前不会显示快捷键的问题。
+	<br>• 修复了化学狂暴的神杖效果不会提供额外攻击力和技能增强的问题。
+	<br>• 修复了魔晶而不是神杖会提供长角抛物的问题。
+	<br>• 修复了神杖而不是魔晶会提供天命之雨的问题。
+	<br>• 修复了猎手旋镖与诱敌奇术和魔晶/神杖之间的对应关系。
+	<br>• 修复了伐木机拥有神杖后会获得锯齿飞轮（二）的问题。现在只有在伐木机选择了锯齿飞轮后通过天赋来获得。"
+	
+
+
 	"DOTA_GameMode_AbilityDraft_ChangeLog_Latest_Oct_06_2022" "
-	<b><font color='#ffffff'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2022年10月8日</font></b>
+	<b><font color='#ffffff'>2022年10月8日</font></b>
 	<br>• 修复猴子猴孙只能施放一次的问题。
 	<br>• 暗影恶魔的灵魂猎手替换为散播。
 	<br>• 现在神杖升级醉拳将提供元素伙伴，设为自动施放后将改为施放元素伙伴。元素战士的等级与所选大招相同。
@@ -33539,6 +33620,11 @@
 	"LoadoutSlot_Tormentor"										"痛苦魔方"
 	"tormentor"													"痛苦魔方"
 
+	"DOTA_GlobalItems_Ancient"									"遗迹"
+	"DOTA_Armory_Category_Ancient"								"遗迹"
+	"LoadoutSlot_Ancient"										"遗迹"
+	"ancient"													"遗迹"
+
 	//Diretide Cosmetics equip page
 	"DOTA_GlobalItems_Diretide"										"夜魇暗潮季节特效"
 	"DOTA_Armory_Category_Diretide_2020"							"2020年夜魇暗潮"
@@ -34986,6 +35072,11 @@
 	"DOTA_Scoreboard_Tip"		"打赏"
 	"DOTA_Scoreboard_TipsAvailable"		"{d:tips_available}次可用"
 	"DOTA_Scoreboard_TipCooldown"		"{s:tip_cooldown}冷却时间"
+
+	"DOTA_Scoreboard_Gifting"	"送礼"
+	"DOTA_Scoreboard_Gift"		"赠送"
+	"DOTA_Scoreboard_GiftsAvailable"	"{d:gifts_available}次可用"
+	"DOTA_Scoreboard_GiftCooldown"		"{s:gift_cooldown}冷却"
 
 	"DOTA_Scoreboard_Bounties"				"悬赏"
 	"DOTA_Scoreboard_SetBounty"				"设置悬赏"
@@ -44708,7 +44799,6 @@
 		// END Faceless Void Arcana
 
 		// RAZOR ARCANA
-
 		"KillEaterEvent_Razor_ArcanaProgress"			"静电连接偷取100+攻击力后击杀数"
 		"DOTA_Hud_Razor_Arcana_EmpoweredKills"			"窃取攻击后击杀"
 		"DOTA_Hud_Razor_Arcana_EmpoweredKillsValue"		"{d:empowered_kills}/{d:max_empowered_kills_per_game}"
@@ -44716,8 +44806,6 @@
 		"DOTA_RazorArcana_Title"						"太虚风暴玄宇"
 		"DOTA_RazorArcana_Score"						"{s:current_score}/{d:unlock_value}"
 		"DOTA_RazorArcana_Label"						"至宝进度"
-		
-
 		// END Razor Arcana
 
 		"DOTA_Profile_Tooltip_LifetimeGames"							"{d:lifetime_games}场全期比赛"
@@ -47032,5 +47120,9 @@
 		"DOTA_Frostivus2023Event_Tooltip_Emoticon"				"聊天表情"
 		"DOTA_Frostivus2023Event_Tooltip_ChatWheel"				"喷绘与贴纸"
 		"DOTA_Frostivus2023Event_Tooltip_HighFive"				"击掌"
+
+		"DOTA_Gift_Title"			"赠送礼物"
+		"DOTA_Gift_Prompt"			"确定要送出这件物品吗？"
+		"DOTA_Gift_Everyone_Prompt"	"确定要把这件物品送给比赛中的所有人吗？"
 	}
 }
