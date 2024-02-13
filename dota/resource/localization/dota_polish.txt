@@ -6978,6 +6978,8 @@
 		"Notification_Compendium2023IncorrectRewards"		"Niedawno odkryliśmy problem powodujący, że niewielka liczba graczy była w stanie zastosować więcej poziomów niż zamierzono do swoich nagród Kompendium. Jako że jesteś jednym z graczy, których dotyczy problem, usunęliśmy wszelkie nieprawidłowo przyznane nagrody z twojego konta i zresetowaliśmy twoje nagrody do ich domyślnego stanu. Możesz odebrać prawidłowe nagrody w normalny sposób na stronie nagród Kompendium."
 		"Notification_Compendium2023ExploitedRewards"		"Niedawno odkryliśmy problem powodujący, że niewielka liczba graczy była w stanie zastosować więcej poziomów niż zamierzono do swoich nagród Kompendium. Podczas gdy większość graczy odebrała niewielką liczbę dodatkowych nagród, to odkryliśmy, że celowo dopuściłeś się nadużycia tego błędu. Z tego powodu twoje konto otrzymało blokadę na grę, która uniemożliwia ci rozgrywkę online i dostęp do ekwipunku."
 		"Notification_AccountSharingBan"		"Twoje konto zostało trwale zablokowane z powodu współdzielenia konta i/lub grania na wielu kontach."
+		"Notification_GiftOpened"				"Gracz {g:dota_persona:target_accountid} otworzył „{g:dota_item_name:result_item_def}” z twojego prezentu „{g:dota_item_name:gift_item_def}”!"
+
 		//-------------------------------------------------------------------------------------------
 		// Economy
 		"ItemTypeDesc"						"%s2 poziomu %s1"			// s1 is the level number, s2 is the item type. Example: "Level 4 Medigun"
@@ -8749,6 +8751,7 @@
 		"Attrib_LowLevelPurchase"					"Tego przedmiotu nie można wymienić, dopóki twój poziom profilu Dota nie osiągnie poziomu 3."
 		"Attrib_ExpirationDate"						"Ten przedmiot straci ważność w dniu %s1."
 		"Attrib_ExpirationDate_Usable"				"Ten przedmiot zniknie, jeżeli do %s1 go nie zużyjesz."
+		"Attrib_ExpirationDate_Transform"			"Ten przedmiot zostanie przekształcony w dniu %s1."
 		"Attrib_SeasonalExpirationDate"				"Dostęp do tego przedmiotu wygaśnie w dniu %s1."
 		"AttribFormat_AdditionalNote"				"( %s1 )"
 		"Attrib_CollectionReward"					"Nagroda za kolekcję"
@@ -8847,6 +8850,12 @@
 		"Attrib_Particle826"						"Mroźnokwit"
 		"Attrib_Particle827"						"Rzucacz Cukierków"
 		"Attrib_Particle828"						"Śnieżny Ślizg"
+		"Attrib_Particle833"						"Upuszczanie złota"
+		"Attrib_Particle834"						"Blask złota"
+		"Attrib_Particle835"						"Dym"
+
+
+
 		// Rarity Names
 		"Rarity_Common"								"Pospolity"
 		"Rarity_Uncommon"							"Niepospolity"
@@ -19487,6 +19496,8 @@ Specjalna drwina Techiesów"
 
 		"DOTA_PlayerSalute_ChatMessage"	"daje napiwek graczowi %s1. Dobra robota!"
 		"DOTA_PartyNotValidLaneSelections"	"Wybory ścieżek w twoim zespole są ze sobą sprzeczne."
+		"DOTA_PlayerGift_ChatMessage"	"podarował graczowi %s1 %s2!"
+
 		"DOTA_BattleLevels"	"Poziomy Bitewne"
 
 		"DOTA_PlusPostGame_DamageTableHeader"	"Obrażenia"
@@ -23541,6 +23552,7 @@ Specjalna drwina Techiesów"
 	"dota_settings_combatlogtoggle"				"Rejestr rozgrywki"
 	"dota_settings_pause"						"Pauza"
 	"dota_settings_screenshot"					"Zrzut ekranu"
+	"dota_settings_show_overlay_map"			"Pokaż mapę nakładki"
 	"dota_settings_console"						"Konsola"
 	"dota_settings_death_summary"				"Podsumowanie śmierci"
 	"dota_settings_dota_alt"					"Modyfikator klawisza Alt"
@@ -23681,6 +23693,7 @@ Specjalna drwina Techiesów"
 	"dota_settings_camerascreenshake"			"Wstrząsy ekranu"
 	"dota_settings_cameraresetonspawn"			"Centrowanie kamery na bohaterze przy odrodzeniu"
 	"dota_settings_cameradeadcolorshift"		"Zmiana barwy obrazu przy śmierci"
+	"dota_settings_free_cam_override"			"Obejście wolnej kamery"
 	"dota_settings_profile"						"Profil"
 	"dota_settings_social"						"Społeczność"
 	"dota_settings_hideprofile"					"Ukrycie profilów Dota 2 i Steam"
@@ -23913,6 +23926,8 @@ Specjalna drwina Techiesów"
 	"DOTA_Hotkeys_Tooltip_CombatLogToggle"  "Otwórz rejestr rozgrywki."
 	"DOTA_Hotkeys_Tooltip_Pause"  "Zatrzymanie i wznowienie gry w trakcie."
 	"DOTA_Hotkeys_Tooltip_ScreenshotSettings"  "Wykonanie zrzutu ekranu obecnego widoku w grze."
+	"DOTA_Hotkeys_Tooltip_OverlayMapSettings"  "Pokaż mapę nakładki po przytrzymaniu przycisku."
+	
 	"DOTA_Hotkeys_Tooltip_Console"  "Otwarcie konsoli (tylko dla zaawansowanych użytkowników)."
 	"DOTA_Hotkeys_Tooltip_DeathSummary"  "Pokaż podsumowanie śmierci"
 	"DOTA_Hotkeys_Tooltip_DotaAlt"	"Zmiana modyfikatora klawisza Alt"
@@ -23956,6 +23971,7 @@ Specjalna drwina Techiesów"
 	"DOTA_Settings_Tooltip_Screenshake"						"Niektóre czary i ogłuszenia potrząsają kamerą."
 	"DOTA_Settings_Tooltip_CameraRespawn"					"Kamera powróci do twojego bohatera zaraz po jego odrodzeniu."
 	"DOTA_Settings_Tooltip_Camera_Hold_Select_To_Follow"	"Przytrzymaj klawisz „Wybierz bohatera”, by kamera śledziła twojego bohatera."
+	"DOTA_Settings_Tooltip_FreeCamOverride"					"Czas trwania obejścia wolnej kamery w sekundach. Zero wyłączy tę opcję."
 	"DOTA_Settings_Tooltip_HideProfile"						"Twój profil Dota 2 nie będzie dostępy dla kogokolwiek. Twój profil Steam nie będzie dostępny z poziomu gry."
 	"DOTA_Settings_Tooltip_ShareMatchData"				"Ujawnia dane twoich publicznych meczów stronom zewnętrznym."
 	"DOTA_Settings_Tooltip_NetworkQuality"					"Jeżeli posiadasz niskiej jakości połączenie internetowe, ustaw tę opcję na „NISKA”, aby zwiększyć wydajność twojej sieci."
@@ -24982,6 +24998,7 @@ Specjalna drwina Techiesów"
 	"DOTA_tooltip_econ_item_gift_dedication"	"{g:dota_filtered_string:gift_dedication}"
 	"DOTA_tooltip_econ_item_delete_restriction" "Nieusuwalne"
 	"DOTA_tooltip_econ_item_expiry_restriction" "Ważna do: {t:T:expires_after_date_time} {t:s:expires_after_date_time}"
+	"DOTA_tooltip_econ_item_transform_restriction" "Przekształcenie w dniu: {t:T:expires_after_date_time} {t:s:expires_after_date_time}"
 	"DOTA_tooltip_econ_item_trade_restriction_permanent" "Nie można wymienić ani sprzedać"
 	"DOTA_tooltip_econ_item_battle_pass_accessible" "Dostępne wraz z sezonową Przepustką Bitewną"
 	"DOTA_tooltip_econ_item_seasonal_accessible" "Dostępne do końca sezonu"
@@ -26532,6 +26549,8 @@ Specjalna drwina Techiesów"
 	"DOTA_Popup_Item_Received_Header_SeasonalItemGrant"			"Otrzymujesz przedmiot sezonowy!"
 	"DOTA_Popup_Item_Received_Header_FrostivusReward"			"Otrzymujesz sezonową nagrodę!"
 	"DOTA_Popup_Item_Received_Header_PlusReward"				"Otrzymujesz nagrodę Dota Plus!"
+	"DOTA_Popup_Item_Received_Header_Transmuted"				"Twój przedmiot został przekształcony!"
+
 	"DOTA_Popup_Item_Received_Header_DefaultSeason"				"Przepustka Bitewna"
 
 	"DOTA_Popup_Item_Received_SeasonalExpiration"			"Ten przedmiot straci ważność na końcu sezonu, czyli w dniu {t:s:item_expiration_date}."
@@ -31383,6 +31402,62 @@ With early pressure heroes like Zeus and Death Prophet making appearances, split
 	"DOTA_GameMode_AbilityDraft_ChangeLog_Title"  "Lista zmian"
 	"DOTA_GameMode_AbilityDraft_ChangeLog_Tooltip"  "Zobacz najnowsze aktualizacje trybu Ability Draft"
 
+	"DOTA_GameMode_AbilityDraft_ChangeLog_Latest_Feb_08_2024" "
+	<b><font color='#ffffff'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8 lutego 2024</font></b>
+	<br>• Istniało wiele umiejętności przyznawanych lub ulepszanych po otrzymaniu Aghanim's Scepter/Shard, które nie były wcześniej dostępne w trybie Ability Draft. Od teraz niektóre z nich są przyznawane, a niektóre dostępne poprzez przełączenie automatycznego rzutu na czarze bazowym:
+	<br>&nbsp;&nbsp;&nbsp;→ Um. Glacier jest przyznawana wraz z um. Marksmanship.
+	<br>&nbsp;&nbsp;&nbsp;→ Um. Crystal Clone jest przyznawana wraz z um. Frostbite.
+	<br>&nbsp;&nbsp;&nbsp;→ Um. Parting Shot jest przyznawana wraz z um. Pierce the Veil.
+	<br>&nbsp;&nbsp;&nbsp;→ Um. Work Horse jest przyznawana wraz z um. Stampede.
+	<br>&nbsp;&nbsp;&nbsp;→ Um. Burning Barrage jest przyznawana wraz z um. Skeleton Walk.
+	<br>&nbsp;&nbsp;&nbsp;→ Um. Friendly Shadow jest przyznawana wraz z um. Shadow Walk.
+	<br>&nbsp;&nbsp;&nbsp;→ Um. Counterspell Ally jest przyznawana wraz z um. Counterspell.
+	<br>&nbsp;&nbsp;&nbsp;→ Um. Lightning Hands jest przyznawana wraz z um. Arc Lightning.
+	<br>&nbsp;&nbsp;&nbsp;→ Um. Burning Army jest przyznawana wraz z um. Death Pact.
+	<br>&nbsp;&nbsp;&nbsp;→ Um. Unrefined Fireblast jest przyznawana wraz z um. Fireblast.
+	<br>&nbsp;&nbsp;&nbsp;→ Um. Poison Nova jest przyznawana wraz z um. Noxious Plague (um. pasywna Poison Nova jest ukryta).
+	<br>• Um. Chemical Rage od teraz przyznaje um. Greevil's Greed. Będzie pojawiać się jako premia zamiast na pasku umiejętności.
+	<br>• Naprawiono błąd powodujący, że duchowy niedźwiedź nie miał żadnych umiejętności.
+	<br>• Naprawiono błąd powodujący, że um. Blinding Light nie była wyświetlana jako umiejętność możliwa do wyboru.
+	<br>• Naprawiono błąd powodujący, że Alchemist miał do wyboru 4 umiejętności bazowe, co powodowało przesunięcie pozostałych umiejętności o jedno pole.
+	<br>• Um. Cloak and Dagger po ulepszeniu przez Aghanim's Shard nie przyznaje już um. Sleeping Dart.
+	<br>• Um. Ravage po ulepszeniu przez Aghanim's Shard od teraz przyznaje um. Dead in the Water zamiast Tendrils of the Deep.
+	<br>• Zaktualizowano ulepszenie z Aghanim's Shard dla Invokera w trybie Ability Draft. Od teraz zamiast starego Meteor jest to nowe E.M.P.
+	<br>• Um. Proximity Mines od teraz dodatkowo przyznaje um. Minefield Sign.
+	<br>• Naprawiono błąd powodujący, że um. Shadow Wave i Dream Coil po ulepszeniu przez Aghanim's Scepter nie działały na bohaterach walczących wręcz.
+	<br>• Naprawiono błąd powodujący, że um. Spirits działała na iluzjach po ulepszeniu przez Aghanim's Scepter.
+	<br>• Naprawiono błąd powodujący, że Ogre Magi otrzymywał um. Multicast zamiast Dumb Luck jako wrodzoną.
+	<br>• Naprawiono błąd powodujący, że um. Primal Spring, Pulse Nova, Rot, Infernal Blade i wiele innych nie przyznawały instancji um. Fiery Soul.
+	<br>• Naprawiono błąd powodujący, że talenty nie były wyświetlane dla um. Starbreaker, Cinder Brew, Phantom Rush i Power Cogs, gdy umiejętność została wybrana dla bohatera, do którego oryginalnie należy.
+	<br>• Naprawiono błąd powodujący, że um. Death Seeker nie dało się przełączyć skrótem klawiszowym.
+	<br>• Naprawiono błąd uniemożliwiający przełączanie się między um. Call of the Wild Hawk a Call of the Wild Boar i odwrotnie.
+	<br>• Naprawiono błąd powodujący, że um. Hairball pojawiała się bez użycia skrótu klawiszowego, dopóki nie została przełączona.
+	<br>• Naprawiono błąd powodujący, że um. Chemical Rage po ulepszeniu przez Aghanim's Scepter nie przyznawała premii do obrażeń i wzmocnienia czarów.
+	<br>• Naprawiono błąd powodujący przyznawanie um. Horn Toss po zdobyciu Aghanim's Shard zamiast Aghanim's Scepter.
+	<br>• Naprawiono błąd powodujący przyznawanie um. Rain of Destiny po zdobyciu Aghanim's Scepter zamiast Aghanim's Shard.
+	<br>• Naprawiono błąd powodujący przyznawanie um. Hunter's Boomerang i Decoy po zdobyciu Aghanim's Shard lub Aghanim's Scepter.
+	<br>• Naprawiono błąd powodujący przyznawanie Timbersawowi um. Second Chakram po zdobyciu Aghanim's Scepter. Od teraz jest ona przyznawana tylko, jeśli talent Timbersawa dobiera um. Chakram."
+	
+
+
+	"DOTA_GameMode_AbilityDraft_ChangeLog_Latest_Oct_06_2022" "
+	<b><font color='#ffffff'>7 października 2022</font></b>
+	<br>• Naprawiono błąd powodujący, że um. Wukong's Command dało się rzucić tylko raz.
+	<br>• Zastąpiono um. Soul Catcher od Shadow Demona um. Disseminate.
+	<br>• Um. Drunken Brawler ulepszona przez Aghanim's Scepter przyznaje od teraz um. Primal Companion. Aby przełączać się między nimi, włącz autorzut. Poziom warzątek jest równy poziomowi dobranej umiejętności ostatecznej.
+	<br>• Um. Ensnare ulepszona przez Aghanim's Scepter przyznaje od teraz um. Reel In. Aby przełączać się między nimi, włącz autorzut.
+	<br>• Um. Primal Roar ulepszona przez Aghanim's Scepter przyznaje od teraz um. Drums of Slom.
+	<br>• Um. Stampede ulepszona przez Aghanim's Scepter przyznaje od teraz um. Hitch a Ride.
+	<br>• Um. Laguna Blade ulepszona przez Aghanim's Scepter przyznaje od teraz um. Flame Cloak.
+	<br>• Um. Viper Strike ulepszona przez Aghanim's Scepter przyznaje od teraz um. Nosedive.
+	<br>• Um. Enchant ulepszona przez Aghanim's Shard przyznaje od teraz um. Little Friends. Aby przełączać się między nimi, włącz autorzut.
+	<br>• Um. Wrath of Nature ulepszona przez Aghanim's Shard przyznaje od teraz um. Curse of the Oldgrowth.
+	<br>• Um. Nether Strike ulepszona przez Aghanim's Shard przyznaje od teraz um. Planar Pocket.
+	<br>• Um. Ravage ulepszona przez Aghanim's Shard przyznaje od teraz um. Tendrils of the Deep.
+	<br>• Um. Posion Nowa ulepszona przez Aghanim's Shard przyznaje od teraz um. Latent Toxicity.
+	<br>• Dodano wiele talentów, których brakowało od aktualizacji 7.32.
+	<br>&nbsp;&nbsp;&nbsp;<b>UWAGA:</b> aby talent Luny na 20. poziomie po prawej stronie jej drzewka talentów był aktywny, trzeba wybrać zarówno um. Moon Glaives, jak i Lucent Beam."
+
 	"DOTA_GameMode_AbilityDraft_ChangeLog_Latest" "<b><font color='#ffffff'>3 września 2021</font></b>
 <br>• Poof od teraz może obrać za cel dowolną sojuszniczą jednostkę w zasięgu 2000 jednostek.
 <br>• Juxtapose z silną iluzją z Vengeance Aura do aktywacji używa szansy bohatera zamiast szansy iluzji.
@@ -33929,7 +34004,9 @@ With early pressure heroes like Zeus and Death Prophet making appearances, split
 	"DOTA_Scoreboard_TipsAvailable"		"Pozostało: {d:tips_available}"
 	"DOTA_Scoreboard_TipCooldown"		"{s:tip_cooldown} czasu ocz."
 
+	"DOTA_Scoreboard_Gifting"	"Prezenty"
 	"DOTA_Scoreboard_Gift"		"Prezent"
+	"DOTA_Scoreboard_GiftsAvailable"	"Dostępne: {d:gifts_available}"
 	"DOTA_Scoreboard_GiftCooldown"		"{s:gift_cooldown} czasu oczekiwania"
 
 	"DOTA_Scoreboard_Bounties"				"Nagrody"
