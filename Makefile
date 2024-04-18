@@ -1,3 +1,6 @@
+DOTA ?= ~/Steam/steamapps/common/dota 2 beta/game
+DECOMPILER ?= ./bin/decompiler-linux-amd64
+
 default: d2vpk pull update commit push
 
 d2vpk:
@@ -8,7 +11,9 @@ pull:
 	git pull
 
 update:
-	ruby update.rb
+	cp -a "$(DOTA)/dota/steam.inf" ./dota
+	$(DECOMPILER) --vpk_decompile --vpk_extensions "txt" --vpk_filepath "resource" -i "$(DOTA)/dota/pak01_dir.vpk" -o ./dota
+	$(DECOMPILER) --vpk_decompile --vpk_extensions "txt" --vpk_filepath "scripts" -i "$(DOTA)/dota/pak01_dir.vpk" -o ./dota
 
 commit:
 	git add -A dota
