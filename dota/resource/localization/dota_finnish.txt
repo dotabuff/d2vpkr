@@ -704,6 +704,9 @@
 		"dota_chatwheel_translation_crownfall_imperia_bleed"		"Vuoda kuiviin! Hah hah!"
 		"dota_chatwheel_translation_crownfall_imperia_fall"			"Käy polvillesi, alamainen!"
 		"dota_chatwheel_translation_crownfall_imperia_real_queen"	"Eläköön kuningatar. Oikea kuningatar."
+		"dota_chatwheel_translation_crownfall_imperia_die"			"Että noinkin voi kuolla!"
+		"dota_chatwheel_translation_crownfall_imperia_peons"		"Miksi ympärilläni on vain tunareita?"
+		"dota_chatwheel_translation_crownfall_imperia_tired"		"Alkaa olla mitta täynnä tätä paikkaa."
 		"DOTA_Item_WillPurchaseAlert"					"Ostan %s1 <font color='%s2'>%s3</font>"
 		"DOTA_Item_WillPurchaseAlert_GoldRemaining"		"Ostan %s1 <font color='%s2'>%s3</font> (%s4 kultaa uupuu)"
 		"DOTA_Item_WillPurchaseAlert_OutOfStock"		"Ostan %s1 <font color='%s2'>%s3</font> (saatavilla: %s4)"
@@ -26017,6 +26020,7 @@ Jos asevarastosi on täynnä, seuraavat toiminnot estetään:<br><br><br>- esine
 	"DOTA_Credits_Slyrak"				"& Slyrak, tulen isä"
 	"DOTA_Credits_Mirana_Persona"		"Yöhopean Mirana"
 	"DOTA_Credits_Flockheart"			"& tulilintu Flockheart"
+	"DOTA_Credits_Princess_Shen"		"Shenin paluuna"
 	"DOTA_Trading_UI_Body_Outgoing" "Käyttäjältä {s:player_name} odotetaan vastausta vaihtopyyntöösi..."
 
 	"DOTA_GiftWrap_Item"	"Paketoidaan {g:dota_item_name:gift_item_def}."
@@ -27124,6 +27128,7 @@ Jos asevarastosi on täynnä, seuraavat toiminnot estetään:<br><br><br>- esine
 	"DOTA_Popup_Item_Received_Header_RecipeOutput"				"Loit esineen!"
 	"DOTA_Popup_Item_Received_Header_CommunityMarketPurchase"	"Ostit esineen!"
 	"DOTA_Popup_Item_Received_Header_GemExtract"				"Irrotit esineen!"
+	"DOTA_Popup_Item_Received_Header_CompendiumReward"			"Olet lunastanut tapahtuman {s:event_name} palkinnon!"
 	"DOTA_Popup_Item_Received_Header_CompendiumDrop"			"Olet saanut kausiesineen!"
 	"DOTA_Popup_Item_Received_Header_CompendiumGift"			"Sait kausilahjan pelaajalta {g:dota_persona:gifter_name}!"
 	"DOTA_Popup_Item_Received_Header_SeasonalItemGrant"			"Olet saanut kausiesineen!"
@@ -33172,6 +33177,8 @@ Alkupelin sankareita kuten Zeusta ja Death Prophetia on nähty, puskijoita kuten
 	"DOTA_Armory_Category_Ancient"									"Muinaislinnoitus"
 	"ancient"														"Muinaislinnoitus"
 
+	"showcase_decoration"											"Vitriinikoriste"
+
 	//Diretide Cosmetics equip page
 	"DOTA_GlobalItems_Diretide"										"Diretide-kausitehosteet"
 	"DOTA_Armory_Category_Diretide_2020"							"Diretide 2020"
@@ -34453,7 +34460,10 @@ Alkupelin sankareita kuten Zeusta ja Death Prophetia on nähty, puskijoita kuten
     "DOTA_TI8_FrontPage_Terrain_Title"   "Smaragdirotko"
     "DOTA_SeasonalItemReceived_ShardText:p{GrantPoints}"	"{d:GrantPoints} sirpale#|#{d:GrantPoints} sirpaletta"
    	"DOTA_SeasonalItemReceived_ShardTitle"	"Olet saanut Dota Plus -sirpaleita!"
-   	"DOTA_SeasonalItemReceived_SteamPackageTitle"		"Olet avannut pelin Steamissä!"
+   	"DOTA_SeasonalItemReceived_ConsumableItemChargesText"	"{d:quantity} × {g:dota_item_name:item_def}"
+   	"DOTA_SeasonalItemReceived_ConsumableItemChargesTitle"	"Olet lunastanut tapahtuman {s:event_name} palkinnon!"
+
+	"DOTA_SeasonalItemReceived_SteamPackageTitle"		"Olet avannut pelin Steamissä!"
    	"DOTA_SeasonalItemReceived_SteamPackageSubtitle"	"Lataa peli ja pelaa sitä Steam-kirjastostasi."
 
 	"DOTA_SeasonalItemReceived_EmoticonTitle"		"Olet avannut hymiön!"
@@ -43167,6 +43177,7 @@ uudet esinekuvakkeet."
 		"DOTA_Showcase_ItemType_ChatWheel"			"Chatrulla"
 		"DOTA_Showcase_ItemType_Background"			"Tausta"
 		"DOTA_Showcase_ItemType_Match"				"Ottelu"
+		"DOTA_Showcase_ItemType_Decoration"				"Koriste"
 		"DOTA_Showcase_WidgetType_SpiderGraph"		"Pelityylitilastot"
 		"DOTA_Showcase_WidgetType_UserFeed"			"Tapahtumasyöte"
 		"DOTA_Showcase_WidgetType_RecentMatchHero"	"Viimeksi pelattu sankari"
@@ -43317,19 +43328,29 @@ uudet esinekuvakkeet."
 		"DOTA_SplashAd_HeroBans_Text"				"Kiellä sankareita ennen pelin hakemista"
 		"DOTA_SplashAd_HeroBans_Description"		"Valitse enintään neljä haluamaasi sankaria kiellettäväksi <b>SANKARIT</b>-välilehdeltä. Vähintään yksi niistä kielletään jokaisessa pelaamassasi ottelussa. Voit vaihtaa niitä milloin haluat."
 		"DOTA_SplashAd_HeroBans_BansActionLabel"	"Valitse kiellettävät sankarit"
-"DOTA_CrownfallStore_DisabledInDiscountMode_Tooltip"			"Alennustila koskee vain esineitä, joiden hinta on {s:regional_coin_currency} tai enemmän."
-		"DOTA_CrownfallStore_VengefulSpiritArcana_Name"		"Shenin ylösnousemus"
+
+
+		// Crownfall
+		"DOTA_CrownfallStore_CoinsInfo"				"Ansaitse Kruununkaappaus-kolikoita tutkimalla Kruununkaappauksen karttaa.<br><br>Tapahtuman päättymiseen asti voit vaihtaa 10 kolikkoa noin {s:regional_coin_currency} alennukseen Kruununkaappaus-kaupassa mistä tahansa ostoksesta, joka maksaa {s:regional_coin_currency} tai enemmän. (Tarkka alennus vaihtelee alueen ja valuutan mukaan.)<br><br>Osassa 1 voit ansaita {d:total_free_coins} kolikkoa ilmaiseksi ja lisäksi {d:total_explorer_coins} kolikkoa Keskitullin tienraivaaja -paketin avulla."
+		"DOTA_CrownfallStore_DisabledInDiscountMode_Tooltip"			"Alennustila koskee vain esineitä, joiden hinta on {s:regional_coin_currency} tai enemmän."
+		"DOTA_CrownfallStore_VengefulSpiritArcana_Name"		"Shenin paluu"
 		"DOTA_CrownfallStore_VengefulSpiritArcana_Subtitle"	"Salatieteellinen esine Vengeful Spiritille"
 		"DOTA_CrownfallStore_SkywrathMageArcana_Name"		"Dragonuksen antaumukset"
 		"DOTA_CrownfallStore_SkywrathMageArcana_Subtitle"	"Salatieteellinen esine Skywrath Magelle"
 		"DOTA_CrownfallStore_View"					"Näytä Kruununkaappaus-kauppa"
 		"DOTA_CrownfallStore_QuestRewards"			"Tehtäväpalkinnot"
 		"DOTA_CrownfallStore_QuestRewards_Tooltip"	"Tienraivaajan paketin ostamisesta saa Tienraivaaja-poletteja, joita käytetään lisätehtävien avaamiseen Kruununkaappauksen kartalla.<br><br>Tehtäväpalkintoja ansaitaan avaamalla kunkin sivutehtävän paikat ennen tapahtuman päättymistä."
+		"DOTA_CrownfallStore_Checkout_ConfirmPurhcaseWithCoins"	"Ostos maksaa {d:coin_cost} Kruununkaappaus-kolikkoa. Oletko varma, että haluat jatkaa?"
+		"DOTA_CrownfallStore_Checkout_InsufficientCoins"	"Sinulla ei ole tarpeeksi Kruununkaappaus-kolikoita ostoksen suorittamiseen."
+
 		"DOTA_CrownfallStore_Act1Pass_Includes"		"Sisältää:"
+		"DOTA_CrownfallStore_Act1Pass_Tokens"		"<child id='PathfinderToken' />×2 polettia, jotka avaavat 2 sivutehtävää"
+		"DOTA_CrownfallStore_Act1Pass_Creeps"		"Kruununkaappaus – Muokatut kätyrit"
+
 		"DOTA_CrownfallStore_ActivateDiscount"		"Aktivoi"
 		"DOTA_CrownfallStore_DeactivateDiscount"	"Poista käytöstä"
 
-		"DOTA_CrownfallStore_Category_Overview"		"Yleiskatsaus"
+		"DOTA_CrownfallStore_Category_Overview"		"Etusivu"
 		"DOTA_CrownfallStore_Category_Arcana"	"Salatieteelliset"
 		"DOTA_CrownfallStore_Category_Treasures"	"Aarteet"
 		"DOTA_CrownfallStore_Category_Bundles"	"Paketit"
@@ -43337,17 +43358,28 @@ uudet esinekuvakkeet."
 		"DOTA_CrownfallStore_ViewOnMap"	"Näytä kartassa"
 		"DOTA_CrownfallStore_SideQuest"	"Sivutehtävä"
 
+		"DOTA_CrownfallStore_Act1Pass_Name"		"Keskitullin tienraivaajan paketti"
 		"DOTA_CrownfallStore_Act1Pass_Desc"		"1. osan bonussisältö"
 
 		"DOTA_CrownfallStore_RoyalBundle_Name"	"Kruununkaappauksen kuninkaallinen paketti"
 		"DOTA_CrownfallStore_RoyalBundle_Desc"		"Kokoelma bonusesineitä"
 
 		"DOTA_CrownfallStore_CandySacks_Name"		"Karkkikaravaanin karkkipussit"
+		"DOTA_CrownfallStore_CandySacks_Desc"		"Karkkikaravaani on täytetty karkeilla – etsi karavaani kunkin osan kartalta ja vaihda sankarikokoelmiin, kuriireihin, wardeihin, salatieteellisiin esineisiin ja moniin muihin."
+		"DOTA_CrownfallStore_CandyRerolls_Name"		"Karkkikaravaanin hyllypäivitykset"
+		"DOTA_CrownfallStore_CandyRerolls_Desc"		"Nappaa lisää hyllypäivityksiä päivittääksesi Karkkikaravaanin valikoimaa."
+		"DOTA_CrownfallStore_DoubleDownTokens_Name"		"MMR-tuplauspoletit"
+		"DOTA_CrownfallStore_DoubleDownTokens_Desc"		"Lisää mahdollisuuksia tuplata MMR-voittosi. Ennusta voittosi ranked-ottelun alussa. Mutta valitse huolellisesti – vaikka voitto ansaitsee kaksinkertaisen MMR:n kyseisessä pelissä, tappio laskee pisteitä kaksinkertaisen MMR:n verran."
+		"DOTA_DoubleDown_RequiresCalibration"		"Ranking-pisteitäsi ei ole vielä kalibroitu. Tuplaaminen tulee saataville, kun MMR on kalibroitu."
+
 		"DOTA_CrownfallStore_ActPass_CheckingOwnership"	"Varmistetaan omistajuutta"
 		"DOTA_CrownfallStore_ActPass_LoadingFailed"	"Omistajuuden varmistus epäonnistui"
 		"DOTA_CrownfallStore_ActPass_AlreadyOwned"	"Omistat tämän jo"
 		"DOTA_CrownfallStore_ActPass_ActivateNow"	"Aktivoi nyt"
 
+
+		"DOTA_CrownfallStore_ArcanaStyleUnlock_1"	"Avataan päätehtävän päätyttyä osassa 4."
+		"DOTA_CrownfallStore_ArcanaStyleUnlock_2"	"Avataan kaikkien neljän Kruununkaappauksen osan päätehtävän ja sivutehtävän suorittamisen jälkeen."
 
 		"DOTA_CrownfallQuests_Tooltip"				"{s:quest_goal}<br><b>Palkinto:</b> {s:quest_reward}"
 
@@ -43361,6 +43393,7 @@ uudet esinekuvakkeet."
 		"DOTA_Crownfall_TooltipOverworldToken_Heading"	"Ansaitse <span class=\"TokenName\">{s:token_name}</span>-poletteja pelaamalla näitä sankareita:"
 		"DOTA_Crownfall_TooltipOverworldToken_Separator" ":"
 		
+		"DOTA_Crownfall_TooltipOverworldPath_RequiresPremium"			"Vaatii tienraivaajan paketin"
 		"DOTA_Crownfall_TooltipOverworldPath_RequiresQuest"				"Käy erikoissijainneissa löytääksesi tämän ainutlaatuisen poletin."
 		"DOTA_Crownfall_TooltipOverworldPath_ActionRegular"					"Klikkaa näyttääksesi sankarit"
 		"DOTA_Crownfall_TooltipOverworldPath_ActionPopup"					"Klikkaa valitaksesi omistamattomat poletit"
@@ -43395,6 +43428,12 @@ uudet esinekuvakkeet."
 		"DOTA_Crownfall_Guide_OtherRewards_3"				"Muutamasta erikoissijainnista, kuten jokaisen osan viimeisestä tarinasijainnista, löytyy <b>saaliskasoja</b>. Useimmista sijainneista saa yhden palkinnon, mutta saaliskasasta saa useamman palkinnon."
 		"DOTA_Crownfall_Guide_OtherRewards_4"				"Kunkin osan tarinatehtävien suorittamisesta saa suorituspokaalin ja ainutlaatuisen kosmeettisen esinekokoelman."
 
+		"DOTA_Crownfall_Feedback_Header"					"Anna palautetta"
+		"DOTA_Crownfall_Feedback_Description"				"Kerro tähänastisista kokemuksistasi Kruununkaappaus-tapahtumassa."
+		"DOTA_Crownfall_Feedback_Placeholder"				"Kirjoita palautteesi tähän"
+		"DOTA_Crownfall_Feedback_Submit"					"Lähetä palaute"
+
+		"DOTA_Crownfall_FrontPage_EventDescription"			"Lähde Skywrath Magen ja Vengeful Spiritin kanssa kuukausia kestävään interaktiiviseen seikkailuun."
 		"DOTA_Crownfall_FrontPage_ProgressAvailable"		"Edistymistä saatavilla!"
 		"DOTA_Crownfall_FrontPage_MapCompletion"			"Suoritettu"
 		"DOTA_Crownfall_FrontPage_ViewArcana"				"Näytä salatieteellinen esine"
@@ -43416,6 +43455,9 @@ uudet esinekuvakkeet."
 		"DOTA_Crownfall_Tab_Store"	"Kruununkaappauksen kauppa"
 		"DOTA_Crownfall_Tab_Candy"	"Karkkikaravaani"
 
+		"DOTA_Crownfall_Store_Title"			"Kruununkaappaus-kauppa"
+		"DOTA_Crownfall_Store_Description"		"Kaikki Taivaanlinnan hienoimmat tavarat yhdestä kaupasta"
+
 		"DOTA_Overworld_ReplayDialog"		"Toista keskustelu"
 
 		"DOTA_Overworld_Node_Reward"				"Palkinto"
@@ -43430,6 +43472,7 @@ uudet esinekuvakkeet."
 		"DOTA_Crownfall_RewardSpray"					"Kausigraffiti"
 		"DOTA_Crownfall_RewardEmoticon"					"Hymiö"
 		"DOTA_Crownfall_RewardChatWheel"				"Kausittainen chatrulla"
+		"DOTA_Crownfall_DecorationReward:p{decoration_count}"	"Vitriinikoriste#|#Vitriinikoristeet"
 		"DOTA_Crownfall_RandomReward_Info"				"Saat yhden satunnaisen palkinnon jokaisesta osiosta. Et saa palkintoa, jonka olet jo saanut."
 
 		"DOTA_Overworld_TokensReceived"					"Saadut poletit"
@@ -43489,6 +43532,10 @@ uudet esinekuvakkeet."
 
 		"DOTA_Crownfall_HowToPlay_Summary"				"Kuningatar Imperia on kieltänyt palvomasta jumalatar Scree'Aukia, joka on antanut viimeiset voimansa Dragonukselle (Skywrath Mage) ja Shenille (Vengeful Spirit) auttaakseen heitä johtamaan kapinaa pahaa kuningatarta vastaan."
 
+		"DOTA_Crownfall_HowToPlay_PlayDota_Description"		"Ansaitset poletteja pelaamalla otteluita Kruununkaappaus-tapahtuman aikana. Eri sankareilla pelaaminen antaa eri poletteja."
+		"DOTA_Crownfall_HowToPlay_Explore_Description"		"Avaa kartan polkuja poleteilla ja etene strategiakartalla samalla, kun ansaitset aarteita. Pidä silmällä erityisiä kohtaamisia, kuten karkkikaravaaneja ja polettikauppiaita!"
+		"DOTA_Crownfall_HowToPlay_Rewards_Description"		"Kerää aarteita, karkkia, Kruununkaappaus-kolikoita ja paljon muuta samalla, kun taistelet ilkeän kuningatar Imperian syrjäyttämiseksi."
+
 		"DOTA_Crownfall_Overworld_Intro_Inventory"					"Tavaraluettelo"
 		"DOTA_Crownfall_Overworld_Intro_Information"				"Tietoja"
 		"DOTA_Crownfall_Overworld_Intro_EarnedTokensInventory"		"Ansaitut poletit näkyvät esineluettelossasi.\nVoit pitää ylimääräiset poletit, kunnes tarvitset niitä."
@@ -43504,6 +43551,7 @@ uudet esinekuvakkeet."
 
 		"DOTA_Overworld_Inventory_HeroTrayNoHeroesForTokens"		"Mikään sankari ei anna kaikkia näitä poletteja."
 		"DOTA_Overworld_Inventory_HeroTrayTooManyTokens"		"Liian monta valittua polettia. Jokaisella sankarilla saa täsmälleen kolme polettia."
+		"DOTA_Overworld_Inventory_HeroTrayPremium"		"<b>Tienraivaaja</b>-poletit ovat osa Kruununkaappaus-kaupasta saatavaa <b>Keskitullin tienraivaajan pakettia</b>.<br>Näillä poleteilla avataan ainutlaatuisia palkintoja antavia erityisiä sivutehtäviä."
 		"DOTA_Overworld_Inventory_HeroTrayHidden"		"Sait tämän erityispoletin erikoisesta kohtaamisesta."
 		
 		"DOTA_Crownfall_Encounter_UnableToClaimReward"	"Palkinnon lunastus epäonnistui"
@@ -43527,6 +43575,8 @@ uudet esinekuvakkeet."
 		"DOTA_Crownfall_PostGame_LossEarned"				"Tappio sankarilla {g:dota_hero_name:hero_id} toi lohdutukseksi satunnaisen poletin:"
 		"DOTA_Crownfall_PostGame_UnclaimedMapProgress"		"Karttaedistymistä saatavilla!"
 		"DOTA_Crownfall_PostGame_GoToOverworld"				"Siirry strategiakartalle"
+		"DOTA_Crownfall_PostGame_TurboDisclaimer"			"Turbo-otteluista saa kaksi polettia voitosta eikä yhtään tappiosta."
+		
 		"DOTA_Crownfall_VisualNovel_ClickToContinue"		"Klikkaa jatkaaksesi"
 		"DOTA_Crownfall_VisualNovel_ViewComicPages"			"Näytä sarjakuvasivut"
 		
@@ -43547,6 +43597,8 @@ uudet esinekuvakkeet."
 		"DOTA_Crownfall_Fishing_Hud_Tip_Aim"				"Tähtää klikkaamalla."
 		"DOTA_Crownfall_Fishing_Hud_Tip_Charge"				"Lataa heittoa pitämällä vasen painike pohjassa."
 		"DOTA_Crownfall_Fishing_Hud_Tip_Reel"				"Nosta nappauslaatikkoa pitämällä vasen painike pohjassa."
+
+		"DOTA_Crownfall_Fishing_Rewards"					"Palkinnot"
 
 		"DOTA_Crownfall_Fishing_Speech_Instructions"		"Nosta nappauslaatikkoa pitämällä vasen painike pohjassa. Pidä kala laatikossa, kunnes se jää kiinni."
 
@@ -43611,14 +43663,22 @@ uudet esinekuvakkeet."
 		"DOTA_Crownfall_Overworld_III"	"3"
 		"DOTA_Crownfall_Overworld_IV"	"4"
 		
+		"DOTA_Crownfall_Overworld_Midgate"	"Keskitullin markkinat"
+		"DOTA_Crownfall_Overworld_Oglodi"	"Druudin aavikot"
+		"DOTA_Crownfall_Overworld_IceWrack"	"Jääraunioiden pakkaset"
 		"DOTA_Crownfall_Overworld_TheEyrie"	"Taivaanlinnan tornit"
 		
+		"DOTA_Crownfall_Background_Midgate"	"<b>Keskitullin</b><br/>markkinat"
+		"DOTA_Crownfall_Background_Oglodi"	"<b>Druudin</b><br/>aavikot"
+		"DOTA_Crownfall_Background_IceWrack"	"<b>Jääraunioiden</b><br/>pakkaset"
 		"DOTA_Crownfall_Background_TheEyrie"	"<b>Taivaanlinnan</b><br/>tornit"
 
 		"DOTA_Crownfall_Overworld_Active"	"Käynnissä!"
 		"DOTA_Crownfall_Overworld_SetActive"	"Valitse"
+		"DOTA_Crownfall_Overworld_EventDates"	"18.4.–8.8."
 		"DOTA_Crownfall_Overworld_LearnMore"	"Tutustu tarkemmin"
 		"DOTA_Crownfall_Overworld_HowToPlay"	"Peliohjeet"
+		"DOTA_Crownfall_Overworld_Feedback"	"Palaute"
 		"DOTA_Crownfall_Overworld_Act"	"Osa"
 		"DOTA_Crownfall_Overworld_ActI"	"Osa 1"
 		"DOTA_Crownfall_Overworld_ActII"	"Osa 2"
@@ -43638,14 +43698,24 @@ uudet esinekuvakkeet."
 		"DOTA_Crownfall_Overworld_CompletionProgressBasic"	"{d:basic_total_earned}/{d:basic_total_max} <br> suoritettu"
 		"DOTA_Crownfall_Overworld_CompletionProgressPremium"	"{d:premium_total_earned}/{d:premium_total_max} <br> suoritettu"
 		
+		"DOTA_Crownfall_Overworld_Rewards_Loading"	"Ladataan"
+		"DOTA_Crownfall_Overworld_Rewards_FailedToLoad"	"Edistymisen lataus epäonnistui."
+
+		"DOTA_Crownfall_Overworld_Inventory_Loading"	"Ladataan tavaraluetteloa"
+		"DOTA_Crownfall_Overworld_Inventory_FailedToLoad"	"Tavaraluettelon sisällön lataaminen epäonnistui."
+
 		"DOTA_Crownfall_Filters_TokensNeeded"	"Tarvittavat poletit"
 
+		"DOTA_Crownfall_ActPassDescription"		"Osta <b>Keskitullin tienraivaajan paketti</b> päästäksesi käsiksi kaikkiin palkintoihin."
 		"DOTA_Crownfall_ActPassButtonLabel"		"Näytä tiedot"
 		"DOTA_Crownfall_ActPassButtonLabel_Embed"	"Näytä kaupassa"
 		"DOTA_Crownfall_ViewStoreButtonLabel"	"Näytä kauppa"
 
 		"DOTA_Crownfall_RewardsGroup_Free"		"Palkinnot"
+		"DOTA_Crownfall_RewardsGroup_Paid"		"Tienraivaajan paketti"
+
 		"DOTA_Crownfall_Encounter_TokenTrader_Trade"			"Vaihda"
+		"DOTA_Crownfall_Encounter_TokenTrader_Reset"			"Nollaa vaihdot"
 		"DOTA_Crownfall_Encounter_TokenTrader_Trade3Title"		"Vaihda <b>3 samaa</b> polettia"
 		"DOTA_Crownfall_Encounter_TokenTrader_Trade4Title"		"Vaihda <b>4 mitä tahansa</b> polettia"
 		"DOTA_Crownfall_Encounter_TokenTrader_ChooseInventory"	"Valitse poletit tavaraluettelostasi"
@@ -43653,6 +43723,8 @@ uudet esinekuvakkeet."
 		"DOTA_Crownfall_Encounter_ChooseTokensLabel"			"Valitse poletti"
 		"DOTA_Crownfall_Encounter_SaveHero"						"Pelasta sankari"
 		"DOTA_Crownfall_Encounter_Treasure_SpendToken"			"Käytä poletti"
+		"DOTA_Crownfall_Encounter_Treasure_TokenNeeded"			"Vaatii poletin"
+
 		"DOTA_Crownfall_Encounter_TakeCandle"		"Ota kynttilä"
 		"DOTA_Crownfall_Encounter_TakeTokens"		"Ota poletit"
 		"DOTA_Crownfall_Encounter_AlreadyClaimed"	"Lunastettu"
@@ -43675,7 +43747,10 @@ uudet esinekuvakkeet."
 		"DOTA_DiscountPriceValue"			"ennen {s:default_price}"
 		"DOTA_PriceFree"					"Ilmainen"
 
+		"DOTA_Crownfall_OverworldMap_Act1_MainQuest"	"Päätehtävä, Keskitulli"
 		"DOTA_Crownfall_OverworldMap_Act1_SideQuest"	"Sivutehtävä"
+		"DOTA_Crownfall_OverworldMap_Act1_PremiumQuest"	"Tienraivaajan sivutehtävä"
+
 		"DOTA_Crownfall_OverworldMap_Act1_StagesComplete"		"%s1/%s2 tehtävää suoritettu"
 		"DOTA_Crownfall_OverworldMap_Act1_Chapter1_StagesComplete"		"{s:main-01_progress} tehtävää suoritettu"
 		"DOTA_Crownfall_OverworldMap_Act1_Chapter2_StagesComplete"		"{s:main-02_progress} tehtävää suoritettu"
@@ -43685,7 +43760,14 @@ uudet esinekuvakkeet."
 		"DOTA_Crownfall_OverworldMap_Act1_Juggernaut_StagesComplete"	"{s:juggernaut01_progress} tehtävää suoritettu"
 		"DOTA_Crownfall_OverworldMap_Act1_Riki_StagesComplete"			"{s:Riki01_progress} tehtävää suoritettu"
 
+		"DOTA_Crownfall_OverworldMap_Act1_TokenTraderSign"				"Dolfrat, pätevä velho<br/><br/>Ei valituksia<br/><br/>Vain viiden tähden arvosteluja, kiitos"
+		"DOTA_Crownfall_OverworldMap_Act1_MarketSign"					"PÄIVÄN ANNOKSET:<br/>– matoja<br/>– etanoita<br/>– kalaa (äärimmäisen tuoretta)"
+		"DOTA_Crownfall_OverworldMap_Act1_MysteriousVendorSign"			"Rikottu tuote on ostopäätös."
+		"DOTA_Crownfall_OverworldMap_Act1_MeepoPosterSign"				"ETSINTÄKUULUTUS: KUOLLEENA TAI KUOLLEENA"
+
 		"DOTA_Crownfall_OverworldInventory_Inventory"	"Tavaraluettelo"
+		"DOTA_Crownfall_OverworldInventory_MultiselectInfo"	"Klikkaa polettia tavaraluettelossa tai kartalla nähdäksesi, millä sankareilla ansaitset kyseiset poletit.<br/><br/>Pidä Shift-näppäintä painettuna valitaksesi useita poletteja kerralla."
+
 		// Act I Tokens
 		"DOTA_Crownfall_Token_Walking"					"Kävelijä"
 		"DOTA_Crownfall_Token_Running"					"Juoksija"
@@ -43706,10 +43788,14 @@ uudet esinekuvakkeet."
 		"DOTA_Crownfall_Token_Pusher"					"Puskija"
 		"DOTA_Crownfall_Token_Healer"					"Parantaja"
 
+		"DOTA_Crownfall_Token_Premium"					"Tienraivaaja"
+
 		"DOTA_Crownfall_Token_Fish"						"Kala"
 		"DOTA_Crownfall_Token_Candle"					"Kynttilä"
 		"DOTA_Crownfall_Token_Stargazer"				"Tähtitiirailija"
 		"DOTA_Crownfall_Token_Mystery"					"????"
+
+		"DOTA_Crownfall_Token_Random"					"Satunnainen"
 
 		"DOTA_Crownfall_StoreCell_ExploreStore"			"Tutustu Kruununkaappaus-kauppaan"
 		"DOTA_Crownfall_StoreCell_DiscountAvailable"	"Alennus saatavilla"
@@ -43720,7 +43806,13 @@ uudet esinekuvakkeet."
 
 		"DOTA_HeroGrid_Overworld"						"Kruununkaappaus"
 		"DOTA_HeroGrid_Overworld_Description"			"Korosta sankarit, joiden poletit aukaisisivat polkuja Kruununkaappaus-kartalla. "
-"DOTA_Style_Crownfall_Drow_Back_0"	"Jään silmät"
+		
+		//DROW RANGER CROWNFALL SET STYLES
+		
+		"DOTA_Style_Crownfall_Drow_Weapon_0"	"Jäinen katse"
+		"DOTA_Style_Crownfall_Drow_Weapon_1"	"Vihainen katse"
+		
+		"DOTA_Style_Crownfall_Drow_Back_0"	"Jään silmät"
 		"DOTA_Style_Crownfall_Drow_Back_1"	"Vihan silmät"
 
 		"DOTA_Style_Crownfall_Drow_Arms_0"	"Jään silmät"
@@ -43740,11 +43832,49 @@ uudet esinekuvakkeet."
 
 		//SKYWRATH MAGE ARCANA
 		"Debut_Arcana_Skywrath_Intro" 								"Uudet salatieteelliset kokoelmat Skywrath Magelle ja Vengeful Spiritille" 
+		"Debut_Arcana_Skywrath_Lore"									"Scree'Auk, elämänsä loppua lähentyvä jumalatar antoi Vengeful Spiritille ja Skywrath Magelle viimeiset voimansa yhdellä ehdolla: kaksikon on syrjäytettävä Taivaanlinnan petollinen kuningatar."
+		
 		"DOTA_Style_Skywrath_Mage_Arcana_Style0"	"Scree'Aukin palvelijat"
+		"DOTA_Style_Skywrath_Mage_Arcana_Style1"	"Taivaanlinnan hallitsijat"
+		
+		"Debut_Arcana_Skywrath_Feature_1_Title"				"Avattava vaihtoehtoinen tyyli"
+		"Debut_Arcana_Skywrath_Feature_1_Desc"				"Suorita osan 4 päätehtävä avataksesi vaihtoehtoisen tyylin."
+		
 		"Debut_Arcana_Skywrath_Feature_2_Title"				"Uusi malli ja jalusta"
+		"Debut_Arcana_Skywrath_Feature_2_Desc"				"Dragonus on saanut täysin uuden mallin täydellisellä, missioon sopivalla esinekokoelmalla sekä uuden jalustan ja avattavan vaihtoehtoisen tyylin."
+		
+		"Debut_Arcana_Skywrath_Feature_3_Title"				"Muokatut animaatiot ja tehosteet"
+		"Debut_Arcana_Skywrath_Feature_3_Desc"				"Sisältää täyden kokoelman uusia animaatioita ja tunnelmatehosteita, kuten mukautetut kuvakkeet ja tehosteet Arcane Boltille, Concussive Shotille, Ancient Sealille ja Mystic Flarelle."
+		
 		"Debut_Arcana_Skywrath_Feature_4_Title"				"Räätälöity sankarigrafiikka"
-"Debut_Arcana_Venge_Feature_2_Title"				"Uusi malli ja jalusta"
+		"Debut_Arcana_Skywrath_Feature_4_Desc"				"Sisältää uuden muotokuvan, minikarttakuvakkeen ja yläpalkin muotokuvan, täysin uudet tehosteet hyökkäyksiin, tappoihin, kuolemiin ja eväyksiin sekä esineiden kuvakkeet ja tehosteet Rod of Atosille ja Phylacterylle."
+		
+		"Debut_Arcana_Skywrath_Feature_5_Title"				"Salatieteellisten kokoelmien repliikit"
+		"Debut_Arcana_Skywrath_Feature_5_Desc"				"Vapautensa saaneella Dragonuksella on uudet repliikit, joilla kertoa vääryyksistä."
+	
+		// VENGEFUL SPIRIT ARCANA
+
+		"Debut_Arcana_Venge_Lore"									"Scree'Auk, elämänsä loppua lähentyvä jumalatar antoi Vengeful Spiritille ja Skywrath Magelle viimeiset voimansa yhdellä ehdolla: kaksikon on syrjäytettävä Taivaanlinnan petollinen kuningatar."
+		
+		"Debut_Arcana_Venge_Feature_1_Title"				"Avattavat vaihtoehtoiset tyylit"
+		"Debut_Arcana_Venge_Feature_1_Desc"				"Suorita osan 4 päätehtävä avataksesi ensimmäisen vaihtoehtoisen tyylin. Suorita kaikki Kruununkaappauksen päätehtävät ja sivutehtävät avataksesi toisen vaihtoehtoisen tyylin."
+		
+		"Debut_Arcana_Venge_Feature_2_Title"				"Uusi malli ja jalusta"
+		"Debut_Arcana_Venge_Feature_2_Desc"				"Shendelzare on saanut siipensä takaisin, ja tarjolla on täysi uusi malli ja Taivaanlinnan kuninkaallinen esinekokoelma, joka sisältää muun muassa uuden jalustan ja kaksi avattavaa vaihtoehtoista tyyliä."
+		
+		"Debut_Arcana_Venge_Feature_3_Title"				"Muokatut animaatiot ja tehosteet"
+		"Debut_Arcana_Venge_Feature_3_Desc"				"Sisältää täydellisen kokoelman uusia animaatioita ja tunnelmatehosteita, mukaan lukien mukautetut kuvakkeet ja tehosteet Magic Missilelle, Wave of Terrorille, Nether Swapille ja mukautettu Vengefulin harha -tehoste."
+		
 		"Debut_Arcana_Venge_Feature_4_Title"				"Räätälöity sankarigrafiikka"
+		"Debut_Arcana_Venge_Feature_4_Desc"				"Sisältää uuden muotokuvan, minikarttakuvakkeen ja yläpalkin muotokuvan, täysin uudet tehosteet hyökkäyksiin, tappoihin, kuolemiin ja eväyksiin sekä esineiden kuvakkeet ja ja mukautetun kuvakkeen Aghanim's Scepterille."
+		
+		"Debut_Arcana_Venge_Feature_5_Title"				"Salatieteellisten kokoelmien repliikit"
+		"Debut_Arcana_Venge_Feature_5_Desc"				"Shendelzarella on siivet, katse kiinni valtaistuimessa ja uudet, elolliseen muotoon sopivat repliikit."
+		
+		"DOTA_Style_Vengeful_Spirit_Arcana_Style0"	"Taivaanlinnan hallitsijat"
+		"DOTA_Style_Vengeful_Spirit_Arcana_Style1"	"Scree'Aukin palvelijat"
+		"DOTA_Style_Vengeful_Spirit_Arcana_Style2"	"Kuningatar Imperia"
+
 		// END Vengeful Spirit Arcana
 
 		"DOTA_Comic_Viewer_Hide_Thumbnails"		"Piilota pikkukuvat"
