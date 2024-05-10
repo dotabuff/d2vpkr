@@ -13017,6 +13017,7 @@ Kummankin kiven kulttuuri ja vaikutusvalta kasvoi, kunnes niiden hallitsemat yht
 
 		"DOTA_CoachControls_Draw"		"Piirrä"
 		"DOTA_CoachControls_Ping"		"Karttamerkki"
+		"DOTA_CoachControls_VoiceChat"	"Ääniviestintä"
 		"DOTA_CoachControls_TextChat"	"Chat"
 		"DOTA_CoachControls_VoiceBind"	"Puhu: <font color='#83caed'>{g:dota_keybind:ally_voice_chat_keybind}</font>"
 		"DOTA_CoachControls_VoiceOpenMic"	"<font color='#83caed'>Avaa mikrofoni</font> puhuaksesi"
@@ -13028,6 +13029,8 @@ Kummankin kiven kulttuuri ja vaikutusvalta kasvoi, kunnes niiden hallitsemat yht
 		"DOTA_CoachControls_PrivateCoach"			"Yksityisvalmentaja"
 		"DOTA_CoachControls_CoachingTeam"			"Valmentaa: {s:coaching_team_name}"
 		"DOTA_CoachControls_PrivateCoaching"		"Yksityisvalmennus"
+		"DOTA_CoachControls_PrivateCoachTextHelp"	"Paina <font color='#83caed'>{g:dota_keybind:ally_text_chat_keybind}</font> → <font color='#83caed'>TAB</font> keskustellaksesi"
+
 		"DOTA_CoachControls_RedirectVoiceToCoach"	"Valmentaja"
 		"DOTA_CoachControls_RedirectVoiceToAllies"	"Liittolaiset"
 
@@ -24463,6 +24466,9 @@ Kokeneet pelaajat, joilla on vähintään {d:new_player_req_behavior_score} vies
 	"dota_settings_accept_match_details"			"Näytä ottelun ennakkoarviotiedot"
 	"dota_tooltip_settings_accept_match_details"	"Tämä ominaisuus näyttää tietoja löydetystä pelistä, jotta voit halutessasi kieltäytyä epämiellyttävästä pelistä. Ominaisuus vaatii aktiivisen Dota Plus -tilauksen eikä ole käytettävissä Kuolemattomien pelaajavalinta -tilassa."
 
+	"dota_settings_target_filter_is_toggle"			"Suodattimen pikanäppäinten aktivointi"
+	"dota_tooltip_settings_target_filter_is_toggle_details"	"Kun asetus on päällä, suodattimet ovat käytössä kunnes suodatuksen pikanäppäintä painetaan uudelleen. Muutoin suodatus on käytössä vain, kun näppäintä pidetään pohjassa."
+
 	"DOTA_Keybind_ARROW"	"Nuoli (oletus)"
 	"DOTA_Keybind_WASD"		"WASD"
 	"DOTA_Keybind_MMO"		"MMO-pelit"
@@ -31431,6 +31437,8 @@ Alkupelin sankareita kuten Zeusta ja Death Prophetia on nähty, puskijoita kuten
 	"DOTA_TI7_CollectorsCache_Title" "Keräilijän kätkö"
 	"DOTA_TI7_CollectorsCache_Text" "Kätkön esineitä ei voi ostaa muualta turnauksen päätyttyä."
 	"DOTA_CollectorsCache_Title" "Keräilijän kätkö"
+	"DOTA_CollectorsCacheVoting_Title" "Keräilijän kätkön äänestys"
+
 	"DOTA_Singles_Day_Treasure_HeaderText" "Ainutlaatuisia hymiöitä"
 	"DOTA_Singles_Day_Treasure_BodyText" "Ansaitse ainutlaatuinen hymiöpakkaus avaamalla 9 aarretta"
 	"DOTA_Singles_Day_Treasure_FooterText" "Nämä hymiöt ovat trajolla vain 13.11.2017 asti"
@@ -35277,6 +35285,7 @@ Alkupelin sankareita kuten Zeusta ja Death Prophetia on nähty, puskijoita kuten
 	"DOTA_Collectors_Cache_Vote_Finished"				"Äänestys on päättynyt"
 	"DOTA_Collectors_Cache_Vote_TimeRemaining"			"{t:d:t:T:countdown_time} aikaa äänestää"
 	"DOTA_Collectors_Cache_Winter2022_Vote_PageTitle"	"Diretide 2022 – Keräilijän kätkö"
+	"DOTA_Collectors_Cache_Crownfall_Vote_PageTitle"	"Kruununkaappauksen Keräilijän kätkö"
 	"DOTA_Collectors_Cache_Vote_PageSubtitle"			"Aarreäänestys"
 	"DOTA_Collectors_Cache_Vote_CreatorsTitle"			"Luojat"
 	"DOTA_Collectors_Cache_Vote_CreatorsFailedToLoad"	"Luojien näyttäminen epäonnistui."
@@ -43303,6 +43312,7 @@ uudet esinekuvakkeet."
 		"DOTA_Gift_Prompt"			"Haluatko varmasti lahjoittaa tämän esineen?"
 		"DOTA_Gift_Everyone_Prompt"	"Haluatko varmasti lahjoittaa tämän esineen pelin kaikille pelaajille?"
 
+		"DOTA_Match_OverallQuality" 			"Ottelun ennustettu laatu on: {s:quality}"
 		"DOTA_Match_OverallTeamQuality" 		"Joukkueiden tasavertaisuus: {s:team_balance}"
 		"DOTA_Match_Region_Title"				"Alue"
 		"DOTA_Match_SkillRange_Title"			"Taitotaso"
@@ -43314,6 +43324,30 @@ uudet esinekuvakkeet."
 		"DOTA_Match_PartyBehavior_Label"		"Oma ryhmä: {s:party_behavior}"
 		"DOTA_Match_SkipActionDescription"		"Kieltäydy ottelusta ilman rangaistusta ja hae uudestaan:"
 		"DOTA_Match_SkipButton_Label"			"Hae uudestaan"
+
+		"DOTA_Match_Quality_Label_1" 			"<span class=\"bad\">Kyseenalainen (★)</span>"
+		"DOTA_Match_Quality_Label_2"			"<span class=\"ok\">Hyväksyttävä (★★)</span>"
+		"DOTA_Match_Quality_Label_3" 			"<span class=\"ok\">Kohtuullinen (★★★)</span>"
+		"DOTA_Match_Quality_Label_4" 			"<span class=\"ok\">Hyvä (★★★★)</span>"
+		"DOTA_Match_Quality_Label_5" 			"<span class=\"good\">Ihanteellinen (★★★★★)</span>"
+
+		"DOTA_Match_Balance_Label_1"			"<span class=\"bad\">Kyseenalainen (★)</span>"
+		"DOTA_Match_Balance_Label_2" 			"<span class=\"ok\">Hyväksyttävä (★★)</span>"
+		"DOTA_Match_Balance_Label_3" 			"<span class=\"ok\">Melko hyvä (★★★)</span>"
+		"DOTA_Match_Balance_Label_4"			"<span class=\"ok\">Hyvä (★★★★)</span>"
+		"DOTA_Match_Balance_Label_5" 			"<span class=\"good\">Täydellinen (★★★★★)</span>"
+
+		"DOTA_Match_SkillRange_Label_1"			"<span class=\"bad\">Hyvin laaja (★)</span>"
+		"DOTA_Match_SkillRange_Label_2"			"<span class=\"ok\">Hyväksyttävä (★★)</span>"
+		"DOTA_Match_SkillRange_Label_3"			"<span class=\"ok\">Kohtalainen (★★★)</span>"
+		"DOTA_Match_SkillRange_Label_4"			"<span class=\"ok\">Hyvä (★★★★)</span>"
+		"DOTA_Match_SkillRange_Label_5"			"<span class=\"good\">Lähes täydellinen (★★★★★)</span>"
+
+		"DOTA_Match_Behavior_Label_1"			"<span class=\"bad\">Häiritsevä (★)</span>"
+		"DOTA_Match_Behavior_Label_2"			"<span class=\"ok\">Hyväksyttävä (★★)</span>"
+		"DOTA_Match_Behavior_Label_3"			"<span class=\"ok\">Kohtuullinen (★★★)</span>"
+		"DOTA_Match_Behavior_Label_4"			"<span class=\"ok\">Hyvä (★★★★)</span>"
+		"DOTA_Match_Behavior_Label_5"			"<span class=\"good\">Ihanteellinen (★★★★★)</span>"
 
 		"DOTA_SplashAd_HeroBans_Title"				"Sankarikiellot ovat muuttuneet"
 		"DOTA_SplashAd_HeroBans_Text"				"Kiellä sankareita ennen pelin hakemista"
@@ -43873,5 +43907,10 @@ uudet esinekuvakkeet."
 
 		"DOTA_Comic_Viewer_Hide_Thumbnails"		"Piilota pikkukuvat"
 
-		}
+		"DOTA_Labs_Feedback"						"Lähetä palautetta"
+		"DOTA_Labs_Feedback_Header"					"Anna palautetta"
+		"DOTA_Labs_Feedback_Description"				"Kerro kokemuksistasi Dota-pajaan liittyvien ominaisuuksien suhteen."
+		"DOTA_Labs_Feedback_Placeholder"				"Kirjoita palautteesi tähän"
+		"DOTA_Labs_Feedback_Submit"					"Lähetä palaute"
+	}
 }
