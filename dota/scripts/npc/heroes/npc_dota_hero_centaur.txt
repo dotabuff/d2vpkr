@@ -1,4 +1,3 @@
-// Abilities for centaur
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -87,6 +86,21 @@
 				"value"				"60 90 120 150"
 				"special_bonus_unique_centaur_4" "+35"
 			}
+			"stack_duration"		
+			{
+				"value"				"0"
+				"special_bonus_facet_centaur_counter_strike"		"=6"
+			}
+			"pct_of_incoming_damage_as_bonus"  
+			{
+				"value"				"0"
+				"special_bonus_facet_centaur_counter_strike"		"=25"
+			}
+			"max_damage_increase_pct"
+			{
+				"value"				"0"
+				"special_bonus_facet_centaur_counter_strike"		"=100"
+			}
 			"radius"						
 			{
 				"value"		"220"
@@ -142,7 +156,12 @@
 					"CalculateSpellDamageTooltip"	"1"
 				}
 				"return_damage_str"			"16 24 32 40"
-				"aura_radius"				"1200"
+				"aura_radius"				
+				{
+					"value"		"1200"
+					"affected_by_aoe_increase"	"1"
+				}
+
 		}
 	}
 
@@ -181,7 +200,6 @@
 			"duration"			
 			{
 				"value"						"3.5 4 4.5"
-				"special_bonus_unique_centaur_7"	"+1"
 			}
 			"scepter_bonus_duration"     
 			{
@@ -201,18 +219,14 @@
 			}
 			"slow_movement_speed"			"100"
 			"damage_reduction"	
-			{
-			//	"special_bonus_scepter"	"+20 +25 +30"
-			}
+			""
 			"AbilityCooldown"
 			{
-				"value"					"90"
+				"value"					"100 95 90"
 				"special_bonus_unique_centaur_5"	"-25"
 			}
 			"has_flying_movement"	
-			{
-			//	"special_bonus_scepter"	"+1"
-			}
+			""
 		}
 	}
 	
@@ -256,7 +270,24 @@
 			"break_distance"		"600"
 		}
 	}
+	//=================================================================================================================
+	// Horsepower
+	//=================================================================================================================
+	"centaur_horsepower"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
 
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI "
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"AbilityValues"
+		{
+			"strength_to_movement_pct"			"40"
+			"move_speed_limit"					"600"
+			"base_move_speed_penalty"			"0"
+		}
+	}
 	//=================================================================================================================
 	// Centaur: Mount
 	//=================================================================================================================
@@ -272,6 +303,7 @@
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		"AbilitySound"					"Hero_Centaur.Stampede"
+		"DependentOnAbility"			"centaur_work_horse"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -309,12 +341,11 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"FightRecapLevel"				"2"
+		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Centaur.Stampede"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 		"MaxLevel"						"1"
-		"FightRecapLevel"				"1"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -327,16 +358,30 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityModifierSupportValue"	"0.2"	// hits everything on the map
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"duration"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"2.0"
+				"value" "2"
 			}
+		}
+	}
+
+	//=================================================================================================================
+	// Centaur: Innate HP Per Time
+	//=================================================================================================================
+	"centaur_rawhide"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"AbilityValues"
+		{
+			"health_per_upgrade"		"40"
+			"upgrade_rate"				"120.0"
 		}
 	}
 
@@ -349,16 +394,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"1"
-				"ad_linked_abilities"			"centaur_return"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "1"
+				"ad_linked_abilities" "centaur_return"
 			}
 		}
 	}
@@ -405,41 +446,6 @@
 	// Ability: Special Bonus
 	//=================================================================================================================
 	"special_bonus_unique_centaur_5"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ad_linked_abilities"			"centaur_stampede"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_centaur_6"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"50"
-				"ad_linked_abilities"			"centaur_stampede"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_centaur_7"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------

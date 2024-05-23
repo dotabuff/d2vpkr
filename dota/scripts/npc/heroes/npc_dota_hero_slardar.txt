@@ -1,8 +1,45 @@
-// Abilities for slardar
 "DOTAAbilities"
 {
     "Version"       "1"
-		
+
+	//=================================================================================================================
+	// Ability: Slardar River Warden
+	//=================================================================================================================
+	"slardar_seaborn_sentinel"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel"						"4"
+		"Innate"						"1"
+		"HasScepterUpgrade"				"1"
+		"DependentOnAbility"			"slardar_amplify_damage"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{			
+			"river_speed"					"18"
+			"puddle_regen"				
+			{
+				"value"						"2 4 6 8"
+				"special_bonus_scepter"		"+22"
+			}
+			"puddle_armor"				
+			{
+				"value"						"1 2 3 4"
+				"special_bonus_scepter"		"+11"
+			}
+			"puddle_status_resistance"			
+			{
+				"value"						"40"
+				"RequiresScepter"			"1"
+			}
+            "river_speed_tooltip"			"18"
+			"river_damage"					"8 16 24 32"
+		}
+	}
+	
 	//=================================================================================================================
 	// Ability: Slardar Guardian Sprint
 	//=================================================================================================================
@@ -13,7 +50,6 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_Slardar.Sprint"
-		"HasScepterUpgrade"				"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -26,28 +62,37 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"29 25 21 17"
+		
 		"AbilityValues"
 		{			
-				"bonus_speed"					"25 30 35 40"
-				"duration"						"10"
-				"river_speed"					"18"
-				"puddle_regen"				
-				{
-					"value"						"2 4 6 8"
-					"special_bonus_scepter"		"+22"
-				}
-				"puddle_armor"				
-				{
-					"value"						"1 2 3 4"
-					"special_bonus_scepter"		"+11"
-				}
-				"puddle_status_resistance"			
-				{
-					"value"						"40"
-					"RequiresScepter"			"1"
-				}
-                "river_speed_tooltip"			"18"
+			"AbilityCooldown"
+			{
+				"value"									"29 25 21 17"
+				"special_bonus_unique_slardar_7"		"-2"
+			}	
+			"bonus_speed"								"25 30 35 40"
+			"duration"						"10"
+			"speed_burst_percent"
+			{
+				"value"							"0"
+				"special_bonus_facet_slardar_leg_day"		"+8"
+				"RequiresFacet"				"slardar_leg_day"
+			}
+			"speed_burst_duration"
+			{
+				"value"							"0"
+				"special_bonus_facet_slardar_leg_day"		"5.0"
+			}
+			"speed_burst_max_duration"
+			{
+				"value"							"0"
+				"special_bonus_facet_slardar_leg_day"		"2.0"
+			}
+			"slow_resistance_tooltip"
+			{
+				"value"										"0"
+				"special_bonus_facet_slardar_leg_day"	"=100"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}	
@@ -79,12 +124,6 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"20"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-		}
 	}
 	
 	//=================================================================================================================
@@ -134,7 +173,6 @@
 				"crush_extra_slow"				
 				{
 					"value"	"-20 -25 -30 -35"
-					"LinkedSpecialBonus"	"special_bonus_unique_slardar_8"
 					"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_SUBTRACT"
 				}
 				"crush_attack_slow_tooltip"		"-20 -25 -30 -35"
@@ -147,7 +185,7 @@
 				"puddle_duration"		
 				{
 					"value"					"7"
-					"special_bonus_scepter"	"+18"
+					"special_bonus_scepter"	"+8"
 				}
 				"puddle_radius"		
 				{
@@ -167,7 +205,7 @@
 				}
 				"shard_bonus_radius"			
 				{
-					"value"				"75"
+					"value"				"0"
 					"RequiresShard"					"1"
 					// "affected_by_aoe_increase" explicitly removed here so shard aoe increase doesn't double dip with base radius increase
 				}
@@ -203,7 +241,6 @@
 			}
 			"duration"				"1.1"
 			"attack_count"			"3"
-			"river_damage"			"8 16 24 32"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -269,6 +306,16 @@
 			{
 				"value"			"8"
 			}
+			"has_self_buff"
+			{
+				"value"			"0"
+				"special_bonus_facet_slardar_brineguard"		"+1"
+			}
+			"armor_pct"
+			{
+				"value"			"0"
+				"special_bonus_facet_slardar_brineguard"		"+40"
+			}
 		}
 	}
 
@@ -307,16 +354,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"0"
-				"ad_linked_abilities"			"slardar_amplify_damage"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "0"
+				"ad_linked_abilities" "slardar_amplify_damage"
 			}
 		}
 	}
@@ -330,16 +373,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"3"
-				"ad_linked_abilities"			"slardar_slithereen_crush"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "3"
+				"ad_linked_abilities" "slardar_slithereen_crush"
 			}
 		}
 	}
@@ -361,60 +400,13 @@
 	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================
-	"special_bonus_unique_slardar_6"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ad_linked_abilities"			"slardar_amplify_damage"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-		
-		
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
 	"special_bonus_unique_slardar_7"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"2"
-				"ad_linked_abilities"			"slardar_sprint"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_slardar_8"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"10"
-				"ad_linked_abilities"			"slardar_slithereen_crush"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
 	//=================================================================================================================
 	// Ability: Special Bonus

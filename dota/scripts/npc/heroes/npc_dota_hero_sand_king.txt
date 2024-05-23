@@ -1,4 +1,3 @@
-// Abilities for sand_king
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -11,7 +10,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_ALT_CASTABLE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
@@ -26,10 +25,6 @@
 
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 		
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"14 13 12 11"
-
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"110 120 130 140"
@@ -40,6 +35,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+			"AbilityCooldown"
+			{
+
+				"value"										"14 13 12 11"
+				"special_bonus_unique_sand_king_7"			"-2"
+
+			}
 			"burrow_width"		
 			{
 				"value"		"150"
@@ -102,10 +104,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"damage_tick_rate"	"0.2"
+			"damage_tick_rate"	"0.2"
 			"sand_storm_radius"
 			{
 				"value"		"425 500 575 650"
+				"special_bonus_facet_sand_king_sandshroud"			"+125"
 				"affected_by_aoe_increase"	"1"
 			}
 			"sand_storm_damage"
@@ -113,7 +116,16 @@
 				"value"		"25 45 65 85"
 				"special_bonus_unique_sand_king_2"	"+15"
 			}
-			"fade_delay"			"0.7"
+			"fade_delay"		
+			{
+				"value"				"-1"
+				"special_bonus_facet_sand_king_sandshroud"			"=0.7"
+			}
+			"sand_storm_move_speed_pct"
+			{
+				"value"		"0"
+				"special_bonus_facet_sand_king_dust_devil"	"+70"
+			}
 			"scepter_explosion_radius_pct"
 			{
 				"value"					"0"
@@ -129,11 +141,7 @@
 				"value"					"0"
 				"special_bonus_scepter"		"+2"
 			}	
-			"sand_storm_move_speed"
-			{
-				"value"		"25 50 75 100"
-				"special_bonus_unique_sand_king_3"	"+50"
-			}
+
 
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -146,11 +154,14 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Ability.SandKing_CausticFinale"
+		"DependentOnAbility"			"sandking_epicenter"
+		"Innate"						"1"
+		"MaxLevel"						"4"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -158,25 +169,44 @@
 		{
 				"caustic_finale_radius"		
 				{
-					"value"		"500"
+					"value"		"400"
 					"affected_by_aoe_increase"	"1"
 				}
-				"caustic_finale_damage_base"		
-				{
-					"value"				"50 70 90 110"
-					"LinkedSpecialBonus"	"special_bonus_unique_sand_king_8"
-				}
-				"caustic_finale_damage_pct"		"10 14 18 22"
+				"caustic_finale_damage_base"		"20 40 60 80"
+				"caustic_finale_damage_pct"		"8 10 12 14"
 				"caustic_finale_duration"	"6"
-				"caustic_finale_slow"		
-				{
-					"value"			"-14 -18 -22 -26"
-					"LinkedSpecialBonus"	"special_bonus_unique_sand_king_6"
-					"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_SUBTRACT"
-				}				
+
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
+	//=================================================================================================================
+	// Ability: Sand King Caustic Finale Impediment
+	//=================================================================================================================
+	"sandking_innate_caustic_impediment"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"						"1"
+	}
+	//=================================================================================================================
+	// Ability: Sand King Caustic Finale Volatility
+	//=================================================================================================================
+	"sandking_innate_caustic_volatility"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"radius"			"200"
+		}
+	}	
 
 	//=================================================================================================================
 	// Ability: Sand King Epicenter
@@ -197,7 +227,7 @@
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"120 110 100"
-		"AbilityDuration"				"3.0"
+		"AbilityDuration"				"6.0"
 		"AbilityCastPoint"				"2.0"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
@@ -216,13 +246,13 @@
 		{			
 			"epicenter_pulses"	
 			{
-				"value"		"6 8 10"
-				"special_bonus_unique_sand_king"	"+5"
+				"value"		"12 16 20"
+				"special_bonus_unique_sand_king"	"+10"
 			}
 			"epicenter_damage"	
 			{
-				"value"					"110 120 130"
-				"special_bonus_shard"	"+10"
+				"value"					"60 70 80"
+				"special_bonus_shard"	"+5"
 				"CalculateSpellDamageTooltip"	"1"
 			}
 			"epicenter_radius_base"
@@ -233,8 +263,8 @@
 			}
 			"epicenter_radius_increment"
 			{
-				"value"		"25"
-				"special_bonus_unique_sand_king_5"	"+25"
+				"value"		"13"
+				"special_bonus_unique_sand_king_5"	"+12"
 			}
 			"epicenter_slow"	
 			{
@@ -242,7 +272,7 @@
 			}
 			"epicenter_slow_as"		
 			{
-				"value"			"-30 -45 -60"
+				"value"			"-50 -55 -60"
 			}
 			"shard_radius"	
 			{
@@ -256,9 +286,66 @@
 				"value"				"3.5"
 				"RequiresShard"		"1"
 			}
-					
+			"linger_duration"		"3.0"
 		}
 	}
+
+	//=================================================================================================================
+	// Ability: Scorpion Strike
+	//=================================================================================================================
+	"sandking_scorpion_strike"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				 "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilitySound"					"Hero_Kunkka.Tidebringer.Attack"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"200"
+		"FightRecapLevel"				"1"
+		"AbilityCastPoint"				"0.4"
+		"AbilityManaCost"				"30"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"14.0 11.0 8.0 5.0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+
+			"radius"		
+			{
+				"value"			"225 255 285 315"
+				"affected_by_aoe_increase"	"1"
+			}
+			"inner_radius"
+			{
+				"value"			"125"
+				"affected_by_aoe_increase"	"1"
+			}
+			"inner_radius_bonus_damage_pct"				"40"
+			"attack_damage"				
+			{
+				"value"																"40 80 120 160"
+				"special_bonus_unique_sand_king_scorpion_strike_damage"			"+50"
+			}
+			"debuff_duration"				"4 5 6 7"
+			"strike_slow"				
+			{
+				"value"					"10 12 14 16"
+				"special_bonus_unique_sand_king_3"	"+12"
+			}
+		}
+	}
+
 
 	//=================================================================================================================
 	// Ability: Special Bonus
@@ -305,16 +392,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"35"
-				"ad_linked_abilities"			"sandking_sand_storm"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "35"
+				"ad_linked_abilities" "sandking_sand_storm"
 			}
 		}
 	}
@@ -328,39 +411,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"20"
-				"ad_linked_abilities"			"sandking_epicenter"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_sand_king_6"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"12"
-				"ad_linked_abilities"			"sandking_caustic_finale"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "20"
+				"ad_linked_abilities" "sandking_epicenter"
 			}
 		}
 	}
@@ -374,41 +430,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"2"
-				"ad_linked_abilities"			"sandking_burrowstrike"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-		//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_sand_king_8"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"120"
-				"ad_linked_abilities"			"sandking_caustic_finale"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
 	//=================================================================================================================
 	// Ability: Special Bonus
@@ -421,4 +443,17 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"special_bonus_base"
 	}	
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_sand_king_scorpion_strike_damage"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
+
 }

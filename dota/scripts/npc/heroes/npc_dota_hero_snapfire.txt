@@ -1,4 +1,3 @@
-// Abilities for snapfire
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -21,7 +20,6 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"800"
 		"AbilityCastPoint"				"0.4"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AnimationPlaybackRate"			"1.2" // 1.0 corresponds to cast point of 0.45 or so
@@ -38,27 +36,43 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+				"AbilityCastRange"				
+				{
+					"value"		"800"
+					"special_bonus_facet_snapfire_full_bore"	"=1400"
+				}
 				"damage"					
 				{
 					"value"		"100 160 220 280"
-					"LinkedSpecialBonus"		"special_bonus_unique_snapfire_7"
+					"special_bonus_unique_snapfire_7" "+70"
 				}
 				"blast_speed"				"3000"
 				"blast_width_initial"		
 				{
 					"value"		"225"
+					"special_bonus_facet_snapfire_full_bore"	"=75"
 					"affected_by_aoe_increase"	"1"		
 				}
 				"blast_width_end"
 				{
 					"value"		"400"
+					"special_bonus_facet_snapfire_full_bore"	"=270"
 					"affected_by_aoe_increase"	"1"		
 				}
 				"debuff_duration"			"1.0"
 				"movement_slow_pct"			"100"
 				"attack_slow_pct"			"100"
-				"point_blank_range"			"450"
-				"point_blank_dmg_bonus_pct"	"50.0"
+				"point_blank_range"			
+				{
+					"value" "450"
+					"special_bonus_facet_snapfire_full_bore"	"=650"
+				}
+				"point_blank_dmg_bonus_pct"				"50"
+				"bonus_applies_at_long_range"
+				{
+					"value"			"0"
+					"special_bonus_facet_snapfire_full_bore"	"=1"
+				}
 				"shard_knockback_distance"			
 				{
 					"value"		"250"
@@ -157,12 +171,12 @@
 			"burn_damage"					
 			{
 				"value"					"60 80 100"
+				"special_bonus_unique_snapfire_5"	"+20"
 				"CalculateSpellDamageTooltip"	"1"
 			}
 			"move_slow_pct"
 			{
 				"value"			"15 20 25"
-				"special_bonus_unique_snapfire_4"	"+20"
 			}
 			"burn_ground_duration"	"3.0"
 			"dist_change_speed"		"75"
@@ -202,19 +216,15 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"150"
 		"AbilityCooldown"				"40"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityValues"
 		{
-			"01"
+			"max_time_in_belly"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"max_time_in_belly"		"3.0"
-				"RequiresScepter"		"1"
+				"value" "3"
+				"RequiresScepter" "1"
 			}
 		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
 
 	//=================================================================================================================
@@ -274,7 +284,6 @@
 			"move_slow_pct"
 			{
 				"value"			"25"
-				"special_bonus_unique_snapfire_4"	"+20"
 			}
 			"burn_ground_duration"	"3.0"
 			"min_lob_travel_time"	"0.1"
@@ -332,17 +341,14 @@
 				"jump_duration"			
 				{
 					"value"	"0.484" //"0.431 0.484 0.538 0.592" // proportional to horizontal distance
-					"special_bonus_shard"	"+0.2"
 				}
 				"jump_height"			
 				{
 					"value"						"257" //"228 257 285 314" // proportional to horizontal distance
-					"special_bonus_shard"		"+105"
 				}
 				"jump_horizontal_distance"	
 				{
 					"value"						"425" //"400 450 500 550"
-					"special_bonus_shard"		"+175"
 				}
 				"pre_land_anim_time"	"0.14"
 				"landing_gesture_duration"	"0.6"
@@ -356,16 +362,49 @@
 					"value"					"70 140 210 280"
 					"CalculateSpellDamageTooltip"	"1"
 				}
-				"impact_stun_duration"	"1.0 1.4 1.8 2.2"
+				"impact_stun_duration"	
+				{
+					"value"		"1.0 1.4 1.8 2.2"
+				}
 				"self_cast_delay"		"0.3"
 				"target_heal"			
 				{
 					"value"			"0"
-					"special_bonus_unique_snapfire_5"	"+175"
+					"special_bonus_shard"	"+200"
 				}
 
 				"shard_damage_multiplier_tooltip" "50"
 		}
+	}
+
+	//=================================================================================================================
+	// Ability: Snapfire: Short Sighted (Innate)
+	//=================================================================================================================
+	"snapfire_buckshot"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+			
+		"AbilityValues"
+		{
+			"miss_chance" "25" 
+			"damage_amp"	"25"
+			"split_shot"
+			{
+				"value"	"0"
+				"special_bonus_facet_snapfire_ricochet_ii"		"+2"
+			}
+			"split_shot_damage_pct"
+			{
+				"value"		"0"
+				"special_bonus_facet_snapfire_ricochet_ii"		"=75"
+			}
+			"glancing_shot_damage_pct"	"50"
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
 
 	//=================================================================================================================
@@ -399,7 +438,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"damage"					"30 55 80 105"
+				"damage"					"15 30 45 60"
 				"buffed_attacks"			
 				{
 					"value"		"6"
@@ -407,11 +446,11 @@
 				}
 				"damage_pct"
 				{
-					"value"	"0"
-					"special_bonus_unique_snapfire_6"	"+100"
+					"value"	"25"
+					"special_bonus_unique_snapfire_6"	"+75"
 				}
 				"attack_speed_bonus"		"300"
-				"attack_range_bonus"		"75 150 225 300"
+				"attack_range_bonus"		"160 240 320 400"
 				"buff_duration_tooltip"		"6"
 				"base_attack_time"			"1.0"
 				"armor_reduction_per_attack"	"0.5"
@@ -460,18 +499,6 @@
  	//=================================================================================================================
 	// Ability: Snapfire Special Bonus
 	//=================================================================================================================
-  	"special_bonus_unique_snapfire_4"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"					"special_bonus_base"
-	}
-
- 	//=================================================================================================================
-	// Ability: Snapfire Special Bonus
-	//=================================================================================================================
   	"special_bonus_unique_snapfire_5"
 	{
 		// General
@@ -491,14 +518,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"value"				"1" // Mounted Turret Uses Your Attack
-				"ad_linked_abilities"			"snapfire_lil_shredder"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "1"
+				"ad_linked_abilities" "snapfire_lil_shredder"
 			}
 		}
 	}
@@ -512,16 +537,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"value"				"70"
-				"ad_linked_abilities"			"snapfire_scatterblast"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -533,14 +549,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"value"				"3"
-				"ad_linked_abilities"			"snapfire_lil_shredder"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "3"
+				"ad_linked_abilities" "snapfire_lil_shredder"
 			}
 		}
 	}

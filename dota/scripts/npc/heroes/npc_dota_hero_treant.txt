@@ -1,4 +1,3 @@
-// Abilities for treant
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -28,7 +27,6 @@
 			}
 			"grace_time"				"0.75"
 			"cooldown_time"				"3"
-			"regen_amp"					"0"
 			"shard_root_time"
 			{
 				"value"			"1.0"
@@ -58,7 +56,28 @@
 			
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
-	}	
+	}
+	
+	//=================================================================================================================
+	// Treant: Innate Attack Damage
+	//=================================================================================================================
+	"treant_innate_attack_damage"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+		"MaxLevel"						"1"
+		"Innate"						"1"
+
+		"AbilityValues"
+		{
+			"attack_damage_per_level"				
+			{ 
+				"value"						"0"
+				"special_bonus_facet_treant_primeval_power"	"+5"
+			}
+		}
+	}
+
 	//=================================================================================================================
 	//  Treant Protector: Nature's Grasp
 	//=================================================================================================================
@@ -92,7 +111,7 @@
 				"damage_per_second"				
 				{
 					"value"		"30 40 50 60"
-					"LinkedSpecialBonus"			"special_bonus_unique_treant_9"
+				"special_bonus_unique_treant_9" "+25"
 				}
 				"movement_slow"				"20 25 30 35"
 				"vines_duration"				"9 10 11 12"
@@ -118,7 +137,7 @@
 	//=================================================================================================================
 	"treant_leech_seed"
 	{
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
@@ -146,13 +165,13 @@
 				"leech_damage"					
 				{
 					"value"				"20 35 50 65"
-					"LinkedSpecialBonus"			"special_bonus_unique_treant_2"
+					"special_bonus_unique_treant_2"			"+45"
 				}		
 				"movement_slow"					
 				{
 					"value"				"-8 -14 -20 -26"
-					"LinkedSpecialBonus"			"special_bonus_unique_treant_3"
-					"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_SUBTRACT"
+					"special_bonus_unique_treant_3"			"-18"
+
 				}	
 				"radius"
 				{
@@ -161,6 +180,16 @@
 				}
 				"duration"						"5.0"
 				"projectile_speed"				"450"
+				"can_target_ground"				
+				{
+					"value"				"0"
+					"special_bonus_facet_treant_sapling"	"=1"
+				}
+				"creep_damage_reduction_pct"			
+				{
+					"value"				"0"
+					"special_bonus_facet_treant_sapling"	"=50"
+				}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -246,14 +275,12 @@
 				"radius"						
 				{
 					"value"		"800"
-					"LinkedSpecialBonus"			"special_bonus_unique_treant_5"
 					"affected_by_aoe_increase"	"1"
 				}	
 			
 				"eyes_radius"					
 				{
 					"value"						"800"
-					"LinkedSpecialBonus"			"special_bonus_unique_treant_5"
 					"affected_by_aoe_increase"	"1"
 				}
 				"damage"
@@ -270,7 +297,6 @@
 				"undispellable"
 				{
 					"value"								"0"
-					"special_bonus_unique_treant_11"	"+1"
 				}
 			
 		}
@@ -313,14 +339,12 @@
 				"vision_aoe"		
 				{
 					"value"		"800"
-					"LinkedSpecialBonus"			"special_bonus_unique_treant_5"
 					"RequiresScepter"				"1"
 					"affected_by_aoe_increase"	"1"
 				}
 				"overgrowth_aoe"		
 				{
 					"value"			"800"
-					"LinkedSpecialBonus"			"special_bonus_unique_treant_5"
 					"RequiresScepter"				"1"
 					"affected_by_aoe_increase"	"1"
 				}
@@ -341,37 +365,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"MaxLevel"						"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE "
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{			
-			
-		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_treant"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"2"
-				"ad_linked_abilities"			"treant_living_armor"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
 	}
 
 	//=================================================================================================================
@@ -383,18 +377,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"45"
-				"ad_linked_abilities"			"treant_leech_seed"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -406,87 +389,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"18"
-				"ad_linked_abilities"			"treant_leech_seed"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_treant_4"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"0"
-				"ad_linked_abilities"			"treant_natures_guise"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_treant_5"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"350"
-				"ad_linked_abilities"			"treant_overgrowth"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_treant_6"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"0"
-				"ad_linked_abilities"			"treant_living_armor"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -498,17 +401,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"450"
-				"affected_by_aoe_increase"	"1"
-				"ad_linked_abilities"			"treant_living_armor"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "450"
+				"affected_by_aoe_increase" "1"
+				"ad_linked_abilities" "treant_living_armor"
 			}
 		}
 	}
@@ -534,53 +433,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"25"
-				"ad_linked_abilities"			"treant_natures_grasp"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_treant_10"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"0"
-				"ad_linked_abilities"			"special_bonus_inherent"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_treant_11"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -592,16 +445,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"4"
-				"ad_linked_abilities"			"treant_natures_grasp"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "4"
+				"ad_linked_abilities" "treant_natures_grasp"
 			}
 		}
 	}

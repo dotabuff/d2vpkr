@@ -1,4 +1,3 @@
-// Abilities for lina
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -21,7 +20,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1075"
-		"AbilityCastPoint"				"0.45"
+		"AbilityCastPoint"				"0.35"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -30,15 +29,34 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 115 130 145"
+		"AbilityManaCost"				"100 110 120 130"
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
 
-			"dragon_slave_damage"		"75 150 225 300"
-			"dragon_slave_burn"			"10 20 30 40"
-			"dragon_slave_burn_duration"	"3"
+			"dragon_slave_damage"
+			{
+				"value"							"85 165 245 325"
+				"LinkedSpecialBonus"			"lina_slow_burn"
+				"LinkedSpecialBonusField"		"impact_damage_pct"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
+			}
+			"dragon_slave_burn_damage_tooltip"
+			{
+				"value"							"0"
+				"special_bonus_facet_lina_dot"	"=85 =165 =245 =325"
+				"LinkedSpecialBonus"			"lina_slow_burn"
+				"LinkedSpecialBonusField"		"burn_percent_tooltip"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
+			}
+			"dragon_slave_burn_duration_tooltip"
+			{
+				"value"							"0"
+				"LinkedSpecialBonus"			"lina_slow_burn"
+				"LinkedSpecialBonusField"		"burn_duration"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_ADD"
+			}
 			"dragon_slave_speed"		"1200"
 			"dragon_slave_width_initial"	
 			{
@@ -104,8 +122,27 @@
 				"light_strike_array_stun_duration"	"1.3 1.6 1.9 2.2"
 				"light_strike_array_damage"	
 				{
-					"value"			"110 160 210 260"
-					"LinkedSpecialBonus"		"special_bonus_unique_lina_3"
+					"value"							"110 160 210 260"
+					"special_bonus_unique_lina_3"	"+150"
+					"LinkedSpecialBonus"			"lina_slow_burn"
+					"LinkedSpecialBonusField"		"impact_damage_pct"
+					"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
+				}
+				"light_strike_array_burn_damage_tooltip"
+				{
+					"value"							"0"
+					"special_bonus_unique_lina_3"	"+150"
+					"special_bonus_facet_lina_dot"	"=110 =160 =210 =260"
+					"LinkedSpecialBonus"			"lina_slow_burn"
+					"LinkedSpecialBonusField"		"burn_percent_tooltip"
+					"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
+				}
+				"light_strike_array_burn_duration_tooltip"
+				{
+					"value"							"0"
+					"LinkedSpecialBonus"			"lina_slow_burn"
+					"LinkedSpecialBonusField"		"burn_duration"
+					"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_ADD"
 				}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -120,6 +157,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+		"MaxLevel"						"5"
+		"Innate"						"1"
+		"RequiredLevel"					"-1"
+
 		"HasShardUpgrade"				"1"
 
 		// Special
@@ -128,15 +170,19 @@
 		{
 			"fiery_soul_attack_speed_bonus"	
 			{
-				"value"								"8 16 24 32"
+				"value"								"4 8 16 24 32"
 				"special_bonus_unique_lina_2"		"+10"
 			}
 			"fiery_soul_move_speed_bonus"	
 			{
-				"value"							"1 1.5 2 2.5"
-				"special_bonus_unique_lina_2"			"+1"
+				"value"								"0.5 1 1.5 2 2.5"
+				"special_bonus_unique_lina_2"		"+1"
 			}
-			"fiery_soul_max_stacks"		"7"
+			"fiery_soul_magic_resist"
+			{
+				"special_bonus_unique_lina_4"		"+5"
+			}
+			"fiery_soul_max_stacks"				"7"
 			"fiery_soul_stack_duration"			"18"		
 			"bonus_spell_damage"
 			{
@@ -204,7 +250,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.45"
+		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time		
@@ -222,7 +268,28 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"damage"					"500 700 900"
+			"damage"
+			{
+				"value"							"500 700 900"
+				"LinkedSpecialBonus"			"lina_slow_burn"
+				"LinkedSpecialBonusField"		"impact_damage_pct"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
+			}
+			"burn_damage_tooltip"
+			{
+				"value"							"0"
+				"special_bonus_facet_lina_dot"	"=500 =700 =900"
+				"LinkedSpecialBonus"			"lina_slow_burn"
+				"LinkedSpecialBonusField"		"burn_percent_tooltip"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
+			}
+			"burn_duration_tooltip"
+			{
+				"value"							"0"
+				"LinkedSpecialBonus"			"lina_slow_burn"
+				"LinkedSpecialBonusField"		"burn_duration"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_ADD"
+			}
 			"damage_delay"				"0.25"
 			"AbilityCooldown"
 			{
@@ -232,18 +299,67 @@
 			"pierce_immunity"
 			{
 				"value"								"0"
-				"special_bonus_unique_lina_7"		"+1"
 			}
-			"supercharge_duration"	"5"
+			"supercharge_duration"
+			{
+				"value"								"0"
+				"special_bonus_facet_lina_supercharge"			"+5"
+				"RequiresFacet"					"lina_supercharge"
+			}
 			"supercharge_stacks"	
 			{
-				"value"				"10"
-				"special_bonus_unique_lina_supercharge_stacks"		"+5"
+				"value"						"0"
+				"special_bonus_facet_lina_supercharge"	"+12"
 			}
-		
-			
+			"barrier_pct"
+			{
+				"special_bonus_unique_lina_7"		"125"
+			}
+			"barrier_duration"
+			{
+				"special_bonus_unique_lina_7"		"15"
+			}
 		}
 	}
+
+	//=================================================================================================================
+	// Ability: Lina Innate: Burn
+	//=================================================================================================================
+	"lina_slow_burn"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"MaxLevel"						"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"impact_damage_pct"						
+			{
+				"special_bonus_facet_lina_dot"		"0.6"
+			}
+			"damage_penalty_tooltip"				"60"		// show as int on tooltip
+
+			"burn_percent"							"36"
+			"burn_percent_tooltip"								// used for other skills' tooltips in LinkedSpecialBonus			= impact_damage_pct * burn_percent / 100
+			{
+				"special_bonus_facet_lina_dot" "0.22"	
+			}
+
+			"burn_percent_tooltip_damage"			"65"		// burn_percent_tooltip * duration
+			"total_damage_tooltip"					"125"		// damage_penalty_tooltip + impact_damage_pct * burn_percent * duration
+
+			"burn_duration"							
+			{
+				"special_bonus_facet_lina_dot"		"3"
+			}
+
+		}
+	}
+
 	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================
@@ -266,7 +382,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"							"special_bonus_base"
+		"BaseClass"						"special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -278,20 +394,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"150"
-				"ad_linked_abilities"			"lina_light_strike_array"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
-
 	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================
@@ -301,32 +405,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"75"
-				"ad_linked_abilities"			"lina_light_strike_array"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_lina_5"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"special_bonus_base"
 	}
-
 	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================
@@ -342,28 +422,6 @@
 	// Ability: Special Bonus
 	//=================================================================================================================
 	"special_bonus_unique_lina_7"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"						"special_bonus_base"
-	}
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_lina_8"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"						"special_bonus_base"
-	}
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_lina_supercharge_stacks"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------

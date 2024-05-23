@@ -1,4 +1,3 @@
-// Abilities for warlock
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -17,7 +16,6 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Warlock.FatalBonds"
-		"HasShardUpgrade"				"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -49,13 +47,12 @@
 			"count"
 			{
 				"value"						"6"
-				"LinkedSpecialBonus"		"special_bonus_unique_warlock_9"
 			}
 
 			"damage_share_percentage"
 			{
 				"value"						"12 16 20 24"
-				"LinkedSpecialBonus"		"special_bonus_unique_warlock_5"
+				"special_bonus_unique_warlock_5" "+4"
 			}
 
 			"duration"						"19 21 23 25"
@@ -63,12 +60,6 @@
 			{
 				"value"			"700"
 				"affected_by_aoe_increase"	"1"
-			}
-			"imp_duration"					"15"
-			"imp_level"
-			{
-				"value"						"1 2 3 4"
-				"special_bonus_shard"		"+1"
 			}
 		}
 	}
@@ -92,7 +83,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.4"
+		"AbilityCastPoint"				"0.2"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -112,19 +103,17 @@
 		{
 				"damage"					
 				{
-					"value"				"15 25 35 45"
-					"special_bonus_unique_warlock_7"		"+18"
+					"value"				"16 24 32 40"
+					"special_bonus_unique_warlock_7"		"+15"
 				}
 				"duration"					
 				{
 					"value"				"10.0"
-					"special_bonus_unique_warlock_8"	"+2"
 				}
-				"tick_interval"				"1.0"
+				"tick_interval"				"0.5"
 				"spell_aoe"					
 				{
-					"value"					"0"
-					"special_bonus_unique_warlock_3" "450"
+					"value"					"300"
 					"affected_by_aoe_increase"	"1"
 				}
 				"shard_movement_speed_pct"					
@@ -165,11 +154,11 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"70 80 90 100"		
+		"AbilityManaCost"				"100"		
 		
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"900"
+		"AbilityCastRange"				"800"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -177,26 +166,33 @@
 		{
 			"aoe"					
 			{
-				"value"				"500 550 600 650"
-				"special_bonus_unique_warlock_upheaval_aoe"			"+65"
+				"value"				"575 600 625 650"
+				"special_bonus_unique_warlock_upheaval_aoe"			"+50"
 				"affected_by_aoe_increase"	"1"
 			}
 			"slow_per_second"		"11 14 17 20"
 			"duration"				"3.0"
 			"max_slow"				"55 70 85 100"
 			"aspd_per_second"		"10"
+			"base_damage"			
+			{
+				"special_bonus_unique_warlock_3" "=40"
+			}
 			"damage_per_second"		"10"
-			"max_damage"			"35 60 85 110"
+			"max_damage"			
+			{	
+				"value"		"35 60 85 110"
+				"special_bonus_unique_warlock_3" "+40"
+			}
 			"damage_tick_interval"	
 			{
 				"value"					"1"
 				"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
 			}
 
-			"AbilityCooldown"			"35"
+			"AbilityCooldown"			"60 50 40 30"
 			"imps_interval"				"2"
-			"minor_imp_duration"		"15"
-			"major_imp_duration"		"40"
+			"minor_imp_duration"		"15"			
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -231,7 +227,7 @@
 		
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1000"
+		"AbilityCastRange"				"900"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -248,12 +244,16 @@
 				"value"			"600"
 				"affected_by_aoe_increase"	"1"
 			}
-			"golem_hp"					"1400 2300 3200"
-			"golem_dmg"					"110 170 230"
+			"golem_hp"					
+			{
+				"value"					"1400 2300 3200"
+			}
+
+			"golem_dmg"					"100 150 200"
 			"golem_armor"				"8 12 14"
 			"golem_movement_speed"		"320 340 360"
 			"golem_health_regen"		"25 50 75"
-			"golem_gold_bounty"			"100 150 200"
+			"golem_gold_bounty"			"100 150 200"			
 			"stun_delay"				"0.5"
 			"number_of_golems_scepter"
 			{
@@ -262,17 +262,17 @@
 			}
 			"golem_hp_scepter"
 			{
-				"value"			"900 1700 2600"
+				"value"			"1400 2300 3200"
 				"RequiresScepter"		"1"
 			}
 			"golem_dmg_scepter"
 			{
-				"value"				"80 125 170"
+				"value"				"80 120 160"
 				"RequiresScepter"		"1"
 			}
 			"golem_gold_bounty_scepter"
 			{
-				"value"					"50 75 100"
+				"value"					"100 150 200"
 				"RequiresScepter"		"1"
 			}
 			"bonus_magic_resistance"
@@ -291,6 +291,12 @@
 				"special_bonus_unique_warlock_2"		"+20"
 			}
 			"bonus_slow_resistance"			"60"
+
+			"tooltip_manahealthboost"
+			{
+				"value"			"0"
+				"special_bonus_facet_warlock_golem"			"+100"
+			}
 		}
 	}
 	
@@ -306,23 +312,19 @@
 		"MaxLevel"						"3"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityValues"
 		{
-			"01"
+			"damage"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"40 50 60"
+				"value" "40 50 60"
 			}
-			"02"
+			"radius"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"			"300 300 300"
+				"value" "300 300 300"
+				"affected_by_aoe_increase"	"1"
 			}
 		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
 	
 	//=================================================================================================================
@@ -340,19 +342,27 @@
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"aura_radius"				
 			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_radius"			"300"
+				"value"		"300"
+				"affected_by_aoe_increase"	"1"
 			}
-			"02"
+			"aura_damage"				"30 50 70"
+
+			"health_bonus_pct"			"0"
+			"share_damage"				"0"
+			"tick_interval"				"0.5"
+			"manahealthboost"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_damage"			"30 50 70"
+				"value"					"0"
+				"special_bonus_facet_warlock_golem" "+100"				
 			}
+			
+			"manaboost_scale_mult"		".25"
 		}
+
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
 
@@ -366,18 +376,104 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"MaxLevel"						"1"
+		"MaxLevel"						"4"
 
 		"AbilityValues"
 		{
 			"explosion_delay"			".2"
-			"explosion_radius"			"400"
-			"explosion_dmg"				"30 60 90 120 180"			
+			"explosion_radius"			
+			{
+				"value"		"400"
+				"affected_by_aoe_increase"	"1"
+			}
+			"explosion_dmg"				"25 75 125 175 225"
 			"explosion_nonhero_reduce" 	"50"
 
-			"bonus_hp"					"0 50 100 150 250"
-			"bonus_dmg"					"0 2 4 6 8"
+			"bonus_hp"					"0 80 160 240 320"
+			"bonus_dmg"					"0 4 8 12 16"
 			"bonus_movespeed"			"0 15 30 45 60"
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Warlock Imps Major Explosion
+	//=================================================================================================================
+	"warlock_imp_explode_major"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"warlock_imp_explode"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"MaxLevel"						"4"
+		"AbilityTextureName"			"warlock_imp_explode"
+
+		"AbilityValues"
+		{
+			"explosion_delay"			".2"
+			"explosion_radius"			
+			{
+				"value"		"600"
+				"affected_by_aoe_increase"	"1"
+			}
+			"explosion_dmg"				"100 200 300 400 500"
+			"explosion_nonhero_reduce" 	"50"
+
+			"bonus_hp"					"0 100 200 300 400"
+			"bonus_dmg"					"0 8 16 24 32"
+			"bonus_movespeed"			"0 15 30 45 60"
+		}
+	}
+
+	//=================================================================================================================
+	// Warlock: Innate Eldritch Summoning
+	//=================================================================================================================
+	"warlock_eldritch_summoning"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"MaxLevel"						"4"		
+		"HasShardUpgrade"				"1"
+		"Innate"						"1"
+		"DependentOnAbility"			"warlock_rain_of_chaos"
+
+		"AbilityValues"
+		{
+			"minor_imp_duration"			"15"
+			"imp_level"
+			{
+				"value"						"1 2 3 4"
+				"special_bonus_shard"		"+1"
+			}
+
+			"golem_can_summon"				"0"
+			"tooltip_imp_health"			"50 130 210 290 370"
+			"tooltip_imp_explode"			"25 75 125 175 225"
+			"tooltip_imp_explode_radius"	
+			{
+				"value"		"400"
+				"affected_by_aoe_increase"	"1"
+			}
+		}	
+	}
+
+	//=================================================================================================================
+	// Warlock Black Grimoire Variant
+	//=================================================================================================================
+	"warlock_black_grimoire"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{	
+			// purely for tooltips on variant selection, actual KV's are on the item
+			"tooltip_xp"				"250"
+			"tooltip_seconds"			"420"
 		}
 	}
 
@@ -402,16 +498,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"20"
-				"ad_linked_abilities"			"warlock_rain_of_chaos"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "20"
+				"ad_linked_abilities" "warlock_rain_of_chaos"
 			}
 		}
 	}
@@ -437,16 +529,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"0"
-				"ad_linked_abilities"			"warlock_rain_of_chaos"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "0"
+				"ad_linked_abilities" "warlock_rain_of_chaos"
 			}
 		}
 	}
@@ -460,41 +548,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"4"
-				"ad_linked_abilities"			"warlock_fatal_bonds"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_warlock_6"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"500"
-				"ad_linked_abilities"			"warlock_shadow_word"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -512,58 +566,18 @@
 	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================
-	"special_bonus_unique_warlock_8"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ad_linked_abilities"			"warlock_shadow_word"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-		
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_warlock_9"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"2"
-				"ad_linked_abilities"			"warlock_fatal_bonds"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
 	"special_bonus_unique_warlock_10"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"10"
-				"ad_linked_abilities"			"warlock_upheaval"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "10"
+				"ad_linked_abilities" "warlock_upheaval"
 			}
 		}
 	}

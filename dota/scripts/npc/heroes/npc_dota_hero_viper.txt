@@ -1,4 +1,3 @@
-// Abilities for viper
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -22,7 +21,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600 640 680 720"
+		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0"
 
 		// Time		
@@ -59,22 +58,34 @@
 					"special_bonus_unique_viper_4"	"+4"
 				}
 				"max_stacks"			"5"
-				"bonus_range"			"25 65 105 145"
+				"bonus_range"			"25"
 				"shard_armor_reduction"
 				{
-					"value"				"1"
+					"special_bonus_shard"				"1"
 					"RequiresShard"		"1"
 				}
 				"shard_building_dmg_pct"
 				{
-					"value"				"40"
+					"special_bonus_shard"			"40"
 					"RequiresShard"		"1"
 				}
 				"shard_bonus_max_stacks"
 				{
-					"value"				"2"
+					"special_bonus_shard"			"2"
 					"RequiresShard"		"1"
 				}
+				"expiration_damage_radius"	
+				{
+					"special_bonus_facet_viper_poison_burst"			"=300"
+					"affected_by_aoe_increase"	"1"
+				}			
+				"accumulated_damage_explosion_pct"		
+				{
+					"special_bonus_facet_viper_poison_burst"			"=100"
+				}
+				
+
+
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -111,12 +122,12 @@
 				"min_damage"			
 				{
 					"value"		"15 20 25 30"
-					"LinkedSpecialBonus"	"special_bonus_unique_viper_3"
+					"special_bonus_unique_viper_3"	"+40"
 				}
 				"max_damage"
 				{
 					"value"			"35 65 95 125"
-					"LinkedSpecialBonus"	"special_bonus_unique_viper_3"
+					"special_bonus_unique_viper_3"	"+40"
 				}
 				"max_duration"			"4"
 				"radius"		
@@ -143,7 +154,11 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"hero_viper.CorrosiveSkin"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"-1"
+		"Innate"						"1"
 		"HasScepterUpgrade"				"1"
+
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityModifierSupportBonus"		"10"
@@ -153,16 +168,19 @@
 		"AbilityValues"
 		{
 			"duration"					"4.0"
-			"bonus_attack_speed"		"8 16 24 32"
+			"bonus_attack_speed"
+			{
+				"value"								"3 6 14 22 30"
+				"special_bonus_unique_viper_6"		"+20"
+			}
 			"bonus_magic_resistance"	
 			{
-				"value"								"10 15 20 25"
-				"special_bonus_unique_viper_6"		"+15"
+				"value"								"5 10 15 20 25"
 			}
 			"damage"
 			{
-				"value"					"8 16 24 32"
-				"special_bonus_unique_viper_1"	"+18"
+				"value"					"3 6 14 22 30"
+				"special_bonus_unique_viper_1"	"+20"
 			}
 			"max_range"
 			{
@@ -177,13 +195,60 @@
 			}
 			"effect_multiplier"
 			{
-				"value"						"2"
+				"value"						"4"
 				"RequiresScepter"		"1"
+			}
+			"nethertoxin_bonus_pct"		
+			{
+				"value"					"0"
+				"special_bonus_facet_viper_caustic_bath"					"=100"
+			}
+			"nethertoxin_bonus_pct_max_duration_tooltip"
+			{
+				"value"										"0"
+				"special_bonus_facet_viper_caustic_bath"		"=4.0"
 			}
 			
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
+
+	//=================================================================================================================
+	// Viper: Innate Corrosive Skin - Vile
+	//=================================================================================================================
+	"viper_innate_corrosive_skin_vile"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"additional_duration"		"1.0"
+		}
+	}
+	//=================================================================================================================
+	// Viper: Innate Corrosive Skin - Virulent
+	//=================================================================================================================
+	"viper_innate_corrosive_skin_virulent"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"bonus_status_resistance"			"3"
+		}
+	}		
 
 	//=================================================================================================================
 	// Viper: Viper Strike
@@ -224,7 +289,6 @@
 		"AbilityValues"
 		{
 			"duration"				"6"
-
 			"damage"
 			{
 				"value"				"70 110 150"
@@ -232,6 +296,7 @@
 			}
 			"bonus_movement_speed"	"-60 -70 -80"
 			"bonus_attack_speed"	"-80 -120 -160"
+
 			"AbilityCooldown"
 			{
 				"value"				"50 40 30"
@@ -245,7 +310,10 @@
 			"projectile_speed"	"1500"
 			"max_charges"			"2"
 			"charge_restore_time"	"30.0"
-
+			"does_break"
+			{
+				"value"				"1"
+			}
 		}
 	}
 
@@ -265,7 +333,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.1"
-		"AbilityCastRange"				"475"
+		"AbilityCastRange"				"700"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -280,21 +348,17 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"radius"							
-			{
-				"value"				"500"
-					"affected_by_aoe_increase"	"1"
-			}
+			
 			"corrosive_radius"					
 			{
-				"value"			"1200"
+				"value"			"500"
 				"affected_by_aoe_increase"	"1"
 			}
 			"duration"							"0.1"
 			"effect_duration"						"4"
 			"dive_speed"						
 			{
-				"value"			"500"
+				"value"			"700"
 			}
 			"start_height"						"100"
 			"movespeed_slow"					"0"
@@ -326,16 +390,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"80"
-				"ad_linked_abilities"			"viper_viper_strike"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "80"
+				"ad_linked_abilities" "viper_viper_strike"
 			}
 		}
 	}
@@ -349,18 +409,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"40"
-				"ad_linked_abilities"			"viper_nethertoxin"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -372,16 +421,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"1"
-				"ad_linked_abilities"			"viper_poison_attack"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "1"
+				"ad_linked_abilities" "viper_poison_attack"
 			}
 		}
 	}

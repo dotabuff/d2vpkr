@@ -1,4 +1,3 @@
-// Abilities for dawnbreaker
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -136,7 +135,11 @@
 			}	
 			"burn_damage"						"20 30 40 50"
 			"burn_interval"						"0.5"
-			"pause_duration"						"2"
+			"pause_duration"						
+			{
+				"value"						"2"
+				"special_bonus_facet_dawnbreaker_gleaming_hammer"			"+2"
+			}
 			"hammer_aoe_radius"						"200"
 			"travel_speed_pct"						"100"
 			"return_anim_distance_threshold"						"300"
@@ -145,7 +148,18 @@
 				"value"								"700 900 1100 1300"
 				"special_bonus_unique_dawnbreaker_celestial_hammer_cast_range"				"+80%"
 			}
-		
+			"hammer_solar_guardian_radius"			
+			{
+				"value"											"0"
+				"special_bonus_facet_dawnbreaker_gleaming_hammer"			"+200"
+				"affected_by_aoe_increase"	"1"
+
+			}
+			"hammer_solar_guardian_effectiveness_pct"
+			{
+				"value"											"0"
+				"special_bonus_facet_dawnbreaker_gleaming_hammer"			"=50"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -158,10 +172,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"			"ACT_INVALID"
 
 
@@ -173,16 +184,8 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"375"
-		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"0.25"
 		"AbilityManaCost"				"0"
-			
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-								
-		}
 	}	
 	//=================================================================================================================
 	// Ability: Dawnbreaker Luminosity
@@ -211,8 +214,8 @@
 				"attack_count"				
 				{
 					"value"		"3"
-					"LinkedSpecialBonus"		"special_bonus_unique_dawnbreaker_luminosity_attack_count"
-					"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_SUBTRACT"				  
+					"special_bonus_unique_dawnbreaker_luminosity_attack_count"		"-1"
+  
 				}
 				"heal_radius"				
 				{
@@ -224,11 +227,25 @@
 				"bonus_damage"				
 				{
 					"value"		"125 150 175 200"
-					"LinkedSpecialBonus"		"special_bonus_unique_dawnbreaker_luminosity_crit"
+					"special_bonus_unique_dawnbreaker_luminosity_crit"		"+50"
 				}	
 				"proc_cooldown"				"0.00"
 				"allied_healing_pct"		"50"
-				"cooldown_reduction"		"0.5 1 1.5 2"
+				"cooldown_reduction"		
+				{
+					"value"									"0"
+					"special_bonus_facet_dawnbreaker_solar_charged"		"1"				
+				}
+				"attackspeed_bonus_max"
+				{
+					"value"					"0"
+					"special_bonus_facet_dawnbreaker_solar_battery"		"+50"					
+				}
+				"movespeed_bonus_max"
+				{
+					"value"					"0"
+					"special_bonus_facet_dawnbreaker_solar_battery"		"+20"					
+				}
 		
 		}
 	}
@@ -257,7 +274,6 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"120 105 90"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -271,11 +287,17 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+			"AbilityCooldown"				
+			{
+				"value"				"120 105 90"
+				"special_bonus_unique_dawnbreaker_solar_guardian_cooldown"			"-20"
+			}
+
 			"airtime_duration"				"0.8"
 			"radius"				
 			{
-				"value"	"500"
-				"LinkedSpecialBonus"	"special_bonus_unique_dawnbreaker_solar_guardian_radius"
+				"value"															"500"
+				"special_bonus_unique_dawnbreaker_solar_guardian_radius"		"+150"
 				"affected_by_aoe_increase"	"1"	
 			}
 			"base_damage"
@@ -331,14 +353,40 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"2"
-		// Special
+	}
+
+	//=================================================================================================================
+	// Dawnbreaker: Break of Dawn
+	//=================================================================================================================
+	"dawnbreaker_break_of_dawn"
+	{
+		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"AbilityValues"
 		{
-			
+				"reveal_duration"				"4"
+				"think_interval"				"0.1"
+				"reveal_linger"				"1"
+				"reveal_radius"				"20000"
+				"conceal_duration"			"1"
 		}
 	}
 
+	//=================================================================================================================
+	// Dawnbreaker: Unbreakable
+	//=================================================================================================================
+	"dawnbreaker_unbreakable"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"MaxLevel"						"1"
+	}
 	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================
@@ -348,16 +396,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"150"
-				"ad_linked_abilities"				"dawnbreaker_solar_guardian"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
 	//=================================================================================================================
 	// Ability: Special Bonus
@@ -375,45 +414,6 @@
 	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================
-  	"special_bonus_unique_dawnbreaker_converge_slow"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"		"40"
-				"ad_linked_abilities"				"dawnbreaker_celestial_hammer"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}	
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-  	"special_bonus_unique_dawnbreaker_celestial_hammer_damage"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"60"
-				"ad_linked_abilities"				"dawnbreaker_celestial_hammer"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
   	"special_bonus_unique_dawnbreaker_celestial_hammer_cast_range"
 	{
 		// General
@@ -422,45 +422,6 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"special_bonus_base"
 	}
-	
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-  	"special_bonus_unique_dawnbreaker_fire_wreath_ministun"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{	
-				"var_type"				"FIELD_INTEGER"
-				"value"					"0" // need type and value for schema checker
-				"ad_linked_abilities"				"dawnbreaker_fire_wreath"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}	
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-  	"special_bonus_unique_dawnbreaker_fire_wreath_charges"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"2"
-				"ad_linked_abilities"				"dawnbreaker_fire_wreath"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}	
 	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================
@@ -470,15 +431,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"50"
-				"ad_linked_abilities"				"dawnbreaker_luminosity"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
 		//=================================================================================================================
 	// Ability: Special Bonus
@@ -489,15 +442,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"20"
-				"ad_linked_abilities"				"dawnbreaker_solar_guardian"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
 		//=================================================================================================================
 	// Ability: Special Bonus
@@ -508,15 +453,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"1"
-				"ad_linked_abilities"				"dawnbreaker_luminosity"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
 	
 			//=================================================================================================================
@@ -528,34 +465,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"18"
-				"ad_linked_abilities"				"dawnbreaker_fire_wreath"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-			//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-  	"special_bonus_unique_dawnbreaker_fire_wreath_aoe"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"250"
-				"ad_linked_abilities"				"dawnbreaker_fire_wreath"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-
+				"value" "18"
+				"ad_linked_abilities" "dawnbreaker_fire_wreath"
 			}
 		}
 	}

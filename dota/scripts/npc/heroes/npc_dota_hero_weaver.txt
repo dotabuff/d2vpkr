@@ -1,4 +1,3 @@
-// Abilities for weaver
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -37,13 +36,13 @@
 				"armor_reduction"	
 				{
 					"value"		"1 1 1 1"
-					"LinkedSpecialBonus"	"special_bonus_unique_weaver_3"
+					"special_bonus_unique_weaver_3"	"+0.5"
 				}
 				"duration"			"16"
 				"destroy_attacks"	
 				{
 					"value"			"6 6 8 8"
-					"LinkedSpecialBonus"	"special_bonus_unique_weaver_4"
+					"special_bonus_unique_weaver_4"	"+2"
 				}
 				"radius"			
 				{
@@ -60,6 +59,12 @@
 				{
 					"value"		"2"
 					"RequiresShard"		"1"
+				}
+				"experience_gain"
+				{
+					"value"						"0 0 0 0"
+					"special_bonus_facet_weaver_hivemind"	"=4 =6 =8 =10"
+					"RequiresFacet"			"weaver_hivemind"
 				}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -96,7 +101,7 @@
 			"damage"				
 			{
 				"value"										"100 130 160 190"
-				"special_bonus_unique_weaver_1"				"+55"
+				"special_bonus_unique_weaver_1"				"+60"
 			}
 			"speed"					"200 230 260 290"
 			"radius"				
@@ -109,12 +114,18 @@
 			"AbilityCooldown"
 			{
 				"value"								"15 12 9 6"
-				"special_bonus_unique_weaver_6"		"-2.5"
+				"special_bonus_unique_weaver_6"		"-3"
 			}
 			"geminate_attack_mark_duration"
 			{
 				"value"									"0"
 				"special_bonus_shard"					"+4.6"
+			}
+			"min_movespeed_override"
+			{
+				"value"									"0"
+				"special_bonus_facet_weaver_skitterstep"				"+600"
+				"RequiresFacet"						"weaver_skitterstep"
 			}
 			"shukuchi_attack_mark_radius"
 			{
@@ -127,7 +138,16 @@
 				"value"									"0"
 				"special_bonus_shard"					"+0.2"
 			}
-		
+			"slow_duration"
+			{
+				"value"									"0"
+				"special_bonus_facet_weaver_skitterstep"				"+0.3"
+			}
+			"slow_percent"
+			{
+				"value"												"0"
+				"special_bonus_facet_weaver_skitterstep"		"+100"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -140,42 +160,40 @@
 		// General
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK | DOTA_ABILITY_BEHAVIOR_BREAK_DISABLES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"-1"
+		"Innate"						"1"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-		"AbilityCooldown"				"8.5 6.5 4.5 2.5"
+		"AbilityCooldown"				"10.5 8.5 6.5 4.5 2.5"
 
 		"AbilityCastRange"				"425"
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"delay"			"0.25"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"tooltip_attack"			"1"
-				"LinkedSpecialBonus"	"special_bonus_unique_weaver_5"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"25 40 55 70"
-				"LinkedSpecialBonus"	"special_bonus_unique_weaver_2"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"shard_beetle_search_range"			"1200"
-				"RequiresShard"			"1"
-			}			
-		}		
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityValues"
+		{
+			"delay"
+			{
+				"value" "0.25"
+			}
+			"extra_attack"
+			{
+				"value" "1"
+				"special_bonus_unique_weaver_5" "+1"
+			}
+			"bonus_damage"
+			{
+				"value" "5 25 40 55 70"
+				"special_bonus_unique_weaver_2" "+90"
+			}
+			"shard_beetle_search_range"
+			{
+				"value" "1200"
+				"affected_by_aoe_increase"	"1"
+				"RequiresShard" "1"
+			}
+		}
 	}
 
 	//=================================================================================================================
@@ -202,16 +220,13 @@
 
 		"AbilityCooldown"				"70 55 40"
 		"AbilityManaCost"				"150 75 0"	
-		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"cooldown_scepter"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"cooldown_scepter"		"40"
-				"RequiresScepter"		"1"
-			}					
+				"value" "40"
+				"RequiresScepter" "1"
+			}
 		}
 	}
 
@@ -224,16 +239,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"50"
-				"ad_linked_abilities"			"weaver_shukuchi"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "50"
+				"ad_linked_abilities" "weaver_shukuchi"
 			}
 		}
 	}
@@ -247,18 +258,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"90"
-				"ad_linked_abilities"			"weaver_geminate_attack"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -270,18 +270,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"0.5"
-				"ad_linked_abilities"			"weaver_the_swarm"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -293,18 +282,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"2"
-				"ad_linked_abilities"			"weaver_the_swarm"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
+
 	}
 
 	//=================================================================================================================
@@ -316,18 +295,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"1"
-				"ad_linked_abilities"			"weaver_geminate_attack"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================

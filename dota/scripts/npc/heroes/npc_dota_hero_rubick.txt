@@ -1,4 +1,3 @@
-// Abilities for rubick
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -157,7 +156,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"120 130 140 150"
+		"AbilityManaCost"				"110 120 130 140"
 		
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
@@ -181,9 +180,9 @@
 				"attack_damage_reduction"	
 				{
 					"value"			"5 15 25 35"
-					"LinkedSpecialBonus"		"special_bonus_unique_rubick_2"
 					"CalculateSpellDamageTooltip"	"0"
 					"DamageTypeTooltip"			"DAMAGE_TYPE_NONE"
+				"special_bonus_unique_rubick_2" "+12"
 				}
 				"duration"					"10.0 10.0 10.0 10.0"
 				"radius"					
@@ -212,20 +211,15 @@
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30"
-	
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"magic_damage_reduction_pct"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"magic_damage_reduction_pct"	"10 14 18 22"
+				"value" "10 14 18 22"
 			}
-			"02"
+			"radius"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"radius"						"1200"
+				"value" "1200"
 			}
 		}
 	}
@@ -241,18 +235,44 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"cast_range"				"60 120 180 240"
+			"spell_amp"					"14 18 22 26"
+
+			"aoe_bonus"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"cast_range"				"60 120 180 240"
+				"value"					"0"
+				"special_bonus_facet_rubick_arcane_accumulation"	"+25"				
 			}
-			"02"
+
+			"aoe_bonus_duration"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"spell_amp"			"14 18 22 26"
+				"value"					"0"
+				"special_bonus_facet_rubick_arcane_accumulation"	"+20"				
 			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Ability: Might and Magus (bonus attack damage from spell amp)
+	//=================================================================================================================
+	"rubick_might_and_magus"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_damage_pct"				"100"
+			"bonus_damage_pct_tooltip"		"1"
+			"magic_resist_pct"				"50"
+			"magic_resist_pct_tooltip"		"0.5"
 		}
 	}
 
@@ -278,7 +298,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.1 0.1 0.1 0.1"
+		"AbilityCastPoint"				"0.1 0.1 0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_7"
 
 		// Time		
@@ -295,28 +315,25 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"projectile_speed"				"1500"
+			"stolen_debuff_amp"				"10 20 30"
+			"cast_range_scepter"			
 			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"180.0 240.0 300.0"
+				"value"						"1400"
+				"RequiresScepter"			"1"
 			}
-			"02"
+
+			"duration"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"projectile_speed"			"1500"
+				"value"						"180 240 300"
 			}
-			"03"
+
+			"stolen_mana_reduction"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"cast_range_scepter"			"1400"
-				"RequiresScepter"	"1"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"stolen_debuff_amp"			"10 20 30"
+				"value"						"0"
+				"special_bonus_facet_rubick_frugal_filch"	"30 45 60"				
 			}
 		}
 	}	
@@ -402,18 +419,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"12"
-				"ad_linked_abilities"			"rubick_fade_bolt"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -425,16 +431,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"5"
-				"ad_linked_abilities"			"rubick_fade_bolt"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "5"
+				"ad_linked_abilities" "rubick_fade_bolt"
 			}
 		}
 	}
@@ -461,16 +463,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"40"
-				"ad_linked_abilities"			"rubick_spell_steal"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "40"
+				"ad_linked_abilities" "rubick_spell_steal"
 			}
 		}
 	}
@@ -484,16 +482,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"25"
-				"ad_linked_abilities"			"rubick_spell_steal"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "25"
+				"ad_linked_abilities" "rubick_spell_steal"
 			}
 		}
 	}
@@ -520,16 +514,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"150"
-				"ad_linked_abilities"			"rubick_telekinesis"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "150"
+				"ad_linked_abilities" "rubick_telekinesis"
 			}
 		}
 	}

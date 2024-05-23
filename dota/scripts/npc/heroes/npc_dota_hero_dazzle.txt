@@ -1,4 +1,3 @@
-// Abilities for dazzle
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -18,7 +17,6 @@
 		"HasScepterUpgrade"				"1"
 		"MaxLevel"						"1"
 		"IsGrantedByScepter"			"1"
-		"HasScepterUpgrade"				"1"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -33,40 +31,31 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"150"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"duration"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"		"7"
+				"value" "7"
 			}
-			"02"
+			"interval"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"interval"		"0.5"
+				"value" "0.5"
 			}
-			"03"
+			"radius"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"		"650"
+				"value" "650"
 			}
-			"04"
+			"hex_chance"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"hex_chance"		"12"
+				"value" "12"
 			}
-			"05"
+			"hex_duration"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"hex_duration"		"1"
+				"value" "1"
 			}
-			"06"
+			"damage"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"		"125"
+				"value" "125"
 			}
 		}
 	}
@@ -150,6 +139,24 @@
 				"special_bonus_unique_dazzle_poison_touch_attack_range_bonus"			"+300"
 			}	
 
+			"split_radius"			
+			{
+				"value"				"0"
+				"special_bonus_facet_dazzle_poison_bloom"			"=450"				
+			}
+			"split_damage"				
+			{
+				"value"				"0"
+				"special_bonus_facet_dazzle_poison_bloom"			"=25 =50 =75 =100"
+				"special_bonus_unique_dazzle_3"	"+60"
+				"RequiresFacet"						"dazzle_poison_bloom"
+			}			
+			"attacks_to_split"	
+			{
+				"value"				"0"
+				"special_bonus_facet_dazzle_poison_bloom"			"=4"				
+			}			
+
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -184,25 +191,19 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"90 100 110 120"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{	
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"3.5 4 4.5 5.0"
-			}
-			"02"	// used to place the halo in the particles at the right height so that it hits the ground right when the effect expires
+			"duration"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"fx_halo_height"	"190 240 300 350"
+				"value" "3.5 4 4.5 5.0"
 			}
-			"03"
-			{	
-				"var_type"			"FIELD_FLOAT"
-				"heal_amplify"		"2 4 6 8"
+			"fx_halo_height"
+			{
+				"value" "190 240 300 350"
+			}
+			"heal_amplify"
+			{
+				"value" "2 4 6 8"
 			}
 		}
 	}
@@ -242,7 +243,6 @@
 			"AbilityCastRange"
 			{
 				"value"				"800"
-				"special_bonus_unique_dazzle_shadow_wave_cast_range" "+150"
 			}
 
 			"bounce_radius"			
@@ -260,7 +260,7 @@
 			"damage"
 			{
 				"value"					"85 105 125 145"
-				"LinkedSpecialBonus"	"special_bonus_unique_dazzle_2"
+				"special_bonus_unique_dazzle_2" "+45"
 			}
 
 			"scepter_heal_pct"			"150"
@@ -298,31 +298,23 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100 100 100"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"radius"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"575 575 575"
+				"value" "575 575 575"
 			}
-			"02"
-			{	
-				"var_type"					"FIELD_INTEGER"
-				"vision"					"800"
+			"vision"
+			{
+				"value" "800"
 			}
-			"03"
-			{	
-				"var_type"					"FIELD_FLOAT"
-				"armor_per_second"			"0.75 1 1.25"
-				"LinkedSpecialBonus"	"special_bonus_unique_dazzle_4"
+			"armor_per_second"
+			{
+				"value" "0.75 1 1.25"
 			}
-			"04"
-			{	
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"24.0"
+			"duration"
+			{
+				"value" "24"
 			}
 		}
 	}
@@ -353,14 +345,7 @@
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
-		{
-			"armor_reduction"			
-			{
-				"value"			"1 2 3"
-				"LinkedSpecialBonus"	"special_bonus_unique_dazzle_4"
-			}
-			"duration"					"8 10 12"
-			
+		{	
 			"cooldown_reduction"			"4 5 6"
 			"cooldown_reduction_items" 		"0"
 			"mana_cost_increase_pct"		"40"
@@ -404,6 +389,54 @@
 				"scepter_cooldown"			"180"
 		}
 	}
+
+	//=================================================================================================================
+	// Dazzle: Innate Weave
+	//=================================================================================================================
+	"dazzle_innate_weave"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"armor_change"			
+			{
+				"value"					"1"
+				"special_bonus_unique_dazzle_4" "+1"
+			}
+			"duration"					"8"
+			"affects_allies"			"1"
+			"affects_enemies"			"1"
+			"heal_reduction"			"0"
+			"ultimate_always_applies"	"0"
+		}
+	}
+
+	//=================================================================================================================
+	// Dazzle Facet: Nothl Boon
+	//=================================================================================================================
+	"dazzle_nothl_boon"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"duration"
+			{
+				"value"	"10"							
+			}
+		}
+	}
 	
 	//=================================================================================================================
 	// Ability: Special Bonus
@@ -426,18 +459,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"45"
-				"ad_linked_abilities"			"dazzle_shadow_wave"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -461,18 +483,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"0.5"
-				"ad_linked_abilities"			"dazzle_bad_juju"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -484,16 +495,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"200"
-				"ad_linked_abilities"			"dazzle_shallow_grave"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "200"
+				"ad_linked_abilities" "dazzle_shallow_grave"
 			}
 		}
 	}
@@ -501,18 +508,6 @@
 	// Ability: Special Bonus
 	//=================================================================================================================
 	"special_bonus_unique_dazzle_poison_touch_attack_range_bonus"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"						"special_bonus_base"
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_dazzle_shadow_wave_cast_range"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------

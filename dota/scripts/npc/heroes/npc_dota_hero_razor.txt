@@ -1,4 +1,3 @@
-// Abilities for razor
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -111,11 +110,6 @@
 				"value"			"5 10 15 20"
 				"special_bonus_unique_razor"	"+5"
 			}
-			"drain_armor"
-			{
-				"value"			"0"
-				"special_bonus_unique_razor_3"	"+1"
-			}
 			"drain_range_buffer"	"250"
 			"radius"				"200 200 200 200"
 			"speed"					"900 900 900 900"
@@ -128,7 +122,7 @@
 			"pull_speed"			
 			{
 				"value"					"0"
-				"special_bonus_shard"		"+100"
+				"special_bonus_shard"		"+75"
 			}
 			"min_pull_range"
 						{
@@ -146,22 +140,19 @@
 	}
 
 	//=================================================================================================================
-	// Razor: Unstable Current (Storm Surge)
+	// Razor: Storm Surge
 	//=================================================================================================================
-	"razor_unstable_current"
+	"razor_storm_surge"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"self_movement_speed_pct"
-			{
-				"value"			"8 12 16 20"
-			}
 			"strike_pct_chance"		"18"
 			"strike_target_count"	"3"
 			"strike_damage"			
@@ -169,11 +160,9 @@
 				"value"													"40 80 120 160"
 				"special_bonus_unique_razor_storm_surge_damage_and_slow"			"+25%"
 			}
-			
-
 			"strike_move_slow_pct"
 			{
-				"value"				"25 30 35 40 "
+				"value"				"25 30 35 40"
 				"special_bonus_unique_razor_storm_surge_damage_and_slow"			"+25"
 			}
 			"strike_slow_duration"			"1.0"
@@ -183,11 +172,47 @@
 				"affected_by_aoe_increase"	"1"
 			}
 
-			"strike_internal_cd"		"3.0"
+			"strike_internal_cd"	
+			{
+				"value"										"3.0"
+				"special_bonus_unique_razor_3"				"-1"
+			}
+			"hit_targets_inside_eye_of_the_storm"
+			{
+				"value"		"0"
+				"special_bonus_facet_razor_thunderhead"			"=1"
+			}
+			"eye_of_the_storm_chance_multiplier"
+			{
+				"value"				"0"
+				"special_bonus_facet_razor_thunderhead"			"=2"
+			}
+
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
 	
+
+	//=================================================================================================================
+	// Ability: Unstable Current
+	//=================================================================================================================
+	"razor_unstable_current"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"movespeed_per_level_pct"				"1"
+		}
+	}
+
+
+
 	//=================================================================================================================
 	// Razor: Eye of the Storm
 	//=================================================================================================================
@@ -235,10 +260,30 @@
 				"strike_interval"		
 				{
 					"value"		"0.7 0.6 0.5"	
-					"LinkedSpecialBonus"	"special_bonus_unique_razor_2"
+				"special_bonus_unique_razor_2" "+-0.1"
 				}
-				"armor_reduction"	"1 1 1"		
+				"armor_reduction"
+				{
+					"value"						"1"
+				}
 				"damage"			"60 75 90"		
+		}
+	}
+
+	//=================================================================================================================
+	// Razor: Dynamo
+	//=================================================================================================================
+	"razor_dynamo"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"spell_amp_damage_divisor"	"20"
+			"spell_amp_mult"			"1"
 		}
 	}
 
@@ -263,18 +308,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"-0.10"
-				"ad_linked_abilities"			"razor_eye_of_the_storm"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -286,16 +320,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"6"
-				"ad_linked_abilities"			"razor_static_link"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "6"
+				"ad_linked_abilities" "razor_static_link"
 			}
 		}
 	}
@@ -309,51 +339,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"30"
-				"ad_linked_abilities"			"razor_plasma_field"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_razor_5"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"						"special_bonus_base"
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_razor_6"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"2"
-				"ad_linked_abilities"			"razor_eye_of_the_storm"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "30"
+				"ad_linked_abilities" "razor_plasma_field"
 			}
 		}
 	}

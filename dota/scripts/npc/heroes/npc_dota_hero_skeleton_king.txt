@@ -1,4 +1,3 @@
-// Abilities for skeleton_king
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -30,7 +29,6 @@
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"75 90 105 120"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -42,118 +40,114 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+
+		"AbilityValues"
 		{
-			"01"
+			"blast_speed"				"1200"
+			"blast_stun_duration"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"blast_speed"			"1200"
-			}			
-			"02"
+				"value"					"1.0 1.2 1.4 1.6"
+				"special_bonus_unique_wraith_king_11" "+1"
+			}
+
+			"blast_dot_duration"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"blast_stun_duration"	"1.0 1.2 1.4 1.6"
-				"LinkedSpecialBonus"	"special_bonus_unique_wraith_king_11"
-	
-			}			
-			"03"
+				"value"					"2.0"
+			}
+
+			"blast_slow"				"-20"
+
+			"damage"					
 			{
-				"var_type"				"FIELD_FLOAT"	
-				"blast_dot_duration"	"2.0"
-				"LinkedSpecialBonus"	"special_bonus_unique_wraith_king_7"
-			}			
-			"04"
+				"value"		"75 90 105 120"
+				"special_bonus_unique_wraith_king_3"	"+20%"
+
+			}
+			"blast_dot_damage"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"blast_slow"			"-20"
-			}			
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"blast_dot_damage"		"20 40 60 80"
-				"LinkedSpecialBonus"	"special_bonus_unique_wraith_king_3"
-			}		
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_move_speed"			"25"
-			}	
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"			"25"
-			}	
+				"value"					"20 40 60 80"
+				"special_bonus_unique_wraith_king_3"	"+20%"
+			}
+
 			
-	
 		}
+
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
 	
 	//=================================================================================================================
-	// Ability: Skeleton King Vampiric Aura (Vampiric Spirit)
+	// Ability: Skeleton King Bone Guard
 	//=================================================================================================================
-	"skeleton_king_vampiric_aura"
+	"skeleton_king_bone_guard"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 			
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.1"
+		"AbilityManaCost"				"70 80 90 100"
+		"AbilityCooldown"				"50"
 
 
 		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"70 80 90 100"
-
+		//-------------------------------------------------------------------------------------------------------------		
 		"AbilityValues"
 		{
-			"vampiric_aura"
-			{
-				"value"									"20 30 40 50"
-				"special_bonus_unique_wraith_king_2"	"+10"
-			}
-			"creep_lifesteal_reduction_pct"				"40"
-			"skeleton_duration"
-			{
-				"value"					"40"
-				"special_bonus_unique_wraith_king_vampiric_skeleton_duration"	"+25%"	
-			}
-			"AbilityCooldown"
-			{
-				"value"					"50"
-				"special_bonus_unique_wraith_king_vampiric_skeleton_duration"	"-25%"	
-			}
-			"max_skeleton_charges"			"2 4 6 8"
-			"min_skeleton_spawn"
-			{
-				"value"		"0"
-				"special_bonus_unique_wraith_king_5"	"+5"
-			}
+
+			"skeleton_duration"			"40"
+			"max_skeleton_charges"		"2 4 6 8"	
+			"min_skeleton_spawn"		"0"
 			"spawn_interval"			"0.25"
 			"reincarnate_time"			"3"
 			"gold_bounty"						"5"
 			"xp_bounty"						"5"
+
 			"skeleton_damage_tooltip"
 			{
-				"value"							"34"
+				"value"							"34 39 43 49"
 				"CalculateSpellDamageTooltip"	"0"
 			}
-			"talent_skeleton_damage"
-			{
-				"value"				"0"
-				"special_bonus_unique_wraith_king_6"			"+23"
-			}
-			"skeleton_building_damage_reduction"			"35"
-			"skeleton_bonus_hero_damage"			"25"
+
+			"talent_skeleton_damage"	"0 5 10 15"
+			"skeleton_building_damage_reduction"		"35"	
+			"skeleton_bonus_hero_damage"				"25"
 
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
-		
+
+	//=================================================================================================================
+	// Ability: Skeleton King Cursed Blade
+	//=================================================================================================================
+	"skeleton_king_spectral_blade"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------		
+		"AbilityValues"
+		{			
+			"cursed_damage_pct"							"70"
+			"cursed_damage"								
+			{
+				"value"									"20 40 60 80"
+				"DamageTypeTooltip"						"DAMAGE_TYPE_PURE"
+			}
+			"curse_cooldown"							"18 16 14 12"
+			"curse_cooldown_creep"						"6"
+			"curse_delay"								"3"
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+
 	//=================================================================================================================
 	// Ability: Skeleton King Mortal Strike
 	//=================================================================================================================
@@ -165,6 +159,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilitySound"					"Hero_SkeletonKing.CriticalStrike"
+		"HasShardUpgrade"				"1"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -172,14 +167,20 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"crit_mult"					"150 200 250 300"
+			"wraith_cd_mult"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"crit_mult"					"150 200 250 300"
+				"value"					"1"
+			}
+			"wraith_crit_bonus"
+			{
+				"value"					"0"
+				"special_bonus_shard"	"+150"
 			}
 		}
+
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
 	
@@ -198,8 +199,8 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"2"
 
-		"HasShardUpgrade"			"1"
-		"HasScepterUpgrade"			"1"
+		"HasShardUpgrade"				"1"
+		"HasScepterUpgrade"				"1"
 		"AbilitySound"					"Hero_SkeletonKing.Reincarnate"
 		
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
@@ -225,46 +226,24 @@
 			"movespeed"				"-75"
 			"attackslow"			"-75"
 			"slow_duration"			"5.0"
-			"scepter_duration"
-			{
-				"value"						"0"
-				"special_bonus_scepter"			"+7"
-				"RequiresScepter"			"1"
-			}
-			"scepter_aura_radius"
-			{
-				"value"						"0"
-				"special_bonus_scepter"			"+1200"
-				"RequiresScepter"			"1"
-			}
-			"scepter_attack_speed"
-			{
-				"value"				"0"
-				"special_bonus_scepter"		"+75"
-				"RequiresScepter"			"1"
-			}
-			"scepter_move_speed_pct"
-			{
-				"value"							"0"
-				"special_bonus_scepter"			"+25"
-				"RequiresScepter"			"1"
-			}
 			"AbilityManaCost"
 			{
 				"value"					"180"
 				"special_bonus_shard"	"=0"
 			}
+
+			"clear_curse"
+			{
+				"value"						"0"
+				"special_bonus_facet_skeleton_king_facet_cursed_blade"	"=1"
+			}
+
 			"shard_skeleton_count"		
 			{
-				"value"							"1 2 3"
-				"special_bonus_shard"			"+2"
+				"value"						"0"
+				"special_bonus_facet_skeleton_king_facet_bone_guard" "2 3 4"				
 			}
-			"scepter_respawn_pct"
-			{
-				"value"							"0"
-				"special_bonus_scepter"			"10"
-				"RequiresScepter"				"1"
-			}
+
 			"AbilityCooldown"
 			{
 				"value"							"180 150 120"
@@ -274,24 +253,53 @@
 	}
 
 	//=================================================================================================================
-	// Ability: Special Bonus
+	// Skeleton King: Innate Vampiric Spirit
 	//=================================================================================================================
-	"special_bonus_unique_wraith_king_1"
+	"skeleton_king_vampiric_spirit"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel"						"4"
+		"Innate"						"1"
+		"HasScepterUpgrade"				"1"
+		"DependentOnAbility"			"skeleton_king_reincarnation"
+		"AbilityValues"
 		{
-			"01"
+			"vampiric_aura"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"0"
-				"ad_linked_abilities"			"skeleton_king_reincarnation"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value"									"20 30 40 50"
+				"special_bonus_unique_wraith_king_2"	"+10"
+			}
+
+			"creep_lifesteal_reduction_pct"				"40"
+
+			"duration"
+			{
+				"value"							"3 4 5 6"
+				"special_bonus_scepter"			"+1"
+			}
+			"scepter_attack_speed"
+			{
+				"value"							"75"
+			}
+			"scepter_move_speed_pct"
+			{
+				"value"							"25"
+			}
+			"scepter_respawn_pct"
+			{
+				"value"							"0"
+				"special_bonus_scepter"			"10"
+				"RequiresScepter"				"1"
+			}
+			"scepter_aura_radius"
+			{
+				"value"							"0"
+				"special_bonus_scepter"			"+1200"
+				"affected_by_aoe_increase"	"1"
+				"RequiresScepter"				"1"
 			}
 		}
 	}
@@ -307,7 +315,6 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"special_bonus_base"
 	}
-
 	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================
@@ -317,20 +324,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"40"
-				"ad_linked_abilities"			"skeleton_king_hellfire_blast"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
-
 	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================
@@ -340,109 +335,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"1"
-				"ad_linked_abilities"			"skeleton_king_reincarnation && skeleton_king_hellfire_blast"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_wraith_king_5"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"						"special_bonus_base"
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_wraith_king_6"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"						"special_bonus_base"
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_wraith_king_7"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"1.2"
-				"ad_linked_abilities"			"skeleton_king_hellfire_blast"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_wraith_king_8"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"80"
-				"ad_linked_abilities"			"skeleton_king_vampiric_aura"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_wraith_king_9"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"1"
-				"ad_linked_abilities"			"skeleton_king_hellfire_blast"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "1"
+				"ad_linked_abilities" "skeleton_king_reincarnation && skeleton_king_hellfire_blast"
 			}
 		}
 	}
@@ -456,16 +354,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"2"
-				"ad_linked_abilities"			"skeleton_king_mortal_strike"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "2"
+				"ad_linked_abilities" "skeleton_king_mortal_strike"
 			}
 		}
 	}
@@ -479,30 +373,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"1.0"
-				"ad_linked_abilities"			"skeleton_king_hellfire_blast"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_wraith_king_vampiric_skeleton_duration"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"						"special_bonus_base"
-
+		"BaseClass" "special_bonus_base"
 	}
 
 }

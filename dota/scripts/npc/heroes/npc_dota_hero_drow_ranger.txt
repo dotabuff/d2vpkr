@@ -1,4 +1,3 @@
-// Abilities for drow_ranger
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -42,7 +41,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"frost_arrows_movement_speed"	"-10 -25 -40 -55"
+			"frost_arrows_movement_speed"	"-10 -20 -30 -40"
 			"damage"
 			{
 				"value"						"6 12 18 24"
@@ -143,7 +142,6 @@
 				"value"										"100 120 140 160"
 				"special_bonus_unique_drow_ranger_1"		"+25"
 			}
-			"arrow_slow_duration"		"1.25 2 2.75 3.5"
 			"arrow_width"					"90"
 			"arrow_speed"					"1200"
 			"arrow_range_multiplier"	"1.75"
@@ -153,6 +151,11 @@
 			{
 				"value"											"24 21 18 15"
 				"special_bonus_unique_drow_ranger_6"			"-6"
+			}
+			"multishot_movespeed"						
+			{
+				"value"										"0"
+				"special_bonus_facet_drow_ranger_sidestep"			"40"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CHANNEL_ABILITY_3"
@@ -228,8 +231,7 @@
 				"wave_width"		
 				{
 					"value"			"250"
-					"special_bonus_unique_drow_ranger_4"	"+250"
-
+					"affected_by_aoe_increase"	"1"
 				}
 				"silence_duration"	"3 4 5 6"
 				"knockback_distance_max"	"450"
@@ -238,23 +240,21 @@
 				"wave_length"		"900"
 				"bonus_movespeed"		
 				{
-					"value"					"10 12 14 16"
-					"special_bonus_unique_drow_ranger_gust_selfmovespeed"		"+15"
+					"value"					"0"
+					"special_bonus_unique_drow_ranger_gust_selfmovespeed"		"+40"
 				}
 				"AbilityCooldown"
 				{
 					"value"											"19 17 15 13"
-					"special_bonus_unique_drow_ranger_7"			"-4"
+					"special_bonus_unique_drow_ranger_7"			"-3"
 				}
 				"miss_chance"
 				{
 					"value"					"0"
-					"special_bonus_unique_drow_ranger_5"			"+50"
 				}
 				"gust_reveals_invis"
 				{
 					"value"											"1"
-					"special_bonus_unique_drow_ranger_gust_invis"	"=1"
 				}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -267,27 +267,27 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
-		"AbilityCastGestureSlot"		"ABSOLUTE"
-		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0 0 0 0"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"100"
-		"AbilityDuration"				"30.0"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Innate"						"1"
+		"MaxLevel"						"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"trueshot_ranged_damage"	"10 20 30 40"
-				"radius"						"1200"
+				"trueshot_agi_bonus_self"	"2"
+				"trueshot_agi_bonus_allies"	"1"
+				"trueshot_aspd_bonus_creeps"	
+				{
+					"value"			"0"
+					"special_bonus_facet_1"	"+3"
+				}
+				"radius"						
+				{
+					"value"			"1200"
+					"affected_by_aoe_increase"	"1"
+				}
+
 		}
 	}
 
@@ -317,24 +317,10 @@
 			"chance"
 			{
 				"value"										"20 30 40"
-				"special_bonus_unique_drow_ranger_3"		"+12"
+				"special_bonus_unique_drow_ranger_3"		"+10"
 			}
-			"bonus_damage"									
-			{
-				"value"										"40 60 80"
-			}
-			"agility_multiplier"							"30 40 50"
-			"agility_range"									"1200"
-			"agility_multiplier_ally"						"50"
-			"split_count"
-			{		
-				"value"										"0"
-				"special_bonus_scepter"						"0"
-			}
-			"split_range"									"375"
-			"split_damage_reduction"						"50"
-			"disable_range"									"400"
-		
+			"bonus_damage"		"40 60 80"
+			"disable_range"		"400"
 		}
 	}
 	
@@ -393,6 +379,37 @@
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
 
+
+	//=================================================================================================================
+	// Drow Ranger: Creep Rally
+	//=================================================================================================================
+	"drow_ranger_creep_rally"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"						"1"
+	}
+
+	//=================================================================================================================
+	// Drow Ranger: Drow Ranger: High Ground
+	//=================================================================================================================
+	"drow_ranger_vantage_point"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"damage_bonus"		"20"
+			"bonus_miss_chance"		"0"
+		}
+	}
+
+
 	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================
@@ -432,30 +449,6 @@
 	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================
-	"special_bonus_unique_drow_ranger_4"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"						"special_bonus_base"
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_drow_ranger_5"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"						"special_bonus_base"
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
 	"special_bonus_unique_drow_ranger_6"
 	{
 		// General
@@ -481,17 +474,6 @@
 	// Ability: Special Bonus
 	//=================================================================================================================
 	"special_bonus_unique_drow_ranger_8"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"						"special_bonus_base"
-	}
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_drow_ranger_gust_invis"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------

@@ -1,4 +1,3 @@
-// Abilities for slark
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -34,25 +33,19 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"50"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"slow_duration"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"slow_duration"		"6"
+				"value" "6"
 			}
-			"02"
+			"movement_speed"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"movement_speed"				"30"
+				"value" "30"
 			}
-			"03"
+			"attack_speed"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"attack_speed"				"75"
+				"value" "75"
 			}
 		}
 	}
@@ -140,7 +133,7 @@
 				"total_damage"			
 				{
 					"value"			"75 150 225 300"
-					"LinkedSpecialBonus"	"special_bonus_unique_slark_2"
+				"special_bonus_unique_slark_2" "+70"
 				}
 				"total_pulses"			"10"
 				"pulse_interval"		"0.1"
@@ -186,9 +179,12 @@
 			"leash_duration"		
 			{
 				"value"			"2.5 2.75 3 3.25"
-				"LinkedSpecialBonus"	"special_bonus_unique_slark"
+				"special_bonus_unique_slark" "+0.5"
 			}
-			"leash_radius"			"400"
+			"leash_radius"
+			{
+				"value"						"400"
+			}
 			"max_charges"			
 			{
 				"value"	"2"
@@ -201,10 +197,14 @@
 			}
 			"pounce_distance_scepter"		
 			{
-				"value"		"1000"
+				"value"		"900"
 				"RequiresScepter"	"1"
 			}
-			"essence_stacks"	"0 1 2 3"
+			"essence_stacks"
+			{
+				"value"						"0"
+				"special_bonus_facet_slark_leeching_leash"	"1 2 3 4"				
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -219,33 +219,69 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"						"4"
+		
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"agi_gain"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"agi_gain"				"3"
-				"LinkedSpecialBonus"	"special_bonus_unique_slark_5"
-
+				"value"					"3"
+				"special_bonus_unique_slark_5" "+1"
 			}
-			"02"
+			"stat_loss"					"1"
+			"duration"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"stat_loss"				"1"
+				"value"					"20 40 60 80"
+				"special_bonus_unique_slark_4" "+40"
 			}
-			"03"
+			"steal_radius"			
 			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"20 40 60 80"
-				"LinkedSpecialBonus"	"special_bonus_unique_slark_4"
+				"value"		"300"
+				"affected_by_aoe_increase"	"1"
+			}
+			"max_stacks_per_hero"
+			{
+				"value"						"0"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
 
+	"slark_barracuda"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel"						"4"
+		"Innate"						"1"
+		"DependentOnAbility"			"slark_shadow_dance"
+
+		"AbilityValues"
+		{
+			"bonus_movement_speed"		"4 24 36 48"
+			"bonus_regen"			
+			{
+				"value"				"8 60 90 120"
+				"special_bonus_unique_slark_8"	"+50"
+			}
+			
+			"linger_search_radius"
+			{
+				"special_bonus_facet_slark_dark_reef_renegade" "1200"
+			}
+
+			"linger_duration"
+			{
+				"special_bonus_facet_slark_dark_reef_renegade" "0.5 1 1.5 2"
+			}
+			"activation_delay"			"0.5"
+			"neutral_disable"			"2.0"
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
 	//=================================================================================================================
 	// Slark Shadow Dance
 	//=================================================================================================================
@@ -261,34 +297,28 @@
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 		"AbilityDraftUltShardAbility"		"slark_depth_shroud"
-
+		"MaxLevel"						"3"
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"75 60 45"
+		"AbilityCooldown"				"60 50 40"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"120 120 120"		
+		"AbilityManaCost"				"100"		
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
-		{
-			
+		{			
 			"duration"					
 			{	
 				"value"			"4 4.25 4.5"
-				"LinkedSpecialBonus"	"special_bonus_unique_slark_3"
+				"special_bonus_unique_slark_3" "+1"
 			}
-			"fade_time"					"0.0 0.0 0.0"
-			"bonus_movement_speed"		"24 36 48"
-			"bonus_regen"			
-			{
-				"value"				"60 90 120"
-				"special_bonus_unique_slark_8"	"+50"
-			}
-			"activation_delay"			"0.5 0.5 0.5"
-			"neutral_disable"			"2.0 2.0 2.0"
+			"fade_time"					"0"
+			
+			
+
 		}
 	}
 	//=================================================================================================================
@@ -300,18 +330,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"0.5"
-				"ad_linked_abilities"			"slark_pounce"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 	//=================================================================================================================
 	// Ability: Special Bonus
@@ -322,18 +341,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"70"
-				"ad_linked_abilities"			"slark_dark_pact"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -345,18 +353,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"1"
-				"ad_linked_abilities"			"slark_shadow_dance"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -368,18 +365,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"40"
-				"ad_linked_abilities"			"slark_essence_shift"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 		//=================================================================================================================
@@ -391,18 +377,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"1"
-				"ad_linked_abilities"			"slark_essence_shift"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -414,16 +389,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"0.5"
-				"ad_linked_abilities"			"slark_dark_pact"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "0.5"
+				"ad_linked_abilities" "slark_dark_pact"
 			}
 		}
 	}
@@ -437,16 +408,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"80"
-				"ad_linked_abilities"			"slark_shadow_dance"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "80"
+				"ad_linked_abilities" "slark_shadow_dance"
 			}
 		}
 	}

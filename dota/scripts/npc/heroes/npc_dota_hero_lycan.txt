@@ -1,4 +1,3 @@
-// Abilities for lycan
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -25,30 +24,46 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"115 120 125 130"
+
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+			"AbilityManaCost"				
+			{
+				"value"			"115 120 125 130"
+				"special_bonus_facet_lycan_spirit_wolves" "-50"
+			}
+			
 			"wolf_index"				"1 2 3 4"
-			"wolf_duration"				"50"
-			"wolf_bat"					"1.2 1.1 1.0 0.9"
+			"wolf_duration"				
+			{
+				"value"					"50"
+				"special_bonus_facet_lycan_spirit_wolves"		"=25"
+			}
+
+			"wolf_bat"					
+			{
+				"value"					"1.2 1.1 1.0 0.9"
+				"RequiresFacet"				"lycan_pack_leader"
+			}
 			"wolf_damage"
 			{
 				"value"							"23 29 35 41"
 				"special_bonus_unique_lycan_3"	"+10"
-
+				"RequiresFacet"				"lycan_pack_leader"
 			}
 			"wolf_hp"					
 			{
 				"value"	"325 375 425 475"
-				"special_bonus_unique_lycan_7"	"+300"
+				"special_bonus_unique_lycan_7"	"+350"
+				"RequiresFacet"				"lycan_pack_leader"
 			}
 			"bonus_health"
 			{
 				"value"			"0"
-				"special_bonus_unique_lycan_7"	"+300"
+				"special_bonus_unique_lycan_7"	"+350"
 			}
 			"bonus_damage"
 			{
@@ -57,10 +72,52 @@
 			}
 			"bash_chance"				"15"
 			"bash_duration"				"1.0"
-			"tooltip_wolf_count"			
+			"wolf_count"			
 			{
 				"value"			"2 2 2 2"
 				"special_bonus_unique_lycan_2" "+2"
+			}
+
+			"is_lone_wolf"	
+			{
+				"value"					"0"
+				"special_bonus_facet_lycan_spirit_wolves"					"+1"
+			}
+			"back_distance"
+			{
+				"value"						"0"
+				"special_bonus_facet_lycan_spirit_wolves"					"+150"
+			}
+			"side_distance"
+			{
+				"value"						"0"
+				"special_bonus_facet_lycan_spirit_wolves"					"+75"
+			}
+			"model_scale"
+			{
+				"value"						"0"
+				"special_bonus_facet_lycan_spirit_wolves"					"-15"
+			}
+			"invis_level"				
+			{
+				"value"						"0"
+				"special_bonus_facet_lycan_spirit_wolves"					"0.05"
+			}
+			"health_per_wolf"				
+			{
+				"value"							"50 100 150 200"	
+				"special_bonus_unique_lycan_7"	"+250"
+				"RequiresFacet"					"lycan_spirit_wolves"
+			}
+			"damage_per_wolf"				
+			{
+				"value"					"8 14 20 26"	
+				"special_bonus_unique_lycan_3"	"+8"
+				"RequiresFacet"					"lycan_spirit_wolves"
+			}
+			"death_fx_time"
+			{
+				"special_bonus_facet_lycan_spirit_wolves"					"1.0"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -91,7 +148,7 @@
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"300"
-		"AbilityCooldown"				"125 110 95"
+		"AbilityCooldown"				"110 100 90"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -104,8 +161,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"lifesteal_percent"		"30"		
-			"lifesteal_range"		"1200"		
+			"lifesteal_percent"		"40"
+			"creep_penalty"			"0.4"
+			"lifesteal_range"		
+			{
+				"value"		"1200"		
+				"affected_by_aoe_increase"	"1"
+			}
 			"attack_range"		"150"		
 		}
 	}
@@ -146,7 +208,6 @@
 			"attack_damage_reduction"		
 			{
 				"value"		"25 30 35 40"
-				"special_bonus_unique_lycan_6"	"+20"
 			}
 			"total_attack_damage_reduction"		
 			{
@@ -156,14 +217,14 @@
 			"armor"			
 			{
 				"value"				"4 5 6 7"
-				"special_bonus_unique_lycan_howl_armor"			"+2"
+				"special_bonus_unique_lycan_howl_armor"			"+3"
 			}
 			"radius"			
 			{
 				"value"		"2000"
 				"affected_by_aoe_increase"	"1"
 			}
-			"fear_duration"		"1 1.5 2 2.5"
+			"fear_duration"		"0"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 		"AbilityCastGestureSlot"	"DEFAULT" 
@@ -230,12 +291,19 @@
 			"speed"				"550"
 			"bonus_night_vision"		"1000"
 			"transformation_time"		"1.1"
-			"crit_chance"			
-			{
-				"value"			"40"
-			}
+			"crit_chance"				"40"
 			"crit_multiplier"		"160 200 240"
 			"health_bonus"		"250 350 450"
+			"is_wolfpack"
+			{
+				"value"				"0"
+				"special_bonus_facet_lycan_pack_leader"			"+1"
+			}
+			"kill_duration_extension"
+			{
+				"value"				"0"
+				"special_bonus_facet_lycan_pack_leader"			"+5"
+			}
 		}
 	}
 
@@ -278,23 +346,18 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityValues"
 		{
-			"01"
+			"fade_time"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"fade_time"					"0.0 0.0 0.0"
+				"value" "0.0 0.0 0.0"
 			}
-			"02"
+			"fade_delay"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"fade_delay"				"2"
+				"value" "2"
 			}
 		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
 	//=================================================================================================================
 	// Ability: Special Bonus
@@ -369,20 +432,6 @@
 	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================
-	"special_bonus_unique_lycan_6"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ad_linked_abilities"			"lycan_howl"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-		
-		
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
 	"special_bonus_unique_lycan_7"
 	{
 		// General
@@ -403,16 +452,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"15"
-				"ad_linked_abilities"			"lycan_shapeshift"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "15"
+				"ad_linked_abilities" "lycan_shapeshift"
 			}
 		}
 	}
@@ -427,5 +472,23 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"special_bonus_base"
+	}
+
+	
+	//=================================================================================================================
+	// Lycan Innate Apex Predator
+	//=================================================================================================================
+	"lycan_apex_predator"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"AbilityValues"
+		{
+			"damage_amp_per_level"			"2"
+		}
 	}
 }

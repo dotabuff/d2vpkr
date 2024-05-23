@@ -1,4 +1,3 @@
-// Abilities for ancient_apparition
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -42,24 +41,29 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"damage"				
+			"aoe"
 			{
-				"value"		"30 50 70 90"
-				"special_bonus_unique_ancient_apparition_8"	"+40"
-				"CalculateSpellDamageTooltip" "1"
+				"value"	"0"
+				"RequiresFacet"	"ancient_apparition_exposure"
+				"special_bonus_facet_ancient_apparition_exposure"	"400"
+				"affected_by_aoe_increase"			"1"
+			}
+			"frost_stacks"	
+			{
+				"value"		"2 4 6 8"
+				"special_bonus_unique_ancient_apparition_8"	"+2"
 			}
 			"break_distance"
 			{
-				"value"		"715"
+				"value"		"725 750 775 800"
 				"special_bonus_unique_ancient_apparition_1"	"+300"
 					"affected_by_aoe_increase"	"1"
 			}
-			"stun_duration"			"1.6 2.0 2.4 2.8"
+			"stun_duration"			"1.9 2.2 2.5 2.8"
 			"area_of_effect"
 			{
 				"value"			"0"
-				"special_bonus_unique_ancient_apparition_6"			"+450"
-				"affected_by_aoe_increase"	"1"
+				
 			}			
 		}
 	}
@@ -110,12 +114,10 @@
 			"movement_speed_pct"
 			{
 				"value"	"-16 -19 -22 -25"
-				"special_bonus_unique_ancient_apparition_4"	"-5"
 			}
 			"spell_resist_pct"
 			{
 				"value"		"-16 -19 -22 -25"
-				"special_bonus_unique_ancient_apparition_4"	"-5"
 				"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
 			}
 			"vision_aoe"		
@@ -123,16 +125,10 @@
 				"value"		"200 220 240 260"
 				"affected_by_aoe_increase"	"1"
 			}
-			"shard_dps"
-			{
-				"value"		"12 18 24 30"
-				"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
-				"CalculateSpellDamageTooltip"	"1"
-			}
+			"frost_stacks"	"1 2 3 4"
 			"vortex_duration"	
 			{
 				"value"					"6 8 10 12"
-
 			}	
 		}
 	}
@@ -169,11 +165,13 @@
 			
 			"damage"
 			{
-				"value"				"40 80 120 160"
+				"value"				"30 60 90 120"
 				"special_bonus_unique_ancient_apparition_2"		"+80"
 			}
-			"slow"					"100"
-			"duration"				"0.7 0.8 0.9 1"
+			"frost_stacks"	"2"
+			"duration"		"4"
+			"slow"		"100"
+			"slow_duration"		"0.7 0.8 0.9 1"
 			"attack_range_bonus"
 			{
 				"value"				"60 120 180 240"
@@ -181,7 +179,7 @@
 			}
 			"AbilityManaCost"
 			{
-				"value"										"30 40 50 60"
+				"value"										"45 50 55 60"
 				"special_bonus_scepter"						"-50%"
 			}
 			"AbilityCooldown"				
@@ -254,11 +252,7 @@
 				"value"		"10"
 				"special_bonus_unique_ancient_apparition_ice_vortex_duration"			"+5"
 			}
-			"dot_damage"				
-			{
-				"value"					"12.5 20.0 32.0"
-				"CalculateSpellDamageTooltip"	"1"
-			}
+			"frost_stacks"	"2"
 			"speed"					"1500 1500 1500 1500"
 			"kill_pct"
 			{	
@@ -270,9 +264,52 @@
 				"value"					"0"
 				"special_bonus_shard"		"+60"
 			}
-			"target_sight_radius"	"500 500 500"
+			"target_sight_radius"	
+			{
+				"value"			"500"
+				"affected_by_aoe_increase"	"1"
+			}
 		}
 	}
+
+	//=================================================================================================================
+	// Ancient Apparition: Absolute Zero innate
+	//=================================================================================================================
+	"ancient_apparition_death_rime"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"						"4"
+		"Innate"						"1"
+		"DependentOnAbility"			"ancient_apparition_ice_blast"
+		
+		"AbilityValues"
+		{
+			"damage"	
+			{
+				"value"						"10"
+				"special_bonus_unique_ancient_apparition_6"			"+50%"
+			}
+			"slow"
+			{
+				"value"						"1.5"
+				"special_bonus_unique_ancient_apparition_6"			"+50%"
+			}
+			"cast_slow"
+			{
+				"value"						"0"
+			}
+			"strength_decrease"
+			{
+				"value"						"0"
+				"special_bonus_facet_ancient_apparition_bone_chill"		"0.5 0.75 1 1.25"
+			}
+		}
+	}	
 
 	//=================================================================================================================
 	// Ancient Apparition: Ice Blast Release
@@ -364,18 +401,6 @@
 	// Ability: Special Bonus
 	//=================================================================================================================
 	"special_bonus_unique_ancient_apparition_3"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"						"special_bonus_base"
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_ancient_apparition_4"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------

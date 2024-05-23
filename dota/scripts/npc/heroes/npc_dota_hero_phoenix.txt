@@ -1,4 +1,3 @@
-// Abilities for phoenix
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -23,7 +22,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"36 34 32 30"
+		"AbilityCooldown"				"40 35 30 25"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -37,7 +36,7 @@
 				"dash_length"			
 				{
 					"value"	"1100 1200 1300 1400" 
-					"LinkedSpecialBonus"	"special_bonus_unique_phoenix_4"
+				"special_bonus_unique_phoenix_4" "+1000"
 				}
 				"dash_width"			
 				{
@@ -52,7 +51,7 @@
 				"burn_duration"			"4"
 				"damage_per_second"		
 				{
-					"value"				"15 35 55 75"
+					"value"				"20 40 60 80"
 					"special_bonus_unique_phoenix_dive_damage"		"+20"
 				}
 				
@@ -60,7 +59,7 @@
 				"slow_movement_speed_pct"	
 				{
 					"value"		"16 19 22 25"
-					"LinkedSpecialBonus"	"special_bonus_unique_phoenix_6"
+				"special_bonus_unique_phoenix_6" "+25"
 				}
 				"dive_duration"			"2.0"
 		}
@@ -127,7 +126,7 @@
 				"damage_per_second"				
 				{
 					"value"		"20 40 60 80"
-					"LinkedSpecialBonus"	"special_bonus_unique_phoenix_3"
+				"special_bonus_unique_phoenix_3" "+20"
 				}
 				"spirit_count"		"5"
 				"tick_interval"		"0.2"
@@ -152,7 +151,7 @@
 
 		// Casting
 		// ---------------------------------------------------------------------------
-		"AbilityCastRange"				"1200"
+		"AbilityCastRange"				"1200"			// if changing this, update focal_point_full_length_tooltip_only
 		"AbilityCastPoint"				"0.01"
 
 		// Time		
@@ -173,7 +172,7 @@
 				"hp_perc_damage"		
 				{
 					"value"			"1 2.75 4.5 6.25"
-					"LinkedSpecialBonus"	"special_bonus_unique_phoenix_5"
+				"special_bonus_unique_phoenix_5" "+1.5"
 				}
 				"base_heal"			"7 10 13 16"
 				"hp_perc_heal"			"0.5 1.0 1.5 2.0"
@@ -191,8 +190,21 @@
 					"value"				"10"
 					"RequiresShard"				"1"
 				}
-				"blind_per_second"	"10"
-				"blind_duration"	"5"	
+				"focal_point_max_multiplier"					// 0 disables
+				{
+					"value"										"0"
+					"special_bonus_facet_phoenix_hotspot"	"150"
+				}
+				"focal_point_start_length_pct"
+				{
+					"value"										"0"
+					"special_bonus_facet_phoenix_hotspot"	"50"
+				}
+				"focal_point_full_length_tooltip_only"
+				{
+					"value"										"0"
+					"special_bonus_facet_phoenix_hotspot"	"1200"
+				}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -276,18 +288,18 @@
 				"stun_duration"		
 				{
 					"value"			"1.6 2 2.4"
-					"LinkedSpecialBonus"	"special_bonus_unique_phoenix_2"
+				"special_bonus_unique_phoenix_2" "+0.5"
 				}
 				"max_hero_attacks"	
 				{
 					"value"			"6 8 10"
-					"LinkedSpecialBonus"	"special_bonus_unique_phoenix_1"
+				"special_bonus_unique_phoenix_1" "+2"
 				}
 				"max_hero_attacks_scepter"	
 				{
 					"value"	"7 10 13"
-					"LinkedSpecialBonus"	"special_bonus_unique_phoenix_1"
 					"RequiresScepter"	"1"
+				"special_bonus_unique_phoenix_1" "+2"
 				}
 				"cast_range_tooltip_scepter"
 				{
@@ -341,13 +353,52 @@
 				"damage_per_second"				
 				{
 					"value"			"20 40 60 80"
-					"LinkedSpecialBonus"	"special_bonus_unique_phoenix_3"
+				"special_bonus_unique_phoenix_3" "+20"
 				}
 				"spirit_count"		"5"
 				"tick_interval"		"0.2"
 		}
 	}
 
+
+	//=================================================================================================================
+	// Phoenix Innate Outburst
+	//=================================================================================================================
+	"phoenix_dying_light"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"radius"					
+			{
+				"value"			"450"
+				"affected_by_aoe_increase"	"1"
+			}
+			"damage_pct"				"6"
+		}
+	}
+	//=================================================================================================================
+	// Phoenix Innate Blinding Sun
+	//=================================================================================================================
+	"phoenix_blinding_sun"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_NONE"	
+
+		"MaxLevel"						"1"
+		"Innate"						"1"
+
+		"AbilityValues"
+		{
+			"blind_per_second"	"2"
+			"blind_duration"	"5"	
+		}
+	}
 	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================
@@ -357,18 +408,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"3"
-				"ad_linked_abilities"			"phoenix_supernova"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -380,18 +420,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"0.4"
-				"ad_linked_abilities"			"phoenix_supernova"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -403,18 +432,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"20"
-				"ad_linked_abilities"			"phoenix_fire_spirits"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -426,24 +444,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"1000"
-				"ad_linked_abilities"			"phoenix_icarus_dive"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value2"				"1"
-				"ad_linked_abilities"			"phoenix_icarus_dive"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -455,18 +456,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"1.5"
-				"ad_linked_abilities"			"phoenix_sun_ray"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -478,64 +468,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"25"
-				"ad_linked_abilities"			"phoenix_icarus_dive"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_phoenix_7"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"0"
-				"ad_linked_abilities"			"phoenix_sun_ray && phoenix_supernova"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_phoenix_8"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"25"
-				"ad_linked_abilities"			"phoenix_sun_ray"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 	//=================================================================================================================
 	// Ability: Special Bonus

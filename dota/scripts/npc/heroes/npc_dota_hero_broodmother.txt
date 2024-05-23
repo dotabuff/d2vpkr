@@ -1,4 +1,3 @@
-// Abilities for broodmother
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -50,15 +49,25 @@
 				"hp_bonus"
 				{
 					"value"				"0"
-					"special_bonus_unique_broodmother_7" "+150"
+					"special_bonus_unique_broodmother_7" "+125"
 				}
-				"count"					"4 5 6"
+				"count"					
+				{
+					"value"		"4 5 6"
+				}
 				"projectile_speed"	"1200"
 				"tooltip_spiderling_hp"
 				{
-					"value"				"320"
-					"special_bonus_unique_broodmother_7" "+150"
+					"value"				"300"
+					"special_bonus_unique_broodmother_7" "+125"
 				}
+				"slow_duration"	
+				{
+					"value"		"4"
+				}
+				"movement_speed" "25 35 45"
+
+					
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -128,6 +137,7 @@
 		"AbilityCooldown"				"0.0"
 		"AbilityManaCost"				"40"
 		"AbilityCharges"				"4 6 8 10"
+		"MaxLevel"						"4"
 			
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -143,10 +153,9 @@
 				"value"				"3 5 7 9"
 				"special_bonus_unique_broodmother_6" "+3"
 			}
-			"health_regen"			
+			"health_regen"
 			{
-				"value"				"2 5 8 11"
-				"special_bonus_unique_broodmother_web_hpregen" "+8"
+				"value"				"0"
 			}
 			"bonus_movespeed"		"10 22 34 46"
 			"AbilityChargeRestoreTime"	
@@ -156,11 +165,38 @@
 			}
 
 			"bonus_turn_rate"	"0.2"
-
+			"degen"
+			{
+				"special_bonus_facet_broodmother_necrotic_webs"	"=10 =15 =20 =25"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
+
+
+	"broodmother_spiders_milk"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"AbilityValues"
+		{
+			"kill_heal_heroes"						"4"
+			"kill_creeps_penalty"						"40"
+			"kill_heal_aoe"							
+			{
+				"value"			"600"
+				"affected_by_aoe_increase"	"1"
+			}
+			"kill_heal_duration"					"3"
+			"tick_rate"								"1"
+
+		}
 	
+	}
+
 	//=================================================================================================================
 	// Broodmother: Silken Bola
 	//=================================================================================================================
@@ -202,15 +238,20 @@
 			"movement_speed"			
 			{
 					"value"		"10 25 40 55"
-					"special_bonus_unique_broodmother_4"	"+35"
 			}
 			"aoe"
 			{
 				"value"	"0"				
-				"special_bonus_unique_broodmother_2"	"+400"
 				"affected_by_aoe_increase"	"1"
 			}
-			"duration"				"6"
+			"duration"				
+			{
+				"value"		"6 6 6 6"
+			}
+			"roots"
+			{
+				"value"	"0"
+			}
 			"projectile_speed"	"1200"
 			"impact_damage"			
 			{
@@ -223,7 +264,6 @@
 			"miss_chance"			
 			{
 				"value"		"40 45 50 55"
-				"special_bonus_unique_broodmother_4"	"+35"
 			}
 			
 		}
@@ -243,22 +283,23 @@
 			
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"miss_chance"			
 			{
-				"var_type"				"FIELD_INTEGER"
-				"miss_chance"			"30 40 50 60"
+				"value"		"30 40 50 60"
+				"special_bonus_unique_broodmother_4"	"+30"
 			}
-			"02"
+			"bonus_movespeed"		
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_movespeed"		"-20 -30 -40 -50"
+				"value"		"-15 -20 -25 -30"
+				"special_bonus_unique_broodmother_4"	"-30"
 			}
-			"03"
+			"duration"				"2.0 2.0 2.0 2.0"
+			"attack_damage"			
 			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"			"2.0 2.0 2.0 2.0"
+				"value"				"2 4 6 8"					
+				"special_bonus_unique_broodmother_2"	"+10"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -319,6 +360,14 @@
 					"value"				"1"
 					"RequiresShard"		"1"
 			}
+			"aura_radius"		
+			{
+				"value"				"0"
+				"special_bonus_facet_broodmother_feeding_frenzy"					"=800"
+				"affected_by_aoe_increase"	"1"
+			}
+			
+					
 		}
 	}
 	
@@ -481,17 +530,6 @@
 	// Ability: Special Bonus
 	//=================================================================================================================
 	"special_bonus_unique_broodmother_7"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"						"special_bonus_base"				
-	}
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_broodmother_web_hpregen"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------

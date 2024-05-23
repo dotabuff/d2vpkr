@@ -25,7 +25,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"19 18 17 16"
+
 		"AbilityDuration"				"3.11 3.11 3.11 3.11"
 
 		// Damage.
@@ -40,6 +40,15 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+				
+				"AbilityCooldown"
+				{
+					"value"						"19 18 17 16"				
+					"special_bonus_unique_mirana_3"		"-2"
+				}
+
+				
+				
 				"arrow_speed"		"900.0"
 				"arrow_width"		
 				{
@@ -63,7 +72,7 @@
 				}
 				"scepter_starstorm_target_pct"		
 				{
-					"value"		"50"
+					"value"		"75"
 					"RequiresScepter"		"1"
 				}
 				"extra_arrows"
@@ -102,7 +111,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"140.0 120.0 100.0"
+		
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -112,14 +121,68 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+				"AbilityCooldown"				
+				{
+					"value"			"140.0 120.0 100.0"
+					"special_bonus_unique_mirana_4"			"-20"				
+				}
 				"fade_delay"			"2.5 2.0 1.5"
 				"duration"				"18.0"
 				"bonus_movement_speed"		"9 12 15"
 				"evasion"		
 				{
-					"value"			"20"
-					"LinkedSpecialBonus"	"special_bonus_unique_mirana_5"
+					"value"			"0"
+					"special_bonus_unique_mirana_5"		"+20"
 				}
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Solar Blessings
+	//=================================================================================================================
+	"mirana_solar_flare"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Ability.MoonlightShadow"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.5 0.5 0.5"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"125"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"AbilityCooldown"				
+			{
+				"value"			"140.0 120.0 100.0"
+				"special_bonus_unique_mirana_4"			"-20"				
+			}
+			"smoothness"						"0.015"
+			"increase_rate"						"8 12 16"
+			"day_vision_multiplier"				"3"
+			"ally_pct"							"50"
+			"duration"							"14"
+			"max_damage_time"					"8"
+			"evasion"		
+			{
+				"value"			"0"
+				"special_bonus_unique_mirana_5"		"+20"
+			}
 		}
 	}
 
@@ -139,12 +202,12 @@
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
-		"AbilityCharges"				"3"
-		"AbilityChargeRestoreTime"		"52 44 36 28"
+		"AbilityCharges"				"2"
+		"AbilityChargeRestoreTime"		"45 35 25 15"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"40"
+		"AbilityManaCost"				"50"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -152,7 +215,7 @@
 		{
 			"leap_distance"			
 			{
-				"value"							"575"
+				"value"							"650"
 				"special_bonus_unique_mirana_6"	"+125"
 			}
 			"min_jump_distance"					"200"
@@ -164,7 +227,7 @@
 				"value"				"25 50 75 100"
 				"special_bonus_unique_mirana_1"	"+80"
 			}
-			"leap_bonus_duration"	"4"
+			"leap_bonus_duration"	"5"
 			"shard_radius"					
 			{
 				"value"				"300"
@@ -267,6 +330,25 @@
 	}
 
 	//=================================================================================================================
+	// Lotus Blessing
+	//=================================================================================================================
+	"mirana_selemenes_faithful"
+	{
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+
+		"MaxLevel"						"1"
+		"Innate"						"1"
+
+		"AbilityValues"
+		{
+			"bonus_lotus"	"20"
+		}
+	}
+
+
+
+	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================
 	"special_bonus_unique_mirana_1"
@@ -275,7 +357,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ad_linked_abilities"			"mirana_leap"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+		"BaseClass"						"special_bonus_base"
 		
 	}
 
@@ -288,18 +370,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"2"
-				"ad_linked_abilities"			"mirana_arrow"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -311,18 +382,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"2"
-				"ad_linked_abilities"			"mirana_arrow"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -334,18 +394,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"20"
-				"ad_linked_abilities"			"mirana_invis"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -357,18 +406,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"20"
-				"ad_linked_abilities"			"mirana_invis"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -380,7 +418,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ad_linked_abilities"			"mirana_leap"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+		"BaseClass"						"special_bonus_base"
 		
 	}
 

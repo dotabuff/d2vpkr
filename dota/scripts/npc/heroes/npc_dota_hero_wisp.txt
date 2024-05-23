@@ -1,4 +1,3 @@
-// Abilities for wisp
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -16,6 +15,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"LinkedAbility"					"wisp_tether_break"
+		
 
 
 		// Casting
@@ -29,7 +29,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"40 40 40 40"
+		"AbilityManaCost"				"40 40 40 40 40"
 		
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
@@ -47,15 +47,19 @@
 				"movespeed"					
 				{
 					"value"				"6 8 10 12"
-					"special_bonus_unique_wisp_3"	"+6"
+					"special_bonus_unique_wisp_3"	"+5"
 				}
-				"latch_distance"			"700 700 700 700"
-				"latch_speed"				"1000 1000 1000 1000"
+				"latch_distance"			
+				{
+					"value"		"700"
+				}
+				"latch_speed"				"1000"
 				"tether_heal_amp"			"60 80 100 120"
+				"tether_mana_amp"			"60 80 100 120"
 				"self_bonus"				"0"
 				"slow"				
 				{
-					"value"			"15 25 35 45"
+					"value"			"10 20 30 40 "
 					"special_bonus_unique_wisp_11"			"+15"
 				}
 				"slow_duration"				"0.2"
@@ -64,8 +68,12 @@
 					"value"			"10"
 					"RequiresShard"	"1"
 				}
-				"damage"			"10 20 30 40"
+				"damage"			"15 25 35 45"
 				"tick_rate"			"0.5"
+				"tether_attack_damage_pct"
+				{
+					"special_bonus_unique_wisp_4" "=75"
+				}
 		}
 	}
 
@@ -101,11 +109,11 @@
 		"AbilityValues"
 		{
 			
-			"creep_damage"				"10 15 20 25"
+			"creep_damage"				"12 18 24 30"
 			"hero_damage"
 			{
 				"value"				"30 50 70 90"
-				"special_bonus_unique_wisp"		"+55"
+				"special_bonus_unique_wisp"		"+60"
 			}
 			"revolution_time"			"5.0 5.0 5.0 5.0"
 			"min_range"					"200"
@@ -178,8 +186,26 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_attack_speed"		"35 60 85 110"
-				"bonus_spell_amp"		"8 10 12 14"
+				"bonus_attack_speed"		
+				{
+					"value"		"0"
+					"special_bonus_facet_wisp_kritzkrieg" "35 60 85 110"
+				}
+				"bonus_spell_amp"		
+				{
+					"value"				"0"
+					"special_bonus_facet_wisp_kritzkrieg" "8 10 12 14"
+				}
+				"bonus_armor"
+				{
+					"value"				"0"
+					"special_bonus_facet_wisp_medigun" "3 6 9 12"
+				}
+				"bonus_mres"
+				{
+					"value"				"0"
+					"special_bonus_facet_wisp_medigun" "10 15 20 25"
+				}
 				"hp_regen"			
 				{
 					"value"			"0.5 0.6 0.7 0.8"
@@ -224,20 +250,15 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"175"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"cast_delay"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"cast_delay"				"3.5 3.25 3.0"
+				"value" "3.5 3.25 3.0"
 			}
-			"02"
+			"return_time"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"return_time"				"12.0 12.0 12.0"
+				"value" "12.0 12.0 12.0"
 			}
 		}
 	}
@@ -254,12 +275,12 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0 0 0 0"
+		"AbilityCastPoint"				"0 0 0 0 0"
  		"AbilityCastAnimation"			"ACT_INVALID"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"1.0 1.0 1.0 1.0"
+		"AbilityCooldown"				"1.0 1.0 1.0 1.0 1.0"
 	}
 
 	//=================================================================================================================
@@ -299,6 +320,25 @@
 	}
 
 	//=================================================================================================================
+	// Bounty Hunter: Innate Bounty Rune Multiplier
+	//=================================================================================================================
+	"wisp_sight_seer"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"						"1"
+		"Innate"						"1"		
+		"AbilityValues"
+		{
+				"bonus_vision"	"300"
+				"bonus_channel_speed"	"1"
+		}
+	}
+
+
+	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================
 	"special_bonus_unique_wisp"
@@ -308,29 +348,6 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"special_bonus_base"
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_wisp_2"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"1"
-				"ad_linked_abilities"			"wisp_tether"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
 	}
 
 	//=================================================================================================================
@@ -355,39 +372,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"1"
-				"ad_linked_abilities"			"wisp_tether"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_wisp_5"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"1"
-				"ad_linked_abilities"			"wisp_tether"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "1"
+				"ad_linked_abilities" "wisp_tether"
 			}
 		}
 	}
@@ -401,45 +391,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"25"
-				"ad_linked_abilities"			"wisp_relocate"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_wisp_7"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"slow"						"80"
-				"ad_linked_abilities"			"wisp_spirits"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"slow_duration"				"0.3"
-				"ad_linked_abilities"			"wisp_spirits"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "30"
+				"ad_linked_abilities" "wisp_relocate"
 			}
 		}
 	}
@@ -453,16 +410,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"15"
-				"ad_linked_abilities"			"wisp_tether"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "12"
+				"ad_linked_abilities" "wisp_tether"
 			}
 		}
 	}
@@ -476,16 +429,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"400"
-				"ad_linked_abilities"			"wisp_tether"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "400"
+				"ad_linked_abilities" "wisp_tether"
 			}
 		}
 	}

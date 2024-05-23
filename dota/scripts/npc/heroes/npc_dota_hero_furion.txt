@@ -1,4 +1,3 @@
-// Abilities for furion
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -13,8 +12,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Furion.Sprout"
-
-        
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 
 		// Unit Targeting
 		//-------------------------------------------------------------------------------------------------------------
@@ -26,8 +24,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"625 700 775 850"
 		"AbilityCastPoint"				"0.35"
-		"AbilityCooldown"				"15 13 11 9"
-		"AbilityManaCost"				"70 90 110 130"
+		"AbilityCooldown"				"14 12 10 8"
+		"AbilityManaCost"				"70 80 90 100"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -38,25 +36,39 @@
 				"value"						"250"
 				"affected_by_aoe_increase"	"1"
 			}
-			"duration"						"3 4 5 6"
-			"blind_pct"
-			{
-				"value" 			"0"
-				"special_bonus_unique_furion_4" 	"+100"
-			}
+			"duration"						"2.5 3 3.5 4"
 			"leash"
 			{
 				"value"				"0"
 				"special_bonus_unique_furion_7"		"+1"
 			}
-			"sprout_damage_per_second"		"25 40 55 70"
-			"sprout_damage_inteval"			"0.5"
+
+			"sprout_damage"					
+			{
+				"value"		"60 120 180 240"
+				"special_bonus_unique_furion_4" 	"+160"
+			}
 			"sprout_damage_radius"
 			{
 				"value"						"275"
 				"affected_by_aoe_increase"	"1"
 			}
 
+			"sprout_heal_interval"
+			{
+				"value"						"0"
+				"special_bonus_facet_furion_soothing_saplings"		"=0.5"				
+			}
+			"sprout_heal_per_second"
+			{
+				"value"						"0"
+				"special_bonus_facet_furion_soothing_saplings"	"=12 =20 =28 =36"				
+			}
+			"building_healing_pct"
+			{
+				"value"				"0"
+				"special_bonus_facet_furion_soothing_saplings"		"+50"				
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -73,7 +85,6 @@
 		"AbilitySound"					"Hero_Furion.Sprout"
 
 		"MaxLevel"						"1"
-		"FightRecapLevel"				"1"
 		"IsGrantedByScepter"			"1"
 		"HasScepterUpgrade"				"1"
 		
@@ -90,23 +101,18 @@
 		"AbilityCastPoint"				"0.35"
 		"AbilityCooldown"				"30"
 		"AbilityManaCost"				"130"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityValues"
 		{
-			"01"
+			"vision_range"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"vision_range"			"500"
+				"value" "500"
 			}
-			"02"
+			"duration"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"6"
+				"value" "6"
 			}
 		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
 	
 	//=================================================================================================================
@@ -129,23 +135,26 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"0"
 		"AbilityCastPoint"				"3 3 3 3"
-		"AbilityCooldown"				"75 60 45 30"
 		"AbilityManaCost"				"50 60 70 80"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 		// Special
 		//-------------------------------------------------------------------------------------------------------------		
 		"AbilityValues"
 		{
-			"max_stacks"				
+			"AbilityCooldown"
 			{
-				"value"				"6 8 10 12"
-				"special_bonus_unique_furion_teleportation_max_stacks"		"+4"
+				"value"										"65 50 35 20"
+				"special_bonus_unique_furion_3"				"-100%"
+			}
+			"barrier"									
+			{
+				"value"					"50 100 150 200"
+				"special_bonus_unique_furion_teleportation_barrier"				"+100"
 
 			}
+			"buff_duration"								"15"			
+
 			
-			"buff_duration"				"15"
-			"damage_per_stack"		"6"
-			"armor_per_stack"		"1"	
 		}
 	}
 	
@@ -178,28 +187,45 @@
 			"max_treants"
 			{
 				"value"							"2 3 4 5"
-				"special_bonus_unique_furion_2"	"+5"
+				"special_bonus_facet_furion_ironwood_treant"			"=1 =1 =1 =1"
+			}
+			"siege_treants"
+			{
+				"value"				"0"
+				"special_bonus_facet_furion_ironwood_treant"				"+1"
 			}
 			"treant_duration"				"50"
 			"treant_health"
 			{
-				"value"								"550"
-				"special_bonus_unique_furion"			"x2.5"
+				"value"						"550 550 550 550"
+				"special_bonus_facet_furion_ironwood_treant"	"=550 =750 =950 =1150"				
+				"special_bonus_unique_furion"			"x3"
 			}
 			"treant_damage_min"
 			{
 				"value"					"11 19 27 35"
-				"special_bonus_unique_furion"			"x2.5"
+				"special_bonus_facet_furion_ironwood_treant"				"+50%"
+				"special_bonus_unique_furion"			"x3"
 			}
 			"treant_damage_max"
 			{
 				"value"					"15 23 31 39"
-				"special_bonus_unique_furion"			"x2.5"
+				"special_bonus_facet_furion_ironwood_treant"				"+50%"
+				"special_bonus_unique_furion"			"x3"
+			}
+			"treant_movespeed"
+			{
+				"value"						"300"
+				"special_bonus_unique_furion_2"				"+45"
 			}
 			"AbilityCooldown"				
 			{
 				"value"				"37 35 33 31"
-				"special_bonus_unique_furion_6"		"-8"
+				"special_bonus_unique_furion_6"		"-10"
+			}
+			"treewalking"
+			{
+				"value"						"0"
 			}
 			
 		}
@@ -410,6 +436,60 @@
 	}
 
 	//=================================================================================================================
+	// Furion: Spirit of the Forest
+	//=================================================================================================================
+	"furion_spirit_of_the_forest"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"						"4"
+		"DependentOnAbility"			"furion_force_of_nature"
+		"Innate"						"1"
+		"AbilityValues"
+		{
+			"damage_per_tree_pct"		"2 3 4 5 6"
+			"radius"	
+			{
+				"value"		"300"
+				"affected_by_aoe_increase"	"1"
+			}
+			"radius_treant"				
+			{
+				"value"		"1200"
+				"affected_by_aoe_increase"	"1"
+			}
+			"multiplier"			
+			{
+				"value"			"1"
+				"special_bonus_facet_furion_ironwood_treant"	"x3"
+				"special_bonus_unique_furion"	"x3"
+			}
+		}
+	}	
+
+	//=================================================================================================================
+	// Furion: Fecundity
+	//=================================================================================================================
+	"furion_fecundity"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"debuff_duration"				"3"
+			"tree_sprout_delay"				"0.75"
+			"tree_duration"					"20"
+		}
+	}	
+
+	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================
 	"special_bonus_unique_furion"
@@ -442,18 +522,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
 		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"1"
-				"ad_linked_abilities"			"furion_teleportation"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
 	}
 
 	//=================================================================================================================
@@ -506,18 +576,7 @@
 	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================
-	"special_bonus_unique_furion_sprout_treant_duration"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"						"special_bonus_base"
-	}
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_furion_teleportation_max_stacks"
+	"special_bonus_unique_furion_teleportation_barrier"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------

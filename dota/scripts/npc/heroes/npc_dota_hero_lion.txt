@@ -1,4 +1,3 @@
-// Abilities for lion
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -21,7 +20,6 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"650"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
 		
 		
@@ -38,6 +36,11 @@
 		"AbilityValues"
 		{
 			"AbilityCooldown"	"14 13 12 11"
+			"AbilityCastRange"
+			{
+				"value"			"650"
+				"special_bonus_unique_lion_2"	"+600"
+			}
 
 			"damage"			
 			{
@@ -55,7 +58,6 @@
 			"pierces_immunity"
 			{
 				"value"			"0"
-				"special_bonus_unique_lion_2"	"+1"
 			}
 			"cone_shaped"
 			{
@@ -174,8 +176,9 @@
 				}		
 				"damage_pct"					
 				{
-					"value"					"100"		
-					"special_bonus_unique_lion_manadrain_damage"			"+100"
+					"value"					"0"		
+					"special_bonus_facet_lion_essence_eater"	"+100"
+					"RequiresFacet"		"lion_essence_eater"
 				}
 				"magic_resist"
 				{
@@ -227,63 +230,95 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"damage"					
-				{
-					"value"				"600 725 850"
-					"special_bonus_scepter"		"+100"
-				}
-				"damage_per_kill"			
-				{
-					"value"				"40"
-					"special_bonus_unique_lion_8"	"+20"
-					"CalculateSpellDamageTooltip"	"0"
-				}
-				"grace_period"				"3"
-				"damage_delay"				
-				{
-					"value"				"0.25"
-					"CalculateSpellDamageTooltip"	"0"
-				}
-				"cooldown_scepter"			
-				{
-					"value"	"80.0 50.0 20.0"
-					"RequiresScepter"			"1"
-				}
-				"splash_radius_scepter"		
-				{
-					"value"		"325"
-					"RequiresScepter"			"1"
-					"affected_by_aoe_increase"	"1"
-				}
-		}
-	}
+			"damage"					
+			{
+				"value"				"600 725 850"
+				"special_bonus_scepter"		"+100"
+			}
+			"damage_per_kill"			
+			{
+				"value"				"40"
+				"special_bonus_unique_lion_8"	"+20"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"grace_period"				"3"
+			"damage_delay"				
+			{
+				"value"				"0.25"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"cooldown_scepter"			
+			{
+				"value"	"80.0 50.0 20.0"
+				"RequiresScepter"			"1"
+			}
+			"splash_radius_scepter"		
+			{
+				"value"		"325"
+				"RequiresScepter"			"1"
+				"affected_by_aoe_increase"	"1"
+			}
+				
+			"punch_duration"
+			{
+				"value"						"0"
+				"special_bonus_facet_lion_fist_of_death"	"+20"
+				"RequiresFacet"			"lion_fist_of_death"
+			}
+			"punch_attack_range"
+			{
+				"value"						"0"
+				"special_bonus_facet_lion_fist_of_death"	"=250"
+				"RequiresFacet"			"lion_fist_of_death"
+			}
+			"punch_bonus_damage_base"
+			{
+				"value"						"0"
+				"special_bonus_facet_lion_fist_of_death"	"+40"
+				"RequiresFacet"			"lion_fist_of_death"
+			}
+			"punch_bonus_damage_per_stack"
+			{
+				"value"						"0"
+				"special_bonus_facet_lion_fist_of_death"	"+30"
+				"RequiresFacet"			"lion_fist_of_death"
+			}
+			"punch_grace_period"
+			{
+				"value"						"0"
+				"special_bonus_facet_lion_fist_of_death"	"+3"
+				"RequiresFacet"			"lion_fist_of_death"
+			}
+			"cleave_starting_width"
+			{
+				"value"						"0"
+				"special_bonus_facet_lion_fist_of_death"	"+150"
+				"affected_by_aoe_increase"	"1"
+				"RequiresFacet"			"lion_fist_of_death"
+			}
+			"cleave_ending_width"
+			{
+				"value"						"0"
+				"special_bonus_facet_lion_fist_of_death"	"+360"
+				"affected_by_aoe_increase"	"1"
+				"RequiresFacet"			"lion_fist_of_death"
+			}
+			"cleave_distance"
+			{
+				"value"						"0"
+				"special_bonus_facet_lion_fist_of_death"	"+650"
+				"affected_by_aoe_increase"	"1"
+				"RequiresFacet"			"lion_fist_of_death"
+			}
+			"cleave_damage"
+			{
+				"value"							"0"
+				"special_bonus_facet_lion_fist_of_death"	"+50"
+				"RequiresFacet"					"lion_fist_of_death"
+				"CalculateSpellDamageTooltip"	"0"
+				"DamageTypeTooltip"				"DAMAGE_TYPE_NONE"
+			}
 
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_lion"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"2"
-				"ad_linked_abilities"			"lion_mana_drain"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"				"400"
-				"ad_linked_abilities"			"lion_mana_drain"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
 		}
 	}
 
@@ -354,29 +389,6 @@
 	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================
-	"special_bonus_unique_lion_7"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"2"
-				"ad_linked_abilities"			"lion_impale"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
 	"special_bonus_unique_lion_8"
 	{
 		// General
@@ -386,29 +398,6 @@
 		"ad_linked_abilities"			"lion_finger_of_death"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 		
 		
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_lion_9"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"120"
-				"ad_linked_abilities"			"lion_mana_drain"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
 	}
 
 	//=================================================================================================================
@@ -432,28 +421,33 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"70"
-				"ad_linked_abilities"			"lion_finger_of_death"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "70"
+				"ad_linked_abilities" "lion_finger_of_death"
 			}
 		}
 	}
+
 	//=================================================================================================================
-	// Ability: Special Bonus
+	// Lion Innate To Hell and Back
 	//=================================================================================================================
-	"special_bonus_unique_lion_manadrain_damage"
+	"lion_to_hell_and_back"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"						"special_bonus_base"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"AbilityValues"
+		{
+			"duration"					"90"
+			"spell_amp"					"20"
+			"debuff_amp"				"20"
+		}
 	}
 }

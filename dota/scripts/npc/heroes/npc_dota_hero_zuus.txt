@@ -1,4 +1,3 @@
-// Abilities for zuus
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -105,7 +104,8 @@
 		{
 			"arc_damage"
 			{
-				"value"			"85 110 135 160"
+				"value"			"90 120 150 180"
+				"special_bonus_unique_zeus_2"	"+60"
 			}
 			"radius"				
 			{
@@ -114,12 +114,7 @@
 			}
 			"jump_count"			"5 7 9 15"
 			"jump_delay"			"0.25 0.25 0.25 0.25"
-			"damage_health_pct"		
-			{
-				"value"				"3 4 5 6"
-				"special_bonus_unique_zeus_2"	"+6"
-
-			}				
+		
 		}
 		
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -190,7 +185,7 @@
 				"ministun_duration"		
 				{
 					"value"			"0.35"
-					"LinkedSpecialBonus"	"special_bonus_unique_zeus_3"
+				"special_bonus_unique_zeus_3" "+0.5"
 				}
 				"creep_damage_bonus_pct"		"100"
 		}
@@ -256,22 +251,47 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"	
 		"AbilitySound"					"Hero_Zuus.StaticField"
 		"MaxLevel"						"1"
+		"Innate"						"1"
 		
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"damage_health_pct"			
+				"damage_health_pct"
 				{
-					"value"	"8"
-					"CalculateSpellDamageTooltip"	"0"
+					"value"								"4"
+					"special_bonus_facet_zuus_livewire"	"=0"
 				}
+
+				"damage_health_pct_max_close"
+				{
+					"value"		"0"					
+					"special_bonus_facet_zuus_livewire"	"7"
+				}
+				"damage_health_pct_min_close"
+				{
+					"value"		"0"					
+					"special_bonus_facet_zuus_livewire"	"2"
+				}
+				"distance_threshold_max"
+				{
+					"value"		"0"					
+					"special_bonus_facet_zuus_livewire"	"1200"
+					"affected_by_aoe_increase"	"1"
+				}
+				"distance_threshold_min"
+				{
+					"value"		"0"					
+					"special_bonus_facet_zuus_livewire"	"200"
+					"affected_by_aoe_increase"	"1"
+				}
+				
 		}
 	}
 	
@@ -321,15 +341,20 @@
 			"sight_duration"		"3.0 3.0 3.0 3.0"
 			"damage"
 			{
-				"value"							"300 425 550"
+				"value"							"300 475 650"
 				"special_bonus_unique_zeus_4"		"+150"
 			}
-			"damage_pct"
+			"growing_delay"
 			{
-				"value"							"5 7.5 10"
+				"value"						"0"
+				"special_bonus_facet_zuus_divine_rampage"	".2"
 			}
-			"second_strike_delay"				"0.75"
-			"second_strike_damage_percent"		"50"
+
+			"grow_kill_amp"
+			{
+				"value"						"0"
+				"special_bonus_facet_zuus_divine_rampage"	"15"
+			}
 		}
 	}
 
@@ -367,7 +392,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"attack_range_bonus"				"100"
+			"attack_speed_bonus"				"30"
 			"arc_lightning_damage_pct"		"50"
 			"arc_lightning_damage_illusion_pct"		"20"
 
@@ -384,15 +409,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"2"
+				"value" "2"
 			}
 		}
 	}
@@ -418,18 +439,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"0.5"
-				"ad_linked_abilities"			"zuus_lightning_bolt"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -453,16 +463,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"325"
-				"ad_linked_abilities"			"zuus_lightning_bolt"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "325"
+				"ad_linked_abilities" "zuus_lightning_bolt"
+				"affected_by_aoe_increase"	"1"
 			}
 		}
 	}

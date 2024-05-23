@@ -1,4 +1,3 @@
-// Abilities for bounty_hunter
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -26,7 +25,7 @@
 		"AbilityCastRange"				"375 425 475 525"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
 		"AbilityCooldown"				"5"
-		"AbilityManaCost"				"50 60 70 80"
+		"AbilityManaCost"				"65 70 75 80"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -40,8 +39,8 @@
 		{
 			"bonus_damage"			
 			{
-				"value"					"100 150 200 250"
-				"special_bonus_unique_bounty_hunter_2"	"+50"
+				"value"					"100 170 240 310"
+				"special_bonus_unique_bounty_hunter_2"	"+275"
 			}
 			"speed"					"1000 1000 1000 1000"
 			"bounce_aoe"			
@@ -64,9 +63,19 @@
 				"value"				"6"
 				"RequiresScepter"	"1"
 			}
+
+			"passthrough_damage"
+			{				
+				"special_bonus_facet_bounty_hunter_shuriken" "1"
+			}
+			"passthrough_width"
+			{
+				"special_bonus_facet_bounty_hunter_shuriken" "175"
+				"affected_by_aoe_increase"	"1"
+			}
+			
 			"cast_range"			"375 425 475 525"
 			"slow"					"100"		
-			"attack_slow"			"100"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -76,14 +85,9 @@
 	//=================================================================================================================
 	"bounty_hunter_jinada"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		//"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"		
-		"AbilitySound"					"Hero_BountyHunter.Jinada"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK | DOTA_ABILITY_BEHAVIOR_BREAK_DISABLES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilitySound"					"Hero_BountyHunter.Jinada"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
@@ -144,7 +148,7 @@
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"55"
+		"AbilityManaCost"				"50"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -206,7 +210,7 @@
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"55"
+		"AbilityManaCost"				"50"
 		"AbilityCooldown"				"15"
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -252,7 +256,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"target_crit_multiplier"	"140 170 200"
+				"target_damage_amp"	"8 14 20"
 				"bonus_gold_radius"		
 				{
 					"value"		"1200"
@@ -271,7 +275,6 @@
 				"duration"				"30.0 30.0 30.0"
 				"gold_steal"			"0.3 0.4 0.5"
 				"bonus_move_speed_pct"	"16 20 24"
-				"toss_crit_multiplier"	"140 170 200"
 		}
 	}
 
@@ -313,6 +316,48 @@
 			"radius"					"150"
 		}
 	}
+
+
+
+	
+	//=================================================================================================================
+	// Bounty Hunter: Innate Gold Steal (Mugging)
+	//=================================================================================================================
+	"bounty_hunter_cutpurse"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"DependentOnAbility"			"bounty_hunter_track"
+		"MaxLevel"						"4"
+		"Innate"						"1"
+		"AbilityValues"
+		{
+			"gold_steal"					"4 8 12 16"
+		}
+
+	}
+
+	//=================================================================================================================
+	// Ability: Stalkers Share (bonus gold from killstreaks)
+	//=================================================================================================================
+	"bounty_hunter_big_game_hunter"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_killstreak_bounty"				"10"
+		}
+	}
+
 	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================
@@ -376,68 +421,18 @@
 	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================
-	"special_bonus_unique_bounty_hunter_6"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"0.5"
-				"ad_linked_abilities"			"bounty_hunter_track"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_bounty_hunter_7"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"2"
-				"ad_linked_abilities"			"bounty_hunter_shuriken_toss"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
 	"special_bonus_unique_bounty_hunter_8"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"500"
-				"ad_linked_abilities"			"bounty_hunter_track"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "500"
+				"ad_linked_abilities" "bounty_hunter_track"
 			}
 		}
 	}

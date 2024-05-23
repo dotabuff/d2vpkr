@@ -1,4 +1,3 @@
-// Abilities for tusk
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -123,7 +122,7 @@
 				"snowball_damage"			
 				{
 					"value"		"80 140 200 260"
-					"LinkedSpecialBonus"		"special_bonus_unique_tusk_2"
+				"special_bonus_unique_tusk_2" "+120"
 				}
 				"snowball_speed"			"575 600 625 650"
 				"snowball_damage_bonus"		"40 65 90 115"
@@ -198,34 +197,26 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"70"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"sigil_radius"				"650"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"sigil_duration"			"25.0"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"move_slow"					"40"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"attack_slow"				"0"
-			}
-
-		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_6"
+		"AbilityValues"
+		{
+			"sigil_radius"
+			{
+				"value" "650"
+			}
+			"sigil_duration"
+			{
+				"value" "25"
+			}
+			"move_slow"
+			{
+				"value" "40"
+			}
+			"attack_slow"
+			{
+				"value" "0"
+			}
+		}
 	}
 
 	//=================================================================================================================
@@ -274,7 +265,77 @@
 				"value"	"350"
 				"affected_by_aoe_increase"	"1"
 			}
-			"attack_speed_slow"		"20 30 40 50"
+		}
+	}
+
+	//=================================================================================================================
+	// Tusk: Fist Bump
+	//=================================================================================================================
+	"tusk_drinking_buddies"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Hero_Tusk.FrozenSigil"
+		
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.1 0.1 0.1 0.1"
+		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_3"
+		"AbilityCastGestureSlot"		"DEFAULT"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"24 21 18 15"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"80"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"AbilityCastRange"			"900"
+			"buff_duration"				"5.0"
+			"pull_duration"				"0.2"
+			
+			"min_distance"				"250"
+			"max_distance"				"1200"
+
+			"movespeed_bonus"			"25"
+			"attackdamage_bonus"
+			{
+				"value"								"20 45 70 95"
+				"special_bonus_unique_tusk_3"		"+25"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Tusk: Innate Attack Slow Aura
+	//=================================================================================================================
+	"tusk_bitter_chill"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+		"AbilityTextureName"			"tusk_frozen_sigil"
+
+		"MaxLevel"						"5"
+		"Innate"						"1"
+
+		"AbilityValues"
+		{
+			"radius"				
+			{
+				"value"	"350"
+				"affected_by_aoe_increase"	"1"
+			}
+			"attack_speed_slow"		"10 20 30 40 50"
 		}
 	}
 
@@ -315,19 +376,17 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_damage"			"50"
+				"bonus_damage"			"50 75 100"
 				"crit_multiplier"			
 				{
-					"value"				"200 275 350"
-					"LinkedSpecialBonus"		"special_bonus_unique_tusk"
+					"value"				"200 250 300"
+				"special_bonus_unique_tusk" "+75"
 				}
 				"air_time"					
 				{
 					"value"				"1.0"
-					"LinkedSpecialBonus"		"special_bonus_unique_tusk_7"
+				"special_bonus_unique_tusk_7" "+0.5"
 				}
-				"slow_duration"				"2.0 3.0 4.0"
-				"move_slow"					"40"
 				"push_length"				"1000"
 		}
 	}
@@ -397,18 +456,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"75"
-				"ad_linked_abilities"			"tusk_walrus_punch"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -420,18 +468,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"120"
-				"ad_linked_abilities"			"tusk_snowball"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -455,16 +492,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"12"
-				"ad_linked_abilities"			"tusk_walrus_punch"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "12"
+				"ad_linked_abilities" "tusk_walrus_punch"
 			}
 		}
 	}
@@ -478,16 +511,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"6"
-				"ad_linked_abilities"			"tusk_ice_shards"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "6"
+				"ad_linked_abilities" "tusk_ice_shards"
 			}
 		}
 	}
@@ -501,16 +530,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"8"
-				"ad_linked_abilities"			"tusk_snowball"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "8"
+				"ad_linked_abilities" "tusk_snowball"
 			}
 		}
 	}
@@ -524,30 +549,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"0.5"
-				"ad_linked_abilities"			"tusk_walrus_punch"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Talent: TUSK Tag Team Armor Reduction
-	//=================================================================================================================
-	"special_bonus_unique_tusk_tag_team_armor_reduction"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ad_linked_abilities"			"tusk_tag_team"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-		"BaseClass"						"special_bonus_base"
+		"BaseClass" "special_bonus_base"
 	}
 }

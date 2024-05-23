@@ -1,4 +1,3 @@
-// Abilities for chaos_knight
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -23,64 +22,52 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"500"
 		"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"13 12 11 10"
-
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"110"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"chaos_bolt_speed"		"700"
+			"stun_min"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"chaos_bolt_speed"		"700"
+				"value"					"1.25 1.5 1.75 2"
+				"special_bonus_unique_chaos_knight_3"	"+0.6"
 			}
-			"02"
+			"stun_max"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"stun_min"				"1.25 1.5 1.75 2"
-				"LinkedSpecialBonus"		"special_bonus_unique_chaos_knight_3"
+				"value"					"1.75 2.25 2.75 3.25"
+				"special_bonus_unique_chaos_knight_3"	"+0.6"
 			}
-			"03"
+			"damage_min"				"90 120 150 180"
+			"damage_max"				"150 230 310 390"		
+			"fake_bolt_distance"		"675"
+
+			"AbilityCastRange"				
 			{
-				"var_type"				"FIELD_FLOAT"
-				"stun_max"				"1.75 2.25 2.75 3.25"
-				"LinkedSpecialBonus"		"special_bonus_unique_chaos_knight_3"
+				"value"							"500"
+				"special_bonus_shard"			"+0"
 			}
-			"04"
+			"AbilityCooldown"				
 			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_min"			"90 120 150 180"
+				"value"				"13 12 11 10"
+				"special_bonus_unique_chaos_knight_8"			"-3"
 			}
-			"05"
+			"illusion_duration"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_max"			"150 210 270 330"
-			}			
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"fake_bolt_distance"		"675"
+				"value"					"0"
+				"special_bonus_shard"			"=6.0"
 			}
-			"07"
+			"illusion_damage_reduction_pct"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"shard_bonus_cast_range"		"150"
-				"RequiresShard"				"1"
-			}
-			"08"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"shard_illusion_duration"		"6.0"
-				"RequiresShard"					"1"
+				"value"							"0"
+				"special_bonus_shard"			"=30"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -105,8 +92,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_2"
 		"AbilityCastGestureSlot"		"DEFAULT"
-		"AbilityCastRange"				"550 600 650 700"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.25"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -118,29 +104,26 @@
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"AbilityCastRange"				"600 650 700 750"
+			"pull_distance"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"cast_range"				"600 650 700 750"
+				"value"										"300 350 400 450"
+				"special_bonus_unique_chaos_knight_2"		"+225"
 			}
-			"02"
+			"armor_reduction"			"4 5 6 7"
+			"duration"			"6"
+			"pierces_immunity"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"pull_distance"				"300 350 400 450"
-				"LinkedSpecialBonus"		"special_bonus_unique_chaos_knight_2"
+				"value"						"0"
+				"special_bonus_unique_chaos_knight"			"=1"
 			}
-			"03"
+			"additional_debuff_duration_percent"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"armor_reduction"			"4 5 6 7"
-			}		
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"			"6"
-			}		
+				"value"						"0"
+				"special_bonus_facet_chaos_knight_irrationality"		"=50"
+			}
 		}
 	}
 
@@ -163,14 +146,14 @@
 				"chance"				
 				{
 						"value"				"33.33"
-						"LinkedSpecialBonus"		"special_bonus_unique_chaos_knight_5"
+						"special_bonus_unique_chaos_knight_5"		"+10"
 				}
 				"crit_min"				"125"
 				"crit_max"				"140 175 210 245"
 				"lifesteal"					
 				{
 					"value"					"24 36 48 60"
-					"LinkedSpecialBonus"		"special_bonus_unique_chaos_knight_6"
+					"special_bonus_unique_chaos_knight_6"		"+35"
 				}
 
 				"creep_multiplier"					"2.0"
@@ -212,60 +195,100 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"images_count"				"1 2 3"
+			"illusion_duration"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"images_count"				"1 2 3"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"illusion_duration"			"30"
-				"LinkedSpecialBonus"		"special_bonus_unique_chaos_knight_4"
+				"value"						"30.0"
+				"special_bonus_unique_chaos_knight_4"		"+10"
 			}	
-			"03"
+			"outgoing_damage"				"0"
+			"outgoing_damage_tooltip"		"100"
+			"incoming_damage"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"outgoing_damage"			"0"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"outgoing_damage_tooltip"			"100"
-			}	
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"incoming_damage"			"225"
-				"LinkedSpecialBonus"		"special_bonus_unique_chaos_knight_7"
+				"value"						"225"
 
 			}
-			"06"
+			"incoming_damage_tooltip"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"incoming_damage_tooltip"			"325"
-				"LinkedSpecialBonus"		"special_bonus_unique_chaos_knight_7"
-
+				"value"						"325"
 			}		
-			"07"
+			"invuln_duration"				"0.5"
+			"vision_radius"					
 			{
-				"var_type"				"FIELD_FLOAT"
-				"invuln_duration"		"0.5"
+				"value"			"400"	
+				"affected_by_aoe_increase"	"1"
 			}
-			"08"
+			"magic_resistance"				"0"
+			"chance_for_extra_illusion"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"vision_radius"			"400"
-			}		
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"magic_resistance"			"0"
-			}			
+				"value"						"0"
+			}
 		}
 	}
+
+
+	//=================================================================================================================
+	// Chaos Knight: Innate Strong Illusions
+	//=================================================================================================================
+	"chaos_knight_phantasmagoria"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"aura_radius"			
+			{
+				"value"		"1200"
+				"affected_by_aoe_increase"	"1"
+			}
+			"damage_reduction_pct"	"20"
+		}
+	}
+	//=================================================================================================================
+	// Chaos Knight: Innate Infinite Chaos (create bonus illusions)
+	//=================================================================================================================
+	"chaos_knight_reins_of_chaos"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"AbilityValues"
+		{
+			"bonus_illusion_chance"				"50"
+			"bonus_illusion_count"				"1"
+		}
+	}
+
+
+	
+
+	//=================================================================================================================
+	// Chaos Knight: Innate Spell Refund
+	//=================================================================================================================
+	"chaos_knight_innate_spell_refund"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"refund_percent"			"33"
+			"refund_chance"				"50"
+			"chance_for_extra_illusion_tooltip"	"50"
+			"extra_illusion_number_tooltip"		"1"
+		}
+	}
+
 	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================
@@ -275,18 +298,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"0"
-				"ad_linked_abilities"			"chaos_knight_reality_rift"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -298,18 +310,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"225"
-				"ad_linked_abilities"			"chaos_knight_reality_rift"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"		
+
 	}
 
 	//=================================================================================================================
@@ -321,18 +323,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"0.6"
-				"ad_linked_abilities"			"chaos_knight_chaos_bolt"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -344,18 +335,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"10"
-				"ad_linked_abilities"			"chaos_knight_phantasm"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -367,18 +347,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"10"
-				"ad_linked_abilities"			"chaos_knight_chaos_strike"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
 	
 	//=================================================================================================================
@@ -390,41 +359,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"35"
-				"ad_linked_abilities"			"chaos_knight_chaos_strike"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-	
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_chaos_knight_7"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"-100"
-				"ad_linked_abilities"			"chaos_knight_phantasm"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
+
 	}
 	//=================================================================================================================
 	// Ability: Special Bonus
@@ -435,17 +371,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"3"
-				"ad_linked_abilities"			"chaos_knight_chaos_bolt"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
 }

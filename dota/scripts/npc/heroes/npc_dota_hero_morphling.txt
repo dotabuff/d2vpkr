@@ -1,4 +1,3 @@
-// Abilities for morphling
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -45,7 +44,6 @@
 			"AbilityCharges"		
 			{
 				"value"	"0"
-				"special_bonus_unique_morphling_6"	"+2"
 			}
 			"AbilityCastRange"
 			{
@@ -75,7 +73,6 @@
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Morphling.AdaptiveStrike"
 		"LinkedAbility"					"morphling_adaptive_strike_str"
-		"HasShardUpgrade"               "1"
 
 
 		// Casting
@@ -86,8 +83,6 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"16 14 12 10"
-
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"40 50 60 70"		
@@ -100,6 +95,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+				
+				"AbilityCooldown"
+				{
+					"value"									"16 14 12 10"
+				}
 				"damage_base"								
 				{
 					"value"					"55 65 75 85"
@@ -117,11 +117,6 @@
 				}
 				"projectile_speed"					"1150"
 				"shared_cooldown"					"3"
-				"bonus_attributes"		
-				{
-					"value"					"3 5 7 9"
-					"special_bonus_shard"					"+6"
-				}
 		}
 	}
 	
@@ -140,7 +135,6 @@
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Morphling.AdaptiveStrike"
 		"LinkedAbility"					"morphling_adaptive_strike_agi"
-		"HasShardUpgrade"               "1"
 
 
 		// Casting
@@ -151,8 +145,6 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"16 14 12 10"
-
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"40 50 60 70"		
@@ -165,6 +157,10 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+				"AbilityCooldown"
+				{
+					"value"									"16 14 12 10"
+				}
 				"stun_min"						
 				{
 					"value" "0.5"
@@ -175,15 +171,20 @@
 					"value"	"1.2 1.6 2.0 2.4"
 					"special_bonus_unique_morphling_10"	"+0.8"
 				}
-				"knockback_min"					"100"
-				"knockback_max"					"500"
+				"knockback_min"					
+				{
+					"value"								"0"
+					"special_bonus_facet_morphling_agi"			"=100"
+					"RequiresFacet"					"morphling_agi"
+				}
+				"knockback_max"					
+				{
+					"value"								"0"
+					"special_bonus_facet_morphling_agi"			"=500"
+					"RequiresFacet"					"morphling_agi"
+				}
 				"projectile_speed"					"1150"
 				"shared_cooldown"					"3"
-				"bonus_attributes"		
-				{
-					"value"					"3 5 7 9"
-					"special_bonus_shard"					"+6"
-				}
 		}
 	}
 	
@@ -195,17 +196,6 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		"HasShardUpgrade"               "1"
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-			"bonus_attributes"		
-			{
-				"value"					"3 5 7 9"
-				"special_bonus_shard"					"+6"
-			}
-		}
 	}
 
 	//=================================================================================================================
@@ -235,6 +225,7 @@
 			{
 				"value"						"5 10 15 20"
 				"special_bonus_unique_morphling_morph_no_manacost"		"-100%"
+				"special_bonus_shard"		"-50%"
 			}
 			"castable_while_stunned"
 			{
@@ -271,12 +262,44 @@
 			{
 				"value"						"5 10 15 20"
 				"special_bonus_unique_morphling_morph_no_manacost"		"-100%"
+				"special_bonus_shard"		"-50%"
 			}
 			"castable_while_stunned"
 			{
 				"value"	"0"
 				"special_bonus_shard"	"+1"
 			}
+		}
+	}
+
+	//=================================================================================================================
+	// Morphling: Innate - Become Agility
+	//=================================================================================================================
+	"morphling_ebb"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"MaxLevel"						"1"
+	}
+
+	//=================================================================================================================
+	// Morphling: Innate - Become Strength
+	//=================================================================================================================
+	"morphling_flow"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"agi_pct_at_max_cooldown_speed"			"175"
+			"agi_pct_at_min_cooldown_speed"			"50"
+			"min_cooldown_speed_pct"			"0"
+			"max_cooldown_speed_pct"			"50"
 		}
 	}
 	
@@ -318,7 +341,7 @@
 			"duration"
 			{
 				"value"						"24"
-				"LinkedSpecialBonus"		"special_bonus_unique_morphling_8"
+				"special_bonus_unique_morphling_8" "+16"
 			}
             "scepter_stat_steal"
 			{
@@ -410,46 +433,54 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"200"
-		
-	
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"illusion_damage_out_pct"
 			{
-				"var_type"						"FIELD_FLOAT"
-				"illusion_damage_out_pct"		"-50 -50 -50"
-				"CalculateSpellDamageTooltip"	"0"
+				"value" "-50 -50 -50"
+				"CalculateSpellDamageTooltip" "0"
 			}
-			"02"
+			"tooltip_illusion_damage_out_pct"
 			{
-				"var_type"						"FIELD_FLOAT"
-				"tooltip_illusion_damage_out_pct"		"50 50 50"
-				"CalculateSpellDamageTooltip"	"0"
+				"value" "50 50 50"
+				"CalculateSpellDamageTooltip" "0"
 			}
-			"03"
+			"illusion_incoming_dmg_pct_tooltip"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"illusion_incoming_dmg_pct_tooltip"		"100 100 100"
+				"value" "100 100 100"
 			}
-			"04"
+			"illusion_damage_in_pct"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"illusion_damage_in_pct"		"0 0 0"
-				"CalculateSpellDamageTooltip"	"0"
+				"value" "0 0 0"
+				"CalculateSpellDamageTooltip" "0"
 			}
-			"05"
+			"illusion_damage_out_pct_scepter"
 			{
-				"var_type"						"FIELD_FLOAT"
-				"illusion_damage_out_pct_scepter"	"-20"
-				"CalculateSpellDamageTooltip"	"0"
+				"value" "-20"
+				"CalculateSpellDamageTooltip" "0"
 			}
-			"06"
+			"duration"
 			{
-				"var_type"						"FIELD_FLOAT"
-				"duration"						"20.0"
+				"value" "20"
 			}
+		}
+	}
+
+	//=================================================================================================================
+	// Morphling: Innate Fluid Stats
+	//=================================================================================================================
+	"morphling_accumulation"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+
+		"MaxLevel"						"1"
+		"Innate"						"1"
+
+		"AbilityValues"
+		{
+			"percent_to_increment"			"50.0"
+			"bonus_all_stats_per_level_of_attributes"	"2"		// if changing this, also change bonus_all_stats_pct_tooltip
+			"bonus_all_stats_pct_tooltip"	"100"
 		}
 	}
 
@@ -469,128 +500,18 @@
 	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================
-	"special_bonus_unique_morphling_2"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"50"
-				"ad_linked_abilities"			"morphling_replicate"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_morphling_3"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"3"
-				"ad_linked_abilities"			"morphling_adaptive_strike"				// for morphling_adaptive_strike, its a substring search, so will find if they have agi or str suffix. This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
 	"special_bonus_unique_morphling_4"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"1"
-				"ad_linked_abilities"			"morphling_waveform"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_morphling_5"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"1"
-				"ad_linked_abilities"			"morphling_replicate"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_morphling_6"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ad_linked_abilities"			"morphling_waveform"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-		
-		
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_morphling_7"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"5"
-				"ad_linked_abilities"			"morphling_adaptive_strike"				// for morphling_adaptive_strike, its a substring search, so will find if they have agi or str suffix. This line is required for Ability Draft to correctly choose talents.
+				"value" "1"
+				"ad_linked_abilities" "morphling_waveform"
 			}
 		}
 	}
@@ -604,41 +525,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"16"
-				"ad_linked_abilities"			"morphling_replicate"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_morphling_9"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"7"
-				"ad_linked_abilities"			"morphling_adaptive_strike"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -650,16 +537,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"0"
-				"ad_linked_abilities"			"morphling_morph_agi"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "0"
+				"ad_linked_abilities" "morphling_morph_agi"
 			}
 		}
 	}

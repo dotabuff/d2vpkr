@@ -1,4 +1,3 @@
-// Abilities for terrorblade
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -24,12 +23,15 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"35 40 45 50"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+				"AbilityManaCost"
+				{
+					"value"		"35 40 45 50"
+				}
 				"AbilityCooldown"				
 				{
 					"value"		"23 20 17 14"
@@ -65,6 +67,14 @@
 					"value"	"400"
 					"affected_by_aoe_increase"	"1"		
 				}
+				"is_global"
+				{
+					"value"						"0"
+				}
+				"requires_vision"
+				{
+					"value"						"0"
+				}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -85,11 +95,11 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"16"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"55 65 75 85"
+		"AbilityCooldown"				"16"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -113,6 +123,29 @@
 			}
 			"illusion_incoming_damage"			"175.0"
 			"illusion_incoming_damage_total_tooltip"			"275.0"
+			"strong_illusion"
+			{
+				"value"						"0"
+			}
+			"show_particle_effect"
+			{
+				"value"						"1"
+			}
+			"appear_as_illusion"
+			{
+				"value"						"1"
+			}
+			"hp_cost_perc"
+			{
+				"value"										"0"
+				"special_bonus_facet_terrorblade_soul_fragment"	"=20"
+				"RequiresFacet"							"terrorblade_soul_fragment"
+			}
+			"illusions_spawn_with_full_hp"
+			{
+				"value"										"0"
+				"special_bonus_facet_terrorblade_soul_fragment"	"+1"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -154,14 +187,19 @@
 			}
 			"transformation_time"	"0.35"
 			"base_attack_time"		"1.5"
-			"bonus_range"			"340 360 380 400"
+			"bonus_range"			"300 340 380 420"
 			"tooltip_attack_range"			"490 510 530 550"
 			"bonus_damage"			"30 40 50 60"
 			"speed_loss"				"0"
-			"metamorph_aura_tooltip"				"1200"
+			"metamorph_aura_tooltip"				
+			{
+				"value"	"1200"
+				"affected_by_aoe_increase"	"1"
+
+			}
 			"AbilityCooldown"				
 			{
-				"value"				"150.0"
+				"value"				"155 150 145 140"
 				"special_bonus_unique_terrorblade_metamorphosis_cooldown"		"-20"
 			}
 
@@ -178,6 +216,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"MaxLevel"						"1"
 		"FightRecapLevel"				"1"
@@ -205,6 +244,7 @@
 					"value"		"1600"
 					"affected_by_aoe_increase"	"1"		
 				}
+				"damage"			"200"
 				"scepter_speed"				"1000"
 				"scepter_spawn_delay"		"0.6"
 				"scepter_meta_duration"		"10"
@@ -248,6 +288,12 @@
 			"berserk_bonus_attack_speed"		"100"
 			"berserk_bonus_movement_speed"				"100"
 			"duration"		"30"
+			"hp_regen"		"20"
+			"radius"	
+			{
+				"value"	"1200"
+				"affected_by_aoe_increase"	"1"
+			}
 			"health_cost_pct"
 			{
 				"value"					"20"
@@ -293,7 +339,39 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"hit_point_minimum_pct"		"35 30 25"
+				"hit_point_minimum_pct"			"35 30 25"
+				"ignore_minimum_pct_for_enemies"
+				{
+					"value"						"0"
+					"special_bonus_facet_terrorblade_condemned"	"+1"
+				}
+				"ignore_minimum_pct_for_enemies_tooltip"
+				{
+					"value"						"1"
+					"special_bonus_facet_terrorblade_condemned"	"=0"
+				}
+		}
+	}
+
+	//=================================================================================================================
+	// Terrorblade Innate: Illusion Damage
+	//=================================================================================================================
+	"terrorblade_dark_unity"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+
+		"MaxLevel"						"1"
+		"Innate"						"1"
+
+		"AbilityValues"
+		{
+			"radius"		
+			{
+				"value"		"1200"
+				"affected_by_aoe_increase"	"1"
+			}
+			"inside_radius_bonus_damage_pct"	"25"
+			"outside_radius_bonus_damage_pct"	"-50"
 		}
 	}
 
@@ -306,16 +384,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"30"
-				"ad_linked_abilities"			"terrorblade_sunder"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "30"
+				"ad_linked_abilities" "terrorblade_sunder"
 			}
 		}
 	}

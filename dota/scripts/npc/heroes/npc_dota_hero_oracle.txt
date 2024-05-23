@@ -1,4 +1,3 @@
-// Abilities for oracle
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -40,12 +39,10 @@
 			"channel_time"
 			{
 				"value"								"2.5"
-				"special_bonus_unique_oracle_7"		"-2.5"
 			}
 			"damage"
 			{
 				"value"					"100 160 220 280"
-				"special_bonus_unique_oracle_fortunes_end_damage"		"+80"
 			}
 			"bolt_speed"				"1200"
 			"minimum_purge_duration"
@@ -72,6 +69,10 @@
 			{
 				"value"					"0"
 				"special_bonus_unique_oracle_damage_per_purge"			"+60"
+			}
+			"purge_constantly"
+			{
+				"special_bonus_unique_oracle_7"		"=1"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -105,23 +106,18 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"95 100 105 110"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityValues"
 		{
-			"01"
+			"duration"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"3.5 4.0 4.5 5.0"
+				"value" "3.5 4.0 4.5 5.0"
 			}
-			"02"
+			"magic_damage_resistance_pct_tooltip"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"magic_damage_resistance_pct_tooltip"				"100"
+				"value" "100"
 			}
 		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
 
 	//=================================================================================================================
@@ -161,8 +157,8 @@
 				"damage"				"90 180 270 360"
 				"heal_per_second"		"15 25 35 45"
 				"total_heal_tooltip"	"135 225 315 405"
-				"duration"				"9.0"
-				"tick_rate"				"1.0"
+				"duration"				"10"
+				"tick_rate"				"0.1"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	} 
@@ -236,7 +232,7 @@
 			"bonus_armor"
 			{
 				"value"								"0"
-				"special_bonus_unique_oracle_9"		"+10"
+				"special_bonus_unique_oracle_9"		"+8"
 			}	
 			"heal_amp_pct"
 			{
@@ -293,6 +289,52 @@
 	}
 
 	//=================================================================================================================
+	//=================================================================================================================
+	// Oracle: Innate - Spell Amp
+	//=================================================================================================================
+	"oracle_clairvoyant_curse"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"spell_amplification"		"0.5"
+		}
+	}
+
+	//=================================================================================================================
+	// Oracle: Innate - Heal Amp
+	//=================================================================================================================
+	"oracle_clairvoyant_cure"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"heal_amplification"		"1.0"
+		}
+	}
+	//=================================================================================================================
+	// Oracle: Rune Prediction
+	//=================================================================================================================
+	"oracle_prognosticate"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_INNATE_UI"		
+		"MaxLevel"						"1"
+		"Innate"						"1"
+	}
+	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================
 	"special_bonus_unique_oracle"
@@ -313,62 +355,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"0.4"
-				"ad_linked_abilities"			"oracle_fortunes_end"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_oracle_3"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"4.0"
-				"ad_linked_abilities"			"oracle_fates_edict"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_oracle_4"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"0"
-				"ad_linked_abilities"			"oracle_false_promise"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "0.4"
+				"ad_linked_abilities" "oracle_fortunes_end"
 			}
 		}
 	}
@@ -382,16 +374,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"1.0"
-				"ad_linked_abilities"			"oracle_purifying_flames"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "1"
+				"ad_linked_abilities" "oracle_purifying_flames"
 			}
 		}
 	}
@@ -417,16 +405,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"2.5"
-				"ad_linked_abilities"			"oracle_fortunes_end"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "2.5"
+				"ad_linked_abilities" "oracle_fortunes_end"
 			}
 		}
 	}
@@ -440,16 +424,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"30"
-				"ad_linked_abilities"			"oracle_purifying_flames"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "30"
+				"ad_linked_abilities" "oracle_purifying_flames"
 			}
 		}
 	}
@@ -458,17 +438,6 @@
 	// Ability: Special Bonus
 	//=================================================================================================================
 	"special_bonus_unique_oracle_9"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"						"special_bonus_base"
-	}
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_oracle_fortunes_end_damage"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -487,5 +456,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"special_bonus_base"
 	}
+
+	
 	
 }

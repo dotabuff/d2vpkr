@@ -1,4 +1,3 @@
-// Abilities for techies
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -95,54 +94,43 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"80 110 140 160"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{		
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"activation_radius"			"400"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"explode_delay"			"0"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"stun_radius"				"600"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"2 3 4 5"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"activation_time"			"2.0"
-			}	
-			"06"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"fade_time"					"2.0"
-			}		
-			"07"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"600.0"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"cast_range_scepter_bonus"		"300"
-				"RequiresScepter"			"1"
-			}	
-		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityValues"
+		{
+			"activation_radius"
+			{
+				"value" "400"
+			}
+			"explode_delay"
+			{
+				"value" "0"
+			}
+			"stun_radius"
+			{
+				"value" "600"
+			}
+			"stun_duration"
+			{
+				"value" "2 3 4 5"
+			}
+			"activation_time"
+			{
+				"value" "2"
+			}
+			"fade_time"
+			{
+				"value" "2"
+			}
+			"duration"
+			{
+				"value" "600"
+			}
+			"cast_range_scepter_bonus"
+			{
+				"value" "300"
+				"RequiresScepter" "1"
+			}
+		}
 	}
 
 	//=================================================================================================================
@@ -176,19 +164,28 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"radius"				
-				{
-					"value"		"400"
-					"affected_by_aoe_increase"	"1"	
-				}
-				"damage"
-				{
-					"value"			"200 300 400 500"
-					"LinkedSpecialBonus"		"special_bonus_unique_techies"
-				}
-				"stun_duration"				"0.8 1 1.2 1.4"
-				"hp_cost"			"20"
-				"duration"				"0.75"
+			"radius"				
+			{
+				"value"		"400"
+				"affected_by_aoe_increase"	"1"	
+			}
+			"damage"
+			{
+				"value"			"200 300 400 500"
+				"special_bonus_unique_techies" "+200"
+			}
+			"stun_duration"				"0.8 1 1.2 1.4"
+			"hp_cost"			
+			{
+				"value" 			"20"
+			}
+			
+			"hp_dmg"
+			{
+				"value"				"0"
+				"special_bonus_facet_techies_spleens_secret_sauce" "=15"
+			}
+			"duration"				"0.75"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -354,73 +351,58 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"120 180 240"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"max_mines"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"max_mines"					"21"
+				"value" "21"
 			}
-			"02"
+			"damage"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"damage"					"300 450 600"
+				"value" "300 450 600"
 			}
-			"03"
+			"radius"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"425"
-			}		
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"600.0"
+				"value" "425"
 			}
-			"05"
+			"duration"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"activation_time"			"2.0"
-			}	
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_scepter"			"450 600 750"
-				"RequiresScepter"			"1"
+				"value" "600"
 			}
-			"07"
+			"activation_time"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"radius_scepter"			"425"
-				"RequiresScepter"			"1"
+				"value" "2"
 			}
-			"08"
+			"damage_scepter"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"cast_range_scepter_bonus"		"300"
-				"RequiresScepter"			"1"
-			}			
-			"09"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"vision_radius"			"500"
+				"value" "450 600 750"
+				"RequiresScepter" "1"
 			}
-			"10"
+			"radius_scepter"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"vision_duration"			"3.0"
+				"value" "425"
+				"RequiresScepter" "1"
 			}
-			"11"
+			"cast_range_scepter_bonus"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"model_scale"				"0 10 20"     // Percentage over model scale
+				"value" "300"
+				"RequiresScepter" "1"
 			}
-			"12"
+			"vision_radius"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"detonate_delay"			"0.25"
+				"value" "500"
+			}
+			"vision_duration"
+			{
+				"value" "3"
+			}
+			"model_scale"
+			{
+				"value" "0 10 20"
+			}
+			"detonate_delay"
+			{
+				"value" "0.25"
 			}
 		}
 	}
@@ -440,18 +422,12 @@
 
 		"MaxLevel"				"1"
 		"AbilityCooldown"				"1.0 1.0 1.0"
-		
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"radius"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"				"700"
+				"value" "700"
 			}
-			
 		}
 	}
 	//=================================================================================================================
@@ -466,19 +442,14 @@
 		
 		"AbilityCastRange"				"0"
 		"MaxLevel"						"1"
-		
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityValues"
 		{
-			"01"
+			"radius"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"400 410 425"
+				"value" "400 410 425"
 			}
 		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
 
 	//=================================================================================================================
@@ -489,8 +460,8 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_NONE"	
-
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_NONE"
+		"Innate"						"1"
 		"MaxLevel"						"1"
 		"HasScepterUpgrade"				"1"
 
@@ -546,6 +517,37 @@
 			}
 		}
 	}
+
+	//=================================================================================================================
+	// Techies Reactive Tazer Stop
+	//=================================================================================================================
+	"techies_squees_scope"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+		"AbilityValues"
+		{
+			"attack_range_tooltip"		"1"
+		}
+	}
+
+	//=================================================================================================================
+	// Techies Reactive Tazer Stop
+	//=================================================================================================================
+	"techies_spoons_stash"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	}
+
+
 	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================
@@ -555,18 +557,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"200"
-				"ad_linked_abilities"			"techies_suicide"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -617,16 +608,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"15"
-				"ad_linked_abilities"			"techies_suicide"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "15"
+				"ad_linked_abilities" "techies_suicide"
 			}
 		}
 	}

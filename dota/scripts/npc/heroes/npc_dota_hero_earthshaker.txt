@@ -1,4 +1,3 @@
-// Abilities for earthshaker
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -18,7 +17,6 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_EarthShaker.Fissure"
-
         "HasShardUpgrade"               "1"
 
 		// Casting
@@ -28,7 +26,6 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"18 17 16 15"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
@@ -39,54 +36,46 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"fissure_range"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"fissure_range"				"1600"
-				"LinkedSpecialBonus"		"special_bonus_unique_earthshaker_3"
+				"value"				"1600"
+				"special_bonus_unique_earthshaker_3"		"+200"
 			}
-			"02"
+			"fissure_duration"			"6.5 7 7.5 8.0"
+			"fissure_radius"				"225"
+			"stun_duration"				"0.8 1.0 1.2 1.4"
+			"fissure_damage"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"fissure_duration"			"6.5 7 7.5 8.0"
+				"value"				"110 160 210 260"
+				"special_bonus_unique_earthshaker_4"		"+90"
 			}
-			"03"
+			"AbilityCooldown"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"fissure_radius"				"225"
+				"value"			"18 17 16 15"
+				"special_bonus_shard"		"-2"
+				"RequiresShard"				"1"
 			}
-			"04"
+			"shard_aftershock_stun_duration_pct"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"0.8 1.0 1.2 1.4"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"fissure_damage"				"110 160 210 260"
-				"LinkedSpecialBonus"		"special_bonus_unique_earthshaker_4"
-			}
-			"06"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"shard_cooldown_reduction"			"2.0"
-				"RequiresShard"						"1"
-			}
-			"07"
-			{
-				"var_type"								"FIELD_INTEGER"
-				"shard_aftershock_stun_duration_pct"	"50"
+				"value"								"0"
+				"special_bonus_shard"				"=50"
 				"RequiresShard"							"1"
 			}
-			"08"
+			"free_pathing_linger_duration"
 			{
-				"var_type"								"FIELD_FLOAT"
-				"shard_free_pathing_linger_duration"	"1.0"
-				"RequiresShard"							"1"
+				"value"												"0.0"
+				"special_bonus_shard"								"=1.0"
+				"RequiresShard"										"1"
 			}
-
+			"free_pathing_application_radius"			"150"
+			"fissure_movement_speed"
+			{
+				"value"												"0"
+				"special_bonus_facet_earthshaker_fissuresplit"	"+100"
+			}
+			"fissure_max_distance_moved"				"300"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -115,7 +104,6 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"5.0"
 		"AbilityDuration"				"14"
 
 		// Damage.
@@ -141,11 +129,11 @@
 				"value"		"950"
 				"RequiresScepter"		"1"
 			}
-			"aftershock_range"			
+			"AbilityCooldown"
 			{
-				"value"		"300"
-				"LinkedSpecialBonus"		"special_bonus_unique_earthshaker_5"
-				"affected_by_aoe_increase"	"1"
+				"value"			"5.0"
+				"special_bonus_unique_earthshaker"			"-1.5"
+
 			}
 			"scepter_height"			"950"
 			"scepter_height_arcbuffer"	"100"
@@ -161,18 +149,65 @@
 			{
 				"value"					"150"
 				"RequiresScepter"		"1"
+				"affected_by_aoe_increase"	"1"
 			}
 			"scepter_cleave_ending_width"
 			{
 				"value"					"360"
 				"RequiresScepter"		"1"
+				"affected_by_aoe_increase"	"1"
 			}
 			"scepter_cleave_distance"
 			{
 				"value"					"650"
 				"RequiresScepter"		"1"
+				"affected_by_aoe_increase"	"1"
 			}
 			"bonus_attack_range"		"100"
+			
+			"projectile_body_on_kill"
+			{
+				"special_bonus_facet_earthshaker_slugger"		"=1"
+			}
+			"projectile_body_initial_impact_radius"
+			{
+				"special_bonus_facet_earthshaker_slugger"		"=225"
+			}
+			"projectile_body_speed"
+			{
+				"special_bonus_facet_earthshaker_slugger"		"=1600"
+			}
+			"projectile_body_distance"
+			{
+				"special_bonus_facet_earthshaker_slugger"		"=1200"
+			}
+			"projectile_body_width_creep"
+			{
+				"special_bonus_facet_earthshaker_slugger"		"=175"
+				"affected_by_aoe_increase"	"1"
+			}
+			"projectile_body_width_hero"
+			{
+				"special_bonus_facet_earthshaker_slugger"		"=175"
+				"affected_by_aoe_increase"	"1"
+			}
+			"projectile_body_vision"
+			{
+				"special_bonus_facet_earthshaker_slugger"		"=175"
+				"affected_by_aoe_increase"	"1"
+			}
+			"projectile_body_damage_creep"
+			{
+				"special_bonus_facet_earthshaker_slugger"		"=50 =80 =110 =140"
+			}
+			"projectile_body_damage_hero"
+			{
+				"special_bonus_facet_earthshaker_slugger"		"=150 =250 =350 =450"
+			}
+			"projectile_body_damage_additional_percent_health"
+			{
+				"special_bonus_facet_earthshaker_slugger"		"=5"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -188,10 +223,13 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"-1"
+		"Innate"						"1"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDuration"				"1.0 1.1 1.2 1.3"
+		"AbilityDuration"				"0.5 1.0 1.1 1.2 1.3"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
@@ -208,16 +246,26 @@
 				{
 					"value"		"350"
 					"affected_by_aoe_increase"	"1"
-					"LinkedSpecialBonus"		"special_bonus_unique_earthshaker_5"
 				}
 				"aftershock_damage"			
 				{
-					"value"		"70 100 130 160"
-					"LinkedSpecialBonus"		"special_bonus_unique_earthshaker_6"
+					"value"		"35 70 100 130 160"
+					"special_bonus_unique_earthshaker_6"		"+50"
+				}
+				"aftershock_range_increase_per_level_interval"
+				{
+					"value"													"0"
+					"special_bonus_facet_earthshaker_tectonic_buildup"		"+50"
+				}
+				"aftershock_range_level_interval"
+				{
+					"value"													"0"
+					"special_bonus_facet_earthshaker_tectonic_buildup"		"+10"
 				}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
+
 	
 	//=================================================================================================================
 	// Ability: Earthshaker Echo Slam
@@ -239,8 +287,7 @@
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"130.0 120.0 110.0"
+		//-------------------------------------------------------------------------------------------------------------		
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -255,6 +302,7 @@
 					"value"		"700"
 					"CalculateSpellDamageTooltip"	"0"
 					"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
+					"affected_by_aoe_increase"	"1"
 				}
 				"echo_slam_echo_search_range" 
 				{
@@ -269,9 +317,14 @@
 				"echo_slam_echo_damage"		
 				{
 					"value"				"90 110 130"
-					"LinkedSpecialBonus"		"special_bonus_unique_earthshaker_2"
+				"special_bonus_unique_earthshaker_2" "+50"
 				}
 				"echo_slam_initial_damage"		"100 140 180"
+				"AbilityCooldown"
+				{
+					"value"										"130.0 120.0 110.0"
+					"special_bonus_unique_earthshaker_echo_cd"	"-50%"
+				}
 		}
 	}
 
@@ -284,18 +337,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"1.5"
-				"ad_linked_abilities"			"earthshaker_enchant_totem"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -307,18 +349,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"50"
-				"ad_linked_abilities"			"earthshaker_echo_slam"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -330,18 +361,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"200"
-				"ad_linked_abilities"			"earthshaker_fissure"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -353,41 +373,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"90"
-				"ad_linked_abilities"			"earthshaker_fissure"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_earthshaker_5"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"200"
-				"ad_linked_abilities"			"earthshaker_aftershock"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -399,18 +385,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"50"
-				"ad_linked_abilities"			"earthshaker_aftershock"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -423,6 +398,19 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ad_linked_abilities"			"earthshaker_enchant_totem"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+		"BaseClass"						"special_bonus_base"
+	}
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_earthshaker_echo_cd"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ad_linked_abilities"			"earthshaker_echo_slam"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 		"BaseClass"						"special_bonus_base"
 	}
 }

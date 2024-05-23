@@ -1,4 +1,3 @@
-// Abilities for shadow_shaman
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -52,12 +51,11 @@
 				"targets"					
 				{
 					"value"		"3 5 7 9"
-					"LinkedSpecialBonus"		"special_bonus_unique_shadow_shaman_7"
 				}
 				"damage"					
 				{
 					"value"		"140 200 260 320"
-					"LinkedSpecialBonus"		"special_bonus_unique_shadow_shaman_3"
+				"special_bonus_unique_shadow_shaman_3" "+400"
 				}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -102,6 +100,47 @@
 					"value"					"10 15 20 25"
 					"special_bonus_unique_shadow_shaman_hex_damage_amp"		"+10"
 				}
+				"can_target_allies"
+				{
+					"value"										"0"
+					"special_bonus_facet_shadow_shaman_cluster_cluck"	"=1"
+				}
+				"ally_invuln_duration"
+				{
+					"value"										"0.0"
+					"special_bonus_facet_shadow_shaman_cluster_cluck"	"=0.1"
+				}
+				"ally_voodoo_duration"
+				{
+					"value"										"0.0"
+					"special_bonus_facet_shadow_shaman_cluster_cluck"	"=2.0"
+				}
+				"ally_invuln_vision_radius"
+				{
+					"value"										"0"
+					"affected_by_aoe_increase"	"1"
+					"special_bonus_facet_shadow_shaman_cluster_cluck"	"=1000"
+				}
+				"ally_chicken_images_count"
+				{
+					"value"										"0"
+					"special_bonus_facet_shadow_shaman_cluster_cluck"	"+3"
+				}
+				"ally_chicken_images_take_damage_percent"
+				{
+					"value"										"0"
+					"special_bonus_facet_shadow_shaman_cluster_cluck"	"=200"
+				}
+				"ally_chicken_movement_speed_bonus_pct"
+				{
+					"value"										"0"
+					"special_bonus_facet_shadow_shaman_cluster_cluck"	"+10"
+				}
+				"tooltip_damage_incoming_total_pct"
+				{
+					"value"										"0"
+					"special_bonus_facet_shadow_shaman_cluster_cluck"	"=300"
+				}
 				
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -140,49 +179,55 @@
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"tick_interval"		"0.1 0.1 0.1 0.1"
+			"total_damage"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"tick_interval"		"0.1 0.1 0.1 0.1"
+				"value"					"75 150 225 300"
+				"special_bonus_unique_shadow_shaman_6" "+170"
 			}
-			"02"
+			"channel_time"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"total_damage"		"75 150 225 300"
-				"LinkedSpecialBonus"	"special_bonus_unique_shadow_shaman_6"
+				"value"									"2.4 3.0 3.6 4.2"
+				"special_bonus_unique_shadow_shaman_2"	"+1.0"
 			}
-			"03"
+			"shard_bonus_cast_range"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"channel_time"		"2.4 3.0 3.6 4.2"
-				"LinkedSpecialBonus"	"special_bonus_unique_shadow_shaman_2"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"shard_bonus_cast_range"		"75"
+				"value"					"75"
 				"RequiresShard"			"1"
 			}
-			"05"
+			"shard_ward_count"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"shard_ward_count"		"4"
+				"value"					"4"
 				"RequiresShard"			"1"
 			}
-			"06"
+			"shard_ward_duration"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"shard_ward_duration"		"6"
+				"value"					"6"
 				"RequiresShard"			"1"
 			}
-			"06"
+			"shard_ward_spawn_distance"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"shard_ward_spawn_distance"		"100"
+				"value"					"100"
 				"RequiresShard"			"1"
-			}											
+			}
+			"bonus_targets"
+			{
+				"value"						"0"
+			}
+			"bonus_targets_search_range"
+			{
+				"value"						"0"
+			}
+			"bonus_target_channel_time_pct"
+			{
+				"value"						"0"					// currently, damage done is calculated using base channel time, so 60% duration = 60% damage
+			}
+			"heal_percentage"
+			{
+				"value"						"100"
+			}
 
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -220,55 +265,52 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"ward_count"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"ward_count"		"10"
+				"value"							"10"	// if changing this, change mega_ward_multiplier_tooltip
 			}
-			"02"
+			"bonus_damage"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_tooltip"			"50 85 120"
-				"LinkedSpecialBonus"		"special_bonus_unique_shadow_shaman_4"
-				"CalculateSpellDamageTooltip"	"0"				
+				"special_bonus_unique_shadow_shaman_4" "+20"
 			}
-			"03"
+			"bonus_attack_range"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"attack_range_tooltip"		"650"
-				"LinkedSpecialBonus"		"special_bonus_unique_shadow_shaman_8"
+				"special_bonus_unique_shadow_shaman_8" "+140"
 			}
-			"04"
+			"duration"						"45.0 45.0 45.0"
+			"spawn_radius"					"150"
+			"hits_to_destroy_tooltip"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"45.0 45.0 45.0"
+				"value"						"2"
+				"special_bonus_unique_shadow_shaman_1"		"50%"
 			}
-			"05"
+			"ward_health"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"scepter_range"			"0"
-				"RequiresScepter"			"1"
+				"value"						"4"
+				"special_bonus_unique_shadow_shaman_1"		"+2"
 			}
-			"06"
+			"is_mega_ward"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"spawn_radius"			"150"
+				"value"						"0"
+				"special_bonus_facet_shadow_shaman_massive_serpent_ward"	"+1"
 			}
-			"07"
+			"mega_ward_multiplier_tooltip"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"hits_to_destroy_tooltip"			"2"
-				"LinkedSpecialBonus"		"special_bonus_unique_shadow_shaman_1"
-				"LinkedSpecialBonusField"		"value2"
+				"value"						"0"
+				"special_bonus_facet_shadow_shaman_massive_serpent_ward"	"=10"
 			}
-			"08"
+			"mega_ward_health_tooltip"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"hits_to_destroy_tooltip_creeps"		"4"
-				"LinkedSpecialBonus"		"special_bonus_unique_shadow_shaman_1"
+				"special_bonus_facet_shadow_shaman_massive_serpent_ward"	"=7.5"
 			}
+			"mega_ward_health_reduction_pct"
+			{
+				"value"					"0"
+				"special_bonus_facet_shadow_shaman_massive_serpent_ward"		"=25"
+			}
+			"mega_ward_model_scale_multiplier"			"2.3 3.0 3.5"
 		}
 	}
 	//=================================================================================================================
@@ -287,7 +329,6 @@
 		"HasScepterUpgrade"				"1"
 		"MaxLevel"						"1"
 		"IsGrantedByScepter"			"1"
-		"HasScepterUpgrade"				"1"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -302,21 +343,39 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"count"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"count"		"8"
+				"value" "8"
 			}
-			"02"
+			"length"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"length"		"925"
+				"value" "925"
 			}
+		}
+	}
+
+	//=================================================================================================================
+	// Shadow Shaman Innate: Fowl Play
+	//=================================================================================================================
+	"shadow_shaman_fowl_play"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"AbilityCooldown"				"90"
+
+		"AbilityValues"
+		{
+			"hex_duration"				"3.0"
+			"movespeed_bonus_pct"		"10"	// if changing this, change ally_chicken_movement_speed_bonus_pct
+
+			"damage_reduction_duration"	"0.75"
+			"damage_reduction_pct"		"100"
 		}
 	}
 
@@ -329,22 +388,17 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"2"
-				"ad_linked_abilities"			"shadow_shaman_mass_serpent_ward"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "2"
+				"ad_linked_abilities" "shadow_shaman_mass_serpent_ward"
 			}
-			"02"
+			"value2"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value2"				"1"
-				"ad_linked_abilities"			"shadow_shaman_mass_serpent_ward"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "1"
+				"ad_linked_abilities" "shadow_shaman_mass_serpent_ward"
 			}
 		}
 	}
@@ -358,18 +412,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"1.0"
-				"ad_linked_abilities"			"shadow_shaman_shackles"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -381,18 +424,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"400"
-				"ad_linked_abilities"			"shadow_shaman_ether_shock"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 		
 	//=================================================================================================================
@@ -404,41 +436,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"25"
-				"ad_linked_abilities"			"shadow_shaman_mass_serpent_ward"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-		
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_shadow_shaman_5"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"2"
-				"ad_linked_abilities"			"shadow_shaman_voodoo"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 		
 	//=================================================================================================================
@@ -450,18 +448,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"170"
-				"ad_linked_abilities"			"shadow_shaman_shackles"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 		
 	//=================================================================================================================
@@ -473,18 +460,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"1"
-				"ad_linked_abilities"			"shadow_shaman_voodoo"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 		
 	//=================================================================================================================
@@ -496,18 +472,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"140"
-				"ad_linked_abilities"			"shadow_shaman_mass_serpent_ward"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 	//=================================================================================================================
 	// Ability: Special Bonus
@@ -520,5 +485,46 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"special_bonus_base"
 	}
-	
+
+	//=================================================================================================================
+	// Shadow Shaman: Innate Snake Jar
+	//=================================================================================================================
+	"shadow_shaman_innate_snake_jar"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			// purely for tooltips on variant selection, actual KV's are on the item
+			"tooltip_cast_range"				"400"
+			"tooltip_damage"					"50"
+			"tooltip_attack_range"				"650"
+			"duration"							"10"
+			"cooldown"							"40"
+			"tooltip_hits_to_destroy"			"2"
+			"tooltip_hits_to_destroy_creeps"	"4"
+		}
+	}
+
+	//=================================================================================================================
+	// Shadow Shaman: Innate Piglet Pole
+	//=================================================================================================================
+	"shadow_shaman_innate_piglet_pole"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{	
+			// purely for tooltips on variant selection, actual KV's are on the item
+			"tooltip_duration"		"4"
+			"tooltip_cooldown"		"25.0"
+			"tooltip_manacost"		"0"
+			"tooltip_movespeed"		"10"
+			"voodoo_manacost"		"110"
+		}
+	}
 }

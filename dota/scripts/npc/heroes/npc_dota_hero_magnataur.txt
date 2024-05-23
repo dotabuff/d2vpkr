@@ -1,4 +1,3 @@
-// Abilities for magnataur
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -32,13 +31,13 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"125"
+		"AbilityManaCost"				"100"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"damage"		"275"
+				"damage"		"300"
 				"radius"		
 				{
 					"value"			"325"
@@ -91,8 +90,8 @@
 		{
 			"shock_speed"				
 			{
-				"value"					"900"
-				"special_bonus_shard"	"+300"
+				"value"					"1200"
+				"special_bonus_shard"	"+400"
 
 			}
 			"shock_width"				
@@ -105,13 +104,13 @@
 				"value"			"90 160 230 300"				
 				"special_bonus_unique_magnus"	"+125"
 			}
-			"pull_duration"				"0.2"
 			"movement_slow"				"75"
 			"slow_duration"				"2"
+			"pull_duration"				"0.2"
 			"pull_distance"		"150"
 			"basic_slow_duration"		
 			{
-				"value"					"0.9"
+				"value"					"0.7 0.8 0.9 1.0"
 				"special_bonus_unique_magnus_6"	"+0.5"
 			}
 			"return_damage_pct"			
@@ -144,7 +143,6 @@
 		"HasScepterUpgrade"				"1"
 		"MaxLevel"						"1"
 		"IsGrantedByScepter"			"1"
-		"HasScepterUpgrade"				"1"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -159,15 +157,11 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"length"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"length"		"1200"
+				"value" "1200"
 			}
 		}
 	}
@@ -220,7 +214,7 @@
 			}
 			"empower_duration"
 			{
-				"value"		"35"
+				"value"		"30 33 36 39"
 				"special_bonus_unique_magnus_4"	"+10"
 			}
 			"bonus_damage_pct"
@@ -280,7 +274,6 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"22 20 18 16"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -290,11 +283,16 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+				"AbilityCooldown"
+				{
+					"value"					"22 20 18 16"
+					"special_bonus_unique_magnus_7"		"-5"
+				}
 				"skewer_speed"					"900"
 				"range"					
 				{
 					"value"			"900 975 1050 1125"
-					"LinkedSpecialBonus"	"special_bonus_unique_magnus_3"
+				"special_bonus_unique_magnus_3" "+275"
 				}
 				"slow_pct"				
 				{
@@ -312,8 +310,20 @@
 					"value"			"200"
 					"affected_by_aoe_increase"	"1"
 				}			
-				"tool_attack_slow"				"10 20 30 40"
-				"damage_distance_pct"			"6 9 12 15" 
+				"tree_hit_damage"
+				{
+					"special_bonus_facet_magnataur_run_through"			"10 15 20 25"
+						
+				}
+				"cliff_hit_damage"
+				{
+					"special_bonus_facet_magnataur_run_through"			"40 60 80 100"
+				}				
+				"terrain_hit_cooldown"
+				{
+					"value"						"0"
+					"special_bonus_facet_magnataur_run_through"			"0.5"
+				}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -354,20 +364,42 @@
 		{
 			"pull_radius"					
 			{
-				"value"	"430"
-				"affected_by_aoe_increase"	"1"
+				"value"							"430"
+				"affected_by_aoe_increase"		"1"
+				"special_bonus_facet_magnataur_reverse_reverse_polarity"		"-100%"				
+			}
+			"push_radius"					
+			{
+				"value"							"0"
+				"special_bonus_facet_magnataur_reverse_reverse_polarity"		"+600"				
+				"affected_by_aoe_increase"		"1"
+			}
+			"max_knockback_distance"	
+			{
+				"value"							"0"
+				"special_bonus_facet_magnataur_reverse_reverse_polarity"		"+700"				
+				"affected_by_aoe_increase"		"1"
+			}	
+			"knockback_height"
+			{
+				"value"							"0"
+				"special_bonus_facet_magnataur_reverse_reverse_polarity"		"+100"
 			}
 			"polarity_damage"				
 			{
-				"value"			"75 150 225"
-				"CalculateSpellDamageTooltip" "1"
+				"value"							"100 200 300"
+				"CalculateSpellDamageTooltip" 	"1"
 			}
 			"hero_stun_duration"
 			{
 				"value"					"2.5 3.0 3.5"
 				"special_bonus_unique_magnus_5"	"+0.8"
 			}
-			"pull_duration"			"0.0 0.0 0.0"
+			"pull_duration"		
+			{
+				"value"							"0.0"
+				"special_bonus_facet_magnataur_reverse_reverse_polarity"		"+0.2"
+			}
 			"stat_buff_duration"
 			{
 				"value"					"0"
@@ -381,6 +413,39 @@
 		}
 	}
 
+	//=================================================================================================================
+	// Magnus: Magnetic Horn
+	//=================================================================================================================
+	"magnus_magnetic_horn"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_NONE"	
+
+		"MaxLevel"						"1"
+
+		"AbilityValues"
+		{
+			"pull_duration"		"0.2"
+			"pull_distance"		"150"
+			"pull_radius"		"200"
+		}		
+	}
+
+	//=================================================================================================================
+	// Magnus: Solid Core
+	//=================================================================================================================
+	"magnataur_solid_core"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_NONE"	
+		"MaxLevel"						"1"
+		"Innate"						"1"
+
+		"AbilityValues"
+		{
+			"knockback_reduction"		"50"
+		}		
+	}
 	//=================================================================================================================
 	// Ability: Magnus Strength of Joelrak (scepter)
 	//=================================================================================================================
@@ -416,16 +481,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"4"
-				"ad_linked_abilities"			"magnataur_shockwave"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "4"
+				"ad_linked_abilities" "magnataur_shockwave"
 			}
 		}
 	}
@@ -451,18 +512,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"275"
-				"ad_linked_abilities"			"magnataur_skewer"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -510,18 +560,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"5"
-				"ad_linked_abilities"			"magnataur_skewer"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
 	//=================================================================================================================
 	// Ability: Special Bonus

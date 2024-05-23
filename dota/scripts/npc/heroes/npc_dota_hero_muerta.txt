@@ -1,4 +1,3 @@
-// Abilities for muerta
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -49,7 +48,7 @@
 			"speed"							"2000"
 			"radius"						
 			{
-				"value"			"100"
+				"value"			"150"
 				"affected_by_aoe_increase"	"1"	
 			}
 			"ricochet_radius_start"			"115"
@@ -57,7 +56,7 @@
 			"ricochet_distance_multiplier"	"1.5"
 			"ricochet_fear_duration"		"0.8 0.95 1.1 1.25"
 			"impact_slow_percent"			"-100"
-			"impact_slow_duration"			"0.5"
+			"impact_slow_duration"			"1"
 		}
 	}
 
@@ -118,7 +117,27 @@
 			"aura_attackspeed_slow"			"-30 -40 -50 -60"
 			"silence_duration"				"1.5 2 2.5 3"
 			"rotation_direction"			"-1"
-			"show_warning"					"1"
+			"kill_check_radius"
+			{
+				"affected_by_aoe_increase"	"1"
+				"value"						"0"
+				"special_bonus_facet_muerta_dance_of_the_dead"	"+200"
+			}
+			"kill_radius_expansion"
+			{
+				"affected_by_aoe_increase"	"1"
+				"value"						"0"
+				"special_bonus_facet_muerta_dance_of_the_dead"	"+100"
+			}
+			"kill_radius_expansion_speed"
+			{
+				"value"						"0"
+				"special_bonus_facet_muerta_dance_of_the_dead"	"+0.25"
+			}
+			"hp_regen_pct"
+			{
+				"special_bonus_unique_muerta_calling_hp_regen"	"+1.5"
+			}
 		}
 	}
 	
@@ -129,10 +148,8 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_BREAK_DISABLES"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		//"AbilitySound"					"Hero_PhantomAssassin.CoupDeGrace"
-
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 
 		// Special
@@ -141,10 +158,14 @@
 		{
 			"double_shot_chance"
 			{
-				"value"					"20 30 40 50"
+				"value"					"26 34 42 50"
 				"special_bonus_unique_muerta_gunslinger_double_shot_chance"	"+20"
 			}
 			"target_search_bonus_range"	"175"
+			"bonus_damage"
+			{
+				"special_bonus_unique_muerta_gunslinger_bonus_damage"	"=55"
+			}
 		}
 	}
 
@@ -198,8 +219,85 @@
 			{
 				"value"				"925"
 				"RequiresShard"		"1"
+				"affected_by_aoe_increase"	"1"
 			}
+			//"time_extension_on_kill"
+			//{
+			//	"value"						"1 1.5 2"
+			//	"RequiresFacet"			"2"
+			//}
+			//"time_extension_kill_range"
+			//{
+			//	"value"						"0"
+			//	"special_bonus_facet_2"	"+925"
+			//	"RequiresFacet"			"2"
+			//}
 		}
+	}
+
+	//=================================================================================================================
+	// Muerta: Ofrenda
+	//=================================================================================================================
+	"muerta_ofrenda"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		//"AbilitySound"					"Hero_TemplarAssassin.Trap"
+		"MaxLevel"						"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"300"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"60.0"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50"
+	}
+
+
+	//=================================================================================================================
+	// Ability: Ethereal attacks
+	//=================================================================================================================
+	"muerta_supernatural"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+	}
+
+
+	//=================================================================================================================
+	// Muerta: Ofrenda Destroy
+	//=================================================================================================================
+	"muerta_ofrenda_destroy"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"MaxLevel"						"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0.5"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
 	}
 
 	//=================================================================================================================
@@ -212,14 +310,9 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"value"							"2"
-				"ad_linked_abilities"			"muerta_dead_shot"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
+			"value"							"2"
 		}
 	}
 
@@ -232,7 +325,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ad_linked_abilities"			"muerta_dead_shot"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 		"BaseClass"						"special_bonus_base"
 	}
 
@@ -245,7 +337,27 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ad_linked_abilities"			"muerta_dead_shot"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+		"BaseClass"						"special_bonus_base"
+	}
+
+	//=================================================================================================================
+	// Talent: MUERTA Deadshot range
+	//=================================================================================================================
+	"special_bonus_unique_muerta_calling_hp_regen"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
+
+		"special_bonus_unique_muerta_gunslinger_bonus_damage"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"special_bonus_base"
 	}
 
@@ -258,7 +370,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ad_linked_abilities"			"muerta_the_calling"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 		"BaseClass"						"special_bonus_base"
 	}
 
@@ -271,7 +382,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ad_linked_abilities"			"muerta_gunslinger"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 		"BaseClass"						"special_bonus_base"
 	}
 

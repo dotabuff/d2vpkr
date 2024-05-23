@@ -1,0 +1,50 @@
+"silencer_last_word_damage"
+{
+	"desc"				"#DOTA_ChallengeDesc_Silencer_LastWord_Damage"
+	"status_text"		"#DOTA_ChallengeStatusText_Silencer_Global_Silence_Damage"
+	"image"				"images/spellicons/silencer_last_word.png"
+	"requiredhero"		"silencer"
+	"events"
+	{
+		"matching_type"		"linear_series"
+		"query"
+		{
+			"find_damage"
+			{
+				"event"		"damage"
+				"damage_type"		"magical"
+				"attack"		"silencer_last_word"
+				"attacker"		"!hero"
+				"target_must_be_hero"		"1"
+				"attacker_team"		"!team"
+				"target_team"		"!enemyteam"
+				"storage"
+				{
+					"1"
+					{
+						"key"		"value"
+						"aggregator"		"sum"
+					}
+				}
+			}
+		}
+		"progress_stored_in"		"1"
+		"post_tests"
+		{
+			"test_last_word_damage"
+			{
+				"storage"		"1"
+				"compare"		">="
+				"amount"		"<last_word_damage>"
+			}
+		}
+	}
+	"variables"
+	{
+		"<last_word_damage>"
+		{
+			"format"	"int"
+			"index"		"0"
+		}
+	}
+}

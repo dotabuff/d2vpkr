@@ -1,4 +1,3 @@
-// Abilities for templar_assassin
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -34,20 +33,36 @@
 		{
 			"instances"
 			{
-				"value"						"3 4 5 6"
-				"LinkedSpecialBonus"		"special_bonus_unique_templar_assassin"
+				"value"						"2 3 4 5"
+				"special_bonus_unique_templar_assassin"		"+5"
+				"CalculateSpellDamageTooltip"				"0"
+				"DamageTypeTooltip"							"DAMAGE_TYPE_NONE"
+			}
+			"shield_per_instance"
+			{
+				"value"						"30 40 50 60"
 			}
 			"bonus_damage"				
 			{
 				"value"						"25 45 65 85"
 				"special_bonus_unique_templar_assassin_refraction_damage"		"+25"
 			}
-			"damage_threshold"			"5"
-			"duration"					"17.0 17.0 17.0 17.0"
+			"bonus_damage_per_instance_burn"
+			{
+				"special_bonus_facet_templar_assassin_refractor"	"+1"
+			}
+			"duration"					
+			{
+				"value"		"17"
+			}
+
 			"cast_while_disabled"
 			{
-				"value"					"0"
 				"special_bonus_unique_templar_assassin_refraction_disable_cast"				"+1"
+			}
+			"dispels"
+			{
+				"special_bonus_unique_templar_assassin_4"				"+1"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -78,24 +93,19 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"35 40 45 50"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityValues"
 		{
-			"01"
+			"bonus_damage"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"80 140 200 260"
+				"value" "80 140 200 260"
 			}
-			"02"
+			"bonus_armor"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_armor"				"-5 -6 -7 -8"
-				"LinkedSpecialBonus"		"special_bonus_unique_templar_assassin_2"
+				"value" "-5 -6 -7 -8"
+				"special_bonus_unique_templar_assassin_2" "+-3"
 			}
 		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
 	
 	//=================================================================================================================
@@ -108,6 +118,9 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"-1"
+		"Innate"						"1"
 	
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -115,17 +128,31 @@
 		{
 				"bonus_attack_range"		
 				{
-					"value"		"80 130 180 230"
+					"value"		"0 50 100 150 200"
 					"special_bonus_unique_templar_assassin_8"	"+120"
 				}
 				"attack_spill_range"		
 				{
-					"value"							"600 650 700 750"
-					"special_bonus_unique_templar_assassin_8"	"+120"
+					"value"							"550 600 650 700 750"
+					"special_bonus_unique_templar_assassin_8"	"+100"
 				}
-				"attack_spill_width"		"90"
-				"attack_spill_pct"			"100"
-				"attack_spill_penalty"			"5"
+				"attack_spill_width"		
+				{
+					"value"		"90"
+					"affected_by_aoe_increase"	"1"
+				}
+				"attack_spill_pct"			"80 85 90 95 100"
+
+				"spill_slow_duration"
+				{
+					"value"											"0.0"
+					"special_bonus_facet_templar_assassin_voidblades"	"+3.0"
+				}
+				"spill_movement_slow_pct"
+				{
+					"special_bonus_facet_templar_assassin_voidblades"	"5 10 15 20 25"
+				}
+				
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}	
@@ -178,12 +205,20 @@
 					"special_bonus_shard"		"+4"
 				}
 				"trap_fade_time"			"2.0 2.0 2.0"
-				"movement_speed_min"			"30"
-				"movement_speed_max"			"60"
+				"movement_speed_min"			
+				{
+					"value"		"30"
+					"special_bonus_unique_templar_assassin_3"	"+5"
+				}
+				"movement_speed_max"			
+				{
+					"value"			"60"
+					"special_bonus_unique_templar_assassin_3"	"+5"
+				}
 				"trap_bonus_damage"			
 				{
 					"value"		"275 325 375"
-					"special_bonus_unique_templar_assassin_3"	"+110"
+					"special_bonus_scepter"	"+100"
 				}
 				"instant_trap_damage"				"0"
 				"extra_damage"						"200"
@@ -222,6 +257,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"MaxLevel"						"3"
+		"HasScepterUpgrade"			"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -239,13 +275,6 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityModifierSupportBonus"		"100"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-
-		}
 	}
 
 	//=================================================================================================================
@@ -267,7 +296,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.2"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
-		"AbilityChannelTime"			"1.5"
+		"AbilityChannelTime"			"2"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -281,7 +310,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{	
-				"extra_damage"						"200"
+				"extra_damage"						"300"
 			
 		}
 	}
@@ -309,13 +338,6 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-			
-		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
 
@@ -329,17 +351,7 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"7"
-				"ad_linked_abilities"			"templar_assassin_refraction"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		
 	}
 
 	//=================================================================================================================
@@ -351,18 +363,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"-3"
-				"ad_linked_abilities"			"templar_assassin_meld"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -386,59 +387,14 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"0"
-				"ad_linked_abilities"			"templar_assassin_meld"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "0"
+				"ad_linked_abilities" "templar_assassin_meld"
 			}
 		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_templar_assassin_5"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"100"
-				"ad_linked_abilities"			"templar_assassin_psi_blades"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value2"				"1.0"
-				"ad_linked_abilities"			"templar_assassin_psi_blades"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_templar_assassin_6"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"						"special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -450,16 +406,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"1"
-				"ad_linked_abilities"			"templar_assassin_meld"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "1"
+				"ad_linked_abilities" "templar_assassin_meld"
 			}
 		}
 	}
@@ -473,16 +425,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"120"
-				"ad_linked_abilities"			"templar_assassin_psi_blades"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "120"
+				"ad_linked_abilities" "templar_assassin_psi_blades"
 			}
 		}
 	}

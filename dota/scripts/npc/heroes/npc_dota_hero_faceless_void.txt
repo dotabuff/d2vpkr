@@ -1,4 +1,3 @@
-// Abilities for faceless_void
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -53,6 +52,12 @@
 				"value"										"2.0"
 				"special_bonus_unique_faceless_void_7"		"+0.5"
 			}
+			"backtrack_time_walk_duration"
+			{
+				"value"						"0"
+				"special_bonus_facet_faceless_void_temporal_impunity"	"+1"				
+			}
+			"dodge_chance_pct"			"100"			
 			"radius"
 			{
 				"value"								"0"
@@ -63,6 +68,46 @@
 
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+
+	//=================================================================================================================
+	// Faceless Void: Innate Distortion Field
+	//=================================================================================================================
+	"faceless_void_distortion_field"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel"						"4"
+		"Innate"						"1"
+		"DependentOnAbility"			"faceless_void_chronosphere"
+
+		"AbilityValues"
+		{
+			"attack_projectile_slow"		"25 30 35 40"
+			"slow_distance_max"				
+			{
+				"value"			"500"
+				"affected_by_aoe_increase"	"1"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Faceless Void: Innate Time Walk - Range
+	//=================================================================================================================
+	"faceless_void_backtrack"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"dodge_chance_pct"		"20"
+		}
 	}
 
 	//=================================================================================================================
@@ -105,22 +150,7 @@
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
 	
-	//=================================================================================================================
-	// Faceless Void: Backtrack
-	//=================================================================================================================
-	"faceless_void_backtrack"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-				"dodge_chance_pct"		"10 15 20 25"
-		}
-	}
+	
 
 	//=================================================================================================================
 	// Faceless Void: Time Lock
@@ -149,7 +179,7 @@
 				"bonus_damage"			
 				{
 					"value"				"10 15 20 25"
-					"LinkedSpecialBonus"	"special_bonus_unique_faceless_void_3"
+				"special_bonus_unique_faceless_void_3" "+30"
 				}
 				"delay"			"0.4"
 		}
@@ -170,7 +200,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityCastPoint"				"0.1"
 		"AbilityCooldown"				"28 24 20 16"
-		"AbilityManaCost"				"75 80 85 90"
+		"AbilityManaCost"				"90"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -238,23 +268,104 @@
 				"radius"				
 				{
 					"value"		"500"
-					"LinkedSpecialBonus"	"special_bonus_unique_faceless_void_2"
 					"affected_by_aoe_increase"	"1"
+				"special_bonus_unique_faceless_void_2" "+140"
 				}
-				"duration"				"3.75 4.25 4.75"
+				"duration"				
+				{
+					"value"			"3.75 4.25 4.75"
+				}
 				"vision_radius"			
 				{
 					"value"	"475"
 					"affected_by_aoe_increase"	"1"
-
 				}
 				"bonus_attack_speed"
-				{
-					"value"		"0"
-					"LinkedSpecialBonus"	"special_bonus_unique_faceless_void"
+				{					
+					"value" "0"
+				"special_bonus_unique_faceless_void" "+80"
 				}
 		}
 	}
+
+
+	//=================================================================================================================
+	// Faceless Void: Time Zone
+	//=================================================================================================================
+	"faceless_void_time_zone"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_FacelessVoid.Chronosphere"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.35 0.35 0.35"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"130 120 110"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"150 225 300"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportBonus"		"50"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"radius"				
+			{
+				"value"		"800"
+				"affected_by_aoe_increase"	"1"
+				"special_bonus_unique_faceless_void_2" "+140"
+			}
+			"duration"				
+			{
+				"value"			"5 5.5 6"				
+			}
+			"vision_radius"			
+			{
+				"value"	"675"				
+				"affected_by_aoe_increase"	"1"
+
+			}
+			"bonus_attack_speed"
+			{					
+				"value" "50 100 150"				
+				"special_bonus_unique_faceless_void" "+80"
+			}
+			"bonus_move_speed"
+			{					
+				"value" "50 60 70"				
+			}
+			"bonus_cast_speed"
+			{					
+				"value" "40 50 60"	
+			}
+			"bonus_turn_speed"
+			{					
+				"value" "30 40 50"
+			}
+			"bonus_projectile_speed"
+			{					
+				"value" "30 40 50"
+			}
+			"yaw"				"45"
+		}
+	}
+
 	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================
@@ -264,18 +375,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"80"
-				"ad_linked_abilities"			"faceless_void_chronosphere"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -287,18 +387,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"140"
-				"ad_linked_abilities"			"faceless_void_chronosphere"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -310,18 +399,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"30"
-				"ad_linked_abilities"			"faceless_void_time_lock"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -333,16 +411,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"dodge_chance_pct"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"dodge_chance_pct"				"20"
-				"ad_linked_abilities"			"special_bonus_inherent"				// inherent bonus is for bonuses not tied to an ability but can be inherent on the hero.  This line is required for Ability Draft to correctly choose talents.
+				"value" "20"
+				"ad_linked_abilities" "special_bonus_inherent"
 			}
 		}
 	}

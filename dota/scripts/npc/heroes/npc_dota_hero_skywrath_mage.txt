@@ -1,4 +1,3 @@
-// Abilities for skywrath_mage
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -17,7 +16,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_SkywrathMage.ArcaneBolt.Cast"
-		"HasScepterUpgrade"			"1"
+		"HasShardUpgrade"               "1"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -42,6 +41,7 @@
 				"int_multiplier"		
 				{
 					"value"		"1.5"
+					"special_bonus_unique_skywrath_2"	"+0.5"
 					"CalculateSpellDamageTooltip"	"1"
 				}
 				"vision_duration"		"3.34"
@@ -50,16 +50,11 @@
 					"value"				"700"
 					"affected_by_aoe_increase"	"1"
 				}
-				"lifesteal_duration"	"5"
-				"lifesteal_amt"			
-				{
-					"value"			"20 30 40 50"
-					"special_bonus_unique_skywrath_arcane_bolt_lifesteal"			"+25"
-				}
+				
 				"total_bolt_count"
 				{
 					"value"				"1"
-					"special_bonus_scepter"		"+2"
+					"special_bonus_shard"		"+1"
 				}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -227,7 +222,7 @@
 				"damage"				
 				{
 					"value"			"800 1200 1600"
-					"LinkedSpecialBonus"	"special_bonus_unique_skywrath_5"
+				"special_bonus_unique_skywrath_5" "+400"
 				}
 				"damage_interval"		"0.1"
 				"scepter_radius"		
@@ -240,23 +235,65 @@
 	}
 
 	//=================================================================================================================
-	// Skywrath Mage: Shield of the Scion (shard ability)
+	// Skywrath Mage: Shield of the Scion
 	//=================================================================================================================
 	"skywrath_mage_shield_of_the_scion"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		"IsGrantedByShard"				"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"MaxLevel"						"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"stack_duration"			"35"
-			"bonus_intelligence"		"2"
-			"bonus_armor"				"0.5"
+			"stack_duration"			"25"
+			"bonus_intelligence"		"0"
+			"damage_barrier_base"		"10"
+			"damage_barrier_per_level"	"1"
+			"barrier_duration"			"15"
+		}
+	}
+
+	//=================================================================================================================
+	// Skywrath Mage: Staff of the Scion
+	//=================================================================================================================
+	"skywrath_mage_staff_of_the_scion"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel"						"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			// can tweak not refreshing casted ability, can tweak not refreshing ultimate
+			"cooldown_reduction"		"0.1"
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Necrolyte's Sadist
+	//=================================================================================================================
+	"skywrath_mage_ruin_and_restoration"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel"						"4"
+		"Innate"						"1"
+		"DependentOnAbility"			"skywrath_mage_mystic_flare"
+
+		"AbilityValues"
+		{
+			"spell_lifesteal"	
+			{
+				"value"		"20 30 40 50"
+				"special_bonus_unique_skywrath_arcane_bolt_lifesteal"			"+15"
+			}
 		}
 	}
 
@@ -269,20 +306,17 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"7"
-				"ad_linked_abilities"			"skywrath_mage_ancient_seal"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "7"
+				"ad_linked_abilities" "skywrath_mage_ancient_seal"
 			}
 		}
 	}
 
+	
 	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================
@@ -292,20 +326,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"1"
-				"ad_linked_abilities"			"skywrath_mage_arcane_bolt"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
-
 	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================
@@ -327,16 +349,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"0"
-				"ad_linked_abilities"			"skywrath_mage_concussive_shot"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "0"
+				"ad_linked_abilities" "skywrath_mage_concussive_shot"
 			}
 		}
 	}
@@ -350,18 +368,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"400"
-				"ad_linked_abilities"			"skywrath_mage_mystic_flare"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -373,39 +380,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"1"
-				"ad_linked_abilities"			"skywrath_mage_arcane_bolt"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_skywrath_7"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"250"
-				"ad_linked_abilities"			"skywrath_mage_ancient_seal"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "1"
+				"ad_linked_abilities" "skywrath_mage_arcane_bolt"
 			}
 		}
 	}

@@ -44,6 +44,11 @@
 			"hp_regen"		"40"
 			"projectile_speed"			"900"
 			"move_speed"			"30"
+			"chemical_rage_cooldown_reduction_pct"
+			{
+				"value"					"0"
+				"special_bonus_facet_alchemist_mixologist"				"=50"
+			}
 
 		}
 	}
@@ -151,6 +156,11 @@
 				"affected_by_aoe_increase"	"1"
 			}
 			"move_speed"				"4 8 12 16"
+			"chemical_rage_cooldown_reduction_pct"
+			{
+				"value"					"0"
+				"special_bonus_facet_alchemist_mixologist"				"=30"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -209,7 +219,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
 
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_SELF"
@@ -230,17 +240,27 @@
 			"duration"				"36"
 			"bonus_gold"			"2"
 			"bonus_bonus_gold"		"2"
-			"bonus_gold_cap"		"18"
 			"bounty_multiplier"		"2"
 			"damage"
 			{
 				"value"		"0"
 				"special_bonus_unique_alchemist_7"	"+2"
 			}
+
+			"bonus_gold_cap"
+			{
+				"value"				"18"
+				
+			}
+			"starting_gold_bonus"
+			{
+				"value"				"0"
+				"special_bonus_facet_alchemist_seed_money"	"=250"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
-	
+
 	//=================================================================================================================
 	// Alchemist: Chemical Rage
 	//=================================================================================================================
@@ -287,7 +307,7 @@
 			"bonus_health"			"0"
 			"bonus_health_regen"
 			{
-				"value"	"50 80 110"
+				"value"	"60 90 120"
 				"special_bonus_unique_alchemist_4"		"+50"
 			}
 			"bonus_mana_regen"		"0"
@@ -332,8 +352,7 @@
 				"max_stacks"	"4 6 8 10"
 				"debuff_duration"		"4.0"
 				"slow_per_stack"		"4 5 6 7"
-				"status_resist_per_stack"		"3 4 5 6"
-				"chemical_rage_bonus"		"1.5"
+				"attack_damage_per_stack"		"3 4 5 6"
 
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"

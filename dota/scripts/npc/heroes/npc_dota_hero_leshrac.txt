@@ -1,4 +1,3 @@
-// Abilities for leshrac
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -46,8 +45,7 @@
 				"delay"				"0.35"
 				"radius"			
 				{
-					"value"	"150 180 210 240"
-					"LinkedSpecialBonus"	"special_bonus_unique_leshrac_5"
+					"value"	"135 160 185 210"
 					"affected_by_aoe_increase"	"1"
 				}
 				"duration"			"1.7"
@@ -102,8 +100,6 @@
 		
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"10 18 26 34"
-		"AbilityDuration"				"10"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -112,16 +108,33 @@
 				"num_explosions"		
 				{
 					"value"		"40"
-					"LinkedSpecialBonus"	"special_bonus_unique_leshrac_1"
+				"special_bonus_unique_leshrac_1" "+20"
 				}
 			
 				"radius"			
 				{
-					"value"			"500"
+					"value"			"450"
 					"affected_by_aoe_increase"	"1"
 				}
 				"tower_bonus"			"0"
-
+				"affects_buildings"
+				{
+					"value"						"1"
+					"special_bonus_facet_leshrac_misanthropy"	"=0"
+				}
+				"damage"
+				{
+					"value"		"10 18 26 34"
+				}
+				"targets"
+				{
+					"value"						"1"
+				}
+				"AbilityDuration"
+				{
+					"value"						"10"
+					"special_bonus_facet_leshrac_misanthropy"	"=7"
+				}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -163,12 +176,12 @@
 				"damage"			
 				{
 					"value"		"90 140 190 240"
-					"special_bonus_unique_leshrac_6"	"+100"
+					"special_bonus_unique_leshrac_6"	"+80"
 				}			
 				"jump_count"			"5 7 9 11"
 				"radius"			
 				{
-					"value"			"475"
+					"value"			"450"
 					"affected_by_aoe_increase"	"1"
 				}
 				"jump_delay"			"0.25 0.25 0.25 0.25"
@@ -178,7 +191,6 @@
 				"bounce_twice"	
 				{
 					"value"								"0"
-					"special_bonus_unique_leshrac_2"	"+1"
 				}	
 				"pulse_nova_lightning_interval"			
 				{
@@ -268,13 +280,13 @@
 				"mana_cost_per_second"	"25 45 65"
 				"radius"				
 				{
-					"value"		"525"
+					"value"		"500"
 					"affected_by_aoe_increase"	"1"
 				}
 				"damage"
 				{
 					"value"			"80 135 180"
-					"LinkedSpecialBonus"	"special_bonus_unique_leshrac_3"
+				"special_bonus_unique_leshrac_3" "+30"
 				}
 				"damage_resistance"
 				{
@@ -290,6 +302,45 @@
 	}
 
 	//=================================================================================================================
+	// Leshrac: Chronoptic Nourishment
+	//=================================================================================================================
+	"leshrac_chronoptic_nourishment"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"						"4"
+		"DependentOnAbility"			"leshrac_pulse_nova"
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"mana_pct_per_hit"		"10 14 18 22"
+		}		
+	}
+
+	//=================================================================================================================
+	// Ability: Leshrac Innate: AoE
+	//=================================================================================================================
+	"leshrac_defilement"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Innate"						"1"
+		"MaxLevel"						"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"aoe_per_int"				"0.5"
+		}
+	}
+
+
+	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================
 	"special_bonus_unique_leshrac_1"
@@ -298,30 +349,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"25"
-				"ad_linked_abilities"			"leshrac_diabolic_edict"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_leshrac_2"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"						"special_bonus_base"
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -333,18 +361,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"35"
-				"ad_linked_abilities"			"leshrac_pulse_nova"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -357,29 +374,6 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 				
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_leshrac_5"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"40"
-				"ad_linked_abilities"			"leshrac_split_earth"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
 	}
 
 	//=================================================================================================================

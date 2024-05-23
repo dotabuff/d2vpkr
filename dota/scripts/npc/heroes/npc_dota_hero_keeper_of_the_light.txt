@@ -1,4 +1,3 @@
-// Abilities for keeper_of_the_light
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -67,6 +66,7 @@
 			"channel_vision_interval"	"0.5"
 			"channel_vision_duration"	"10.34"
 			"channel_vision_step"		"150 180 210 240"
+
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -100,28 +100,22 @@
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"400 500 600 700"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityValues"
 		{
-			"01"
+			"duration"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"4.0 5.0 6.0 7.0"
+				"value" "4.0 5.0 6.0 7.0"
 			}
-			"02"
+			"mana_leak_pct"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"mana_leak_pct"				"5.0"
+				"value" "5"
 			}
-			"03"
+			"stun_duration"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"1.5 2.0 2.5 3.0"
+				"value" "1.5 2.0 2.5 3.0"
 			}
 		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}	
 
 	//=================================================================================================================
@@ -139,6 +133,7 @@
 		"AbilitySound"					"Hero_KeeperOfTheLight.ManaLeak.Cast"
 		"MaxLevel"						"1"
 		"FightRecapLevel"				"1"
+		"HasShardUpgrade"				"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -146,7 +141,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"14"
+		
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -162,12 +157,27 @@
 		{
 				"duration"					"6"
 				"slow"						"10"
-				"magic_resistance"			"35"
+				"magic_resistance"			"20 30 40"
 				"stun_duration"			
 				{
 					"value"			"0"
-					"special_bonus_unique_keeper_of_the_light_10"	"+1.5"
 				}
+				"AbilityCooldown"			
+				{
+					"value"					"14"
+					"special_bonus_shard"		"=0"
+				}
+				"AbilityChargeRestoreTime"			
+				{
+					"value"					"0"
+					"special_bonus_shard"		"=14"
+				}
+				"AbilityCharges"
+				{
+					"value"					"0"
+					"special_bonus_shard"		"=2"
+				}
+					
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}	
@@ -201,7 +211,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"250"		
+		"AbilityManaCost"				"150"		
 
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
@@ -318,8 +328,7 @@
 		"AbilityDraftPreAbility"		"keeper_of_the_light_radiant_bind"
 		"AbilityDraftUltScepterAbility"	"keeper_of_the_light_will_o_wisp"
 		"AbilityDraftUltShardAbility"	"keeper_of_the_light_recall"
-				
-
+		"HasShardUpgrade"				"1"				
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"85"
@@ -334,28 +343,19 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{ 
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"40.0 40.0 40.0"
-				"LinkedSpecialBonus"	"special_bonus_unique_keeper_of_the_light_11"
+			"duration"
+			{
+				"value"				"40.0 40.0 40.0"
+				"special_bonus_unique_keeper_of_the_light_11"	"+15"
 			}
-			"02"
-			{ 
-				"var_type"					"FIELD_INTEGER"
-				"movement_speed"			"15 20 25" 
-			}
-			"03"
-			{ 
-				"var_type"					"FIELD_INTEGER"
-				"cast_range"			"125 250 375" 
-			}
-			"04"
-			{ 
-				"var_type"					"FIELD_INTEGER"
-				"illuminate_heal"			"50 60 70" 
+			"movement_speed"			"15 20 25" 
+			"cast_range"			"125 250 375" 
+			"illuminate_heal"			
+			{
+				"value"					"50 60 70" 
+				"special_bonus_shard"		"+30"
 			}
 		}
 	}
@@ -367,16 +367,15 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_ALT_CASTABLE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
 		"AbilityUnitTargetFlags"			"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"MaxLevel"						"1"
+		"MaxLevel"						"3"
 		"AbilitySound"					"Hero_KeeperOfTheLight.Recall.Cast"
-
-		"IsGrantedByShard"				"1"
+		"HasShardUpgrade"				"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -386,20 +385,37 @@
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"0"
-		"AbilityCooldown"				"15"
-
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"150"		
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"teleport_delay"	
 			{
-				"var_type"				"FIELD_FLOAT"
-				"teleport_delay"		"4"
+				"value"							"6 5 4"
+			}
+			"movespeed_bonus_duration"			"4"
+			"ally_movespeed_pct"
+			{
+				"value"							"12 16 20"	
+			}
+			"AbilityCooldown"			
+			{
+				"value"							"21 18 15"
+				"special_bonus_shard"			"=0"
+			}
+			"AbilityChargeRestoreTime"			
+			{
+				"value"							"0 0 0"
+				"special_bonus_shard"			"21 18 15"
+			}
+			"AbilityCharges"
+			{
+				"value"							"0"
+				"special_bonus_shard"			"=2"
 			}
 		}
 	}
@@ -427,7 +443,6 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"25 22 19 16"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -444,7 +459,7 @@
 				"miss_rate"				
 				{
 					"value"				"40"
-					"LinkedSpecialBonus"		"special_bonus_unique_keeper_of_the_light_8"
+				"special_bonus_unique_keeper_of_the_light_8" "+40"
 				}
 				"duration"				"4"
 				"radius"				
@@ -459,6 +474,11 @@
 					"affected_by_aoe_increase"	"1"
 				}
 				"damage"				"85 130 175 220"
+				"AbilityCooldown"
+				{
+					"value"											"25 22 19 16"
+					"special_bonus_unique_keeper_of_the_light_5"	"-5"
+				}
 			
 		}
 	}
@@ -478,81 +498,31 @@
  		"AbilityCastAnimation"			"ACT_INVALID"
 	}
 
+	
 	//=================================================================================================================
-	// Keeper of the Light: Spirit Form Illuminate
+	// Keeper of the Light: Illuminate End
 	//=================================================================================================================
-	"keeper_of_the_light_spirit_form_illuminate"
+	"keeper_of_the_light_mana_magnifier"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"FightRecapLevel"				"1"
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1800"
-		"AbilityCastPoint"				"0"
- 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_7"
+		"MaxLevel"						"1"
+		"Innate"						"1"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 125 150 175"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"total_damage"
+			"aura_radius"	
 			{
-				"value"				"185 290 395 500"
-				"special_bonus_unique_keeper_of_the_light"		"+200"
-			}
-			"max_channel_time"		"3"
-			"radius"				
-			{
-				"value"		"400"
+				"value"		"900"
 				"affected_by_aoe_increase"	"1"
 			}
-			"range"					"1550"
-			"speed"					"950"
-			"vision_radius"			
-			{
-				"value"		"800 800 800 800"
-				"affected_by_aoe_increase"	"1"
-			}
-			"vision_duration"		"3.34 3.34 3.34 3.34"
-			"channel_vision_radius"	{
-					"value"		"400"
-					"affected_by_aoe_increase"	"1"
-			}
-			"channel_vision_interval"	"0.5"
-			"channel_vision_duration"	"10.34"
-			"channel_vision_step"		"150 180 210 240"
-			"AbilityCooldown"				
-			{
-				"value"					"13"
-				"special_bonus_unique_keeper_of_the_light_illuminate_cooldown"			"-2"
-			}
-
+			"bonus_mana_pct"	"15"
 		}
 	}
 
-	//=================================================================================================================
-	// Keeper of the Light: Spirit Form Illuminate End
-	//=================================================================================================================
-	"keeper_of_the_light_spirit_form_illuminate_end"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
- 		"AbilityCastAnimation"			"ACT_INVALID"
-	}
+
 
 	//=================================================================================================================
 	// Ability: Special Bonus
@@ -575,62 +545,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"200"
-				"ad_linked_abilities"			"keeper_of_the_light_chakra_magic"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_keeper_of_the_light_3"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"2"
-				"ad_linked_abilities"			"keeper_of_the_light_will_o_wisp"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_keeper_of_the_light_4"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"3"
-				"ad_linked_abilities"			"keeper_of_the_light_will_o_wisp"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "200"
+				"ad_linked_abilities" "keeper_of_the_light_chakra_magic"
 			}
 		}
 	}
@@ -644,39 +564,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"8"
-				"ad_linked_abilities"			"keeper_of_the_light_blinding_light"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_keeper_of_the_light_6"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"150"
-				"ad_linked_abilities"			"keeper_of_the_light_will_o_wisp"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "8"
+				"ad_linked_abilities" "keeper_of_the_light_blinding_light"
 			}
 		}
 	}
@@ -690,16 +583,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"3"
-				"ad_linked_abilities"			"keeper_of_the_light_chakra_magic"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "3"
+				"ad_linked_abilities" "keeper_of_the_light_chakra_magic"
 			}
 		}
 	}
@@ -713,54 +602,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"40"
-				"ad_linked_abilities"			"keeper_of_the_light_blinding_light"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_keeper_of_the_light_9"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"50"
-				"ad_linked_abilities"			"keeper_of_the_light_illuminate"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_keeper_of_the_light_10"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -772,64 +614,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"15"
-				"ad_linked_abilities"			"keeper_of_the_light_spirit_form"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_keeper_of_the_light_12"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"2"
-				"ad_linked_abilities"			"keeper_of_the_light_blinding_light"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_keeper_of_the_light_13"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"2"
-				"ad_linked_abilities"			"keeper_of_the_light_radiant_bind"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -841,16 +626,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"0"
-				"ad_linked_abilities"			"keeper_of_the_light_chakra_magic"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "0"
+				"ad_linked_abilities" "keeper_of_the_light_chakra_magic"
 			}
 		}
 	}

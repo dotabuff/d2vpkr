@@ -1,4 +1,3 @@
-// Abilities for sniper
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -46,7 +45,6 @@
 			"AbilityCastRange"		
 			{
 				"value"							"600"
-				"special_bonus_unique_sniper_grenade_range"		"+250"
 			}
 			"radius"		
 			{
@@ -65,7 +63,6 @@
 			"self_push"					
 			{
 				"value"			"1"
-				"special_bonus_unique_sniper_grenade_self_push"		"+1"
 
 			}
 		}
@@ -93,7 +90,6 @@
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
-		"AbilityChargeRestoreTime"		"35"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -107,10 +103,16 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+				"AbilityChargeRestoreTime"		
+				{
+					"value"				"35"
+					"special_bonus_unique_sniper_2" "-25"
+				}
 				"slow_movement_speed"	
 				{
 					"value"		"-12 -18 -24 -30"
-					"LinkedSpecialBonus"	"special_bonus_unique_sniper_5"
+					"special_bonus_facet_sniper_scattershot"	"x2"
+					"special_bonus_unique_sniper_5" "-10"
 				}
 				"radius"			
 				{
@@ -120,15 +122,23 @@
 				"shrapnel_damage"		
 				{
 					"value"			"25 40 55 70"
-					"LinkedSpecialBonus"	"special_bonus_unique_sniper_1"
+					"special_bonus_facet_sniper_scattershot"	"x4"
+
 				}
-				"duration"				"10.0"
+				"duration"				
+				{
+					"value"		"10.0"
+					"special_bonus_facet_sniper_scattershot"	"=1"
+				}
 				"damage_delay"			"1.2"
-				"slow_duration"			"2.0 2.0 2.0 2.0"
+				"slow_duration"			
+				{
+					"value"		"2"
+					"special_bonus_facet_sniper_scattershot"	"=2"
+				}
 				"AbilityCharges"		
 				{
 					"value" "3"
-					"LinkedSpecialBonus"	"special_bonus_unique_sniper_2"
 				}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -160,8 +170,8 @@
 			"proc_chance"					"40"
 			"knockback_distance"
 			{
-				"value"					"10"
-				"special_bonus_unique_sniper_3"			"+25"
+				"value"					"50"
+				"special_bonus_unique_sniper_3"			"+50"
 			}
 			"slow"			"-100"
 			"slow_duration"					"0.5"		
@@ -176,7 +186,9 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 	
@@ -196,36 +208,45 @@
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"duration"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_attack_range"			"130 220 310 400"
-				"LinkedSpecialBonus"			"special_bonus_unique_sniper_6"
+				"value"					"3"
+				"special_bonus_unique_sniper_4"	"+1"
 			}
-			"02"
+
+			"slow"						
 			{
-				"var_type"						"FIELD_FLOAT"
-				"duration"			"3"
-				"LinkedSpecialBonus"			"special_bonus_unique_sniper_4"
+				"value"								"65"				
 			}
-			"03"
+			"headshot_chance"			"100"
+			"active_attack_range_bonus"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"slow"			"45 40 35 30"
+				"value"					"200"				
 			}
-			"04"
+			"bonus_armor"		
 			{
-				"var_type"						"FIELD_INTEGER"
-				"headshot_chance"			"100"
+				"value"												"5 10 15 20"
+				"special_bonus_unique_sniper_take_aim_armor"		"+15"
 			}
-			"05"
+				
+			"does_root"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"active_attack_range_bonus"			"200"
+				"value"		"0"			
+			}
+
+			"require_target"
+			{
+				"value"		"0"				
+			}
+
+			"no_reveal"
+			{
+				"special_bonus_facet_sniper_ghillie_suit"	"1"
 			}
 		}
+		
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
 	
@@ -278,63 +299,58 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"projectile_speed"			"2500 2500 2500"
-				"scepter_stun_duration"			
-				{
-					"value" "0.8 1.0 1.2"
-					"RequiresScepter"		"1"
-				}
-				"scepter_crit"			
-				{
-					"value" "0"
-					"RequiresScepter"		"1"
-				}
-				"scepter_cast_point"			
-				{
-					"value" "0.5"
-					"RequiresScepter"		"1"
-				}
-				"scatter_range"
-				{
-					"value"			"0"
-					"special_bonus_shard"	"0"
-				}
-				"scatter_width"
-				{
-					"value"			"0"
-					"special_bonus_shard"			"0"
-					"RequiresShard"	"1"
-				}
-				"scatter_damage_pct"
-				{
-					"value"			"0"
-					"special_bonus_shard"			"0"
-					"RequiresShard"	"1"
-				}
-				"cooldown_reduction_on_kill"		"0 5 10"
+			"projectile_speed"			"2500 2500 2500"
+			"scepter_stun_duration"			
+			{
+				"value" "0.8 1.0 1.2"
+				"RequiresScepter"		"1"
+			}
+			"scepter_crit"			
+			{
+				"value" "0"
+				"RequiresScepter"		"1"
+			}
+			"scepter_cast_point"			
+			{
+				"value" "0.5"
+				"RequiresScepter"		"1"
+			}
+			"scatter_range"
+			{
+				"value"			"0"
+				"special_bonus_shard"	"0"
+			}
+			"scatter_width"
+			{
+				"value"			"0" 
+				"special_bonus_shard"			"0"
+				"RequiresShard"	"1"
+			}
+			"scatter_damage_pct"
+			{
+				"value"			"0"
+				"special_bonus_shard"			"0"
+				"RequiresShard"	"1"
+			}
+			"cooldown_reduction_on_kill"		"0 5 10"
+
+			
 		}		
 	}
 
 	//=================================================================================================================
-	// Ability: Special Bonus
+	// Sniper: Keen Scope
 	//=================================================================================================================
-	"special_bonus_unique_sniper_1"
+	"sniper_keen_scope"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel"						"4"		
+		"Innate"						"1"
+		"DependentOnAbility"			"sniper_assassinate"
+
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"25"
-				"ad_linked_abilities"			"sniper_shrapnel"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
+			"bonus_range"				"100 200 300 400"
 		}
 	}
 
@@ -347,18 +363,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"6"
-				"ad_linked_abilities"			"sniper_shrapnel"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -370,18 +375,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"25"
-				"ad_linked_abilities"			"sniper_headshot"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -394,17 +388,7 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"1"
-				"ad_linked_abilities"			"sniper_take_aim"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		
 	}
 
 	//=================================================================================================================
@@ -416,64 +400,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"-15"
-				"ad_linked_abilities"			"sniper_shrapnel"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_sniper_6"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"125"
-				"ad_linked_abilities"			"sniper_take_aim"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_sniper_grenade_range"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"						"special_bonus_base"
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_sniper_grenade_self_push"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"						"special_bonus_base"
+		"BaseClass" "special_bonus_base"
 	}
 	//=================================================================================================================
 	// Ability: Special Bonus
@@ -486,4 +413,15 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"special_bonus_base"
 	}
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_sniper_take_aim_armor"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}	
 }

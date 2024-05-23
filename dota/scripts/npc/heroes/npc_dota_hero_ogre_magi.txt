@@ -1,4 +1,3 @@
-// Abilities for ogre_magi
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -21,11 +20,24 @@
 				"value"					"6"
 				"special_bonus_unique_ogre_magi_dumb_luck_mana"			"+2"
 			}
+
 			"mana_regen_per_str"		
 			{ 
 				"value"			"0.03"
 				"special_bonus_unique_ogre_magi_dumb_luck_mana"			"+0.01"
 
+			}
+
+			"level_one_ability_points"
+			{
+				"value"				"1"
+				"special_bonus_facet_ogre_magi_learning_curve" "=0"
+			}
+
+			"level_two_ability_points"
+			{
+				"value"				"1"
+				"special_bonus_facet_ogre_magi_learning_curve" "=3"
 			}
 		}
 	}
@@ -77,6 +89,12 @@
 			{
 				"value"		"70 130 190 250"
 				"special_bonus_unique_ogre_magi_2"	"+240"
+			}
+
+			"required_level"
+			{
+				"value"						"1"
+				"special_bonus_facet_ogre_magi_learning_curve"	"-1"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -182,7 +200,6 @@
 			"scepter_mana"		"35"
 			"base_damage"			"150"
 			"str_multiplier"			"1.5"
-			
 		}
 	}
 
@@ -219,20 +236,25 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"duration"			"5 6 7 8"
-				"burn_damage"		
-				{
-					"value"				"20 30 40 50"
-					"LinkedSpecialBonus"	"special_bonus_unique_ogre_magi_4"
-				}		
-				"slow_movement_speed_pct"		"-20 -23 -26 -29"
-				"projectile_speed"		"1000"
-				"multicast_delay"	"0.6"
-				"ignite_multicast_aoe"	
-				{
-					"value"			"1400"
-					"affected_by_aoe_increase"	"1"
-				}				
+			"duration"			"5 6 7 8"
+			"burn_damage"		
+			{
+				"value"				"20 30 40 50"
+				"special_bonus_unique_ogre_magi_4" "+15"
+			}		
+			"slow_movement_speed_pct"		"-20 -23 -26 -29"
+			"projectile_speed"		"1000"
+			"multicast_delay"	"0.6"
+			"ignite_multicast_aoe"	
+			{
+				"value"			"1400"
+				"affected_by_aoe_increase"	"1"
+			}
+			"required_level"
+			{
+				"value"						"1"
+				"special_bonus_facet_ogre_magi_learning_curve"	"-1"
+			}		
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -269,24 +291,30 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"modelscale"				"25.0"
-				"bonus_movement_speed"		"7 9 11 13"
-				"bonus_attack_speed"
-				{
-					"value"					"30 45 60 75"
-					"LinkedSpecialBonus"	"special_bonus_unique_ogre_magi"
-				}
-				"self_bonus"
-				{
-					"value"					"40 60 80 100"
-					"LinkedSpecialBonus"	"special_bonus_unique_ogre_magi"
-				}
-				"duration"					"30"
-				"multicast_bloodlust_aoe"
-				{
-					"value"						"700"
-					"affected_by_aoe_increase"	"1"
-				}
+			"modelscale"				"25.0"
+			"bonus_movement_speed"		"7 9 11 13"
+			"bonus_attack_speed"
+			{
+				"value"					"30 45 60 75"
+				"special_bonus_unique_ogre_magi" "+30"
+			}
+			"self_bonus"
+			{
+				"value"					"40 60 80 100"
+				"special_bonus_unique_ogre_magi" "+30"
+			}
+			"duration"					"30"
+			"multicast_bloodlust_aoe"
+			{
+				"value"						"700"
+				"affected_by_aoe_increase"	"1"
+			}
+
+			"required_level"
+			{
+				"value"						"1"
+				"special_bonus_facet_ogre_magi_learning_curve"	"-1"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -304,23 +332,39 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"multicast_2_times"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"multicast_2_times"		"75 75 75"
+				"value"		"75"
+				// Have the bonus listed here so the value shows as modified, actual modification is done by strenght_mult
+				"special_bonus_facet_ogre_magi_fat_chance" "+0"
 			}
 
-			"02"
+			"multicast_3_times"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"multicast_3_times"		"0 30 30"
+				"value"		"0 30 30"
+				// Have the bonus listed here so the value shows as modified, actual modification is done by strenght_mult
+				"special_bonus_facet_ogre_magi_fat_chance" "+0"
 			}
-			"03"
+
+			"multicast_4_times"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"multicast_4_times"		"0 0 15"
+				"value"		"0 0 15"
+				// Have the bonus listed here so the value shows as modified, actual modification is done by strenght_mult
+				"special_bonus_facet_ogre_magi_fat_chance" "+0"
+			}
+
+			"strength_mult"
+			{
+				"value"						"0"
+				"special_bonus_facet_ogre_magi_fat_chance"	"=0.05"
+			}
+
+			"required_level"
+			{
+				"value"						"6"
+				"special_bonus_facet_ogre_magi_learning_curve"	"-1"
 			}
 		}
 	}
@@ -347,38 +391,30 @@
 		"AbilityCastPoint"				"0.56"
 		"AbilityCooldown"				"5.0"
 		"AbilityManaCost"				"40"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityValues"
 		{
-			"01"
+			"armor_bonus"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"armor_bonus"			"4 5 6 8"
+				"value" "4 5 6 8"
 			}
-			"02"
+			"duration"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"45.0"
+				"value" "45"
 			}
-			"03"
+			"movespeed_slow"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"movespeed_slow"		"-22 -24 -26 -30"
+				"value" "-22 -24 -26 -30"
 			}
-			"04"
+			"attackspeed_slow"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"attackspeed_slow"		"-22 -24 -26 -30"
+				"value" "-22 -24 -26 -30"
 			}
-			"05"
+			"slow_duration"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"slow_duration"			"5.0"
+				"value" "5"
 			}
 		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
 
 	//=================================================================================================================
@@ -390,18 +426,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"25"
-				"ad_linked_abilities"			"ogre_magi_bloodlust"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -425,16 +450,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"17"
-				"ad_linked_abilities"			"ogre_magi_fireblast"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "17"
+				"ad_linked_abilities" "ogre_magi_fireblast"
 			}
 		}
 	}
@@ -448,18 +469,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"15"
-				"ad_linked_abilities"			"ogre_magi_ignite"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================

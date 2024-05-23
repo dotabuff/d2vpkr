@@ -1,4 +1,3 @@
-// Abilities for witch_doctor
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -64,8 +63,10 @@
 				"bounce_delay"			"0.1"
 				"bounce_bonus_damage"
 				{
-					"value"					"10 15 20 25"
+					"value"							"0"
 					"CalculateSpellDamageTooltip"	"1"
+					"special_bonus_facet_witch_doctor_headhunter"	"+35"
+					"RequiresFacet"				"witch_doctor_headhunter"
 				}
 				"creep_damage_pct"		"150"
 		}
@@ -100,21 +101,35 @@
 				"mana_per_second"			
 				{
 					"value"	"8 12 16 20"
-					"LinkedSpecialBonus"	"special_bonus_unique_witch_doctor_4"
-					"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
-					"LinkedSpecialBonusField"	"value"
+				"special_bonus_unique_witch_doctor_4" "x0.75"
+				}
+				"tooltip_mana_per_second"			
+				{
+				"special_bonus_unique_witch_doctor_4" "+25"
 				}
 				"radius"					
 				{
 					"value"			"500 550 600 650"
+					"special_bonus_facet_witch_doctor_voodoo_festeration"	"+200"
 					"affected_by_aoe_increase"	"1"
 				}
 				"heal"						
 				{
 					"value"			"20 30 40 50"
 					"DamageTypeTooltip"			"DAMAGE_TYPE_MAGICAL"
+					"special_bonus_facet_witch_doctor_voodoo_festeration"	"+10"
 				}
 				"heal_interval"				"0.33 0.33 0.33 0.33"
+				"does_heal"
+				{
+					"value"			"1"
+					"special_bonus_facet_witch_doctor_voodoo_festeration"	"=0"
+				}
+				"does_damage"
+				{
+					"value"			"0"
+					"special_bonus_facet_witch_doctor_voodoo_festeration"	"+1"
+				}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -136,7 +151,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"575"
+		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0.35 0.35 0.35 0.35"
 
 		// Time		
@@ -146,7 +161,7 @@
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"12 18 24 30"
+		"AbilityDamage"					"15 20 25 30"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -158,14 +173,14 @@
 		{
 				"radius"
 				{
-					"value"			"180"
-					"LinkedSpecialBonus"	"special_bonus_unique_witch_doctor_6"
+					"value"			"200"
 					"affected_by_aoe_increase"	"1"
+				"special_bonus_unique_witch_doctor_6" "+100"
 				}
 				"bonus_damage"				
 				{
 					"value"			"16 24 32 40"
-					"LinkedSpecialBonus"	"special_bonus_unique_witch_doctor_7"
+				"special_bonus_unique_witch_doctor_7" "+30"
 				}
 				"bonus_damage_threshold"	"100"
 				"ticks"
@@ -199,7 +214,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600"
+		"AbilityCastRange"				"500"
 		"AbilityCastPoint"				"0.35 0.35 0.35"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
@@ -219,14 +234,20 @@
 		{
 				"damage"					
 				{
-					"value"		"65 100 135"
-					"LinkedSpecialBonus"	"special_bonus_unique_witch_doctor_5"
+					"value"		"60 95 130"
+					"special_bonus_unique_witch_doctor_5"	"+45"
+					"special_bonus_facet_witch_doctor_cleft_death"	"-30%"
 					"CalculateSpellDamageTooltip"	"0"
 				}
 				"attack_range_tooltip"		
 				{
 					"value"		"600"
-					"LinkedSpecialBonus"	"special_bonus_unique_witch_doctor_1"
+					"special_bonus_unique_witch_doctor_1"	"+75"
+				}
+				"bonus_attack_range"
+				{
+					"value"					"0"
+					"special_bonus_unique_witch_doctor_1"	"+75"
 				}
 				"bounce_radius"				
 				{
@@ -240,6 +261,11 @@
 					"RequiresScepter"		"1"
 				}
 				"bonus_accuracy"			"50"
+				"initial_target_count"
+				{
+					"value"						"1"
+					"special_bonus_facet_witch_doctor_cleft_death"	"+1"
+				}
 		}
 	}
 	
@@ -262,31 +288,59 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"40"
+		"AbilityCooldown"				"50"
 
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"200"
-
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityValues"
 		{
-			"01"
+			"duration"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"		"3"
+				"value" "3"
 			}
-			"02"
+			"attack_speed_reduction"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"attack_speed_reduction"		"40"
+				"value" "45"
 			}
 		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
+
+	//=================================================================================================================
+	// Witch Doctor: Innate Maledict Health Restoration Reduction
+	//=================================================================================================================
+	"witch_doctor_innate_maledict_heal_reduction"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"health_restoration_reduction"		"30"
+		}
+	}
+	//=================================================================================================================
+	// Witch Doctor: Innate Grisgris item
+	//=================================================================================================================
+	"witch_doctor_gris_gris"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"AbilityValues"
+		{
+			"death_gold_lost_reduction_pct_tooltip"		"100"
+			"gold_tick_interval_tooltip"		"3"
+		}
+	}
+
+
 
 	//=================================================================================================================
 	// Ability: Special Bonus
@@ -297,18 +351,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"75"
-				"ad_linked_abilities"			"witch_doctor_death_ward"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -320,16 +363,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"2"
-				"ad_linked_abilities"			"witch_doctor_voodoo_restoration"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "2"
+				"ad_linked_abilities" "witch_doctor_voodoo_restoration"
 			}
 		}
 	}
@@ -356,24 +395,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"0.75" 					
-				"ad_linked_abilities"			"witch_doctor_voodoo_restoration"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER" 
-				"value2"				"25"					
-				"ad_linked_abilities"			"witch_doctor_voodoo_restoration"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -385,18 +407,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"45"
-				"ad_linked_abilities"			"witch_doctor_death_ward"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -408,18 +419,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"75"
-				"ad_linked_abilities"			"witch_doctor_maledict"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -431,17 +431,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"25"
-				"ad_linked_abilities"			"witch_doctor_maledict"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 }
