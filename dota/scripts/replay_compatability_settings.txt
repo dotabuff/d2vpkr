@@ -3,27 +3,31 @@
 	m_RenamedSerializers =
 	[
 		{ m_OldName = "CDOTAPlayer"			m_NewName = "CDOTAPlayerController" },
-	]
-	
-	m_RenamedTypes =
-	[
-		{ m_OldName =  "CHandle< CDOTAPlayer >"					m_NewName = "CHandle< C_DOTAPlayerController >" },
-		{ m_OldName =  "CDOTAPlayer"							m_NewName = "C_DOTAPlayerController" },
-
-		{ m_OldName =  "CUtlVector< AABB_t >"					m_NewName = "C_NetworkUtlVectorBase< NeutralSpawnBoxes_t >" },
-		{ m_OldName =  "AABB_t"									m_NewName = "NeutralSpawnBoxes_t" },
-
-		{ m_OldName =  "WeightedSuggestion_t"					m_NewName = "WeightedAbilitySuggestion_t" },
-		{ m_OldName =  "int32"									m_NewName = "AbilityID_t" },
-
-		{ m_OldName = "uint32"									m_NewName = "LeagueID_t" },
-		{ m_OldName = "uint64"									m_NewName = "MatchID_t" },
 
 		// Fixes for misnamed types that shipped to public and are therefore encoded in replays.
 		{ m_OldName = "CODTA_Item_Gossamer_Cape"					m_NewName = "CDOTA_Item_Gossamer_Cape" },
 		{ m_OldName = "CDOTA_Lamp_Use"								m_NewName = "CDOTA_Ability_Lamp_Use" },
 		{ m_OldName = "DOTA_Ability_Beastmaster_DrumsOfSlom"		m_NewName = "CDOTA_Ability_Beastmaster_DrumsOfSlom" },
 		{ m_OldName = "DOTA_Ability_Beastmaster_DrumsOfSlom_Stop"	m_NewName = "CDOTA_Ability_Beastmaster_DrumsOfSlom_Stop" },
+
+		// Anything that used to not have its own network class would network as the now-abstract CDOTABaseAbility, so
+		// pretend they're now CDOTAEmptyAbility which we can actually instantiate at run-time.
+		{ m_OldName = "CDOTABaseAbility"	m_NewName = "CDOTAEmptyAbility" },
+	]
+	
+	m_RenamedTypes =
+	[
+		{ m_OldName = "CHandle< CDOTAPlayer >"			m_NewName = "CHandle< C_DOTAPlayerController >" },
+		{ m_OldName = "CDOTAPlayer"						m_NewName = "C_DOTAPlayerController" },
+
+		{ m_OldName = "CUtlVector< AABB_t >"			m_NewName = "C_NetworkUtlVectorBase< NeutralSpawnBoxes_t >" },
+		{ m_OldName = "AABB_t"							m_NewName = "NeutralSpawnBoxes_t" },
+
+		{ m_OldName = "WeightedSuggestion_t"			m_NewName = "WeightedAbilitySuggestion_t" },
+		{ m_OldName = "int32"							m_NewName = "AbilityID_t" },
+
+		{ m_OldName = "uint32"							m_NewName = "LeagueID_t" },
+		{ m_OldName = "uint64"							m_NewName = "MatchID_t" },
 	]
 
 	m_FieldTypeAliases =
