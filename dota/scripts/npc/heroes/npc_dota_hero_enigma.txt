@@ -355,11 +355,12 @@
 
 	"enigma_gravity_well"
 	{
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_NONE"	
-
-		"MaxLevel"						"1"
+		"DependentOnAbility"			"enigma_black_hole"
+		"MaxLevel"						"4"
 		"Innate"						"1"
+		"IsBreakable"					"1"
 
 		"AbilityValues"
 		{
@@ -373,7 +374,7 @@
 				"value"		"200"
 				"affected_by_aoe_increase"	"1"
 			}
-			"damage_reduction"	"15"
+			"damage_reduction"	"9 11 13 15"
 		}
 	}
 	//=================================================================================================================
@@ -387,6 +388,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"MaxLevel"						"1"
+		"IsBreakable"					"1"
 		"AbilityValues"
 		{
 				"damage_threshold"				"350"
@@ -404,7 +406,10 @@
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"MaxLevel"						"1"
+		"MaxLevel"						"4"
+		"DependentOnAbility"			"enigma_black_hole"
+		"IsBreakable"					"1"
+
 		"AbilityValues"
 		{
 			"radius"			
@@ -412,7 +417,7 @@
 				"value"		"600"
 				"affected_by_aoe_increase"	"1"
 			}
-			"speed_bonus"		"15"
+			"speed_bonus"		"9 11 13 15"
 			"vision_cone"		"0.08715"
 		}
 	}	

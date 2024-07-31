@@ -55,7 +55,8 @@
 			}
 			"AbilityChargeRestoreTime"
 			{
-				"value"						"90"
+				"value"											"0"
+				"special_bonus_facet_doom_bringer_gluttony"		"=90"
 			}
 			"AbilityCooldown"
 			{
@@ -76,10 +77,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_NONE"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_NONE"
 
 		"MaxLevel"						"1"
 		"Innate"						"1"
+		"IsBreakable"					"1"
 		"AbilityValues"
 		{
 			"bonus_damage"	"15"
@@ -240,12 +242,14 @@
 		{
 			"duration"				
 			{
-				"value"								"12 14 16"
+				"value"												"12 14 16"
+				"special_bonus_facet_doom_bringer_impending_doom"	"+0"		// this is needed for facet tooltip to recognize that it's modifying this value
+				"dynamic_value"										"true"
 			}
-
 			"damage"
 			{
-				"value"								"30 50 70"
+				"value"												"30 50 70"
+				"special_bonus_facet_doom_bringer_impending_doom"	"=30 =45 =60"
 			}				
 			"deniable_pct"			"25 25 25"
 			"AbilityCooldown"
@@ -272,7 +276,16 @@
 			{
 				"special_bonus_scepter"						"0"
 			}
-			
+			"upgrade_interval"
+			{
+				"value"												"0.0"
+				"special_bonus_facet_doom_bringer_impending_doom"	"=6.66"
+			}
+			"upgrade_amount"
+			{
+				"value"												"0.0"
+				"special_bonus_facet_doom_bringer_impending_doom"	"+0.66"
+			}
 		}
 	}
 

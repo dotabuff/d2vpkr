@@ -166,6 +166,7 @@
 		"HasScepterUpgrade"				"1"
 
 		"AbilityCastPoint"				"0"
+		"IsBreakable"					"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -199,7 +200,7 @@
 			"activation_cooldown"					"24"
 			"activation_manacost"					"100"
 			"activation_delay"						"0.5"
-			"activation_num_quill_sprays"			"6"
+			"activation_num_quill_sprays"			"5"
 			"activation_spray_interval"				"0.4"
 			"activation_angle"						"45"
 			"cast_range_bonus"						"0"
@@ -212,6 +213,31 @@
 		"AbilityCastAnimation"		"ACT_DOTA_SPAWN"
 	}
 
+
+	//=================================================================================================================
+	// Bristleback: Innate Danger Zone
+	//=================================================================================================================
+	"bristleback_prickly"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"IsBreakable"					"1"
+
+		"AbilityValues"
+		{
+			"amp_pct"				"10"
+			"angle"			"110"
+		}
+	}
+
+
 	//=================================================================================================================
 	// Bristleback: Warpath
 	//=================================================================================================================
@@ -222,10 +248,16 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
-		"MaxLevel"						"4"
-		"Innate"						"1"
-		"RequiredLevel"					"0"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+		"IsBreakable"					"1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"45.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"55 65 75"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -237,18 +269,39 @@
 		{
 			"damage_per_stack"
 			{
-				"value"					"5 15 20 25"
+				"value"					"15 20 25"
 				"special_bonus_facet_bristleback_berserk"	"=5"
 				"special_bonus_unique_bristleback_3"	"+18"
 			}
 			"aspd_per_stack"
 			{
 				"value"					"0"
-				"special_bonus_facet_bristleback_berserk"	"=5 =10 =15 =20"				
+				"special_bonus_facet_bristleback_berserk"	"=10 =15 =20"				
 			}
-			"move_speed_per_stack"		"0 2 3 4"
-			"stack_duration"				"12.0 16.0 18.0 20.0"
-			"max_stacks"					"4 8 10 12"
+			"move_speed_per_stack"		"2 3 4"
+			"stack_duration"				"16.0 18.0 20.0"
+			"max_stacks"					"8 10 12"
+
+			"active_bonus_attack_percent"
+			{
+				"value"									"0"
+				"special_bonus_facet_bristleback_seeing_red"				"50"
+			}
+			"active_bonus_movement_percent"
+			{
+				"value"									"0"
+				"special_bonus_facet_bristleback_seeing_red"				"50"
+			}
+			"active_duration"						
+			{
+				"value"				"0"
+				"special_bonus_facet_bristleback_seeing_red"				"4 5 6"
+			}
+			"active_view_angle_restriction"
+			{
+				"value"				"0"
+				"special_bonus_facet_bristleback_seeing_red"				"90"
+			}
 		}
 	}
 

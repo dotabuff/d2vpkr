@@ -83,20 +83,15 @@
 				"value"								"0"
 				"special_bonus_facet_puck_curveball"			"0.6"
 			}
-			"orb_particle_offset_z"
-			{
-				"value"								"0"
-				"special_bonus_facet_puck_curveball"			"80.0"
-			}
 			"vector_reticle_distance"
 			{
 				"value"								"0"
-				"special_bonus_facet_puck_curveball"			"300.0"
+				"special_bonus_facet_puck_curveball"			"200.0"
 			}
 			"vector_reticle_radius"
 			{
 				"value"								"0"
-				"special_bonus_facet_puck_curveball"			"50.0"
+				"special_bonus_facet_puck_curveball"			"0.0"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -125,8 +120,10 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"		
-		"Innate"					"1"
-		"MaxLevel"					"1"
+		"Innate"						"1"
+		"MaxLevel"						"1"
+		"IsBreakable"					"1"
+
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
@@ -182,7 +179,7 @@
 				"silence_duration"		
 				{
 					"value"					"2.0 2.5 3.0 3.5"
-					"special_bonus_unique_puck_7"	"+1.0"
+					"special_bonus_unique_puck_7"	"+1.25"
 				}
 				"damage"				
 				{
@@ -302,7 +299,6 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"75"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -317,13 +313,20 @@
 
 		"AbilityValues"
 		{
+				"AbilityCooldown"				
+				{
+					"value"				"75"
+					"special_bonus_unique_puck"		"-10"
+
+				}
+
 				"coil_duration"				"6.0"
 				"coil_break_radius"			"600"
 				"stun_duration"				"0.5"
 				"coil_initial_damage"
 				{	
 					"value"					"175 250 325"
-					"special_bonus_unique_puck_coil_damage"			"+150"
+					"special_bonus_unique_puck_coil_damage"			"+200"
 				}
 				"coil_stun_duration"		
 				{
@@ -332,7 +335,7 @@
 				"coil_break_damage"			
 				{
 					"value"					"200 300 400"
-					"special_bonus_unique_puck_coil_damage"			"+175"
+					"special_bonus_unique_puck_coil_damage"			"+200"
 				}
 				"coil_radius"				
 				{
@@ -366,11 +369,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ad_linked_abilities"			"puck_dream_coil"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-		"AbilityValues"
-		{
-				"value"				"10"
-		}
+		"BaseClass"						"special_bonus_base"
+
 	}
 
 	//=================================================================================================================

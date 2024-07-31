@@ -13,34 +13,64 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"		
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilitySound"					"Hero_Antimage.ManaBreak"
-		"MaxLevel"						"5"
-		"RequiredLevel"					"-1"
-		"Innate"						"1"
+		"IsBreakable"					"1"
 
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
 			"percent_damage_per_burn"		"50"
-			"mana_per_hit"			"16 23 30 37 44"
+			"mana_per_hit"					"25 30 35 40"
 			"mana_per_hit_pct"		
 			{
-				"value"		"0.8 1.6 2.4 3.2 4"
+				"value"								"1.6 2.4 3.2 4"
 				"special_bonus_unique_antimage_7"	"+1"
 			}
 			"illusion_percentage"		"50"
-			"move_slow"				
+			"empowered_max_burn_pct"
 			{
-				"value"			"0"
-				"special_bonus_unique_antimage_5"		"+40"
+				"value"								"0.0"
+				"special_bonus_scepter"				"+20.0"		// NOTE: Update blink empowered_max_burn_pct_tooltip values
 			}
-			"slow_duration"			
+			"empowered_mana_break_debuff_duration"
 			{
-				"value"			"0"
-				"special_bonus_unique_antimage_5"		"+0.75"
+				"value"						"0"
+				"special_bonus_scepter"		"+6.0"				// NOTE: Update blink empowered_mana_break_debuff_duration_tooltip values
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+
+	//=================================================================================================================
+	// Innate Ability: Puritan
+	//=================================================================================================================
+	"antimage_persectur"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"						"4"
+		"Innate"						"1"
+		"DependentOnAbility"			"antimage_mana_void"
+		"IsBreakable"					"1"
+
+		"AbilityValues"
+		{
+			"move_slow_min"
+			{
+				"value"								"12.5 15.0 17.5 20"
+				"special_bonus_unique_antimage_5"	"+5"
+			}
+			"move_slow_max"
+			{
+				"value"								"25 30 35 40"
+				"special_bonus_unique_antimage_5"	"+10"
+			}
+			"mana_threshold"						"50"
+			"slow_duration"		"0.75"
+			"zero_tooltip"		"0"
+		}
 	}
 	
 	//=================================================================================================================
@@ -51,8 +81,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_OVERSHOOT"
-
-        "HasScepterUpgrade"             "0"
+		"HasScepterUpgrade"				"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -76,7 +105,7 @@
 				"AbilityCooldown"				
 				{
 					"value"			"13.5 11 8.5 6"
-					"special_bonus_unique_antimage"	"-1"
+					"special_bonus_scepter"	"-1"
 				}
 				"AbilityCastRange"			
 				{
@@ -84,6 +113,21 @@
 					"special_bonus_unique_antimage_3"	"+200"
 				}
 				"min_blink_range"		"200"
+				"empowered_mana_break_duration"
+				{
+					"value"						"0"
+					"special_bonus_scepter"		"+5.0"
+				}
+				"empowered_max_burn_pct_tooltip"
+				{
+					"value"								"0.0"
+					"special_bonus_scepter"				"+20.0"	// NOTE: tooltip only: update empowered_max_burn_pct value
+				}
+				"empowered_mana_break_debuff_duration_tooltip"
+				{
+					"value"						"0"
+					"special_bonus_scepter"		"+6.0"			// NOTE: tooltip only: update empowered_mana_break_debuff_duration value
+				}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -118,6 +162,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilityDraftShardAbility"		"antimage_counterspell_ally"
+		"IsBreakable"					"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -244,6 +289,7 @@
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Antimage.ManaVoid"
 		"AbilityDraftUltScepterAbility"		"antimage_mana_overload"
+		"IsBreakable"					"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -279,6 +325,7 @@
 			"mana_void_ministun"			
 			{
 				"value"					"0.3"
+				"special_bonus_unique_antimage_8"	"+0.7"
 			}			
 			"mana_void_aoe_radius"			
 			{
@@ -445,6 +492,19 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	}
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_antimage_8"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
+
 	"special_bonus_unique_antimage_manavoid_aoe"
 	{
 		// General

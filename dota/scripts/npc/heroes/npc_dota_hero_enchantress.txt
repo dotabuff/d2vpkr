@@ -15,6 +15,7 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityDraftUltScepterAbility"		"enchantress_bunny_hop"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+		"IsBreakable"					"1"
 		"AbilityValues"
 		{
 			"slow_attack_speed"
@@ -204,6 +205,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
 		"AbilitySound"					"Hero_Enchantress.NaturesAttendantsCast"
+		"IsBreakable"					"1"
 
 
 		// Casting
@@ -318,20 +320,27 @@
 	}
 
 	//=================================================================================================================
-	// Ability: Extra Credit (bonus neutral token drops)
+	// Enchantress: Woodland Uprising
 	//=================================================================================================================
-	"enchantress_forest_freebie"
+	"enchantress_rabblerouser"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"MaxLevel"						"1"
 		"Innate"						"1"
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
+		"IsBreakable"					"1"
+		
 		"AbilityValues"
 		{
-			"additional_neutral_tokens"				"1"
+			"base_damage_amp"			"10"
+			"damage_amp_per_level"		"3"
+			"damage_increase_tooltip"
+			{
+				"dynamic_value"			"true"
+			}
 		}
 	}
 

@@ -88,7 +88,7 @@
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"11 9 7 5"
-		"AbilityDuration"				"12"
+		"AbilityDuration"				"6"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -105,6 +105,12 @@
 				"value" "-5 -6 -7 -8"
 				"special_bonus_unique_templar_assassin_2" "+-3"
 			}
+			"bash_duration"
+			{
+				"value"				"0"
+				"special_bonus_unique_templar_assassin_7"			"=1.0"
+			}
+
 		}
 	}
 	
@@ -118,22 +124,20 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"MaxLevel"						"5"
-		"RequiredLevel"					"-1"
-		"Innate"						"1"
-	
+		"IsBreakable"					"1"
+		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
 				"bonus_attack_range"		
 				{
-					"value"		"0 50 100 150 200"
+					"value"		"50 100 150 200"
 					"special_bonus_unique_templar_assassin_8"	"+100"
 				}
 				"attack_spill_range"		
 				{
-					"value"							"350 550 600 650 700"
+					"value"							"550 600 650 700"
 					"special_bonus_unique_templar_assassin_8"	"+100"
 				}
 				"attack_spill_width"		
@@ -141,16 +145,22 @@
 					"value"		"90"
 					"affected_by_aoe_increase"	"1"
 				}
-				"attack_spill_pct"			"80 85 90 95 100"
+				"attack_spill_pct"			"85 90 95 100"
+
+				"meld_strike_spills"
+				{
+					"value"											"0.0"
+					"special_bonus_facet_templar_assassin_voidblades"	"+1.0"
+				}
 
 				"spill_slow_duration"
 				{
 					"value"											"0.0"
-					"special_bonus_facet_templar_assassin_voidblades"	"+3.0"
+					//"special_bonus_facet_templar_assassin_voidblades"	"+3.0"
 				}
 				"spill_movement_slow_pct"
 				{
-					"special_bonus_facet_templar_assassin_voidblades"	"5 10 15 20 25"
+					//"special_bonus_facet_templar_assassin_voidblades"	"5 10 15 20 25"
 				}
 				
 		}
@@ -245,6 +255,26 @@
 				}
 		}
 	}
+
+	//=================================================================================================================
+	// Templar Assassin: Third Eye (innate)
+	//=================================================================================================================
+	"templar_assassin_third_eye"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+
+	}
+
+
+
 
 	//=================================================================================================================
 	// Templar Assassin: Trap
@@ -406,14 +436,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityValues"
-		{
-			"value"
-			{
-				"value" "1"
-				"ad_linked_abilities" "templar_assassin_meld"
-			}
-		}
+		"BaseClass"				"special_bonus_base"
+
 	}
 
 	//=================================================================================================================

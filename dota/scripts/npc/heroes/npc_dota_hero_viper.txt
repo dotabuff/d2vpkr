@@ -154,10 +154,8 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"hero_viper.CorrosiveSkin"
-		"MaxLevel"						"5"
-		"RequiredLevel"					"-1"
-		"Innate"						"1"
 		"HasScepterUpgrade"				"1"
+		"IsBreakable"					"1"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -170,16 +168,16 @@
 			"duration"					"4.0"
 			"bonus_attack_speed"
 			{
-				"value"								"3 6 14 22 30"
+				"value"								"8 16 24 32"
 				"special_bonus_unique_viper_6"		"+20"
 			}
 			"bonus_magic_resistance"	
 			{
-				"value"								"5 10 15 20 25"
+				"value"								"10 15 20 25"
 			}
 			"damage"
 			{
-				"value"					"3 6 14 22 30"
+				"value"					"8 16 24 32"
 				"special_bonus_unique_viper_1"	"+20"
 			}
 			"max_range"
@@ -216,39 +214,29 @@
 	//=================================================================================================================
 	// Viper: Innate Corrosive Skin - Vile
 	//=================================================================================================================
-	"viper_innate_corrosive_skin_vile"
+	"viper_predator"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"MaxLevel"						"1"
-		"AbilityValues"
-		{
-			"additional_duration"		"1.0"
-		}
-	}
-	//=================================================================================================================
-	// Viper: Innate Corrosive Skin - Virulent
-	//=================================================================================================================
-	"viper_innate_corrosive_skin_virulent"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
+		"Innate"						"1"
+		"IsBreakable"					"1"
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"MaxLevel"						"1"
 		"AbilityValues"
 		{
-			"bonus_status_resistance"			"3"
+			"damage_base"				"0.25"
+			"damage_per_level"			"0.05"
+			"total_damage_per_missing_health"
+			{
+				"dynamic_value"			"true"
+			}
 		}
-	}		
+	}	
 
 	//=================================================================================================================
 	// Viper: Viper Strike

@@ -36,7 +36,7 @@
 				"radius"					
 				{
 					"value"					"425"
-					"special_bonus_unique_underlord_8"	"+75"
+					"special_bonus_unique_underlord_8"	"+60"
 					"affected_by_aoe_increase"	"1"		
 				}
 				"wave_duration"					
@@ -117,12 +117,12 @@
 			"ensnare_duration"
 			{
 				"value"	"1.5 1.6 1.7 1.8"
-				"special_bonus_unique_underlord" "+0.65"
+				"special_bonus_unique_underlord" "+0.5"
 			}
 			"speed_bonus"
 			{
 				"value"						"0"
-				"special_bonus_unique_underlord_6" "+30"
+				"special_bonus_unique_underlord_6" "+25"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -140,9 +140,8 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"MaxLevel"						"5"
-		"Innate"						"1"		
-		"RequiredLevel"					"-1"
+		"IsBreakable"					"1"
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
@@ -155,26 +154,26 @@
 
 			"damage_reduction_pct"
 			{
-				"value"		"0 6 14 22 30"
+				"value"		"6 14 22 30"
 				"special_bonus_unique_underlord_3"	"+10"
 				"CalculateSpellDamageTooltip"		"0"
 				"DamageTypeTooltip"					"DAMAGE_TYPE_NONE"
 			}
 			"bonus_damage_from_creep"
 			{
-				"value"							"1 3 5 7 9"
+				"value"							"2 4 6 8"
 				"special_bonus_unique_underlord_3"	"+10%"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"bonus_damage_from_hero"
 			{
-				"value"							"25 30 35 40 45"
+				"value"							"30 35 40 45"
 				"special_bonus_unique_underlord_3"	"+10%"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"bonus_damage_duration"
 			{
-				"value"							"25 35 45 55 65"
+				"value"							"35 45 55 65"
 				"CalculateSpellDamageTooltip"	"0"
 				"DamageTypeTooltip"				"DAMAGE_TYPE_NONE"
 			}
@@ -313,17 +312,6 @@
 					"special_bonus_scepter"	"-10"
 				}
 				"duration"				"20.0"
-				"damage_reduction"		
-				{
-					"value"		"14 22 30"
-					"special_bonus_unique_underlord_7"	"+10"
-				}
-				"bonus_ms"				
-				{
-					"value"			"10 20 30"
-					"special_bonus_unique_underlord_7"	"+10"
-				}
-				"buff_duration"			"5.0"
 				"minimum_distance"		"1500"
 				"spawn_pit_on_cast"
 				{
@@ -377,6 +365,38 @@
 			"stop_distance"			"100"
 		}
 	}
+
+	//=================================================================================================================
+	// Underlord: Innate Conqueror
+	//=================================================================================================================
+	"abyssal_underlord_raid_boss"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+		"MaxLevel"						"4"
+		"Innate"						"1"
+		"DependentOnAbility"			"abyssal_underlord_dark_portal"
+		"IsBreakable"					"1"
+
+		"AbilityValues"
+		{
+			"damage_reduction"		
+			{
+				"value"		"4 6 8 10"
+				"special_bonus_unique_underlord_7"	"+5"
+			}
+			"bonus_ms"				
+			{
+				"value"			"5 10 15 20"
+				"special_bonus_unique_underlord_7"	"+5"
+			}
+			"dark_portal_multiplier"			"2"
+			"buff_duration"			"5.0"
+		}
+	}
+
 	//=================================================================================================================
 	// Ability: Abyssal Underlings
 	//=================================================================================================================
@@ -532,6 +552,7 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"IsBreakable"					"1"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -554,6 +575,7 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"IsBreakable"					"1"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -573,6 +595,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"IsBreakable"					"1"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------

@@ -52,56 +52,73 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilitySound"					"Hero_TrollWarlord.BerserkersRage.Toggle"
-		"MaxLevel"						"5"
-		"Innate"						"1"
-		"RequiredLevel"					"-1"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"IsBreakable"					"1"
+
+		"MaxLevel"						"4"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.2 0.2 0.2 0.2 0.2"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_hp"				"0"
 			"bonus_move_speed"
 			{
-				"value"		"5 15 25 35 45"
+				"value"		"15 25 35 45"
 				"special_bonus_unique_troll_warlord_2"		"+25"
 
 			}
 			"bonus_armor"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"value"			"1 2 3 4 5"
+				"value"			"2 3 4 5"
 				"special_bonus_unique_troll_warlord"		"+8"
-
 			}
 			"bonus_range"			"350"
 			"base_attack_time"		"1.4"
-			"ensnare_chance"			"20"
-			"ensnare_duration"			"0.4 0.8 1.2 1.6 2.0"
+			"ensnare_chance"		"20"
+			"ensnare_duration"		"0.8 1.2 1.6 2.0"
+			"maim_chance"			"20"
+			"maim_duration"			"0.8 1.2 1.6 2.0"
+			"maim_slow"				"8 16 24 32"	
+			"maim_attack_slow"				"8 16 24 32"	//note:currently unused in code, just tooltips.
+			"maim_damage"		
+			{
+				"value"					"5 10 15 20"
+				"CalculateSpellDamageTooltip"	"0"
+
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
 	//=================================================================================================================
-	// Troll 
+	// Troll Warlord: Switch Stance
 	//=================================================================================================================
-	"troll_warlord_innate_unflinching"
+	"troll_warlord_switch_stance"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilitySound"					"Hero_TrollWarlord.BerserkersRage.Toggle"
 		"MaxLevel"						"1"
+		"Innate"						"1"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.2"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_hp_pct"			"10"
+			"bonus_range"			"350"
+			"base_attack_time"		"1.4"
 		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
 	//=================================================================================================================
 	// Bristleback Innate Warpath Chaser
@@ -162,7 +179,7 @@
 			}
 			"axe_damage"				
 			{ 
-				"value"						"80 100 120 140"
+				"value"						"60 80 100 120"
 				"special_bonus_unique_troll_warlord_3"		"+100"
 			}
 			"axe_slow_duration"			
@@ -316,6 +333,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
  		"AbilityCastAnimation"			"ACT_INVALID"
 		"HasShardUpgrade"				"1"
+		"IsBreakable"					"1"
 		// Casting
 		"AbilityValues"
 		{
@@ -331,12 +349,12 @@
 			}
 			"extra_attack_chance_per_stack"
 			{
-				"value"	"4"
+				"value"	"3"
 				"RequiresShard"	"1"
 			}
 			"base_chance"
 			{
-				"value"	"18"
+				"value"	"16"
 				"RequiresShard"	"1"
 			}
 			"armor_per_stack"

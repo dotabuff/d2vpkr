@@ -152,12 +152,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-
-		"MaxLevel"						"5"
-		"Innate"						"1"
-		"RequiredLevel"					"-1"
-
 		"HasShardUpgrade"				"1"
+		"IsBreakable"					"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -165,12 +161,12 @@
 		{
 			"fiery_soul_attack_speed_bonus"	
 			{
-				"value"								"4 8 16 24 32"
+				"value"								"8 16 24 32"
 				"special_bonus_unique_lina_2"		"+10"
 			}
 			"fiery_soul_move_speed_bonus"	
 			{
-				"value"								"1 1.5 2 2.5 3.0"
+				"value"								"1.5 2 2.5 3.0"
 				"special_bonus_unique_lina_2"		"+1"
 			}
 			"fiery_soul_magic_resist"
@@ -364,6 +360,36 @@
 		}
 	}
 
+	//=================================================================================================================
+	// Ability: Lina Combustion
+	//=================================================================================================================
+	"lina_combustion"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"MaxLevel"						"4"
+		"DependentOnAbility"			"lina_laguna_blade"
+		"Innate"						"1"
+		"IsBreakable"					"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"damage_threshold"			"150"
+			"damage"					"10 30 50 70"
+			"damage_illusions"			"10 15 20 25"
+			"damage_aoe"
+			{
+				"value"					"400"
+				"affected_by_aoe_increase"	"1"
+			}
+			"duration"					"6"
+		}
+	}
 	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================

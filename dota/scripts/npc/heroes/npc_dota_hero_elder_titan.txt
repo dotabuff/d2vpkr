@@ -128,9 +128,6 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_ElderTitan.AncestralSpirit.Cast"
-		"MaxLevel"						"5"
-		"RequiredLevel"					"-1"
-		"Innate"						"1"
 
 		"HasScepterUpgrade"			"1"
 
@@ -138,15 +135,15 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_DOTA_ANCESTRAL_SPIRIT"
 		"AbilityCastGestureSlot"		"DEFAULT"
-		"AbilityCastPoint"				"0.4 0.4 0.4 0.4 0.4"
+		"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"25 23 21 19 17"
+		"AbilityCooldown"				"23 21 19 17"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"70 80 90 100 110"
+		"AbilityManaCost"				"80 90 100 110"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -182,24 +179,24 @@
 			"move_pct_creeps"				"1.5"
 			"move_pct_heroes"				
 			{
-				"value"		"4 5 6 7 8"
+				"value"		"5 6 7 8"
 				"special_bonus_unique_elder_titan_bonus_spirit_speed"	"+2"
 			}
 			"damage_creeps"					
 			{
-				"value"	"3 3 7 11 15"
+				"value"	"3 7 11 15"
 				"CalculateSpellDamageTooltip"				"0"
 				"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
 			}
 			"damage_heroes"
 			{
-				"value"		"10 17 38 59 80"
+				"value"		"17 38 59 80"
 				"special_bonus_unique_elder_titan"	"+25"
 				"CalculateSpellDamageTooltip"	"0"
 				"DamageTypeTooltip"				"DAMAGE_TYPE_NONE"
 			}
 			"armor_creeps"					"0.5"
-			"armor_heroes"					"1 1.5 3 4.5 6"
+			"armor_heroes"					"1.5 3 4.5 6"
 			"move_pct_cap"					"40"
 			"scepter_magic_immune_per_hero"	
 			{
@@ -261,6 +258,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
  		"AbilityCastAnimation"			"ACT_INVALID"
+		"IsBreakable"					"1"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -363,7 +361,6 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"100"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -373,6 +370,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+				"AbilityCooldown"
+				{
+					"value"				"100"
+					"special_bonus_unique_elder_titan_3"			"-60"
+				}
+
 				"crack_time"				"2.7182"
 				"crack_width"				
 				{
@@ -417,10 +420,29 @@
 		"MaxLevel"						"1"
 		"AbilityValues"
 		{
-			"attack_speed_from_movespeed"			"30"
+			"attack_speed_from_movespeed"			"25"
 			"attack_speed_penalty"					"75"
 		}
 	}	
+	//=================================================================================================================
+	// Constructor Innate
+	//=================================================================================================================
+	"elder_titan_tip_the_scales"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"damage_bonus"			"100"
+		}
+	}
 
 	//=================================================================================================================
 	// Ability: Special Bonus
@@ -468,14 +490,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityValues"
-		{
-			"value"
-			{
-				"value" "60"
-				"ad_linked_abilities" "elder_titan_earth_splitter"
-			}
-		}
+		"BaseClass"						"special_bonus_base"
+
 	}
 
 	//=================================================================================================================

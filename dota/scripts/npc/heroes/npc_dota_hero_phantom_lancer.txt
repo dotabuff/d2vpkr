@@ -53,8 +53,8 @@
 				"value"				"-14 -21 -28 -35"
 			}
 			"illusion_duration"			"2.0 4.0 6.0 8.0"
-			"illusion_damage_out_pct"	"-80"
-			"tooltip_illusion_damage"	"20"
+			"illusion_damage_out_pct"	"-85"
+			"tooltip_illusion_damage"	"15"
 			"illusion_damage_in_pct"	"300 300 300 300"
 			"tooltip_illusion_total_damage_in_pct"	"400 400 400 400"
 			"fake_lance_distance"		"675"
@@ -66,7 +66,7 @@
 			}
 			"scepter_bonus_illusion_damage"
 			{
-				"value"						"30"
+				"value"						"20"
 				"RequiresScepter"			"1"
 			}
 			"scepter_total_hits"
@@ -146,9 +146,10 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
-		"HasShardUpgrade"         "1"
+		"HasShardUpgrade"				"1"
+		"IsBreakable"					"1"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
@@ -171,16 +172,17 @@
 			"illusion_duration"			"8"
 			"illusion_damage_out_pct"
 			{
-				"value"							"-82 -80 -78"
+				"value"							"-87 -85 -83"
 				"CalculateSpellDamageTooltip"	"0"
-				"special_bonus_facet_phantom_lancer_divergence"		"+6"
+				"special_bonus_facet_phantom_lancer_divergence"		"+2"
+				"special_bonus_unique_phantom_lancer_6" "+6"
 			}
 			"tooltip_illusion_damage"
 			{
-				"value"							"18 20 22"
+				"value"							"13 15 17"
 				"CalculateSpellDamageTooltip"	"0"
-				"special_bonus_facet_phantom_lancer_divergence"		"+4"
-				"special_bonus_unique_phantom_lancer_6" "+10"
+				"special_bonus_facet_phantom_lancer_divergence"		"+2"
+				"special_bonus_unique_phantom_lancer_6" "+6"
 			}
 			"illusion_damage_in_pct"
 			{
@@ -229,43 +231,64 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_BREAK_DISABLES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
 		"AbilitySound"			"Hero_PhantomLancer.PhantomEdge"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"HasScepterUpgrade"				"0"
-		"Innate"						"1"
-		"MaxLevel"						"5"
-		"RequiredLevel"					"-1"
+		"HasScepterUpgrade"				"0"		
+		"MaxLevel"						"4"
+		"IsBreakable"					"1"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"16 13 10 7 4"
+		"AbilityCooldown"				"13 10 7 4"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"min_distance"		"275"
-				"max_distance"				
-				{
-					"value"				"525 600 675 750 825"
+			"min_distance"		"275"
+			"max_distance"				
+			{
+				"value"				"600 675 750 825"
 				"special_bonus_unique_phantom_lancer" "+300"
-				}
-				"bonus_speed"		"800"
-				"bonus_agility"		
-				{
-					"value"				"5 10 20 30 40"
-					"special_bonus_unique_phantom_lancer_phantom_rush_agility"			"10"
+			}
+			"bonus_speed"		"800"
+			"bonus_agility"		
+			{
+				"value"				"10 20 30 40"
+				"special_bonus_unique_phantom_lancer_phantom_rush_agility"			"10"
 
-				}
-				"agility_duration"		
-				{
-					"value"			"1.5"
-					"special_bonus_unique_phantom_lancer_2"		"+2.5"
-				}
+			}
+			"agility_duration"		
+			{
+				"value"			"1.5"
+				"special_bonus_unique_phantom_lancer_2"		"+2.5"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
+
+	//=================================================================================================================
+	// Ability: Inner Strength
+	//=================================================================================================================
+	"phantom_lancer_illusory_armaments"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"Innate"						"1"
+		"MaxLevel"						"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_to_base"
+			{				
+				"value"			"65"
+				"special_bonus_unique_phantom_lancer_illusory_armaments_dmg" "+15"
+			}
+		}
+	}
+
 	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================
@@ -371,5 +394,16 @@
 		"BaseClass"						"special_bonus_base"
 		"ad_linked_abilities"			"phantom_lancer_phantom_edge"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 	}
-	
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_phantom_lancer_illusory_armaments_dmg"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
 }

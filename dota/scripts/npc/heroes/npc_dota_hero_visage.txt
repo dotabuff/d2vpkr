@@ -113,6 +113,26 @@
 					"value"			"70"
 				"special_bonus_unique_visage_4" "+25"
 				}
+				"soul_charge_gold"
+				{
+					"value"												"0"
+					"special_bonus_facet_visage_gold_assumption"		"35"	// if changing this, change gold_max_tooltip
+				}
+				"gold_creep_pct"
+				{
+					"value"												"0"
+					"special_bonus_facet_visage_gold_assumption"		"15"
+				}
+				"gold_grace_period_hero"
+				{
+					"value"												"0"
+					"special_bonus_facet_visage_gold_assumption"		"3.0"
+				}
+				"gold_max_tooltip"
+				{
+					"value"												"0"
+					"special_bonus_facet_visage_gold_assumption"		"105 140 175 210"		// TOOLTIP ONLY, if changing this, change soul_charge_gold
+				}
 				"stack_limit"				"3 4 5 6"
 				"stack_duration"			"6.0"
 				"damage_limit"				
@@ -141,10 +161,8 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"HasShardUpgrade"             "1"
 		"AbilityDraftPreAbility"		"visage_summon_familiars_stone_form"
-		"MaxLevel"						"5"
-		"RequiredLevel"					"-1"
-		"Innate"						"1"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+		"IsBreakable"					"1"
 		"AbilityValues"
 		{
 			"max_layers"
@@ -153,11 +171,11 @@
 			}
 			"damage_reduction"
 			{
-				"value" "4 8 12 16 20"
+				"value" "8 12 16 20"
 			}
 			"recovery_time"
 			{
-				"value" "7 6 5 4 3"
+				"value" "7 6 5 4"
 			}
 			"minimum_damage"
 			{
@@ -326,7 +344,7 @@
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100"
+		"AbilityManaCost"				"115"
 		"AbilityValues"
 		{
 			"bonus_duration"
@@ -335,11 +353,11 @@
 			}
 			"bonus_damage"
 			{
-				"value" "25"
+				"value" "20"
 			}
 			"invis_duration"
 			{
-				"value" "35"
+				"value" "30"
 			}
 			"movespeed_bonus"
 			{
@@ -435,6 +453,28 @@
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_5"
 	}
+	//=================================================================================================================
+	// Visage Biding Time
+	//=================================================================================================================
+	"visage_lurker"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"IsBreakable"					"1"
+
+		"AbilityValues"
+		{
+			"max_stacks"				"10"
+			"stack_gain_time"			"2.0"
+			"cooldown_speed_per_stack"	"2.0"
+			"linger_duration"			"2"
+		}
+	}
+
 	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================

@@ -27,7 +27,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"80 90 100 110"
+		"AbilityManaCost"				"95 100 105 110"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -132,7 +132,7 @@
 				"second_attack_damage_penalty"
 				{
 					"value"					"0"
-					"special_bonus_facet_ember_spirit_double_impact"			"=40"
+					"special_bonus_facet_ember_spirit_double_impact"			"=50"
 				}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -150,9 +150,6 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_EmberSpirit.FlameGuard.Cast"
-		"MaxLevel"						"5"
-		"RequiredLevel"					"-1"
-		"Innate"						"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -171,40 +168,74 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"duration"						"10 12 14 16 18"
+				"duration"						"12 14 16 18"
 				"passive_radius"						
 				{
 					"value"		"150"
 					"affected_by_aoe_increase"	"1"
 				}
 				"tick_interval"					"0.2"
-				"passive_damage_per_second"				
+				"damage_per_second"				
 				{
-					"value"			"10 15 20 25 30"	
+					"value"			"20 30 40 50"	
 					"special_bonus_unique_ember_spirit_3"			"+100%"			
 				}
-				"blind_pct"				"50"
 				"linger_duration"		"0.5"
-				"active_radius"			
+				"radius"			
 				{
 					"value"				"500"
 					"affected_by_aoe_increase"	"1"
 				}
-				"active_damage_per_second"
-				{
-					"value"			"15 25 35 45 55"
-					"special_bonus_unique_ember_spirit_3"			"+100%"
-				}
 				"shield_pct_absorb"		"70"
 				"absorb_amount"					
 				{
-					"value"						"30 60 135 210 285"
+					"value"						"60 135 210 285"
 					"special_bonus_unique_ember_spirit_1"			"+200"
 				}	
 
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
+
+	//=================================================================================================================
+	// Ember Spirit: Smolder
+	//=================================================================================================================
+	"ember_spirit_immolation"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Hero_EmberSpirit.FlameGuard.Cast"
+		"DependentOnAbility"			"ember_spirit_fire_remnant"
+
+		"MaxLevel"						"4"
+		"Innate"						"1"
+		"HasShardUpgrade"				"1"
+		"IsBreakable"					"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"radius"						
+				{
+					"value"		"175"
+					"special_bonus_shard"			"+175"
+					"affected_by_aoe_increase"	"1"
+				}
+				"tick_interval"					"0.2"
+				"damage"				
+				{
+					"value"			"10 20 30 40"	
+					"special_bonus_shard"			"+10"
+				}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+
 
 	//=================================================================================================================
 	// Ember Spirit: Fire Remnant
@@ -277,17 +308,7 @@
 					"value"			"5"
 					"RequiresScepter"	"1"
 				}
-                "shard_radius"				
-				{
-					"value"			"450"
-					"RequiresShard"				"1"
-					"affected_by_aoe_increase"	"1"
-				}
-                "shard_damage_per_second"	
-				{
-					"value"		"45"
-					"RequiresShard"				"1"
-				}
+
                 "shard_charge_radius"				
 				{
 					"value"		"400"

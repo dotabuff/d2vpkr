@@ -17,6 +17,7 @@
 		"MaxLevel"						"1"
 		"FightRecapLevel"				"1"
 		"IsGrantedByShard"				"1"
+		"IsBreakable"					"1"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -40,6 +41,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"		
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"IsBreakable"					"1"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -100,7 +102,7 @@
 			"AbilityCastPoint"					"0.2"
 			"AbilityCooldown"					
 			{
-				"value"				"13 12 11 10"
+				"value"				"15 14 13 12"
 				"special_bonus_unique_medusa_5"					"-3"
 			}
 			"AbilityManaCost"					"80 100 120 140"
@@ -141,7 +143,7 @@
 				"value"			"30"
 			}
 			
-			"slow_duration"						"3"
+			"slow_duration"						"0"
 
 
 			"max_attacks"					
@@ -173,31 +175,25 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"		
 		"AbilitySound"					"Hero_Medusa.ManaShield.On"
-		"MaxLevel"						"5"
-		"RequiredLevel"					"-1"
+		"MaxLevel"						"1"
 		"Innate"						"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"damage_per_mana"		
-			{
-				"value"								"2 2.4 2.8 3.2 3.6"
-				"special_bonus_unique_medusa_6"		"+1.9"
-			}
-
-			"illusion_damage_per_mana"
-			{
-				"value"								"1 1.4 1.8 2.2 2.6"
-				"special_bonus_unique_medusa_6"		"+1"
-			}
+			"damage_per_mana"						"2.4"
+			"damage_per_mana_per_level"				"0.1"
+			"illusion_percentage"					"60"
 
 			"absorption_pct"						"98"
-
+			"damage_per_mana_total"
+			{
+				"dynamic_value"			"true"
+			}
 
 			// for the Toggle facet
 			"aspd_increase_smoothness"						"0.015"
@@ -282,7 +278,7 @@
 			}
 			"AbilityManaCost"				
 			{
-				"value"							"150"
+				"value"							"200"
 				"special_bonus_unique_medusa_stone_gaze_cooldown"							"-50%"
 			}
 			"radius"							
@@ -303,9 +299,89 @@
 			{
 				"value"							"35 45 55"
 				"DamageTypeTooltip"				"DAMAGE_TYPE_PHYSICAL"
-				"special_bonus_unique_medusa_8"	"+8"
+				"special_bonus_unique_medusa_8"	"+10"
 			}
 			"speed_boost"						"50"
+		}
+	}
+
+	//=================================================================================================================
+	// Medusa: Gorgon's Grasp
+	//=================================================================================================================
+	"medusa_gorgon_grasp"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Ability.Torrent"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"625"
+		"AbilityCastPoint"				"0.4"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"40 60 80 100"
+		"AbilityCooldown"				"30 27 24 21"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.5"	// applies 2 modifiers
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"radius"
+			{
+				"value"					"150"
+				"affected_by_aoe_increase"	"1"
+			}
+
+			"radius_grow"				"50"
+
+			"delay"						"1"
+			"volley_interval"			".25"
+			"volley_spread_pct"			"170"
+			"volley_count"				
+			{
+				"value"					"3"
+				"special_bonus_special_bonus_unique_medusa_gorgons_grasp_volleys"			"1"
+			}
+
+			"duration"					"0.8 1.2 1.6 2.0"
+			"damage"					"30 70 110 150"
+			"damage_pers"				"100"
+			"damage_interval"			".2"
+		}		
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+
+	//=================================================================================================================
+	// Medusa: Venomed Arrows Passive
+	//=================================================================================================================
+	"medusa_venomed_volley"
+	{
+				// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"MaxLevel"						"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"duration"				"1.5"
+			"move_slow"				"35"
+			"attack_slow"			"80"
+			"cast_slow"				"50"
+			"attack_count"			"5"
 		}
 	}
 
@@ -404,6 +480,16 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"special_bonus_base"
+	}
+	
+	"special_bonus_special_bonus_unique_medusa_gorgons_grasp_volleys"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
 	}	
+	
 }
 

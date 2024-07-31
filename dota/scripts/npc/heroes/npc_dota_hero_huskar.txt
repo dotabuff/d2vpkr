@@ -174,20 +174,41 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"health_cost"					
+				"health_cost"	// current HP, not max
 				{
-					"value"			"4"
-					"DamageTypeTooltip"				"DAMAGE_TYPE_MAGICAL"
+					"value"												"4"
+					"DamageTypeTooltip"									"DAMAGE_TYPE_MAGICAL"
+					"special_bonus_facet_huskar_nothl_conflagration"	"=0"
+				}
+				"max_health_cost"
+				{
+					"value"												"0"
+					"DamageTypeTooltip"									"DAMAGE_TYPE_MAGICAL"
+					"special_bonus_facet_huskar_nothl_conflagration"	"=4"
 				}
 				"burn_damage"					
 				{
-					"value"					"5 10 15 20"
-				"special_bonus_unique_huskar_2" "+4"
-				}		
+					"value"							"5 10 15 20"
+					"special_bonus_unique_huskar_2" "+4"
+				}
+				"burn_damage_max_pct"					
+				{
+					"value"												"0"
+					"special_bonus_facet_huskar_nothl_conflagration"	"+1.0"
+				}
 				"duration"						
 				{
-					"value"					"9"
-					"special_bonus_unique_huskar_5"	"+6"
+					"value"												"9"
+					"special_bonus_facet_huskar_nothl_conflagration"	"=0"
+					"special_bonus_unique_huskar_5"						"+6"
+				}
+				// having a separate value here instead of doing +67% burning spears duration for level 25 talent
+				"duration_for_nothl_conflagration"
+				{
+					"value"												"0"
+					"special_bonus_facet_huskar_nothl_conflagration"	"=6"
+					"special_bonus_unique_huskar_5"						"+4"
+					"RequiresFacet"										"huskar_nothl_conflagration"
 				}
 
 		}
@@ -208,6 +229,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilityCastPoint"				"0.3"
 		"AbilityCastRange"				"550"
+		"IsBreakable"					"1"
 				
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -219,9 +241,16 @@
 				"value"						"25 40 55 70"
 				"special_bonus_unique_huskar_6"			"+30"
 			}
+			"aura_radius"
+			{
+				"value"												"0"
+			}
+			"aura_effectiveness"
+			{
+				"value"												"0"
+			}
 			"maximum_magic_resist"			"15 20 25 30"
 			"hp_threshold_max"				"12"
-
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -325,13 +354,10 @@
 				"value"						"0"
 				"special_bonus_facet_huskar_nothl_transfusion"		"=400"
 				"affected_by_aoe_increase"	"1"
-				"RequiresFacet"			"huskar_nothl_transfusion"
 			}
 			"life_break_heal_pct"
 			{
 				"value"						"0"
-				"special_bonus_facet_huskar_nothl_transfusion"	"0"
-				"RequiresFacet"			"huskar_nothl_transfusion"
 			}
 		}
 	}

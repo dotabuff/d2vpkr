@@ -19,7 +19,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600"
+		"AbilityCastRange"				"900"
 		"AbilityCastPoint"				"0.2"
 
 		// Cost
@@ -50,7 +50,7 @@
 				"value"			"300"
 				"affected_by_aoe_increase"	"1"
 			}
-			"range"						"810 810 810 810"
+			"range"						"900"
 			"speed"						"1100 1100 1100 1100"
 			"slow_percent"
 			{
@@ -97,6 +97,7 @@
 			"radius"					
 			{
 				"value"	"450"
+				"special_bonus_unique_death_prophet_silence_aoe"		"+75" 
 				"affected_by_aoe_increase"	"1"
 			}
 			"projectile_speed"					"1200"
@@ -129,6 +130,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
 		"MaxLevel"						"1"
 		"Innate"						"1"
+		"IsBreakable"					"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -136,6 +138,15 @@
 		{
 			"movement_speed_pct_per_level"		"0.75"
 			"cooldown_reduction_pct_per_level"	"0.5"
+
+			"movement_speed_tooltip"
+			{
+				"dynamic_value"					"true"
+			}
+			"cooldown_reduction_tooltip"
+			{
+				"dynamic_value"					"true"
+			}
 		}
 	}
 	 
@@ -395,5 +406,37 @@
 			"heal_amplify"			"20"
 		}
 	}
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_death_prophet_silence_aoe"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ad_linked_abilities"			"death_prophet_carrion_swarm"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+		"BaseClass"						"special_bonus_base"
+	}
 	
+	//=================================================================================================================
+	// Death Prophet Unholy Vitality
+	//=================================================================================================================
+	"death_prophet_mourning_ritual"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel"						"4"
+		"DependentOnAbility"			"death_prophet_exorcism"
+		"Innate"						"1"
+		"IsBreakable"					"1"
+
+		"AbilityValues"
+		{
+			"delay_pct"					"20 30 40 50"
+			"delay_time"				"5"
+			"damage_interval"			"1"
+		}
+	}
 }
