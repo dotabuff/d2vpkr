@@ -1053,7 +1053,6 @@
 
 		"DOTA_Tooltip_ability_mirana_solar_flare"							"Solar Flare"
 		"DOTA_Tooltip_ability_mirana_solar_flare_Description"				"<b><font color='#F2A93E'>Сонячний спалах</font></b>\nПоступово збільшує дальність видимості вдень, швидкість атаки та шкоду Мірани й усіх союзних героїв, досягаючи максимальної потужності через %max_damage_time% с. Додаткова видимість удень зростає x%day_vision_multiplier% швидше, ніж швидкість атаки та шкода.<br><br>Союзники отримують %ally_pct%%% бонусів."
-		"DOTA_Tooltip_ability_mirana_solar_flare_increase_rate"				"ЧАСТОТА ЗБІЛЬШЕННЯ ШКОДИ І ШВИДКОСТІ АТАКИ:"
 		"DOTA_Tooltip_ability_mirana_solar_flare_duration"					"ЗАГАЛЬНА ТРИВАЛІСТЬ:"
 		"DOTA_Tooltip_ability_mirana_solar_flare_ally_pct"					"%БОНУС СОЮЗНИКАМ:"
 			
@@ -1554,7 +1553,7 @@
 		"DOTA_Tooltip_ability_witch_doctor_maledict_bonus_damage"						"%ДОД. ШКОДА ВІД ВТРАТИ ЗДОРОВ’Я:"
 		"DOTA_Tooltip_ability_witch_doctor_death_ward"									"Death Ward"
 		"DOTA_Tooltip_ability_witch_doctor_death_ward_Description"						"<b><font color='#F2A93E'>Смертевард</font></b>\nЧАКЛУЄТЬСЯ. Викликає вбивчий вард, що атакує ворожих героїв у радіусі своєї атаки. Максимальна тривалість: %abilitychanneltime% с. Смертевард має %bonus_accuracy%%% шансу пробити ухилення."
-		"DOTA_Tooltip_ability_witch_doctor_death_ward_facet_witch_doctor_cleft_death"		"Смертевард атакує кілька (%initial_target_count%) цілей одночасно зі зменшеною шкодою."
+		"DOTA_Tooltip_ability_witch_doctor_death_ward_facet_witch_doctor_cleft_death"		"Смертевард атакує кілька (%initial_target_count%) цілей одночасно зі зменшеною шкодою. Другорядна ціль отримує %secondary_attack_damage_pct%%% шкоди."
 		"DOTA_Tooltip_ability_witch_doctor_death_ward_scepter_description"				"Атаки Смертеварда відскакують від цілі, вражаючи ворогів поруч."
 		"DOTA_Tooltip_ability_witch_doctor_death_ward_Lore"								"Знахар виконує один з тих ритуальних танців, що переслідують сни вцілілих, щоби його переповідали."
 		"DOTA_Tooltip_ability_witch_doctor_death_ward_Note0"							"Смертевард є невразливим і зникає, лише коли минає час його дії або Знахар перериває чаклування."
@@ -2793,6 +2792,7 @@
 		"DOTA_Tooltip_ability_phantom_lancer_illusory_armaments_Description"				"<b><font color='#F2A93E'>Ілюзорне озброєння</font></b>\nПредмети, здібності й аури, що дають додаткову шкоду, натомість дають базову шкоду."
 		"DOTA_Tooltip_ability_phantom_lancer_illusory_armaments_Note0"						"Додаткова шкода від Ілюзорного озброєння не враховується під час розрахунку додаткової шкоди від атаки на основі відсотка."
 		"DOTA_Tooltip_ability_phantom_lancer_illusory_armaments_bonus_to_base"				"%ДОДАТКОВА БАЗОВА ШКОДА:"
+		"DOTA_Tooltip_ability_phantom_lancer_illusory_armaments_bonus_to_base_illusions"	"%ДОДАТКОВА БАЗОВА ШКОДА (ІЛЮЗІЇ):"
 
 		"DOTA_Tooltip_Facet_phantom_lancer_convergence"							"Збіжність"
 		"DOTA_Tooltip_Facet_phantom_lancer_convergence_Description"				"Двійники створюють додаткові ілюзії, кількість яких залежить від поточного здоров’я Фантомного Улана."
@@ -3463,7 +3463,7 @@
 		"DOTA_Tooltip_modifier_puck_coil_break_stun_Description"	"Уявну спіраль розірвано! Приголомшення."
 
 		"DOTA_Tooltip_ability_puck_puckish"						"Puckish"
-		"DOTA_Tooltip_ability_puck_puckish_Description"			"<b><font color='#F2A93E'>Пакство</font></b>\nЩоразу, коли Пак уникає атаки, він відновлює %mana_restore_pct%%% від своєї максимальної мани та %hp_restore_pct%%% від свого максимального здоров’я. Уникнення націлених снарядів від чарів відновлює x%dodged_spell_multiplier% цього обсягу."
+		"DOTA_Tooltip_ability_puck_puckish_Description"			"<b><font color='#F2A93E'>Пакство</font></b>\nЩоразу, коли Пак уникає атаки, він відновлює %mana_restore_base% + %mana_restore_pct%%% від своєї максимальної мани та %hp_restore_base% + %hp_restore_pct%%% від свого максимального здоров’я. Уникнення націлених снарядів від чарів відновлює x%dodged_spell_multiplier% цього обсягу."
 
 		//DAZZLE
 		"DOTA_Tooltip_ability_dazzle_poison_touch"										"Poison Touch"
@@ -3582,7 +3582,7 @@
 		"DOTA_Tooltip_ability_rattletrap_rocket_flare_slow_duration"					"ТРИВАЛІСТЬ УПОВІЛЬНЕННЯ:"
 		"DOTA_Tooltip_ability_rattletrap_hookshot"										"Hookshot"
 		"DOTA_Tooltip_ability_rattletrap_hookshot_Description"							"<b><font color='#F2A93E'>Кидок гака</font></b>\nШвидко вистрілює гаком на ланцюгу у вказану точку. Якщо гак потрапляє в істоту, Годинникар притягується до неї, завдаючи шкоди та приголомшуючи всіх у радіусі %stun_radius% від цілі. Усі ворожі істоти, з якими Годинникар стикається на льоту, отримують шкоду та приголомшуються."
-		"DOTA_Tooltip_ability_rattletrap_hookshot_Facet_rattletrap_hookup"			"Якщо Кидок гака влучає в союзника, то він має більший радіус удару, дає Годинникарю й зачепленим союзникам бар’єр від фізичної шкоди обсягом шкоди від гака й частково повертає час зарядки."
+		"DOTA_Tooltip_ability_rattletrap_hookshot_Facet_rattletrap_hookup"			"Якщо Кидок гака влучає в союзника, то він має більший радіус удару, дає Годинникарю й зачепленим союзникам додаткову броню та частково повертає час зарядки й витрачену ману."
 		"DOTA_Tooltip_ability_rattletrap_hookshot_Lore"									"За допомогою цього дещо недоладного крюка Торохтій може посилати свою механічну броню у вільний політ."
 		"DOTA_Tooltip_ability_rattletrap_hookshot_Note0"								"Гак може притягувати Годинникаря до союзників, не завдаючи їм шкоди і не приголомшуючи їх."
 		"DOTA_Tooltip_ability_rattletrap_hookshot_duration"								"ДІЯ ПРИГОЛОМШЕННЯ:"
@@ -3590,6 +3590,7 @@
 		"DOTA_Tooltip_ability_rattletrap_hookshot_cooldown_refund_ally"					"%ЗМЕНШЕННЯ ЗАРЯДКИ (ВЛУЧАННЯ В СОЮЗНИКА):"
 		"DOTA_Tooltip_ability_rattletrap_hookshot_stun_radius_ally"						"РАДІУС ПРИГОЛОМШЕННЯ СОЮЗНИКА:"
 		"DOTA_Tooltip_ability_rattletrap_hookshot_ally_shield_duration"						"ДІЯ БАР’ЄРА ДЛЯ СОЮЗНИКА:"
+		"DOTA_Tooltip_ability_rattletrap_hookshot_allied_armor_bonus"						"ДОД. БРОНЯ СОЮЗНИКАМ:"
 		"DOTA_Tooltip_ability_rattletrap_overclocking"									"Overclocking"
 		"DOTA_Tooltip_ability_rattletrap_overclocking_Description"						"<b><font color='#F2A93E'>Розгін</font></b>\nПосилює здібності Годинникаря: Гальванічна атака застосовується на всіх ворогів у радіусі дії; швидкість атаки Годинникаря в Силових шестернях збільшується; Сигнальна ракета має зменшену зарядку і стріляє додатковими ракетами по обидва боки від цілі; радіус і тривалість приголомшення Кидка гака збільшено; Ракетний ранець рухає швидше. Після завершення дії швидкість руху й атаки Годинникаря суттєво сповільнюються."
 		"DOTA_Tooltip_ability_rattletrap_overclocking_Lore"						"Торохтій знає обмеження своєї броні. Так само він знає ризики, коли за потреби треба витискати з неї ще більше."
@@ -3612,7 +3613,7 @@
 		"DOTA_Tooltip_Facet_rattletrap_hookup"									"Під’єднання"				
 		"DOTA_Tooltip_Facet_rattletrap_expanded_armature"									"Розширений каркас"
 		"DOTA_Tooltip_Facet_rattletrap_expanded_armature_Description"						"Силові шестерні утворюють коло більшого радіуса."
-		"DOTA_Tooltip_Facet_rattletrap_hookup_Description"						"Якщо Кидок гака влучає в союзника, то він має більший радіус удару, дає захисний бар’єр і частково повертає час зарядки."
+		"DOTA_Tooltip_Facet_rattletrap_hookup_Description"						"Якщо Кидок гака влучає в союзника, то він має більший радіус удару, дає броню та частково повертає час зарядки й витрачену ману."
 
 		"DOTA_Tooltip_modifier_rattletrap_battery_assault"				"Гальванічна атака"
 		"DOTA_Tooltip_modifier_rattletrap_battery_assault_Description"	"Завдає періодичної шкоди істотам поблизу."
@@ -5375,7 +5376,7 @@
 
 		"DOTA_Tooltip_ability_enchantress_enchant"										"Enchant"
 		"DOTA_Tooltip_ability_enchantress_enchant_Description"							"<b><font color='#F2A93E'>Зачарування</font></b>\nЧарівниця одурманює ворога. Якщо ворог — герой, то він розвіюється та сповільнюється на %slow_duration% с.\n\nЯкщо ворог — кріп, то Чарівниця бере його під свій контроль та отримує %xp_gain_pct%%% від його винагороди досвідом. Одночасно можна контролювати до %max_creeps% кріпів упродовж %dominate_duration% с.\n\nТИП РОЗВІЮВАННЯ: базове"
-		"DOTA_Tooltip_ability_enchantress_enchant_Facet_enchantress_spellbound"			"Дальність чаклування Зачарування збільшено. Якщо ворог — герой, Чарівниця має збільшену дальність атаки проти цілі."
+		"DOTA_Tooltip_ability_enchantress_enchant_Facet_enchantress_spellbound"			"Дальність чаклування Зачарування збільшено. Якщо ворог — герой, Чарівниця й істоти під її контролем мають збільшену дальність атаки проти цілі."
 
 		"DOTA_Tooltip_ability_enchantress_enchant_scepter_description"					"Чарівниця може контролювати кількох кріпів одночасно."
 		"DOTA_Tooltip_ability_enchantress_enchant_Lore"									"Як істинна хранителька лісу, Аюшта дружна з усіма в ньому — від нижчих тролів до могутніх кентаврів."
@@ -6798,6 +6799,8 @@
 		"DOTA_Tooltip_ability_invoker_quas_Facet_invoker_agnostic"	"Після влучання атаки пасивно завдають періодичної шкоди."
 		"DOTA_Tooltip_ability_invoker_quas_Note0"									"Герой може мати лише 3 заряди незалежно від типу."
 		"DOTA_Tooltip_ability_invoker_quas_Note1"									"Вампіризм від чарів розраховується в момент чаклування. Зміна сфер після чаклування не впливає на вампіризм."
+		"DOTA_Tooltip_ability_invoker_quas_Note2"									"Не перериває невидимість. Можна застосовувати під час чаклування."
+
 		"DOTA_Tooltip_ability_invoker_quas_strength_bonus"							"ДОД. СИЛА ЗА РІВЕНЬ:"
 
 		"DOTA_Tooltip_modifier_invoker_quas_intrinsic_dot"							"Шкода від Куас"
@@ -6812,6 +6815,7 @@
 		"DOTA_Tooltip_ability_invoker_wex_Facet_invoker_elitist"	"Кожна одиниця <font color='#d671a9'>Вексу</font> дає збільшення швидкості руху."
 		"DOTA_Tooltip_ability_invoker_wex_Facet_invoker_agnostic"		"Пасивно дає швидкість руху."
 		"DOTA_Tooltip_ability_invoker_wex_Note0"									"Герой може мати лише 3 заряди незалежно від типу."
+		"DOTA_Tooltip_ability_invoker_wex_Note1"									"Не перериває невидимість. Можна застосовувати під час чаклування."
 		"DOTA_Tooltip_ability_invoker_wex_agility_bonus"							"ДОД. СПРИТНІСТЬ ЗА РІВЕНЬ:"
 		"DOTA_Tooltip_ability_invoker_wex_move_speed_per_instance"					"%ШВИДКІСТЬ РУХУ ЗА ЗАРЯД:"
 		"DOTA_Tooltip_ability_invoker_wex_intrinsic_attack_speed"					"ШВИДКІСТЬ АТАКИ:"
@@ -6822,6 +6826,7 @@
 		"DOTA_Tooltip_ability_invoker_exort_Facet_invoker_agnostic"	"Пасивно дає додаткову шкоду від атаки."
 		"DOTA_Tooltip_ability_invoker_exort_Note0"									"Герой може мати лише 3 заряди незалежно від типу."
 		"DOTA_Tooltip_ability_invoker_exort_Note1"									"Посилення чарів розраховується в момент чаклування. Зміна сфер після чаклування не впливає на посилення."
+		"DOTA_Tooltip_ability_invoker_exort_Note2"									"Не перериває невидимість. Можна застосовувати під час чаклування."
 		"DOTA_Tooltip_ability_invoker_exort_intelligence_bonus"						"ДОД. ІНТЕЛЕКТ ЗА РІВЕНЬ:"
 		"DOTA_Tooltip_ability_invoker_exort_magic_amp"								"%ПОСИЛЕННЯ ЧАРІВ ЗА РАЗ:"
 		"DOTA_Tooltip_ability_invoker_exort_intrinsic_attack_damage"				"ДОДАТКОВА ШКОДА ВІД АТАКИ:"
@@ -6840,6 +6845,7 @@
 		"DOTA_Tooltip_ability_invoker_invoke_Lore"									"Так починається нова епоха знань."
 		"DOTA_Tooltip_ability_invoker_invoke_Note0"									"Порядок застосування зарядів не має значення."
 		"DOTA_Tooltip_ability_invoker_invoke_Note1"									"<font color='#F2A93E'>Заклинання</font> не потребує мани та зарядки, якщо використовується лише для зміни положення активних здібностей."
+		"DOTA_Tooltip_ability_invoker_invoke_Note2"									"Заклинання не перериває невидимість. Можна застосовувати під час чаклування."
 		"DOTA_Tooltip_ability_invoker_invoke_max_invoked_spells"					"МАКС. ЗАКЛИНАНЬ:"
 		"DOTA_Tooltip_ability_invoker_cold_snap"									"Cold Snap"
 		"DOTA_Tooltip_ability_invoker_cold_snap_Description"						"<b><font color='#F2A93E'>Обійми холоду</font></b>\nВитягує тепло з ворожої істоти, пронизуючи її холодом упродовж часу, що залежить від поточного рівня <font color='#7998b5'>Куасу</font>. Жертва зазнає шкоди й ненадовго заклякає. Коли замерзлий ворог отримує шкоду, він знову заклякає, зазнає додаткової шкоди, а також лікує Заклинача. Ворог може заклякати не частіше, ніж це дозволяє поточний рівень <font color='#7998b5'>Куас</font>."
@@ -9278,7 +9284,8 @@
 		"DOTA_Tooltip_ability_magnus_strength_of_joelrak_stack_duration"					"ТРИВАЛІСТЬ:"
 
 		"DOTA_Tooltip_ability_magnataur_solid_core"							"Solid Core"
-		"DOTA_Tooltip_ability_magnataur_solid_core_Description"				"<b><font color='#F2A93E'>Міцна опора</font></b>\nМаґнус зазнає на %knockback_reduction%%% менше відкидання від ворожих здібностей і предметів."
+		"DOTA_Tooltip_ability_magnataur_solid_core_Description"				"<b><font color='#F2A93E'>Міцна опора</font></b>\nМаґнус має опір сповільненню й зазнає на %knockback_reduction%%% менше відкидання від ворожих здібностей і предметів."
+		"DOTA_Tooltip_ability_magnataur_solid_core_slow_resistance"			"%ОПІР СПОВІЛЬНЕННЮ:"
 
 		"DOTA_Tooltip_modifier_magnataur_shockwave"							"Сповільнення Ударною хвилею"
 		"DOTA_Tooltip_modifier_magnataur_shockwave_Description"				"Сповільнено на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
@@ -9509,7 +9516,7 @@
 		"DOTA_Tooltip_ability_tusk_ice_shards_stop_Description"		"<b><font color='#F2A93E'>Зупинка льодяних брил</font></b>\nСтоп."	
 		 
 		"DOTA_Tooltip_ability_tusk_snowball"							"Snowball"
-		"DOTA_Tooltip_ability_tusk_snowball_Description"				"<b><font color='#F2A93E'>Сніжна куля</font></b>\nТаск починає утворювати сніжну кулю. Союзників у радіусі %snowball_grab_radius% од. можна затягувати до кулі правою кнопкою миші навіть під час її руху. Після запуску кулі всі ворожі істоти, які трапляться на її шляху, будуть приголомшені та отримають шкоду. Кожний союзний герой у кулі збільшує шкоду від її влучання."
+		"DOTA_Tooltip_ability_tusk_snowball_Description"				"<b><font color='#F2A93E'>Сніжна куля</font></b>\nТаск починає утворювати сніжну кулю. Союзників у радіусі %snowball_grab_radius% од. можна затягувати до кулі правою кнопкою миші навіть під час її руху. Після запуску кулі всі ворожі істоти, які трапляться на її шляху, будуть приголомшені та отримають шкоду. Кожний союзний герой у кулі збільшує шкоду та тривалість приголомшення від її влучання."
 		"DOTA_Tooltip_ability_tusk_snowball_Lore"						"Про неймовірний фінт, який вивершив знатну халазію на Білих полях, і понині розказують усілякі небувальщини."
 		"DOTA_Tooltip_ability_tusk_snowball_Note0"						"Сніжна куля розбивається максимум через 3 секунди після запуску."
 		"DOTA_Tooltip_ability_tusk_snowball_Note1"						"Сніжну кулю можна запустити раніше, натиснувши на «Запустити снігову кулю»."
@@ -9520,6 +9527,7 @@
 		"DOTA_Tooltip_ability_tusk_snowball_snowball_damage_bonus"		"ДОД. ШКОДА ЗА СОЮЗНИКА:"
 		"DOTA_Tooltip_ability_tusk_snowball_snowball_speed"				"ШВИДКІСТЬ КУЛІ:"
 		"DOTA_Tooltip_ability_tusk_snowball_stun_duration"				"ДІЯ ПРИГОЛОМШЕННЯ:"
+		"DOTA_Tooltip_ability_tusk_snowball_stun_duration_bonus"				"ДІЯ ПРИГОЛОМШ. ЗА СОЮЗНИКА:"
 		"DOTA_Tooltip_ability_tusk_snowball_snowball_grab_radius"		"РАДІУС ПІДБИРАННЯ:"
 		"DOTA_Tooltip_ability_tusk_snowball_snowball_windup"			"ЧАС НА ЗАПУСК:"
 		"DOTA_Tooltip_ability_tusk_launch_snowball"						"Launch Snowball"
@@ -11259,6 +11267,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_mars_bulwark_damage_reduction" "+{s:bonus_physical_damage_reduction}%/+{s:bonus_physical_damage_reduction_side}% зменшення шкоди спереду/з боків від Bulwark"
 		"DOTA_Tooltip_ability_special_bonus_unique_mars_bulwark_redirect_chance" "+{s:bonus_redirect_chance}% до шансу переспрямування Bulwark"
 		"DOTA_Tooltip_ability_special_bonus_unique_mars_bulwark_cooldown"		"-{s:bonus_AbilityCooldown} с зарядки Bulwark"
+		"DOTA_Tooltip_ability_special_bonus_unique_mars_arena_cooldown"			"-{s:bonus_AbilityCooldown} с зарядки Arena Of Blood"
 
 		"DOTA_Tooltip_Facet_mars_victory_feast"				"Святкування перемоги"
 		"DOTA_Tooltip_Facet_mars_victory_feast_Description"	"Марс здобуває здоров’я, ману й шкоду від атаки, коли всередині його Кривавої арени помирає ворог."
@@ -11486,13 +11495,10 @@
 		"DOTA_Tooltip_modifier_snapfire_gobble_up_creep_Description"	"Ця істота знаходиться в животі Мортімера."
 
 		"DOTA_Tooltip_ability_snapfire_spit_creep"				"Spit Out"
-		"DOTA_Tooltip_ability_snapfire_spit_creep_Description"	"<b><font color='#F2A93E'>Випльовування</font></b>\nМортімер випльовує істоту, що спричиняє шкоду під час удару та приголомшення на великій площі. Плювок лишає вогняну калюжу, яка сповільнює та завдає періодичної шкоди. Випльовування не має мінімальної дальності."
+		"DOTA_Tooltip_ability_snapfire_spit_creep_Description"	"<b><font color='#F2A93E'>Випльовування</font></b>\nМортімер випльовує істоту, що спричиняє шкоду під час удару та приголомшення на великій площі. Плювок лишає вогняну калюжу (на основі поточного рівня Поцілунків Мортімера), яка сповільнює та завдає періодичної шкоди. Випльовування не має мінімальної дальності."
 		"DOTA_Tooltip_ability_snapfire_spit_creep_Lore"					" "
 		"DOTA_Tooltip_ability_snapfire_spit_creep_impact_radius"	"РАДІУС УДАРУ:"
 		"DOTA_Tooltip_ability_snapfire_spit_creep_impact_damage"	"ШКОДА ВІД УДАРУ:"
-		"DOTA_Tooltip_ability_snapfire_spit_creep_burn_damage"		"ШЗС ВІД ГОРІННЯ:"
-		"DOTA_Tooltip_ability_snapfire_spit_creep_move_slow_pct"	"%СПОВІЛЬНЕННЯ РУХУ ВОРОГІВ:"
-		"DOTA_Tooltip_ability_snapfire_spit_creep_burn_ground_duration"	"ТРИВАЛІСТЬ ВОГНЯНОЇ КАЛЮЖІ:"
 		"DOTA_Tooltip_ability_snapfire_spit_creep_stun_duration"	"ДІЯ ПРИГОЛОМШЕННЯ:"
 
 		"DOTA_Tooltip_ability_special_bonus_unique_snapfire_1"		"+{s:bonus_projectile_count} до кількості Mortimer Kisses"
@@ -11879,15 +11885,15 @@
 
 		"DOTA_Tooltip_ability_primal_beast_trample"			"Trample"
 		"DOTA_Tooltip_ability_primal_beast_trample_Description"		"<b><font color='#F2A93E'>Розтоптування</font></b>\nПервісний Звір розтоптує все на своєму шляху. Кожні %step_distance% дистанції всі вороги навколо зазнають шкоди. Завдає базову шкоду плюс множник шкоди від атаки Первісного Звіра. Герой роззброєний на час дії здібності."
-		"DOTA_Tooltip_ability_primal_beast_trample_Facet_primal_beast_romp_n_stomp" "Розтоптування дає додаткову швидкість руху, а після активації дає ауру невеликої додаткової швидкості руху союзникам."
+		"DOTA_Tooltip_ability_primal_beast_trample_Facet_primal_beast_romp_n_stomp" "Після активації Розтоптування дає додаткову швидкість руху як Первісному Звіру, так і його союзникам."
 		"DOTA_Tooltip_ability_primal_beast_trample_Lore"		"Оскільки він єдиний представник свого виду, що прибув у цей світ, то місцеві можуть лише здогадуватися, наскільки великий Звір у порівнянні з його земляками. Такі спостереження, звісно, були би простішими, якби об’єкт дослідження не їв усе, що бачить, і не знищував майже все, що не з’їв."
 		"DOTA_Tooltip_ability_primal_beast_trample_base_damage"			"БАЗОВА ШКОДА:"
 		"DOTA_Tooltip_ability_primal_beast_trample_attack_damage"		"%МНОЖНИК ШКОДИ ВІД АТАКИ:"
 		"DOTA_Tooltip_ability_primal_beast_trample_effect_radius"		"РАДІУС ШКОДИ:"
 		"DOTA_Tooltip_ability_primal_beast_trample_duration"			"ТРИВАЛІСТЬ:"
 		"DOTA_Tooltip_ability_primal_beast_trample_bonus_movespeed_pct_self"	"%ДОД. ШВИДКІСТЬ РУХУ СОБІ:"		
+		"DOTA_Tooltip_ability_primal_beast_trample_bonus_movespeed_pct_allies"	"%ДОД. ШВИДКІСТЬ РУХУ СОЮЗНИКАМ:"		
 		"DOTA_Tooltip_ability_primal_beast_trample_aura_radius"			"РАДІУС АУРИ:"
-		"DOTA_Tooltip_ability_primal_beast_trample_bonus_movespeed_pct_extra"			"%ДОДАНА ШВИДКІСТЬ ПІСЛЯ АКТИВАЦІЇ:"
 		
 
 
@@ -12915,7 +12921,8 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_enchantress_4"	"+{s:bonus_distance_damage_pct}% до шкоди від Impetus"
 		"DOTA_Tooltip_ability_special_bonus_unique_enchantress_5"	"+{s:bonus_heal} до зцілення від Nature's Attendants"
 		"DOTA_Tooltip_ability_special_bonus_unique_enchantress_6"	"+{s:bonus_movespeed} до швидкості руху під час Nature's Attendants"
-		"DOTA_Tooltip_ability_special_bonus_unique_enchantress_enchant_health_damage"			"+{s:bonus_enchant_health}/{s:bonus_enchant_damage} до здоров’я/шкоди зачарованих кріпів"
+		"DOTA_Tooltip_ability_special_bonus_unique_enchantress_enchant_health_damage"			"+{s:bonus_bonus_health}/{s:bonus_bonus_damage} до здоров’я/шкоди Чарівниці та її істот"
+		"DOTA_Tooltip_ability_special_bonus_unique_enchantress_enchant_attackspeed"				"+{s:bonus_bonus_attackspeed} до швидкості атаки Чарівниці та її істот"
 		"DOTA_Tooltip_ability_special_bonus_unique_enchantress_enchant_armor"			"+{s:bonus_enchant_armor} до броні зачарованого кріпа"
 		"DOTA_Tooltip_ability_special_bonus_unique_batrider_1"	"+{s:bonus_duration} с до тривалості Firefly"
 		"DOTA_Tooltip_ability_special_bonus_unique_batrider_2"	"Flamebreak застосовує {s:bonus_napalm_stacks} зарядів Sticky Napalm"
@@ -12972,7 +12979,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_invoker_8"	"+{s:bonus_lift_duration} с до підйому від Tornado"
 		"DOTA_Tooltip_ability_special_bonus_unique_invoker_9"	"-{s:bonus_AbilityCooldown} с зарядки Cold Snap"
 		"DOTA_Tooltip_ability_special_bonus_unique_invoker_10"	"+{s:bonus_damage_per_mana_pct}% до випалення мани від E.M.P."
-		"DOTA_Tooltip_ability_special_bonus_unique_invoker_11"	"+{s:bonus_spirit_attack_speed} до швидкості атаки Forged Spirit"
+		"DOTA_Tooltip_ability_special_bonus_unique_invoker_11"	"+{s:bonus_spirit_count} Forged Spirit"
 		"DOTA_Tooltip_ability_special_bonus_unique_invoker_12"	"Ice Wall стає векторною здібністю"
 		"DOTA_Tooltip_ability_special_bonus_unique_invoker_12_Description" 	"Дозволяє чаклувати Крижану стіну як здібність із векторним прицілюванням на відстань {s:bonus_vector_cast_range}."		
 		"DOTA_Tooltip_ability_special_bonus_unique_invoker_13_facet_invoker_agnostic"	"x{s:bonus_intrinsic_attack_speed} до пасивних ефектів від Quas/Wex/Exort"
@@ -13254,6 +13261,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_viper_6"	"+{s:bonus_bonus_attack_speed} до сповільнення атаки від Corrosive Skin"
 		"DOTA_Tooltip_ability_special_bonus_unique_viper_7"	"+{s:bonus_damage}% до сповільнення/шкоди від Poison Attack"
 		"DOTA_Tooltip_ability_special_bonus_unique_viper_8"	"-{s:bonus_AbilityCooldown}% витрати мани/зарядки Viper Strike"
+		"DOTA_Tooltip_ability_special_bonus_unique_viper_predator_damage"		"+{s:bonus_damage_base} шкоди від Predator за втрачене здоров’я"
 		"DOTA_Tooltip_ability_special_bonus_unique_zeus"	"+{s:bonus_targets} до цілей Heavenly Jump"
 		"DOTA_Tooltip_ability_special_bonus_unique_zeus_2"	"+{s:bonus_arc_damage} до шкоди від Arc Lightning"
 		"DOTA_Tooltip_ability_special_bonus_unique_zeus_3"	"+{s:bonus_ministun_duration} с до міні-приголомшення від Lightning Bolt"
@@ -13261,6 +13269,8 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_zeus_5"	"{s:value} до області дії Lightning Bolt"
 		"DOTA_Tooltip_ability_special_bonus_unique_zeus_jump_cooldown"			"-{s:bonus_AbilityCooldown} с зарядки Heavenly Jump"
 		"DOTA_Tooltip_ability_special_bonus_unique_zeus_jump_postjump_movespeed"	"+{s:bonus_postjump_movespeed} до швидкості руху після Heavenly Jump"
+		"DOTA_Tooltip_ability_special_bonus_unique_zeus_static_field_dmg"		"+{s:bonus_damage_health_pct}% до шкоди від Static Field"
+
 		"DOTA_Tooltip_ability_special_bonus_unique_elder_titan"						"+{s:bonus_damage_heroes} шкоди за героя від Astral Spirit"
 		"DOTA_Tooltip_ability_special_bonus_unique_elder_titan_2"					"+{s:bonus_stomp_damage} до шкоди від Echo Stomp"
 		"DOTA_Tooltip_ability_special_bonus_unique_elder_titan_3"					"-{s:bonus_AbilityCooldown} с зарядки Earth Splitter"
@@ -13425,7 +13435,6 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_huskar_3"	"+{s:bonus_disarm_duration} с до дії Inner Fire"
 		"DOTA_Tooltip_ability_special_bonus_unique_huskar_4"	"+{s:bonus_slow_duration_tooltip} с до сповільнення від Life Break"
 		"DOTA_Tooltip_ability_special_bonus_unique_huskar_5"	"+{s:bonus_duration} с до дії Burning Spear"
-		"DOTA_Tooltip_ability_special_bonus_unique_huskar_5_facet_huskar_nothl_conflagration"	"+{s:bonus_duration_for_nothl_conflagration} с до дії Burning Spear"
 		//"DOTA_Tooltip_ability_special_bonus_unique_huskar_5_Description"	"Pierces Spell Immunity."
 		"DOTA_Tooltip_ability_special_bonus_unique_huskar_6"	"+{s:bonus_maximum_health_regen}% регенерації Berserker's Blood"
 		"DOTA_Tooltip_ability_special_bonus_unique_huskar_7"	"-{s:value} с зарядки Life Break"
