@@ -1,0 +1,601 @@
+"DOTAAbilities"
+{
+    "Version"       "1"
+
+	//=================================================================================================================
+	// Ring Master: Spotlight
+	//=================================================================================================================
+	"ringmaster_spotlight"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Ringmaster.SpotLight.Cast"
+		"MaxLevel"						"1"
+		"IsGrantedByShard"				"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.5"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1500"
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"50"
+		"AbilityDuration"				"8"
+		
+		// Values
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			
+			"radius"
+			{
+				"value"		"550"
+				"affected_by_aoe_increase"	"1"
+			}
+			"illusion_percent_damage"		"50"
+			"pulse_interval"				"0.1"
+			"duration"						"8"
+			"miss_chance"					"30"
+			"initial_speed"					"3000"
+			"sweep_speed"					"0.785"
+			"sweep_radius"					"450"
+			"linger_duration"				"0.1"
+		}
+	}	
+
+	//=================================================================================================================
+	// Ring Master: Tame The Beasts
+	//=================================================================================================================
+	"ringmaster_tame_the_beasts"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Ringmaster.Whip.Channel"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+ 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_1"
+		"AbilityCastPoint"				"0"
+		"AbilityChannelTime"			"1.0"
+ 		"AbilityCastRange"				"700 750 800 850"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"16 14 12 10"
+		"AbilityManaCost"				"90 105 120 135"
+		
+		// Values
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"start_width"
+			{
+				"value"		"450"
+				"affected_by_aoe_increase"	"1"
+				"special_bonus_unique_ringmaster_whip_radius"	"+75"
+			}
+			"end_width"
+			{
+				"value"		"200"
+				"affected_by_aoe_increase"	"1"
+				"special_bonus_unique_ringmaster_whip_radius"	"+75"
+			}
+			"damage_min"
+			{
+				"value"		"45 70 95 120"
+				"special_bonus_unique_ringmaster_whip_damage"	"+75"
+			}
+			"damage_max"
+			{
+				"value"		"180 280 380 480" // Real max damage is 4x damage min. Adjusting this only affects tooltips.
+				"special_bonus_unique_ringmaster_whip_damage"	"+300"
+			}
+			"crack_duration"				"0.2"
+			"max_multiplier"				"4.0"
+			"whip_channel_reduction"
+			{
+				"value"		"0"
+			}
+			"whip_cooldown_reduction"
+			{
+				"value"		"0"
+			}
+			"magic_resist"
+			{
+				"value"		"0"
+				"special_bonus_unique_ringmaster_whip_debuff_immunity"	"+50"
+			}
+			"has_debuff_immunity"
+			{
+				"value"		"0"
+				"special_bonus_unique_ringmaster_whip_debuff_immunity"	"+1"
+			}
+			"fear_duration_min"				"0.1 0.2 0.3 0.4"
+			"fear_duration_max"				"0.6 0.8 1.0 1.2"
+		}
+	}
+
+	//=================================================================================================================
+	// Ring Master: Tame The Beasts Crack
+	//=================================================================================================================
+	"ringmaster_tame_the_beasts_crack"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Ringmaster.Whip.Target"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+ 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+ 		"AbilityCastRange"				"0"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0.5"
+		"AbilityCastPoint"				"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+	}
+
+	//=================================================================================================================
+	// Ring Master: The Box
+	//=================================================================================================================
+	"ringmaster_the_box"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Ringmaster.Box.Destroy"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.4"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"38 32 26 20"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"80"
+		
+		// Values
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"AbilityCastRange"
+			{
+				"value"			"600"
+				"special_bonus_unique_ringmaster_box_cast_range"		"+200"
+			}
+			"invis_duration"			"2.0 2.4 2.8 3.2"
+			"move_speed"				"5 10 15 20"
+			"magic_resist"				"50 60 70 80"
+			"slow_resist"				"100"
+			"transform_time"			"0.5"
+			"model_scale_time"			"0.2"
+			"leash_radius"				"500"
+			"heal_ally"					"0"
+			"launch_daggers"
+			{
+				"value"					"0"
+			}
+			"leap_distance"			"250"
+			"leap_speed"			"1300.0"
+			"leap_acceleration"		"20000.0"
+			"grant_debuff_immunity"
+			{
+				"value"	"0"
+			}
+			"strong_dispel"
+			{
+				"value"	"0"
+				"special_bonus_unique_ringmaster_the_box_strong_dispel_and_flying" "+1"
+			}
+			"grant_flying"
+			{
+				"value"	"0"
+				"special_bonus_unique_ringmaster_the_box_strong_dispel_and_flying" "+1"
+			}
+		}
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityCastGestureSlot"		"DEFAULT"
+	}
+
+	//=================================================================================================================
+	// Ring Master: The Wheel 
+	//=================================================================================================================
+	"ringmaster_wheel"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Ringmaster.Wheel.Target"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+ 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCooldown"				"90 80 70"
+
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"175 275 375"
+		
+		// Values
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"min_range"			"700"
+			"mesmerize_radius"		
+			{
+				"value"		"600"
+				"affected_by_aoe_increase"	"1"
+				"special_bonus_unique_ringmaster_wheel_radius" "+100"
+			}
+			"projectile_speed"		"1200"
+			"AbilityCastRange"
+			{
+				"value"		"1400"
+				"special_bonus_unique_ringmaster_wheel_radius" "+100"
+			}
+			"trap_duration"				"8"
+			"wheel_stun"			"2.75 3.0 3.25"
+			"face_duration"			"0.5"
+			"aura_tick_interval"	"0.5"
+			"aura_damage"			"50 75 100"
+			"aura_slow"				"-50"
+			"explosion_damage"		"300 450 600"
+			"vision_radius"			"400"
+			"damage_per_second"		"0"
+			"tick_rate"				"0.25"
+			"vision_cone"			"0.08715"		// 85 degree cone
+			"knockback_radius"			"100"
+			"knockback_duration"		"0.35"
+			"knockback_distance"		"100"
+			"knockback_height"			"100"
+
+		}
+	}
+
+	//=================================================================================================================
+	// Ring Master: Impalement Arts
+	//=================================================================================================================
+	"ringmaster_impalement"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Ringmaster.Impalement.Cast"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+ 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastRange"				"2400"
+		"AbilityCharges"			"1 2 3 4"
+		"AbilityChargeRestoreTime"		"17"
+				
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"1"
+		"AbilityManaCost"				"80"
+
+		// Values
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"damage_impact"				"75"
+			"bleed_health_pct"			"3.5 4 4.5 5.0"
+			"bleed_creep_dps"			"100"
+			"bleed_duration"
+			{
+				"value"		"4"
+				"special_bonus_unique_ringmaster_dagger_bleed_and_slow_duration"	"+1"
+			}
+			"slow_percent"				"100"
+			"slow_duration"
+			{
+				"value"		"0.8"
+				"special_bonus_unique_ringmaster_dagger_bleed_and_slow_duration"	"+1"
+			}
+			"dagger_speed"				"1350"
+			"dagger_width"				"130"
+			"dagger_range"				"2400"
+			"dagger_vision"				"200"
+			"tick_interval"				"1.0"
+			"dagger_pass_through"
+			{
+				"value"		"0"
+				"special_bonus_unique_ringmaster_dagger_penetrates"	"+1"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Ringmaster: Empty Souvenir
+	//=================================================================================================================
+	"ringmaster_empty_souvenir"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IS_FAKE_ITEM"
+		"MaxLevel"						"0"
+	}
+
+	//=================================================================================================================
+	// Ring Master: Dark Carnival Souvenirs
+	//=================================================================================================================
+	"ringmaster_dark_carnival_souvenirs"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+
+		"AbilityValues"
+		{
+			"souvenir_collection_range"	"925"
+		}
+	}
+
+	//=================================================================================================================
+	// Ringmaster: Funhouse Mirror
+	//=================================================================================================================
+	"ringmaster_funhouse_mirror"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_SILENCE | DOTA_ABILITY_BEHAVIOR_AFFECTED_BY_MUTE | DOTA_ABILITY_BEHAVIOR_IS_FAKE_ITEM | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+		"MaxLevel"						"1"
+
+		"AbilityCooldown"				"3.0"
+		"AbilitySharedCooldown"			"dark_carnival_souvenir"
+		"AbilityCastPoint"				"0.0"
+
+		"AbilityCharges"				"99"
+		"AbilityChargeRestoreTime"		"0"
+		"InitialAbilityCharges"			"0"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"images_count"						"1"
+			"illusion_duration"					"18"
+			"images_do_damage_percent_melee"	"-67"
+			"tooltip_damage_outgoing_melee"		"33"
+			"images_take_damage_percent"		"200"
+			"tooltip_damage_incoming_total_pct"	"300"
+			"images_do_damage_percent_ranged"	"-72"
+			"tooltip_damage_outgoing_ranged"	"28"
+			"invuln_duration"					"0.2"
+			"vision_radius"						"1000"
+			"num_scale_sets"					"3"
+			"model_scale_animate_time"			"0.05"
+			"illusion_model_scale_1"			"0"
+			"illusion_model_scale_2"			"0"
+			"illusion_model_scale_3"			"50"
+			"health_bar_offset_1"				"180"
+			"health_bar_offset_2"				"220"
+			"health_bar_offset_3"				"280"
+		}
+	}
+
+	//=================================================================================================================
+	// Ringmaster Whoopee Cushion
+	//=================================================================================================================
+	"ringmaster_whoopee_cushion"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_SILENCE | DOTA_ABILITY_BEHAVIOR_AFFECTED_BY_MUTE | DOTA_ABILITY_BEHAVIOR_IS_FAKE_ITEM | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"3.0"
+		"AbilitySharedCooldown"			"dark_carnival_souvenir"
+		"AbilityCastPoint"				"0.0"
+
+		"AbilityCharges"				"99"
+		"AbilityChargeRestoreTime"		"0"
+		"InitialAbilityCharges"			"0"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"leap_distance"			"400"
+			"leap_speed"			"1300.0"
+			"leap_acceleration"		"10000.0"
+			"fart_cloud_duration"					"3.0"
+			"fart_cloud_slow"						"-30.0"
+			"fart_cloud_aura_linger_duration"		"1.0"
+			"fart_cloud_radius"						"200"
+		}
+	}
+
+	//=================================================================================================================
+	// Ringmaster: Strongman Tonic
+	//=================================================================================================================
+	"ringmaster_strongman_tonic"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_SILENCE | DOTA_ABILITY_BEHAVIOR_AFFECTED_BY_MUTE | DOTA_ABILITY_BEHAVIOR_IS_FAKE_ITEM | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"750"
+		"AbilityCooldown"				"3.0"
+		"AbilitySharedCooldown"			"dark_carnival_souvenir"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_2"
+
+		"AbilityCharges"				"99"
+		"AbilityChargeRestoreTime"		"0"
+		"InitialAbilityCharges"			"0"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"projectile_speed"		"1400"
+			"strength_bonus_base"		"5.0"
+			"strength_bonus_per_level"	"1.5"
+			"model_scale"				"30"
+			"model_scale_animate_time"	"0.1"
+			"duration"				"8.0"
+			"effect_strength_max_duration"	"4.0"
+		}
+	}
+	
+	//=================================================================================================================
+	// Ability: Ring Master special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_ringmaster_whip_radius"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ad_linked_abilities"			"ringmaster_tame_the_beasts"
+		"BaseClass"						"special_bonus_base"
+	}	
+	
+	//=================================================================================================================
+	// Ability: Ring Master special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_ringmaster_box_cast_range"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ad_linked_abilities"			"ringmaster_the_box"
+		"BaseClass"						"special_bonus_base"
+	}
+
+	//=================================================================================================================
+	// Ability: Ring Master special Bonus
+	//=================================================================================================================
+ 	"special_bonus_unique_ringmaster_the_box_strong_dispel_and_flying"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ad_linked_abilities"			"ringmaster_the_box"
+		"BaseClass"						"special_bonus_base"
+	}
+
+ 	//=================================================================================================================
+	// Ability: Ring Master special Bonus
+	//=================================================================================================================
+ 	"special_bonus_unique_ringmaster_whip_damage"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ad_linked_abilities"			"ringmaster_tame_the_beasts"
+		"BaseClass"						"special_bonus_base"
+	}
+
+	//=================================================================================================================
+	// Ability: Ring Master special Bonus
+	//=================================================================================================================
+ 	"special_bonus_unique_ringmaster_wheel_radius"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ad_linked_abilities"			"ringmaster_tame_the_beasts"
+		"BaseClass"						"special_bonus_base"
+	}
+
+	//=================================================================================================================
+	// Ability: Ring Master special Bonus
+	//=================================================================================================================
+ 	"special_bonus_unique_ringmaster_whip_debuff_immunity"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ad_linked_abilities"			"ringmaster_tame_the_beasts"
+		"BaseClass"						"special_bonus_base"
+	}
+
+	//=================================================================================================================
+	// Ability: Ring Master special Bonus
+	//=================================================================================================================
+  	"special_bonus_unique_ringmaster_dagger_penetrates"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ad_linked_abilities"			"ringmaster_impalement"
+		"BaseClass"						"special_bonus_base"
+	}
+
+	//=================================================================================================================
+	// Ability: Ring Master special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_ringmaster_dagger_bleed_and_slow_duration"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ad_linked_abilities"			"ringmaster_impalement"
+		"BaseClass"						"special_bonus_base"
+	}
+
+}

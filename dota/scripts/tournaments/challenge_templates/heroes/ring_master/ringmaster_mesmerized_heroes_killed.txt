@@ -1,0 +1,55 @@
+"ringmaster_mesmerized_heroes_killed"
+{
+	"desc"		"#DOTA_ChallengeDesc_Ringmaster_MesmerizedHeroesKilled"
+	"requiredhero"		"ringmaster"
+	"image"			"images/spellicons/ringmaster_wheel.png"
+	"events"
+	{
+		"matching_type"		"timeblock_accumulate_between_events"
+		"query"
+		{
+			"start_event"
+			{
+				"event"		"modifier_add"
+				"modifier"	"modifier_ringmaster_wheel_mesmerize_pull"
+				"target"	"!enemy_hero"
+			}
+			"accumulate_event"
+			{
+				"event"		"death"
+				"target"	"!enemy_hero"
+				"target_must_be_hero"		"1"
+				"storage"
+				{
+					"1"
+					{
+						"aggregator"		"increment"
+					}
+				}
+			}
+			"end_event"
+			{
+				"event"		"modifier_remove"
+				"modifier" 	"modifier_ringmaster_wheel_debuff"
+			}
+		}
+		"progress_stored_in"		"1"
+		"post_tests"
+		{
+			"test_mesmerized_heroes_killed"
+			{
+				"storage"		"1"
+				"compare"		">="
+				"amount"		"<mesmerized_heroes_killed>"
+			}
+		}
+	}
+	"variables"
+	{
+		"<mesmerized_heroes_killed>"
+		{
+			"format"		"int"
+			"index"		"0"
+		}
+	}
+}
