@@ -1,0 +1,47 @@
+"kez_kills_during_falcon_rush"
+{
+	"desc"		"#DOTA_ChallengeDesc_Kez_KillsDuringFalconRush"
+	"requiredhero"		"kez"
+	"image"			"images/spellicons/kez_falcon_rush.png"
+	"events"
+	{
+		"matching_type"		"linear_series"
+		"query"
+		{
+			"afterimage_killeater"
+			{
+				"event"							"kill_eater"
+				"caster"					"!hero"
+				"kill_eater_event"			"862"
+			}
+		}
+		"postmatch_increments"
+		{
+			"storage"
+			{
+				"1"
+				{
+					"aggregator"		"increment"
+				}
+			}
+		}
+		"progress_stored_in"		"1"
+		"post_tests"
+		{
+			"test_falcon_killeater"
+			{
+				"storage"		"1"
+				"compare"		">="
+				"amount"		"<falcon_rush_kills>"
+			}
+		}
+	}
+	"variables"
+	{
+		"<falcon_rush_kills>"
+		{
+			"format"		"int"
+			"index"		"0"
+		}
+	}
+}

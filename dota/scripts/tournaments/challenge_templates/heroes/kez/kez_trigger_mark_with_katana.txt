@@ -1,0 +1,47 @@
+"kez_trigger_mark_with_katana"
+{
+	"desc"		"#DOTA_ChallengeDesc_Kez_TriggerMarkWithKatana"
+	"requiredhero"		"kez"
+	"image"			"images/spellicons/kez_switch_weapons_katana.png"
+	"events"
+	{
+		"matching_type"		"linear_series"
+		"query"
+		{
+			"afterimage_killeater"
+			{
+				"event"							"kill_eater"
+				"caster"					"!hero"
+				"kill_eater_event"			"863"
+			}
+		}
+		"postmatch_increments"
+		{
+			"storage"
+			{
+				"1"
+				{
+					"aggregator"		"increment"
+				}
+			}
+		}
+		"progress_stored_in"		"1"
+		"post_tests"
+		{
+			"test_katana_triggers"
+			{
+				"storage"		"1"
+				"compare"		">="
+				"amount"		"<katana_triggers>"
+			}
+		}
+	}
+	"variables"
+	{
+		"<katana_triggers>"
+		{
+			"format"		"int"
+			"index"		"0"
+		}
+	}
+}

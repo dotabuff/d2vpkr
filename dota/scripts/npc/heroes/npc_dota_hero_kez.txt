@@ -1,0 +1,530 @@
+// Abilities for kez
+"DOTAAbilities"
+{
+    "Version"       "1"
+
+    //=================================================================================================================
+	// Kez: Switch Weapons
+	//=================================================================================================================
+	"kez_switch_weapons"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_INVISIBLE"
+		"Innate" 						"1"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"kez_switch_weapons_sai"
+		"HasScepterUpgrade"				"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+		"AbilityCastGestureSlot"		"ATTACK"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"8.0"
+
+		"AbilityValues"
+		{			
+			"katana_attack_range"								"225"
+			"katana_base_attack_time"							"2.0"
+			"katana_bonus_damage"								"20"
+			"sai_attack_range"									"150"
+			"sai_base_attack_time"								"1.5"
+			"cooldown_reduction_per_level"						"0.2"
+			"scepter_cooldown_timer"							"3"
+		}
+	}
+
+    //=================================================================================================================
+	// Kez: Echo Slash
+	//=================================================================================================================
+	"kez_echo_slash"
+	{
+		// General
+ 		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Kez.EchoSlash.Katana.Start"
+		"LinkedAbility"					"kez_falcon_rush"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"800"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20 18 16 14"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"85 100 115 130"	
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"katana_echo_damage"				
+			{
+				"DamageTypeTooltip"										"DAMAGE_TYPE_PHYSICAL"
+				"value" 												"70 80 90 100"
+			}
+			"echo_hero_damage"				
+			{
+				"value"													"30 45 60 75"
+				"DamageTypeTooltip"										"DAMAGE_TYPE_PHYSICAL"
+			}
+			"katana_strikes"			
+			{
+				"value"  												"2"
+				"special_bonus_unique_kez_echo_slash_strike_count"		"+1"
+			}
+			"strike_interval"			
+			{		
+				"value"					"1.2"
+				"special_bonus_unique_kez_echo_slash_strike_count"		"-0.6"
+			}
+			"katana_radius"				
+			{
+				"value"					"200"
+				"affected_by_aoe_increase"	"1"		
+			}
+			"katana_distance"			
+			{
+				"value"					"800"
+				"affected_by_aoe_increase"	"1"	
+			}
+			"travel_distance"			"250"
+			"tag_slow"					"100"
+			"tag_slow_duration"			"0.25"
+		}
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+	}
+
+	//=================================================================================================================
+	// Kez: Grappling Claw 
+	//=================================================================================================================
+	"kez_grappling_claw"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_TREE"	
+		"AbilityUnitTargetFlag"			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Kez.GrapplingClaw.Katana.Cast"
+		"LinkedAbility"					"kez_talon_toss"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"AbilityCooldown"			"15 12 9 6"		
+
+			"AbilityCastRange"			"700 800 900 1000"	
+			
+			"land_distance"					"75"
+			"projectile_speed"				"3000"
+			"grapple_speed"					"1800"
+			
+			"bonus_flat_lifesteal"			"50 100 150 200"
+			"lifesteal_pct"					"100"
+			"creep_lifesteal_reduction_pct"				"40"
+			"katana_ms_slow_pct"			"80"		
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+
+	//=================================================================================================================
+	// Kez: Kazurai Katana
+	//=================================================================================================================
+	"kez_kazurai_katana"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC" 
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"LinkedAbility"					"kez_shodo_sai"
+		"HasShardUpgrade"				"1"
+		"AbilitySound"					"Hero_Kez.Katana.Impale.Start"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"150"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"katana_attack_range"							"225"
+			"katana_base_attack_time"						"2.0"
+			"katana_bonus_damage"							"20"
+			"katana_bleed_duration"							"5.0 6.0 7.0 8.0"
+			"katana_bleed_attack_damage_pct"						
+			{
+				"value" 														"7 8 9 10"   
+				"DamageTypeTooltip"												"DAMAGE_TYPE_PHYSICAL"	
+				"special_bonus_unique_kez_kazura_katana_bleed_damage"			"+5.0"
+			}	
+			"heal_reduction_pct"												"20 25 30 35"
+	
+			// Shard
+			"AbilityCooldown"				
+			{
+				"value"						"0"
+				"special_bonus_shard"		"5"
+			}
+			"AbilityManaCost"				
+			{
+				"value"						"0"
+				"special_bonus_shard"		"50"
+			}
+			"stun_duration"					
+			{
+				"value"						"0"
+				"special_bonus_shard"		"0.6"
+				"RequiresShard"				"1"
+			}
+			"bleed_as_rupture_pct"			
+			{
+				"value"						"0"
+				"special_bonus_shard"		"100"
+				"RequiresShard"				"1"
+				"DamageTypeTooltip"			"DAMAGE_TYPE_PHYSICAL"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Kez: Raptor Dance
+	//=================================================================================================================
+	"kez_raptor_dance"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC" 
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"				"1"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"LinkedAbility"					"kez_ravens_veil"
+		"AbilitySound"					"Hero_Kez.RaptorDance.Katana.Cast"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------	
+		"AbilityChannelTime"			"1.0"
+		
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 125 150"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"AbilityCooldown"				
+			{
+				"value"		"40 32 24"
+				"special_bonus_unique_kez_ultimate_cooldown"		"-4"
+			}
+			
+			"strike_interval"										"0.25"
+			"strikes"												"2 3 4"
+			"radius"						
+			{
+				"value"												"450"
+				"affected_by_aoe_increase"							"1"	
+				"special_bonus_unique_kez_raptor_dance_radius"		"+50"
+			}	
+			"base_damage"				
+			{
+				"value" 				"75"
+				"DamageTypeTooltip"		"DAMAGE_TYPE_PURE"
+			}
+			"max_health_damage_pct"		
+			{
+				"value" 				"4"
+				"DamageTypeTooltip"		"DAMAGE_TYPE_PURE"
+			}
+			"lifesteal_pct"		"100"
+			"magic_resist"		"100"
+			"hard_dispel"		"1"
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+	}
+
+	//=================================================================================================================
+	// Kez: Falcon Rush
+	//=================================================================================================================
+	"kez_falcon_rush"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Hero_Kez.FalconRush.Sai.Cast"
+		"LinkedAbility"					"kez_echo_slash"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		
+		"AbilityCastPoint"				"0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20 18 16 14"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"85 90 95 100"	
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"duration"					
+			{
+				"value" 												"7.0"
+				"special_bonus_unique_kez_falcon_rush_duration"			"+2.0"
+			}
+			"rush_range"			
+			{	
+				"value"									"650"
+				"affected_by_aoe_increase"				"1"	
+			}
+			
+			"buff_evasion_pct"			
+			{
+				"value"													"0"
+				"special_bonus_unique_kez_falcon_rush_evasion"			"+50"
+			}
+			"rush_speed"				"1000"
+			"base_attack_rate"			"1.3 1.2 1.1 1.0"
+			"attack_speed_factor"		"6 7 8 9"
+			"current_attack_rate_tooltip"
+			{
+				"dynamic_value"			"true"
+			}
+			"echo_damage"				
+			{
+				"value"					"100"
+				"DamageTypeTooltip"		"DAMAGE_TYPE_PHYSICAL"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Kez: Talon Toss
+	//=================================================================================================================
+	"kez_talon_toss"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"LinkedAbility"					"kez_grappling_claw"
+		"AbilitySound"					"Hero_Kez.TalonToss.Target"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+ 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"1200"
+
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75"	
+		"AbilityCooldown"				"15 12 9 6"		
+
+
+		// Values
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{	
+			"radius"					
+			{
+				"value" 								"275"
+				"affected_by_aoe_increase"				"1"	
+			}
+			"damage"					
+			{
+				"value" 				"75 125 175 225"
+				"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
+			}
+			"speed"						"2000"
+			"silence_duration"			"1.75 2.0 2.25 2.5"
+		}
+	}
+
+	//=================================================================================================================
+	// Kez: Shodo Sai
+	//=================================================================================================================
+	"kez_shodo_sai"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"				"1"
+		"HasShardUpgrade"				"1"
+		"AbilitySound"					"Hero_Kez.Sai.Proc"
+		"LinkedAbility"					"kez_shodo_sai_parry_cancel"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastPoint"				"0.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"30 20 10 0"
+		"AbilityCooldown"				"20 15 10 5"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"sai_attack_range"									"150"
+			"sai_base_attack_time"								"1.5"
+			"sai_proc_vuln_chance"								"17"
+			"vuln_slow"											"10"
+			"vuln_duration"										"8.0"
+			"base_crit_pct"										
+			{
+				"value"												"140 160 180 200"
+				"special_bonus_unique_kez_mark_damage"				"+75"
+			}
+			"stun_duration"											"0.5"
+			"shard_base_movement_speed"
+			{
+				"value"					"0"
+				"special_bonus_shard"	"10"
+				"RequiresShard"			"1"
+			}
+			"shard_vuln_movement_speed"
+			{
+				"value"					"0"
+				"special_bonus_shard"	"10"
+				"RequiresShard"			"1"
+			}
+
+			// Parry below here                   
+			"forward_angle"											"180"				
+			"speed_penalty"											"25"
+			"parry_duration"										"2.0"
+			"parry_bonus_crit"										"25 50 75 100"
+			"parry_stun_duration"									"0.5"
+		}
+	}
+
+	//=================================================================================================================
+	// Kez: Shodo Sai Parry Cancel
+	//=================================================================================================================
+	"kez_shodo_sai_parry_cancel"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT"
+		"AbilityCooldown"				"1.0"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"0"
+		"MaxLevel"						"1"
+		"LinkedAbility"					"kez_kazurai_katana"
+	}
+
+	//=================================================================================================================
+	// Kez: Raven's Veil
+	//=================================================================================================================
+	"kez_ravens_veil"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityDamageType"				"DAMAGE_TYPE_PURE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Kez.RavensVeil.Sai.Cast"
+		"LinkedAbility"					"kez_raptor_dance"
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------	
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastRange"				"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 125 150"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"AbilityCooldown"				
+			{
+				"value"		"40 32 24"
+				"special_bonus_unique_kez_ultimate_cooldown"		"-4"
+			}
+			
+			"blast_radius"											
+			{
+				"value" 					"1500"
+				"affected_by_aoe_increase"	"1"	
+			}
+			"blast_speed"											"1500"
+			"buff_duration"											"7 8 9"
+			"blind_duration"										"4.0"
+			"bonus_ms"												"15 25 35"
+			"basic_dispel"											"1"										
+			"fade_delay"											"0.0"
+			"apply_parry_bonus"										"1"
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCastGestureSlot"		"DEFAULT"
+	}
+}
+
+

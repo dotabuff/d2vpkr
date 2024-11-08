@@ -1,0 +1,47 @@
+"kez_echo_slash_damage"
+{
+	"desc"				"#DOTA_ChallengeDesc_Kez_EchoSlashDamage"
+	"image"				"images/spellicons/kez_echo_slash.png"
+	"requiredhero"		"kez"
+	"events"
+	{
+		"matching_type"		"linear_series"
+		"query"
+		{
+			"accumulate_event"
+			{
+				"event"					"damage"
+				"attack"				"kez_echo_slash"
+				"damage_source"			"!hero"
+				"target_team"			"!enemyteam"
+				"target_must_be_hero"	"1"
+				"storage"
+				{
+					"1"
+					{
+						"key"			"value"
+						"aggregator"	"sum"
+					}
+				}
+			}
+		}
+		"progress_stored_in"	"1"
+		"post_tests"
+		{
+			"test_echo_slash_damage"
+			{
+				"storage"		"1"
+				"compare"		">="
+				"amount"		"<echo_slash_damage>"
+			}
+		}
+	}
+	"variables"
+	{
+		"<echo_slash_damage>"
+		{
+			"format"	"int"
+			"index"		"0"
+		}
+	}
+}

@@ -1,0 +1,45 @@
+"kez_raptor_dance_healing"
+{
+	"requiredhero"		"kez"
+	"desc"				"#DOTA_ChallengeDesc_Kez_RaptorDanceHealing"
+	"image"				"images/spellicons/kez_raptor_dance.png"
+	"events"
+	{
+		"matching_type"		"linear_series"
+		"query"
+		{
+			"heal_event"
+			{
+				"event"					"heal"
+				"target"				"!hero"
+				"source"				"kez_raptor_dance"
+				"storage"
+				{
+					"1"
+					{
+						"key"			"value"
+						"aggregator"	"sum"
+					}
+				}
+			}
+		}
+		"progress_stored_in"		"1"
+		"post_tests"
+		{
+			"test_total_healing"
+			{
+				"storage"		"1"
+				"compare"		">="
+				"amount"		"<raptor_dance_healing>"
+			}
+		}
+	}
+	"variables"
+	{
+		"<raptor_dance_healing>"
+		{
+			"format"		"int"
+			"index"			"0"
+		}
+	}
+}

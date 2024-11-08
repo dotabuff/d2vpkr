@@ -1,0 +1,47 @@
+"kez_kills_during_afterimage"
+{
+	"desc"		"#DOTA_ChallengeDesc_Kez_KillsDuringAfterimage"
+	"requiredhero"		"kez"
+	"image"			"images/spellicons/kez_afterimage_sai.png"
+	"events"
+	{
+		"matching_type"		"linear_series"
+		"query"
+		{
+			"afterimage_killeater"
+			{
+				"event"							"kill_eater"
+				"caster"					"!hero"
+				"kill_eater_event"			"862"
+			}
+		}
+		"postmatch_increments"
+		{
+			"storage"
+			{
+				"1"
+				{
+					"aggregator"		"increment"
+				}
+			}
+		}
+		"progress_stored_in"		"1"
+		"post_tests"
+		{
+			"test_afterimage_killeater"
+			{
+				"storage"		"1"
+				"compare"		">="
+				"amount"		"<afterimage_kills>"
+			}
+		}
+	}
+	"variables"
+	{
+		"<afterimage_kills>"
+		{
+			"format"		"int"
+			"index"		"0"
+		}
+	}
+}

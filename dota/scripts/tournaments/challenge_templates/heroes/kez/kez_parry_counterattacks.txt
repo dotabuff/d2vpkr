@@ -1,0 +1,47 @@
+"kez_parry_counterattacks"
+{
+	"desc"		"#DOTA_ChallengeDesc_Kez_ParryCounterAttacks"
+	"requiredhero"		"kez"
+	"image"			"images/spellicons/kez_shodo_sai.png"
+	"events"
+	{
+		"matching_type"		"linear_series"
+		"query"
+		{
+			"afterimage_killeater"
+			{
+				"event"							"kill_eater"
+				"caster"					"!hero"
+				"kill_eater_event"			"860"
+			}
+		}
+		"postmatch_increments"
+		{
+			"storage"
+			{
+				"1"
+				{
+					"aggregator"		"increment"
+				}
+			}
+		}
+		"progress_stored_in"		"1"
+		"post_tests"
+		{
+			"test_parry_counterattacks"
+			{
+				"storage"		"1"
+				"compare"		">="
+				"amount"		"<parry_counterattacks>"
+			}
+		}
+	}
+	"variables"
+	{
+		"<parry_counterattacks>"
+		{
+			"format"		"int"
+			"index"		"0"
+		}
+	}
+}

@@ -1,0 +1,45 @@
+"kez_hungering_blade_healing"
+{
+	"requiredhero"		"kez"
+	"desc"				"#DOTA_ChallengeDesc_Kez_HungeringBladeHealing"
+	"image"				"images/spellicons/kez_hungering_blade.png"
+	"events"
+	{
+		"matching_type"		"linear_series"
+		"query"
+		{
+			"heal_event"
+			{
+				"event"					"heal"
+				"target"				"!hero"
+				"source"				"kez_hungering_blade"
+				"storage"
+				{
+					"1"
+					{
+						"key"			"value"
+						"aggregator"	"sum"
+					}
+				}
+			}
+		}
+		"progress_stored_in"		"1"
+		"post_tests"
+		{
+			"test_total_healing"
+			{
+				"storage"		"1"
+				"compare"		">="
+				"amount"		"<hungering_blade_healing>"
+			}
+		}
+	}
+	"variables"
+	{
+		"<hungering_blade_healing>"
+		{
+			"format"		"int"
+			"index"			"0"
+		}
+	}
+}
