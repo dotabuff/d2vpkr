@@ -2720,6 +2720,9 @@
 		"DOTA_Tooltip_ability_axe_culling_blade_Lore"									"Mogul Khan on taistelun ja vihan ruumiillistuma. Kaikki, jotka uskaltavat kohdata hänet taistelussa, kuolevat verisesti."
 		"DOTA_Tooltip_ability_axe_culling_blade_damage"									"VAHINKO:"
 		"DOTA_Tooltip_ability_axe_culling_blade_speed_bonus"							"%TAPPOVAHVISTUKSEN LIIKENOPEUSLISÄ:"
+		"DOTA_Tooltip_ability_axe_culling_blade_armor_bonus"							"TAPPOVAHVISTUKSEN PANSSARILISÄ:"
+		"DOTA_Tooltip_ability_axe_culling_blade_speed_aoe"								"TAPPOVAHVISTUKSEN SÄDE:"
+		"DOTA_Tooltip_ability_axe_culling_blade_speed_duration"							"TAPPOVAHVISTUKSEN KESTO:"		
 		"DOTA_Tooltip_ability_axe_culling_blade_armor_per_stack"						"TAPPOPANSSARI:"
 
 		"DOTA_Tooltip_modifier_axe_culling_blade_permanent"								"Tappopanssari"
@@ -2739,6 +2742,7 @@
 		"DOTA_Tooltip_modifier_axe_counter_helix"					"Counter Helix"
 		"DOTA_Tooltip_modifier_axe_counter_helix_Description"		"Pyörähdyksen vaatima hyökkäysmäärä."
 		"DOTA_Tooltip_modifier_axe_culling_blade_boost"					"Culling Blade"
+		"DOTA_Tooltip_modifier_axe_culling_blade_boost_Description"		"Axe karjaisee sotahuudon, joka antaa lähellä olevien liittolaisille %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %% liikenopeuslisää ja %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% panssaria."
 		"DOTA_Tooltip_modifier_axe_counter_helix_damage_reduction"					"Counter Helix -vahinkovähennys"
 		"DOTA_Tooltip_modifier_axe_counter_helix_damage_reduction_Description"		"-%dMODIFIER_PROPERTY_TOOLTIP% vahinkoa Axeen."
 		
@@ -12236,8 +12240,16 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_ringmaster_whip_debuff_immunity_Description" "Heikennysimmuniteetti antaa 50 % loitsunvastustusta."
 		"DOTA_Tooltip_Ability_special_bonus_unique_ringmaster_dagger_penetrates"	"Impalement Arts läpäisee yhden kohteen"
 		"DOTA_Tooltip_Ability_special_bonus_unique_ringmaster_dagger_bleed_and_slow_duration" "+{s:bonus_bleed_duration} s Impalement Artsin kestoja"
-"DOTA_Tooltip_Facet_kez_default_Description"					"Kezillä on kiire pelastaa Taivaanlinna, joten kulmakivien hiominen saa odottaa."
-"DOTA_HUD_KezWeapon_Katana"							"Katana"
+
+
+		// Kez
+		// Kez Facets
+		"DOTA_Tooltip_Facet_kez_default"								"Hero of the Flightless"
+		"DOTA_Tooltip_Facet_kez_default_Description"					"Kezillä on kiire pelastaa Taivaanlinna, joten kulmakivien hiominen saa odottaa."
+
+		// Kez UI Panel
+		"DOTA_HUD_KezWeapon_Header"							"Aseet"
+		"DOTA_HUD_KezWeapon_Katana"							"Katana"
 		"DOTA_HUD_KezWeapon_Sai"							"Sai"
 
 		// Kez Abilities
@@ -12247,8 +12259,13 @@
 		"DOTA_Tooltip_ability_kez_switch_weapons_katana_bonus_damage"			"%KATANAN LISÄVAHINKO:"
 		"DOTA_Tooltip_ability_kez_switch_weapons_sai_base_attack_time"		"SAIN PERUSHYÖKKÄYSAIKA:"
 		"DOTA_Tooltip_ability_kez_switch_weapons_sai_attack_range"			"SAIN HYÖKKÄYSETÄISYYS:"
+		"DOTA_Tooltip_ability_kez_switch_weapons_scepter_description"		 "Minkä tahansa asekyvyn käyttäminen nollaa Switch Disciplinen latausajan.<br><br>Ensimmäinen %scepter_cooldown_timer% sekunnin sisällä Switch Disciplinen käytöstä käytetty kyky ei laita vastaavaa toisen aseen kykyä jäähylle."
+
+		"DOTA_Tooltip_modifier_kez_switch_weapons_aghs"						"Switch Discipline"
+
 		"DOTA_Tooltip_ability_kez_echo_slash"								"Echo Slash"
 		"DOTA_Tooltip_ability_kez_echo_slash_Description"					"Kez huitaisee katanallaan eteensä, mikä hidastaa ja tekee vahinkoa hyökkäysvahinkonsa perusteella alueella oleviin vihollisiin. Pienen viiveen päästä huitaisu tapahtuu uudelleen. Sankarit ottavat lisävahinkoa."
+		"DOTA_Tooltip_ability_kez_echo_slash_Lore"						"Kez on mestarinsa Krawin kanssa väsymättä opettanut kazuraille uusia tapoja käyttää muinaisia lentäjänvastaisia tekniikoita."
 		"DOTA_Tooltip_ability_kez_echo_slash_echo_hero_damage"			"LISÄVAHINKO SANKAREIHIN:"
 		"DOTA_Tooltip_ability_kez_echo_slash_katana_echo_damage"		"%HYÖKKÄYSVAHINKO:"
 		"DOTA_Tooltip_ability_kez_echo_slash_strike_interval"			"KAIKUVIIVE:"
@@ -12259,23 +12276,42 @@
 		"DOTA_Tooltip_modifier_kez_echo_slash_slow"						"Echo Slash"
 		"DOTA_Tooltip_modifier_kez_echo_slash_slow_Description"			"-%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %% liikenopeutta"
 
+		"DOTA_Tooltip_ability_kez_grappling_claw"								"Grappling Claw"
+		"DOTA_Tooltip_ability_kez_grappling_claw_Description"					"Kez laukaisee vetokoukun kohdehahmoon tai -puuhun. Viholliseen osuessa kohde hidastuu Kezin saapumiseen asti, jonka jälkeen hän hyökkää siihen %lifesteal_pct% %%:n vampirismin kera. Jos kohde on vihollissankari, hyökkäys tekee lisävahinkoa."
+		"DOTA_Tooltip_ability_kez_grappling_claw_Lore"							"Kazuraiden nopeudelle ja työkaluille ei pärjää korkeimmallakaan lentävä vihollinen."
 		"DOTA_Tooltip_ability_kez_grappling_claw_bonus_flat_lifesteal"			"SANKARIN LISÄVAMPIRISMI:"
 		"DOTA_Tooltip_ability_kez_grappling_claw_katana_ms_slow_pct"			"%LIIKEHIDASTUS:"
 
+		"DOTA_Tooltip_modifier_kez_grappling_claw_slow"						"Grappling Claw -hidastus"
 		"DOTA_Tooltip_modifier_kez_grappling_claw_slow_Description"			"-%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %% liikenopeutta"
 
 		"DOTA_Tooltip_ability_kez_kazurai_katana"											"Kazurai Katana"
+		"DOTA_Tooltip_ability_kez_kazurai_katana_Lore"										"Imperian ja kuningattaren vartioston päihittäminen vaati kazuraita kouluttautumaan pitkiä taisteluita varten."
+		"DOTA_Tooltip_ability_kez_kazurai_katana_Description"								"Katanahyökkäykset ja -kyvyt antavat vihollisille kertymiä, jotka tekevät niihin ajan myötä vahinkoa alkuperäisen hyökkäysvahingon perusteella. Verta vuotavat viholliset palauttavat vähemmän terveyttä." 
+		"DOTA_Tooltip_ability_kez_kazurai_katana_katana_bleed_attack_damage_pct"			"%VAHINKO/S:"
 		"DOTA_Tooltip_ability_kez_kazurai_katana_katana_bleed_duration"						"KESTO:"	
 		"DOTA_Tooltip_ability_kez_kazurai_katana_heal_reduction_pct"						"%PALAUTUMISHEIKENNYS:"
+		"DOTA_Tooltip_ability_kez_kazurai_katana_shard_description"							"Kyvyn aktivointi pistää kohdetta miekalla, mikä tainnuttaa Kezin ja kohteen hetkeksi paikoilleen. Kohteen veriheikennys räjähtää, mikä poistaa sen ja tekee siihen lisävahinkoa kertymien perusteella."
 		"DOTA_Tooltip_ability_kez_kazurai_katana_stun_duration"								"PISTON KESTO:"
+		"DOTA_Tooltip_ability_kez_kazurai_katana_bleed_as_rupture_pct"						"%KERTYMÄN RÄJÄHDYSVAHINKO:"
+
 		"DOTA_Tooltip_modifier_kez_katana_bleed"											"Kazurai Katana"
 		"DOTA_Tooltip_modifier_kez_katana_bleed_Description"								"-%dMODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE% %% terveydenpalautumista, ottaa jatkuvaa vahinkoa."
+		"DOTA_Tooltip_ability_kez_raptor_dance"							"Raptor Dance"
+		"DOTA_Tooltip_ability_kez_raptor_dance_radius"					"SÄDE:"
+		"DOTA_Tooltip_ability_kez_raptor_dance_strikes"					"HUITAISUMÄÄRÄ:"
+		"DOTA_Tooltip_ability_kez_raptor_dance_base_damage"				"PERUSVAHINKO:"
 		"DOTA_Tooltip_ability_kez_raptor_dance_max_health_damage_pct"	"%ENIMMÄISTERVEYSVAHINKO:"
+		"DOTA_TOoltip_ability_kez_raptor_dance_lifesteal_pct"			"%VAMPIRISMI:"
+		"DOTA_Tooltip_modifier_kez_raptor_dance_immune"					"Raptor Dance"
+		"DOTA_Tooltip_modifier_kez_raptor_dance_immune_Description"		"+%dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS% loitsunvastustusta, heikennysimmuuni."
+
 		"DOTA_Tooltip_ability_kez_falcon_rush"						"Falcon Rush"
+		"DOTA_Tooltip_ability_kez_falcon_rush_Lore"					"Muinainen lentävien vihollisten metsästykseen käytetty shodotekniikka: monta hyökkäystä yhdessä siivenräpäyksessä."
+		"DOTA_Tooltip_ability_kez_falcon_rush_Description"			"Kez pystyy hetkellisesti ryntäämään viholliskohteisiin tekemään kaikuvia kaksoishyökkäyksiä. Tässä tilassa Kez kulkee hahmojen lävitse ja hyökkää nopeammin, mutta hyökkäysnopeus vaikuttaa häneen heikommin."
 		"DOTA_Tooltip_ability_kez_falcon_rush_duration"				"KESTO:"
 		"DOTA_Tooltip_ability_kez_falcon_rush_rush_range"			"RYNTÄYSETÄISYYS:"
 		"DOTA_Tooltip_ability_kez_falcon_rush_buff_evasion_pct"		"%VÄISTÖLISÄ:"
-		"DOTA_Tooltip_ability_kez_falcon_rush_base_attack_rate"		"PERUSHYÖKKÄYSAIKA:"
 		"DOTA_Tooltip_ability_kez_falcon_rush_current_attack_rate_tooltip"	"TÄMÄNHETKINEN HYÖKKÄYSVÄLI:"
 		"DOTA_Tooltip_ability_kez_falcon_rush_attack_speed_factor"	"%HYÖKKÄYSNOPEUSTEHO:"
 		"DOTA_Tooltip_ability_kez_falcon_rush_rush_speed"			"RYNTÄYSNOPEUS:"
@@ -12284,6 +12320,7 @@
 		"DOTA_Tooltip_modifier_kez_falcon_rush_Description"			"+%dMODIFIER_PROPERTY_EVASION_CONSTANT% %% väistökykyä, voi rynnätä vihollisiin tekemään kaksoishyökkäyksiä."
 
 		"DOTA_Tooltip_ability_kez_talon_toss"								"Talon Toss"
+		"DOTA_Tooltip_ability_kez_talon_toss_Lore"								"Shodot luottivat etäisyyden ja hämäysten hallintaan selviytyäkseen ylivoimaisia vihollisia vastaan."
 		"DOTA_Tooltip_ability_kez_talon_toss_Description"					"Kez heittää kohdeviholliseen sain. Osuessaan sai räjähtää, jolloin se tekee vahinkoa ja hiljentää kaikki kohdealueella olevat viholliset."
 		"DOTA_Tooltip_ability_kez_talon_toss_radius"						"SÄDE:"
 		"DOTA_Tooltip_ability_kez_talon_toss_damage"						"VAHINKO:"
@@ -12293,6 +12330,7 @@
 		"DOTA_Tooltip_modifier_kez_talon_toss_silence_Description"			"Hiljennetty"
 
 		"DOTA_Tooltip_ability_kez_shodo_sai"						"Shodo Sai"
+		"DOTA_Tooltip_ability_kez_shodo_sai_Lore"						"Shodot saattavat olla mennyttä, mutta Kez ja kazurait voivat silti käyttää heidän opetuksiaan kansan hyväksi."
 		"DOTA_Tooltip_ability_kez_shodo_sai_Description"			"Saihyökkäyksillä ja -kyvyillä on mahdollisuus merkitä vihollisia. Merkityt viholliset hidastuvat, ja Kezin seuraava hyökkäys tai kyky siihen osuu varmasti, tekee kriittistä vahinkoa ja tainnuttaa sen. Merkki katoaa osuman jälkeen.<br><br>Kyvyn aktivointi riisuu Kezin %parry_duration% sekunniksi aseista ja lukitsee hänen katselusuuntansa, jonka aikana Kez voi torjua katselusuunnasta tulevia hyökkäyksiä ja hyökkäysvaikutuksia. Vihollissankarilta torjuttu hyökkäys tainnuttaa sen ja antaa sille vahvemman merkin, jonka kriittinen osuma ja tainnutus ovat vahvempia.<br><br>Torjunnan voi keskeyttää ennenaikaisesti aktivoimalla kyvyn uudelleen."
 		"DOTA_Tooltip_ability_kez_shodo_sai_sai_proc_vuln_chance"	"%MERKINTÄMAHDOLLISUUS:"
 		"DOTA_Tooltip_ability_kez_shodo_sai_base_crit_pct"			"%MERKINTÄHYÖKKÄYKSEN KRIITTINEN VAHINKO:"
@@ -12322,10 +12360,17 @@
 		"DOTA_Tooltip_modifier_kez_ravens_veil_blind_Description"			"Pienennetty näkökenttä, joka palautuu hitaasti."
 
 		"DOTA_Tooltip_ability_special_bonus_unique_kez_falcon_rush_duration"				"+{s:bonus_duration} s Falcon Rushin kestoa"
+		"DOTA_Tooltip_ability_special_bonus_unique_kez_kazura_katana_bleed_damage"			"+{s:bonus_katana_bleed_attack_damage_pct} % Kazurai Katanan vahinkoa"
 		"DOTA_Tooltip_ability_special_bonus_unique_kez_echo_slash_strike_count"				"+{s:bonus_katana_strikes} Echo Slash -hyökkäys"
 		"DOTA_Tooltip_ability_special_bonus_unique_kez_echo_slash_strike_count_Description"	"-0,6 s hyökkäysväliä."
+		"DOTA_Tooltip_ability_special_bonus_unique_kez_mark_damage"							"+{s:bonus_base_crit_pct} % Shodo Sain kriittistä osumaa"
+		"DOTA_Tooltip_ability_special_bonus_unique_kez_raptor_dance_radius"					"+{s:bonus_radius} Raptor Dancen vaikutusaluetta"
+		"DOTA_Tooltip_ability_special_bonus_unique_kez_grapple_cast_range"					"+{s:bonus_AbilityCastRange} Grappling Clawin käyttöetäisyyttä"
 		"DOTA_Tooltip_ability_special_bonus_unique_kez_parry_bonus"							"+{s:bonus_parry_bonus_crit} % vahvan merkin vaikutuksia"
 		"DOTA_Tooltip_ability_special_bonus_unique_kez_ravens_veil_duration"				"+{s:bonus_buff_duration} s Raven's Veilin kestoa"
+		"DOTA_Tooltip_ability_special_bonus_unique_kez_ultimate_cooldown"					"-{s:bonus_AbilityCooldown} s Raptor Dancen/Raven's Veilin latausaikaa"
+		"DOTA_Tooltip_ability_special_bonus_unique_kez_falcon_rush_evasion"					"Falcon Rush antaa {s:bonus_buff_evasion_pct} % väistökykyä"
+
 		// Special Bonuses
 		"DOTA_Tooltip_ability_special_bonus_undefined"			"Odottaa korvausta"
 		"DOTA_Tooltip_ability_ad_special_bonus_gold_lvl10_l"			"+{s:value} kultaa"
@@ -13184,6 +13229,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_kunkka_admirals_rum_delay" "+{s:bonus_delay_time} s Admiral's Rumin vahinkoviivytystä"		
 		"DOTA_Tooltip_ability_special_bonus_unique_dragon_knight"	"+{s:bonus_base_health_regen} Dragon Bloodin panssaria ja terveydenpalautumista"
 		"DOTA_Tooltip_ability_special_bonus_unique_dragon_knight_2"	"+{s:bonus_stun_duration} s Dragon Tailin tainnutuksen kestoa"
+		"DOTA_Tooltip_ability_special_bonus_unique_dragon_knight_3"	"+{s:bonus_reduction} % Breathe Firen vahinkovähennystä"
 		"DOTA_Tooltip_ability_special_bonus_unique_dragon_knight_4"	"Wyrm's Wrath vaikuttaa liittolaisiin"
 		"DOTA_Tooltip_ability_special_bonus_unique_dragon_knight_5"	"+{s:value} % Frost Breathin hidastusta"
 		"DOTA_Tooltip_ability_special_bonus_unique_dragon_knight_6"	"+{s:value} % Splash Attackin vahinkoa"
@@ -13234,6 +13280,8 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_axe_6"	"+{s:bonus_slow} % Battle Hungerin hidastusta"
 		"DOTA_Tooltip_ability_special_bonus_unique_axe_7"	"+{s:bonus_bonus_armor} Berserker's Callin panssaria"
 		"DOTA_Tooltip_ability_special_bonus_unique_axe_8"	"Aktiivinen Battle Hunger antaa +{s:bonus_speed_bonus} % liikenopeutta"
+		"DOTA_Tooltip_ability_special_bonus_unique_axe_culling_blade_speed_duration"	"+{s:bonus_speed_duration} s Culling Bladen tappovahvistuksen kestoa"
+		
 		"DOTA_Tooltip_ability_special_bonus_unique_beastmaster"	"+{s:bonus_axe_damage} Wild Axesin vahinkoa"
 		"DOTA_Tooltip_ability_special_bonus_unique_beastmaster_2"	"+{s:bonus_boar_bonus_damage} vahinkoa Beastmasterille ja hänen kätyreilleen"
 		"DOTA_Tooltip_ability_special_bonus_unique_beastmaster_3"	"Inner Beast antaa {s:bonus_magic_resist} % loitsunvastustusta"
@@ -15109,6 +15157,7 @@
 		"DOTA_Tooltip_ability_item_abyssal_blade_Note0"									"Tainnutus toimii lähietäisyydeltä."
 		"DOTA_Tooltip_ability_item_abyssal_blade_Note1"									"Ei toimi muiden Bash-kykyjen kanssa, eikä anna Bashiä klooneille tai Tempest Doublen kopiolle."
 		"DOTA_Tooltip_ability_item_abyssal_blade_Note2"									"Useat torjumislähteet eivät toimi yhdessä."
+		"DOTA_Tooltip_ability_item_abyssal_blade_Note3"									"Tämän esineen Bash ei tapahdu koskaan seuraavilla sankareilla: Spirit Breaker, Faceless Void, Slardar ja saita käyttävä Kez."
 		"DOTA_Tooltip_ability_item_abyssal_blade_bonus_damage"							"+$damage"
 		"DOTA_Tooltip_ability_item_abyssal_blade_bonus_health"							"+$health"
 		"DOTA_Tooltip_ability_item_abyssal_blade_bonus_health_regen"					"+$hp_regen"
