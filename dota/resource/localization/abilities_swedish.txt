@@ -314,6 +314,9 @@
 		"npc_dota_hero_muerta__en:n"					"#|c|#Muerta"
 		"npc_dota_hero_ringmaster:n"					"#|c|#Ringmaster"
 		"npc_dota_hero_ringmaster__en:n"				"#|c|#Ringmaster"
+		"npc_dota_hero_kez:n"							"#|c|#Kez"
+		"npc_dota_hero_kez__en:n"						"#|c|#Kez"
+
 		// NPC names
 		"ent_dota_halloffame"							"Aegis of Champions"
 		"npc_dota_creep"								"Creep"
@@ -2663,6 +2666,8 @@
 		"DOTA_Tooltip_ability_axe_culling_blade_Lore"									"Mogul Khan är en inkarnation av strid och raseri, som kastar sig med ohyggligt dödsförakt in i dem som vågar inlåta sig i strid med Axe."
 		"DOTA_Tooltip_ability_axe_culling_blade_damage"									"SKADA:"
 		"DOTA_Tooltip_ability_axe_culling_blade_speed_bonus"							"%FARTBONUS VID MORD:"
+		"DOTA_Tooltip_ability_axe_culling_blade_armor_bonus"							"SKYDDSBONUS PER OFFER:"
+		"DOTA_Tooltip_ability_axe_culling_blade_speed_aoe"								"BUFFRADIE PER OFFER:"
 		"DOTA_Tooltip_ability_axe_culling_blade_armor_per_stack"						"SKYDD PER KILL:"
 
 		"DOTA_Tooltip_modifier_axe_culling_blade_permanent"								"Culled Armor"
@@ -9015,6 +9020,9 @@
 		
 		"DOTA_Tooltip_ability_centaur_rawhide"							"Rawhide"
 		"DOTA_Tooltip_ability_centaur_rawhide_Description"				"Få permanent %health_per_upgrade% maximal HP var v%upgrade_rate% sekund."
+		"DOTA_Tooltip_ability_centaur_rawhide_bonus_hp_total"			"PERMANENT MAX-HP:"
+
+
 		"DOTA_Tooltip_ability_centaur_horsepower"							"Horsepower"
 		"DOTA_Tooltip_ability_centaur_horsepower_Description"				"Centaur Warrunner får förflyttningshastighet baserat på hans styrka."
 		"DOTA_Tooltip_ability_centaur_horsepower_Note0"						"Centaur Warrunner får %strength_to_movement_pct% %% av sin styrka som extra förflyttningshastighet. Den maximala förflyttningshastighet för Centaur ökas till %move_speed_limit%.<br><br> Den extra förflyttningshastigheten stackar inte med bonusar från stövlar."
@@ -11318,11 +11326,16 @@
 		"DOTA_Tooltip_modifier_hoodwink_decoy_invisibility_Description"			"Osynlig. Förflyttningshastighet ökad med %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %%."
 
 		"DOTA_Tooltip_ability_hoodwink_hunters_boomerang"				"Hunter's Boomerang"
+		"DOTA_Tooltip_ability_hoodwink_hunters_boomerang_Description"	"Kastar en bumerang i en båge. Efter träff återvänder den till Hoodwink. Bumerangen skadar alla fiender den träffar längs vägen och applicerar en debuff som gör att påverkade fiender saktas ned och tar mer skada från besvärjelser."
 		"DOTA_Tooltip_ability_hoodwink_hunters_boomerang_damage"				"SKADA:"
 		"DOTA_Tooltip_ability_hoodwink_hunters_boomerang_radius"				"RADIE:"
+		"DOTA_Tooltip_ability_hoodwink_hunters_boomerang_mark_duration"			"DEBUFF – VARAKTIGHET:"
 		"DOTA_Tooltip_ability_hoodwink_hunters_boomerang_spell_amp"				"%INKOMMANDE FÖRMÅGESKADA:"
 		"DOTA_Tooltip_ability_hoodwink_hunters_boomerang_slow_pct"				"%NEDSAKTNING:"
 		"DOTA_Tooltip_ability_hoodwink_hunters_boomerang_status_resistance"		"%MINSKAD STATUSRESISTENS:"
+		"DOTA_Tooltip_Ability_hoodwink_hunters_boomerang_shard_description"		"Hunter's Boomerang minskar även statusresistens."
+
+		"DOTA_Tooltip_modifier_hoodwink_hunters_mark"					"Hunter's Boomerang"
 		"DOTA_Tooltip_modifier_hoodwink_hunters_mark_Description"		"Saktas ned och tar ökad förmågeskada."
 
 
@@ -11834,7 +11847,145 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_ringmaster_whip_debuff_immunity_Description" "Ger även 50 % magiresistens."
 		"DOTA_Tooltip_Ability_special_bonus_unique_ringmaster_dagger_penetrates"	"Impalement Arts penetrerar ett mål"
 		"DOTA_Tooltip_Ability_special_bonus_unique_ringmaster_dagger_bleed_and_slow_duration" "Impalement Arts: +{s:bonus_bleed_duration} s blödning och nedsaktningsvaraktighet"
-"DOTA_Tooltip_ability_special_bonus_unique_kez_ultimate_cooldown"					"Raptor Dance/Raven's Veil: -{s:bonus_AbilityCooldown} s cooldown."
+
+
+		// Kez
+		// Kez Facets
+		"DOTA_Tooltip_Facet_kez_default"								"De markbundnas hjälte"
+		"DOTA_Tooltip_Facet_kez_default_Description"					"Kez har alltid några roliga trick i rockärmen, men just nu har han ett krig att vinna. Den här fasetten gör ingenting ... än."
+
+		// Kez UI Panel
+		"DOTA_HUD_KezWeapon_Header"							"Discipliner"
+		"DOTA_HUD_KezWeapon_Katana"							"Katana"
+		"DOTA_HUD_KezWeapon_Sai"							"Sai"
+
+		// Kez Abilities
+		"DOTA_Tooltip_ability_kez_switch_weapons"								"Switch Discipline"
+		"DOTA_Tooltip_ability_kez_switch_weapons_Lore"								"Som före detta anhängare av Shodo kan ledarna för Kazurai-orden utan ansträngning byta disciplin mellan mästerlig behärskning av Sai och svärd."
+		"DOTA_Tooltip_ability_kez_switch_weapons_Description"					"Kez växlar mellan Kazurai Katana och Shodo Sai.<br><br>Han får olika attackmöjligheter och förmågor baserat på det utrustade vapnet. Förmågorna levlas upp tillsammans, och när en förmåga används, blir det cooldown även för den alternativa vapenförmågan.<br><br>Cooldown för Switch Discipline minskar med %cooldown_reduction_per_level% s per hjältenivå."
+		"DOTA_Tooltip_ability_kez_switch_weapons_katana_base_attack_time"		"GRUNDATTACKTID (KATANA):"
+		"DOTA_Tooltip_ability_kez_switch_weapons_katana_attack_range"			"ATTACKRÄCKVIDD (ATTACK):"
+		"DOTA_Tooltip_ability_kez_switch_weapons_katana_bonus_damage"			"%BONUSSKADA (KATANA):"
+		"DOTA_Tooltip_ability_kez_switch_weapons_sai_base_attack_time"		"GRUNDATTACKTID (SAI):"
+		"DOTA_Tooltip_ability_kez_switch_weapons_sai_attack_range"			"ATTACKRÄCKVIDD (SAI):"
+		"DOTA_Tooltip_ability_kez_switch_weapons_scepter_description"		 "Vid användning av valfri vapenförmåga uppdateras cooldown för Switch Discipline.<br><br>Den första förmågan som Kez använder %scepter_cooldown_timer% sekunder efter att ha använt Switch Discipline ger inte cooldown för den alternativa vapenförmågan."
+
+		"DOTA_Tooltip_modifier_kez_switch_weapons_aghs"						"Switch Discipline"
+
+		"DOTA_Tooltip_ability_kez_echo_slash"								"Echo Slash"
+		"DOTA_Tooltip_ability_kez_echo_slash_Lore"						"Kez och hans mästare Kraw har outtröttligt jobbat med att lära Kazurai nya sätt att hålla flygarna ur balans genom att förbättra uråldriga tekniker."
+		"DOTA_Tooltip_ability_kez_echo_slash_echo_hero_damage"			"BONUSSKADA (HJÄLTAR):"
+		"DOTA_Tooltip_ability_kez_echo_slash_katana_distance"			"AVSTÅND:"
+		"DOTA_Tooltip_ability_kez_echo_slash_katana_echo_damage"		"%ATTACKSKADA:"
+		"DOTA_Tooltip_ability_kez_echo_slash_strike_interval"			"FÖRDRÖJNING (ECHO):"
+		"DOTA_Tooltip_ability_kez_echo_slash_katana_strikes"			"ATTACKER:"
+		"DOTA_Tooltip_ability_kez_echo_slash_katana_radius"				"ATTACKRADIE:"
+		"DOTA_Tooltip_ability_kez_echo_slash_tag_slow"					"%FÖRFLYTTNINGSNEDSAKTNING:"
+		"DOTA_Tooltip_ability_kez_echo_slash_tag_slow_duration"			"NEDSAKTNING – VARAKTIGHET:"
+
+		"DOTA_Tooltip_modifier_kez_echo_slash_slow"						"Echo Slash"
+		"DOTA_Tooltip_modifier_kez_echo_slash_slow_Description"			"Förflyttningshastighet minskad med %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %%"
+
+		"DOTA_Tooltip_ability_kez_grappling_claw"								"Grappling Claw"
+		"DOTA_Tooltip_ability_kez_grappling_claw_Description"					"Kez kastar en änterkrok mot en enhet eller ett träd. När änterkroken träffar målet, saktas enheten ned tills Kez anländer. Vid landning attackerar han med %lifesteal_pct% %% livstjälande plus en bestämd mängd extra om målet är en hjälte."
+		"DOTA_Tooltip_ability_kez_grappling_claw_Lore"							"Kazurai har rätt hastighet och räckvidd för att kunna dra ned även de mest högflygande flygarna från himlen."
+		"DOTA_Tooltip_ability_kez_grappling_claw_bonus_flat_lifesteal"			"EXTRA HELANDE (HJÄLTE):"
+		"DOTA_Tooltip_ability_kez_grappling_claw_katana_ms_slow_pct"			"%NEDSAKTNING:"
+
+		"DOTA_Tooltip_modifier_kez_grappling_claw_slow"						"Grappling Claw"
+		"DOTA_Tooltip_modifier_kez_grappling_claw_slow_Description"			"Förflyttningshastighet minskad med %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %%"
+
+		"DOTA_Tooltip_ability_kez_kazurai_katana"											"Kazurai Katana"
+		"DOTA_Tooltip_ability_kez_kazurai_katana_Lore"										"För att slå tillbaka mot Imperias och livgardets räckvidd har Kazurai blivit skickliga på utmattningsmetoder."
+		"DOTA_Tooltip_ability_kez_kazurai_katana_Description"								"Katana-attacker och -förmågor applicerar en stackande effekt över tid på fiender som delar ut en procentandel av den ursprungliga attackens skada som ytterligare skada över tid. Påverkade fiender har reducerad HP-regeneration." 
+		"DOTA_Tooltip_ability_kez_kazurai_katana_katana_bleed_attack_damage_pct"			"%SKADA PER SEKUND:"
+		"DOTA_Tooltip_ability_kez_kazurai_katana_katana_bleed_duration"						"VARAKTIGHET:"	
+		"DOTA_Tooltip_ability_kez_kazurai_katana_heal_reduction_pct"						"%REDUCERAD REGENERATION:"
+		"DOTA_Tooltip_ability_kez_kazurai_katana_shard_description"							"Kez kan aktivera förmågan för att spetsa målet med sin attack, vilket kortvarigt bedövar Kez och målet. Målets debuff gör utbrottsskada, tas bort och gör att attacken delar ut bonusskada baserat på stackantalet."
+		"DOTA_Tooltip_ability_kez_kazurai_katana_bleed_as_rupture_pct"						"%STACKAR SOM UTBROTTSSKADA:"
+
+		"DOTA_Tooltip_modifier_kez_katana_bleed"											"Kazurai Katana"
+		"DOTA_Tooltip_modifier_kez_katana_bleed_Description"								"Tar skada över tid. HP-regenerationen minskad med %dMODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE% %%."
+		"DOTA_Tooltip_modifier_kez_katana_shard_debuff"										"Kazurai Katana Impale"
+
+		"DOTA_Tooltip_ability_kez_raptor_dance"							"Raptor Dance"
+		"DOTA_Tooltip_ability_kez_raptor_dance_Lore"							"Släpp loss de markbundnas inre raseri för att njuta av dina fienders essens."
+		"DOTA_Tooltip_ability_kez_raptor_dance_Description"				"Kez går in i en okontrollerbar kanalisering i %AbilityChannelTime% sekunder och får debuffimmunitet och %magic_resist% %% magiskt motstånd. Om kanaliseringen slutförs framgångsrikt, utför Kez en serie dödliga cirkulära attacker runt sig som gör skada baserat på målets maximala HP och helar Kez med en procentandel av all skada. Kez får en stark dispel efteråt."
+		"DOTA_Tooltip_ability_kez_raptor_dance_radius"					"RADIE:"
+		"DOTA_Tooltip_ability_kez_raptor_dance_strikes"					"ATTACKER:"
+		"DOTA_Tooltip_ability_kez_raptor_dance_base_damage"				"BASSKADA:"
+		"DOTA_Tooltip_ability_kez_raptor_dance_max_health_damage_pct"	"%MAX-HP SOM SKADA:"
+		"DOTA_TOoltip_ability_kez_raptor_dance_lifesteal_pct"			"%LIVSTJÄLANDE FRÅN SLAG:"
+		"DOTA_Tooltip_modifier_kez_raptor_dance_immune"					"Raptor Dance"
+		"DOTA_Tooltip_modifier_kez_raptor_dance_immune_Description"		"Debuffimmunitet %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS% %% och magiresistens."
+
+		"DOTA_Tooltip_ability_kez_falcon_rush"						"Falcon Rush"
+		"DOTA_Tooltip_ability_kez_falcon_rush_Lore"					"En uråldrig Shodo-teknik som används för att jaga snabbare flygfiender. Den tar tillbaka fördelen och levererar flera attacker under ett enda vingflax från deras panikslagna byte."
+		"DOTA_Tooltip_ability_kez_falcon_rush_Description"			"Kez får förmågan att storma mot fiendens mål för att leverera sekundära ekoattacker. I det här tillståndet har Kez obehindrad förflyttning och en attackhastighet som påverkas mindre av attackhastigheten."
+		"DOTA_Tooltip_ability_kez_falcon_rush_duration"				"VARAKTIGHET:"
+		"DOTA_Tooltip_ability_kez_falcon_rush_buff_evasion_pct"		"%UNDVIKANDE:"
+		"DOTA_Tooltip_ability_kez_falcon_rush_base_attack_rate_sai"			"GRUNDATTACKFREKVENS (SAI):"
+		"DOTA_Tooltip_ability_kez_falcon_rush_base_attack_rate_katana"		"GRUNDATTACKFREKVENS (KATANA):"
+		"DOTA_Tooltip_ability_kez_falcon_rush_current_attack_rate_tooltip"	"NUVARANDE ATTACKFREKVENS:"
+		"DOTA_Tooltip_ability_kez_falcon_rush_attack_speed_factor"	"%ATTACKHASTIGHETSFAKTOR:"
+		"DOTA_Tooltip_modifier_kez_falcon_rush"						"Falcon Rush"
+		"DOTA_Tooltip_modifier_kez_falcon_rush_Description"			"Får %dMODIFIER_PROPERTY_EVASION_CONSTANT% %% undvikande och förmågan att rusa mot fiender och leverera en dubbelattack."
+
+		"DOTA_Tooltip_ability_kez_talon_toss"								"Talon Toss"
+		"DOTA_Tooltip_ability_kez_talon_toss_Lore"								"Shodo lärde sig att förlita på avstånd och desorientering för att överleva mot ett mycket starkare motstånd."
+		"DOTA_Tooltip_ability_kez_talon_toss_Description"					"Kez kastar en Sai på målenheten. Sai detonerar vid träff, gör skada och applicerar tystnad på alla fiender i området."
+		"DOTA_Tooltip_ability_kez_talon_toss_radius"						"RADIE:"
+		"DOTA_Tooltip_ability_kez_talon_toss_damage"						"SKADA:"
+		"DOTA_Tooltip_ability_kez_talon_toss_silence_duration"				"TYSTNADSVARAKTIGHET:"
+
+		"DOTA_Tooltip_modifier_kez_talon_toss_silence"						"Talon Toss"
+		"DOTA_Tooltip_modifier_kez_talon_toss_silence_Description"			"Tystad"
+
+		"DOTA_Tooltip_ability_kez_shodo_sai"						"Shodo Sai"
+		"DOTA_Tooltip_ability_kez_shodo_sai_Lore"						"Shodo må ha gått förlorade, men Kez och Kazurai kan fortfarande använda Shodo-kunskapen för folkets bästa."
+		"DOTA_Tooltip_ability_kez_shodo_sai_Description"			"Kez attacker och förmågor med Sai har en chans att markera fiender. Markerade fiender saktas ned, och nästa attack eller förmåga från Kez får True Strike, bedövar fienden och gör kritisk skada, vilket förbrukar buffen.<br><br>Kez kan aktivera förmågan att avväpna sig själv, låsa riktningen och parera attacker och attackeffekter från riktningen i %parry_duration% sekunder. Om en attack pareras från en fiendehjälte på det sättet, bedövas och markeras fienden. Fienden tar ytterligare kritisk skada och bedövning när debuffen är utlöst.<br><br>Underförmågan kan användas för att avbryta blockeringen i förtid."
+		"DOTA_Tooltip_ability_kez_shodo_sai_sai_proc_vuln_chance"	"%MARKERINGSCHANS:"
+		"DOTA_Tooltip_ability_kez_shodo_sai_base_crit_pct"			"%KRITISK TRÄFF PÅ MARKERADE:"
+		"DOTA_Tooltip_ability_kez_shodo_sai_stun_duration"			"BEDÖVNINGSVARAKTIGHET PÅ MARKERADE:"
+		"DOTA_Tooltip_ability_kez_shodo_sai_vuln_duration"			"MARKERINGSVARAKTIGHET:"
+		"DOTA_Tooltip_ability_kez_shodo_sai_vuln_slow"				"%FÖRFLYTTNINGSNEDSAKTNING PÅ MARKERADE:"
+		"DOTA_Tooltip_ability_kez_shodo_sai_parry_bonus_crit"		"%EXTRA KRITISK SKADA VID PARERING:"
+		"DOTA_Tooltip_ability_kez_shodo_sai_parry_stun_duration"	"EXTRA BEDÖVNINGSVARAKTIGHET VID PARERING:"
+		"DOTA_Tooltip_ability_kez_shodo_sai_shard_Description"		"Ger passivt %shard_base_movement_speed% förflyttningshastighet och ytterligare %shard_vuln_movement_speed% förflyttningshastighet per markerad fiende."
+
+		"DOTA_Tooltip_modifier_kez_shodo_sai_parry"					"Shodo Sai"
+		"DOTA_Tooltip_modifier_kez_shodo_sai_parry_Description"		"Blockerar fysiska attacker framifrån. Om en attack blockeras eller undviks markeras fienden med ytterligare kritisk träff och bedövning."
+		"DOTA_Tooltip_modifier_kez_shodo_sai_mark"							"Markerad"
+		"DOTA_Tooltip_modifier_kez_shodo_sai_mark_Description"				"Kez nästa attack- eller förmågeskada utlöser bedövning och kritisk träff."
+
+		"DOTA_Tooltip_ability_kez_ravens_veil"								"Raven's Veil"
+		"DOTA_Tooltip_ability_kez_ravens_veil_Lore"								"Vid både hot och möjlighet glider shodomästare omedelbart in i skuggan för att återställa villkoren för varje konfrontation till sin favör."
+		"DOTA_Tooltip_ability_kez_ravens_veil_Description"					"Kez släpper ut en våg av rök som applicerar hans markering på fiender i närheten, vilket under en kort tid minskar fiendernas sikt. Kez får en grundläggande dispel, extra förflyttningshastighet och osynlighet tills han attackerar eller kastar en besvärjelse."
+		"DOTA_Tooltip_ability_kez_ravens_veil_blast_radius"					"VÅGRADIE:"
+		"DOTA_Tooltip_ability_kez_ravens_veil_blast_speed"					"VÅGHASTIGHET:"
+		"DOTA_Tooltip_ability_kez_ravens_veil_buff_duration"				"VARAKTIGHET:"
+		"DOTA_Tooltip_ability_kez_ravens_veil_bonus_ms"						"%EXTRA FÖRFLYTTNINGSHASTIGHET:"
+		"DOTA_Tooltip_ability_kez_ravens_veil_blind_duration"				"BLÄNDNING – VARAKTIGHET:"
+
+		"DOTA_Tooltip_modifier_kez_ravens_veil_buff"						"Raven's Veil"
+		"DOTA_Tooltip_modifier_kez_ravens_veil_buff_Description"			"Osynlig och rör sig %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %% snabbare. Buffen förloras vid nästa attack eller förmåga."
+		"DOTA_Tooltip_modifier_kez_ravens_veil_blind"						"Raven's Veil"
+		"DOTA_Tooltip_modifier_kez_ravens_veil_blind_Description"			"Sikten minskas och återhämtas långsamt över tid."
+
+		"DOTA_Tooltip_ability_special_bonus_unique_kez_falcon_rush_duration"				"Falcon Rush: +{s:bonus_duration} s varaktighet"
+		"DOTA_Tooltip_ability_special_bonus_unique_kez_kazura_katana_bleed_damage"			"Kazurai Katana: +{s:bonus_katana_bleed_attack_damage_pct} % skada per sekund"
+		"DOTA_Tooltip_ability_special_bonus_unique_kez_echo_slash_strike_count"				"Echo Slash: +{s:bonus_katana_strikes} attack"
+		"DOTA_Tooltip_ability_special_bonus_unique_kez_echo_slash_strike_count_Description"	"-0,6 s intervall"
+		"DOTA_Tooltip_ability_special_bonus_unique_kez_mark_damage"							"Shodo Sai: +{s:bonus_base_crit_pct} % kritisk träff"
+		"DOTA_Tooltip_ability_special_bonus_unique_kez_raptor_dance_radius"					"Raptor Dance: +{s:bonus_radius} radie"
+		"DOTA_Tooltip_ability_special_bonus_unique_kez_grapple_cast_range"					"Grappling Claw: +{s:bonus_AbilityCastRange} användningsräckvidd"
+		"DOTA_Tooltip_ability_special_bonus_unique_kez_parry_bonus"							"+{s:bonus_parry_bonus_crit} % pareringsbonusar"
+		"DOTA_Tooltip_ability_special_bonus_unique_kez_ravens_veil_duration"				"Raven's Veil: +{s:bonus_buff_duration} varaktighet"
+		"DOTA_Tooltip_ability_special_bonus_unique_kez_ultimate_cooldown"					"Raptor Dance/Raven's Veil: -{s:bonus_AbilityCooldown} s cooldown."
+		"DOTA_Tooltip_ability_special_bonus_unique_kez_falcon_rush_evasion"					"Falcon Rush: +{s:bonus_buff_evasion_pct} % undvikande"
+		"DOTA_Tooltip_ability_special_bonus_unique_kez_ravens_veil_mark_parry_bonus"		"Raven's Veils markering applicerar pareringsbonus"
+
+
 		// Special Bonuses
 		"DOTA_Tooltip_ability_special_bonus_undefined"			"Odefinierad"
 		"DOTA_Tooltip_ability_ad_special_bonus_gold_lvl10_l"			"+{s:value} guld"
@@ -14087,6 +14238,7 @@
 		"DOTA_Tooltip_ability_item_abyssal_blade_Lore"									"Det förlorade svärdet från Djupets befälhavare, skär den här klingan in i en fiendes själ."
 		"DOTA_Tooltip_ability_item_abyssal_blade_Note0"									"Bedövningen är i närkampsräckvidd."
 		"DOTA_Tooltip_ability_item_abyssal_blade_Note2"									"Flera källor av skadeblockering stackar ej."
+		"DOTA_Tooltip_ability_item_abyssal_blade_Note3"									"Följande hjältar kan inte utlösa Bash med detta föremål: Spirit Breaker, Faceless Void, Slardar och Kez i Sai-läge."
 		"DOTA_Tooltip_ability_item_abyssal_blade_bonus_damage"							"+$damage"
 		"DOTA_Tooltip_ability_item_abyssal_blade_bonus_health"							"+$health"
 		"DOTA_Tooltip_ability_item_abyssal_blade_bonus_health_regen"					"+$hp_regen"
@@ -14144,6 +14296,7 @@
 		"DOTA_Tooltip_ability_item_basher_Description"							"<h1>Passiv: Bash</h1> Varje närstridsattack har %bash_chance_melee%% % chans att bedöva målet i %bash_duration% sekunder och göra %bonus_chance_damage% extra fysisk skada. Chansen för Bash vid avståndsattacker är %bash_chance_ranged%% %."
 		"DOTA_Tooltip_ability_item_basher_Lore"									"I de rätta händerna ska detta fruktade vapens kapacitet att kunna splittra motståndarens försvar inte underskattas."
 		"DOTA_Tooltip_ability_item_basher_Note0"								"Stackar inte med andra källor av Bash."
+		"DOTA_Tooltip_ability_item_basher_Note1"								"Följande hjältar kan inte utlösa Bash med detta föremål: Spirit Breaker, Faceless Void, Slardar och Kez i Sai-läge."
 		"DOTA_Tooltip_ability_item_basher_bonus_damage"							"+$damage"
 		"DOTA_Tooltip_ability_item_basher_bonus_strength"						"+$str"
 		//"DOTA_Tooltip_ability_item_basher_bash_chance_melee"					"%BASH MELEE CHANCE:"
@@ -14635,6 +14788,7 @@
 		"DOTA_Tooltip_modifier_flask_healing"				"Healing Salve"
 		"DOTA_Tooltip_modifier_flask_healing_Description"		"Återställer hälsa."
 
+		"DOTA_Tooltip_ability_item_force_staff_Description"						"<h1>Aktiv: Force</h1>Knuffar en målenhet %push_length% enheter i riktningen som den är vänd mot."
 		"DOTA_Tooltip_ability_item_force_staff_Lore"						"Låter dig manipulera andra, för gott och ont."
 		"DOTA_Tooltip_ability_item_force_staff_Note0"							"Själv-användande kommer att använda Force på dig själv."
 		"DOTA_Tooltip_ability_item_force_staff_Note1"							"Force Staff avbryter inte målets ageranden."
