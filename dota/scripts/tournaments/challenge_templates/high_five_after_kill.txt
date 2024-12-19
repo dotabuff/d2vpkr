@@ -1,0 +1,54 @@
+"high_five_after_kill"
+{
+	"desc"		""
+	"image"		""
+	"events"
+	{
+		"matching_type"		"linear_series"
+		"query"
+		{
+			"enemy_hero_kill"
+			{
+				"event"					"death"
+				"target_must_be_hero"	"1"
+				"target_team"			"!enemyteam"
+				"assist_player_id"		"!playerid"
+			}
+			"separator"		"10.000000"
+			"high_five"
+			{
+				"event"				"player_stat_tracker"
+				"tracked_stat_id"	"625"	// "high_fives"
+				"target"			"!playerid"
+			}
+		}
+		"progress_stored_in"		"1"
+		"postmatch_increments"
+		{
+			"storage"
+			{
+				"1"
+				{
+					"aggregator"		"increment"
+				}
+			}
+		}
+		"post_tests"
+		{
+			"kills"
+			{
+				"storage"		"1"
+				"compare"		">="
+				"amount"		"<kills>"
+			}
+		}
+	}
+	"variables"
+	{
+		"<kills>"
+		{
+			"format"		"int"
+			"index"		"0"
+		}
+	}
+}
