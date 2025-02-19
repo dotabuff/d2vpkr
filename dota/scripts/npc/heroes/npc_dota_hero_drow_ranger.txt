@@ -45,7 +45,6 @@
 			"damage"
 			{
 				"value"						"10 15 20 25"
-				"special_bonus_unique_drow_ranger_2"			"+15"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"shard_regen_reduction_pct_per_stack"
@@ -136,7 +135,12 @@
 				"value"				"3"
 				"special_bonus_unique_drow_ranger_8"		"+1"
 			}			
-			"arrow_count_per_wave"				"4"
+			"arrow_count_per_wave"			
+			{
+				"value"											"4"
+				"special_bonus_unique_drow_ranger_2"			"+1"
+
+			}
 			"arrow_damage_pct"
 			{
 				"value"										"100 120 140 160"
@@ -221,7 +225,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"70"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -246,7 +249,11 @@
 				"AbilityCooldown"
 				{
 					"value"											"19 17 15 13"
-					"special_bonus_unique_drow_ranger_7"			"-3.5"
+				}
+				"AbilityManaCost"
+				{
+					"value"										"70"
+					"special_bonus_unique_drow_ranger_7"		"=0"
 				}
 				"miss_chance"
 				{
@@ -267,26 +274,27 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS "
 		"Innate"						"1"
-		"MaxLevel"						"1"
+		"MaxLevel"						"4"
+		"DependentOnAbility"			"drow_ranger_marksmanship"
 		"IsBreakable"					"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"trueshot_agi_bonus_self"	"2"
-				"trueshot_agi_bonus_allies"	"1"
-				"trueshot_aspd_bonus_creeps"	
-				{
-					"value"			"0"
-					"special_bonus_facet_1"	"+3"
-				}
 				"radius"						
 				{
 					"value"			"1200"
 					"affected_by_aoe_increase"	"1"
+				}
+				"trueshot_agi_bonus_base"			"4 8 12 16"
+				"trueshot_agi_bonus_per_level"		"1"
+				"trueshot_agi_bonus_allies_pct"		"50"
+				"agi_bonus_pct_tooltip"
+				{
+					"dynamic_value"						"true"
 				}
 
 		}
@@ -407,7 +415,7 @@
 		"IsBreakable"					"1"
 		"AbilityValues"
 		{
-			"damage_bonus"		"20"
+			"damage_bonus"		"30"
 			"bonus_miss_chance"		"0"
 		}
 	}

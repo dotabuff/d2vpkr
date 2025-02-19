@@ -68,7 +68,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 
-        "HasShardUpgrade"             "1"
+        "HasShardUpgrade"             "0"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -82,7 +82,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"75"
+		"AbilityManaCost"				"85 90 95 100"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -91,7 +91,6 @@
 			"shock_speed"				
 			{
 				"value"					"1200"
-				"special_bonus_shard"	"+400"
 
 			}
 			"shock_width"				
@@ -101,27 +100,44 @@
 			}
 			"shock_damage"				
 			{
-				"value"			"90 160 230 300"				
+				"value"			"90 160 230 300 300"				
 				"special_bonus_unique_magnus"	"+125"
 			}
 			"movement_slow"				"75"
 			"slow_duration"				"2"
 			"pull_duration"				"0.2"
 			"pull_distance"		"150"
+			"max_level"
+			{
+				"value"												"4"
+				"special_bonus_facet_magnataur_diminishing_return" "+1"
+			}
+			"max_level_tooltip"
+			{
+				"special_bonus_facet_magnataur_diminishing_return" "=5"
+			}
 			"basic_slow_duration"		
 			{
-				"value"					"0.7 0.8 0.9 1.0"
-				"special_bonus_unique_magnus_6"	"+0.75"
+				"value"					"0.7 0.8 0.9 1.0 1.0"
+
 			}
 			"return_damage_pct"			
 			{
 				"value"			"0"
-				"special_bonus_shard"		"+75"
+				"special_bonus_facet_magnataur_diminishing_return"		"=0 =0 =0 =0 =50"
+			}
+			"return_damage_pct_tooltip"
+			{
+				"value"			"0"
+				"special_bonus_facet_magnataur_diminishing_return"		"=50"
 			}
 			"AbilityCastRange"
 			{
 				"value"					"1200"
-				"special_bonus_shard"		"+400"
+			}
+			"return_shockwave_bonus_distance"
+			{
+				"special_bonus_facet_magnataur_diminishing_return"		"+200"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -249,6 +265,27 @@
 				//"special_bonus_shard"	"+400"
 			}
 			"self_multiplier"		"50"
+			
+			"always_on"			
+			{
+				"value"															"0"
+				"special_bonus_facet_magnataur_eternal_empowerment"				"=1"
+			}
+			"self_multiplier_bonus_stack_duration"
+			{
+				"value"															"0"
+				"special_bonus_facet_magnataur_eternal_empowerment"				"10"
+			}
+			"self_multiplier_bonus_max_stacks"		
+			{
+				"value"															"0"
+				"special_bonus_facet_magnataur_eternal_empowerment"				"10 15 20 25"
+			}
+			"self_multiplier_bonus_per_stack"		
+			{
+				"value"															"0"
+				"special_bonus_facet_magnataur_eternal_empowerment"				"2 3 4 5"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -267,6 +304,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Magnataur.Skewer.Cast"
+		"HasShardUpgrade"				"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -292,7 +330,7 @@
 				"range"					
 				{
 					"value"			"900 975 1050 1125"
-				"special_bonus_unique_magnus_3" "+275"
+					"special_bonus_shard" 			"+275"
 				}
 				"slow_pct"				
 				{
@@ -303,21 +341,34 @@
 					"value"		"145"
 					"affected_by_aoe_increase"	"1"
 				}
-				"slow_duration"				"3.25"
+				"slow_duration"			
+				{
+					"value"										"3.25"
+					"special_bonus_unique_magnus_6"				"+1.25"
+				}
 				"skewer_damage"			"80 160 240 320"
+				"damage_distance_pct"			
+				{		
+					"value"			"6 9 12 15" 
+					"special_bonus_unique_magnus_skewer_damage_distance"		"+15"
+				}
 				"tree_radius"				
 				{
-					"value"			"200"
+					"value"			"0"
+					"special_bonus_shard"			"+200"
 					"affected_by_aoe_increase"	"1"
 				}			
 				"tree_hit_damage"
 				{
-					"value"			"15 20 25 30"
+					"value"							"0"
+					"special_bonus_shard"			"30"
 						
 				}
 				"cliff_hit_damage"
 				{
-					"value"			"50 75 100 125"
+					"value"			"0"
+					"special_bonus_shard"			"125"
+
 				}				
 				"terrain_hit_cooldown"
 				{
@@ -582,5 +633,16 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"special_bonus_base"
 	}
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_magnus_skewer_damage_distance"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}	
 
 }

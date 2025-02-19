@@ -48,6 +48,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Pudge.AttackHookExtend"
+		"HasShardUpgrade"			"1"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -96,14 +97,19 @@
 
 			"distance_to_damage"
 			{
-				"special_bonus_facet_pudge_flayers_hook" "12 18 24 30"				
+				"special_bonus_shard"	 "20"				
 			}
 
 			"min_distance_damage"
 			{
-				"special_bonus_facet_pudge_flayers_hook" "10"
+				"special_bonus_shard"	"10"
 			}
 			
+			"cooldown_reduction_pct_allied_hook"
+			{
+				"special_bonus_shard"	"50"
+			}
+
 			"self_stun_duration_percent"
 			{
 				"value"									"65"
@@ -156,6 +162,42 @@
 					"value"			"20"
 					"RequiresScepter"				"1"
 				}
+				"attack_damage_per_stack"
+				{
+					"value"									"0"
+					"special_bonus_facet_pudge_rotten_core"	"0.8 1.6 2.4 3.2"
+				}
+				"max_total_stacks"
+				{
+					"value"									"0"
+					"special_bonus_facet_pudge_rotten_core"	"=25"
+				}
+				"stacks_decrement_per_rot_off_tick"
+				{
+					"value"									"0"
+					"special_bonus_facet_pudge_rotten_core"	"=5"
+				}
+				"attack_damage_per_second_tooltip"			// attack_damage_per_stack * time_for_max_stacks_tooltip
+				{
+					"value"									"0"
+					"special_bonus_facet_pudge_rotten_core"	"4 8 12 16"
+				}
+				"max_bonus_damage_tooltip"					// attack_damage_per_stack * max_total_stacks
+				{
+					"value"									"0"
+					"special_bonus_facet_pudge_rotten_core"	"20 40 60 80"
+					"CalculateSpellDamageTooltip"			"0"
+					"DamageTypeTooltip"						"DAMAGE_TYPE_PHYSICAL"
+				}
+				"time_for_max_stacks_tooltip"				// max_total_stacks * rot_tick
+				{
+					"value"									"0"
+					"special_bonus_facet_pudge_rotten_core"	"=5.0"
+				}
+				"time_for_decay_tooltip"					// max_total_stacks * rot_tick / stacks_decrement_per_rot_off_tick
+				{
+					"special_bonus_facet_pudge_rotten_core"	"=1.0"
+				}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -187,7 +229,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
@@ -195,13 +237,12 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"FightRecapLevel"				"2"
 		"AbilityDraftPreAbility"		"pudge_eject"
-		"HasShardUpgrade"			"1"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"200"
 		"AbilityCastPoint"				"0.3 0.3 0.3"
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
 
 		// Time		
@@ -243,7 +284,6 @@
 			"AbilityCooldown"				
 			{
 				"value"							"30 25 20"
-				"special_bonus_shard"			"-5"
 			}
 			"shard_regen_pct"			
 			{
@@ -263,7 +303,7 @@
 			"gluttony_strength_bonus"
 			{
 				"value"					"0"
-				"special_bonus_facet_pudge_fresh_meat"			"1 3 5"				
+				"special_bonus_facet_pudge_fresh_meat"			"2 4 6"				
 			}
 			"glutton_strength_stack_duration"
 			{

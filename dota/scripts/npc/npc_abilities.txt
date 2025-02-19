@@ -127,7 +127,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"MaxLevel"						"7"
-		"RequiredLevel"					"6"
+		"RequiredLevel"					"2"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -198,7 +198,7 @@
 	//=================================================================================================================
 	// Ability: Ability Capture
 	//=================================================================================================================
-	"ability_pluck_famango"
+	"ability_pluck_lotus"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -219,10 +219,41 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"famango_rate"				"1"
+			"lotus_rate"				"1"
+			"channel_time_reduction_threshold_mins"		"5"
+			"channel_time_after_threshold"				"0.5"
+
 		}
 	}
 		
+
+		
+	//=================================================================================================================
+	// Ability: Ability Capture
+	//=================================================================================================================
+	"ability_lotus_pool"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"lotus_channel"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"radius"						"350"
+			"think_interval"				"0.1"
+			"first_lotus_pickup_time"		"1.5"
+			"pickup_time_reduction_pct"		"70"
+			"min_lotus_pickup_time"			"0.3"
+		}
+	}
+
 	//=================================================================================================================
 	// Ability: Twin Gate Portal Warp
 	//=================================================================================================================
@@ -339,6 +370,58 @@
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
+
+	//=================================================================================================================
+	// XP Fountain buildings ability
+	//=================================================================================================================
+	"ability_xp_fountain"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		"AbilityCharges"				"1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"radius"				"300"
+				"think_interval"				"0.1"
+				"countdown_time"		"3"
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}	
+
+	//=================================================================================================================
+	// Launchpad ability
+	//=================================================================================================================
+	"ability_launchpad"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"radius"			"125"
+			"vision_cone"						"0.08715"
+			"movespeed_bonus_slow"				"20"
+			"movespeed_bonus_moderate"			"40"
+			"movespeed_bonus_fast"				"60"
+
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}		
 	//=================================================================================================================
 	// Ability: Necronomicon Warrior's Last Will
 	//=================================================================================================================
@@ -931,7 +1014,7 @@
 	}
 
 	//=================================================================================================================
-	// Roshan: Slam
+	// Roshan: Revenge Roar
 	//=================================================================================================================
 	"roshan_revengeroar"
 	{
@@ -947,22 +1030,85 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20.0"
-		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"60.0"
+		"AbilityCastPoint"				"0.5"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"radius"			"900"
+			"radius"			"600"
 			"damage"			"50"
 			"damage_pct"		"25"
 			"duration"			"8"
 			"damage_growth"		"10"
+			"disarm_duration"	"2"
 		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
 
+	
+	//=================================================================================================================
+	// Roshan: Grab+Throw
+	//=================================================================================================================
+	"roshan_grab_and_throw"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED  | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AnimationIgnoresModelScale"      	"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.25"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_2"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"400"
+		"AbilityCooldown"				"1"
+		
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"interval"					"0.75"
+			"ministun"					"0.2"
+			"cast_range"				"300"
+			"animation_rate"			"1.5"			// FLAIL MULTIPLIER ON ENEMY UNITS
+			"damage"					"200"
+			"damage_per_combo"			"100"
+			"damage_growth_curr_hp_pct"
+			{
+				"value"		"0.5"
+			}
+			"channel_time"
+			{
+				"value"					"0.84"
+			}
+
+			"max_knockback_distance"	"1500"
+			"knockback_duration"		"0.8"
+			"knockback_height"			"100"
+
+			// stun duration upon landing from throw
+			"stun_duration"				"1.0"
+
+			// How many times Roshan will throw in one cycle before ignoring units
+			"max_interrupt_count"		"5"	
+		}
+	}
 	//=================================================================================================================
 	// Roshan: Inherent Buffs
 	//=================================================================================================================
@@ -971,8 +1117,15 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	}
 
+		"AbilityValues"
+		{
+			"move_pits_bonus_speed_per_interrupt"		"70"
+			"move_pits_max_bonus_speed"					"300"
+			"move_pits_slow_resistance"					"25"
+		}
+	}
+	
 	//=================================================================================================================
 	// Roshan: Devotion
 	//=================================================================================================================
@@ -987,6 +1140,7 @@
 			{
 				"value" "5"
 			}
+			"slow_resistance"						"25"
 		}
 	}
 
@@ -1221,11 +1375,19 @@
 		{
 			"duration"
 			{
-				"value" "2"
+				"value" "1.2 1.3 1.4 1.5"
 			}
 			"damage"
 			{
-				"value" "75"
+				"value" "100"
+			}
+			"tick_interval"
+			{
+				"value"	"0.1"
+			}
+			"health_threshold_pct"
+			{
+				"value"	"90"		// 100 disables
 			}
 		}
 	}
@@ -1753,10 +1915,10 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"damage_absorb"		"2500"
-				"absorb_bonus_per_death"	"200"
-				"regen_per_second"	"100"
-				"regen_bonus_per_death"	"100"
+				"damage_absorb"		"1900"
+				"absorb_bonus_per_interval"	"20"
+				"regen_per_second"	"30"
+				"regen_bonus_per_interval"	"5"
 		}
 	}
 
@@ -1772,8 +1934,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"passive_reflection_pct"			"90"
-				"passive_reflection_bonus_per_death"		"20"
+				"passive_reflection_pct"			"50"
+				"passive_reflection_bonus_per_interval"		"2"
 		}
 	}
 
@@ -1789,11 +1951,109 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"aura_radius"			"1200"
-				"aura_damage"			"30"
+				"aura_radius"			"1000"
+				"aura_damage"			"60"
 				"aura_interval"			"0.2"
 		}
 	}
+	"miniboss_alleviation"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"aura_duration"			"10"
+				"hp_restoration_pct"			"2"
+				"radius"			"900"
+		}
+	}
+
+	"miniboss_inherent_buffs"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	"miniboss_minion_unyielding_shield"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"damage_absorb"		"1300"
+				"absorb_bonus_per_interval"	"23"
+				"regen_per_second"	"20"
+				"regen_bonus_per_interval"	"0"
+				"smaller_shield" "1"
+		}
+	}
+
+	"miniboss_minion_deflecting_shield"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"IsBreakable"					"1"
+
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"aura_radius"								"1200"
+				"max_barrier_pct_max_health"				"20"	// What percent of max health is given as a barrier
+				"regeneration_to_max_seconds"				"2.5"	// How long to charge barrier to full
+				"decay_to_zero_seconds"						"1"		// How long it takes barrier to decay to 0 outside of aura.
+				"damage_cooldown"							"1.5"		// How long after taking damage will the barrier start to regenerate.
+				"damage_reflection_pct"						"20"	// How much damage gets reflected on hit.
+		}
+	}
+
+	"miniboss_minion_following_movement"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+		}
+	}
+
+	"gyrocopter_side_gunner"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+		}
+	}
+
 
 	//=================================================================================================================
 	// Heavy (Replacing legacy Siege Attack Type / Structure Defend type)
@@ -2397,6 +2657,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"MaxLevel"						"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"IsBreakable"					"1"
 		"AbilityValues"
 		{
 			"gpm_aura"
@@ -2666,11 +2927,11 @@
 		{
 			"lifesteal"
 			{
-				"value" "10"
+				"value" "9 10 11 12"
 			}
 			"hp_regen"
 			{
-				"value" "10"
+				"value" "9 10 11 12"
 			}
 			"radius"
 			{
@@ -2851,6 +3112,292 @@
 		}
 	}
 
+
+	
+	//=================================================================================================================
+	// Frogmen: Riverborn Aura
+	//=================================================================================================================
+	"frogmen_riverborn_aura"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"				"1"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"		
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+		"IsBreakable"					"1"
+		"AbilityValues"
+		{
+			"bonus_movement_speed"
+			{
+				"value" "10 12 14 16"
+			}
+			"bonus_outgoing_damage"
+			{
+				"value"	"10 12 14 16"
+			}
+			"radius"
+			{
+				"value" "1200"
+				"affected_by_aoe_increase"	"1"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Frogmen: Arm of the Deep
+	//=================================================================================================================
+	"frogmen_arm_of_the_deep"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Ability.Ravage"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"275"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"16"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"40"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"projectile_width"				"100"
+			"damage"						"80 100 120 140"
+			"duration"						"0.8"
+			"range"							"275"
+			"speed"							"725"
+			"neutral_shared_cooldown"		"5.0"		// 0 disables
+		}
+	}
+	//=================================================================================================================
+	// Frogmen: Arm of the Deep
+	//=================================================================================================================
+	"frogmen_tendrils_of_the_deep"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Ability.Ravage"
+
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"300"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"18"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"projectile_width"				"100"
+			"damage"						"120 140 160 180"
+			"duration"						"1.2"
+			"range"							"300"
+			"speed"							"725"
+			"yaw_offset"					"17"
+			"neutral_shared_cooldown"		"5.0"		// 0 disables
+		}
+	}
+	//=================================================================================================================
+	// Frogmen: Arm of the Deep
+	//=================================================================================================================
+	"frogmen_congregation_of_the_deep"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Ability.Ravage"
+
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"70"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"projectile_width"				"100"
+			"damage"						"250 275 300 325"
+			"duration"						"1.4"
+			"range"							"300"
+			"speed"							"725"
+			"projectile_count"				"6"
+			"neutral_shared_cooldown"		"5.0"		// 0 disables
+		}
+	}
+	//=================================================================================================================
+	// Frogmen: Water Bubbles
+	//=================================================================================================================
+	"frogmen_water_bubble_small"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"550"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"16"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+			"AbilityManaCost"				"90"
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"duration"			"10"
+			"damage_absorb"
+			{
+				"value"			"100 120 140 160"
+				"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
+			}
+
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+	//=================================================================================================================
+	// Frogmen: Water Bubbles
+	//=================================================================================================================
+	"frogmen_water_bubble_medium"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"550"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"16"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"duration"			"10"
+			"heal_pct"			"50"
+			"damage_absorb"
+			{
+				"value"			"150 180 210 240"	
+				"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
+			}
+
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+	//=================================================================================================================
+	// Frogmen: Water Bubbles
+	//=================================================================================================================
+	"frogmen_water_bubble_large"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"550"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"16"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"110"
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"duration"			"10"
+			"radius"			"675"		
+			"heal_pct"			"50"
+			"damage_absorb"
+			{
+				"value"			"210 240 270 300"	
+				"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
+			}
+
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
 
 	// Next free ID 5523
 	//=================================================================================================================
@@ -8863,6 +9410,26 @@
 			"value"
 			{
 				"value" "35"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_intelligence_40"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+		"SpecialBonusIntrinsicModifier" "modifier_special_bonus_intelligence"
+		"AbilityValues"
+		{
+			"value"
+			{
+				"value" "40"
 			}
 		}
 	}

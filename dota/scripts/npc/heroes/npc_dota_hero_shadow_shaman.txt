@@ -55,7 +55,7 @@
 				"damage"					
 				{
 					"value"		"140 200 260 320"
-				"special_bonus_unique_shadow_shaman_3" "+400"
+					"special_bonus_unique_shadow_shaman_3" "+250"
 				}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -93,54 +93,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"movespeed"					"100"
-				"duration"					"2 2.3 2.6 2.9"
-				"damage_amp"				
-				{
-					"value"					"0"
-					"special_bonus_unique_shadow_shaman_hex_damage_amp"		"0"
-				}
-				"can_target_allies"
-				{
-					"value"										"0"
-					"special_bonus_facet_shadow_shaman_cluster_cluck"	"=1"
-				}
-				"ally_invuln_duration"
-				{
-					"value"										"0.0"
-					"special_bonus_facet_shadow_shaman_cluster_cluck"	"=0.1"
-				}
-				"ally_voodoo_duration"
-				{
-					"value"										"0.0"
-					"special_bonus_facet_shadow_shaman_cluster_cluck"	"=2.0"
-				}
-				"ally_invuln_vision_radius"
-				{
-					"value"										"0"
-					"affected_by_aoe_increase"	"1"
-					"special_bonus_facet_shadow_shaman_cluster_cluck"	"=1000"
-				}
-				"ally_chicken_images_count"
-				{
-					"value"										"0"
-					"special_bonus_facet_shadow_shaman_cluster_cluck"	"+3"
-				}
-				"ally_chicken_images_take_damage_percent"
-				{
-					"value"										"0"
-					"special_bonus_facet_shadow_shaman_cluster_cluck"	"=200"
-				}
-				"ally_chicken_movement_speed_bonus_pct"
-				{
-					"value"										"0"
-				}
-				"tooltip_damage_incoming_total_pct"
-				{
-					"value"										"0"
-					"special_bonus_facet_shadow_shaman_cluster_cluck"	"=300"
-				}
-				
+			"movespeed"					"100"					// if changing this, update shadow_shaman_voodoo_hands movespeed
+			"duration"					"2 2.3 2.6 2.9"
+			"damage_amp"				
+			{
+				"value"					"0"
+				"special_bonus_unique_shadow_shaman_hex_damage_amp"		"0"
+			}		
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -159,12 +118,10 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
 		"FightRecapLevel"				"1"
-
-		"HasShardUpgrade"               "1"
+		"HasScepterUpgrade"				"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"450"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
 		
 		// Time		
@@ -180,6 +137,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+			"AbilityCastRange"
+			{
+				"value"					"450"
+				"special_bonus_scepter" "+150"
+			}
+
 			"tick_interval"		"0.1 0.1 0.1 0.1"
 			"total_damage"
 			{
@@ -191,25 +154,10 @@
 				"value"									"2.4 3.0 3.6 4.2"
 				"special_bonus_unique_shadow_shaman_2"	"+1.5"
 			}
-			"shard_bonus_cast_range"
-			{
-				"value"					"75"
-				"RequiresShard"			"1"
-			}
-			"shard_ward_count"
-			{
-				"value"					"4"
-				"RequiresShard"			"1"
-			}
-			"shard_ward_spawn_distance"
-			{
-				"value"					"100"
-				"RequiresShard"			"1"
-			}
 			"ward_linger_duration"
 			{
 				"value"					"0"
-				"special_bonus_shard"		"=2.5"
+				"special_bonus_scepter"		"=2.5"
 			}
 			"bonus_targets"
 			{
@@ -228,6 +176,30 @@
 				"value"						"100"
 			}
 
+			"scepter_shock_pct"
+			{
+				"special_bonus_scepter"						"100"
+			}
+
+			"scepter_shock_radius"
+			{
+				"special_bonus_scepter"						"600"
+			}
+
+			"scepter_shock_interval"
+			{
+				"special_bonus_scepter"						"0.9"
+			}
+
+			"alt_cast_on_allies"
+			{
+				"special_bonus_scepter"						"1"
+			}
+
+			"ally_break_range"
+			{
+				"special_bonus_scepter"						"2000"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -245,8 +217,6 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_ShadowShaman.SerpentWard"
-
-		"HasScepterUpgrade"			"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -270,10 +240,7 @@
 			{
 				"value"							"10"	// if changing this, change mega_ward_multiplier_tooltip
 			}
-			"bonus_damage"
-			{
-				"special_bonus_unique_shadow_shaman_4" "+20"
-			}
+			"bonus_damage"						"0"
 			"bonus_attack_range"
 			{
 				"special_bonus_unique_shadow_shaman_8" "+160"
@@ -289,6 +256,10 @@
 			{
 				"value"						"4"
 				"special_bonus_unique_shadow_shaman_1"		"+2"
+			}
+			"bonus_attack_targets"
+			{
+				"special_bonus_unique_shadow_shaman_4" "+1"
 			}
 			"is_mega_ward"
 			{
@@ -368,14 +339,74 @@
 		"Innate"						"1"
 		"AbilityCooldown"				"120"
 		"IsBreakable"					"1"
+		"HasShardUpgrade"				"1"
 
 		"AbilityValues"
 		{
 			"hex_duration"				"3.0"
 			"movespeed_bonus_pct"		"0"	// if changing this, change ally_chicken_movement_speed_bonus_pct
 
-			"damage_reduction_duration"	"1"
+			"damage_reduction_duration"	
+			{
+				"value"					"1"
+				"special_bonus_shard"	"+.5"
+			}
 			"damage_reduction_pct"		"100"
+
+			"allow_items"
+			{
+				"special_bonus_shard"	"1"
+			}
+
+			"invuln_duration"
+			{
+				"special_bonus_shard"	".1"
+			}
+
+			"invuln_vision_radius"
+			{
+				"special_bonus_shard"	"1000"
+			}
+
+			"ally_chicken_images_take_damage_percent"
+			{
+				"special_bonus_shard"	"200"
+			}
+
+			"ally_chicken_images_count"
+			{
+				"special_bonus_shard"	"3"
+			}
+
+			"ally_voodoo_duration"
+			{
+				"special_bonus_shard"	"3"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Shadow Shaman: Voodoo Hands
+	//=================================================================================================================
+	"shadow_shaman_voodoo_hands"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+
+		"MaxLevel"						"1"
+		"IsBreakable"					"1"
+
+		"AbilityCooldown"				"15"
+
+		"AbilityValues"
+		{
+			"voodoo_duration"			"1"
+			"movespeed"					"100"		// if changing this, update shadow_shaman_voodoo movespeed
 		}
 	}
 

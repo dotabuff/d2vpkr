@@ -55,7 +55,6 @@
 				"magic_resistance"			
 				{
 					"value"			"4 6 8 10"
-					"special_bonus_unique_viper_4"	"+4"
 				}
 				"max_stacks"			"6"
 				"bonus_range"			"25"
@@ -138,6 +137,17 @@
 				"attack_slow"		"30 40 50 60"
 				"duration"			"6.5 7 7.5 8"
 				"projectile_speed"	"2400"
+				"radius_increase"			
+				{
+					"value"					"0"
+					"special_bonus_unique_viper_nethertoxin_radius"						"+25"
+				}		
+				"expand_interval"			
+				{
+					"value"					"0"
+					"special_bonus_unique_viper_nethertoxin_radius"						"+0.5"
+				}
+				
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -206,6 +216,7 @@
 				"value"										"0"
 				"special_bonus_facet_viper_caustic_bath"		"=4.0"
 			}
+			
 			
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -280,7 +291,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"duration"				"6"
+			"duration"			
+			{
+				"value"								"6"
+				"special_bonus_unique_viper_4"		"+1"
+			}
 			"damage"
 			{
 				"value"				"70 110 150"
@@ -413,14 +428,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityValues"
-		{
-			"value"
-			{
-				"value" "1"
-				"ad_linked_abilities" "viper_poison_attack"
-			}
-		}
+		"BaseClass"						"special_bonus_base"
+
 	}
 
 	//=================================================================================================================
@@ -481,5 +490,18 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"special_bonus_base"
 	}		
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_viper_nethertoxin_radius"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}		
+	
 	
 }

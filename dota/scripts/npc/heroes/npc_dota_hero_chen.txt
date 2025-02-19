@@ -115,7 +115,6 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Chen.TestOfFaith.Target"
-		"HasScepterUpgrade"				"1"
 		"IsBreakable"					"1"
 
 		// Casting
@@ -134,7 +133,6 @@
 			"aura_radius"		
 			{
 				"value"	"1200"
-				"special_bonus_scepter"	"=-1"
 				"affected_by_aoe_increase"	"1"
 			}
 			"AbilityCastRange"				"1200"
@@ -142,7 +140,6 @@
 			"teleport_delay"		
 			{
 				"value"				"6"
-				"special_bonus_unique_chen_3" "-2"
 			}
 			"bonus_armor"			"5 10 15 20"
 			"heal_amp"				"5 10 15 20"
@@ -234,8 +231,13 @@
 			}
 			"is_martyr"
 			{
-				"value"			"0"
+				"value"							"0"
 				"special_bonus_scepter"			"+1"
+			}
+			"current_hp_pct_tooltip"
+			{
+				"value"							"0"
+				"special_bonus_scepter"			"+30.0"	// TOOLTIP ONLY, reflects current_hp_pct in chen_martyrdom
 			}
 			"creep_ability_level"
 			{
@@ -256,7 +258,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Chen.HandOfGodHealHero"
@@ -268,12 +270,19 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"8"
-		"AbilityCastRange"				"0"
+		"AbilityCooldown"				"4"
+		"AbilityCastRange"				"1200"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"current_hp_pct"			"30.0"	// If changing this, also update current_hp_pct_tooltip in chen_holy_persuasion
+		}
 	}
 
 	//=================================================================================================================
@@ -309,13 +318,11 @@
 			"heal_amount"
 			{
 				"value"							"200 300 400"
-				"special_bonus_unique_chen_2"	"+200"
 			}
 			"hot_duration"	"10"
 			"heal_per_second"
 			{
 				"value"							"20 30 40"
-				"special_bonus_unique_chen_2"	"+10"
 			}
 			"ancient_creeps_scepter"		
 			{
@@ -326,7 +333,11 @@
 			{
 				"value"				"0"
 				"special_bonus_unique_chen_12"		"+1"
-
+			}
+			"full_heal_on_chen_and_creeps"
+			{
+				"value"							"0"
+				"special_bonus_unique_chen_2"	"=1"
 			}
 		}
 	}
@@ -377,9 +388,21 @@
 				"special_bonus_facet_chen_satyr_convert" "1"
 			}
 
+			"summon_frogs"
+			{
+				"special_bonus_facet_chen_frog_convert" "1"
+			}
+
+
 			"convert_hp_tooltip"
 			{
 				"dynamic_value"	"true"
+			}
+
+			"attack_speed"
+			{
+				"value"							"0"
+				"special_bonus_unique_chen_3"	"+150"
 			}
 		}
 

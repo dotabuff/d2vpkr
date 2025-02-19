@@ -57,6 +57,8 @@
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_ArcWarden.Flux.Target"
 
+		"HasScepterUpgrade"				"1"
+
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
@@ -76,31 +78,19 @@
 				"duration"						
 				{
 					"value"			"6.0"
-					"special_bonus_unique_arc_warden_4"	"+2.0"
+					"special_bonus_scepter"			"+2.0"
 				}
 				"search_radius"					"225"
 				"think_interval"				"0.5"
 				"damage_per_second"				
 				{
-					"value"		"15 30 45 60"
-					"RequiresFacet"				"arc_warden_order"
+					"value"							"15 30 45 60"
+					"special_bonus_scepter"			"+50%"
 				}
 				"move_speed_slow_pct"				
 				{
-					"value" 					"15 22 30 39"
-					"RequiresFacet"				"arc_warden_order"
-				}
-
-				"tempest_damage_per_second"				
-				{
-					"value"		"20 45 70 95"
-					"RequiresFacet"				"arc_warden_disorder"
-				}
-
-				"tempest_move_speed_slow_pct"
-				{
-					"value"						"5 8 11 14"
-					"RequiresFacet"				"arc_warden_disorder"
+					"value" 							"14 21 28 35"
+					"special_bonus_unique_arc_warden_4"	"+20"
 				}
 				"AbilityCastRange"			
 				{
@@ -109,8 +99,8 @@
 				}
 				"applies_silence"
 				{
-					"value"					"0"
-					"special_bonus_unique_arc_warden_flux_silences"			"1"
+					"value"							"0"
+					"special_bonus_scepter"			"1"
 				}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -123,12 +113,10 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_CAN_SELF_CAST"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_ArcWarden.MagneticField.Cast"
-
-        "HasShardUpgrade"               "1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -154,60 +142,24 @@
 			{
 				"value"		"300"
 				"affected_by_aoe_increase"	"1"	
-				"special_bonus_shard" "+75"
 			}
-			"projectile_slow"
+			"knockback_enemies"
 			{
-				"value"		"0"
-				"RequiresShard"		"1"
-				"special_bonus_shard"	"+75"
-			}
-			"shard_slow_pct"
-			{
-				"value"						"30"
-				"RequiresShard"				"1"
-			}			
+				"value"					"0"
+			}		
 			"duration"					
 			{
 				"value"						"4 5 6 7"
-				"RequiresFacet"				"arc_warden_order"
 			}
 			"attack_speed_bonus"		
 			{
 				"value" 				"30 60 90 120"
-				"special_bonus_unique_arc_warden_3" 		"+16"
-				"RequiresFacet"				"arc_warden_order"
+				"special_bonus_unique_arc_warden_3" 		"+25"
 			}
 			"evasion_chance"			
 			{
 				"value"					"100"
-				"RequiresFacet"			"arc_warden_order"
-			}
-
-			"tempest_duration"
-			{
-				"value"					"4 5 6 7"
-				"RequiresFacet"			"arc_warden_disorder"
-			}
-
-			"attack_range_bonus"				
-			{
-				"value"					"150"			
-				"RequiresFacet"			"arc_warden_disorder"
-			}
-
-			"attack_damage_bonus"
-			{
-				"value"								"20 40 60 80"
-				"special_bonus_unique_arc_warden_3" 		"+25"
-				"RequiresFacet"			"arc_warden_disorder"
-			}
-
-			"attack_magic_damage"				
-			{
-				"value"								"20 40 60 80"
-				"special_bonus_unique_arc_warden_3" 		"+16"
-			}			
+			}		
 			"AbilityCooldown"
 			{
 				"value"						"20 19 18 17"
@@ -216,7 +168,32 @@
 			"affects_buildings"
 			{
 				"value"			"0"
-				"special_bonus_unique_arc_warden_7"	"=1"
+			}
+
+			"rune_pull_strength"
+			{
+				"value"											"0"
+				"special_bonus_facet_arc_warden_power_capture"	"+150"	// If changing this, also update rune_pull_radius
+			}
+			"rune_pull_max_speed_as_multiplier_of_pull_strength"
+			{
+				"value"											"0"
+				"special_bonus_facet_arc_warden_power_capture"	"+4.0"	// 0 is uncapped. If changing this, also update rune_pull_radius
+			}
+			"rune_pull_falloff_multiplier"
+			{
+				"value"											"0.0"
+				"special_bonus_facet_arc_warden_power_capture"	"+3.0"
+			}
+			"rune_pull_radius"
+			{
+				"value"											"0"
+				"special_bonus_facet_arc_warden_power_capture"	"=1200 =1800 =2400 =3000"	// 0 is global. If changing this, calc the max distance that runes can get pulled
+			}
+			"rune_activate_radius_buffer"
+			{
+				"value"											"0"
+				"special_bonus_facet_arc_warden_power_capture"	"+30"
 			}
 		}
 	}
@@ -237,7 +214,7 @@
 		"AbilityCastRange"				"2000"
 		"AbilityCastPoint"				"0.3"
 
-		"HasScepterUpgrade"               "1"
+		"HasShardUpgrade"               "1"
 
 		
 
@@ -256,6 +233,7 @@
 			"radius"									
 			{
 				"value"			"375"
+				"special_bonus_shard"	"+100"
 				"affected_by_aoe_increase"	"1"	
 			}
 			"duration"									"16"
@@ -263,55 +241,25 @@
 
 			"base_activation_delay"							
 			{
-				"value"									"2.0"
-				"RequiresFacet"			"arc_warden_order"
+				"value"									"1.5"
+				"special_bonus_unique_arc_warden_7"		"-1.0"
 			}
 
 			"spark_damage_base"
 			{
 			
-				"value"									"100 180 260 340"
+				"value"									"100 170 240 310"
 				"special_bonus_unique_arc_warden"		"+40%"
-				"RequiresFacet"			"arc_warden_order"
 			}
 
 			"wraith_speed_base"
 			{			
-				"value"									"400"
-				"RequiresFacet"							"arc_warden_order"
+				"value"									"550"
 			}
 
 			"ministun_duration"							
 			{
-				"value"									"0.6 0.8 1.0 1.2"
-				"RequiresFacet"							"arc_warden_order"
-			}
-
-			"tempest_activation_delay"
-			{
-				"value"									"1.0"
-				"RequiresFacet"							"arc_warden_disorder"
-			}
-
-			"spark_damage_tempest"
-			{
-			
-				"value"									"75 140 205 270"
-				"special_bonus_unique_arc_warden"		"+40%"
-				"RequiresFacet"							"arc_warden_disorder"
-			}
-
-			"wraith_speed_tempest"
-			{
-				"value"									"725"
-				"RequiresFacet"							"arc_warden_disorder"
-			}
-
-			"ministun_duration_tempest"
-			{
-
-				"value"									"0.4 0.5 0.6 0.7"
-				"RequiresFacet"							"arc_warden_disorder"
+				"value"									"0.5 0.6 0.7 0.8"
 			}
 					
 			"think_interval"							"0.2"
@@ -322,24 +270,23 @@
 			}
 			"wraith_vision_duration"					"3.34"
 
-			"scepter_activation_delay"
+			"maximum_targets"
 			{
-				"value"									"2.0"
-				"RequiresScepter"						"1"
+				"value"					"1"
+				"special_bonus_shard"	"+1"
 			}
-			"scepter_duration"
+			"second_wraith_damage_pct"
 			{
-				"value"									"15"
-				"RequiresScepter"						"1"
-			}				
-			"scepter_radius"
+				"value"					"0"
+				"special_bonus_shard"	"=80.0"
+			}
+			"second_wraith_speed_pct"
 			{
-				"value"									"225"
-				"RequiresScepter"						"1"
-				"affected_by_aoe_increase"	"1"	
+				"value"					"0"
+				"special_bonus_shard"	"=100.0"
 			}
 
-			"creep_damage_bonus_pct"					"40"
+			"creep_damage_bonus_pct"					"0"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -373,22 +320,41 @@
 		{
 			"AbilityCooldown"				
 			{	
-				"value"			"100 90 80"
-				
+				"value"			"60 55 50"
 			}
 			"bounty"				"180 240 300"
-			"duration"						"60"
-			"penalty_distance"			
+			"duration"				"18 21 24"
+			"max_blind_chance"		"35.0"
+			"max_slow"				"35.0"
+			"has_debuff"
 			{
-				"value"	"2000"
-				"affected_by_aoe_increase"	"1"	
+				"value"								"1"
+				"special_bonus_unique_arc_warden_8"	"=0"
 			}
-			"ignore_penalty_distance"		
+
+			"rune_duration"
 			{
-				"value"						"0"
-				"special_bonus_unique_arc_warden_8"		"+1"				
+				"value"											"0"
+				"special_bonus_facet_arc_warden_runed_replica"	"=10"
 			}
-			"incoming_damage_penalty"				"60"		
+
+			"invis_rune"
+			{
+				"value"											"0 0 0"
+				"special_bonus_facet_arc_warden_runed_replica"	"=1 =1 =1"
+			}
+
+			"arcane_rune"
+			{
+				"value"											"0 0 0"
+				"special_bonus_facet_arc_warden_runed_replica"	"=0 =1 =1"
+			}
+
+			"haste_rune"
+			{
+				"value"											"0 0 0"
+				"special_bonus_facet_arc_warden_runed_replica"	"=0 =0 =1"
+			}
 		}
 	}
 	//=================================================================================================================
@@ -401,7 +367,6 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"FightRecapLevel"				"2"
-		"IsGrantedByScepter"			"1"
 		"AbilitySound"					"Hero_ArcWarden.TempestDouble"
 		"MaxLevel"						"1"
 
@@ -442,6 +407,16 @@
 			"regeneration_effect"		"1"
 			"duration"					"4.0"
 			"water_bounty_rune_duration_pct"	"67"
+			"bonus_stacks_per_rune_pickup"
+			{
+				"value"											"0"
+				"special_bonus_facet_arc_warden_power_capture"	"+1"
+			}
+			"all_attribute_bonus_per_stack"
+			{
+				"value"											"0"
+				"special_bonus_facet_arc_warden_power_capture"	"+1.5"
+			}
 		}
 	}
 

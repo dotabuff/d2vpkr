@@ -25,11 +25,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDuration"				"4.0"
-
-		// Damage.
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"40 80 120 160"
+		"AbilityDuration"				"4.0"			
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -38,7 +34,7 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityModifierSupportValue"	"0.3"	// Primarily about the damage
-
+		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
@@ -56,6 +52,7 @@
 			}
 			"slow_movement_speed"	"-25"
 			"slow_attack_speed_primary"		"-30 -40 -50 -60"
+			"damage"			"40 80 120 160"
 			"aoe_damage"			
 			{
 				"value"			"80 120 160 200"
@@ -136,7 +133,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_CHANNEL"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED "
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -154,12 +151,15 @@
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"50 60 70 80"
-		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+			"AbilityManaCost"				
+			{
+				"value"			"25"
+			}
+		
 			"AbilityChannelTime"
 			{
 				"value" "1.10 1.4 1.7 2.0"
@@ -171,14 +171,18 @@
 				"special_bonus_unique_lich_2" "+0.3"
 			}
 			"destination"		"32 38 44 50"
-			"mana_drain"		"12"
+			"mana_drain"		"15"
 			"aoe_scepter"
 			{
 				"special_bonus_scepter" "+400"
 					"affected_by_aoe_increase"	"1"
 			}
 			"creep_duration_multiplier"				"2"
-			"creep_damage"					"250"
+
+			"frost_blast_damage_percent"
+			{
+				"value" "0"			
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -271,7 +275,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1000"
+		"AbilityCastRange"				"800"
 		"AbilityCastPoint"				"0.2"
 
 		// Time		
@@ -308,7 +312,7 @@
 			}
 			"duration"
 			{
-				"value"	"5 6 7 8"
+				"value"	"4 5 6 7"
 				"special_bonus_unique_lich_4"	"+4"
 			}
 			"health_regen"
@@ -378,12 +382,13 @@
 			"bonus_jump_damage"		
 			{
 				"value"			"15 20 25"
+				"special_bonus_unique_lich_jump_damage"	"+100"
 				"CalculateSpellDamageTooltip" "1"
 			}
 			"jumps"					"10 10 10"
 			"jump_range"			
 			{
-				"value"			"600"
+				"value"			"550"
 				"affected_by_aoe_increase"	"1"
 			}
 			"slow_movement_speed"	"-65"
@@ -398,7 +403,7 @@
 			}
 			"has_unlimited_jumps"
 			{
-				"special_bonus_unique_lich_5"	"+1"
+				"value"							"0"
 			}
 			"should_fire_chain_frost_on_death"
 			{
@@ -421,83 +426,6 @@
 			}
 		}			
 	}
-
-//=================================================================================================================
-	// Lich: Ice Rite
-	//=================================================================================================================
-	"lich_variant_ice_rite"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"AbilitySound"					"Ability.FrostNova"
-		"MaxLevel"						"1"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"750"
-		"AbilityCastPoint"				"0.3"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
-		"AbilityCastGestureSlot"		"DEFAULT"
-		"IsBreakable"					"1"
-		
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"25"
-	
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"150"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-			"hero_kill_spire_health"			"8"
-			"hero_health_tooltip"				"4"
-			"creep_kill_spire_health"			"2"
-			"creep_health_tooltip"				"1"
-			"spire_duration"					"20"
-			"bonus_intelligence_per_stack"		"3"
-			"gold_bounty"						"5"
-			
-		}
-	}
-
-
-	//=================================================================================================================
-	// Lich: Innate Chain Frost - Projectile Speed
-	//=================================================================================================================
-	"lich_innate_chain_frost_projectile_speed"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
-		"MaxLevel"						"1"
-		"AbilityValues"
-		{
-			"additional_projectile_speed"		"150"	// Only applies to bounce projectile speed, not initial projectile speed
-		}
-	}
-
-	//=================================================================================================================
-	// Lich: Innate Chain Frost - Bounces
-	//=================================================================================================================
-	"lich_innate_chain_frost_bounces"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
-		"MaxLevel"						"1"
-		"AbilityValues"
-		{
-			"additional_jumps"			"2"
-		}
-	}	
 
 
 	//=================================================================================================================
@@ -538,7 +466,7 @@
 			"bonus_movespeed"			"-25"
 			"aura_radius"				
 			{
-				"value"		"750"
+				"value"						"550"
 				"affected_by_aoe_increase"	"1"
 			}
 			"max_hero_attacks"			"5"
@@ -656,5 +584,17 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"	
 		"ad_linked_abilities"			"lich_frost_shield"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+	}
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_lich_jump_damage"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
 	}
 }

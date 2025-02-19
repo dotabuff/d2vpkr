@@ -18,9 +18,7 @@
 
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"hero_bloodseeker.bloodRage"
-
-		"HasShardUpgrade"				"1"
-
+		"HasScepterUpgrade"				"1"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.2"
@@ -59,12 +57,17 @@
 				"damage_pct"				
 				{
 					"value"		"1.4"
+					"special_bonus_unique_bloodseeker"		"-0.7"
 					"DamageTypeTooltip"			"DAMAGE_TYPE_PURE"
 				}
-				"shard_max_health_dmg"	
+				"max_health_dmg_pct"	
 				{
-					"value"			"35"
-					"RequiresShard"				"1"
+					"value"			"0"
+					"special_bonus_scepter"				"+3.0"
+				}
+				"thirst_threshold_bonus"
+				{
+					"value"			"0"
 				}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -79,7 +82,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"hero_bloodseeker.bloodRite"
@@ -113,8 +116,8 @@
 				"silence_duration"			"3 4 5 6"
 				"damage"					
 				{
-					"value"			"115 190 265 340"
-					"special_bonus_unique_bloodseeker_2"	"+135"
+					"value"			"90 145 200 255"
+					"special_bonus_unique_bloodseeker_2"	"+100"
 				}
 				"heal"
 				{
@@ -148,10 +151,19 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"15.0"
 
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+			"AbilityManaCost"
+			{
+				"value" "0"
+				"special_bonus_facet_bloodseeker_bloodrush"				"50"
+			}
+
 			"min_bonus_pct"				"100"
 			"bonus_movement_speed"		
 			{
@@ -160,13 +172,23 @@
 			}
 			"active_movement_speed"
 			{
-				"value"									"0"
-				"special_bonus_facet_bloodseeker_bloodrush"				"4 8 12 16"
+				"value"													"0"
+				"special_bonus_facet_bloodseeker_bloodrush"				"6 12 18 24"
 			}
 			"active_duration"						
 			{
 				"value"				"0"
 				"special_bonus_facet_bloodseeker_bloodrush"				"5"
+			}
+			"inactive_penalty_pct"
+			{
+				"value"													"0"
+				"special_bonus_facet_bloodseeker_bloodrush"				"+50.0"		// NOTE: inactive bonuses are 100 - x
+			}
+			"sanguivore_multiplier"
+			{
+				"value"													"0"
+				"special_bonus_facet_bloodseeker_bloodrush"				"2"
 			}
 			"max_bonus_pct"				"25"
 			"visibility_threshold_pct"	"25"
@@ -334,13 +356,20 @@
 		"MaxLevel"						"1"
 		"Innate"						"1"
 		"IsBreakable"					"1"
+		"HasShardUpgrade"				"1"
+		"HasScepterUpgrade"				"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
 			"base_heal"							"25"
-			"heal_hp_pct_per_level"				"1.5"
+			"heal_hp_pct_per_level"				
+			{
+				"value"										"1.5"
+
+			}
+			
 			"creep_lifesteal_reduction_pct"		"40"
 			"deny_lifesteal_reduction_pct"						"0"
 
@@ -353,6 +382,21 @@
 			"max_hp_percent_heal_tooltip"
 			{
 				"dynamic_value"				"true"
+			}
+			"barrier_decay_pct"			
+			{
+				"value"								"0"
+				"special_bonus_shard"				"1.5"
+			}
+			"max_shield_pct"
+			{
+				"value"								"0"
+				"special_bonus_shard"				"+50"
+			}
+			"pure_damage_lifesteal_pct"
+			{
+				"value"								"0"
+				"special_bonus_scepter"				"=30"
 			}
 		}
 	}

@@ -36,7 +36,7 @@
 			"AbilityCooldown"				
 			{
 				"value"					"17 15 13 11"
-				"special_bonus_unique_dawnbreaker_fire_wreath_cooldown"			"-5"
+				"special_bonus_unique_dawnbreaker_fire_wreath_cooldown"			"-4"
 			}
 			"duration"					"1.1"
 			"swipe_radius"				
@@ -76,9 +76,29 @@
 			"shard_movement_penalty"
 			{
 				"value"							"0"
-				"special_bonus_shard"				"+25"
+				"special_bonus_shard"				"+35"
 			}			
-			
+
+			"movespeed_bonus_radius"
+			{
+				"value"					"0"
+				"special_bonus_facet_dawnbreaker_blaze"		"700"
+			}
+			"movespeed_bonus_self_max"
+			{
+				"value"					"0"
+				"special_bonus_facet_dawnbreaker_blaze"		"+15 +21 +27 +33"
+			}
+			"movespeed_bonus_ally_max"
+			{
+				"value"					"0"
+				"special_bonus_facet_dawnbreaker_blaze"		"+9 +12 +15 +18"
+			}
+			"movespeed_bonus_duration"
+			{
+				"value"					"0"
+				"special_bonus_facet_dawnbreaker_blaze"		"+4"
+			}
 		}	
 	}
 
@@ -122,7 +142,10 @@
 				"value"					"1600"
 				"special_bonus_unique_dawnbreaker_celestial_hammer_cast_range"				"+80%"
 			}
-			"flare_debuff_duration"				"2.5 3 3.5 4"
+			"flare_debuff_duration"
+			{
+				"value" "2.5 3 3.5 4"
+			}
 			"flare_radius"					
 			{
 				"value"	"200"
@@ -138,7 +161,7 @@
 			"pause_duration"						
 			{
 				"value"						"2"
-				"special_bonus_facet_dawnbreaker_gleaming_hammer"			"+2"
+				"special_bonus_unique_dawnbreaker_gleaming_hammer"			"+2"
 			}
 			"hammer_aoe_radius"						"200"
 			"travel_speed_pct"						"100"
@@ -151,14 +174,19 @@
 			"hammer_solar_guardian_radius"			
 			{
 				"value"											"0"
-				"special_bonus_facet_dawnbreaker_gleaming_hammer"			"+200"
+				"special_bonus_unique_dawnbreaker_gleaming_hammer"			"+200"
 				"affected_by_aoe_increase"	"1"
 
 			}
 			"hammer_solar_guardian_effectiveness_pct"
 			{
 				"value"											"0"
-				"special_bonus_facet_dawnbreaker_gleaming_hammer"			"=50"
+				"special_bonus_unique_dawnbreaker_gleaming_hammer"			"=40"
+			}
+			"fire_trail_health_regen"
+			{
+				"value"			"0"
+				"special_bonus_facet_dawnbreaker_hearthfire" "=10 =15 =20 =25"			
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -227,7 +255,7 @@
 				"bonus_damage"				
 				{
 					"value"		"125 150 175 200"
-					"special_bonus_unique_dawnbreaker_luminosity_crit"		"+50"
+					"special_bonus_unique_dawnbreaker_luminosity_crit"		"+40"
 				}	
 				"proc_cooldown"				"0.00"
 				"allied_healing_pct"		"50"
@@ -236,17 +264,11 @@
 					"value"									"0"
 					"special_bonus_facet_dawnbreaker_solar_charged"		"1"				
 				}
-				"attackspeed_bonus_max"
+				"triggered_by_celestial_hammer"
 				{
-					"value"					"0"
-					"special_bonus_facet_dawnbreaker_solar_battery"		"+50"					
-				}
-				"movespeed_bonus_max"
-				{
-					"value"					"0"
-					"special_bonus_facet_dawnbreaker_solar_battery"		"+20"					
-				}
-		
+					"value"			"0"
+					"special_bonus_facet_dawnbreaker_brightmaul_wake" "1"
+				}	
 		}
 	}
 	//=================================================================================================================
@@ -293,7 +315,21 @@
 				"special_bonus_unique_dawnbreaker_solar_guardian_cooldown"			"-20"
 			}
 
-			"airtime_duration"				"0.8"
+			"scepter_aura_duration"
+			{
+				value "3"
+				"RequiresScepter"			"1"
+			}
+			"miss_rate"				
+			{
+				"value"			"0"
+				"RequiresScepter"			"1"
+			}
+			"base_heal"				
+			{
+				"value"				"45 70 95"
+				"special_bonus_scepter"	"+10 15 20"
+			}
 			"radius"				
 			{
 				"value"															"500"
@@ -304,11 +340,6 @@
 			{
 				"value"			"30 50 70"
 				"CalculateSpellDamageTooltip" "1"
-			}
-			"base_heal"				
-			{
-				"value"				"45 70 95"
-				"special_bonus_scepter"	"+15 20 25"
 			}
 			"pulse_interval"				"0.5"
 			"land_damage"
@@ -328,12 +359,12 @@
 				"value"				"3.5"
 				"RequiresScepter"			"1"
 			}
-			"miss_rate"				
-			{
-				"value"			"60"
-				"RequiresScepter"			"1"
-			}
 			"airtime_scepter_movement_speed"				"200"
+			"airtime_duration"
+			{
+				"value"						"0.8"
+				"special_bonus_scepter"		"=0.5"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 		//"AbilityChannelAnimation"	"ACT_DOTA_CAST_ABILITY_4"
@@ -366,13 +397,14 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel"						"1"
 		"Innate"						"1"
+		"DependentOnAbility"				"dawnbreaker_solar_guardian"
 		"AbilityValues"
 		{
 				"reveal_duration"				"4"
 				"think_interval"				"0.1"
-				"reveal_linger"				"1"
-				"reveal_radius"				"20000"
-				"conceal_duration"			"1"
+				"reveal_linger"					"1"
+				"reveal_radius"					"20000"
+				"conceal_duration"				"1"
 		}
 	}
 
@@ -386,5 +418,29 @@
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
 		"MaxLevel"						"1"
+	}
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_dawnbreaker_break_of_dawn_damage"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_dawnbreaker_gleaming_hammer"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"	
 	}
 }

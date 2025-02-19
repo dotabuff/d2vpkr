@@ -40,8 +40,9 @@
 			"damage"
 			{
 				"value"							"16 24 32 40"
-				"special_bonus_unique_silencer"		"+15"
+
 			}
+			"application_damage"				"20 40 60 80"
 			"AbilityCooldown"					
 			{
 				"value"						"22 20 18 16"
@@ -60,19 +61,28 @@
 			{
 				"value"						"6"
 				"special_bonus_unique_silencer_arcane_curse_duration"		"+2"
-			}
-			"silence_duration"	
-			{
-				"value"						"2"
-				"special_bonus_unique_silencer_arcane_curse_duration"		"+1"
-			}			
+				"dynamic_value"				"true"
+			}		
 			"movespeed"			"-16 -19 -22 -25"
 			"undispellable"
 			{
 				"value"					"0"
 				"special_bonus_unique_silencer_arcane_curse_undispellable"		"+1"
 			}
-
+			"penalty_duration"
+			{
+				"value"														"2"
+				"special_bonus_unique_silencer_arcane_curse_duration"		"+1"
+			}
+			"penalty_multiplier"		
+			{
+				"value"													"1.5"
+				"special_bonus_unique_silencer"							"+0.5"
+			}
+			"duration_percent_per_stolen_int"
+			{
+				"special_bonus_facet_silencer_burden_of_knowledge" "1"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}	
@@ -113,7 +123,7 @@
 		{
 			"intellect_damage_pct"
 			{
-				"value"					"20 40 60 80"
+				"value"					"35 50 65 80"
 				"special_bonus_unique_silencer_3"	"+25"
 			}
 			"int_steal"		
@@ -140,7 +150,7 @@
 			
 			"stacks_for_silence"
 			{
-				"value"		"+4"
+				"value"		"0"
 			}							
 			"silence_duration"
 			{
@@ -159,37 +169,51 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Silencer.LastWord.Target"
-
 		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastRange"				"900"
 
-		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"22 18 14 10"
+		"AbilityManaCost"				"100 105 110 115"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.3"	// Applies multiple modifiers
+
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"damage_per_silence"			
+				"damage"			"120 160 200 240"
+				"int_multiplier"	
 				{
-					"value"			"30 40 50 60"
-					"special_bonus_unique_silencer_4"					"+35"
+					"value"					"1 1.5 2 2.5" 
 				}
-				"slow_per_silence"				
+				"debuff_duration"	
 				{
-					"value"				"6 9 12 15"
-					"special_bonus_unique_silencer_4"					"+5"
+					"value"					"4"
 				}
-				"radius"						
+				"duration"	"3 4 5 6"
+				"radius"
 				{
-					"value"	"1200"
-					"affected_by_aoe_increase"	"1"
+					"value"								"0"
+					"special_bonus_unique_silencer_4"	"+250"
+					"affected_by_aoe_increase"			"1"
 				}
-		} 
+		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
 
@@ -206,7 +230,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Silencer.GlobalSilence.Cast"
-		"HasScepterUpgrade"			"1"
+		"HasScepterUpgrade"				"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -215,7 +239,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"130 115 100"
+		"AbilityCooldown"				"120"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -250,7 +274,6 @@
 			{
 				"special_bonus_facet_silencer_reverberating_silence" "1.5 1.75 2"
 			}
-
 			"applies_curse"
 			{
 				"special_bonus_scepter"		"+1"
@@ -281,7 +304,7 @@
 			{
 				"value"						"1"
 				"special_bonus_shard"		"+2"
-			}	
+			}
 		}
 	}
 

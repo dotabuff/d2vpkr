@@ -44,7 +44,7 @@
 				"AbilityCooldown"
 				{
 					"value"						"19 18 17 16"				
-					"special_bonus_unique_mirana_3"		"-2"
+
 				}
 
 				
@@ -58,7 +58,12 @@
 				"arrow_max_stunrange"	"1500"
 				"arrow_min_stun"	"0.01"
 				"arrow_max_stun"	"2.6 3.4 4.2 5.0"
-				"arrow_bonus_damage"	"150 160 170 180"
+				"arrow_bonus_damage"	
+				{
+					"value"				"150 160 170 180"
+					"special_bonus_unique_mirana_arrow_damage"				"+180"
+				}
+				
 				"arrow_vision"
 				{
 					"value"						"400"
@@ -134,6 +139,7 @@
 					"value"			"0"
 					"special_bonus_unique_mirana_5"		"+20"
 				}
+				"bonus_outgoing_damage_pct"				"9.0 12.0 15.0"
 		}
 	}
 
@@ -194,11 +200,11 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES "
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Ability.Leap"
 
-        "HasShardUpgrade"               "1"
+		"HasShardUpgrade"               "1"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -219,58 +225,34 @@
 				"value"							"650"
 				"special_bonus_unique_mirana_6"	"+150"
 			}
-			"min_jump_distance"					"200"
 			"leap_speed"			"1300.0"
 			"leap_acceleration"		"6000.0"
-			"leap_speedbonus"	"8 16 24 32"
+			"leap_speedbonus"		"6 12 18 24"
 			"leap_speedbonus_as"	
 			{
 				"value"				"25 50 75 100"
 				"special_bonus_unique_mirana_1"	"+90"
 			}
 			"leap_bonus_duration"	"5"
-			"shard_radius"					
+			"additional_charges"
 			{
-				"value"				"300"
-				"RequiresShard"		"1"
-				"affected_by_aoe_increase"	"1"
+				"value"					"0"
+				"special_bonus_shard"	"+1"
 			}
-			"shard_radius_end"					
+			"crit_damage_pct"
 			{
-				"value"				"450"
-				"RequiresShard"		"1"
-				"affected_by_aoe_increase"	"1"
+				"value"					"0"
+				"special_bonus_shard"	"+150"
 			}
-			"shard_damage"					
+			"root_radius"
 			{
-				"value"				"170"
-				"RequiresShard"		"1"
-				"DamageTypeTooltip"	"DAMAGE_TYPE_MAGICAL"
+				"value"											"0"
+				"special_bonus_facet_mirana_leaps_and_bounds"	"+250"
 			}
-			"shard_slow_pct"					
+			"root_duration"
 			{
-				"value"				"30"
-				"RequiresShard"		"1"
-			}
-			"shard_slow_duration"					
-			{
-				"value"				"2.5"
-				"RequiresShard"		"1"
-			}
-			"shard_bonus_charges"	
-			{
-				"value"				"1"
-				"RequiresShard"		"1"
-			}
-			"shard_projectile_distance"			
-			{
-				"value"					"800"
-				"RequiresShard"			"1"
-			}
-			"shard_projectile_speed"
-			{
-				"value"					"1200"
-				"RequiresShard"			"1"
+				"value"											"0"
+				"special_bonus_facet_mirana_leaps_and_bounds"	"=1.1 =1.4 =1.7 =2.0"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -297,7 +279,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"12.0 12.0 12.0 12.0"
+
 		"AbilityDuration"				"10.0 10.0 10.0 10.0"
 
 
@@ -309,6 +291,22 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+			"AbilityCooldown"
+			{
+				"value"										"12.0 12.0 12.0 12.0"
+				"special_bonus_unique_mirana_3"				"-2"
+			}
+			"damage"	 
+			{
+				"value"			"75 150 225 300"
+				"special_bonus_unique_mirana_7"	"+250"						
+			}
+			"secondary_starfall_damage_percent"
+			{
+				"value"									"60"
+				"CalculateSpellDamageTooltip"			"0"
+				"special_bonus_facet_mirana_starstruck"	"+40"
+			}
 			"starfall_radius"	
 			{
 				"value"			"675"		
@@ -319,11 +317,15 @@
 				"value"			"675"
 				"affected_by_aoe_increase"	"1"
 			}
-			"secondary_starfall_damage_percent"	 "80"
-			"damage"	 
+			"starstruck_blind_pct"
 			{
-				"value"			"75 150 225 300"
-				"special_bonus_unique_mirana_7"	"+250"						
+				"value"									"0"
+				"special_bonus_facet_mirana_starstruck"	"+60.0"
+			}
+			"starstruck_duration"
+			{
+				"value"									"0"
+				"special_bonus_facet_mirana_starstruck"	"=3.5 =4.0 =4.5 =5.0"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -343,7 +345,7 @@
 
 		"AbilityValues"
 		{
-			"bonus_lotus"	"20"
+			"bonus_lotus"	"50"
 		}
 	}
 
@@ -434,4 +436,18 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"special_bonus_base"
 	}
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_mirana_arrow_damage"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
+
+	
 }

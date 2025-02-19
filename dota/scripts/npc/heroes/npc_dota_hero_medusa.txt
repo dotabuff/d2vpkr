@@ -27,7 +27,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"damage"		"0"
+			"damage"								"0"
+			"stone_form_scepter_base_tooltip"		"1"		//taken from stone_form_scepter_base
 		}
 	}
 
@@ -41,6 +42,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"		
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"HasScepterUpgrade"				"1"
 		"IsBreakable"					"1"
 		
 		// Casting
@@ -63,12 +65,13 @@
 				}		
 				"arrow_count"
 				{
-					"value"			"4"
+					"value"						"4"
+					"special_bonus_scepter"		"+1"
 				}	
 				"process_procs"
 				{
-					"value"			"0"
-					"special_bonus_unique_medusa_4"		"+1"
+					"value"						"0"
+					"special_bonus_scepter"		"+1"
 				}
 				"split_shot_bonus_range"		"150"
 		}
@@ -91,7 +94,6 @@
 		"AbilitySound"					"Hero_Medusa.MysticSnake.Cast"
 		
 		"AbilityDraftShardAbility"		"medusa_cold_blooded"
-		"HasScepterUpgrade"				"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -300,7 +302,7 @@
 				"DamageTypeTooltip"				"DAMAGE_TYPE_PHYSICAL"
 				"special_bonus_unique_medusa_8"	"+10"
 			}
-			"speed_boost"						"50"
+			"speed_boost"						"50"			// NOTE: if changing this, please update stone_gaze_ms_tooltip_only
 		}
 	}
 
@@ -339,10 +341,15 @@
 			"radius"
 			{
 				"value"					"150"
+				"special_bonus_unique_medusa_gorgons_grasp_radius"		"+20%"
 				"affected_by_aoe_increase"	"1"
 			}
 
-			"radius_grow"				"50"
+			"radius_grow"
+			{
+				"value"					"50"
+				"special_bonus_unique_medusa_gorgons_grasp_radius"		"+20%"
+			}
 
 			"delay"						"1"
 			"volley_interval"			".25"
@@ -350,7 +357,7 @@
 			"volley_count"				
 			{
 				"value"					"3"
-				"special_bonus_special_bonus_unique_medusa_gorgons_grasp_volleys"			"1"
+				"special_bonus_unique_medusa_gorgons_grasp_volleys"			"1"
 			}
 
 			"duration"					"0.8 1.2 1.6 2.0"
@@ -382,6 +389,26 @@
 			"attack_slow"			"20 35 50 65 80"
 			"cast_slow"				"50"
 			"attack_count"			"5"
+		}
+	}
+
+	//=================================================================================================================
+	// Medusa: Fixed Movespeed Passive
+	//=================================================================================================================
+	"medusa_undulation"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"						"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"fixed_movespeed"				"310"
+			"stone_gaze_ms_tooltip_only"	"465"
 		}
 	}
 
@@ -489,7 +516,15 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"special_bonus_base"
-	}	
+	}
+	"special_bonus_unique_medusa_gorgons_grasp_radius"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}		
 	
 }
 

@@ -50,7 +50,11 @@
 					"value"		"250"					
 				}
 				"pull_angle"		"230"
-				"debuff_duration"	"3"			
+				"debuff_duration"	
+				{
+					"value"				"3"
+					"special_bonus_unique_marci_dispose_slow"		"+1.5"
+				}
 				"impact_damage"		
 				{
 					"value"			"75 150 225 300"
@@ -81,16 +85,17 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"90 75 60"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 125 150"
 
 
 		"AbilityValues"
 		{
-				"duration"				"16"
+				"duration"
+				{
+					"value"										"16"
+				}
 				"charges_per_flurry"	"5"
 				"flurry_bonus_attack_speed"	"700 975 1325"
 				"time_between_flurries"	"1.5"
@@ -138,6 +143,14 @@
 				{
 					"special_bonus_unique_marci_unleash_extend_duration" 		"6"
 				}
+				"AbilityCooldown"
+				{
+					"value"										"90 75 60"
+				}
+				"AbilityManaCost"
+				{
+					"value"										"100 125 150"
+				}
 		}
 		
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
@@ -170,7 +183,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"70 80 90 100"
+		"AbilityManaCost"				"75 90 105 120"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -179,7 +192,7 @@
 				"AbilityCooldown"				
 				{
 					"value"		"24 20 16 12"
-					"special_bonus_shard"	"-3"
+					
 				}
 				
 				"move_speed"			"1700"
@@ -197,11 +210,13 @@
 				"landing_radius"		
 				{
 					"value"	"275"
+					"special_bonus_unique_marci_rebound_radius"		"+75"
 					"affected_by_aoe_increase"	"1"	
 				}
 				"impact_damage"			
 				{
-					"value"				"80 160 240 320"
+					"value"							"80 160 240 320"
+					"special_bonus_shard"			"+20%"
 				}
 				"debuff_duration"
 				{
@@ -218,7 +233,7 @@
 				"ally_buff_duration"	"4.0"
 				"ally_movespeed_pct"	
 				{
-					"value"				"25 30 35 40"
+					"value"				"15 20 25 30"
 					"special_bonus_unique_marci_lunge_movespeed" "+10"
 				}
 				"impact_position_offset"	"64"
@@ -233,7 +248,40 @@
 					"value"	"15"
 					"RequiresScepter"	"1"
 				}
-
+				"ally_arc_offset"
+				{
+					"value"					"0"
+					"RequiresFacet"		"marci_pickmeup"
+					"special_bonus_facet_marci_pickmeup"	"=150"
+				}
+				"ally_impact_damage_pct"
+				{
+					"value"					"0"
+					"RequiresFacet"		"marci_pickmeup"
+					"special_bonus_facet_marci_pickmeup"	"=25"
+				}				
+				"max_level"
+				{
+					"value"				"4"
+					//"special_bonus_facet_marci_pickmeup"				"+1"
+				}
+				"max_level_tooltip"
+				{
+					"special_bonus_facet_marci_pickmeup" "=5"
+				}
+				"postjump_unleash_duration"
+				{
+					"value"											"0"
+					"RequiresFacet"									"marci_fleeting_fury"
+					"special_bonus_facet_marci_fleeting_fury"		"=3"
+				}
+				"postjump_flurry_charges"
+				{
+					"value"											"0"
+					"RequiresFacet"									"marci_fleeting_fury"
+					"special_bonus_facet_marci_fleeting_fury"		"=3"
+				}				
+				
 		}
 		
 	}
@@ -348,8 +396,15 @@
 			{
 				"value"											"125"
 			}
-			"bonus_armor"										"4 8 12 16"
+			//"bonus_armor"										"4 8 12 16"
+			"max_partner_penalty"				"75"
 			"counter_cooldown"									"0.45"
+			"shared_healing_percent"
+			{
+				"value"				"0"
+				"RequiresFacet"		"marci_buddy_system"
+				"special_bonus_facet_marci_buddy_system"	"=100"
+			}
 		}
 	}
 
@@ -361,9 +416,17 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"MaxLevel"						"1"
 		"Innate"						"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"240.0"
+		"AbilityCastPoint"				"1.0"
+		"MaxLevel"						"1"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+
 		"AbilityValues"
 		{
 			"bonus_levels"				"3"
@@ -453,17 +516,29 @@
 		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"							"special_bonus_base"
-
-		
 	}
-		"special_bonus_unique_marci_guardian_damage"
+	"special_bonus_unique_marci_guardian_damage"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"							"special_bonus_base"
-
-	
+	}
+	"special_bonus_unique_marci_dispose_slow"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"							"special_bonus_base"
+	}
+	"special_bonus_unique_marci_rebound_radius"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"							"special_bonus_base"
 	}
 }
