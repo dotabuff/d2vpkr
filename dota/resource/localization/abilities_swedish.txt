@@ -44,7 +44,8 @@
 		"dota_ability_variable_max_mana_percentage"	"extra max mana"			// $max_mana_percentage
 		"dota_ability_variable_slow_resistance"		"Nedsaktningsresistens"			// $slow_resistance
 		"dota_ability_variable_aoe_bonus"			"Extra radie"					// $aoe_bonus
-"dota_ability_variable_healing_amp"			"utgående helandeförstärkning" // $healing_amp
+		"dota_ability_variable_exclusive_movespeed"	"förflyttningshastighet (stövlar)"		// $exclusive_movespeed
+		"dota_ability_variable_healing_amp"			"utgående helandeförstärkning" // $healing_amp
 
 		"dota_ability_variable_damage_int_hero"	"skada (intelligenshjältar)"
 		"dota_ability_variable_damage_agi_hero"	"skada (agilityhjältar)"
@@ -1038,6 +1039,7 @@
 		"DOTA_Tooltip_ability_mirana_invis_bonus_outgoing_damage_pct"					"%EGEN UTGÅENDE SKADEBONUS:"
 		"DOTA_Tooltip_ability_mirana_leap"												"Leap"
 		"DOTA_Tooltip_ability_mirana_leap_Description"									"Mirana tar ett språng in i striden med ett rovlystet vrål, som ger henne extra attack- och förflyttningshastighet. Bonusen varar i %leap_bonus_duration% sekunder."
+		"DOTA_Tooltip_ability_mirana_leap_Facet_mirana_leaps_and_bounds"				"Vid landning rotar Leap fast målen i en radie på %root_radius% i %root_duration% s."
 		"DOTA_Tooltip_ability_mirana_leap_Lore"											"Alla känner igen Miranas legendariska vita best i stridens hetta."
 		"DOTA_Tooltip_ability_mirana_leap_leap_distance"								"STRÄCKA:"
 		"DOTA_Tooltip_ability_mirana_leap_leap_speedbonus"								"%RÖRELSEBONUS:"
@@ -1062,6 +1064,8 @@
 		"DOTA_Tooltip_Facet_mirana_starstruck"											"Starstruck"
 		"DOTA_Tooltip_Facet_mirana_starstruck_Description"								"Starstorms andra meteor gör mer skada och förblindar målet."
 		"DOTA_Tooltip_Facet_mirana_leaps_and_bounds"									"Leaps and Bounds"
+		"DOTA_Tooltip_Facet_mirana_leaps_and_bounds_Description"						"Vid landning rotar Leap fast målen i en radie på {s:bonus_root_radius} i {s:bonus_root_duration} s."
+
 		"DOTA_Tooltip_modifier_mirana_leap_root"										"Leaps and Bounds"
 		"DOTA_Tooltip_modifier_mirana_leap_root_Description"							"Fastrotad."
 
@@ -1580,7 +1584,6 @@
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_Lore"						"Zharvakkos hokus pokus är inte begränsad till att förhäxa sina motståndare, utan är även mycket skicklig på att bota krämpor."
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_Note0"					"Helandet görs i intervaller på %heal_interval% sekunder."
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_Note1"					"Kan hela förmågeimmuna enheter."
-		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_Note2"					"Skadevärdena på Voodoo Festeration är samma som helandet."
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_mana_per_second"			"MANA PER SEKUND:"
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_heal"						"HELA:"
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_radius"					"RADIE:"
@@ -2025,7 +2028,6 @@
 		
 
 		"DOTA_Tooltip_Facet_sand_king_dust_devil"								"Dust Devil"		
-		"DOTA_Tooltip_Facet_sand_king_dust_devil_Description"					"Sand Storm följer Sand King när han förflyttar sig eller använder Burrowstrike."		
 		"DOTA_Tooltip_Facet_sand_king_sandshroud"								"Sandshroud"		
 		"DOTA_Tooltip_Facet_sand_king_sandshroud_Description"					"Sand Storm har ökat radie och ger Sand King osynlighet medan han är i den."
 
@@ -2289,6 +2291,8 @@
 		"DOTA_Tooltip_Facet_phantom_assassin_methodical_Description"				"Coup de Grace utlöses var {s:bonus_attacks_to_proc} attack på samma hjälte eller var {s:bonus_attacks_to_proc_creeps} attack på icke-hjältar."
 		"DOTA_Tooltip_Facet_phantom_assassin_veiled_one_Description"				"Blur försvinner inte längre vid attack, och reducerar manakostnader under och efter Blur."
 		"DOTA_Tooltip_Facet_phantom_assassin_sweet_release"							"Sweet Release"
+		"DOTA_Tooltip_Facet_phantom_assassin_sweet_release_Description"				"Stifling Dagger används på nytt när en fiende dör."
+
 		"DOTA_Tooltip_modifier_phantom_assassin_blur_manacost_reduction"				"Veiled One"
 		"DOTA_Tooltip_modifier_phantom_assassin_blur_manacost_reduction_Description"	"Förmågor och föremål har ingen manakostnad."
 		"DOTA_Tooltip_modifier_phantom_assassin_coup_counter"	"Methodical"
@@ -2304,7 +2308,6 @@
 		"DOTA_Tooltip_modifier_phantom_assassin_blur_active"				"Blur"
 		"DOTA_Tooltip_modifier_phantom_assassin_blur_active_Description"	"Suddas ut för att försvinna ur fiendens sikte."
 		"DOTA_Tooltip_modifier_phantom_assassin_phantom_strike"				"Phantom Strike"
-		"DOTA_Tooltip_modifier_phantom_assassin_phantom_strike_Description"	"Attackhastigheten ökar med %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% och får extra livstjälande."
 		"DOTA_Tooltip_modifier_special_bonus_corruption_debuff" 	"Armor Corruption"
 		"DOTA_Tooltip_modifier_special_bonus_corruption_debuff_description" 	"Skydd är reducerat just nu."
 		"DOTA_Tooltip_modifier_phantom_assassin_fan_of_knives"				"Fan of Knives"
@@ -2513,6 +2516,7 @@
 		
 		"DOTA_Tooltip_ability_morphling_adaptive_strike_agi"							"Adaptive Strike"
 		"DOTA_Tooltip_ability_morphling_adaptive_strike_agi_Description"				"Avfyrar en svallvåg mot en fiende som gör grundskada plus ytterligare skada baserad på Morphlings agility gånger en multiplikator. Om Morphling har 50 % högre agility än styrka används den maximala multiplikatorn för agility.\n\nMålet knuffas också tillbaka baserat på Morphlings styrka. Om hans styrka är 50 % högre än hans agility används det maximinala tillbakaknuffavståndet."
+		"DOTA_Tooltip_ability_morphling_adaptive_strike_agi_Facet_morphling_str"		"Adaptive Strike bedövar baserat på Morphlings styrka."
 		"DOTA_Tooltip_ability_morphling_adaptive_strike_agi_Lore"						"Morphling frammanar sina element för att krossa sina motståndare med vågor."
 		"DOTA_Tooltip_ability_morphling_adaptive_strike_agi_Note0"						"Projektilens hastighet är %projectile_speed%."
 		"DOTA_Tooltip_ability_morphling_adaptive_strike_agi_damage_base"				"GRUNDSKADA:"
@@ -2857,6 +2861,7 @@
 		"DOTA_Tooltip_ability_razor_plasma_field_radius"								"RADIE:"
 		"DOTA_Tooltip_ability_razor_static_link"										"Static Link"
 		"DOTA_Tooltip_ability_razor_static_link_Description"							"Skapar en laddad länk mellan Razor och en fiendehjälte som stjäl attackskada från målet och ger det till Razor. Medan länken är aktiv kan Razor förflytta sig och attackera samtidigt."
+		"DOTA_Tooltip_ability_razor_static_link_shard_Description"						"Ökar användningsräckvidden. Saktar ner Razors mål med %move_speed_factor%x mängden stulen skada så länge länken är aktiv."
 		"DOTA_Tooltip_ability_razor_static_link_Lore"									"Razors polaritet kanaliserar elektricitet till sig och dränerar kraften från sina motståndare."
 		"DOTA_Tooltip_ability_razor_static_link_Note0"									"Länken bryts när någon av enheterna dör eller om avståndet mellan dem överstiger %drain_range_buffer% distansenheter utöver Static Links räckvidd."
 		"DOTA_Tooltip_ability_razor_static_link_drain_rate"								"SKADETÖMNINGSHASTIGHET:"
@@ -3581,6 +3586,7 @@
 		"DOTA_Tooltip_ability_dazzle_innate_weave_armor_change"							"SKYDDSÄNDRING PER STACK:"
 
 		"DOTA_Tooltip_ability_dazzle_nothl_projection"									"Nothl Projection"
+		"DOTA_Tooltip_ability_dazzle_nothl_projection_Note1"							"Dazzles själ kan inte attackera byggnader."
 		"DOTA_Tooltip_ability_dazzle_nothl_projection_min_duration"						"MINSTA VARAKTIGHET:"
 		"DOTA_Tooltip_ability_dazzle_nothl_projection_max_duration"						"MAX VARAKTIGHET:"
 		"DOTA_Tooltip_ability_dazzle_nothl_projection_poison_touch_hex"					"VARAKTIGHET (HEX):"
@@ -3594,6 +3600,7 @@
 		"DOTA_Tooltip_Ability_dazzle_nothl_boon_Note0"								"När Dazzle överhelar sig själv eller en allierad får hjälten en fysisk skadebarriär motsvarande mängden som överhelas i %duration% sekunder. Om målet redan har en större barriär uppdateras istället varaktigheten."
 
 		"DOTA_Tooltip_Facet_dazzle_poison_bloom"							"Poison Bloom"
+		"DOTA_Tooltip_Facet_dazzle_poison_bloom_Description"				"Dazzle kan sprida sin Poison Touch när han attackerar fiender. Weave är starkare mot fiender."
 		"DOTA_Tooltip_Facet_dazzle_poison_bloom_Note0"				"Var {s:bonus_attacks_to_split} gång som Dazzle attackerar ett mål som utsatts av Poison Touch, tar målet ytterligare skada och ytterligare Poison Touch-projektiler avfyras mot fiender i närheten. Antalet ytterligare enheter som påverkas beror på hur många mål Poison Touch har."
 
 		"DOTA_Tooltip_modifier_dazzle_nothl_boon_shield"							"Nothl Boon"
@@ -3621,8 +3628,14 @@
 		"DOTA_Tooltip_modifier_dazzle_bad_juju_manacost_Description"			"Kostnaden för Bad Juju har ökat."
 
 		"DOTA_Tooltip_modifier_dazzle_nothl_projection_physical_body_debuff"				"Nothl Projection"
+		"DOTA_Tooltip_modifier_dazzle_nothl_projection_physical_body_debuff_Description"	"Den här kroppen är ett tomt skal medan Dazzles själ utforskar Nothlriket."
+
 		"DOTA_Tooltip_modifier_dazzle_nothl_projection_knockback"							"Nothl Projection"
+		"DOTA_Tooltip_modifier_dazzle_nothl_projection_knockback_Description"				"Själen blir åtskild från kroppen."
+
 		"DOTA_Tooltip_modifier_dazzle_nothl_projection_soul_debuff"							"Nothl Projection"
+		"DOTA_Tooltip_modifier_dazzle_nothl_projection_soul_debuff_Description"				"Osårbar, kommer att dras tillbaka till din kropp när du går för långt bort."
+
 		//CLOCKWERK
 		"DOTA_Tooltip_ability_rattletrap_battery_assault"								"Battery Assault"
 		"DOTA_Tooltip_ability_rattletrap_battery_assault_Description"					"Skjuter iväg splitter i hög fart mot slumpvalda fiender i närheten, som utdelar mindre magisk skada och minibedövar."
@@ -3999,6 +4012,7 @@
 		"DOTA_Tooltip_modifier_shadow_shaman_serpent_ward_invuln_aura"					"Mass Serpent Ward"
 		//RIKI
 		"DOTA_Tooltip_ability_riki_smoke_screen"										"Smoke Screen"
+		"DOTA_Tooltip_ability_riki_smoke_screen_Description"							"Kastar en rökbomb som tystar fiender och får dem att missa attacker."
 		"DOTA_Tooltip_ability_riki_smoke_screen_Lore"									"Sedan hans flykt under natten för hans svek, har Riki värdesatt användandet av ett enkelt rökmoln för att förvirra motståndare."
 		"DOTA_Tooltip_ability_riki_smoke_screen_Note0"									"Kan användas under Tricks of the Trade."
 		"DOTA_Tooltip_ability_riki_smoke_screen_Note1"									"Hindrar inte användandet av aktiva föremål."
@@ -4016,6 +4030,7 @@
 		"DOTA_Tooltip_ability_riki_innate_backstab_Description"							"Varje gång Riki slår sin fiende bakifrån gör han bonusskada baserat på sin agility."
 		"DOTA_Tooltip_ability_riki_innate_backstab_Facet_riki_contract_killer"			"Riki får extra XP för assister och kills."
 		"DOTA_Tooltip_ability_riki_innate_backstab_Note0"								"Fungerar inte när man nekar allierade enheter."
+		"DOTA_Tooltip_ability_riki_innate_backstab_Note1"								"Rikis illusioner kommer att visa Backstab-animationer, men inte utdela någon extra skada."
 		"DOTA_Tooltip_ability_riki_innate_backstab_damage_multiplier"					"SKADEMULTIPLIKATOR (AGILITY):"
 		"DOTA_Tooltip_ability_riki_innate_backstab_bonus_xp_kill"						"BONUS-XP (HJÄLTEKILL):"
 		"DOTA_Tooltip_ability_riki_innate_backstab_bonus_xp_assist"						"BONUS-XP (ASSISTS):"
@@ -4052,7 +4067,8 @@
 		"DOTA_Tooltip_ability_riki_blink_strike_slow"									"NEDSAKTNING – VARAKTIGHET:"
 		"DOTA_Tooltip_ability_riki_tricks_of_the_trade"									"Tricks of the Trade"
 		"DOTA_Tooltip_ability_riki_tricks_of_the_trade_Description"						"KANALISERAD – Riki fasar ut ur världen medan han attackerar slumpmässiga fiendeenheter bakifrån i ett område runt honom. Under utfasning minskar hans attackskada, men hans agility ökar kraftigt."
-		"DOTA_Tooltip_ability_riki_tricks_of_the_trade_scepter_description"				"Ökar kasträckvidden, antalet attacker och låter dig välja en allierad hjälte att gömma dig i under varaktigheten. Varje attack träffar ett extra mål."
+		"DOTA_Tooltip_ability_riki_tricks_of_the_trade_Facet_riki_exterminator"			"Tricks of the Trade har %creep_agility_multiplier}%x extra agility när icke-hjälteenheter attackeras. När Riki dödar någon som inte är en hjälte under Tricks of the Trade, minskas cooldown med %cooldown_reduction_per_creep_kill% s."
+        "DOTA_Tooltip_ability_riki_tricks_of_the_trade_scepter_description"				"Ökar kasträckvidden, antalet attacker och låter dig välja en allierad hjälte att gömma dig i under varaktigheten. Varje attack träffar ett extra mål."
 		"DOTA_Tooltip_ability_riki_tricks_of_the_trade_Lore"							"Den Smygande Lönnmördaren är inte rädd för att slåss ojust, och är specialiserad på att attackera sina motståndare bakifrån."
 		"DOTA_Tooltip_ability_riki_tricks_of_the_trade_Note0"							"Förflyttning avbryter förmågan."
 		"DOTA_Tooltip_ability_riki_tricks_of_the_trade_radius"							"RADIE:"
@@ -4379,6 +4395,7 @@
 
 		//SLARDAR
 		"DOTA_Tooltip_ability_slardar_seaborn_sentinel"										"Seaborn Sentinel"
+		"DOTA_Tooltip_ability_slardar_seaborn_sentinel_Description"							"Slardar får extra förflyttningshastighet, HP-regeneration, attackskada och skydd när han befinner sig i en vattenpöl, flod eller på en stig."
 		"DOTA_Tooltip_ability_slardar_seaborn_sentinel_river_speed"							"%EXTRA FÖRFLYTTNINGSHASTIGHET:"
 		"DOTA_Tooltip_ability_slardar_seaborn_sentinel_puddle_regen"						"HP-REGENERATION:"		
 		"DOTA_Tooltip_ability_slardar_seaborn_sentinel_puddle_armor"						"EXTRA SKYDD:"		
@@ -4470,6 +4487,7 @@
 		"DOTA_Tooltip_ability_beastmaster_call_of_the_wild_hawk_hawk_base_max_health"			"HAWK – GRUNDLÄGGANDE HP:"
 		"DOTA_Tooltip_ability_beastmaster_call_of_the_wild_hawk_hawk_base_magic_resist"			"HAWK – GRUNDLÄGGANDE MAGIRESISTENS:"
 				
+		"DOTA_Tooltip_ability_beastmaster_call_of_the_wild_hawk_dive_damage"			"DYKSKADA:"
 		"DOTA_Tooltip_ability_beastmaster_call_of_the_wild_hawk_dive_root_duration"			"FASTROTNING – VARAKTIGHET:"
 		"DOTA_Tooltip_ability_beastmaster_hawk_dive"									"Dive Bomb"
 		"DOTA_Tooltip_ability_beastmaster_hawk_dive_Description"						"Flyger och slår ned mot en vald fiende, vilket skadar och rotar fast dem."
@@ -4536,6 +4554,8 @@
 		"DOTA_Tooltip_modifier_beastmaster_primal_roar_speed_Description"		"Förflyttningshastighet ökad med %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 		
 		"DOTA_Tooltip_modifier_beastmaster_call_of_the_wild_hawk"	"Hawk"
+		"DOTA_Tooltip_modifier_beastmaster_call_of_the_wild_hawk_Description"	"Okontrollerbar."
+
 		"DOTA_Tooltip_ability_beastmaster_drums_of_slom"					"Drums of Slom"
 		"DOTA_Tooltip_ability_beastmaster_drums_of_slom_Lore"				"Naturens raseri är tidlöst, och för dem som känner till hemligheterna är det lätt att väcka vredens genklang som gladde sig åt Sloms fall."
 		"DOTA_Tooltip_ability_beastmaster_drums_of_slom_Description"			"Attacker från Beastmaster eller kontrollerade enheter i närheten gör att han slår på trumman, vilket skadar enheter i närheten och helar Beastmaster och enheter som han kontrollerar med en andel av gjord skada. Varje attack minskar intervallet mellan trumslagen ned till %min_drum_hit_interval% sekunder som lägst mellan träffar efter %max_stacks% attacker. Om inga attacker görs ökar intervallen gradvis.<br><br>Att använda Primal Roar räknas som 10/15/20 attacker, beroende på den nuvarande nivån av Primal Roar."
@@ -4675,6 +4695,7 @@
 
 
 		"DOTA_Tooltip_ability_faceless_void_time_dilation"								"Time Dilation"
+		"DOTA_Tooltip_ability_faceless_void_time_dilation_Description"					"Faceless Void fångar alla fiender i närheten i ett tidsdilatationsfält i %duration% sekunder, vilket förlänger deras cooldowns och saktar ned deras attack- och förflyttningshastighet med %slow% %% för varje förlängd cooldown. Utdelar extra skada per sekund för varje cooldown."
 		"DOTA_Tooltip_ability_faceless_void_time_dilation_lore"							"För dem som möter Darkterror verkar varje ögonblick vara i en evighet."
 		"DOTA_Tooltip_ability_faceless_void_time_dilation_Note0"						"Påverkar inte cooldown på föremål."
 		"DOTA_Tooltip_ability_faceless_void_time_dilation_radius"					    "RADIE:"
@@ -4685,6 +4706,7 @@
 		"DOTA_Tooltip_ability_faceless_void_time_lock"									"Time Lock"
 		"DOTA_Tooltip_ability_faceless_void_time_lock_Description"						"Attacker har en chans att låsa en fiendeenhet i tiden och attackera den en gång till."
 		"DOTA_Tooltip_ability_faceless_void_time_lock_Lore"								"Faceless Voids slag träffar med dimensionsskiftande kraft."
+		"DOTA_Tooltip_ability_faceless_void_time_lock_Note0"							"Stackar ej med Skull Basher."
 		"DOTA_Tooltip_ability_faceless_void_time_lock_abilitydraft_note"				"I Ability Draft <b>stackar</b> förmågan med Skull Basher."
 		"DOTA_Tooltip_ability_faceless_void_time_lock_chance_pct"						"%CHANS:"
 		"DOTA_Tooltip_ability_faceless_void_time_lock_duration"							"VARAKTIGHET:"
@@ -4715,6 +4737,8 @@
 		"DOTA_Tooltip_ability_faceless_void_time_zone_bonus_turn_speed"				"%MANIPULERAD VÄNDHASTIGHET:"
 		"DOTA_Tooltip_ability_faceless_void_time_zone_bonus_projectile_speed"		"%MANIPULERAD PROJEKTILHASTIGHET:"
 		"DOTA_Tooltip_ability_faceless_void_time_zone_duration"						"VARAKTIGHET:"			
+		"DOTA_Tooltip_ability_faceless_void_time_zone_cooldown_acceleration"		"%COOLDOWNACCELERERING"
+
 		"DOTA_Tooltip_ability_faceless_void_distortion_field"					"Distortion Field"
 		"DOTA_Tooltip_ability_faceless_void_distortion_field_Description"		"Fientliga attackprojektiler inom en radie på %slow_distance_max% saktas ned med %attack_projectile_slow% %%."
 
@@ -4791,6 +4815,7 @@
 		"DOTA_Tooltip_modifier_death_prophet_spirit_siphon_slow"						"Spirit Siphon"
 		"DOTA_Tooltip_modifier_death_prophet_spirit_siphon_slow_Description"			"Anden är kopplad till Death Prophet."
 		"DOTA_Tooltip_modifier_death_prophet_silence"			"Tystad"
+		"DOTA_Tooltip_modifier_death_prophet_silence_Description"						"Tystad."
 		"DOTA_Tooltip_modifier_death_prophet_spirit_siphon"								"Spirit Siphon"
 		"DOTA_Tooltip_modifier_death_prophet_spirit_siphon_Description"					"Dränerar en fiende i närheten genom en Spirit Link."
 		"DOTA_Tooltip_modifier_death_prophet_spirit_siphon_buff"						"Siphoned Armor"
@@ -4802,6 +4827,7 @@
 		"DOTA_Tooltip_modifier_death_prophet_crypt_swarm_slow"							"Crypt Swarm – nedsaktning"
 		"DOTA_Tooltip_ability_death_prophet_spirit_collector"							"Spirit Collector"
 		"DOTA_Tooltip_ability_death_prophet_spirit_collector_Description"				"Hjältars död stärker nästa Exorcism."
+		"DOTA_Tooltip_ability_death_prophet_spirit_collector_Note0"						"När en hjälte dör fångar Death Prophet dess ande för senare användning. När hon använder Exorcism kommer varje fångad hjälteande att ersätta en standardande. Hjälteandar gör mer skada än vanliga andar.<br><br>När en hjälte dödas medan Exorcism är aktiv, ersätts en standardande med en hjälteande om möjligt, och bevaras till nästa gång Exorcism används."
 		"DOTA_Tooltip_ability_death_prophet_spirit_collector_Note1"						"Gäller också Death Prophets egen död."
 
 		"DOTA_Tooltip_modifier_death_prophet_spirit_collector"						"Spirit Collector"
@@ -4841,6 +4867,7 @@
 		"DOTA_Tooltip_ability_pugna_nether_ward_Description"							"Pugna placerar ut en Nether Ward på målplatsen. Den angriper fiendehjältar som använder förmågor, och utdelar skada som motsvarar grundskada plus skademultiplikatorn av den mana som fiendehjälten har förbrukat."
 		"DOTA_Tooltip_ability_pugna_nether_ward_Facet_pugna_siphoning_ward"					"Nether Ward återställer mana och hälsa till Pugna baserat på hur mycket skada som utdelas."
 		"DOTA_Tooltip_ability_pugna_nether_ward_Lore"									"Medan han var i klostret av Glömskans Konster, lärde sig Pugna att dominera sina klasskamrater med en enda ward laddad med Nether-magi."
+		"DOTA_Tooltip_ability_pugna_nether_ward_shard_description"						"Ökar användningsräckvidden till %AbilityCastRange%."		
 		"DOTA_Tooltip_ability_pugna_nether_ward_Note0"									"Nether Ward åsamkar skada innan den faktiska trollformeln kastas, så om kastaren dör kommer trollformeln inte att ha någon effekt."
 		"DOTA_Tooltip_ability_pugna_nether_ward_Note1"									"Decrepify går att använda på Nether Ward."
 		"DOTA_Tooltip_ability_pugna_nether_ward_Note2"									"Illusioner och creeps gör 25 % skada mot Nether Ward."
@@ -4889,6 +4916,7 @@
 		"DOTA_Tooltip_ability_templar_assassin_refraction_Description"					"Templar Assassin blir mycket svårfångad, får en liten barriär och får skadebonus. Skade- och undvikandeeffekterna är separata och har ett begränsat antal instanser. Om en barriär förbrukas skapas en ny så länge det finns laddningar kvar. Om en skadeinstans skulle orsaka mer skada än den återstående barriären, absorberas all skada."
 		"DOTA_Tooltip_ability_templar_assassin_refraction_Facet_templar_assassin_refractor"		"När en sköld förbrukas får Templar Assassin en skadeinstans."
 		"DOTA_Tooltip_ability_templar_assassin_refraction_Note0"						"HP-borttagande skada går igenom Refraction (men kommer ej att minska laddningarna)."
+		"DOTA_Tooltip_ability_templar_assassin_refraction_Note1"						"Refraction kan ses av fiender."
 		"DOTA_Tooltip_ability_templar_assassin_refraction_instances"				"INSTANSER:"
 		"DOTA_Tooltip_ability_templar_assassin_refraction_bonus_damage"					"BONUSSKADA:"
 		"DOTA_Tooltip_ability_templar_assassin_refraction_duration"						"VARAKTIGHET:"
@@ -5143,11 +5171,15 @@
 		"DOTA_Tooltip_ability_dragon_knight_dragon_tail_Facet_dragon_knight_corrosive_dragon"			"Skadetyp ändrad till fysisk."
 
 		"DOTA_Tooltip_ability_dragon_knight_dragon_blood"								"Wyrm's Wrath"
+		"DOTA_Tooltip_ability_dragon_knight_dragon_blood_Description"					"Drakens livsblod förbättrar Dragon Knights attacker. I drakform är effekterna starkare."
+		"DOTA_Tooltip_ability_dragon_knight_dragon_blood_Facet_dragon_knight_fire_dragon"					"Attacker gör ytterligare magisk skada på fiendeenheter. Besvärjelser och föremål har ökat effektområde."
+		"DOTA_Tooltip_ability_dragon_knight_dragon_blood_Facet_dragon_knight_frost_dragon"					"Attacker är fyllda med frost som påverkar fiendens enheter, saktar förflyttningshastighet och attackhastighet och minskar helande."
 		"DOTA_Tooltip_ability_dragon_knight_dragon_blood_Lore"							"Slyraks blod rinner fortfarande genom Davions ådror, vilket gör honom dubbelt så härdig som en vanlig riddare."
 		
 		"DOTA_Tooltip_Facet_dragon_knight_corrosive_dragon"						"Corrosive Dragon"
 		"DOTA_Tooltip_Facet_dragon_knight_corrosive_dragon_Description"			"Dragon Knight har frätande krafter på sina attacker som blir starkare i Elder Dragon Form. Alla hans förmågor gör fysisk skada."
 		"DOTA_Tooltip_Facet_dragon_knight_fire_dragon"							"Fire Dragon"		
+		"DOTA_Tooltip_Facet_dragon_knight_fire_dragon_Description"				"Dragon Knight gör ytterligare magisk skada med sina attacker. Dragon Knights förmågor har ökat effektområde som blir starkare i Elder Dragon Form."		
 		"DOTA_Tooltip_Facet_dragon_knight_frost_dragon"							"Frost Dragon"
 		"DOTA_Tooltip_Facet_dragon_knight_frost_dragon_Description"				"Dragon Knight har nedsaktning och helandereducering på sina attacker som blir starkare i Elder Dragon-form."
 
@@ -5159,7 +5191,11 @@
 		"DOTA_Tooltip_ability_dragon_knight_dragon_blood_frost_bonus_attack_speed"		"ATTACKHASTIGHETSNEDSAKTNING (FROST):"
 		"DOTA_Tooltip_ability_dragon_knight_dragon_blood_frost_duration"				"VARAKTIGHET (FROST):"
 		"DOTA_Tooltip_ability_dragon_knight_dragon_blood_frost_aoe"						"DEBUFFRADIE (FROST):"
+		"DOTA_Tooltip_ability_dragon_knight_dragon_blood_frost_healing_reduction"		"%HELANDEREDUCERING (FROST):"
+
 		"DOTA_Tooltip_ability_dragon_knight_elder_dragon_form"							"Elder Dragon Form"
+		"DOTA_Tooltip_ability_dragon_knight_elder_dragon_form_Description"				"Dragon Knight tar an formen av en av de tre kraftfulla Elder Dragons. Förflyttningshastigheten och attackskadan ökar, och träffeffekterna för Wyrm's Wrath och en procentandel av attackskadan appliceras på alla fiender i närheten av målet. Räckvidden för Dragon Tail ökar. HP-regeneration och extra skydd från Dragon Blood ökar. "
+
 		"DOTA_Tooltip_ability_dragon_knight_elder_dragon_form_shard_description"        "Elder Dragon Form får förmågan Fireball."
 		"DOTA_Tooltip_ability_dragon_knight_elder_dragon_form_scepter_description"      "Ökar nivån på Dragon Form genom att lägga till en Black Dragon på nivå 4 som ökar skadan och effektiviteten av Wyrm's Wrath-attackerna."
 		"DOTA_Tooltip_ability_dragon_knight_elder_dragon_form_Lore"						"Den slumrande drakkraften väcks till liv i Davions inre och kombinerar krafterna av en legendarisk riddare med en legendarisk Eldwurm."
@@ -5169,6 +5205,9 @@
 		"DOTA_Tooltip_ability_dragon_knight_elder_dragon_form_bonus_attack_range"		"EXTRA ATTACKRÄCKVIDD:"
 		"DOTA_Tooltip_ability_dragon_knight_elder_dragon_form_bonus_attack_damage"		"EXTRA ATTACKSKADA:"
 		"DOTA_Tooltip_ability_dragon_knight_elder_dragon_form_ranged_splash_radius"		"EFFEKTENS SPRIDNINGSRADIE:"
+		"DOTA_Tooltip_ability_dragon_knight_elder_dragon_form_ranged_splash_damage_pct"		"%SPRIDNINGSSKADA:"
+		"DOTA_Tooltip_ability_dragon_knight_elder_dragon_form_wyrms_wrath_bonus_tooltip"	"%BONUS (WYRM'S WRATH):"
+
 		"DOTA_Tooltip_ability_dragon_knight_elder_dragon_form_abilitydraft_note"		"Shard: Ger förmågan Fireball."
 		"DOTA_Tooltip_ability_dragon_knight_fireball"							        "Fireball"
 		"DOTA_Tooltip_ability_dragon_knight_fireball_Description"				        "Sätter ett område i brand, vilket utdelar skada över tid mot fiender i branden. Har reducerad räckvidd i närkamp."
@@ -5434,6 +5473,7 @@
 
 
 		"DOTA_Tooltip_ability_enchantress_impetus"										"Impetus"
+		"DOTA_Tooltip_ability_enchantress_impetus_Description"							"Placerar en förtrollning på varje attack, vilket får attacken att göra ytterligare skada som baseras på hur långt borta målet är. Ju längre bort målet är, desto mer skada utdelas. Gör dubbelt så mycket skada mot illusioner."
 		"DOTA_Tooltip_ability_enchantress_impetus_Lore"									"Medan Aiushta föredrar fredsfulla medel, är hon kapabel till magiska angrepp från distans, då hennes spjut får energi från det naturliga livet runtom henne."
 		"DOTA_Tooltip_ability_enchantress_impetus_Note0"								"Skadan maximeras vid en distans på %distance_cap% enheter."
 		"DOTA_Tooltip_ability_enchantress_impetus_Note1"								"Distansen fram till målet mäts när projektilen träffar."
@@ -5591,6 +5631,8 @@
 		
 		"DOTA_Tooltip_ability_huskar_burning_spear"										"Burning Spear"
 		"DOTA_Tooltip_ability_huskar_burning_spear_Description"							"Huskar tänder eld på sina spjut som utdelar skada över tid med sin normala attack. Flera attacker kommer att stacka ytterligare skada. Varje attack görs på bekostnad av Huskars hälsa."
+		"DOTA_Tooltip_ability_huskar_burning_spear_Facet_huskar_nothl_conflagration"	"Burning Spears bränner även fiender med en andel av deras max-HP. Kostar max-HP istället för nuvarande HP."
+		"DOTA_Tooltip_ability_huskar_burning_spear_scepter_description"					"Burning Spears skjuter ytterligare %multishot_targets% spjut mot slumpmässiga fiender inom Huskars attackräckvidd."
 		"DOTA_Tooltip_ability_huskar_burning_spear_Lore"								"Den heliga krigaren tänder eld på sina vapen efter att ha markerat dem med sitt blod - vilket skapar större smärtor än de som han själv känner."
 		"DOTA_Tooltip_ability_huskar_burning_spear_Note0"								"Burning Spear stackar additivt när de används flera gånger på ett enda mål. Det finns ingen gräns."
 		"DOTA_Tooltip_ability_huskar_burning_spear_Note1"								"Huskar kan ej döda sig själv med den här förmågan."
@@ -5618,6 +5660,7 @@
 		"DOTA_Tooltip_ability_huskar_berserkers_blood_hp_threshold_max" 				"%HP FÖR MAXBONUS:"
 		"DOTA_Tooltip_ability_huskar_berserkers_blood_activation_cooldown"				"COOLDOWN:"
 		"DOTA_Tooltip_ability_huskar_berserkers_blood_activation_healthcost_pct"	 	"%NUVARANDE HP-KOSTNAD:"
+		"DOTA_Tooltip_ability_huskar_berserkers_blood_activation_delay"	 				"FÖRDRÖJNING (CAUTERIZE):"
 		"DOTA_Tooltip_ability_huskar_berserkers_blood_activation_heal_pct_per_debuff"	 "%HELANDE (MAX-HP) PER DEBUFF:"
 
 		"DOTA_Tooltip_ability_huskar_life_break"										"Life Break"
@@ -5669,8 +5712,11 @@
 		"DOTA_Tooltip_Facet_huskar_nothl_transfusion_Description"		"Life Break helar även allierade enheter i en radie runt målet."
 		"DOTA_Tooltip_Facet_huskar_cauterize"							"Cauterize"
 		"DOTA_Tooltip_Facet_huskar_nothl_conflagration"					"Incendiary"
+		"DOTA_Tooltip_Facet_huskar_nothl_conflagration_Description"		"Burning Spears bränner även fiender med en andel av deras max-HP. Kostar max-HP istället för nuvarande HP."
+
 		//NIGHT STALKER
 		"DOTA_Tooltip_ability_night_stalker_void"										"Void"
+		"DOTA_Tooltip_ability_night_stalker_void_Description"							"Skapar ett skadligt tomrum som saktar ner en fiendeenhet och utdelar skada. På natten applicerar Void en minibedövning som avbryter kanaliserade förmågor, och effekten varar längre."
 		"DOTA_Tooltip_ability_night_stalker_void_Facet_night_stalker_blinding_void"		"Fiender som påverkas av Void delar inte sikt med sina allierade. Påverkade fiender tar skada per sekund när de inte är synliga för sina allierade."
 		"DOTA_Tooltip_ability_night_stalker_void_invisible_damage_pers"					"SKADA PER SEKUND VID OSYNLIGHET:"
 		"DOTA_Tooltip_ability_night_stalker_void_Lore"									"Balanar skapar en virvel av oändlig natt som sliter sönder motsåndare till det oändliga mörker som en gång fanns."
@@ -5693,6 +5739,7 @@
 		"DOTA_Tooltip_ability_night_stalker_crippling_fear_mana_pct_cost"				"%MANAKOSTNAD:"
 		"DOTA_Tooltip_ability_night_stalker_hunter_in_the_night"						"Hunter in the Night"
 		"DOTA_Tooltip_ability_night_stalker_hunter_in_the_night_Description"			"Night Stalker är i sitt rätta element på natten, då han attackerar och rör sig med stor snabbhet."
+		"DOTA_Tooltip_ability_night_stalker_hunter_in_the_night_Facet_night_stalker_dayswap"			"Ökar maxnivån på Hunter in the Night till %max_level_tooltip%. Night Stalker börjar med en bonusnivå av Hunter in the Night."
 		"DOTA_Tooltip_ability_night_stalker_hunter_in_the_night_shard_description"		"Hunter in the Night kan användas på ett creep för att omedelbart döda det och återställa en andel av Night Stalkers maximala HP och mana. Kan inte användas på Ancient creeps under dagtid."
 		"DOTA_Tooltip_ability_night_stalker_hunter_in_the_night_Lore"					"Balanars jägarskicklighet ökar då natten kommer."
 		"DOTA_Tooltip_ability_night_stalker_hunter_in_the_night_bonus_movement_speed_pct_night"	"%FÖRFLYTTNINGSHASTIGHET:"
@@ -5726,6 +5773,7 @@
 		
 		"DOTA_Tooltip_Facet_night_stalker_voidbringer"								"Voidbringer"		
 		"DOTA_Tooltip_Ability_night_stalker_night_reign"				"Night Reign"
+		"DOTA_Tooltip_Ability_night_stalker_night_reign_Description"	"Matchen startar nu på natten istället för på dagen. Natten är längre än dagen. Night Stalker börjar med en bonusnivå av Hunter in the Night."
 		"DOTA_Tooltip_Ability_night_stalker_night_reign_daytime_change"	"DAGTIDSREDUCERING:"
 		"DOTA_Tooltip_Ability_night_stalker_night_reign_tooltip_nighttime_change" "NATTETIDSFÖRLÄNGNING:"
 		
@@ -5953,6 +6001,7 @@
 		"DOTA_Tooltip_ability_weaver_geminate_attack_Description"			"Låter Weaver skicka iväg två attacker på samma gång."
 		"DOTA_Tooltip_ability_weaver_geminate_attack_Lore"					"Skitskurrs förhållande till tiden är något varierande, vilket gör så att hans handlingar bevittnas, och känns, mer än en gång."
 		"DOTA_Tooltip_ability_weaver_geminate_attack_Note0"					"Den andra attacken lämnar Weaver %delay% sekunder efter den första, och har ingen begränsning på räckvidd."
+		"DOTA_Tooltip_ability_weaver_geminate_attack_Note1"					"Bonusskada gäller bara den geminerade attacken och inte originalattacken."
 		"DOTA_Tooltip_ability_weaver_geminate_attack_tooltip_attack"		"GEMINATE – ANTAL ATTACKER:		"
 		"DOTA_Tooltip_ability_weaver_geminate_attack_bonus_damage"			"BONUSSKADA (GEMINATE):"
 		"DOTA_Tooltip_ability_weaver_geminate_attack_shard_description"		"Geminate Attack kommer även att träffa enheter inom %shard_beetle_search_range% enheters räckvidd från det ursprungliga målet som angrips av The Swarm."
@@ -6030,6 +6079,8 @@
         "DOTA_Tooltip_ability_jakiro_liquid_fire_building_dmg_pct"			"%SKADA MOT BYGGNADER:"
 		"DOTA_Tooltip_ability_jakiro_liquid_fire_abilitydraft_note"			"<span class=\"ADWarning\">Shard ger <i>INTE</i> förmågan <b>Liquid Frost</b>.</span>"
 		"DOTA_Tooltip_ability_jakiro_liquid_ice"                            "Liquid Frost"
+		"DOTA_Tooltip_ability_jakiro_liquid_ice_Description"                "Jakiros attack kyler fienderna, saktar ner förflyttningshastigheten i %duration% sekunder och ökar skadan som tas från Jakiros attacker och förmågor. Effekten gäller inte på byggnader. Delar cooldown med Liquid Fire."
+		"DOTA_Tooltip_ability_jakiro_liquid_ice_shard_Description"          "Jakiros Liquid Frost delar inte längre cooldown med Liquid Fire."				
 		"DOTA_Tooltip_ability_jakiro_liquid_ice_duration"                   "VARAKTIGHET:"
 		"DOTA_Tooltip_ability_jakiro_liquid_ice_movement_slow"              "%NEDSAKTNING:"
 		"DOTA_Tooltip_ability_jakiro_liquid_ice_slow_attack_speed_pct"		"ATTACKNEDSAKTNING:"
@@ -6462,6 +6513,8 @@
 		"DOTA_Tooltip_ability_ancient_apparition_ice_blast_path_radius"					"BANRADIE:"
 		"DOTA_Tooltip_ability_ancient_apparition_ice_blast_frostbite_duration_scepter"	"SCEPTER - VARAKTIGHET:"
 		"DOTA_Tooltip_ability_ancient_apparition_ice_blast_release"						"Släpp"
+		"DOTA_Tooltip_ability_ancient_apparition_ice_blast_release_Description"			"Släpper isexplosionen för att explodera vid markörens nuvarande plats. Kan användas när man är tystad."
+		
 		"DOTA_Tooltip_Facet_ancient_apparition_exposure"								"Exposure"	
 		"DOTA_Tooltip_Facet_ancient_apparition_exposure_Description"			"Cold Feet appliceras i ett effektområde (AoE), beroende på den aktuella nivån på Ice Blast."		
 		"DOTA_Tooltip_Facet_ancient_apparition_bone_chill"						"Bone Chill"		
@@ -6824,13 +6877,19 @@
 
 		//INVOKER
 		"DOTA_Tooltip_ability_invoker_quas"											"Quas"
+		"DOTA_Tooltip_ability_invoker_quas_scepter_description"						"Ger %scepter_bonus_levels% nuvarande nivåer och maxnivåer."
 		"DOTA_Tooltip_ability_invoker_quas_Lore"									" "
 		"DOTA_Tooltip_ability_invoker_quas_Note0"									"Invoker kan bara ha 3 av en instans."
 		"DOTA_Tooltip_ability_invoker_quas_Note1"									"Avbryter inte osynlighet och kan användas under kanalisering."
 		"DOTA_Tooltip_ability_invoker_quas_max_level"								"MAXNIVÅ:"
 		"DOTA_Tooltip_ability_invoker_quas_hp_regen_per_instance"					"HP-REGENERATION PER INSTANS:"
 		"DOTA_Tooltip_ability_invoker_quas_strength_bonus"							"EXTRA STYRKA PER NIVÅ:"
+		"DOTA_Tooltip_ability_invoker_quas_facet_invoker_quas_focus"				"<font color='#7998b5'>Quas</font> får en extra maxnivå. När Invoker når nivå 6 får <font color='#7998b5'>Quas</font> en extra nivå."
+
+
 		"DOTA_Tooltip_ability_invoker_wex"											"Wex"
+		"DOTA_Tooltip_ability_invoker_wex_Description"								"Tillåter manipulation av stormelement. Aktiva instanser av <font color='#d671a9'>Wex</font> ger Invoker extra förflyttningshastighet. Ger passivt extra agility per nivå för <font color='#d671a9'>Wex</font>."
+		"DOTA_Tooltip_ability_invoker_wex_scepter_description"						"Ger %scepter_bonus_levels% nuvarande nivåer och maxnivåer."
 		"DOTA_Tooltip_ability_invoker_wex_Lore"										" "
 		"DOTA_Tooltip_ability_invoker_wex_Note0"									"Invoker kan bara ha 3 av en instans."
 		"DOTA_Tooltip_ability_invoker_wex_Note1"									"Avbryter inte osynlighet och kan användas under kanalisering."
@@ -6838,13 +6897,19 @@
 		"DOTA_Tooltip_ability_invoker_wex_agility_bonus"							"EXTRA AGILITY PER NIVÅ:"
 		"DOTA_Tooltip_ability_invoker_wex_move_speed_per_instance"					"%FÖRFLYTTNINGSHASTIGHET PER INSTANS:"
 		"DOTA_Tooltip_ability_invoker_wex_intrinsic_attack_speed"					"ATTACKHASTIGHET:"
+		"DOTA_Tooltip_ability_invoker_wex_facet_invoker_wex_focus"				"<font color='#d671a9'>Wex</font> får en extra maxnivå. När Invoker når nivå 6 får <font color='#d671a9'>Wex</font> en extra nivå."
+
 		"DOTA_Tooltip_ability_invoker_exort"										"Exort"
+		"DOTA_Tooltip_ability_invoker_exort_Description"							"Tillåter manipulation av eldelement. Aktiva instanser av <font color='#cabe68'>Exort</font> ger Invoker extra attackskada. Ger passivt extra intelligens per nivå för <font color='#cabe68'>Exort</font>."		 	
+		"DOTA_Tooltip_ability_invoker_exort_scepter_description"					"Ger %scepter_bonus_levels% nuvarande nivåer och maxnivåer."
 		"DOTA_Tooltip_ability_invoker_exort_Lore"									" "
 		"DOTA_Tooltip_ability_invoker_exort_Note0"									"Invoker kan bara ha 3 av en instans."
 		"DOTA_Tooltip_ability_invoker_exort_Note1"									"Avbryter inte osynlighet och kan användas under kanalisering."
 		"DOTA_Tooltip_ability_invoker_exort_max_level"								"MAXNIVÅ:"
 		"DOTA_Tooltip_ability_invoker_exort_intelligence_bonus"						"EXTRA INTELLIGENS PER NIVÅ:"
 		"DOTA_Tooltip_ability_invoker_exort_bonus_damage_per_instance"				"ATTACKSKADA PER INSTANS:"
+		"DOTA_Tooltip_ability_invoker_exort_facet_invoker_exort_focus"				"<font color='#cabe68'>Exort</font> får en extra maxnivå. När Invoker når nivå 6 får <font color='#cabe68'>Exort</font> en extra nivå."
+
 		"DOTA_Tooltip_Facet_invoker_elitist"								"Elitist"		
 		"DOTA_Tooltip_Facet_invoker_elitist_Description"					"Dina aktiva klot ger <font color='#7998b5'>livstjälande</font>, <font color='#d671a9'>förflyttningshastighet</font> och <font color='#cabe68'>besvärjelseförstärkning</font>."
 		"DOTA_Tooltip_Facet_invoker_agnostic"								"Agnostic"		
@@ -6869,6 +6934,8 @@
 		"DOTA_Tooltip_ability_invoker_cold_snap_freeze_damage"						"FRYSSKADA (<font color='#7998b5'>QUAS</font>):"
 		"DOTA_Tooltip_ability_invoker_cold_snap_freeze_cooldown"					"COOLDOWN PÅ FRYSNING (<font color='#7998b5'>QUAS</font>):"
 		"DOTA_Tooltip_ability_invoker_cold_snap_freeze_heal"						"FRYSHELANDE (<font color='#7998b5'>QUAS</font>):"
+		"DOTA_Tooltip_ability_invoker_cold_snap_Facet_invoker_quas_focus"			"När Cold Snap utlöses helas Invoker med %freeze_heal% HP."
+
 		"DOTA_Tooltip_ability_invoker_ghost_walk"									"Ghost Walk"
 		"DOTA_Tooltip_ability_invoker_ghost_walk_Description"						"Invoker manipulerar isen och elektriska energier runtom sig, vilket ger honom HP- och manaregeneration och gör hans kropp osynlig. Den elementära obalansen saktar ned fiender i närheten baserat på <font color='#7998b5'>Quas</font>-nivån, och saktar ned Invoker själv baserat på <font color='#d671a9'>Wex</font>-nivån."
 		"DOTA_Tooltip_ability_invoker_ghost_walk_Lore"								"Myraults hindrande gast."
@@ -6878,6 +6945,7 @@
 		"DOTA_Tooltip_ability_invoker_ghost_walk_health_regen"						"HP-REGENERATION (<font color='#7998b5'>QUAS</font>):"
 		"DOTA_Tooltip_ability_invoker_ghost_walk_mana_regen"						"MANAREGENERATION (<font color='#d671a9'>WEX</font>):\n"
 		"DOTA_Tooltip_ability_invoker_ghost_walk_enemy_slow"						"%NEDSAKTNING PÅ FIENDE (<font color='#7998b5'>QUAS</font>):\n"
+		"DOTA_Tooltip_ability_invoker_ghost_walk_ally_cast_area_of_effect"			"RADIE (ALLIERAD):"
 		"DOTA_Tooltip_ability_invoker_tornado"										"Tornado"
 		"DOTA_Tooltip_ability_invoker_tornado_Description"							"Släpper lös en snabb tornado som plockar upp fiender i sin väg och lyfter upp dem hjälplöst i luften kortvarigt innan de tillåts falla mot sitt öde. Reser längre beroende på <font color='#d671a9'>Wex</font>-nivån. Håller fiender i luften under en längre tid baserat på <font color='#7998b5'>Quas</font>-nivån. Gör grundskada och extra skada baserat på <font color='#d671a9'>Wex</font>-nivån.\n\nDISPEL: Grundläggande"
 		"DOTA_Tooltip_ability_invoker_tornado_Lore"									"Tornarus klor."
@@ -6887,6 +6955,8 @@
 		"DOTA_Tooltip_ability_invoker_tornado_lift_duration"						"VARAKTIGHET I LUFTEN (<font color='#7998b5'>QUAS</font>):\n"
 		"DOTA_Tooltip_ability_invoker_tornado_base_damage"							"GRUNDSKADA:"
 		"DOTA_Tooltip_ability_invoker_tornado_wex_damage"							"EXTRA SKADA (<font color='#d671a9'>WEX</font>):"
+		"DOTA_Tooltip_ability_invoker_tornado_scepter_Facet_invoker_wex_focus"		"Tornado skapar mindre virvlar längs vägen var %twister_distance_interval% enhet. Varje virvel varar under Tornados varaktighet och stannar kvar i ytterligare %twister_duration% sekunder efter att tornadon förstörs. Virvlarna gör %twister_damage% skada i en radie på %twister_radius% var %twister_tick_rate% sekund. Virvlarna gör halva skadan på creeps."
+
 		"DOTA_Tooltip_ability_invoker_emp"											"E.M.P."
 		"DOTA_Tooltip_ability_invoker_emp_Description"								"Invoker bygger upp en laddning av elektromagnetisk energi på en målinriktad plats som automatiskt detonerar efter %delay% sekunder. Detonationen täcker ett område och tömmer mana baserat på <font color='#d671a9'>Wex</font>-nivån. Utdelar skada för varje tömd manapoäng. Invoker får %self_mana_restore_pct% %% av den mana som töms från fiendehjältar."
 "DOTA_Tooltip_ability_invoker_emp_Lore"										"Endoleons ondsinta rubbning."
@@ -6895,14 +6965,22 @@
 		"DOTA_Tooltip_ability_invoker_emp_area_of_effect"							"RADIE:"
 		"DOTA_Tooltip_ability_invoker_emp_mana_burned"								"MAX MANA BRÄND (<font color='#d671a9'>WEX</font>):\n"
 		"DOTA_Tooltip_ability_invoker_emp_damage_per_mana_pct"						"%BRÄNNSKADA:"
+		"DOTA_Tooltip_ability_invoker_emp_drag_speed"								"DRAGHASTIGHET:"
+
 		"DOTA_Tooltip_ability_invoker_alacrity"										"Alacrity"
 		"DOTA_Tooltip_ability_invoker_alacrity_Description"							"Invoker fyller en allierad med en ofantlig ström av energi, vilket ökar dess attackhastighet baserat på <font color='#d671a9'>Wex</font>-nivån och dess skada baserat på <font color='#cabe68'>Exort</font>-nivån."
 		"DOTA_Tooltip_ability_invoker_alacrity_Lore"								"Gasters mandat av våldsam missämja."
 		"DOTA_Tooltip_ability_invoker_alacrity_bonus_attack_speed"					"EXTRA ATTACKHASTIGHET (<font color='#d671a9'>WEX</font>):\n"
 		"DOTA_Tooltip_ability_invoker_alacrity_bonus_damage"						"BONUSSKADA (<font color='#cabe68'>EXORT</font>):\n"
 		"DOTA_Tooltip_ability_invoker_alacrity_duration"							"VARAKTIGHET:"
+		"DOTA_Tooltip_ability_invoker_alacrity_bonus_attack_range"					"EXTRA ATTACKRÄCKVIDD (<font color='#d671a9'>WEX</font>):"
+		"DOTA_Tooltip_ability_invoker_alacrity_Facet_invoker_wex_focus"				"Invoker och avståndsenheter under hans kontroll får extra attackräckvidd av Alacrity."
+
+
 		"DOTA_Tooltip_ability_invoker_chaos_meteor"									"Chaos Meteor"
 		"DOTA_Tooltip_ability_invoker_chaos_meteor_Description"						"Invoker drar en flammande meteor från rymden till den målinriktade platsen. Vid landning rullar meteoren framåt, och gör hela tiden skada baserat på <font color='#cabe68'>Exort</font>-nivån, och rullar längre beroende på <font color='#d671a9'>Wex</font>-nivån. Enheter som träffas av meteoren kommer även att fatta eld för en kort tid och ta emot ytterligare skada baserat på <font color='#cabe68'>Exort</font>-nivån."
+
+		"DOTA_Tooltip_ability_invoker_chaos_meteor_Facet_invoker_exort_focus"		"Chaos Meteor har %bonus_area_of_effect% extra radie och %bonus_travel_distance% längre resesträcka."
 
 		"DOTA_Tooltip_ability_invoker_chaos_meteor_Lore"							"Taraks fallande eld."
 		"DOTA_Tooltip_ability_invoker_chaos_meteor_Note0"							"Gör full skada mot fiender under meteoren var %damage_interval% sekund och bränner fiender för mindre skada i %burn_duration% sekunder."
@@ -6914,9 +6992,13 @@
 		"DOTA_Tooltip_ability_invoker_chaos_meteor_damage_interval"					"SKADA ÖVER TID VID KONTAKT:"
 		"DOTA_Tooltip_ability_invoker_chaos_meteor_burn_duration"					"BRÄNNVARAKTIGHET:"
 		"DOTA_Tooltip_ability_invoker_chaos_meteor_burn_dps"						"BRÄNNSKADA PER SEKUND (<font color='#cabe68'>EXORT</font>):\n"
+		"DOTA_Tooltip_ability_invoker_chaos_meteor_stun_duration"					"BEDÖVNINGSVARAKTIGHET:"
+
 		"DOTA_Tooltip_ability_invoker_sun_strike"									"Sun Strike"
 		"DOTA_Tooltip_ability_invoker_sun_strike_Description"						"Skickar en förödande stråle av våldsam energi från solen mot en målinriktad plats, vilket förbränner alla fiender som står där när den når Jorden. Utdelar skada baserat på <font color='#cabe68'>Exort</font>-nivån, dock fördelas den här skadan jämnt över alla fiender som träffas."
 		"DOTA_Tooltip_ability_invoker_sun_strike_Lore"								"Harleks brännande besvärjelse."
+		"DOTA_Tooltip_ability_invoker_sun_strike_scepter_Facet_invoker_exort_focus"			"En Cataclysm skapas när man dubbelklickar på Sun Strike. Får en cooldown på %cataclysm_cooldown% sekunder. Skapar %cataclysm_count% synliga Sun Strikes som gör %cataclysm_damage_pct% %% skada inom en räckvidd på %cataclysm_min_range%–%cataclysm_max_range% av varje fiendehjälte."
+		"DOTA_Tooltip_ability_invoker_sun_strike_shard_Facet_invoker_exort_focus"			"Om Sun Strike skadar en fiendehjälte skapas en Forge Spirit med nuvarande nivå på platsen."
 		"DOTA_Tooltip_ability_invoker_sun_strike_Note0"								"Ger sikt över målområdet innan nedslaget."
 		"DOTA_Tooltip_ability_invoker_sun_strike_Note1"								"Invoker får erfarenhet från mord med Sun Strike, även om den gjordes utanför erfarenhetsradien."
 		"DOTA_Tooltip_ability_invoker_sun_strike_area_of_effect"					"RADIE:"
@@ -6930,6 +7012,8 @@
 		"DOTA_Tooltip_ability_invoker_forge_spirit_spirit_attack_range"				"ATTACKRÄCKVIDD (<font color='#7998b5'>QUAS</font>):\n"
 		"DOTA_Tooltip_ability_invoker_forge_spirit_spirit_hp"						"HÄLSA (<font color='#7998b5'>QUAS</font>):\n"
 		"DOTA_Tooltip_ability_invoker_forge_spirit_spirit_duration"					"VARAKTIGHET (<font color='#7998b5'>QUAS</font>):\n"
+		"DOTA_Tooltip_ability_invoker_forge_spirit_extra_spirit_count_quas"			"ANDEANTAL (<font color='#7998b5'>QUAS</font>):\n"
+		"DOTA_Tooltip_ability_invoker_forge_spirit_extra_spirit_count_exort"		"ANDEANTAL (<font color='#cabe68'>EXORT</font>):\n"
 		"DOTA_Tooltip_ability_forged_spirit_melting_strike"							"Melting Strike"
 		"DOTA_Tooltip_ability_forged_spirit_melting_strike_Description"				"Smälter rustningen på hjältar som träffas av andens attacker. Varje lyckad träff ökar mängden rustning som smälts."
 		"DOTA_Tooltip_ability_forged_spirit_melting_strike_armor_removed"			"SKYDD BORTTAGET PER TRÄFF:"
@@ -6942,6 +7026,9 @@
 		"DOTA_Tooltip_ability_invoker_ice_wall_slow"								"%NEDSAKTNING (<font color='#7998b5'>QUAS</font>):\n"
 		"DOTA_Tooltip_ability_invoker_ice_wall_slow_duration"						"NEDSAKTNING – VARAKTIGHET:"	
 		"DOTA_Tooltip_ability_invoker_ice_wall_damage_per_second"					"SKADA PER SEKUND (<font color='#cabe68'>EXORT</font>):\n"	
+		"DOTA_Tooltip_ability_invoker_ice_wall_ally_healing"						"HP-REGENERATION (ALLIERAD):"
+		"DOTA_Tooltip_ability_invoker_ice_wall_ally_buff_duration"					"BUFFVARAKTIGHET (ALLIERAD):"
+		"DOTA_Tooltip_ability_invoker_ice_wall_shard_Facet_invoker_quas_focus"		"Fiendehjältar som stannar i Ice Wall i längre än %root_delay% sekunder fryser till is, blir fastrotade i %root_duration% sekunder och tar %root_damage% magisk skada. Ice Walls radiella tjocklek ökar också med %bonus_wall_radius% och längden med <b>160</b>."
 		"DOTA_Tooltip_ability_invoker_deafening_blast"								"Deafening Blast"
 		"DOTA_Tooltip_ability_invoker_deafening_blast_Description"					"Invoker avger en mäktig ljudvåg framför sig som utdelar skada mot alla fiender som träffas baserat på <font color='#cabe68'>Exort</font>-nivån. Ljudvågen är kraftfull nog att knuffa tillbaka enheter som träffas under en tid baserat på <font color='#7998b5'>Quas</font>-nivån, och sedan avväpna dem under en tid baserat på <font color='#d671a9'>Wex</font>-nivån."
         "DOTA_Tooltip_ability_invoker_deafening_blast_Lore"							"Buluphonts eliminerande tryckvåg."
@@ -6951,12 +7038,14 @@
 		"DOTA_Tooltip_ability_invoker_deafening_blast_disarm_duration"				"AVVÄPNINGSTID (<font color='#d671a9'>WEX</font>):\n"
 
 		"DOTA_Tooltip_modifier_invoker_quas_instance"							"Quas"
+		"DOTA_Tooltip_modifier_invoker_quas_instance_Description"				"Ger %dMODIFIER_PROPERTY_TOOLTIP% HP-regeneration."
 		"DOTA_Tooltip_modifier_invoker_quas_instance_Description_facet_invoker_agnostic"	"Möjliggör manipulation av iselement."
 		"DOTA_Tooltip_modifier_invoker_wex_instance"							"Wex"
 		"DOTA_Tooltip_modifier_invoker_wex_instance_Description"				"Förflyttningshastighet ökad med %fMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %%."
 		"DOTA_Tooltip_modifier_invoker_wex_instance_Description_facet_invoker_agnostic"		"Möjliggör manipulation av blixtelement."
 
 		"DOTA_Tooltip_modifier_invoker_exort_instance"							"Exort"
+		"DOTA_Tooltip_modifier_invoker_exort_instance_Description"				"Ger %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% bonusskada."
 		"DOTA_Tooltip_modifier_invoker_exort_instance_Description_facet_invoker_agnostic"	"Tillåter manipulation av eldelement."
 		"DOTA_Tooltip_modifier_invoker_cold_snap"								"Cold Snap"
 		"DOTA_Tooltip_modifier_invoker_cold_snap_Description"					"Tar extra skada och blir kortvarigt fryst vid tagen skada."
@@ -6971,6 +7060,7 @@
 		"DOTA_Tooltip_modifier_invoker_chaos_meteor_burn"						"Bränd av Chaos Meteor"
 		"DOTA_Tooltip_modifier_invoker_chaos_meteor_burn_Description"			"Tar skada varje sekund."
 		"DOTA_Tooltip_modifier_invoker_ice_wall_slow_debuff"					"Ice Wall"
+		"DOTA_Tooltip_modifier_invoker_ice_wall_slow_debuff_Description"		"Nedsaktad och tar skada från isväggen."
 		"DOTA_Tooltip_modifier_invoker_deafening_blast_knockback"				"Deafening Blast Knockback"
 		"DOTA_Tooltip_modifier_invoker_deafening_blast_knockback_Description"	"Vacklar tillbaka från den öronbedövande explosionen."
 		"DOTA_Tooltip_modifier_invoker_deafening_blast_disarm"					"Deafening Blast Disarm"
@@ -7112,6 +7202,11 @@
 
 
 		"DOTA_Tooltip_modifier_silencer_last_word_stack"							"Last Word"
+		"DOTA_Tooltip_modifier_silencer_last_word_stack_Description"				"När debuffen upphör tar du skada och tystas baserat på antalet stackar på hjälten."
+		"dota_hud_error_no_last_word_victims"										"Inga aktuella Last Word-offer"
+
+
+
 		"DOTA_Tooltip_ability_silencer_global_silence"								"Global Silence"
 		"DOTA_Tooltip_ability_silencer_global_silence_Lore"							"Med en stöt i marken, upphör all magi och allt ljud och Nortrom uppfyller sin profetia."
 		"DOTA_Tooltip_ability_silencer_global_silence_Description"					"Silencer stoppar allt ljud, och hindrar fientliga hjältar och enheter från att använda förmågor."
@@ -7134,6 +7229,8 @@
 		"DOTA_Tooltip_modifier_silencer_last_word_silence_checker"			"Last Word"
 		"DOTA_Tooltip_modifier_silencer_last_word_silence_checker_Description"		"Saktas ned med %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %%. Tar %dMODIFIER_PROPERTY_TOOLTIP% skada per sekund."
 		"DOTA_Tooltip_modifier_silencer_last_word_stack_applier"					"Last Word"
+		"DOTA_Tooltip_modifier_silencer_last_word_stack_applier_Description"		"Användning av besvärjelser påför en stack och gör det möjligt för Silencer att tysta och skada hjälten."
+
 		"DOTA_Tooltip_modifier_silencer_glaives_of_wisdom_buff_counter"		"Glaives of Wisdom"
 		"DOTA_Tooltip_modifier_silencer_glaives_of_wisdom_buff_counter_Description"		"Stjäl intelligens temporärt"
 		"DOTA_Tooltip_modifier_silencer_glaives_of_wisdom_silence_debuff_counter"				"Glaives of Wisdom"
@@ -8371,6 +8468,7 @@
 		"DOTA_Tooltip_ability_rubick_spell_steal_cooldown_scepter"		        "COOLDOWN:"
 		"DOTA_Tooltip_ability_rubick_spell_steal_cast_range_scepter"		    "RÄCKVIDD:"
 		"DOTA_Tooltip_ability_rubick_spell_steal_stolen_debuff_amp"		        "%STULEN DEBUFF-FÖRSTÄRKNING:"
+		"DOTA_Tooltip_ability_rubick_spell_steal_stolen_mana_reduction"			"%REDUCERING AV STULEN MANAKOSTNAD:"
 		"DOTA_Tooltip_ability_rubick_empty1"									"Stulen förmåga"
 		"DOTA_Tooltip_ability_rubick_empty1_Description"						"Förmågor som stulits med Spell Steal kommer ersätta denna plats."
 		"DOTA_Tooltip_ability_rubick_empty2"									"Stulen förmåga"
@@ -8519,8 +8617,12 @@
 		"DOTA_Tooltip_ability_nyx_assassin_unburrow_Description"			"Dyk upp från din håla."
 		"DOTA_Tooltip_ability_nyx_assassin_unburrow_Lore"						"Somliga kaster av selotskarabéer är kända för att gräva små hålutrymmen att gömma sig i, och sedan överfalla sitt byte."
 		"DOTA_Tooltip_ability_nyx_assassin_jolt"							"Mind Flare"
+		"DOTA_Tooltip_ability_nyx_assassin_jolt_Description"				"Gör skada på fienden som motsvarar en andel av hens maximala mana. Gör dessutom skada som motsvarar en andel av skadan som målet har tagit från Nyx Assassin under de senaste %damage_echo_duration% sekunderna. "
+		"DOTA_Tooltip_ability_nyx_assassin_jolt_Facet_nyx_assassin_burn_mana" "Mind Flare bränner mana motsvarande en procentandel av målets maxmana."
+
 		"DOTA_Tooltip_ability_nyx_assassin_jolt_max_mana_as_damage_pct"			"%MAXIMAL MANA SOM SKADA:"
 		"DOTA_Tooltip_ability_nyx_assassin_jolt_damage_echo_pct"				"%BONUSSKADA:"
+		"DOTA_Tooltip_ability_nyx_assassin_jolt_mana_burn_pct"				"%BRÄND MANA:"
 		"DOTA_Tooltip_modifier_nyx_assassin_impale"							"Impale"
 		"DOTA_Tooltip_modifier_nyx_assassin_impale_Description"					"Bedövad."
 		"DOTA_Tooltip_modifier_nyx_assassin_spiked_carapace"				"Spiked Carapace"
@@ -8538,6 +8640,9 @@
 		"DOTA_Tooltip_Facet_nyx_assassin_scuttle_Description"				"Under de första {s:bonus_free_pathing_duration} sekunderna av Vendetta får Nyx snabbhet och obehindrad förflyttning."
 
 		"DOTA_Tooltip_Facet_nyx_assassin_burn_mana"							"Mana Burn"		
+		"DOTA_Tooltip_Facet_nyx_assassin_burn_mana_Description"				"Mind Flare bränner en procentandel av målets maxmana."
+
+
 		"DOTA_Tooltip_ability_nyx_assassin_innate_mana_burn"						"Mana Burn"
 		"DOTA_Tooltip_ability_nyx_assassin_innate_mana_burn_Description"			"Nyx Assassins förmågdeskada bränner fienders mana."
 		"DOTA_Tooltip_ability_nyx_assassin_innate_mana_burn_mana_pct"				"%PROCENT AV NUVARANDE BRÄND MANA:"
@@ -8733,6 +8838,7 @@
 		"DOTA_Tooltip_modifier_keeper_of_the_light_mana_magnifier_boost"					"Mana Magnifier"
 		"DOTA_Tooltip_modifier_keeper_of_the_light_mana_magnifier_boost_Description"		"Får %dMODIFIER_PROPERTY_EXTRA_MANA_PERCENTAGE% %% max. mana."
 
+		"DOTA_Tooltip_ability_keeper_of_the_light_special_reserve"							"Special Reserve"
 		"DOTA_Tooltip_modifier_keeper_of_the_light_mana_leak"							"Mana Leak"
 		"DOTA_Tooltip_modifier_keeper_of_the_light_mana_leak_Description"				"Förlorar mana när du rör dig."
 		"DOTA_Tooltip_modifier_keeper_of_the_light_spirit_form"							"Spirit Form"
@@ -8764,6 +8870,8 @@
 		
 
 		"DOTA_Tooltip_ability_wisp_tether"										"Tether"
+		"DOTA_Tooltip_ability_wisp_tether_Description"							"Io binder sig med en allierad enhet, vilket ger båda högre förflyttningshastighet. När Io återställer HP eller mana får det bundna målet en del av den mängden. Förbindelsen bryts om den allierade enheten rör sig för långt bort eller om Io avbryter förbindelsen. Tether saktar ner fiender vid beröring."
+		"DOTA_Tooltip_ability_wisp_tether_shard_description"					"Tether skadar fiender vid beröring. Io helas med %damage_to_heal% %% av skadan som gjorts."
 		"DOTA_Tooltip_ability_wisp_tether_Lore"									"Ios välvilliga beröring skänker styrka från mellan planen."
 		"DOTA_Tooltip_ability_wisp_tether_Note0"								"Om du försöker att använda tether på en enhet som är mer än 700 enheter eller längre bort från Io, kommer han att fästa och dra sig närmre till målenheten (till ett avstånd på 300 enheter)."
 		"DOTA_Tooltip_ability_wisp_tether_Note1"								"Enheten som Tether används på helas snabbare, även om Io har full HP."
@@ -8830,6 +8938,8 @@
 		"DOTA_Tooltip_modifier_wisp_tether_haste"							"Förbunden"
 		"DOTA_Tooltip_modifier_wisp_tether_haste_Description"				"Förflyttningshastighet ökad med %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %% och Io ger HP- och manaregeneration."
 		"DOTA_Tooltip_modifier_wisp_tether_slow"							"Tether"
+		"DOTA_Tooltip_modifier_wisp_tether_slow_description"				"Tar %dMODIFIER_PROPERTY_TOOLTIP% skada per sekund. Förflyttningshastighet minskad med %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %% och attackhastighet minskad med %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
+		"DOTA_Tooltip_modifier_wisp_tether_cooldown"						"Cooldown på Tether"
 		"DOTA_Tooltip_modifier_wisp_tether_cooldown_Description"			"Tether är på cooldown."
 		"DOTA_Tooltip_modifier_wisp_spirits_slow"							"Saktas ned av Spirits"
 		"DOTA_Tooltip_modifier_wisp_spirits_slow_Description"				"Förflyttningshastighet minskad med %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
@@ -8886,8 +8996,11 @@
 		"DOTA_Tooltip_Facet_slark_leeching_leash"								"Leeching Leash"
 		"DOTA_Tooltip_Facet_slark_leeching_leash_Description"					"Pounce applicerar stackar av Essence Shift när den träffar fiendehjältar."
 		"DOTA_Tooltip_Facet_slark_dark_reef_renegade"							"Dark Reef Renegade"		
+		"DOTA_Tooltip_Facet_slark_dark_reef_renegade_Description"				"Barracuda dröjer sig kvar efter att ha avslöjats för fienden om Slark inte är i närheten av allierade hjältar. Slarks attacker minskar målets skydd medan Slark är under påverkan av Barracuda."
+
 		"DOTA_Tooltip_ability_slark_barracuda"								"Barracuda"
 		"DOTA_Tooltip_ability_slark_barracuda_Description"					"När Slark inte är synlig för fiendelaget får han extra förflyttningshastighet och HP-regeneration."
+		"DOTA_Tooltip_ability_slark_barracuda_Facet_slark_dark_reef_renegade"		"Barracuda dröjer sig kvar efter att ha avslöjats för fienden om Slark inte är i närheten av allierade hjältar. Slarks attacker minskar målets skydd medan Slark är under påverkan av Barracuda."
 		"DOTA_Tooltip_ability_slark_barracuda_Facet_vision_break" 			"Medan Take Aim är aktiv delar Slark inte sikt med sina allierade."
 		"DOTA_Tooltip_ability_slark_barracuda_bonus_movement_speed"			"%EXTRA FÖRFLYTTNINGSHASTIGHET:"
 		"DOTA_Tooltip_ability_slark_barracuda_bonus_regen"					"HP ÅTERSTÄLLD PER SEKUND:"
@@ -8938,6 +9051,7 @@
 		// MEDUSA
 		"DOTA_Tooltip_ability_medusa_split_shot"								"Split Shot"
 		"DOTA_Tooltip_ability_medusa_split_shot_Description"					"Medusa delar magiskt upp sina skott till flera pilar. Dessa pilar utdelar en lägre procent av hennes normala skada.\n\n De extra målen kommer inte bli utsatta för andra attackeffekter (såsom kritiska träffar)."
+		"DOTA_Tooltip_ability_medusa_split_shot_scepter_Description"			"Tillåter att vid-träff-effekter appliceras på de sekundära attackerna från Split Shot. Ökar pilantalet."
 		"DOTA_Tooltip_ability_medusa_split_shot_Lore"							"Alla som möter den förbannade gorgonen kommer känna hennes vrede."
 		"DOTA_Tooltip_ability_medusa_split_shot_Note0"							"Sekundära mål kommer att vara de närmsta fiendeenheterna förutom det primära målet."
 		"DOTA_Tooltip_ability_medusa_split_shot_Note1"							"Om illusioner av Medusa skapas medan Split Shot är aktiverad, kommer de också att ha förmågan."
@@ -8975,6 +9089,7 @@
 		"DOTA_Tooltip_ability_medusa_stone_gaze_stone_duration"					"FÖRSTENAD - VARAKTIGHET:"
 		"DOTA_Tooltip_ability_medusa_stone_gaze_speed_boost"					"%EGEN HASTIGHETSBONUS:"
 		"DOTA_Tooltip_ability_medusa_cold_blooded"						        "Cold Blooded"
+		"DOTA_Tooltip_ability_medusa_cold_blooded_Description"			        "När Medusa utsätts för en besvärjelse skickas en Mystic Snake tillbaka mot fienden som förvandlar hen till sten i %stone_form_scepter_base_tooltip% s."
 		"DOTA_Tooltip_ability_medusa_gorgon_grasp"								"Gorgon's Grasp"
 		"DOTA_Tooltip_ability_medusa_gorgon_grasp_Description"					"Medusa skjuter pilar i en linje som landar i %volley_count% grupper, där varje grupp är större än den föregående. Fiender som träffas av pilar tar inledande skada innan de rotas fast. De kan inte vända sig, avslöjas för fienden och tar skada per sekund."
 		"DOTA_Tooltip_ability_medusa_gorgon_grasp_radius"						"STARTRADIE:"
@@ -9020,6 +9135,8 @@
 		"DOTA_Tooltip_Facet_medusa_mana_pact_Description"						"Medusa kan få attackhastighet på bekostnad av mana över tid."
 
 		"DOTA_Tooltip_ability_medusa_undulation"								"Undulation"
+		"DOTA_Tooltip_ability_medusa_undulation_Note0"							"Medusa drar fortfarande nytta av extra förflyttningshastighet från vattenströmmar."
+
 		"DOTA_Tooltip_modifier_medusa_manashield_attack_buff"					"Mana Pact"
 		"DOTA_Tooltip_modifier_medusa_manashield_attack_buff_Description"		"Attackhastighet ökad med %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 
@@ -9075,6 +9192,7 @@
 		"DOTA_Tooltip_ability_troll_warlord_fervor_armor_per_stack"				"SKYDD PER STACK:"
 		"DOTA_Tooltip_ability_troll_warlord_battle_trance"						"Battle Trance"
 		"DOTA_Tooltip_ability_troll_warlord_battle_trance_Description"				"Troll Warlord går in i en kraftfull stridstrans som tvingar honom att kontinuerligt attackera den närmsta fienden inom %range% enheters räckvidd, med hjältar som prioritet. Kan ej dö av skada i detta läge. Ger extra livstjälande plus attack- och förflyttningshastighet. Applicerar en grundläggande dispel.\n\nDISPEL: Grundläggande"
+		"DOTA_Tooltip_ability_troll_warlord_battle_trance_Facet_troll_warlord_bad_influence"	"Under Battle Trance har Troll Warlord ett högre maxantal Fervor-stackar och ingen begränsning på attackhastighet. Battle Trance ger allierade hjältar %attack_speed_share_percent% %% av attackhastighetsbonusen."
 		"DOTA_Tooltip_ability_troll_warlord_battle_trance_shard_description"	"Battle Trance ger nu Troll Warlord en global aura som ger allierade hjältar (och han själv) +60 attackhastighet."
 		"DOTA_Tooltip_ability_troll_warlord_battle_trance_Lore"					"En adrenalinkick av rent hat gör klingorna snabbare."
 		"DOTA_Tooltip_ability_troll_warlord_battle_trance_Note0"				"Troll Warlord kan fortfarande använda sina föremål och förmågor medan han påverkas av Battle Trance, men inte andra kommandon."
@@ -9119,6 +9237,7 @@
 
 		"DOTA_Tooltip_Facet_troll_warlord_bad_influence"						"Bad Influence"		
 		"DOTA_Tooltip_Facet_troll_warlord_insensitive"							"Insensitive"
+		"DOTA_Tooltip_Facet_troll_warlord_bad_influence_Description"			"Under Battle Trance har Troll Warlord ett högre maxantal Fervor-stackar och ingen begränsning på attackhastighet. Battle Trance ger allierade hjältar {s:bonus_attack_speed_share_percent} % av attackhastighetsbonusen. "
 		"DOTA_Tooltip_Facet_troll_warlord_insensitive_Description"				"Fervor ger skydd per stack i närstridsform."
 
 		// CENTAUR WARCHIEF
@@ -9227,6 +9346,7 @@
 		"DOTA_Tooltip_ability_magnataur_greater_shockwave_Description"			"."
 		"DOTA_Tooltip_ability_magnataur_empower"								"Empower"
 		"DOTA_Tooltip_ability_magnataur_empower_Description"					"Ger en allierad enhet extra skada och klyvning vid attack. Magnus får själv %self_multiplier% %% större bonus."		
+		"DOTA_Tooltip_ability_magnataur_empower_Facet_magnataur_eternal_empowerment"		"Magnus har alltid Empower. Var och en av hans efterföljande attacker ökar självbonusen med %self_multiplier_bonus_per_stack% %%, upp till max %self_multiplier_bonus_max_stacks% %% i %self_multiplier_bonus_stack_duration% s."
 		"DOTA_Tooltip_ability_magnataur_empower_Lore"							"Med ett djupt vrål visar Magnus sin sanna styrka."
 		"DOTA_Tooltip_ability_magnataur_empower_Note0"							"Bonusskadan baseras bara på grundskada och skada från primära attribut."
 		"DOTA_Tooltip_ability_magnataur_empower_Note1"							"Klyvskada går igenom förmågeimmunitet."
@@ -9238,6 +9358,7 @@
 		
 		"DOTA_Tooltip_ability_magnataur_skewer"									"Skewer"
 		"DOTA_Tooltip_ability_magnataur_skewer_facet_magnataur_run_through"		"Gör ytterligare skada när Magnus spetsar fiender mot träd eller klippor."
+		"DOTA_Tooltip_ability_magnataur_skewer_shard_description"		"Ökar räckvidden och gör extra skada när Magnus spetsar fast fiender i träd eller på klippor."
 		"DOTA_Tooltip_ability_magnataur_skewer_Lore"							"Magnoceroshorn är värdefulla i direkt proportion till dess fara för blivande handlare."
 		"DOTA_Tooltip_ability_magnataur_skewer_range"							"AVSTÅND:"
 		"DOTA_Tooltip_ability_magnataur_skewer_skewer_speed"					"HASTIGHET:"
@@ -9707,6 +9828,7 @@
 		"DOTA_Tooltip_ability_abaddon_the_quickening_Description"	"Enheter som dör i närheten av Abaddon reducerar hans cooldowns."
 		"DOTA_Tooltip_ability_abaddon_the_quickening_Note0"		"Varje gång en enhet dör inom en radie på %radius% från Abaddon, reduceras alla hans cooldowns med %cooldown_reduction_creeps% sekunder om det är ett creep eller %cooldown_reduction_heroes% sekunder om det är en hjälte."
 		"DOTA_Tooltip_ability_abaddon_withering_mist"				"Withering Mist"
+		"DOTA_Tooltip_ability_abaddon_withering_mist_Description"	"Skada på fiender applicerar en Withering Mist-debuff i %duration% s. Påverkade fienders HP-regeneration, helande, livstjälande och magiskt livstjälande minskas med %heal_reduction_pct% %% om de har under %hp_threshold_pct% %% HP."
 		"DOTA_Tooltip_ability_abaddon_frostmourne"					"Curse of Avernus"
 		"DOTA_Tooltip_ability_abaddon_frostmourne_Description"		"Abaddon attackerar en fiende, påverkar hen med en kylande förbannelse, saktar ned hen, tar skada över tid och alla attacker mot hen har ökad attackhastighet. Skada över tid mot byggnader minskas med %tower_dps_pct% %%."
 		"DOTA_Tooltip_ability_abaddon_frostmourne_shard_description" "Ökar nedsaktningen från Curse of Avernus."
@@ -11578,6 +11700,7 @@
 		"DOTA_Tooltip_Facet_hoodwink_hunter_Description"			"Scurry ger också extra attack- och användningsräckvidd."
 		"DOTA_Tooltip_Facet_hoodwink_treebounce_trickshot"				"Treebounce Trickshot"		
 		"DOTA_Tooltip_Facet_hoodwink_treebounce_trickshot_Description"	"Acorn Shot kan studsa en gång på träd."	
+		"DOTA_Tooltip_Facet_hoodwink_hipshot"							"Hipshot"		
 		// Dawnbreaker
 		"dota_hud_error_no_allies_nearby"										"Inga allierade inom räckhåll"
 		"dota_hud_error_fire_wreath_in_progress"								"Kan inte användas under Starbreaker"
@@ -11602,6 +11725,8 @@
 		"DOTA_Tooltip_ability_dawnbreaker_solar_guardian_base_heal"				"HELANDE PER PULS:"
 		"DOTA_Tooltip_ability_dawnbreaker_solar_guardian_scepter_heal"				"HELANDE PER PULS:"
 		"DOTA_Tooltip_ability_dawnbreaker_solar_guardian_miss_rate"					"%UNDVIKANDE:"
+		"DOTA_Tooltip_ability_dawnbreaker_solar_guardian_scepter_channel_time"		"KANALISERINGSTID (SCEPTER):"
+		"DOTA_Tooltip_ability_dawnbreaker_solar_guardian_airtime_duration"			"TID I LUFTEN:"
 		"DOTA_Tooltip_ability_dawnbreaker_solar_guardian_land_damage" 				"SKADA VID LANDNING:"
 		"DOTA_Tooltip_ability_dawnbreaker_solar_guardian_land_stun_duration" 		"BEDÖVNINGSVARAKTIGHET VID LANDNING:"
 
@@ -11617,6 +11742,8 @@
 		"DOTA_Tooltip_ability_dawnbreaker_fire_wreath_Note0"	 							"Dawnbreaker har %movement_speed% i förflyttningshastighet under förmågans varaktighet och måste återhämta sig i %self_stun_duration% sekunder efter det slutgiltiga slaget."
 		"DOTA_Tooltip_ability_dawnbreaker_fire_wreath_Note1"								"Celestial Hammer och Solar Guardian kan inte användas under kombon."
 		"DOTA_Tooltip_ability_dawnbreaker_fire_wreath_Note2"								"Klyvning fungerar inte med denna förmåga."
+		"DOTA_Tooltip_ability_dawnbreaker_fire_wreath_Note3"								"Kan självanvändas för röra sig framåt."
+		"DOTA_Tooltip_ability_dawnbreaker_fire_wreath_Note4"								"De två första träffarna saktar ner fiendens förflyttningshastighet med %swipe_slow% %% i %sweep_stun_duration% s."
 		"DOTA_Tooltip_ability_dawnbreaker_fire_wreath_duration"								"VARAKTIGHET PÅ KOMBO:"
 		"DOTA_Tooltip_ability_dawnbreaker_fire_wreath_swipe_radius"							"SVING/SMÄLL – RADIE:"
 		"DOTA_Tooltip_ability_dawnbreaker_fire_wreath_swipe_damage"							"SVING/SMÄLL – BONUSSKADA:"
@@ -11641,10 +11768,14 @@
 		"DOTA_Tooltip_ability_dawnbreaker_celestial_hammer_burn_damage"						"ELDSPÅR – SKADA PER SEKUND:"
 		"DOTA_Tooltip_ability_dawnbreaker_celestial_hammer_flare_debuff_duration"			"ELDSPÅR – VARAKTIGHET :"
 		"DOTA_Tooltip_ability_dawnbreaker_celestial_hammer_range"							"RÄCKVIDD:"
+		"DOTA_Tooltip_ability_dawnbreaker_celestial_hammer_facet_dawnbreaker_brightmaul_wake" 			"Fiender som träffas av Celestial Hammer räknas som Luminosity-attacker. Luminositys kritiska skada kommer att gälla för Celestial Hammer."
+		
 		"DOTA_Tooltip_Ability_dawnbreaker_luminosity"							"Luminosity"
 		"DOTA_Tooltip_Ability_dawnbreaker_luminosity_Lore"							"Utan tillgång till Ljusbarnens återställande ljus är Valora försvagad, men hon kan fortfarande ge energi åt sig själv och sina allierade genom att skapa ordning från kaoset som finns i varje strid."
 		"DOTA_Tooltip_Ability_dawnbreaker_luminosity_Description"				"Efter ett antal attacker förstärks Dawnbreaker, vilket gör att hennes nästa attack blir en kritisk träff som helar alla allierade hjältar inom %heal_radius% enheters radie från henne med en andel av den utdelade attackskadan. Creeps och neutrala fiender ger mindre helande. Allierade helas med %allied_healing_pct% %% av mängden."
 		"DOTA_Tooltip_Ability_dawnbreaker_luminosity_Facet_dawnbreaker_solar_charged"		"När Dawnbreaker träffar ett mål med förstärkt Luminosity, minskar hon cooldown på alla sina förmågor."
+		"DOTA_Tooltip_ability_dawnbreaker_luminosity_facet_dawnbreaker_brightmaul_wake" 	"Fiender som träffas av Celestial Hammer räknas som Luminosity-attacker. Luminositys kritiska skada kommer att gälla för Celestial Hammer."
+		"DOTA_Tooltip_ability_dawnbreaker_luminosity_Note0"							"Helande från Luminosity ökas av källor som förstärker livstjälande."
 		"DOTA_Tooltip_ability_dawnbreaker_luminosity_Note1"						"Avbrott inaktiverar erhållandet av nya stackar."
 		"DOTA_Tooltip_Ability_dawnbreaker_luminosity_bonus_damage"				"%KRITISK SKADA:"
 		"DOTA_Tooltip_Ability_dawnbreaker_luminosity_heal_pct"					"%HELANDE FRÅN HJÄLTAR:"
@@ -11658,6 +11789,8 @@
 		"DOTA_Tooltip_modifier_dawnbreaker_fire_wreath_magic_immunity_tooltip_Description"	"Debuffimmunitet."
 		"DOTA_Tooltip_modifier_dawnbreaker_fire_wreath_smash_stun"							"Starbreaker"
 		"DOTA_Tooltip_modifier_dawnbreaker_fire_wreath_smash_stun_Description"				"Bedövad."
+		"DOTA_Tooltip_modifier_dawnbreaker_fire_wreath_slow"								"Starbreaker"
+		"DOTA_Tooltip_modifier_dawnbreaker_fire_wreath_slow_Description"					"Förflyttningshastighet minskad med %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %%."
 		"DOTA_Tooltip_modifier_dawnbreaker_luminosity"								"Luminosity"
 		"DOTA_Tooltip_modifier_dawnbreaker_luminosity_Description"								"Förstärkt av Luminosity."
 		
@@ -11665,6 +11798,8 @@
 		"DOTA_Tooltip_modifier_dawnbreaker_luminosity_attack_buff_Description"					"Nästa attack kommer att hela Dawnbreaker och utdela en kritisk träff"
 		"DOTA_Tooltip_modifier_dawnbreaker_solar_guardian_air_time"							"Solar Guardian"
 		"DOTA_Tooltip_modifier_dawnbreaker_solar_guardian_air_time_Description"		"Flyger till sin destination"
+		"DOTA_Tooltip_modifier_dawnbreaker_solar_guardian_landing_stun"				"Solar Guardian"
+		"DOTA_Tooltip_modifier_dawnbreaker_solar_guardian_landing_stun_Description"	"Bedövad."
 		"DOTA_Tooltip_modifier_dawnbreaker_converge"								"Converge"
 		"DOTA_Tooltip_modifier_dawnbreaker_converge_Description"								"Nedsaktad och tar skada"
 
@@ -11673,6 +11808,7 @@
 		"DOTA_Tooltip_Facet_dawnbreaker_solar_charged"						"Solar Charged"		
 		"DOTA_Tooltip_Facet_dawnbreaker_solar_charged_Description"			"När Dawnbreaker träffar ett mål med förstärkt Luminosity, minskar hon cooldown på alla sina förmågor."
 
+		"DOTA_Tooltip_Facet_dawnbreaker_blaze"																"Starsurge"
 		"DOTA_Tooltip_Ability_special_bonus_unique_dawnbreaker_celestial_hammer_damage"					"+{s:value} skada med Celestial Hammer"
 		"DOTA_Tooltip_Ability_special_bonus_unique_dawnbreaker_fire_wreath_magic_immunity"				"Magisk immunitet under Starbreaker"
 		"DOTA_Tooltip_Ability_special_bonus_unique_dawnbreaker_solar_guardian_radius"					"Solar Guardian: +{s:bonus_radius} radie"
@@ -12139,7 +12275,10 @@
 		"DOTA_Tooltip_modifier_ringmaster_whoopee_cushion_debuff_Description"	"Förflyttningshastighet minskas med %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %%."
 
 		"DOTA_Tooltip_modifier_ringmaster_unicycle_movement"	"Unicycle"
+		"DOTA_Tooltip_modifier_ringmaster_unicycle_movement_Description"	"Åker enhjuling."
+
 		"DOTA_Tooltip_modifier_ringmaster_weighted_pie_debuff"	"Weighted Pie"
+		"DOTA_Tooltip_modifier_ringmaster_weighted_pie_debuff_Description"	"Tillbakaknuffad av en paj i fejan."
 		"DOTA_Tooltip_modifier_ringmaster_weighted_pie_blind"	"Weighted Pie"
 		"DOTA_Tooltip_modifier_ringmaster_weighted_pie_blind_Description"	"Sikt reduceras och återställs långsamt över tid. Kan inte få sikt av allierade."
 
@@ -12897,7 +13036,6 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_lich_8"	"Frost Shield: +{s:bonus_damage_reduction} % skadereducering"
 		"DOTA_Tooltip_ability_special_bonus_unique_lich_jump_damage"	"Chain Frost: +{s:bonus_bonus_jump_damage} stegvis skada"
 		"DOTA_Tooltip_ability_special_bonus_unique_rubick"	"+{s:bonus_max_land_distance} distans med Telekinesis Land"
-		"DOTA_Tooltip_ability_special_bonus_unique_rubick_2"	"Might and Magus: +{s:bonus_bonus_damage_pct} % skada/resistens"
 		"DOTA_Tooltip_ability_special_bonus_unique_rubick_3"	"-{s:value} s cooldown på Fade Bolt"
 		"DOTA_Tooltip_ability_special_bonus_unique_rubick_4"	"-{s:bonus_AbilityCooldown} s cooldown på Telekinesis"
 		"DOTA_Tooltip_ability_special_bonus_unique_rubick_5"	"+{s:value} % magiförstärkning för stulna förmågor"
@@ -13363,6 +13501,8 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_windranger_8"	"Focus Fire: -{s:bonus_focusfire_damage_reduction} % skadereducering"		
 		"DOTA_Tooltip_ability_special_bonus_unique_windranger_10"	"+{s:value} HP-regeneration med Windrun"
 		"DOTA_Tooltip_ability_special_bonus_unique_windranger_windrun_undispellable"		"Windrun kan inte avlägsnas med dispel"
+		"DOTA_Tooltip_ability_special_bonus_unique_windranger_powershot_slow"				"Powershot: +{s:bonus_slow_duration} s nedsaktningsvaraktighet"
+		"DOTA_Tooltip_ability_special_bonus_unique_windranger_powershot_dmg"				"Powershot: +{s:bonus_powershot_damage} skada"
 		"DOTA_Tooltip_ability_special_bonus_unique_phantom_lancer"	"Phantom Rush: +{s:bonus_max_distance} räckvidd"
 		"DOTA_Tooltip_ability_special_bonus_unique_phantom_lancer_2"	"Phantom Rush: +{s:bonus_agility_duration} s varaktighet på agilitybonus"
 		"DOTA_Tooltip_ability_special_bonus_unique_phantom_lancer_3"	"+{s:value} max. illusioner med Juxtapose"
@@ -13371,6 +13511,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_phantom_lancer_6"	"Juxtapose: +{s:bonus_tooltip_illusion_damage} % skada"
 		"DOTA_Tooltip_ability_special_bonus_unique_phantom_lancer_7"	"+{s:value} mål med Spirit Lance"
 		"DOTA_Tooltip_ability_special_bonus_unique_phantom_lancer_doppel_illusion2_amt"			"Doppelganger: +{s:bonus_illusion_2_amount} illusioner"
+		"DOTA_Tooltip_ability_special_bonus_unique_phantom_lancer_lance_slow_duration"					"Spirit Lance: +{s:bonus_duration} s nedsaktningsvaraktighet"
 		"DOTA_Tooltip_ability_special_bonus_unique_phantom_lancer_phantom_rush_agility"			"Phantom Rush: +{s:bonus_bonus_agility} agility"
 		"DOTA_Tooltip_ability_special_bonus_unique_phantom_lancer_illusory_armaments_dmg"			"Illusory Armaments: +{s:bonus_bonus_to_base} % skada."
 		"DOTA_Tooltip_ability_special_bonus_unique_slark"	"Pounce: +{s:bonus_leash_duration} s fasthållning"
@@ -13387,6 +13528,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_spectre_5"	"+{s:value} % reflekterad skada med Dispersion"
 		"DOTA_Tooltip_ability_special_bonus_unique_spectre_6"	"Spectral Dagger: +{s:bonus_damage} skada"
 		"DOTA_Tooltip_ability_special_bonus_unique_spectre_desolate_radius"			"Desolate: -{s:bonus_radius} radie"
+		"DOTA_Tooltip_ability_special_bonus_unique_spirit_breaker_1"	"Greater Bash: -{s:bonus_AbilityCooldown} s cooldown"
 		"DOTA_Tooltip_ability_special_bonus_unique_spirit_breaker_2"	"-{s:value} s cooldown på Bulldoze"
 		"DOTA_Tooltip_ability_special_bonus_unique_spirit_breaker_3"	"Greater Bash: +{s:bonus_damage} % skada"
 		"DOTA_Tooltip_ability_special_bonus_unique_spirit_breaker_4"	"Charge of Darkness: -{s:bonus_AbilityCooldown} s cooldown"
@@ -13401,6 +13543,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_storm_spirit_7"	"Attacker med Overload studsar {s:value} gånger"
 		"DOTA_Tooltip_ability_special_bonus_unique_storm_spirit_7_Description"	"Studsande attacker gör {s:bonus_overload_damage_pct} % skada."
 		"DOTA_Tooltip_ability_special_bonus_unique_storm_spirit_8"	"Static Remnant: -{s:bonus_AbilityCooldown} s cooldown"
+		"DOTA_Tooltip_ability_special_bonus_unique_storm_spirit_overload_aspd"			"Overload: -{s:bonus_overload_move_slow} attack-/förflyttningsnedsaktning"
 		"DOTA_Tooltip_ability_special_bonus_unique_tidehunter"	"Gush: -{s:bonus_negative_armor} skydd"
 		"DOTA_Tooltip_ability_special_bonus_unique_tidehunter_2"	"Gush: +{s:bonus_gush_damage} skada"
 		"DOTA_Tooltip_ability_special_bonus_unique_tidehunter_3"	"Anchor Smash: +{s:bonus_damage_reduction} % skadereducering"
@@ -13414,6 +13557,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_tidehunter_10"	"Anchor Smash påverkar byggnader"
 		"DOTA_Tooltip_ability_special_bonus_unique_tinker"		"Laser: +{s:bonus_laser_damage} skada"
 		"DOTA_Tooltip_ability_special_bonus_unique_tinker_2"	"+{s:value} skada med March of the Machines"
+		"DOTA_Tooltip_ability_special_bonus_unique_tinker_3"	"Defense Matrix: +{s:bonus_barrier_duration} s varaktighet"
 		"DOTA_Tooltip_ability_special_bonus_unique_tinker_4"	"Laser: {s:bonus_radius_explosion} effektområde (AoE)"
 		"DOTA_Tooltip_ability_special_bonus_unique_tinker_5"	"Keen Conveyance: -{s:bonus_AbilityChannelTime} s kanaliseringstid"
 		"DOTA_Tooltip_ability_special_bonus_unique_tinker_6"	"+{s:value} mål med Heat-Seeking Missile"
@@ -13453,6 +13597,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_viper_1"	"Corrosive Skin: +{s:bonus_damage} skada per sekund"
 		"DOTA_Tooltip_ability_special_bonus_unique_viper_2"	"Viper Strike: +{s:bonus_damage} skada per sekund"
 		"DOTA_Tooltip_ability_special_bonus_unique_viper_3"	"Nethertoxin: +{s:bonus_max_damage} min./max. skada"
+		"DOTA_Tooltip_ability_special_bonus_unique_viper_4"	"Viper Strike: +{s:bonus_duration} s varaktighet"
 		"DOTA_Tooltip_ability_special_bonus_unique_viper_5"	"Bli universell"
 		"DOTA_Tooltip_ability_special_bonus_unique_viper_6"	"Corrosive Skin: +{s:bonus_bonus_attack_speed} attacknedsaktning"
 		"DOTA_Tooltip_ability_special_bonus_unique_viper_7"	"Poison Attack: +{s:bonus_damage} % nedsaktning/skada"
@@ -13473,6 +13618,8 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_elder_titan_4"					"Echo Stomp: +{s:bonus_wake_damage_limit} skada för att väcka"
 		"DOTA_Tooltip_ability_special_bonus_unique_elder_titan_5"					"Natural Order: +{s:bonus_radius} radie"
 		"DOTA_Tooltip_ability_special_bonus_unique_elder_titan_bonus_spirit_speed"	"+{s:bonus_move_pct_heroes} % förflyttningshastighet per hjälte med Astral Spirit"
+		"DOTA_Tooltip_ability_special_bonus_unique_elder_titan_spirit_damage"		"Astral Spirit: +{s:bonus_pass_damage} skada"
+		
 		"DOTA_Tooltip_ability_special_bonus_unique_ember_spirit_1"	"+{s:bonus_absorb_amount} barriärmängd för Flame Guard"
 		"DOTA_Tooltip_ability_special_bonus_unique_ember_spirit_2"	"Searing Chains: +{s:bonus_duration} s varaktighet"
 		"DOTA_Tooltip_ability_special_bonus_unique_ember_spirit_3"	"Flame Guard: +{s:bonus_damage_per_second} skada per sekund"
@@ -13484,6 +13631,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_lifestealer"		"Rage: +{s:bonus_duration} s varaktighet"
 		"DOTA_Tooltip_ability_special_bonus_unique_lifestealer_Facet_life_stealer_rage_dispell"		"Unfettered: +{s:bonus_duration} s varaktighet."
 		"DOTA_Tooltip_ability_special_bonus_unique_lifestealer_2"	"Ghoul Frenzy: +{s:bonus_movement_speed_bonus} % förflyttningshastighet"
+		"DOTA_Tooltip_ability_special_bonus_unique_lifestealer_3"	"Feast: +{s:bonus_hp_damage_percent} % helande och skada"
 		"DOTA_Tooltip_ability_special_bonus_unique_lifestealer_4"	"Open Wounds: +{s:bonus_slow_tooltip} % nedsaktning"
 		"DOTA_Tooltip_ability_special_bonus_unique_lifestealer_5"	"Ghoul Frenzy: +{s:bonus_attack_speed_bonus} attackhastighet"
 		"DOTA_Tooltip_ability_special_bonus_unique_lifestealer_6"	"Open Wounds: +{s:bonus_heal_percent} % livstjälande"
@@ -13538,6 +13686,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_ogre_magi_dumb_luck_mana"		"Dumb Luck: +{s:bonus_mana_per_str}/{s:bonus_mana_regen_per_str} mana/manaregeneration per styrka"
 		"DOTA_Tooltip_ability_special_bonus_unique_silencer_2"	"Global Silence kan inte avlägsnas med dispel."
 		"DOTA_Tooltip_ability_special_bonus_unique_silencer_3"	"Glaives of Wisdom: +{s:bonus_intellect_damage_pct} % skada"
+		"DOTA_Tooltip_ability_special_bonus_unique_silencer_4"	"Last Word: {s:bonus_radius} effektområde (AoE)"
 		"DOTA_Tooltip_ability_special_bonus_unique_silencer_5"	"+{s:value} s Glaives Silence"
 		"DOTA_Tooltip_ability_special_bonus_unique_silencer_6"	"+{s:value} % nedsaktning med Arcane Curse"
 		"DOTA_Tooltip_ability_special_bonus_unique_silencer_7"	"-{s:value} s cooldown på Global Silence"
@@ -13579,15 +13728,20 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_riki_9"	"-{s:bonus_AbilityChargeRestoreTime} sekunders laddningstid för Blink Strike"
 		"DOTA_Tooltip_ability_special_bonus_unique_tusk"	"Walrus Punch: +{s:bonus_crit_multiplier} % kritisk skada"
 		"DOTA_Tooltip_ability_special_bonus_unique_tusk_2"	"Snowball: +{s:bonus_snowball_damage} skada"
+		"DOTA_Tooltip_ability_special_bonus_unique_tusk_3"	"Tag Team: +{s:bonus_debuff_duration} s varaktighet"
+		"DOTA_Tooltip_ability_special_bonus_unique_tusk_3_facet_tusk_facet_fist_bump"	"Drinking Buddies: +{s:bonus_buff_duration} s varaktighet"
 		"DOTA_Tooltip_ability_special_bonus_unique_tusk_4"	"{s:value} % chans för Walrus Punch"
 		"DOTA_Tooltip_ability_special_bonus_unique_tusk_4_Description"	"Walrus Punch får en chans att aktiveras vid normala attacker, oberoende av manakostnad och cooldown."
 		"DOTA_Tooltip_ability_special_bonus_unique_tusk_5"	"-{s:value} s cooldown på Ice Shards"
 		"DOTA_Tooltip_ability_special_bonus_unique_tusk_6"	"-{s:value} s cooldown på Snowball"
 		"DOTA_Tooltip_ability_special_bonus_unique_tusk_7"	"Walrus Punch: +{s:bonus_air_time} s bedövningsvaraktighet"
 		"DOTA_Tooltip_ability_special_bonus_unique_tusk_tag_team_armor_reduction"	"Tag Team: -{s:bonus_armor_reduction} skyddsreducering"
+		"DOTA_Tooltip_ability_special_bonus_unique_sniper_1"	"Assassinate: +{s:bonus_damage} skada"
 		"DOTA_Tooltip_ability_special_bonus_unique_sniper_2"	"Shrapnel: -{s:bonus_AbilityChargeRestoreTime} s laddningstid"
 		"DOTA_Tooltip_ability_special_bonus_unique_sniper_3"	"Headshot: +{s:bonus_knockback_distance} maximalt knuffavstånd"
 		"DOTA_Tooltip_ability_special_bonus_unique_sniper_4"	"Take Aim: +{s:bonus_duration} s varaktighet"
+		"DOTA_Tooltip_ability_special_bonus_unique_sniper_5"	"Take Aim: +{s:bonus_active_attack_range_bonus} extra attackräckvidd"
+		"DOTA_Tooltip_ability_special_bonus_unique_sniper_6"	"Take Aim: +{s:bonus_attack_speed} attackhastighet"
 		"DOTA_Tooltip_ability_special_bonus_unique_sniper_take_aim_armor"			"Take Aim: +{s:bonus_bonus_armor} skydd"
 		"DOTA_Tooltip_ability_special_bonus_unique_sniper_grenade_range"	"Concussive Grenade: +{s:bonus_AbilityCastRange} räckvidd"
 		"DOTA_Tooltip_ability_special_bonus_unique_sniper_grenade_self_push"	"Concussive Grenade knuffar Sniper bakåt"
@@ -13601,6 +13755,8 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_magnus_7"	"Skewer: -{s:bonus_AbilityCooldown} s cooldown."
 		"DOTA_Tooltip_ability_special_bonus_unique_magnus_reverse_polarity_stats"		"+{s:bonus_stats_per_stack} på alla attribut per hjälte som träffas av Reverse Polarity"
 		"DOTA_Tooltip_ability_special_bonus_unique_magnus_reverse_polarity_stats_Description"		"Bonusattribut varar i {s:bonus_stat_buff_duration} sekunder"
+		"DOTA_Tooltip_ability_special_bonus_unique_magnus_skewer_damage_distance"					"Skewer: +{s:bonus_damage_distance_pct} % skada per reslängd"
+
 		"DOTA_Tooltip_ability_special_bonus_unique_earth_spirit"	"Rolling Boulder: +{s:bonus_damage} skada"
 		"DOTA_Tooltip_ability_special_bonus_unique_earth_spirit_2"	"Magnetize kan inte avlägsnas med dispel."
 		"DOTA_Tooltip_ability_special_bonus_unique_earth_spirit_3"	"+{s:bonus_stun_duration} s lamslagning med Boulder Smash"
@@ -13680,6 +13836,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_slardar_3"	"Corrosive Haze kan inte tas bort"
 		"DOTA_Tooltip_ability_special_bonus_unique_slardar_4"	"-{s:value} s cooldown på Slithereen Crush"
 		"DOTA_Tooltip_ability_special_bonus_unique_slardar_5"	"-{s:bonus_armor_reduction} skydd med Corrosive Haze"
+		"DOTA_Tooltip_ability_special_bonus_unique_slardar_6"	"Seaborn Sentinel: +{s:bonus_river_damage} bonusskada"
 		"DOTA_Tooltip_ability_special_bonus_unique_slardar_8"	"+{s:value} % nedsaktning på attack/förflyttning med Slithereen Crush"
 		"DOTA_Tooltip_ability_special_bonus_unique_slardar_slithereen_crush_stun"			"Slithereen Crush: +{s:bonus_stun_duration} s bedövning"
 		"DOTA_Tooltip_ability_special_bonus_unique_lina_1"	"Dragon Slave: -{s:bonus_AbilityCooldown} s cooldown"
@@ -13794,6 +13951,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_bloodseeker_7"	"Rupture: +{s:bonus_hp_pct} % inledande skada"
 		"DOTA_Tooltip_ability_special_bonus_unique_bloodseeker_rupture_charges"	"Rupture: {s:bonus_AbilityCharges} laddningar"
 		"DOTA_Tooltip_ability_special_bonus_unique_outworld_devourer"	"Arcane Orb: +{s:bonus_mana_pool_damage_pct} % skada"
+		"DOTA_Tooltip_ability_special_bonus_unique_outworld_devourer_2"	"Astral Imprisonment: +{s:bonus_mana_capacity_steal} % stulen manakapacitet"
 		"DOTA_Tooltip_ability_special_bonus_unique_outworld_devourer_3"	"+{s:bonus_mana_as_ms} % av nuvarande mana som förflyttningshastighet"
 		"DOTA_Tooltip_ability_special_bonus_unique_outworld_devourer_4"	"Sanity's Eclipse: +{s:bonus_damage_multiplier} multiplikator på manaskillnad"
 		"DOTA_Tooltip_ability_special_bonus_unique_outworld_devourer_5"	"-{s:value} s cooldown för Sanity's Eclipse"
@@ -13808,6 +13966,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_broodmother_web_hpregen"		"+{s:bonus_health_regen} HP-regeneration med Spin Web"
 		"DOTA_Tooltip_ability_special_bonus_unique_chen_1"	"Holy Persuasion: +{s:bonus_AbilityCharges} max enheter och laddningar"
 		"DOTA_Tooltip_ability_special_bonus_unique_chen_2"	"Hand of God helar Chen och hans creeps fullt ut"
+		"DOTA_Tooltip_ability_special_bonus_unique_chen_2_description"	"Inledande helande helar fullständigt. Helande över tid gäller fortfarande."
 		"DOTA_Tooltip_ability_special_bonus_unique_chen_3"	"Convert: +{s:bonus_attack_speed} attackhastighet"
 		"DOTA_Tooltip_ability_special_bonus_unique_chen_4"	"Holy Persuasion: +{s:bonus_health_min} hälsominimum"
 		"DOTA_Tooltip_ability_special_bonus_unique_chen_5"	"Holy Persuasion: +{s:bonus_damage_bonus} skada"
@@ -14482,20 +14641,34 @@
 		"DOTA_Tooltip_Ability_roshan_revengeroar_damage_growth"			"ÖKAD SKADA PER MINUT:"
 		"DOTA_Tooltip_Ability_roshan_revengeroar_damage"	"SKADA:"
 		
+		"DOTA_Tooltip_Ability_roshan_grab_and_throw"					"Throw"
+		"DOTA_Tooltip_Ability_roshan_grab_and_throw_Note0"				"Hjältar kastas bort från Roshan baserat på deras relativa position till honom."
 		"DOTA_Tooltip_Ability_roshan_grab_and_throw_damage"				"SKADA:"
+		"DOTA_Tooltip_Ability_roshan_grab_and_throw_damage_per_combo"	"EXTRA SKADA PER KAST:"
 		"DOTA_Tooltip_Ability_roshan_grab_and_throw_max_knockback_distance"		"KASTAVSTÅND:"
 		"DOTA_Tooltip_Ability_roshan_grab_and_throw_stun_duration"		"BEDÖVNINGSVARAKTIGHET:"
 		
+		"DOTA_Tooltip_modifier_roshan_grab_thrown"					"Kastad"
+		"DOTA_Tooltip_modifier_roshan_grab_thrown_Description"		"Kastades nyligen av Roshan."
+
+		"DOTA_Tooltip_modifier_roshan_grab"							"Greppad"
+		"DOTA_Tooltip_modifier_roshan_grab_Description"				"Fast i Roshans grepp."
+		
 		"DOTA_Tooltip_modifier_roshan_moving"							"Förflyttar sig"
+		"DOTA_Tooltip_modifier_roshan_moving_Description"				"När Roshan flyttar till en ny plats har han 25 %% extra nedsaktningsresistens. Han får extra förflyttningshastighet varje gång han blir avbruten."
+
 		"DOTA_Tooltip_modifier_roshan_spell_block"		"Spell Block"
 		"DOTA_Tooltip_modifier_roshan_spell_block_Description"			"Roshan blockerar individuella trollformler var 15:e sekund."
 		"DOTA_Tooltip_modifier_roshan_bash"				"Bash"
 		"DOTA_Tooltip_modifier_roshan_slam"				"Slam"
 		"DOTA_Tooltip_modifier_roshan_devotion"			"Devotion"
+		"DOTA_Tooltip_modifier_roshan_devotion_Description"			"55 %% resistens mot magisk skada, förmågan att reducera inkommande skada från attackerande illusioner och %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% extra skydd. Skyddsbonusen ökar över tid."
 		"DOTA_Tooltip_modifier_roshan_revengeroar"			"Roared"
 		"DOTA_Tooltip_modifier_roshan_revengeroar_Description"			"Tar mer skada."
 
 		"DOTA_Tooltip_modifier_roshan_revengeroar_disarm"				"Roared"
+		"DOTA_Tooltip_modifier_roshan_revengeroar_disarm_Description"	"Avväpnad av Roar of Retribution. Kan inte attackera."
+
 		"DOTA_Tooltip_Ability_miniboss_unyielding_shield"		"Unyielding Shield"
 		"DOTA_Tooltip_Ability_miniboss_unyielding_shield_Description"		"Ger en barriär mot all skada som regenereras passivt. Skydd kan inte bli lägre än 0."
 		"DOTA_Tooltip_Ability_miniboss_reflect"					"Reflect"
@@ -14504,6 +14677,8 @@
 		"DOTA_Tooltip_Ability_miniboss_radiance_Description"		"Gör %aura_damage% skada på alla enheter inom en radie på %aura_radius% varje sekund."
 
 		"DOTA_Tooltip_Ability_miniboss_alleviation"				"Alleviation"
+		"DOTA_Tooltip_Ability_miniboss_alleviation_Description"		"Efter döden lämnar Tormentor en grönskande dalgång efter sig, vilket ökar regenerationen för alla i närheten med %hp_restoration_pct% %% av deras max-HP."
+
 		"DOTA_Tooltip_modifier_miniboss_unyielding_shield"		"Unyielding Shield"
 		"DOTA_Tooltip_modifier_miniboss_unyielding_shield_Description"	"Skyddas av en konstant regenererande skadebarriär på %dMODIFIER_PROPERTY_TOOLTIP%, som återställs med %dMODIFIER_PROPERTY_TOOLTIP2%HP/s."
 		"DOTA_Tooltip_modifier_miniboss_reflect"				"Reflect"
@@ -14513,6 +14688,8 @@
 		"DOTA_Tooltip_modifier_miniboss_radiance_debuff"		"Burn Damage"
 		"DOTA_Tooltip_modifier_miniboss_radiance_debuff_Description"	"Tar 30 skada varje sekund."
 		"DOTA_Tooltip_modifier_miniboss_alleviation_active"		"Alleviation"
+		"DOTA_Tooltip_modifier_miniboss_alleviation_active_Description"		"Ökad regeneration på grund av Tormentorns död."
+
 		// NEUTRAL UNIT TOOLTIPS
 		
 		// Kobold: Steal Weapon
@@ -14880,7 +15057,8 @@
 		//"DOTA_Tooltip_ability_spawnlord_aura_Note0"         "The aura is stacking."
 		"DOTA_Tooltip_ability_spawnlord_aura_lifesteal"     "%LIFESTEAL:"
 		"DOTA_Tooltip_modifier_spawnlord_aura_bonus"                "Prowler Aura"
-        // Prowler Shaman (Spawnlord Master): Prowler Freeze
+        "DOTA_Tooltip_modifier_spawnlord_aura_bonus_Description"    "Ger %dMODIFIER_PROPERTY_TOOLTIP%%% livstjälande. HP-regeneration ökas med %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% HP per sekund."
+		// Prowler Shaman (Spawnlord Master): Prowler Freeze
 
 		"DOTA_Tooltip_ability_spawnlord_master_freeze"              "Petrify"
 		"DOTA_Tooltip_ability_spawnlord_master_freeze_Description"  "Gör att nästa attack förstenar fienden, vilket rootar dem och gör %damage% skada per sekund."
@@ -15065,40 +15243,52 @@
 		"DOTA_Tooltip_ability_big_thunder_lizard_wardrums_aura_radius"					"RADIE:"
 		
 		"DOTA_Tooltip_modifier_big_thunder_lizard_wardrums_aura"							"War Drums Aura"
-		"DOTA_Tooltip_modifier_big_thunder_lizard_wardrums_aura_Description"				"Attackhastighet ökad med %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, och attackskada ökad med %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%%."	
-
-
 		//Frogmen: Riverborn Aura
 		"DOTA_Tooltip_ability_frogmen_riverborn_aura"								"Riverborn Aura"
+		"DOTA_Tooltip_ability_frogmen_riverborn_aura_Description"					"När grodan är i vattnet ökar den förflyttningshastigheten och utgående skada för alla allierade."		
 		"DOTA_Tooltip_ability_frogmen_riverborn_aura_bonus_movement_speed"		"%EXTRA FÖRFLYTTNINGSHASTIGHET:"
 		"DOTA_Tooltip_ability_frogmen_riverborn_aura_bonus_outgoing_damage"		"%UTGÅENDE SKADA:"
 		"DOTA_Tooltip_ability_frogmen_riverborn_aura_radius"		"RADIE:"
 		
 		"DOTA_Tooltip_modifier_frogmen_riverborn_aura_bonus"							"Riverborn Aura"
+		"DOTA_Tooltip_modifier_frogmen_riverborn_aura_bonus_Description"				"Förflyttningshastighet ökad med %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %% och utgående skada ökad med %dMODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE% %%."	
+
 		"DOTA_Tooltip_ability_frogmen_arm_of_the_deep"							"Arm of the Deep"
+		"DOTA_Tooltip_ability_frogmen_arm_of_the_deep_Description"							"Skickar ut en massa tentakler i vald riktning, som bedövar och skadar fiender."
 		"DOTA_Tooltip_ability_frogmen_arm_of_the_deep_damage"					"SKADA:"
 		"DOTA_Tooltip_ability_frogmen_arm_of_the_deep_duration"						"BEDÖVNINGSVARAKTIGHET:"
 		"DOTA_Tooltip_ability_frogmen_arm_of_the_deep_range"							"RÄCKVIDD:"
 
 		"DOTA_Tooltip_ability_frogmen_tendrils_of_the_deep"							"Tendrils of the Deep"
+		"DOTA_Tooltip_ability_frogmen_tendrils_of_the_deep_Description"				"Skickar ut en massa tentakler i en konform i vald riktning, som bedövar och skadar fiender."
 		"DOTA_Tooltip_ability_frogmen_tendrils_of_the_deep_damage"					"SKADA:"
 		"DOTA_Tooltip_ability_frogmen_tendrils_of_the_deep_duration"						"BEDÖVNINGSVARAKTIGHET:"
 		"DOTA_Tooltip_ability_frogmen_tendrils_of_the_deep_range"							"RÄCKVIDD:"
 
 		"DOTA_Tooltip_ability_frogmen_congregation_of_the_deep"							"Congregations of the Deep"
+		"DOTA_Tooltip_ability_frogmen_congregation_of_the_deep_Description"					"Skickar ut en massa tentakler i alla riktningar, som bedövar och skadar fiender."
 		"DOTA_Tooltip_ability_frogmen_congregation_of_the_deep_damage"					"SKADA:"
 		"DOTA_Tooltip_ability_frogmen_congregation_of_the_deep_duration"						"BEDÖVNINGSVARAKTIGHET:"
 		"DOTA_Tooltip_ability_frogmen_congregation_of_the_deep_range"							"RÄCKVIDD:"
 
 		"DOTA_Tooltip_modifier_frogmen_arm_of_the_deep_stun"						"Bedövad"
+		"DOTA_Tooltip_modifier_frogmen_arm_of_the_deep_stun_Description"			"Bedövad av en tentakel."
+
 		"DOTA_Tooltip_ability_frogmen_water_bubble_small"							"Water Bubble (liten)"
+		"DOTA_Tooltip_ability_frogmen_water_bubble_small_Description"					"Skapar en barriärbubbla som skyddar målet från magisk skada under %duration% s. "
 		"DOTA_Tooltip_ability_frogmen_water_bubble_small_damage_absorb"					"SKADEABSORBERING:"
 
+		"DOTA_Tooltip_ability_frogmen_water_bubble_medium"							"Water Bubble (medium)"
+		"DOTA_Tooltip_ability_frogmen_water_bubble_medium_Description"					"Skapar en barriärbubbla som skyddar målet från magisk skada under %duration% s. Efter att den upphör helar den målet och alla allierade inom en radie på %heal_pct% med %heal_pct% %% av den absorberade mängden."
 		"DOTA_Tooltip_ability_frogmen_water_bubble_medium_damage_absorb"					"SKADEABSORBERING:"
 
+		"DOTA_Tooltip_ability_frogmen_water_bubble_large"							"Water Bubble (stor)"
+		"DOTA_Tooltip_ability_frogmen_water_bubble_large_Description"					"Skapar en barriärbubbla som skyddar målet från magisk skada under %duration% s. Efter att den upphör helar den målet och alla allierade inom en radie på %radius% med %heal_pct% %% av den absorberade mängden."
 		"DOTA_Tooltip_ability_frogmen_water_bubble_large_damage_absorb"					"SKADEABSORBERING:"
 
 		"DOTA_Tooltip_modifier_frogmen_water_bubble"								"Water Bubble"
+		"DOTA_Tooltip_modifier_frogmen_water_bubble_Description"					"Absorberar magisk skada. Helar med %dMODIFIER_PROPERTY_TOOLTIP% när bubblan spricker."
+
 		//Items
 
 		"DOTA_Tooltip_ability_item_aegis_Description"							"<h1>Passiv: Reincarnation</h1> Du återupplivas med full hälsa och mana %reincarnate_time% sekunder efter att du har dött, vid samma plats som du dog på.<br><br> Reincarnation måste användas inom %disappear_time_minutes_tooltip% minuter, annars försvinner Aegis of the Immortal. Om den försvinner, kommer den att hela dig över 5 sekunder (avbryts av skada)."
@@ -15696,6 +15886,7 @@
 
 
 
+		"DOTA_Tooltip_Ability_item_phylactery_Description"					"<h1>Passiv: Empower Spell</h1> Nästa besvärjelse med enhetsmål gör %bonus_spell_damage% separat bonusskada mot målet, och saktar ned det med %slow% %% i %slow_duration% sekunder."
 		"DOTA_Tooltip_Ability_item_phylactery_bonus_health"					"+$health"
 		"DOTA_Tooltip_Ability_item_phylactery_bonus_mana"					"+$mana"
 		"DOTA_Tooltip_ability_item_phylactery_bonus_all_stats"				"+$all"
@@ -15734,6 +15925,7 @@
 		"DOTA_Tooltip_ability_item_ethereal_blade_Description"					"<h1>Aktiv: Ether Blast</h1>Konverterar målet till eterisk form, vilket gör det immunt mot fysisk skada, men det kan inte attackera och tar %ethereal_damage_bonus% %% mer magisk skada.<br><br>Fiendemål saktas även ned med %blast_movement_slow% %% och tar %blast_agility_multiplier%x bärarens primära attribut + %blast_damage_base% som magisk skada.<br>Varaktighet: %duration% sekunder."
 		"DOTA_Tooltip_ability_item_ethereal_blade_Note0"						"Delar cooldown med Ghost Scepter."
 		"DOTA_Tooltip_ability_item_ethereal_blade_Note1"						"Eteriska enheter tar %ethereal_damage_bonus% extra magisk skada."
+		"DOTA_Tooltip_ability_item_ethereal_blade_Note2"						"Universella hjältars primära attribut är %universal_multiplier_tooltip% %% av summan av alla deras attribut."
 		"DOTA_Tooltip_ability_item_ethereal_blade_Note3"						"Användandet av Town Portal Scroll eller Boots of Travel kommer inte skingra eterisk form."
 		"DOTA_Tooltip_ability_item_ethereal_blade_bonus_agility"				"+$all"
 		"DOTA_Tooltip_ability_item_ethereal_blade_bonus_mana"                      "+$mana"
@@ -15767,6 +15959,7 @@
 		"DOTA_Tooltip_ability_item_force_staff_Note0"							"Själv-användande kommer att använda Force på dig själv."
 		"DOTA_Tooltip_ability_item_force_staff_Note1"							"Force Staff avbryter inte målets ageranden."
 		"DOTA_Tooltip_ability_item_force_staff_Note2"							"Kommer inte att fungera på en enhet inuti Chronosphere, Duel eller Black Hole."
+		"DOTA_Tooltip_ability_item_force_staff_Note3"							"Force Staff har %enemy_cast_range% användningsräckvidd vid användning på fiender."
 		"DOTA_Tooltip_ability_item_force_staff_bonus_intellect"					"+$int"
 		"DOTA_Tooltip_ability_item_force_staff_bonus_health"					"+$health"
 		
@@ -16041,6 +16234,8 @@
 		"DOTA_Tooltip_ability_item_lotus_orb_bonus_mana"					"+$mana"
 		//"DOTA_Tooltip_ability_item_lotus_orb_active_duration"				"ECHO DURATION:"
 		"DOTA_Tooltip_ability_item_lotus_orb_Lore"							"Juvelen i mitten reflekterar fortfarande en blek bild av dess skapare."
+		"DOTA_Tooltip_ability_item_lotus_orb_Note0"							"Riktade förmågor från neutrala föremål utlöser inte Echo Shell."
+
 		"DOTA_Tooltip_modifier_item_lotus_orb_active"		"Echo Shell"
 		"DOTA_Tooltip_modifier_item_lotus_orb_active_Description"		"De flesta riktade förmågor skickas tillbaka till källan."
 
@@ -17024,6 +17219,7 @@
 		"DOTA_Tooltip_modifier_devastator_debuff"						"Magic Corruption"
 		"DOTA_Tooltip_modifier_devastator_debuff_Description"  			"Magiresistens minskad med %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS% %%."
 
+		"DOTA_Tooltip_Ability_item_revenants_brooch_Note1"						"Phantom Critical fungerar inte mot byggnader."
 		"DOTA_Tooltip_ability_item_revenants_brooch_Lore"						"Den förbannade broschen från en fallen vakt som för evigt vandrar mellan liv och död."
 		"DOTA_Tooltip_ability_item_revenants_brooch_bonus_damage"				"+$damage"
 		"DOTA_Tooltip_ability_item_revenants_brooch_spell_lifesteal"		"%+$spell_lifesteal"
@@ -17090,7 +17286,6 @@
 		"DOTA_Tooltip_ability_item_nullifier_slow_pct"				"%FÖRFLYTTNINGSNEDSAKTNING:"
 		//"DOTA_Tooltip_ability_item_nullifier_bonus_mana_regen"					"+$mana_regen"
 		"DOTA_Tooltip_ability_item_nullifier_Note0"							"Kan användas på osårbara enheter."
-		"DOTA_Tooltip_ability_item_nullifier_Note1"							"Går igenom besvärjelseimmunitet."
 
 		"DOTA_Tooltip_modifier_item_nullifier_mute" 						"Nullifier"
 		"DOTA_Tooltip_modifier_item_nullifier_mute_Description" 			"Målets positiva effekter avlägsnas kontinuerligt med dispel. Saktas ned med %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %%."
@@ -17184,6 +17379,9 @@
 		"DOTA_Tooltip_modifier_elixer_healing"									"Elixer"
 		"DOTA_Tooltip_modifier_elixer_healing_Description"						"Återställer HP och mana."
 		
+		"DOTA_Tooltip_ability_item_vampire_fangs_attack_lifesteal"				"%+$lifesteal"		
+		"DOTA_Tooltip_ability_item_vampire_fangs_spell_lifesteal"				"%+$spell_lifesteal"		
+		
 		"DOTA_Tooltip_ability_item_craggy_coat_Description"		"<h1>Aktiv: Toughen Up</h1> Ger dig ytterligare %active_armor% bonusskydd på bekostnad av -%move_speed% förflyttningshastighet. Varar i %active_duration% sekunder."		
 
 		"DOTA_Tooltip_ability_item_greater_faerie_fire_Description"                     "<h1>Använd: Imbue</h1> Återställer omedelbart %hp_restore% HP."
@@ -17213,6 +17411,7 @@
 		"DOTA_Tooltip_modifier_royal_jelly_regen_Description"			"Ger %fMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% HP-regeneration och %fMODIFIER_PROPERTY_MANA_REGEN_CONSTANT% manaregeneration."
 
 		"DOTA_Tooltip_ability_item_pupils_gift_Description"				"Ökar båda icke-primära attributen."		
+		"DOTA_Tooltip_ability_item_pupils_gift_Note0"				"Ger två tredjedelar av värdet till varje attribut för universella hjältar"
 		"DOTA_Tooltip_ability_item_pupils_gift_Lore"				"En häpnadsväckande och stärkande frukttallrik."		
 		"DOTA_Tooltip_ability_item_pupils_gift_secondary_stats"				"+SEKUNDÄRA ATTRIBUT"		
 		"DOTA_Tooltip_ability_item_tome_of_aghanim_Description"					"<h1>Använd: Consume</h1> Ger temporärt ett allierat mål Aghanim's Scepter i %duration_minutes% minuter."
@@ -17336,9 +17535,7 @@
 		"DOTA_Tooltip_modifier_havoc_hammer_slow"				"Havoc"
 		"DOTA_Tooltip_modifier_havoc_hammer_slow_Description"	"Saktas ned %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% %%."
 		
-		"DOTA_Tooltip_Ability_item_panic_button_Description"		"<h1>Passiv: Rejuvenate </h1>När bärarens HP hamnar under %health_threshold% %%, appliceras en stark dispel och bärarens helas med %heal% HP."
-
-        "DOTA_Tooltip_Ability_item_apex_Lore"		"Tre klot av anmärkningsvärd kraft som binds inuti en enda spira."
+		"DOTA_Tooltip_Ability_item_apex_Lore"		"Tre klot av anmärkningsvärd kraft som binds inuti en enda spira."
         "DOTA_Tooltip_Ability_item_apex_primary_stat"		"+$primary_attribute"
         "DOTA_Tooltip_Ability_item_apex_Note0"				"Ger +%primary_stat_universal% till varje attribut för universella hjältar."
 		
@@ -17392,6 +17589,7 @@
 		"DOTA_Tooltip_Ability_item_paladin_sword_bonus_spell_lifesteal"		"%+$spell_lifesteal"
 
 		"DOTA_Tooltip_Ability_item_minotaur_horn_Lore"		"Trofén från en mäktig varelse som blev överfallen och dräpt i sitt eget hem."
+		"DOTA_Tooltip_modifier_minotaur_horn_immune"				"Minotaur Horn"
 		"DOTA_Tooltip_Ability_item_orb_of_destruction_Description"		"<h1>Passiv: Impeding Corruption</h1> Attacker reducerar målets skydd och förflyttningshastighet. Nedsaktningen baseras på om bäraren är en närstridshjälte eller avståndshjälte."
 		"DOTA_Tooltip_Ability_item_orb_of_destruction_Lore"		"Ett göt av kaos, suspenderat i trollkarlseter och inrymt i ett arkanistklot."
 		"DOTA_Tooltip_Ability_item_orb_of_destruction_armor_reduction"		"SKYDDSREDUCERING:"
@@ -17415,7 +17613,10 @@
 		"DOTA_Tooltip_Ability_item_chipped_vest_hp_regen"		"+$hp_regen"
 
 		"DOTA_Tooltip_Ability_item_orb_of_corrosion_Lore"				"Utgjutningen från en krigargudoms sår, förseglad i ett arkanistklot efter ett våldsamt fälttåg."
+		"DOTA_Tooltip_Ability_item_orb_of_corrosion_bonus_agility"		"+$agi"	
+
 		"DOTA_Tooltip_modifier_orb_of_corrosion_debuff"		            "Orb of Corrosion"
+		"DOTA_Tooltip_modifier_orb_of_frost_debuff"		            "Orb of Frost"
 		"DOTA_Tooltip_Ability_item_wizard_glass_Description"		"<h1>Aktiv</h1>Utdelar %damage% skada mot upp till %count% slumpmässigt valda fientliga enheter inom en radie på %radius%."
         "DOTA_Tooltip_Ability_item_wizard_glass_debuff_amp"		    "%+$debuff_amp"
         "DOTA_Tooltip_Ability_item_wizard_glass_cooldown_reduction"		    "%+reducerad cooldown"
@@ -17603,6 +17804,25 @@
 
 		"DOTA_Tooltip_ability_item_gossamer_cape_Description"					"<h1>Passiv: Sixth Sense</h1> Undviker automatiskt en attack från en fiendehjälte."
 
+		"DOTA_Tooltip_ability_item_enhancement_vast_attack_range"    	              	"+$attack_range_all"
+
+		"DOTA_Tooltip_ability_item_enhancement_quickened_movement_speed"					"+$move_speed	"
+		"DOTA_Tooltip_ability_item_enhancement_quickened_max_mana"						"+$mana"
+
+		"DOTA_Tooltip_ability_item_cursed_circlet_bonus_all_stats"				"+$all"
+		"DOTA_Tooltip_ability_item_cursed_circlet_attack_damage"				"+$damage"
+
+		"DOTA_Tooltip_ability_item_ogre_heart_mana_regen"						"+$mana_regen"
+
+		"DOTA_Tooltip_ability_item_neutral_tabi_movespeed"						"+$move_speed"
+		"DOTA_Tooltip_ability_item_neutral_tabi_evasion"						"%+$evasion"
+
+		"DOTA_Tooltip_ability_item_enhancement_audacious_attack_speed"					"+$attack"
+		"DOTA_Tooltip_ability_item_hellbear_totem_heal_increase"				"%+$healing_amp"
+		"DOTA_Tooltip_ability_item_enhancement_mystical_mana_regen"				"+$mana_regen"
+		"DOTA_Tooltip_ability_item_enhancement_mystical_magic_res"				"%+$spell_resist"
+
+		"DOTA_Tooltip_ability_item_enhancement_alert_bonus_attack_speed"			"+$attack"
 		"DOTA_Tooltip_ability_item_enhancement_brawny_health_bonus"				"+$health"
 		"DOTA_Tooltip_ability_item_enhancement_brawny_health_regen"				"+$hp_regen"
 		
@@ -17643,7 +17863,17 @@
 
 		"DOTA_Tooltip_Modifier_item_gale_guard"									"Cyclonic Shield"
 		"DOTA_Tooltip_modifier_item_pyrrhic_cloak"								"Pyrrhic Cloak"
+		"DOTA_Tooltip_modifier_item_crippling_crossbow"							"Hobbled"
+		"DOTA_Tooltip_modifier_item_crippling_crossbow_Description"				"Reducerad förflyttningshastighet och helande."
+
+		"DOTA_Tooltip_modifier_searing_signet_burn"								"Searing Signet"
 		"DOTA_Tooltip_modifier_searing_signet_burn_Description"					"Tar skada över tid."
+
+		"DOTA_Tooltip_modifier_item_polliwog_charm_buff"						"Ribbit"
+		"DOTA_Tooltip_modifier_item_polliwog_charm_buff_Description"			"Ökad HP-regeneration. Förflyttar sig snabbare i vatten."
+
+		"DOTA_Tooltip_ability_item_madstone_bundle"								"Madstone-bunt"
+		"DOTA_Tooltip_ability_item_madstone_bundle_Description"					"Samla för att skapa nya neutrala föremål."
 
 		"DOTA_Tooltip_ability_item_river_painter_Description"					"Häll detta serum i floden för att förvandla vattnet till flytande krom i %paint_duration% minuter. <font color='#FF5555'>Att använda detta föremål på floden kommer permanent förbruka en laddning ur Vapenförrådet när effekten upphör. Laddningar förbrukas ej om effekten ersätts med en starkare vial innan effekten upphör.</font> Vialer kan endast användas om minst en laddning återstår i ditt Vapenförråd. Laddningar kommer bara förbrukas efter att floden förtrollats, och kommer inte förbrukas om föremålet säljs, släpps, eller förstörs under en match. Du kan bara använda en vial på floden om den inte redan är påverkad av en starkare vial."
 		"DOTA_Tooltip_ability_item_river_painter2_Description"					"Häll detta serum i floden för att torka ut den i %paint_duration% minuter. <font color='#FF5555'>Att använda detta föremål på floden kommer permanent förbruka en laddning ur Vapenförrådet.</font> Vialer kan endast användas om minst en laddning återstår i ditt Vapenförråd. Laddningar kommer bara förbrukas efter att floden förtrollats, och kommer inte förbrukas om föremålet säljs, släpps, eller förstörs under en match. Du kan bara använda vialen på floden så länge inte en starkare vial redan är aktiv."
@@ -17768,6 +17998,7 @@
 		"DOTA_Tooltip_modifier_watch_tower_allied_aura_tracker"					"Utpostbonus"
 		"DOTA_Tooltip_modifier_watch_tower_allied_aura_tracker_Description"		"Den här enheten ger 8%% mer guld och XP."	
 
+		"DOTA_Tooltip_modifier_path_movespeed"					"Wandering Whirl"
 		"DOTA_Tooltip_rune_doubledamage"				"Skadeförstärkning"
 		"DOTA_Tooltip_rune_doubledamage_description"	"Ökar basskadan med 80 % och ger 15 % förmågeförstärkning."
 		"DOTA_Tooltip_rune_water"						"Vatten"

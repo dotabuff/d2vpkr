@@ -26,9 +26,13 @@
 		"dota_ability_variable_spell_resist"		"магическа устойчивост"			// $spell_resist
 		"dota_ability_variable_spell_lifesteal"		"кражба на здраве от заклинания"			// $spell_lifesteal
 		"dota_ability_variable_spell_lifesteal_hero_attacks" "атаки върху герои"
+		"dota_ability_variable_spell_lifesteal_hero_spells" "умения върху герои"
 		"dota_ability_variable_spell_lifesteal_creep_attacks" "атаки върху крийпове"
+		"dota_ability_variable_spell_lifesteal_creep_spells" "умения върху крийпове"
 		"dota_ability_variable_lifesteal_hero_attacks" "атаки върху герои"
+		"dota_ability_variable_lifesteal_hero_spells" "умения върху герои"
 		"dota_ability_variable_lifesteal_creep_attacks" "атаки върху крийпове"
+		"dota_ability_variable_lifesteal_creep_spells" "умения върху крийпове"
 		"dota_ability_variable_selected_attrib"		"избран атрибут"		// $selected_attribute
 		"dota_ability_variable_attack_range"		"обсег за атака <font color='#7d7d7d'>(само за далекобойни)</font>"	// $attack_range
 		"dota_ability_variable_attack_range_melee"	"обсег за атака <font color='#7d7d7d'>(само за ръкопашни)</font>"	// $attack_range_melee
@@ -41,6 +45,7 @@
 		"dota_ability_variable_max_mana_percentage"	"бонус макс. мана"			// $max_mana_percentage
 		"dota_ability_variable_slow_resistance"		"устойчивост срещу забавяне"			// $slow_resistance
 		"dota_ability_variable_aoe_bonus"			"бонус площ на ефекта"					// $aoe_bonus
+		"dota_ability_variable_exclusive_movespeed"	"скорост за движение с ботуши"		// $exclusive_movespeed
 "dota_ability_variable_damage_int_hero"	"щети (интелигентни герои)"
 		"dota_ability_variable_damage_agi_hero"	"щети (ловки герои)"
 		"dota_ability_variable_damage_str_hero"	"щети (силови герои)"
@@ -544,6 +549,7 @@
 		"npc_dota_neutral_froglet"						"Boglet"
 		"npc_dota_neutral_grown_frog"					"Croaker"
 		"npc_dota_neutral_ancient_frog"					"Ancient Croaker"
+		"npc_dota_neutral_froglet_mage"					"Marshmage Apprentice"
 		"npc_dota_neutral_grown_frog_mage"				"Marshmage"
 		"npc_dota_neutral_ancient_frog_mage"			"Ancient Marshmage"
 
@@ -808,6 +814,7 @@
 
 		"DOTA_Tooltip_ability_antimage_counterspell_ally"								"Counterspell Ally"
 		"DOTA_Tooltip_ability_antimage_counterspell_ally_reflected_spell_amp"			"%УСИЛ. (ОТРАЗЕНИ ЗАКЛИНАНИЯ):"
+		"DOTA_Tooltip_ability_antimage_counterspell_ally_mana_drain_percent"			"%ОБГАРЯНЕ НА МАНА (ПРОЦЕНТ):"
 		"DOTA_Tooltip_ability_antimage_counterspell"									"Counterspell"
 		"DOTA_Tooltip_ability_antimage_counterspell_shard_description"					"Counterspell пасивно предоставя аура, която понижава вражеските щети от заклинания. Намаляването е по-силно при близък обсег."
 		"DOTA_Tooltip_ability_antimage_counterspell_Lore"								"С правилния фокус, Anti-Mage превръща присъщата съпротива в пресметливо отмъщение."
@@ -815,6 +822,7 @@
 		"DOTA_Tooltip_ability_antimage_counterspell_magic_resistance"					"%МАГИЧЕСКА УСТОЙЧИВОСТ:"
 		"DOTA_Tooltip_ability_antimage_counterspell_duration"							"ВРЕМЕТРАЕНЕ:"
 		"DOTA_Tooltip_ability_antimage_counterspell_reflected_spell_amp"				"%УСИЛ. (ОТРАЗЕНИ ЗАКЛИНАНИЯ):"
+		"DOTA_Tooltip_ability_antimage_counterspell_mana_drain_percent"					"%ОБГАРЯНЕ НА МАНА (ПРОЦЕНТ):"
 		"DOTA_Tooltip_Ability_antimage_counterspell_abilitydraft_note"					"<span class=\"ADBlue\">Aghanim's Shard:</span> <span class=\"ADWhite\"><b>Counterspell Ally</b></span> е достъпно като включите авт. изпълняване на <span class=\"ADWhite\"><b>Counterspell</b></span>."
 		"DOTA_Tooltip_ability_antimage_mana_void"										"Mana Void"
 		"DOTA_Tooltip_ability_antimage_mana_void_Description"							"За всяка липсваща точка мана на целевата единица, се нанасят щети върху нея и заобикалящите я врагове. Основната цел бива зашеметена леко."
@@ -902,6 +910,8 @@
 		"DOTA_Tooltip_ability_queenofpain_masochist_Description_Note2"				"Отразените щети не са смъртоносни."
 		"DOTA_Tooltip_ability_queenofpain_masochist_Description_Note3"				"Включва щетите от заклинания от предмети."
 		"DOTA_Tooltip_ability_queenofpain_succubus"								"Succubus"
+		"DOTA_Tooltip_ability_queenofpain_succubus_spell_lifesteal"				"%МИН. КРАЖБА НА ЗДРАВЕ:"
+		"DOTA_Tooltip_ability_queenofpain_succubus_spell_lifesteal_close"		"%МАКС. КРАЖБА НА ЗДРАВЕ:"
 		"DOTA_Tooltip_ability_queenofpain_bondage"							"Bondage"
 		"DOTA_Tooltip_ability_queenofpain_bondage_Description"				"Всеки път, когато даден враг в рамките на %radius% обсег нанесе щети от заклинания на Queen of Pain, тя връща %spell_reflect_pct%%% от нанесените такива."
 
@@ -1031,16 +1041,20 @@
 		"DOTA_Tooltip_ability_mirana_starfall_Note1"									"Starstorm не може да удря невидими единици."
 		"DOTA_Tooltip_ability_mirana_starfall_starfall_radius"							"РАДИУС:"
 		"DOTA_Tooltip_ability_mirana_starfall_damage"									"ЩЕТИ:"
+		"DOTA_Tooltip_ability_mirana_starfall_secondary_starfall_damage_percent"		"%ВТОРИ МЕТЕОР (ЩЕТИ):"
 		"DOTA_Tooltip_ability_mirana_starfall_starstruck_blind_pct"						"%ЧЕСТОТА ЗА СЛЯП ПРОПУСК:"
 		"DOTA_Tooltip_ability_mirana_starfall_starstruck_duration"						" ЗАСЛЕПЯВАНЕ (ВРЕМЕТРАЕНЕ):"
 
 		"DOTA_Tooltip_ability_mirana_selemenes_faithful"									"Selemene's Faithful"
 		"DOTA_Tooltip_ability_mirana_selemenes_faithful_Description"						"Healing Lotuses са %bonus_lotus%%% по-ефективни върху Mirana и нейните съюзници."
 
+		"DOTA_Tooltip_Facet_mirana_moonlight"											"Moonlight Shadow (фасет)"
 		"DOTA_Tooltip_Facet_mirana_moonlight_Description"								"Ултиматът на Mirana предоставя на нейните съюзници невидимост и скорост за движение."
 		"DOTA_Tooltip_Facet_mirana_sunlight"											"Solar Flare"
 		"DOTA_Tooltip_Facet_mirana_sunlight_Description"								"Ултиматът на Mirana предоставя на нейните съюзници увеличаваща се скорост за атака и щети през време."
 		"DOTA_Tooltip_Facet_mirana_starstruck"											"Starstruck"
+		"DOTA_Tooltip_Facet_mirana_leaps_and_bounds"									"Leaps and Bounds"
+		"DOTA_Tooltip_modifier_mirana_leap_root"										"Leaps and Bounds"
 		"DOTA_Tooltip_modifier_mirana_leap_root_Description"							"Вкоренен."
 
 		"DOTA_Tooltip_modifier_mirana_leap_charge_counter"								"Leap — заряди"
@@ -1101,6 +1115,7 @@
 		"DOTA_Tooltip_ability_life_stealer_open_wounds"									"Open Wounds"
 		"DOTA_Tooltip_ability_life_stealer_open_wounds_Lore"							"Свежите рани и ароматът на кръв често привличат мършоядите, които да довършат започнатото."
 		"DOTA_Tooltip_ability_life_stealer_open_wounds_Note0"							"Open Wounds забавя през 8 различни стъпки: 50% / 50% / 40% / 30% / 20% / 10% / 10% / 10%. Забавянето се намалява с по една стъпка за секунда."
+		"DOTA_Tooltip_ability_life_stealer_open_wounds_heal_percent"					"%ЩЕТИ КЪМ ЛЕЧЕНИЕ:"
 		"DOTA_Tooltip_ability_life_stealer_open_wounds_slow_tooltip"					"%МАКС. ЗАБАВЯНЕ:"
 		"DOTA_Tooltip_ability_life_stealer_open_wounds_duration"						"ВРЕМЕТРАЕНЕ:"
 		
@@ -1118,6 +1133,7 @@
 		"DOTA_Tooltip_ability_life_stealer_infest_attack_rate_enemy"					"ЧЕСТОТА НА АТАКА:"
 		"DOTA_Tooltip_ability_life_stealer_infest_bonus_regen_pct"					"%БОНУС РЕГЕН.:"
 		"DOTA_Tooltip_ability_life_stealer_infest_infest_duration_enemy"				"ВРЕМЕТРАЕНЕ (ВРАГ):"
+		"DOTA_Tooltip_ability_life_stealer_infest_dot_duration"							"GORESTORM — ВРЕМЕТРАЕНЕ:"
 		"DOTA_Tooltip_ability_life_stealer_infest_scepter_description"					"Увеличава обсега за изпълняване и понижава времето за изчакване до %bonus_AbilityCooldown% сек. Infest може да се прицелва към вражески герои за кратко времетраене, обезоръжавайки и атакувайки ги отвътре, докато увеличава честотата за регенерация на Lifestealer."
 		"DOTA_Tooltip_ability_life_stealer_infest_shard_description"					"Infest експлозията прилага Open Wounds с %bonus_open_wounds_duration_pct%%% времетраене към враговете в радиуса на щетите."
 
@@ -1127,6 +1143,8 @@
 		"DOTA_Tooltip_facet_life_stealer_rage_dispell"									"Unfettered"		
 		"DOTA_Tooltip_facet_life_stealer_rage_dispell_Description"						"Lifestealer може да изпълнява <b color='white'>Unfettered</b>, за да разсее себе си и да стане по устойчив. Може да изпълнява, докато е зашеметен."		
 
+		"DOTA_Tooltip_facet_life_stealer_gorestorm"										"Gorestorm"
+		"DOTA_Tooltip_facet_life_stealer_fleshfeast"									"Fleshfeast"
 		"DOTA_Tooltip_ability_life_stealer_corpse_eater"							"Corpse Eater"
 		"DOTA_Tooltip_ability_life_stealer_corpse_eater_Description"				"Lifestealer придобива %bonus_hp_per_creep% здраве всеки път, когато убие крийп и %bonus_hp_per_hero% всеки път, когато убие герой."
 
@@ -1165,6 +1183,7 @@
 		"DOTA_Tooltip_modifier_life_stealer_infest_enemy_hero"							"Infested"
 		"DOTA_Tooltip_modifier_life_stealer_infest_enemy_hero_Description"				"Вие сте под влиянието на Infest от вражески герой."
 
+		"DOTA_Tooltip_modifier_life_stealer_infest_dot"									"Gorestorm"
 		"DOTA_Tooltip_modifier_life_stealer_rage" "Rage"
 		"DOTA_Tooltip_modifier_life_stealer_rage_Description" "Придобиване на имунитет срещу дебъфове."
 		"DOTA_Tooltip_modifier_life_stealer_unfettered"	"Unfettered"
@@ -1336,6 +1355,8 @@
 		"DOTA_Tooltip_ability_windrunner_shackleshot_Note2"								"Shackleshot може да бъде отклонено."
 		"DOTA_Tooltip_ability_windrunner_shackleshot_stun_duration"						"SHACKLE — ВРЕМЕТРАЕНЕ:"
 		"DOTA_Tooltip_ability_windrunner_shackleshot_bonus_damage_per_hero"				"БОНУС ЩЕТИ ЗА ГЕРОЙ:"
+		"DOTA_Tooltip_ability_windrunner_shackleshot_damage_buff_duration"				"БЪФ ЗА ЩЕТИ (ВРЕМЕТРАЕНЕ):"
+
 		"DOTA_Tooltip_ability_windrunner_windrun"										"Windrun"
 		"DOTA_Tooltip_ability_windrunner_windrun_Description" 							"Увеличава скоростта за движение и добавя шанс за избягване на физически атаки."
 		"DOTA_Tooltip_ability_windrunner_windrun_Facet_windrunner_tailwind"			"Windrun предоставя допълнителна бонус скорост за движение на Windranger и съюзниците наблизо."
@@ -1541,7 +1562,6 @@
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_Lore"						"Фокус-мокусът на Зарвакко не е ограничен само до вуду омагьосването на опоненти, а е и доста приспособим в лечението на заболявания."
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_Note0"					"Лечението се извършва през %heal_interval% секундни интервали."
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_Note1"					"Може да лекува единици с имунитет срещу заклинания."
-		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_Note2"					"Voodoo Festeration стойностите за щетите са равни на тази за лечение."
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_mana_per_second"			"МАНА В СЕКУНДА:"
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_heal"						"ЛЕЧЕНИЕ:"
 		"DOTA_Tooltip_ability_witch_doctor_voodoo_restoration_radius"					"РАДИУС:"
@@ -1757,6 +1777,7 @@
 		"DOTA_Tooltip_ability_pudge_rot_rot_slow"										"%ЗАБАВЯНЕ НА ДВИЖЕНИЕТО:"
 		"DOTA_Tooltip_ability_pudge_rot_rot_damage"										"ЩЕТИ:"
 		"DOTA_Tooltip_ability_pudge_rot_scepter_rot_regen_reduction_pct"				"%ПОНИЖАВАНЕ НА РЕГЕН.:"
+		"DOTA_Tooltip_ability_pudge_rot_time_for_max_stacks_tooltip"					"ВРЕМЕ ЗА МАКС. БОНУС:"
 		"DOTA_Tooltip_ability_pudge_flesh_heap"											"Meat Shield"
 		"DOTA_Tooltip_ability_pudge_flesh_heap_Description"								"Pudge се покрива със слой плът, която блокира щети от всякакъв вид, поети от всякакви източници."
 		"DOTA_Tooltip_ability_pudge_flesh_heap_Lore"									"Касапинът дава ново значение на думите „щит от месо“."
@@ -1973,7 +1994,6 @@
 		
 
 		"DOTA_Tooltip_Facet_sand_king_dust_devil"								"Dust Devil"		
-		"DOTA_Tooltip_Facet_sand_king_dust_devil_Description"					"Sand Storm следва Sand King, когато той се движи или ползва Burrowstrike."		
 		"DOTA_Tooltip_Facet_sand_king_sandshroud"								"Sandshroud"		
 		"DOTA_Tooltip_Facet_sand_king_sandshroud_Description"					"Sand Storm разполага с увеличен радиус и предоставя невидимост на Sand King, докато той е в нея."
 
@@ -2243,7 +2263,6 @@
 		"DOTA_Tooltip_modifier_phantom_assassin_blur_active"				"Blur"
 		"DOTA_Tooltip_modifier_phantom_assassin_blur_active_Description"	"Замъгляване, за да изчезне от вражеския взор."
 		"DOTA_Tooltip_modifier_phantom_assassin_phantom_strike"				"Phantom Strike"
-		"DOTA_Tooltip_modifier_phantom_assassin_phantom_strike_Description"	"Скоростта за атака е увеличена с %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% и придобиване на бонус кражба на здраве."
 		"DOTA_Tooltip_modifier_special_bonus_corruption_debuff" 	"Поквара на бронята"
 		"DOTA_Tooltip_modifier_special_bonus_corruption_debuff_description" 	"Понастоящем бронята е понижена."
 		"DOTA_Tooltip_modifier_phantom_assassin_fan_of_knives"				"Fan of Knives"
@@ -2931,6 +2950,7 @@
 		"DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_base_mana_regen"				"РЕГЕН. НА МАНА:"
 		"DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_proximity_mana_regen_tooltip"	"РЕГЕН. НА МАНА (БЛИЗОСТ):"
 		"DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_activation_spell_amp_pct"			"%УСИЛ. НА ЗАКЛ.:"
+		"DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_activation_mana_cost_increase_pct"	"%УВЕЛИЧАВАНЕ НА НУЖНАТА МАНА:"
 		"DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_mana_battery_mana_pct"				"%ПРЕДОСТАВЕНА ИЗРАЗХОДВАНА МАНА:"
 		"DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_activation_duration"				"ВРЕМЕТРАЕНЕ:"
 		"DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_activation_cooldown"				"ИЗЧАКВАНЕ:"
@@ -3495,6 +3515,8 @@
 		"DOTA_Tooltip_modifier_dazzle_innate_weave_armor"								"Weave"
 		"DOTA_Tooltip_modifier_dazzle_innate_weave_armor_Description"					"Бронята е намалена с %fMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%."
 		"DOTA_Tooltip_modifier_dazzle_innate_weave_armor_counter"						"Weave"
+		"DOTA_Tooltip_modifier_dazzle_innate_weave_armor_counter_Description"			"Бронята е модифицирана с %fMODIFIER_PROPERTY_TOOLTIP%."
+
 		"DOTA_Tooltip_modifier_dazzle_bad_juju_manacost"						"Bad Juju"
 		"DOTA_Tooltip_modifier_dazzle_bad_juju_manacost_Description"			"Нужната мана за Bad Juju беше увеличена."
 
@@ -4227,6 +4249,7 @@
 
 		//SLARDAR
 		"DOTA_Tooltip_ability_slardar_seaborn_sentinel"										"Seaborn Sentinel"
+		"DOTA_Tooltip_ability_slardar_seaborn_sentinel_river_speed"							"%БОНУС СКОРОСТ ЗА ДВИЖЕНИЕ:"
 		"DOTA_Tooltip_ability_slardar_seaborn_sentinel_puddle_regen"						"РЕГЕН. НА ЗДРАВЕ:"		
 		"DOTA_Tooltip_ability_slardar_seaborn_sentinel_puddle_armor"						"БОНУС БРОНЯ:"		
 		"DOTA_Tooltip_ability_slardar_seaborn_sentinel_puddle_status_resistance"			"%СТАТУС НА УСТОЙЧИВОСТ:"		
@@ -5863,6 +5886,9 @@
 		"DOTA_Tooltip_modifier_jakiro_macropyre_ice_edge_slow_Description"	"Движението е забавено с %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 
 		"DOTA_Tooltip_ability_jakiro_double_trouble"				"Double Trouble"
+		"DOTA_Tooltip_ability_jakiro_double_trouble_attack_damage_reduction"				"%ПОНИЖАВАНЕ НА ЩЕТИ:"
+		 
+
 		//BATRIDER
 		"DOTA_Tooltip_ability_batrider_sticky_napalm"						"Sticky Napalm"
 		"DOTA_Tooltip_ability_batrider_sticky_napalm_Description"			"Накисва дадена площ с лепкаво гориво, увеличавайки щетите от атаките и уменията на Batrider. Също така забавя скоростта за движение и стойност за обръщане на враговете. Допълнителни изпълнявания на Sticky Napalm продължават да усилват щетите до %max_stacks% натрупвания. Прилага малко щети с всяко изпълняване."
@@ -6366,6 +6392,7 @@
 		"DOTA_Tooltip_ability_gyrocopter_flak_cannon_Note1"							"Пречупването преустановява Side Gunner."
 		"DOTA_Tooltip_ability_gyrocopter_flak_cannon_radius"						"РАДИУС:"
 		"DOTA_Tooltip_ability_gyrocopter_flak_cannon_max_attacks"					"МАКС. АТАКИ:"
+		"DOTA_Tooltip_ability_gyrocopter_flak_cannon_bonus_night_vision"			"БОНУС НОЩНА ВИДИМОСТ:"
 		"DOTA_Tooltip_ability_gyrocopter_flak_cannon_sidegunner_fire_rate"			"SIDE GUNNER — ЧЕСТОТА НА СТРЕЛБА:"
 		"DOTA_Tooltip_ability_gyrocopter_flak_cannon_sidegunner_radius"				"SIDE GUNNER — РАДИУС НА АТАКА:"
 
@@ -6740,6 +6767,9 @@
 		"DOTA_Tooltip_modifier_invoker_magic_amp_debuff"						"Exort"
 		"DOTA_Tooltip_modifier_invoker_magic_amp_debuff_Description"			"Поемане на увеличени щети от заклинания."
 		"DOTA_Tooltip_modifier_invoker_ice_wall_ally_buff"						"Ice Wall"
+		"DOTA_Tooltip_modifier_invoker_ice_wall_ally_buff_Description"			"Лечение през време."
+		
+
 		"DOTA_Tooltip_ability_special_bonus_unique_invoker_cataclysm"				"Cataclysm"
 		// AD version of invoker abilities
 		"DOTA_Tooltip_ability_invoker_cold_snap_ad"								"Cold Snap (AD)"
@@ -8553,6 +8583,7 @@
 		"DOTA_Tooltip_ability_wisp_overcharge_Facet_wisp_medigun"				 "Overcharge предоставя броня и магическа устойчивост на Io и всички съюзници под Tether."
 
 		"DOTA_Tooltip_ability_wisp_overcharge_bonus_armor"						"БОНУС БРОНЯ:"
+		"DOTA_Tooltip_ability_wisp_overcharge_bonus_attack_speed"				"БОНУС СКОРОСТ ЗА АТАКА:"
 		"DOTA_Tooltip_ability_wisp_overcharge_bonus_spell_amp"					"%УСИЛВАНЕ НА ЗАКЛИНАНИЯТА:"
 		"DOTA_Tooltip_ability_wisp_overcharge_hp_regen"							"%МАКС. РЕГЕН. НА ЗДРАВЕ:"
 		"DOTA_Tooltip_ability_wisp_overcharge_duration"							"ВРЕМЕТРАЕНЕ:"
@@ -8663,6 +8694,7 @@
 		"DOTA_Tooltip_modifier_slark_shadow_dance_passive_regen_Description"	"Придобиване на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% бонус скорост за движение и регенериране на %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% здраве в секунда."
 		"DOTA_Tooltip_modifier_slark_shadow_dance"							"Shadow Dance"
 		"DOTA_Tooltip_modifier_slark_shadow_dance_Description"				"Невидимост, докато сте в рамките на своя димен облак."
+		"DOTA_Tooltip_modifier_slark_armor_reduction_debuff"				"Dark Reef Renegade"
 		"DOTA_Tooltip_modifier_slark_armor_reduction_debuff_Description"	"Бронята е понижена с %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%."
 		
 		"DOTA_Tooltip_modifier_slark_essence_shift_permanent_buff"	"Перманентна ловкост"
@@ -8992,6 +9024,8 @@
 		"DOTA_Tooltip_ability_magnataur_skewer_tool_attack_slow"				"ЗАБАВЯНЕ НА СКОРОСТТА ЗА АТАКА:"
 		"DOTA_Tooltip_ability_magnataur_skewer_tree_hit_damage"					"ЩЕТИ (СБЛЪСЪК С ДЪРВО):"
 		"DOTA_Tooltip_ability_magnataur_skewer_cliff_hit_damage"				"ЩЕТИ (СБЛЪСЪК СЪС СКАЛА):"
+		"DOTA_Tooltip_ability_magnataur_skewer_damage_distance_pct"				"%ЩЕТИ КАТО РАЗСТОЯНИЕ:"
+
 		"DOTA_Tooltip_ability_magnataur_reverse_polarity"						"Reverse Polarity"		
 		"DOTA_Tooltip_ability_magnataur_reverse_polarity_description"			"Magnus променя свойствата на материята, извършвайки всички близки врагове пред себе си и ги зашеметява с нанасящ щети трясък."
 		"DOTA_Tooltip_ability_magnataur_reverse_polarity_Facet_magnataur_reverse_reverse_polarity"			"Reverse Polarity избутва надалеч враговете, навсякъде около Magnus, вместо да издърпва такива, които са пред него."
@@ -10360,6 +10394,7 @@
 		"DOTA_Tooltip_ability_winter_wyvern_cold_embrace_duration"						"ВРЕМЕТРАЕНЕ:"
 		"DOTA_Tooltip_ability_winter_wyvern_cold_embrace_heal_additive"					"БАЗОВО ЛЕЧЕНИЕ В СЕКУНДА:"
 		"DOTA_Tooltip_ability_winter_wyvern_cold_embrace_heal_percentage"				"%МАКС. ЛЕЧЕНИЕ НА ЗДРАВЕ В СЕКУНДА:"
+		"DOTA_Tooltip_ability_winter_wyvern_cold_embrace_damage_buff_duration"			"БЪФ ЗА ЩЕТИ (ВРЕМЕТРАЕНЕ):"
 		"DOTA_Tooltip_ability_winter_wyvern_winters_curse"								"Winter's Curse"
 		"DOTA_Tooltip_ability_winter_wyvern_winters_curse_Lore"							"Най-старото от заклинанията на книжовните дракони, това проклятие придава истина на старата поговорка „Понякога врагът на моя враг — си остава мой враг“."
 		"DOTA_Tooltip_ability_winter_wyvern_winters_curse_radius"						"CURSE — РАДИУС:"
@@ -13778,6 +13813,7 @@
 		"DOTA_Tooltip_Ability_item_quickening_charm"	"Quickening Charm"
 		"DOTA_Tooltip_Ability_item_philosophers_stone"	"Philosopher's Stone"
 		"DOTA_Tooltip_Ability_item_force_boots"			"Force Boots"
+		"DOTA_Tooltip_Ability_item_desolator_2:n"		"#|m|#Stygian Desolator"
 		"DOTA_Tooltip_Ability_item_phoenix_ash"			"Phoenix Ash"
 		"DOTA_Tooltip_Ability_item_seer_stone"			"Seer Stone"
 		"DOTA_Tooltip_Ability_item_greater_mango"		"Greater Mango"
@@ -13833,6 +13869,7 @@
 		"DOTA_Tooltip_Ability_item_faded_broach"		"Faded Broach"
 		"DOTA_Tooltip_Ability_item_paladin_sword"		"Paladin Sword"
 		"DOTA_Tooltip_Ability_item_minotaur_horn:n"		"#|m|#Minotaur Horn"
+		"DOTA_Tooltip_Ability_item_orb_of_destruction:n"	"#|m|#Orb of Destruction"
 		"DOTA_Tooltip_Ability_item_the_leveller"		"The Leveller"
 		"DOTA_Tooltip_Ability_item_titan_sliver"		"Titan Sliver"
 		"DOTA_Tooltip_Ability_item_chipped_vest"		"Chipped Vest"
@@ -13910,6 +13947,7 @@
 		"DOTA_Tooltip_ability_item_horizons_equilibrium"				"Horizon's Equilibrium"
 		"DOTA_Tooltip_ability_item_dandelion_amulet"					"Dandelion Amulet"
 		"DOTA_Tooltip_ability_item_safety_bubble"						"Safety Bubble"
+		"DOTA_Tooltip_ability_item_whisper_of_the_dread:n"				"#|m|#Whisper of the Dread"
 		"DOTA_Tooltip_ability_item_nemesis_curse:n"						"#|n|#Nemesis Curse"
 		"DOTA_Tooltip_ability_item_avianas_feather"						"Aviana's Feather"
 		"DOTA_Tooltip_ability_item_unwavering_condition"				"Unwavering Condition"
@@ -13970,11 +14008,14 @@
 
 		"DOTA_Tooltip_Ability_item_mana_draught:n"				"#|n|#Mana Draught"
 		"DOTA_Tooltip_Ability_item_rippers_lash:n"				"#|f|#Ripper's Lash"
+		"DOTA_Tooltip_Ability_item_crippling_crossbow:n"		"#|m|#Crippling Crossbow"
 		"DOTA_Tooltip_Ability_item_gale_guard:n"				"#|m|#Gale Guard"
+		"DOTA_Tooltip_Ability_item_gunpowder_gauntlets:n"		"#|f|#Gunpowder Gauntlet"
 		"DOTA_Tooltip_Ability_item_searing_signet:n"			"#|m|#Searing Signet"
 		"DOTA_Tooltip_Ability_item_serrated_shiv:n"				"#|n|#Serrated Shiv"
 		"DOTA_Tooltip_Ability_item_polliwog_charm:n"			"#|m|#Pollywog Charm"
 		"DOTA_Tooltip_ability_item_unrelenting_eye:n"			"#|n|#Unrelenting Eye"
+		"DOTA_Tooltip_ability_item_magnifying_monocle:n"		"#|m|#Magnifying Monocle"
 		"DOTA_Tooltip_ability_item_pyrrhic_cloak:n"				"#|n|#Pyrrhic Cloak"
 		
 
@@ -14669,8 +14710,8 @@
 		"DOTA_Tooltip_ability_big_thunder_lizard_wardrums_aura_radius"					"РАДИУС:"
 		
 		"DOTA_Tooltip_modifier_big_thunder_lizard_wardrums_aura"							"War Drums Aura"
-		"DOTA_Tooltip_modifier_big_thunder_lizard_wardrums_aura_Description"				"Скоростта за атака е увеличена с %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, а нанасяните щети с %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%%."	
 "DOTA_Tooltip_ability_frogmen_riverborn_aura_bonus_movement_speed"		"%БОНУС СКОРОСТ ЗА ДВИЖЕНИЕ:"
+		"DOTA_Tooltip_ability_frogmen_riverborn_aura_bonus_outgoing_damage"		"%ЩЕТИ (ИЗХОДЯЩИ):"
 		"DOTA_Tooltip_ability_frogmen_riverborn_aura_radius"		"РАДИУС:"
 		
 		"DOTA_Tooltip_modifier_frogmen_riverborn_aura_bonus"							"Riverborn Aura"
@@ -14679,6 +14720,7 @@
 		"DOTA_Tooltip_ability_frogmen_arm_of_the_deep_duration"						"ВРЕМЕТРАЕНЕ НА ЗАШЕМЕТЯВАНЕТО:"
 		"DOTA_Tooltip_ability_frogmen_arm_of_the_deep_range"							"ОБСЕГ:"
 
+		"DOTA_Tooltip_ability_frogmen_tendrils_of_the_deep"							"Tendrils of the Deep"
 		"DOTA_Tooltip_ability_frogmen_tendrils_of_the_deep_damage"					"ЩЕТИ:"
 		"DOTA_Tooltip_ability_frogmen_tendrils_of_the_deep_duration"						"ВРЕМЕТРАЕНЕ НА ЗАШЕМЕТЯВАНЕТО:"
 		"DOTA_Tooltip_ability_frogmen_tendrils_of_the_deep_range"							"ОБСЕГ:"
@@ -14706,6 +14748,7 @@
 		"DOTA_Tooltip_ability_item_abyssal_blade_Note2"									"Множество източници за блокиране на щети не се натрупват."
 		"DOTA_Tooltip_ability_item_abyssal_blade_Note3"									"Следните герои не могат да задействат Bash на този предмет: Spirit Breaker, Faceless Void, Slardar и Kez, докато е в Сай режим."
 		"DOTA_Tooltip_ability_item_abyssal_blade_bonus_damage"							"+$damage"
+		"DOTA_Tooltip_ability_item_abyssal_blade_slow_resistance"						"%+устойчивост срещу забавяне"
 		//"DOTA_Tooltip_ability_item_abyssal_blade_block_damage_melee"					"BLOCK DAMAGE MELEE:"
 		//"DOTA_Tooltip_ability_item_abyssal_blade_block_damage_ranged"					"BLOCK DAMAGE RANGED:"
 		//"DOTA_Tooltip_ability_item_abyssal_blade_block_chance"							"BLOCK CHANCE:"
@@ -16672,7 +16715,6 @@
 		"DOTA_Tooltip_ability_item_nullifier_slow_pct"				"%ЗАБАВЯНЕ НА ДВИЖЕНИЕТО:"
 		//"DOTA_Tooltip_ability_item_nullifier_bonus_mana_regen"					"+$mana_regen"
 		"DOTA_Tooltip_ability_item_nullifier_Note0"							"Може да бъде изпълнявано върху неуязвими единици."
-		"DOTA_Tooltip_ability_item_nullifier_Note1"							"Прониква през магически имунитет."
 
 		"DOTA_Tooltip_modifier_item_nullifier_mute" 						"Nullifier"
 		"DOTA_Tooltip_modifier_item_nullifier_mute_Description" 			"Целта бива постоянно разсейвана. Забавяне с %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
@@ -16767,6 +16809,8 @@
 		"DOTA_Tooltip_modifier_elixer_healing_Description"						"Възстановяване на здраве и мана"
 		
 		"DOTA_Tooltip_ability_item_vampire_fangs_attack_lifesteal"				"%+$lifesteal"		
+		"DOTA_Tooltip_ability_item_vampire_fangs_spell_lifesteal"				"%+$spell_lifesteal"		
+		
 		"DOTA_Tooltip_ability_item_craggy_coat_Description"		"<h1>Активно: Toughen Up</h1> Предоставя Ви екстра %active_armor% бонус броня за сметка на -%move_speed% скорост за движение. Трае %active_duration% секунди."		
 
 		"DOTA_Tooltip_ability_item_greater_faerie_fire_Description"                     "<h1>Употреба: Imbue</h1> Незабавно възстановява %hp_restore% здраве."
@@ -16919,9 +16963,7 @@
 		"DOTA_Tooltip_modifier_havoc_hammer_slow"				"Havoc"
 		"DOTA_Tooltip_modifier_havoc_hammer_slow_Description"	"Забавяне с %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 		
-		"DOTA_Tooltip_Ability_item_panic_button_Description"		"<h1>Пасивно: Rejuvenate</h1> Когато здравето на носителя падне под %health_threshold%%%, той ще получи силно разсейване и ще бъде излекуван за %heal% здраве."
-
-        "DOTA_Tooltip_Ability_item_apex_Lore"		"Три кълба със забележителна мощ, обвързани в рамките на един скиптър."
+		"DOTA_Tooltip_Ability_item_apex_Lore"		"Три кълба със забележителна мощ, обвързани в рамките на един скиптър."
         "DOTA_Tooltip_Ability_item_apex_primary_stat"		"+$primary_attribute"
         "DOTA_Tooltip_Ability_item_apex_Note0"				"Предоставя +%primary_stat_universal% към всеки атрибут за универсални герои."
 		
@@ -17189,6 +17231,8 @@
 
 		"DOTA_Tooltip_ability_item_gossamer_cape_Description"					"<h1>Пасивно: Sixth Sense</h1> Автоматично отбягване на атака от вражески герой."
 
+		"DOTA_Tooltip_ability_item_enhancement_vast_attack_range"    	              	"+$attack_range_all"
+
 		"DOTA_Tooltip_ability_item_enhancement_quickened_movement_speed"					"+$move_speed"
 		"DOTA_Tooltip_ability_item_enhancement_quickened_max_mana"						"+$mana"
 
@@ -17221,18 +17265,28 @@
 
 		"DOTA_Tooltip_Ability_item_enhancement_feverish_cooldown_reduction"		"%+$cooldown_reduction"
 		"DOTA_Tooltip_Ability_item_enhancement_fleetfooted_movespeed"			"+$move_speed"
+		"DOTA_Tooltip_ability_item_enhancement_crude_slow_resistance"			"%+$slow_resistance"
 		"DOTA_Tooltip_ability_item_enhancement_greedy_bonus_gpm"                "+ЗВМ БОНУС"
 		"DOTA_Tooltip_ability_item_enhancement_greedy_bonus_mana"       		"+$mana"	 
 		"DOTA_Tooltip_ability_item_enhancement_greedy_bonus_damage"       		"-<font color='#e03e2e'>щети на атака</font>"
 
 		"DOTA_Tooltip_ability_item_enhancement_vampiric_attack_lifesteal"		"%+$lifesteal"
+		"DOTA_Tooltip_ability_item_enhancement_vampiric_spell_lifesteal"		"%+$spell_lifesteal"
+
 		"DOTA_Tooltip_Ability_item_enhancement_keen_eyed_cast_range_bonus"		"+$cast_range"
 		"DOTA_Tooltip_Ability_item_enhancement_keen_eyed_bonus_mana_regen"		"+$mana_regen"
+		"DOTA_Tooltip_Ability_item_enhancement_evolved_primary_stat"			"+$primary_attribute"
+        "DOTA_Tooltip_Ability_item_enhancement_titanic_base_attack_damage"		"%+базови щети на атака"
 		"DOTA_Tooltip_Ability_item_enhancement_titanic_status_resistance"		"%+$status_resist"
 
 		"DOTA_Tooltip_ability_item_enhancement_timeless_debuff_amp"				"%+$debuff_amp"
+		"DOTA_Tooltip_ability_item_enhancement_timeless_spell_amp"				"%+усилване на заклинанията"	
+
 		"DOTA_Tooltip_modifier_item_unrelenting_eye"							"Unrelenting Eye"
+		"DOTA_Tooltip_ability_item_enhancement_boundless_bonus_attack_range"	"+$attack_range_all"
 		"DOTA_Tooltip_ability_item_enhancement_boundless_bonus_cast_range"		"+$cast_range"
+
+		"DOTA_tooltip_ability_item_enhancement_wise_bonus_xpm"					"+опит в минута"
 
 		"DOTA_Tooltip_ability_item_rippers_lash_bonus_damage_hero"				"БОНУС ЩЕТИ (ГЕРОИ):"
 		"DOTA_Tooltip_ability_item_rippers_lash_bonus_damage_creep"				"БОНУС ЩЕТИ (КРИЙПОВЕ):"
