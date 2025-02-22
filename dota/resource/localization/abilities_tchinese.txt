@@ -25,6 +25,14 @@
 		"dota_ability_variable_evasion"				"迴避"					// $evasion
 		"dota_ability_variable_spell_resist"		"魔法抗性"			// $spell_resist
 		"dota_ability_variable_spell_lifesteal"		"技能生命吸取"			// $spell_lifesteal
+		"dota_ability_variable_spell_lifesteal_hero_attacks" "對英雄攻擊"
+		"dota_ability_variable_spell_lifesteal_hero_spells" "對英雄施放技能"
+		"dota_ability_variable_spell_lifesteal_creep_attacks" "對蔓生單位攻擊"
+		"dota_ability_variable_spell_lifesteal_creep_spells" "對蔓生單位施放技能"
+		"dota_ability_variable_lifesteal_hero_attacks" "對英雄攻擊"
+		"dota_ability_variable_lifesteal_hero_spells" "對英雄施放技能"
+		"dota_ability_variable_lifesteal_creep_attacks" "對蔓生單位攻擊"
+		"dota_ability_variable_lifesteal_creep_spells" "對蔓生單位施放技能"
 		"dota_ability_variable_selected_attrib"		"選擇屬性"		// $selected_attribute
 		"dota_ability_variable_attack_range"		"攻擊距離<font color='#7d7d7d'>（僅限遠程普攻）</font>"	// $attack_range
 		"dota_ability_variable_attack_range_melee"	"攻擊距離<font color='#7d7d7d'>（僅限近戰普攻）</font>"	// $attack_range_melee
@@ -36,7 +44,10 @@
 		"dota_ability_variable_max_mana_percentage"	"最大魔力加成"			// $max_mana_percentage
 		"dota_ability_variable_slow_resistance"		"緩速抗性"			// $slow_resistance
 		"dota_ability_variable_aoe_bonus"			"額外範圍"					// $aoe_bonus
-"dota_ability_variable_damage_int_hero"	"傷害（智力屬性英雄）"
+		"dota_ability_variable_exclusive_movespeed"	"靴子移動速度"		// $exclusive_movespeed
+		"dota_ability_variable_healing_amp"			"輸出治療增強" // $healing_amp
+
+		"dota_ability_variable_damage_int_hero"	"傷害（智力屬性英雄）"
 		"dota_ability_variable_damage_agi_hero"	"傷害（敏捷屬性英雄）"
 		"dota_ability_variable_damage_str_hero"	"傷害（力量屬性英雄）"
 		"dota_ability_variable_damage_universal_hero"	"傷害（全方位英雄）"
@@ -351,6 +362,7 @@
 		"npc_dota_courier"								"信使"
 		"npc_dota_scout"								"偵察兵"
 		"npc_dota_miniboss"								"折磨者"
+		"npc_dota_lotus_pool"							"蓮花池"
 		"npc_dota_unit_twin_gate"						"雙子門"
 		"npc_dota_clinkz_skeleton_archer"				"骷髏弓箭手"
 		"npc_dota_flying_courier"						"飛行信使"
@@ -533,6 +545,14 @@
 		"npc_dota_neutral_forest_troll_high_priest"		"丘陵巨魔祭司"
 		"npc_dota_neutral_harpy_scout"					"鷹身女妖偵查者"
 		"npc_dota_neutral_harpy_storm"					"鷹身女妖風暴巫師"
+		"npc_dota_neutral_tadpole"						"小蝌蚪"
+		"npc_dota_neutral_froglet"						"幼蛙"
+		"npc_dota_neutral_grown_frog"					"長鬚蛙"
+		"npc_dota_neutral_ancient_frog"					"遠古長鬚蛙"
+		"npc_dota_neutral_froglet_mage"					"沼蛙法師學徒"
+		"npc_dota_neutral_grown_frog_mage"				"沼蛙法師"
+		"npc_dota_neutral_ancient_frog_mage"			"遠古沼蛙法師"
+
 		// Towns
 		"dota_fountain"					"泉源"
 		"npc_dota_goodguys_tower1_top"	"防禦塔"
@@ -893,6 +913,8 @@
 		"DOTA_Tooltip_ability_queenofpain_bondage_Description"				"當 %radius% 範圍內有敵人對痛苦女王造成技能傷害，她會送回造成傷害的 %spell_reflect_pct%%%。"
 
 		"DOTA_Tooltip_facet_queenofpain_facet_bondage"						"傷痛綑綁"
+		"DOTA_Tooltip_facet_queenofpain_facet_bondage_Description"			"痛苦女王將技能傷害反射給敵人。"
+
 		"DOTA_Tooltip_facet_queenofpain_lifesteal"							"魅魔刻面"
 
 		//LINA
@@ -928,6 +950,7 @@
 		"DOTA_Tooltip_ability_lina_laguna_blade"										"神滅斬"
 		"DOTA_Tooltip_ability_lina_laguna_blade_Description"							"發出閃電雷擊一個敵方單位，造成大量傷害。"
 		"DOTA_Tooltip_ability_lina_laguna_blade_Facet_lina_supercharge"					"施放神滅斬會暫時使莉娜獲得技能強化，提供熾魂層數。"
+		"DOTA_Tooltip_ability_lina_laguna_blade_shard_description"						"造成傷害的 %barrier_pct%%% 轉化為莉娜身上的全傷害護盾。護盾持續 %barrier_duration% 秒。"
 		"DOTA_Tooltip_ability_lina_laguna_blade_Lore"									"莉娜周圍的空氣變得極度灼熱，產生白熱的閃電灼燒距離不遠的敵人。"
 		"DOTA_Tooltip_ability_lina_laguna_blade_Note0"									"施放神滅斬後，在距離擊中目標前有 %damage_delay% 秒的延遲，這使得部份技能可以迴避它的傷害。"
 		"DOTA_Tooltip_ability_lina_laguna_blade_damage"									"傷害："
@@ -5253,6 +5276,8 @@
 
 		"DOTA_Tooltip_ability_enchantress_enchant"										"魅惑"
 		"DOTA_Tooltip_ability_enchantress_enchant_Description"							"魅惑魔女魅惑一名敵人。若為英雄單位，對方將被驅散並受到 %slow_duration% 秒的緩速。\n\n若對方是蔓生單位，則受魅惑魔女所控制，獲得 %xp_gain_pct%%% 的擊殺經驗值。魅惑魔女最多只能控制蔓生單位 %dominate_duration% 秒。\n\n驅散類型：基本"
+		"DOTA_Tooltip_ability_enchantress_enchant_Facet_enchantress_spellbound"			"魅惑的施放距離提升。若敵人為英雄，魅惑魔女及受魅惑單位對目標的攻擊距離提升。"
+
 		"DOTA_Tooltip_ability_enchantress_enchant_scepter_description"					"魅惑魔女可以一次控制多個蔓生單位。"
 		"DOTA_Tooltip_ability_enchantress_enchant_Lore"									"作為森林真正的管理員，無論是卑賤的巨魔還是強大的半人馬，愛由莎都會和他們成為朋友。"
 		"DOTA_Tooltip_ability_enchantress_enchant_Note0"								"幻象可被轉換。"
@@ -5464,6 +5489,8 @@
 		"DOTA_Tooltip_ability_huskar_berserkers_blood_maximum_health_regen"				"%最大力量恢復："
 		"DOTA_Tooltip_ability_huskar_berserkers_blood_maximum_magic_resist"				"%最大魔法抗性："
 		"DOTA_Tooltip_ability_huskar_berserkers_blood_hp_threshold_max" 				"%最大效力血量門檻："
+		"DOTA_Tooltip_ability_huskar_berserkers_blood_activation_cooldown"				"冷卻："
+		"DOTA_Tooltip_ability_huskar_berserkers_blood_activation_healthcost_pct"	 	"%目前生命消耗："
 		"DOTA_Tooltip_ability_huskar_life_break"										"犧牲"
 		"DOTA_Tooltip_ability_huskar_life_break_Description"							"哈斯卡利用自己的生命值去摧毀敵人，躍向目標並造成對方目前生命一定百分比的傷害，以及減緩其移動和攻擊速度。哈斯卡在跳躍過程中具有減幅免疫狀態和提升 60% 魔法抗性。\n\n驅散類型：基本"
 		"DOTA_Tooltip_ability_huskar_life_break_Facet_huskar_bloodbath"					"犧牲亦會對目標附近的敵人造成緩速。"
@@ -5512,6 +5539,8 @@
 		//NIGHT STALKER
 		"DOTA_Tooltip_ability_night_stalker_void"										"虛空"
 		"DOTA_Tooltip_ability_night_stalker_void_Facet_night_stalker_blinding_void"		"受虛空影響的敵人不能看到隊友的視野。若受影響的敵人不在隊友視野中，會每秒受到傷害。"
+		"DOTA_Tooltip_ability_night_stalker_void_Facet_night_stalker_voidbringer"		"提升虛空最大等級。夜間的 %max_level% 級虛空改為對地面施放且施加 %cast_radius_tooltip% 範圍效果。"
+
 		"DOTA_Tooltip_ability_night_stalker_void_invisible_damage_pers"					"隱形狀態下每秒傷害："
 		"DOTA_Tooltip_ability_night_stalker_void_Lore"									"巴拉那製造一個無垠之夜的漩渦，將敵人猛烈地拉扯進永恆的黑暗。"
 		"DOTA_Tooltip_ability_night_stalker_void_Note0"									"虛空不會在白天造成短暫暈眩效果。"
@@ -5547,6 +5576,8 @@
 		"DOTA_Tooltip_ability_night_stalker_darkness_bonus_damage"						"額外傷害："
 		
 		"DOTA_Tooltip_modifier_night_stalker_void"							"虛空"
+		"DOTA_Tooltip_modifier_night_stalker_void_Description"				"移動速度降低 %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%，攻擊速度降低 %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%。"
+		"DOTA_Tooltip_modifier_night_stalker_crippling_fear"				"傷殘恐懼"
 		"DOTA_Tooltip_modifier_night_stalker_crippling_fear_Description"	"受到沉默及持續傷害。"
 		"DOTA_Tooltip_modifier_night_stalker_crippling_fear_aura"				"傷殘恐懼"
 		"DOTA_Tooltip_modifier_night_stalker_crippling_fear_aura_Description"	"對附近敵人造成沉默和傷害。"
@@ -5562,6 +5593,12 @@
 		"DOTA_Tooltip_Facet_night_stalker_blinding_void"							"失明虛空"		
 		"DOTA_Tooltip_Facet_night_stalker_blinding_void_Description"				"受虛空影響的敵人不能看到隊友的視野。若受影響的敵人不在隊友視野中，會每秒受到傷害。"
 		
+		"DOTA_Tooltip_Facet_night_stalker_voidbringer"								"虛空降臨"		
+		"DOTA_Tooltip_Facet_night_stalker_voidbringer_Description"					"提升虛空最大等級。夜間的 {s:bonus_max_level_tooltip} 級虛空改為對地面施放且施加範圍效果。"
+		
+		
+
+
 		"DOTA_Tooltip_Ability_night_stalker_night_reign"				"暗夜主宰"
 		"DOTA_Tooltip_Ability_night_stalker_night_reign_daytime_change"	"日間時間縮短："
 		"DOTA_Tooltip_Ability_night_stalker_night_reign_tooltip_nighttime_change" "夜間時間延長："
@@ -5626,6 +5663,7 @@
 		"DOTA_Tooltip_ability_broodmother_incapacitating_bite_bonus_movespeed"			"%移動速度降低："
 		"DOTA_Tooltip_ability_broodmother_incapacitating_bite_duration"			"持續時間："		
 		"DOTA_Tooltip_ability_broodmother_insatiable_hunger"							"極度饑渴"
+		"DOTA_Tooltip_ability_broodmother_insatiable_hunger_Description"				"對活物體液的強烈飢渴提升了育母蜘蛛的攻擊傷害，並使她的攻擊附帶吸血效果。"
 		"DOTA_Tooltip_ability_broodmother_insatiable_hunger_Facet_broodmother_feeding_frenzy"				"極度饑渴亦施加於附近的小蜘蛛。"
 		"DOTA_Tooltip_ability_broodmother_insatiable_hunger_aura_radius"				"小蜘蛛範圍："		
 
@@ -5675,6 +5713,7 @@
 		"DOTA_Tooltip_modifier_broodmother_spawn_spiderite_debuff"				"孵化小蜘蛛"
 		"DOTA_Tooltip_modifier_broodmother_spawn_spiderite_debuff_Description"	"若被擊殺，將會孵化一隻小蜘蛛。"
 		"DOTA_Tooltip_modifier_broodmother_poison_sting_debuff"					"毒刺"
+		"DOTA_Tooltip_modifier_broodmother_poison_sting_debuff_Description"		"移速減緩 %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%。"
 		"DOTA_Tooltip_modifier_broodmother_sticky_snare_root"						"織網陷阱"
 		"DOTA_Tooltip_modifier_broodmother_sticky_snare_root_Description"			"因蜘蛛絆繩而被纏繞。"
 
@@ -5888,6 +5927,7 @@
 		"DOTA_Tooltip_facet_jakiro_fire_Description"				"傑奇洛可使自己在一定範圍內的攻擊帶有攻速減緩和持續傷害。"
 		"DOTA_Tooltip_facet_jakiro_ice_Description"					"傑奇洛可使自己的攻擊帶有移速減緩效果，以及會增強他其它技能造成傷害的減幅。"
 
+		"DOTA_Tooltip_facet_jakiro_ice_breaker"						"破冰者"
 		"DOTA_Tooltip_ability_jakiro_double_trouble"				"齊頭並進"
 		//BATRIDER
 		"DOTA_Tooltip_ability_batrider_sticky_napalm"						"黏性燃油"
@@ -6051,6 +6091,8 @@
 		"DOTA_Tooltip_modifier_chen_divine_favor_Description"	"獲得 %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% 生命恢復。"
 		"DOTA_Tooltip_modifier_chen_divine_favor_armor_buff"			"神賜恩典護甲"
 		"DOTA_Tooltip_modifier_chen_divine_favor_armor_buff_Description"			"護甲提升 %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% 點，獲得治療量提升 %dMODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE_TARGET%%%"
+		"DOTA_Tooltip_modifier_chen_divine_favor_teleport"				"神賜恩典"
+		"DOTA_Tooltip_modifier_chen_divine_favor_teleport_Description"	"傳送中。"
 		"DOTA_Tooltip_Facet_chen_centaur_convert"				"半人馬招降"
 		"DOTA_Tooltip_Facet_chen_wolf_convert"					"獸狼招降"
 		"DOTA_Tooltip_Facet_chen_hellbear_convert"				"地獄熊招降"
@@ -6554,6 +6596,7 @@
 		"DOTA_Tooltip_ability_alchemist_unstable_concoction_radius"					"爆炸範圍："
 		"DOTA_Tooltip_ability_alchemist_goblins_greed"								"貪魔之慾"		
 		"DOTA_Tooltip_ability_alchemist_goblins_greed_Description"					"煉金術士將從敵人和財智神符中萃取金幣，每次殺敵時獲得更多的基礎金錢和額外金錢。若煉金術士在擊殺一個單位後的 %duration% 秒內再度擊殺一個敵人並獲得金錢，則額外金錢的獲得量還將再度增加。此外還將使煉金術士從獎賞神符那獲得更多金錢。"
+		"DOTA_Tooltip_ability_alchemist_goblins_greed_scepter_description"		    "煉金術士可以熔解阿哈利姆神杖，對一名隊友施加它的所有神力，並藉每一次送贈神力使自己獲得傷害加成和技能增強。"
 		"DOTA_Tooltip_ability_alchemist_goblins_greed_abilitydraft_note"			"「化學狂暴」的阿哈利姆神杖升級在技能徵召模式中將改為「貪魔之慾」所有。化學狂暴的阿哈利姆神杖升級為：對一名友方英雄使用阿哈利姆神杖來賦予對方所有阿哈利姆神杖加成，同時使自己隨著每給予一位隊友（自己也算）神杖升級而獲得攻擊傷害加成和技能增強。"
 		"DOTA_Tooltip_ability_alchemist_goblins_greed_Lore"							"儘管不是一座山，不過拉澤爾還是掌握將一些較小的化合物轉化成金錢來填滿他荷包的技術。"
 		"DOTA_Tooltip_ability_alchemist_goblins_greed_duration"						"連殺時限："
@@ -6561,6 +6604,8 @@
 		"DOTA_Tooltip_ability_alchemist_goblins_greed_bonus_bonus_gold"				"額外金錢獎勵："		
 		"DOTA_Tooltip_ability_alchemist_goblins_greed_bonus_gold_cap"				"最大額外擊殺金錢："
 		"DOTA_Tooltip_ability_alchemist_goblins_greed_bounty_multiplier"			"獎賞神符加乘倍數："
+		"DOTA_Tooltip_ability_alchemist_goblins_greed_scepter_bonus_damage"			"每次贈神杖的傷害加成："
+		"DOTA_Tooltip_ability_alchemist_goblins_greed_scepter_spell_amp"			"%每次贈神杖的技能增強："
 		"DOTA_Tooltip_ability_alchemist_chemical_rage"								"化學狂暴"
 		"DOTA_Tooltip_ability_alchemist_chemical_rage_Description"					"煉金術士誘發他的食人魔同伴進入化學狂暴狀態，降低基礎攻擊間隔，提升移動速度並使恢復速度激增。\n\n驅散類型：基本"
 		"DOTA_Tooltip_ability_alchemist_chemical_rage_abilitydraft_note"			"同時賦予貪魔之慾技能。"
@@ -6579,6 +6624,8 @@
 		"DOTA_Tooltip_ability_alchemist_corrosive_weaponry_attack_damage_per_stack"	"%每層基礎攻擊傷害降低："
 
 		"DOTA_Tooltip_modifier_alchemist_corrosive_weaponry_debuff"							"腐蝕性武器"
+		"DOTA_Tooltip_modifier_alchemist_corrosive_weaponry_debuff_description"				"移動速度降低 %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%，基礎攻擊傷害降低 %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%%"
+
 		"DOTA_Tooltip_ability_alchemist_berserk_potion"								"狂戰藥劑"
 		"DOTA_Tooltip_ability_alchemist_berserk_potion_Description"					"向一名隊友投擲狂戰藥劑，對其施加基本的驅散效果，並提升對方移動速度、攻擊速度和生命恢復。<br><br>驅散類型：基本"
 		"DOTA_Tooltip_ability_alchemist_berserk_potion_Facet_alchemist_mixologist"	"當煉金術士處於化學狂暴狀態時，冷卻會降低 %chemical_rage_cooldown_reduction_pct%%%。"
@@ -6613,6 +6660,7 @@
 		"DOTA_Tooltip_ability_invoker_quas"											"冰"
 		"DOTA_Tooltip_ability_invoker_quas_Lore"									"　"
 		"DOTA_Tooltip_ability_invoker_quas_Note0"									"召喚師最多只有 3 個元素球。"
+		"DOTA_Tooltip_ability_invoker_quas_Note1"									"不會中斷隱形狀態，可在持續施法時施放。"
 		"DOTA_Tooltip_ability_invoker_quas_strength_bonus"							"每級力量加成："
 		"DOTA_Tooltip_ability_invoker_wex"											"雷"
 		"DOTA_Tooltip_ability_invoker_wex_Lore"										"　"
@@ -6624,7 +6672,9 @@
 		"DOTA_Tooltip_ability_invoker_exort"										"火"
 		"DOTA_Tooltip_ability_invoker_exort_Lore"									"　"
 		"DOTA_Tooltip_ability_invoker_exort_Note0"									"召喚師最多一次只能掌握 3 個元素球。"
+		"DOTA_Tooltip_ability_invoker_exort_Note1"									"不會中斷隱形狀態，可在持續施法時施放。"
 		"DOTA_Tooltip_ability_invoker_exort_intelligence_bonus"						"每級智力加成："
+		"DOTA_Tooltip_Facet_invoker_exort_focus"				"加拉隆施事"
 		"DOTA_Tooltip_Facet_invoker_elitist"								"菁英主義"		
 		"DOTA_Tooltip_Facet_invoker_elitist_Description"					"目前掌握的元素球會提供<font color='#7998b5'>生命吸取</font>、<font color='#d671a9'>移速</font>或<font color='#cabe68'>技能增強</font>。"
 		"DOTA_Tooltip_Facet_invoker_agnostic"								"不可知論"		
@@ -6655,11 +6705,12 @@
 		"DOTA_Tooltip_ability_invoker_ghost_walk_Note0"								"減速效果不會影響到具有技能免疫狀態的單位。"
 		"DOTA_Tooltip_ability_invoker_ghost_walk_self_slow"							"%自身速度（<font color='#d671a9'>雷</font>）：\n"
 		"DOTA_Tooltip_ability_invoker_ghost_walk_duration"							"持續時間："
+		"DOTA_Tooltip_ability_invoker_ghost_walk_area_of_effect"					"緩速範圍："
 		"DOTA_Tooltip_ability_invoker_ghost_walk_health_regen"						"生命恢復（<font color='#7998b5'>冰</font>）："
 		"DOTA_Tooltip_ability_invoker_ghost_walk_mana_regen"						"魔力恢復（<font color='#d671a9'>雷</font>）：\n"
 		"DOTA_Tooltip_ability_invoker_ghost_walk_enemy_slow"						"%敵人減速（<font color='#7998b5'>冰</font>）：\n"
 		"DOTA_Tooltip_ability_invoker_tornado"										"龍捲風"
-		"DOTA_Tooltip_ability_invoker_tornado_Description"							"釋放出一道快速移動的龍捲風，將路徑上的敵方單位捲起，使其在空中無助的漂浮一段時間，然後落地摔死。最大距離取決於<font color='#d671a9'>雷元素</font>等級。吹起時間取決於<font color='#7998b5'>冰元素</font>等級。落地時將造成基礎傷害加上取決於<font color='#d671a9'>雷元素</font>等級的額外傷害。\n\n驅散類型：基本"
+		"DOTA_Tooltip_ability_invoker_tornado_Description"							"釋放出一道快速移動的龍捲風，將路徑上的敵方單位捲起，使其在空中無助的漂浮一段時間，然後落地受死。最大距離取決於<font color='#d671a9'>雷元素</font>等級。吹起時間取決於<font color='#7998b5'>冰元素</font>等級。落地時將造成基礎傷害加上取決於<font color='#d671a9'>雷元素</font>等級的額外傷害。\n\n驅散類型：基本"
 		"DOTA_Tooltip_ability_invoker_tornado_Lore"									"托納魯斯的暴風利爪。"
 		"DOTA_Tooltip_ability_invoker_tornado_Note0"								"被龍捲風捲起的單位處於無敵狀態，傷害在墜地時生效。"
 		"DOTA_Tooltip_ability_invoker_tornado_travel_distance"						"移動距離（<font color='#d671a9'>雷</font>）：\n"
@@ -6669,7 +6720,9 @@
 		"DOTA_Tooltip_ability_invoker_tornado_wex_damage"							"<font color='#d671a9'>雷元素</font>加成的傷害："
 		"DOTA_Tooltip_ability_invoker_emp"											"電磁脈衝"
 		"DOTA_Tooltip_ability_invoker_emp_Description"								"召喚師在指定位置召喚出一道強力的電磁脈衝。電磁脈衝將於 %delay% 秒後自動爆炸，根據<font color='#d671a9'>雷元素</font>的等級對爆炸範圍內的敵人造成燃魔效果，以及相當於燃魔量的傷害。而若燃燒了敵方英雄的魔力，則燃魔量的 %self_mana_restore_pct%%% 將轉移給召喚師。"
-"DOTA_Tooltip_ability_invoker_emp_Lore"										"恩多利昂的邪惡擾動。"
+		//"DOTA_Tooltip_ability_invoker_emp_Facet_invoker_wex_focus"					"E.M.P. deals its damage again to all barriers."
+		"DOTA_Tooltip_ability_invoker_emp_shard_Facet_invoker_wex_focus"			"提升電磁脈衝造成的燃魔傷害，並將敵人以每秒 %drag_speed% 單位的速度牽引至電磁脈衝的中心。"
+		"DOTA_Tooltip_ability_invoker_emp_Lore"										"恩多利昂的邪惡擾動。"
 		"DOTA_Tooltip_ability_invoker_emp_Note0"									"無法影響被颶風捲起的單位（包括龍捲風及 Eul 的神聖法杖）。"
 		"DOTA_Tooltip_ability_invoker_emp_delay"									"爆炸延遲："
 		"DOTA_Tooltip_ability_invoker_emp_area_of_effect"							"範圍："
@@ -6694,6 +6747,8 @@
 		"DOTA_Tooltip_ability_invoker_chaos_meteor_damage_interval"					"碾壓傷害間隔："
 		"DOTA_Tooltip_ability_invoker_chaos_meteor_burn_duration"					"燃燒持續時間："
 		"DOTA_Tooltip_ability_invoker_chaos_meteor_burn_dps"						"每秒燃燒傷害（<font color='#cabe68'>火</font>）：\n"
+		"DOTA_Tooltip_ability_invoker_chaos_meteor_stun_duration"					"暈眩時間："
+
 		"DOTA_Tooltip_ability_invoker_sun_strike"									"陽炎衝擊"
 		"DOTA_Tooltip_ability_invoker_sun_strike_Description"						"向目標區域釋放毀滅性的陽炎之光能量，能量在著陸後將對區域內的敵人進行灼燒，傷害取決於<font color='#cabe68'>火元素</font>的等級，且會平均分攤給區域內的所有敵人。"
 		"DOTA_Tooltip_ability_invoker_sun_strike_Lore"								"哈雷克的火葬魔咒。"
@@ -6761,6 +6816,11 @@
 		"DOTA_Tooltip_modifier_invoker_emp_pull_Description"					"被牽引至電磁脈衝的中心。"
 		"DOTA_Tooltip_modifier_invoker_magic_amp_debuff"						"火"
 		"DOTA_Tooltip_modifier_invoker_magic_amp_debuff_Description"			"承受更高的技能傷害。"
+		"DOTA_Tooltip_modifier_invoker_ice_wall_ally_buff"						"寒冰之牆"
+		"DOTA_Tooltip_modifier_invoker_ice_wall_ally_buff_Description"			"持續治療。"
+		
+
+		"DOTA_Tooltip_ability_special_bonus_unique_invoker_cataclysm"				"天火之災"
 		// AD version of invoker abilities
 		"DOTA_Tooltip_ability_invoker_cold_snap_ad"								"急速冷卻（技徵）"
 		"DOTA_Tooltip_ability_invoker_cold_snap_ad_Description"					"召喚師把敵人的熱量抽空至椎心刺骨的地步，使其承受急速冷卻狀態一段時間。此狀態將隨著對方後續受到更多傷害而造成形同暈眩的凍結效果和凍結傷害；會在狀態施加當下先凍結一次。之後凍結雖可反覆觸發，但有具有觸發次數上限，不過觸發間隔下限將隨著技能等級提升而縮短。"
@@ -6854,11 +6914,15 @@
 		//Silencer
 		"DOTA_Tooltip_ability_silencer_curse_of_the_silent"							"奧術詛咒"
 		"DOTA_Tooltip_ability_silencer_curse_of_the_silent_Lore"					"無法使用咒語對諾崇來說毫無影響，但對於他的敵人來說可是個嚴重的問題。"				
+		"DOTA_Tooltip_ability_silencer_curse_of_the_silent_Description"				"詛咒目標區域，對敵人造成傷害，並使敵方英雄受到持續傷害和移動速度減緩。沈默的敵人會受到 %penalty_multiplier%x 緩速和傷害，詛咒的持續時間將隨著對方施放技能而延長。只要目標仍處於沈默，詛咒的持續時間會暫停。"
 		"DOTA_Tooltip_ability_silencer_curse_of_the_silent_Note0"				    "可影響蔓生單位。"
 		"DOTA_Tooltip_ability_silencer_curse_of_the_silent_damage"			        "每秒傷害："
 		"DOTA_Tooltip_ability_silencer_curse_of_the_silent_duration"				"基礎持續時間："
+		"DOTA_Tooltip_ability_silencer_curse_of_the_silent_penalty_duration"		"施法導致詛咒延長："
 		"DOTA_Tooltip_ability_silencer_curse_of_the_silent_radius"					"範圍："
 		"DOTA_Tooltip_ability_silencer_curse_of_the_silent_movespeed"				"%移動速度降低："
+		"DOTA_Tooltip_ability_silencer_curse_of_the_silent_application_damage"		"初始傷害："
+
 		"DOTA_Tooltip_Facet_silencer_irrepressible"					"無法壓制"
 		"DOTA_Tooltip_Facet_silencer_irrepressible_Description"		"沉默術士不會被沉默。"
 		"DOTA_Tooltip_Facet_silencer_reverberating_silence"						"靜默迴盪"		
@@ -6875,6 +6939,13 @@
 		"DOTA_Tooltip_ability_silencer_glaives_of_wisdom_int_steal_duration"		"智力竊取持續時間："
 		"DOTA_Tooltip_ability_silencer_last_word"									"遺言"
 		"DOTA_Tooltip_ability_silencer_last_word_Lore"								"諾崇的敵人口中念出的咒語往往是他們最後的遺言。"
+		"DOTA_Tooltip_ability_silencer_last_word_Description"						"向目標施加詛咒，若目標在詛咒期間施放技能或詛咒結束，他將會受到傷害並被沉默。遺言傷害具有取決於施效者和受效者之間智力屬性差異的浮動值。"
+		"DOTA_Tooltip_ability_silencer_last_word_Note0"								"持續施法者將隨即於持續施法結束時觸發此技能。"
+		"DOTA_Tooltip_ability_silencer_last_word_damage"							"基礎傷害："
+		"DOTA_Tooltip_ability_silencer_last_word_int_multiplier"					"智力差傷害倍數："
+		"DOTA_Tooltip_ability_silencer_last_word_debuff_duration"					"詛咒持續時間："
+		"DOTA_Tooltip_ability_silencer_last_word_duration"							"沉默持續時間："
+		"DOTA_Tooltip_modifier_silencer_last_word_stack"							"遺言"
 		"DOTA_Tooltip_ability_silencer_global_silence"								"世界緘默"
 		"DOTA_Tooltip_ability_silencer_global_silence_Lore"							"伴隨著一波掠過大地的衝擊，諾崇沉默了一切魔法和聲音，實現了他的預言。"
 		"DOTA_Tooltip_ability_silencer_global_silence_Description"					"沉默術士消滅一切聲音，阻止地圖上所有敵方英雄和單位進行施法。"
@@ -6883,8 +6954,6 @@
 		"DOTA_Tooltip_ability_silencer_global_silence_abilityduration"				"持續時間："
 		"DOTA_Tooltip_ability_silencer_global_silence_first_duration"				"第一次持續時間："
 		"DOTA_Tooltip_ability_silencer_global_silence_second_duration"				"第二次持續時間："
-		"DOTA_Tooltip_ability_silencer_global_silence_scepter_Description"			"世界緘默對英雄施加奧術詛咒。"
-
 		"DOTA_Tooltip_modifier_silencer_curse_of_the_silent"				"奧術詛咒"
 		"DOTA_Tooltip_modifier_silencer_curse_of_the_silent_Description"	"持續受到傷害，移動速度降低 %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%。施放法術將導致詛咒持續時間延長。"
 
@@ -6896,6 +6965,7 @@
 		"DOTA_Tooltip_modifier_silencer_last_word_aura_Description"			"智力竊取總值"
 		"DOTA_Tooltip_modifier_silencer_last_word_silence_checker"			"遺言"
 		"DOTA_Tooltip_modifier_silencer_last_word_silence_checker_Description"		"緩速 %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%。每秒受到 %dMODIFIER_PROPERTY_TOOLTIP% 傷害。"
+		"DOTA_Tooltip_modifier_silencer_last_word_stack_applier"					"遺言"
 		"DOTA_Tooltip_modifier_silencer_glaives_of_wisdom_buff_counter"		"智慧之刃"
 		"DOTA_Tooltip_modifier_silencer_glaives_of_wisdom_buff_counter_Description"		"暫時竊取智力屬性。"
 		"DOTA_Tooltip_modifier_silencer_glaives_of_wisdom_silence_debuff_counter"				"智慧之刃"
@@ -7693,6 +7763,7 @@
 		"DOTA_Tooltip_ability_treant_natures_guise_shard_description"	"使樹精衛士在自然掩護下進入隱形狀態，且攻擊能纏繞敵人。若在樹木附近攻擊，則造成持續傷害、纏繞效果將持續更久。總傷害等於 %shard_damage% + %attack_damage_pct%%% 樹精衛士基礎攻擊傷害。"
 		"DOTA_Tooltip_ability_treant_natures_guise_Lore"				"樹精衛士並不常出現在人們的視線中；他們以自然之姿隱蔽於蒼翠蓊鬱的同胞之中。"
 		"DOTA_Tooltip_ability_treant_natures_guise_Note0"				"在自然掩護影響下可自由穿越樹木不受阻礙。"
+		"DOTA_Tooltip_ability_treant_natures_guise_movement_bonus"   	"%移動速度加成："
 		"DOTA_Tooltip_ability_treant_natures_guise_shard_root_time"			"纏繞時間："
 		"DOTA_Tooltip_ability_treant_natures_guise_shard_by_tree_root_time"	"樹木造成纏繞時間："
 		"DOTA_Tooltip_ability_treant_natures_guise_shard_tree_movement_bonus_pct"	"%樹木造成移動速度加成："
@@ -7794,6 +7865,7 @@
 		"DOTA_Tooltip_ability_meepo_ransack_Lore"				"你不需要的吧，那我……？"
 		"DOTA_Tooltip_ability_meepo_ransack_health_steal_heroes"		"生命竊取（英雄）："
 		"DOTA_Tooltip_ability_meepo_ransack_health_steal_creeps"		"生命竊取（小兵）："
+		"DOTA_Tooltip_ability_meepo_ransack_Note0"						"治療量會受到生命吸取增強而提升"
 		"DOTA_Tooltip_ability_meepo_divided_we_stand"					"萬眾一心"
 		"DOTA_Tooltip_ability_meepo_divided_we_stand_shard_description"	"使萬眾一心能夠在附近 %fling_radius% 範圍內有其他米波時主動施放，如此施放時令其他米波把施放者向施放目標投擲過去，對目標造成傷害和移速減緩效果。施放距離為 %AbilityCastRange%，魔耗為 %AbilityManaCost%。"
 
@@ -8303,6 +8375,7 @@
 		"DOTA_Tooltip_Facet_nyx_assassin_scuttle"							"疾速奔馳"		
 		"DOTA_Tooltip_Facet_nyx_assassin_scuttle_Description"				"夜神在復仇的前 {s:bonus_free_pathing_duration} 秒可獲得疾速和自由移動能力。"
 
+		"DOTA_Tooltip_Facet_nyx_assassin_burn_mana"							"魔力燃燒"		
 		"DOTA_Tooltip_Facet_nyx_assassin_burn_mana_Description"				"神智閃燃會燃燒目標一定百分比的最大魔力。"
 
 
@@ -8458,6 +8531,7 @@
 		"DOTA_Tooltip_ability_keeper_of_the_light_spirit_form_shard_Description"		"提升輝煌的治療量。"
 		"DOTA_Tooltip_ability_keeper_of_the_light_spirit_form_Lore"				"在閃耀的光芒中，伊札洛展現出自己真實的形態。"
 		"DOTA_Tooltip_ability_keeper_of_the_light_spirit_form_duration"			"持續時間："
+		"DOTA_Tooltip_ability_keeper_of_the_light_spirit_form_movement_speed"			"%移動速度加成："
 		"DOTA_Tooltip_ability_keeper_of_the_light_spirit_form_illuminate_heal"			"%輝煌治療："
 		"DOTA_Tooltip_ability_keeper_of_the_light_spirit_form_cast_range"			"施放距離加成："
 		"DOTA_Tooltip_ability_keeper_of_the_light_spirit_form_evasion"			"%迴避率："
@@ -8571,9 +8645,12 @@
 		"DOTA_Tooltip_ability_wisp_overcharge_Facet_wisp_kritzkrieg"			"超載為艾歐和以閃電之鏈連結的隊友提供攻速提升和技能增強。"
 		"DOTA_Tooltip_ability_wisp_overcharge_Facet_wisp_medigun"				 "超載為艾歐和以閃電之鏈連結的隊友提供護甲和魔抗。"
 
+		"DOTA_Tooltip_ability_wisp_overcharge_bonus_mres"						"%魔法抗性加成："
+		"DOTA_Tooltip_ability_wisp_overcharge_bonus_attack_speed"				"攻擊速度加成："
 		"DOTA_Tooltip_ability_wisp_overcharge_bonus_spell_amp"					"%技能增強："
 		"DOTA_Tooltip_ability_wisp_overcharge_hp_regen"							"%最大生命恢復："
 		"DOTA_Tooltip_ability_wisp_overcharge_duration"							"持續時間："
+		"DOTA_Tooltip_ability_wisp_overcharge_spell_lifesteal"					"%技能生命吸取："
 		"DOTA_Tooltip_ability_wisp_relocate"									"守衛降臨"
 		"DOTA_Tooltip_ability_wisp_relocate_Lore"								"艾歐是神祕宇宙的具體化身。"
 		"DOTA_Tooltip_ability_wisp_relocate_Description"						"將艾歐和一個與它連接的隊友傳送到地圖上的任何位置。技能結束後，艾歐和與它連接的隊友將會返回當初來自的位置。可藉由雙擊來直接選擇我方泉源做為傳送目的地。"
@@ -8654,6 +8731,7 @@
 		"DOTA_Tooltip_ability_slark_barracuda_bonus_regen"					"每秒生命獲取："
 		"DOTA_Tooltip_ability_slark_barracuda_linger_search_radius"			"維持搜尋範圍："
 		"DOTA_Tooltip_ability_slark_barracuda_linger_duration"				"維持時間："
+		"DOTA_Tooltip_ability_slark_barracuda_corruption_armor"				"護甲降低："
 		"DOTA_Tooltip_ability_slark_barracuda_Note0"						"如斯拉克受到中立單位的傷害，將失去被動移速和生命恢復加成 %neutral_disable% 秒。"
 		
 		"DOTA_Tooltip_ability_slark_shadow_dance"								"暗影之舞"
@@ -8680,6 +8758,9 @@
 		"DOTA_Tooltip_modifier_slark_shadow_dance_passive_regen_Description"	"獲得 %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% 移動速度加成，每秒恢復 %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% 生命值。"
 		"DOTA_Tooltip_modifier_slark_shadow_dance"							"暗影之舞"
 		"DOTA_Tooltip_modifier_slark_shadow_dance_Description"				"在暗影雲霧中進入隱形狀態。"
+		"DOTA_Tooltip_modifier_slark_armor_reduction_debuff"				"暗黑之礁叛徒"
+		"DOTA_Tooltip_modifier_slark_armor_reduction_debuff_Description"	"護甲降低 %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%。"
+		
 		"DOTA_Tooltip_modifier_slark_essence_shift_permanent_buff"	"永久敏捷"
 		"DOTA_Tooltip_modifier_slark_essence_shift_permanent_buff_Description"	"永久竊得 %dMODIFIER_PROPERTY_STATS_AGILITY_BONUS% 點敏捷屬性。"
 		"DOTA_Tooltip_modifier_slark_essence_shift_permanent_buff_PostGame"		"獲得永久敏捷。"
@@ -8829,6 +8910,7 @@
 		"DOTA_Tooltip_ability_troll_warlord_fervor_Note1"						"破勢會封鎖由阿哈利姆碎晶提供的觸發機率。"
 		"DOTA_Tooltip_ability_troll_warlord_fervor_attack_speed"				"每層攻擊速度提升："
 		"DOTA_Tooltip_ability_troll_warlord_fervor_max_stacks"					"最大疊加次數："
+		"DOTA_Tooltip_ability_troll_warlord_fervor_armor_per_stack"				"每層護甲加成："
 		"DOTA_Tooltip_ability_troll_warlord_battle_trance"						"戰鬥專注"
 		"DOTA_Tooltip_ability_troll_warlord_battle_trance_Description"				"巨魔戰將進入出神的專注狀態，獲得生命吸取、攻擊速度和移動速度加成，並強迫自己攻擊 %range% 距離內最近的敵方單位，優先選擇英雄。在此狀態下不會因為受到傷害而死亡。將在技能發動當下為自身施加基本的驅散效果。\n\n驅散類型：基本"
 		"DOTA_Tooltip_ability_troll_warlord_battle_trance_shard_description"	"使戰鬥專注一併在作用期間使自己和場上所有友方英雄提升 60 攻速。"
@@ -8993,6 +9075,7 @@
 
 		
 		"DOTA_Tooltip_ability_magnataur_skewer"									"巨角衝刺"
+		"DOTA_Tooltip_ability_magnataur_skewer_Description"						"馬格納斯向前衝刺，用他的巨角刺穿敵人，使路徑上的英雄都將被拖至終點，然後受到傷害和攻移雙緩。傷害根據移動距離提升。"
 		"DOTA_Tooltip_ability_magnataur_skewer_facet_magnataur_run_through"		"巨角衝刺將敵人推至樹木或峭壁時造成額外傷害。"
 		"DOTA_Tooltip_ability_magnataur_skewer_Lore"							"對於有興趣的商人來說，半人犀牛的獸角價值與它們能造成的破壞成正比。"
 		"DOTA_Tooltip_ability_magnataur_skewer_range"							"距離："
@@ -9003,6 +9086,8 @@
 		"DOTA_Tooltip_ability_magnataur_skewer_tool_attack_slow"				"攻速降低："
 		"DOTA_Tooltip_ability_magnataur_skewer_tree_hit_damage"					"撞上樹木傷害："
 		"DOTA_Tooltip_ability_magnataur_skewer_cliff_hit_damage"				"撞上峭壁傷害："
+		"DOTA_Tooltip_ability_magnataur_skewer_damage_distance_pct"				"%距離轉傷害比率："
+
 		"DOTA_Tooltip_ability_magnataur_reverse_polarity"						"兩極反轉"		
 		"DOTA_Tooltip_ability_magnataur_reverse_polarity_description"			"馬格納斯改變物質的極性，將附近的敵人都吸引到他前方，並透過震擊對他們造成暈眩和傷害。"
 		"DOTA_Tooltip_ability_magnataur_reverse_polarity_Facet_magnataur_reverse_reverse_polarity"			"兩極反轉將敵人從馬格納斯四方八面推開，而非將他面前的敵人拉近。"
@@ -12866,9 +12951,11 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_invoker_8"	"龍捲風滯空時間 +{s:bonus_lift_duration} 秒"
 		"DOTA_Tooltip_ability_special_bonus_unique_invoker_9"	"急速冷卻冷卻 -{s:bonus_AbilityCooldown} 秒"
 		"DOTA_Tooltip_ability_special_bonus_unique_invoker_10"	"電磁脈衝魔力燃燒 +{s:bonus_damage_per_mana_pct}%"
+		"DOTA_Tooltip_ability_special_bonus_unique_invoker_11"	"陽炎衝擊冷卻 -{s:bonus_AbilityCooldown} 秒"
 		"DOTA_Tooltip_ability_special_bonus_unique_invoker_12"	"寒冰之牆變得可向量施放"
 		"DOTA_Tooltip_ability_special_bonus_unique_invoker_12_Description" 	"使寒冰之牆的施放方式改為具有 {s:bonus_vector_cast_range} 施放距離的向量施放。"		
 		"DOTA_Tooltip_ability_special_bonus_unique_invoker_13_facet_invoker_agnostic"	"{s:bonus_intrinsic_attack_speed} 倍冰/雷/火被動效果"
+		"DOTA_Tooltip_ability_special_bonus_unique_invoker_13"	"{s:bonus_move_speed_per_instance} 倍冰/雷/火主動效果"
 		"DOTA_Tooltip_ability_special_bonus_unique_invoker_ice_wall_dps"	"寒冰之牆每秒傷害 +{s:bonus_damage_per_second}"
 		"DOTA_Tooltip_ability_special_bonus_unique_invoker_additional_chaos_meteors"	"混沌隕石數 +{s:bonus_meteor_count}"
 		"DOTA_Tooltip_ability_special_bonus_unique_abaddon"		"悔暗屏障護盾厚度 +{s:bonus_damage_absorb}"
@@ -13197,6 +13284,9 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_medusa_8"	"石化凝視物理傷害加成 +{s:bonus_bonus_physical_damage}%"
 		"DOTA_Tooltip_ability_special_bonus_unique_medusa_snake_damage"			"秘術異蛇傷害 +{s:bonus_snake_damage}" 
 		"DOTA_Tooltip_ability_special_bonus_unique_medusa_stone_gaze_cooldown"	"石化凝視冷卻和魔耗 -{s:bonus_AbilityCooldown}%"
+		"DOTA_Tooltip_ability_special_bonus_unique_medusa_gorgons_grasp_volleys"			"蛇妖之爪箭矢組 +{s:bonus_volley_count}"
+		"DOTA_Tooltip_ability_special_bonus_unique_medusa_gorgons_grasp_radius"			"蛇妖之爪範圍 +{s:bonus_radius}%"
+
 		"DOTA_Tooltip_ability_special_bonus_unique_ogre_magi"	"嗜血術攻擊速度 +{s:bonus_bonus_attack_speed}"
 		"DOTA_Tooltip_ability_special_bonus_unique_ogre_magi_2"	"火焰爆轟傷害 +{s:bonus_fireblast_damage}"
 		"DOTA_Tooltip_Ability_special_bonus_unique_ogre_magi_3"	"普攻有 {s:value}% 機率觸發火焰爆轟"
@@ -13498,6 +13588,8 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_wisp_8"	"閃電之鏈連接對象攻擊傷害 +{s:value}"
 		"DOTA_Tooltip_ability_special_bonus_unique_wisp_10"	"超載最大生命恢復加成 +{s:bonus_hp_regen}%"
 		"DOTA_Tooltip_ability_special_bonus_unique_wisp_11"	"閃電之鏈對敵人的移速/攻速減緩 +{s:bonus_slow}%"
+		"DOTA_Tooltip_ability_special_bonus_unique_wisp_overcharge_duration"	"超載持續時間 +{s:bonus_duration} 秒"
+
 		"DOTA_Tooltip_ability_special_bonus_unique_techies"	"點火升空！傷害 +{s:bonus_damage}"
 		"DOTA_Tooltip_ability_special_bonus_unique_techies_2"	"黏性炸彈黏上/爆炸範圍 +{s:bonus_radius}"
 		"DOTA_Tooltip_ability_special_bonus_unique_techies_3"	"近接式地雷冷卻 -{s:bonus_AbilityChargeRestoreTime} 秒"

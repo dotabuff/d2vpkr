@@ -858,6 +858,8 @@
 		"DOTA_Chat_Rune_Arcane"			"%s1 heeft een <font color='#FD3AFB'>Arcane</font>-rune geactiveerd."
 		"DOTA_Chat_Rune_Water"			"%s1 heeft een <font color='#74A7F7'>Water</font>-rune geactiveerd."
 		"DOTA_Chat_Rune_Bounty"			"%s1 heeft een <font color='#FF7800'>Bounty</font>-rune geactiveerd."
+		"DOTA_Chat_Rune_XP"			"%s1 heeft een <font color='#FFC0CB'>Shrine of Wisdom</font> geactiveerd."
+
 		"DOTA_Chat_Rune_Bottle_DoubleDamage"	"%s1 heeft een <font color='#82CAFF'>Amplify Damage</font>-rune gebotteld."
 		"DOTA_Chat_Rune_Bottle_Haste"			"%s1 heeft een <font color='#F62817'>Haste</font>-rune gebotteld."
 		"DOTA_Chat_Rune_Bottle_Illusion"		"%s1 heeft een <font color='#FFD700'>Illusion</font>-rune gebotteld."
@@ -876,6 +878,10 @@
 		"DOTA_Chat_Rune_Water_Spotted"			"<font color='#74A7F7'>Water</font>-rune hier (%s1)."
 		"DOTA_Chat_Rune_Neutral_Bounty_Spotted"	"<font color='#FF7800'>Bounty</font>-rune hier (%s1)."
 		"DOTA_Chat_Rune_Pumpkin_Spotted"		"<font color='#FF7D40'>Pumpkin</font>-rune hier!"
+		"DOTA_Chat_Rune_XP_Time_Remaining"		"<font color='#c642fe'>Shrine of Wisdom</font> wordt geactiveerd over %s1 (om %s2)"
+
+		"DOTA_Chat_Rune_XP_Time_Remaining_RecentlyOccurred"		"<font color='#c642fe'>Shrine of Wisdom</font> is %s1 geleden geactiveerd. (Volgende: %s2)"
+
 		"DOTA_Chat_Item_Spotted" "<font color='%s1'>%s2</font> op de grond hier."
 		"DOTA_Chat_Item_Alert" "Verzamel hier voor <font color='%s1'>%s2</font>."
 
@@ -4899,6 +4905,7 @@ Terwijl de invloed van beide stenen spreidde, kwamen ze uiteindelijk in conflict
 		"dota_hud_error_no_hats_to_steal"				"Geen hoed om te stelen"
 		"dota_hud_error_no_hats_to_gift"				"Geen hoed om te geven"
 		"dota_hud_error_no_hat_buff"					"Eenheid kan geen hoeden dragen"
+		"dota_hud_error_cant_attack_building"			"Kan geen gebouwen aanvallen"
 		"dota_hud_error_magnataur_already_empowered"	"Je bent al onder invloed van Empower"
 
 		"dota_cursor_silenced"							"Het zwijgen opgelegd!"
@@ -16527,6 +16534,7 @@ Speciale Techies-bespotting"
 		"DOTA_HUD_Rune_DenyWater"			"heeft een <font color='#74A7F7'>Water</font>-rune afgewezen"
 		"DOTA_HUD_Rune_Bounty"			"<font color='#FF7800'>Bounty</font>-rune {s:gold}"
 		"DOTA_HUD_Rune_DenyBounty"			"heeft een <font color='#FF7800'>Bounty</font>-rune afgewezen"
+		"DOTA_HUD_Rune_XP"				"<font color='#FFC0CB'>Shrine of Wisdom</font> ({d:xp} XP)"
 		"DOTA_HUD_ActivatedRune"		"{s:player_name}{s:rune_icon}{s:rune_name}"
 		"DOTA_HUD_DenyRune"		        "{s:player_name}{s:denied_icon}{s:rune_name}{s:rune_icon}"
 		"DOTA_HUD_BottledRune"			"{s:player_name} heeft een{s:rune_icon}{s:rune_name} gebotteld"
@@ -16795,6 +16803,7 @@ Speciale Techies-bespotting"
 		"DOTA_Location_Name_Tower3" "Toren van rang 3"
 		"DOTA_Location_Name_Tower4" "Toren van rang 4"
 		"DOTA_Location_Name_Roshan" "Roshans kuil"
+		"DOTA_Location_Name_XPRune" "Shrine of Wisdom"
 		"DOTA_Location_Name_Top_Rune" "Bovenste Power-rune"
 		"DOTA_Location_Name_Bot_Rune" "Onderste Power-rune"
 		"DOTA_Location_Name_Base" "Basis"
@@ -17443,6 +17452,7 @@ Speciale Techies-bespotting"
 		"DOTA_PlusPostGame_XPReceived_Creep"	"Creeps"
 		"DOTA_PlusPostGame_XPReceived_Heroes"	"Helden"
 		"DOTA_PlusPostGame_XPReceived_Roshan"	"Roshan"
+		"DOTA_PlusPostGame_XPReceived_TomeOfKnowledge"	"Shrine of Wisdom"
 		"DOTA_PlusPostGame_XPReceived_Outpost"	"Buitenposten"
 		"DOTA_PlusPostGame_XPReceived_Other"	"Overig"
 		"OK"			"OK"
@@ -27550,6 +27560,18 @@ Nu vroege, druk uitoefenende helden als Zeus en Death Prophet meer voorkomen, sp
     "DOTA_Tooltip_RoshanTimer_BaseTime"		"Roshan kan respawnen over:"
 	"DOTA_Tooltip_RoshanTimer_VisibleTime"	"Roshan zal respawnen over:"
 	
+	"DOTA_Tooltip_RoshanTimerMessage_RoshanIsAlive"	"Roshan leeft en bevindt zich in de {s:roshan_cave_location} kuil."
+	"DOTA_Tooltip_RoshanTimerMessage_VisibleTime"   "Roshan respawnt over {s:roshan_respawn_time} in de {s:roshan_cave_location} kuil."
+	"DOTA_Tooltip_RoshanTimerMessage_VariableTime"	"Roshan leeft misschien nog in de {s:roshan_cave_location} kuil. Over {s:roshan_respawn_time} gaat hij respawnen."
+	
+	"DOTA_Chat_RoshanTimerMessage_RoshanIsAlive"	"Roshan leeft en bevindt zich in de %s2 kuil."
+	"DOTA_Chat_RoshanTimerMessage_BaseTime"		    "Roshan is dood. Kan respawnen over %s3."
+	"DOTA_Chat_RoshanTimerMessage_VisibleTime"      "Roshan respawnt over %s3 in de %s2 kuil."
+	"DOTA_Chat_RoshanTimerMessage_VariableTime"	    "Roshan leeft misschien nog in de %s2 kuil. Over %s3 gaat hij respawnen."
+
+	"DOTA_Top"										"Bovenste"
+	"DOTA_Bottom"									"Onderste"
+
 	"DOTA_Tooltip_RiverVial_Active"			"{g:dota_item_name:itemdef}"
 	"DOTA_Tooltip_RiverVial_Locked"			"{g:dota_item_name:itemdef} - Level {d:grant_level}"
 
@@ -33480,7 +33502,10 @@ Nu vroege, druk uitoefenende helden als Zeus en Death Prophet meer voorkomen, sp
 		"DOTA_FrontPageCell_737_GameplayUpdate"			"Gameplayupdate"
 		"DOTA_FrontPageCell_737_Description"			"Ontdek nieuwe gaven, heldenfacetten en verbeteringen aan de spelervaring."
 		
+		"DOTA_FrontPageCell_738_Header"					"Gameplayupdate <b>7.38</b>"
+		"DOTA_FrontPageCell_738_Title"					"Wandering Waters"
 		"DOTA_FrontPageCell_738_Description"			"Een nieuwe map, grote veranderingen voor neutrale items, updates voor helden en items, en meer."
+		"DOTA_FrontPageCell_738_Patchnotes"				"Patchnotes weergeven"
 "DOTA_Crownfall_Encounter_SecretAdmirer_Friend"		"Vriend"
 "DOTA_Labs_Feedback"						"Feedback versturen"
 		"DOTA_Labs_Feedback_Header"					"Je feedback delen"
@@ -33945,5 +33970,14 @@ Nu vroege, druk uitoefenende helden als Zeus en Death Prophet meer voorkomen, sp
 
 		"DOTA_Style_Frostivus_2024_Tormentor_0"	"Icebite Bell"
 		"DOTA_Style_Frostivus_2024_Tormentor_1"	"Emberbite Bell"
-}
+"DOTA_NeutralTooltip_Subtitle_Trinket"			"Artefact <span class=\"NeutralItemTier\">van niveau {d:neutral_item_tier}</span>"
+		"DOTA_NeutralTooltip_Subtitle_Enhancement"		"Betovering <span class=\"NeutralItemTier\">van niveau {d:neutral_item_tier}</span>"
+		"DOTA_CraftHUD_ChooseOption"					"Kies een artefact en een betovering"
+		"DOTA_CraftHUD_ChooseTrinket"					"Beschikbare artefacten"
+		"DOTA_Toast_CraftAvailableBody"					"Kies een nieuw artefact en een nieuwe betovering!"
+		"DOTA_NeutralCraft_TrinketHeader"				"Artefact"
+		"DOTA_FoundNeutralItem_EnhancedWith"			"Betoverd met <span class=\"EnhancementName\">{s:item_affix}</span>"
+		"DOTA_AdjNounWordOrder"							"{s:adj} {s:noun}"
+
+		}
 } 
