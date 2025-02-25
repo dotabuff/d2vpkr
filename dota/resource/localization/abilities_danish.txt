@@ -25,10 +25,19 @@
 		"dota_ability_variable_evasion"				"undvigelse"					// $evasion
 		"dota_ability_variable_spell_resist"		"magisk resistens"			// $spell_resist
 		"dota_ability_variable_spell_lifesteal"		"evnelivsstjæl"			// $spell_lifesteal
+		"dota_ability_variable_spell_lifesteal_hero_attacks" "angreb på helte"
+		"dota_ability_variable_spell_lifesteal_hero_spells" "evner på helte"
+		"dota_ability_variable_spell_lifesteal_creep_attacks" "angreb på kryb"
+		"dota_ability_variable_spell_lifesteal_creep_spells" "evner på kryb"
+		"dota_ability_variable_lifesteal_hero_attacks" "angreb på helte"
+		"dota_ability_variable_lifesteal_hero_spells" "evner på helte"
+		"dota_ability_variable_lifesteal_creep_attacks" "angreb på kryb"
+		"dota_ability_variable_lifesteal_creep_spells" "evner på kryb"
 		"dota_ability_variable_selected_attrib"		"valgt attribut"		// $selected_attribute
 		"dota_ability_variable_attack_range"		"angrebsrækkevidde <font color='#7d7d7d'>(kun afstandshelte)</font>"	// $attack_range
 		"dota_ability_variable_attack_range_melee"	"angrebsrækkevidde <font color='#7d7d7d'>(kun nærkamp)</font>"	// $attack_range_melee
-"dota_ability_variable_cast_range"			"kasterækkevidde"				// $cast_range
+		"dota_ability_variable_attack_range_all"	"angrebsrækkevidde <font color='#7d7d7d'>(nær- og afstandskamp)</font>" // $attack_range_all
+		"dota_ability_variable_cast_range"			"kasterækkevidde"				// $cast_range
 		"dota_ability_variable_status_resist"		"statusresistens"			// $status_resist
 		"dota_ability_variable_projectile_speed"	"projektilhastighed"			// $projectile_speed
 		"dota_ability_variable_manacost_reduction"	"reduceret mana-omkostning"		// $manacost_reduction
@@ -36,7 +45,10 @@
 		"dota_ability_variable_max_mana_percentage"	"ekstra maks. mana"			// $max_mana_percentage
 		"dota_ability_variable_slow_resistance"		"hæmingsresistens"			// $slow_resistance
 		"dota_ability_variable_aoe_bonus"			"ekstra områdeeffekt"					// $aoe_bonus
-"dota_ability_variable_damage_int_hero"	"skade (intelligenshelte)"
+		"dota_ability_variable_exclusive_movespeed"	"bevægelseshastighed (støvler)"		// $exclusive_movespeed
+		"dota_ability_variable_healing_amp"			"udgående helingsamplifikation" // $healing_amp
+
+		"dota_ability_variable_damage_int_hero"	"skade (intelligenshelte)"
 		"dota_ability_variable_damage_agi_hero"	"skade (agilitetshelte)"
 		"dota_ability_variable_damage_str_hero"	"skade (styrkehelte)"
 		"dota_ability_variable_damage_universal_hero"	"skade (universelle helte)"
@@ -351,6 +363,7 @@
 		"npc_dota_courier"								"Kurér"
 		"npc_dota_scout"								"Scout"
 		"npc_dota_miniboss"								"Plageånd"
+		"npc_dota_lotus_pool"							"Lotusdam"
 		"npc_dota_unit_twin_gate"						"Tvillingeport"
 		"npc_dota_clinkz_skeleton_archer"				"Skeleton Archer"
 		"npc_dota_flying_courier"						"Flyvende kurér"
@@ -533,6 +546,14 @@
 		"npc_dota_neutral_forest_troll_high_priest"		"Hill Troll Priest"
 		"npc_dota_neutral_harpy_scout"					"Harpy Scout"
 		"npc_dota_neutral_harpy_storm"					"Harpy Stormcrafter"
+		"npc_dota_neutral_tadpole"						"Pollywog"
+		"npc_dota_neutral_froglet"						"Boglet"
+		"npc_dota_neutral_grown_frog"					"Croaker"
+		"npc_dota_neutral_ancient_frog"					"Ancient Croaker"
+		"npc_dota_neutral_froglet_mage"					"Marshmage Apprentice"
+		"npc_dota_neutral_grown_frog_mage"				"Marshmage"
+		"npc_dota_neutral_ancient_frog_mage"			"Ancient Marshmage"
+
 		// Towns
 		"dota_fountain"					"Springvand"
 		"npc_dota_goodguys_tower1_top"	"Tårn"
@@ -643,6 +664,7 @@
 		"DOTA_Tooltip_ability_fountain_glyph"											"Glyph of Fortification {s:glyph_hotkey}"
 		"DOTA_Tooltip_ability_fountain_glyph_Description"								"– Gør jeres bygninger og kryb usårlige.<br>– Giver multiskud til tårne <span class=\"Footnote\">(gælder ikke niveau 1-tårne)</span>.<br>– Nedkøling nulstilles, når det første af jeres tårne i niveau 1, niveau 2 eller jeres første nærkampsbarak ødelægges."
 		"DOTA_Tooltip_ability_fountain_glyph_duration_structures"						"VARIGHED (BYGNINGER): <span class=\"GameplayValues\">7 sekunder</span>"
+		"DOTA_Tooltip_ability_fountain_glyph_duration_creeps"							"VARIGHED (KRYB): <span class=\"GameplayValues\">3 sekunder</span>"
 		"DOTA_Tooltip_ability_fountain_glyph_multishot_targets"							"EKSTRA TÅRNPROJEKTILER: <span class=\"GameplayValues\">5</span>"
 		"DOTA_Tooltip_glyph_cooldown_ready"												"Klar"
 		"DOTA_Tooltip_glyph_cooldown"													"Nedkøling: %s1"
@@ -754,6 +776,7 @@
 		"DOTA_Tooltip_ability_antimage_mana_break_slow_duration"						"HÆMNINGSVARIGHED:"
 
 		"DOTA_Tooltip_Facet_antimage_magebanes_mirror"											"Magebane's Mirror"
+		"DOTA_Tooltip_Facet_antimage_magebanes_mirror_Description"								"Besværgelser, der modvirkes af Counterspell eller Counterspell Ally, afbrænder straks en procentdel af mana-omkostningen fra fjenden og gør skade baseret på den afbrændte mana-omkostning."
 		"DOTA_Tooltip_Facet_antimage_mana_thirst"												"Mana Thirst"		
 		"DOTA_Tooltip_Facet_antimage_mana_thirst_Description"									"Anti-Mage får øget skade, når hans fjender har lav mana."		
 
@@ -792,14 +815,18 @@
 		"DOTA_Tooltip_ability_antimage_spell_shield_spell_shield_resistance"			"%RESISTENS:"
 
 		"DOTA_Tooltip_ability_antimage_counterspell_ally"								"Counterspell Ally"
+		"DOTA_Tooltip_ability_antimage_counterspell_ally_Description"					"Counterspell Ally kan aktiveres for at skabe et antimagisk skjold rundt om en allieret helt, som blokerer og reflekterer målrettede besværgelser. Hver gang en besværgelse blokeres af Counterspell eller Counterspell Ally, skabes der en illusion af Anti-Mage ved siden af fjenden."
 		"DOTA_Tooltip_ability_antimage_counterspell_ally_reflected_spell_amp"			"%REFLEKTERET EVNEAMPLIFIKATION:"
+		"DOTA_Tooltip_ability_antimage_counterspell_ally_mana_drain_percent"			"%PROCENT AF AFBRÆNDT MANA"
 		"DOTA_Tooltip_ability_antimage_counterspell"									"Counterspell"
+		"DOTA_Tooltip_ability_antimage_counterspell_Description"						"Giver passivt magisk resistens. Counterspell kan aktiveres for at skabe et antimagisk skjold omkring Anti-Mage, som blokerer og reflekterer målrettede besværgelser."
 		"DOTA_Tooltip_ability_antimage_counterspell_shard_description"					"Counterspell giver passivt en aura, der reducerer fjenders besværgelsesskade. Reduktionen er stærkere hos fjender inden for tæt radius."
 		"DOTA_Tooltip_ability_antimage_counterspell_Lore"								"Med det rette fokus gør Anti-Mage sin naturlige resistens til en planlagt tilbagesendelse."
 		"DOTA_Tooltip_ability_antimage_counterspell_Note0"								"Evnebrud deaktiverer den passive magiske resistens."
 		"DOTA_Tooltip_ability_antimage_counterspell_magic_resistance"					"%MAGISK RESISTENS:"
 		"DOTA_Tooltip_ability_antimage_counterspell_duration"							"VARIGHED:"
 		"DOTA_Tooltip_ability_antimage_counterspell_reflected_spell_amp"				"%REFLEKTERET EVNEAMPLIFIKATION:"
+		"DOTA_Tooltip_ability_antimage_counterspell_mana_drain_percent"					"%PROCENT AF AFBRÆNDT MANA:"
 		"DOTA_Tooltip_Ability_antimage_counterspell_abilitydraft_note"					"<span class=\"ADBlue\">Shard:</span> Tilgå evnen <span class=\"ADWhite\"><b>Counterspell Ally</b></span> ved at aktivere autokast på <span class=\"ADWhite\"><b>Counterspell</b></span>."
 		"DOTA_Tooltip_ability_antimage_mana_void"										"Mana Void"
 		"DOTA_Tooltip_ability_antimage_mana_void_Description"							"For hvert point mana, som målet mangler, gøres der skade på målet og omkringværende fjender. Hovedmålet mini-lammes også."
@@ -838,6 +865,7 @@
 		//QUEEN OF PAIN
 		"DOTA_Tooltip_ability_queenofpain_shadow_strike"								"Shadow Strike"
 		"DOTA_Tooltip_ability_queenofpain_shadow_strike_Description"					"Slynger en forgiftet daggert af sted, som gør stor startskade og dernæst gør skade over tid. Den forgiftede enhed har hæmmet bevægelseshastighed i %duration% sekunder. Der gøres skade hvert %damage_interval%. sekund."
+		"DOTA_Tooltip_ability_queenofpain_shadow_strike_scepter_Description"			"Shadow Strike bliver til en områdeevne med %aoe_radius% størrelse. Når Shadow Strike udløber på en fjendtlig helt eller påføres igen, sender målet en instans af Scream of Pain ud mod fjender i nærheden."
 		"DOTA_Tooltip_ability_queenofpain_shadow_strike_Lore"							"Akashas forgiftede daggert gør hende i stand til at nyde hendes ofres langtrukne lidelser."
 		"DOTA_Tooltip_ability_queenofpain_shadow_strike_Note0"							"Den ramte enhed genopnår langsomt sin oprindelige bevægelseshastighed hvert sekund i løbet af varigheden."
 		"DOTA_Tooltip_ability_queenofpain_shadow_strike_Note1"							"Enheder, påvirket af Shadow Strike, kan nægtes af deres allierede, når deres HP ryger under 25% af deres maksimale helbred."
@@ -886,10 +914,16 @@
 		"DOTA_Tooltip_ability_queenofpain_masochist_Description_Note2"				"Reflekteret skade er ikke dødbringende."
 		"DOTA_Tooltip_ability_queenofpain_masochist_Description_Note3"				"Inkluderer besværgelsesskade fra genstande."
 		"DOTA_Tooltip_ability_queenofpain_succubus"								"Succubus"
+		"DOTA_Tooltip_ability_queenofpain_succubus_Description"					"Alle kilder til evnelivsstjæl gælder også for ren skade. Queen of Pain får evnelivsstjæl, som øges, når hun er tæt på sine fjender. Livsstjæl er på maksimum, når fjenden er %close_radius% enheder af hende eller tættere på, og på minimum, når fjenden er %max_radius% enheder af hende eller længere væk."
+		"DOTA_Tooltip_ability_queenofpain_succubus_Facet_queenofpain_facet_bondage" "Evnelivsstjæl gælder også for ren og magisk reflekteret skade."
+		"DOTA_Tooltip_ability_queenofpain_succubus_spell_lifesteal"				"%MIN. LIVSSTJÆL:"
+		"DOTA_Tooltip_ability_queenofpain_succubus_spell_lifesteal_close"		"%MAKS. LIVSSTJÆL:"
 		"DOTA_Tooltip_ability_queenofpain_bondage"							"Bondage"
 		"DOTA_Tooltip_ability_queenofpain_bondage_Description"				"Når en fjende indenfor %radius% rækkevidde gør besværgelsesskade på Queen of Pain, returnerer hun %spell_reflect_pct%%% af den gjorte skade."
 
 		"DOTA_Tooltip_facet_queenofpain_facet_bondage"						"Bondage"
+		"DOTA_Tooltip_facet_queenofpain_facet_bondage_Description"			"Queen of Pain sender besværgelsesskade tilbage til fjender."
+
 		//LINA
 		"DOTA_Tooltip_ability_lina_dragon_slave"										"Dragon Slave"
 		"DOTA_Tooltip_ability_lina_dragon_slave_Description"							"Lina kanaliserer dragens ånde og sender en bølge af ild af sted, som svider enhver fjende på sin vej."
@@ -923,6 +957,7 @@
 		"DOTA_Tooltip_ability_lina_laguna_blade"										"Laguna Blade"
 		"DOTA_Tooltip_ability_lina_laguna_blade_Description"							"Affyrer et lyn mod en enkelt fjendtlig enhed, hvilket gør enorm skade."
 		"DOTA_Tooltip_ability_lina_laguna_blade_Facet_lina_supercharge"					"Brug af Laguna Blade superlader midlertidigt Lina og giver hende stablinger af Fiery Soul."
+		"DOTA_Tooltip_ability_lina_laguna_blade_shard_description"						"%barrier_pct%%% af den gjorte skade konverteres til en barriere mod al skade for Lina. Barrieren varer i %barrier_duration%s."
 		"DOTA_Tooltip_ability_lina_laguna_blade_Lore"									"Luften omkring Lina bliver så brændende hed, at den svider en modstander, som kommer for tæt på, med et hvidglødende lyn."
 		"DOTA_Tooltip_ability_lina_laguna_blade_Note0"									"Laguna Blade har en forsinkelse på %damage_delay% før skaden gøres efter besværgelsen er kastet, hvilket lader visse evner undgå skaden."
 		"DOTA_Tooltip_ability_lina_laguna_blade_damage"									"SKADE:"
@@ -991,28 +1026,37 @@
 		"DOTA_Tooltip_ability_mirana_arrow_Lore"										"Måneenergier gør månens prinsesses pile mere dødelige end de fleste."
 		"DOTA_Tooltip_ability_mirana_arrow_Note0"										"For hver 150 enheder, pilen rejser, øges lammelsesvarigheden ved kontakt med 0,5 sekunder, og bonusskaden, der tilføjes, øges med 14."
 		"DOTA_Tooltip_ability_mirana_arrow_Note1"										"Sacred Arrow kan ramme usynlige enheder."
+		"DOTA_Tooltip_ability_mirana_arrow_Note2"										"Starstruck påfører ikke den anden Starstorm fra Aghanim's Scepter."
 		"DOTA_Tooltip_ability_mirana_arrow_arrow_range"									"RÆKKEVIDDE:"
 		"DOTA_Tooltip_ability_mirana_arrow_arrow_min_stun"								"MIN. LAMMELSE:"
 		"DOTA_Tooltip_ability_mirana_arrow_arrow_max_stun"								"MAKS. LAMMELSE:"
 		"DOTA_Tooltip_ability_mirana_arrow_arrow_bonus_damage"							"MAKS. BONUSSKADE:"
 		"DOTA_Tooltip_ability_mirana_invis"												"Moonlight Shadow"
+		"DOTA_Tooltip_ability_mirana_invis_Description"									"Gør Mirana og alle allierede helte usynlige og giver øget bevægelseshastighed. Mirana får ekstra udgående skade, mens evnen varer. Hvis en helts usynlighed brydes, aktiveres den igen efter kort tid, så længe Moonlight Shadows varighed ikke er udløbet."
 		"DOTA_Tooltip_ability_mirana_invis_Lore"										"Miranas tjenesteforhold til Selemene gør hende i stand til at formørke jorden, hvilket hyller hendes allierede ind i en skygge-kappe."
 		"DOTA_Tooltip_ability_mirana_invis_Note0"										"Påvirkede enheder vil ikke auto-angribe fjender."
 		"DOTA_Tooltip_ability_mirana_invis_fade_delay"									"FORSVINDINGSTID:"
 		"DOTA_Tooltip_ability_mirana_invis_duration"									"VARIGHED:"
 		"DOTA_Tooltip_ability_mirana_invis_bonus_movement_speed"						"%BEVÆGELSESHASTIGHED:"
+		"DOTA_Tooltip_ability_mirana_invis_bonus_outgoing_damage_pct"					"%EGEN UDGÅENDE SKADEBONUS:"
 		"DOTA_Tooltip_ability_mirana_leap"												"Leap"
 		"DOTA_Tooltip_ability_mirana_leap_Description"									"Mirana hopper fremad, ind i kampen, hvilket styrker hende med et glubskt brøl, der giver ekstra angrebs- og bevægelseshastighed. Bonushastigheden varer i %leap_bonus_duration% sekunder."
+		"DOTA_Tooltip_ability_mirana_leap_shard_description"							"Giver +%additional_charges% Leap-ladning. Angreb under Leap-styrkelsen gør %crit_damage_pct%%% kritisk skade."
+		"DOTA_Tooltip_ability_mirana_leap_Facet_mirana_leaps_and_bounds"				"Ved landing fastgør Leap mål i en radius på %root_radius% i %root_duration%s."
 		"DOTA_Tooltip_ability_mirana_leap_Lore"											"Ingen kan overse Miranas ikoniske hvide bæst i kampens hede."
 		"DOTA_Tooltip_ability_mirana_leap_leap_distance"								"AFSTAND:"
 		"DOTA_Tooltip_ability_mirana_leap_leap_speedbonus"								"%BEVÆGELSESBONUS:"
 		"DOTA_Tooltip_ability_mirana_leap_leap_speedbonus_as"							"ANGREBSHASTIGHEDSBONUS:"
 		"DOTA_Tooltip_ability_mirana_starfall"											"Starstorm"
+		"DOTA_Tooltip_ability_mirana_starfall_Description"								"Nedkalder en bølge af meteorer, som skader fjendtlige enheder i nærheden. Den fjendtlige enhed, som er tættest på Mirana indenfor en radius på %starfall_secondary_radius%, bliver ramt af endnu en meteor."
+		"DOTA_Tooltip_ability_mirana_starfall_Facet_mirana_starstruck"					"Starstorms anden meteor gør mere skade og blænder målet."
 		"DOTA_Tooltip_ability_mirana_starfall_Lore"										"Gudinden bryder jordlagene for at styrke sin prinsesse, når det er nødvendigt."
 		"DOTA_Tooltip_ability_mirana_starfall_Note0"									"Starstorm blokeres ikke af Linken's Sphere."
 		"DOTA_Tooltip_ability_mirana_starfall_Note1"									"Starstorm kan ikke ramme usynlige enheder."
+		"DOTA_Tooltip_ability_mirana_starfall_Note2"									"Starstorm vælger et nyt mål for den anden meteor, hvis det første mål dør før nedslaget."
 		"DOTA_Tooltip_ability_mirana_starfall_starfall_radius"							"RADIUS:"
 		"DOTA_Tooltip_ability_mirana_starfall_damage"									"SKADE:"
+		"DOTA_Tooltip_ability_mirana_starfall_secondary_starfall_damage_percent"		"%SKADE FRA ANDEN METEOR:"
 		"DOTA_Tooltip_ability_mirana_starfall_starstruck_blind_pct"						"%MISSECHANCE:"
 		"DOTA_Tooltip_ability_mirana_starfall_starstruck_duration"						"BLÆNDINGSVARIGHED:"
 
@@ -1023,6 +1067,11 @@
 		"DOTA_Tooltip_Facet_mirana_sunlight"											"Solar Flare"
 		"DOTA_Tooltip_Facet_mirana_sunlight_Description"								"Miranas ultimate-evne giver allierede øget angrebshastighed og skade over tid."
 		"DOTA_Tooltip_Facet_mirana_starstruck"											"Starstruck"
+		"DOTA_Tooltip_Facet_mirana_starstruck_Description"								"Starstorms anden meteor gør mere skade og blænder målet."
+		"DOTA_Tooltip_Facet_mirana_leaps_and_bounds"									"Leaps and Bounds"
+		"DOTA_Tooltip_Facet_mirana_leaps_and_bounds_Description"						"Ved landing fastgør Leap mål i en radius på {s:bonus_root_radius} i {s:bonus_root_duration}s."
+
+		"DOTA_Tooltip_modifier_mirana_leap_root"										"Leaps and Bounds"
 		"DOTA_Tooltip_modifier_mirana_leap_root_Description"							"Fastgjort."
 
 		"DOTA_Tooltip_modifier_mirana_leap_charge_counter"								"Leap – antal ladninger"
@@ -1064,9 +1113,11 @@
 		
 		"DOTA_Tooltip_ability_life_stealer_feast"										"Feast"
 		"DOTA_Tooltip_ability_life_stealer_feast_Description"							"Lifestealers angreb gør skade og heler ham med en procentdel af målets maksimale HP. Lifestealer kan angribe allierede kryb med %creep_deny_percent%%% helbred. Lifestealer får permanent maks. HP, når han dræber et kryb eller en helt."
+		"DOTA_Tooltip_ability_life_stealer_feast_Facet_life_stealer_fleshfeast"		"Feasts maks. HP per helt er øget."
 		"DOTA_Tooltip_ability_life_stealer_feast_Lore"									"Efter at have undsluppet fra sin celle i Devarque har N'aix holdt sig i live ved kød og knogler, som tilhører de uheldige, der krydser hans vej." 
 		"DOTA_Tooltip_ability_life_stealer_feast_Note0"									"Virker på allierede og fjender. Påvirker ikke Roshan."
 		"DOTA_Tooltip_ability_life_stealer_feast_Note1"									"Helingen er uafhængig af skaden."
+		"DOTA_Tooltip_ability_life_stealer_feast_Note2"									"Helingsmængden forstærkes af øget livsstjæl."
 		"DOTA_Tooltip_ability_life_stealer_feast_Note3"									"Evnebrud deaktiverer opbygning af nye stablinger."
 		"DOTA_Tooltip_ability_life_stealer_feast_Note4"									"Evnebrud deaktiverer ikke bonusserne fra aktive stablinger."
 		
@@ -1081,8 +1132,11 @@
 		"DOTA_Tooltip_ability_life_stealer_ghoul_frenzy_movement_speed_bonus"			"%EKSTRA BEVÆGELSESHASTIGHED:"
 		
 		"DOTA_Tooltip_ability_life_stealer_open_wounds"									"Open Wounds"
+		"DOTA_Tooltip_ability_life_stealer_open_wounds_Description"						"Lifestealer flænser en fjendtlig enhed, hvilket hæmmer offerets bevægelseshastighed og gør alle allierede i stand til at hele HP med en procentdel af deres skade mod enheden. Den fjendtlige enhed gendanner sin bevægelseshastighed i løbet af evnens varighed."
+		"DOTA_Tooltip_ability_life_stealer_open_wounds_Facet_life_stealer_fleshfeast"		"Open Wounds' nedkøling opdateres, hvis en enhed dør, mens den er påvirket af Open Wounds."
 		"DOTA_Tooltip_ability_life_stealer_open_wounds_Lore"							"Friske sår og færten af blod drager ofte klunsere ud for at afslutte arbejdet."
 		"DOTA_Tooltip_ability_life_stealer_open_wounds_Note0"							"Open Wounds hæmmer over 8 forskellige trin: 50% / 50% / 40% / 30% / 20% / 10% / 10% / 10%, hvoraf hæmningen reduceres ét trin per sekund."
+		"DOTA_Tooltip_ability_life_stealer_open_wounds_heal_percent"					"%SKADE SOM HELING:"
 		"DOTA_Tooltip_ability_life_stealer_open_wounds_slow_tooltip"					"%MAKS. HÆMNING:"
 		"DOTA_Tooltip_ability_life_stealer_open_wounds_duration"						"VARIGHED:"
 		
@@ -1386,7 +1440,7 @@
 		"DOTA_Tooltip_ability_lion_voodoo_Note1"										"Målet vil have en basis-bevægelseshastighed på %movespeed%, men buffs, der giver maksimal bevægelseshastighed, deaktiveres ikke."
 		"DOTA_Tooltip_ability_lion_voodoo_duration"										"VARIGHED:"
 		"DOTA_Tooltip_ability_lion_mana_drain"											"Mana Drain"
-		"DOTA_Tooltip_ability_lion_mana_drain_Description"								"KANALISERET – Kanaliserer magisk energi, som dræner mana og hæmmer fjenden over tid. Hvis fjenden ikke har noget mana, øges hæmningen med %movespeed_bonus_when_empty_pct%%%. <br><br> Kan bruges på allierede for at give dem mana og %ally_pct%%% af bevægelseshastigheden."
+		"DOTA_Tooltip_ability_lion_mana_drain_Description"								"KANALISERET – Kanaliserer magisk energi, som dræner mana og hæmmer fjenden over tid. Hvis fjenden ikke har noget mana, øges hæmningen med %movespeed_bonus_when_empty_pct%%%. <br><br>Kan bruges på allierede for at give dem mana og %ally_pct%%% af bevægelseshastigheden."
 		"DOTA_Tooltip_ability_lion_mana_drain_Facet_lion_essence_eater"			"Mana Drain påfører skade svarende til %damage_pct%%% af mana stjålet."
 		"DOTA_Tooltip_ability_lion_mana_drain_shard_description"						"Mana Drain rammer op til %shard_bonus_targets% flere fjender og får ekstra brydningsafstand. Lion bliver svækkelsesimmun med %magic_resist%%% magisk resistens, mens han kanaliserer besværgelsen."
 		"DOTA_Tooltip_ability_lion_mana_drain_Lore"										"Mindre magikere er intet andet end en kilde til magisk heling for Dæmonheksen."
@@ -2426,6 +2480,10 @@
 		"DOTA_Tooltip_ability_morphling_adaptive_strike_agi_damage_base"				"BASISSKADE:"
 		"DOTA_Tooltip_ability_morphling_adaptive_strike_agi_damage_max"					"MAKS. AGI.-SKADEMULTIPLIKATOR:"
 		"DOTA_Tooltip_ability_morphling_adaptive_strike_agi_damage_min"					"MIN. AGI.-SKADEMULTIPLIKATOR:"
+		"DOTA_Tooltip_ability_morphling_adaptive_strike_agi_stun_min"					"MIN. LAMMELSESVARIGHED:"
+		"DOTA_Tooltip_ability_morphling_adaptive_strike_agi_knockback_max"				"MAKS. TILBAGESKUB:"
+		"DOTA_Tooltip_ability_morphling_adaptive_strike_agi_knockback_min"				"MIN. TILBAGESKUB:"
+
 		"DOTA_Tooltip_ability_morphling_morph_agi"										"Attribute Shift (Agility Gain)"
 		"DOTA_Tooltip_ability_morphling_morph_agi_Description"							"Morphling skifter form ved at konvertere attributter fra styrke til agilitet. Processen er reversibel. Flere levels i Attribute Shift øger konverteringshastigheden."
 		"DOTA_Tooltip_ability_morphling_morph_agi_shard_description"					"Morphling kan skifte attributter, mens han er lammet. Reducerer manaomkostning."
@@ -2459,12 +2517,19 @@
 		"DOTA_Tooltip_ability_morphling_hybrid_duration"						"VARIGHED:"
 
 		"DOTA_Tooltip_ability_morphling_accumulation"								"Accumulation"
+		"DOTA_Tooltip_ability_morphling_accumulation_Description"					"Morphling modtager %percent_to_increment%%% af attributbonusser hvert halve level i stedet for hele bonussen ved hvert hele level. Alle attributbonusser fra færdighedspoint i talenttræet giver yderligere +%bonus_primary_stat_per_level_of_attributes%%% til Morphlings primære attribut."
 		"DOTA_Tooltip_modifier_morphling_accumulation"								"Accumulation"
 		"DOTA_Tooltip_modifier_morphling_accumulation_Description"					"Får ekstra attributter."
 
 		"DOTA_Tooltip_Facet_morphling_agi"										"Ebb"
+		"DOTA_Tooltip_Facet_morphling_agi_Description"							"Morphlings primære attribut er nu <font color='#9acd32'>agilitet</font>. Waveform angriber fjender på vejen."
+
 		"DOTA_Tooltip_ability_morphling_ebb"					"Ebb"
+		"DOTA_Tooltip_ability_morphling_ebb_Description"		"Morphlings primære attribut er nu <font color='#9acd32'>agilitet</font>."
 		"DOTA_Tooltip_ability_morphling_flow"					"Flow"
+		"DOTA_Tooltip_ability_morphling_flow_Description"		"Morphlings primære attribut er nu <font color='#ff0000'>styrke</font>. Adaptive Strike lammer baseret på Morphlings styrke. Morphling får %one_percent_tooltip%%% evneamplifikation per %agi_per_one_spell_amp% agilitet."
+		"DOTA_Tooltip_ability_morphling_flow_spell_amp_tooltip"	"%EVNEAMPLIFIKATION:"
+		
 		"DOTA_Tooltip_modifier_morphling_morph_str"				"Attribute Shift (Strength)"
 		"DOTA_Tooltip_modifier_morphling_morph_str_Description"	"Opnår styrke på bekostning af agilitet"
 		"DOTA_Tooltip_modifier_morphling_morph_agi"				"Attribute Shift (Agility)"
@@ -2477,6 +2542,8 @@
 		"DOTA_Tooltip_modifier_morphling_replicate_manager_Description"		"Angiver, hvornår Morphling transformerer tilbage til sin naturlige form."
 		"DOTA_Tooltip_modifier_morphling_waveform_charge_counter"	"Waveform – antal ladninger"
 		"DOTA_Tooltip_modifier_morphling_adaptive_strike"					"Adaptive Strike"
+		"DOTA_Tooltip_modifier_morphling_adaptive_strike_Description"		"Skubbes tilbage."
+
 		"DOTA_Tooltip_modifier_morphling_scepter_stats_drain_strength_buff"							"Morph – Styrkereduktion"
 		"DOTA_Tooltip_modifier_morphling_scepter_stats_drain_strength_buff_Description"				"Modtager %dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS% styrke, %dMODIFIER_PROPERTY_STATS_AGILITY_BONUS% agilitet, %dMODIFIER_PROPERTY_STATS_INTELLECT_BONUS% intelligens og %dMODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING%%% statusresistens."
 		"DOTA_Tooltip_modifier_morphling_scepter_stats_drain_strength_debuff"						"Morph – Styrkereduktion"
@@ -2507,6 +2574,7 @@
 		"DOTA_Tooltip_ability_bloodseeker_bloodrage_spell_amp"							"%EVNEAMPLIFIKATION:"
 		"DOTA_Tooltip_ability_bloodseeker_bloodrage_damage_pct"							"%MAKS. HP SOM SKADE PER SEKUND:"
 
+		"DOTA_Tooltip_ability_bloodseeker_bloodrage_scepter_description"				    "Angreb med Bloodrage gør nu %max_health_dmg_pct%%% af målets maks. HP som <font color=\"#d8ae53\">ren</font> skade."
 		"DOTA_Tooltip_ability_bloodseeker_blood_bath"									"Blood Rite"
 		"DOTA_Tooltip_ability_bloodseeker_blood_bath_Description"						"Bloodseeker døber et område i helligt blod. Efter %delay_plus_castpoint_tooltip% sekunder gennemføres ritualet, hvilket får enhver fjende, der befinder sig i det afmærkede område, til at tage skade og blive undertrykt."
 		"DOTA_Tooltip_ability_bloodseeker_blood_bath_Lore"								"De Afpillede Tvillinger er altid villige til at hjælpe dem, der spilder blod på slagets mark."
@@ -2517,6 +2585,7 @@
 		
 		"DOTA_Tooltip_ability_bloodseeker_thirst"										"Thirst"
 		"DOTA_Tooltip_ability_bloodseeker_thirst_Description"							"Bloodseeker oplives af sine fjenders sår og får ekstra bevægelseshastighed, når en fjendtlig helts helbred kommer under %min_bonus_pct%%%, og den ekstra hastighed stiger, i takt med at deres helbred falder yderligere. Hvis en fjendtlig helts helbred kommer under %invis_threshold_pct%%%, så får Bloodseeker også udsyn og True Sight over helten. Bonusser stables per helt. Fjerner begrænsningen på Bloodseekers maksimale bevægelseshastighed."
+		"DOTA_Tooltip_ability_bloodseeker_thirst_Facet_bloodseeker_bloodrush"			"Kan aktiveres for at give ekstra bevægelseshastighed og %sanguivore_multiplier%x ekstra heling med Sanguivore i en kort periode. Mens den er på nedkøling, er passiv Thirsts bevægelseshastighed reduceret med %inactive_penalty_pct%%%. Kan ikke bruges, når alle fjendtlige helte har fuldt helbred."
 		"DOTA_Tooltip_ability_bloodseeker_thirst_Lore"									"Strygwyr bliver vanvittig, når der udgydes blod."
 		"DOTA_Tooltip_ability_bloodseeker_thirst_Note0"									"Udløses ikke af illusioner."
 		"DOTA_Tooltip_ability_bloodseeker_thirst_Note1"									"Den maksimale bonus til bevægelseshastighed forekommer, når en fjendens helbred er ved eller under %max_bonus_pct%%%."
@@ -2529,6 +2598,10 @@
 
 		"DOTA_Tooltip_ability_bloodseeker_sanguivore"										"Sanguivore"
 		"DOTA_Tooltip_ability_bloodseeker_sanguivore_Description"							"Bloodseeker gendanner noget helbred, når han dræber en enhed, svarende til %heal_hp_pct_per_level%%% af enhedens maksimale helbred per Bloodseekers level plus en grundmængde på %base_heal%.<br><br>Gendanner den halve værdi hvis en allieret dræber en fjendtlig helt i nærheden."
+		"DOTA_Tooltip_ability_bloodseeker_sanguivore_shard_Description"						"Forvandler passivt al Bloodseekers overheling fra hans egne evner til en barriere, som blokerer al skade op til %max_shield_pct%%% af Bloodseekers maksimale HP. Barrieren reduceres med %barrier_decay_pct%%% per sekund."
+		"DOTA_Tooltip_ability_bloodseeker_sanguivore_scepter_Description"						"Bloodseeker heler med %pure_damage_lifesteal_pct%%% af den <font color=\"#d8ae53\">rene</font> skade, han gør."
+
+
 		"DOTA_Tooltip_ability_bloodseeker_sanguivore_Note0"								"Krybs livsstjæl reduceret med %creep_lifesteal_reduction_pct%%%."
 		"DOTA_Tooltip_ability_bloodseeker_sanguivore_half_bonus_aoe"						"RADIUS FOR HALV HELING:"
 		"DOTA_Tooltip_ability_bloodseeker_sanguivore_max_hp_percent_heal_tooltip"			"%MAKS. HP-HELING:"
@@ -2578,6 +2651,7 @@
 		"DOTA_Tooltip_modifier_bloodseeker_thirst_vision"				"Thirst"
 		"DOTA_Tooltip_modifier_bloodseeker_thirst_vision_Description"				"Bloodseeker sanser dine sår og ved præcis, hvor du er."
 		"DOTA_Tooltip_modifier_bloodseeker_thirst_active"				"Bloodrush"
+		"DOTA_Tooltip_modifier_bloodseeker_thirst_active_Description"	"Øget bevægelseshastighed. Sanguivore heler mere."
 		"DOTA_Tooltip_modifier_bloodseeker_rupture"						"Rupture"
 		"DOTA_Tooltip_modifier_bloodseeker_rupture_Description"			"Gør en procentdel af den afstand, du bevæger dig, som skade"		
 		
@@ -2611,6 +2685,8 @@
 		"DOTA_Tooltip_ability_axe_counter_helix_scepter_description"					"Counter Helix påfører en stablende svækkelse på ramte fjender, som får dem til at gøre mindre samlet skade på Axe. Fjerner nedkølingen fra Counter Helix og tæller op, når Axe angriber."
 		"DOTA_Tooltip_ability_axe_counter_helix_Note1"									"Illusioners tællere øges ikke, når de angriber, når du har Scepter."
 		"DOTA_Tooltip_ability_axe_counter_helix_debuff_duration"						"SVÆKKELSESVARIGHED:"
+		"DOTA_Tooltip_ability_axe_counter_helix_damage_reduction"						"%ANGREBSSKADEREDUKTION:"
+		"DOTA_Tooltip_ability_axe_counter_helix_max_stacks"								"MAKS. ANTAL STABLINGER:"	
 		"DOTA_Tooltip_ability_axe_counter_helix_Note0"									"Counter Helix udløses, når angrebet rammer."
 		"DOTA_Tooltip_ability_axe_counter_helix_Lore"									"Axe er den eneste forstærkning, som denne hær har brug for."
 		"DOTA_Tooltip_ability_axe_counter_helix_damage"									"SKADE:"
@@ -2660,6 +2736,8 @@
 		"DOTA_Tooltip_modifier_axe_one_man_army_Description"			"Axe får %dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS% styrke som en procentdel af sin nuværende rustning, så længe han er alene."
 		
 		"DOTA_Tooltip_ability_axe_coat_of_blood"							"Coat of Blood"
+		"DOTA_Tooltip_ability_axe_coat_of_blood_Description"				"Axe gennembløder permanent sin klinge, hver gang han dræber en fjendtlig helt og får %armor_per_kill% ekstra rustning for hver stabling. Drab med Culling Blade giver %culling_blade_multiplier%x stablinger."
+
 		"DOTA_Tooltip_modifier_axe_coat_of_blood"							"Coat of Blood"
 		"DOTA_Tooltip_modifier_axe_coat_of_blood_Description"				"%fMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% rustning høstet med Axes økse."
 		"DOTA_Tooltip_modifier_axe_culling_blade_permanent_PostGame"					"Rustning fra fjender dræbt af Axe."
@@ -2668,7 +2746,10 @@
 		//PHANTOM LANCER
 		"DOTA_Tooltip_ability_phantom_lancer_spirit_lance"								"Spirit Lance"
 		"DOTA_Tooltip_ability_phantom_lancer_spirit_lance_Description"					"Sender en magisk åndelanse imod en valgt fjendtlig enhed, hvilket skader og hæmmer den. Der skabes også en illusion, som angriber enheden."
+		"DOTA_Tooltip_ability_phantom_lancer_spirit_lance_facet_phantom_lancer_lancelot"	"Spirit Lances fra Phantom Lancers illusioner gør %illusion_lance_damage_pct%%% lanseskade.<br><br>Påvirker ikke lanseskade fra yderligere hop fra Aghanim's Scepter."
+		"DOTA_Tooltip_ability_phantom_lancer_spirit_lance_scepter_description"			"Spirit Lance hopper én gang til fjender og prioriterer helte. Øger illusionsskaden for Spirit Lance."
 		"DOTA_Tooltip_ability_phantom_lancer_spirit_lance_Lore"							"Azwraiths færdighed i at spidde hans families fiskemåltider viser sig ret brugbart i slagmarken."
+		"DOTA_Tooltip_ability_phantom_lancer_spirit_lance_Note0"						"Illusioner indenfor %fake_lance_distance% rækkevidde af Phantom Lancer efterligner kasteanimationen."
 		"DOTA_Tooltip_ability_phantom_lancer_spirit_lance_duration"						"HÆMNINGSVARIGHED:"
 		"DOTA_Tooltip_ability_phantom_lancer_spirit_lance_movement_speed_pct"			"%BEVÆGELSESHÆMNING:"
 		"DOTA_Tooltip_ability_phantom_lancer_spirit_lance_lance_damage"					"LANSESKADE:"
@@ -2718,6 +2799,9 @@
 		"DOTA_Tooltip_Facet_phantom_lancer_convergence_Description"				"Doppelganger skaber yderligere illusioner. Hvor mange afhænger af Phantom Lancers nuværende helbred."
 		"DOTA_Tooltip_Facet_phantom_lancer_divergence"							"Divergence"		
 		"DOTA_Tooltip_Facet_phantom_lancer_divergence_Description"				"Illusioner fra Juxtapose dukker op på tilfældige enheder i nærheden og gør mere skade, men kan ikke kontrolleres."
+		"DOTA_Tooltip_Facet_phantom_lancer_lancelot"							"Lancelot"
+		"DOTA_Tooltip_Facet_phantom_lancer_lancelot_Description"				"Spirit Lances fra Phantom Lancers illusioner gør {s:bonus_illusion_lance_damage_pct}% lanseskade."
+
 		"DOTA_Tooltip_modifier_phantom_lancer_spirit_lance"					"Spirit Lance"
 		"DOTA_Tooltip_modifier_phantom_lancer_spirit_lance_Description"		"Bevægelseshastighed reduceret med %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
 		"DOTA_Tooltip_modifier_phantom_lancer_juxtapose_illusion"			"Phantom"
@@ -2740,6 +2824,7 @@
 		"DOTA_Tooltip_ability_razor_plasma_field_radius"								"RADIUS:"
 		"DOTA_Tooltip_ability_razor_static_link"										"Static Link"
 		"DOTA_Tooltip_ability_razor_static_link_Description"							"Skaber en ladet forbindelse mellem Razor og en fjendtlig helt, hvilket stjæler angrebsskade fra målet og giver det til Razor. Mens forbindelsen er aktiv, kan Razor angribe, mens han bevæger sig."
+		"DOTA_Tooltip_ability_razor_static_link_shard_Description"						"Øger kasterækkevidde. Hæmmer Razors mål med %move_speed_factor%x den stjålne skade, mens forbindelsen er aktiv."
 		"DOTA_Tooltip_ability_razor_static_link_Lore"									"Razors polaritet kanaliserer elektricitet ind i sig selv ved at dræne kræfterne ud af sine modstandere."
 		"DOTA_Tooltip_ability_razor_static_link_Note0"									"Forbindelsen brydes, når en af enhederne dør, eller afstanden mellem dem bliver %drain_range_buffer% enheder større end evnens kasterækkevidde."
 		"DOTA_Tooltip_ability_razor_static_link_drain_rate"								"SKADE STJÅLET PER INSTANS:"
@@ -2879,12 +2964,17 @@
 		//CRYSTAL MAIDEN
 		"DOTA_Tooltip_ability_crystal_maiden_crystal_nova"								"Crystal Nova"
 		"DOTA_Tooltip_ability_crystal_maiden_crystal_nova_Description"					"Et brag af skadende frost hæmmer fjenders bevægelse i det valgte område."
+		"DOTA_Tooltip_ability_crystal_maiden_crystal_nova_Facet_crystal_maiden_glacial_guard"	"Crystal Nova har øget radius og giver allierede helte en barriere mod fysisk skade. Barrieren øges for Crystal Maiden."
 		"DOTA_Tooltip_ability_crystal_maiden_crystal_nova_Lore"							"Lufttemperaturen omkring Rylai daler hastigt, hvilket forfryser alle omkring hende ind til benet."
 		"DOTA_Tooltip_ability_crystal_maiden_crystal_nova_Note0"						"Crystal Nova giver udsyn over målområdet i sin varighed."
+		"DOTA_Tooltip_ability_crystal_maiden_crystal_nova_duration"						"HÆMNINGSVARIGHED:"
 		"DOTA_Tooltip_ability_crystal_maiden_crystal_nova_movespeed_slow"				"%BEVÆGELSESHÆMNING:"
 		"DOTA_Tooltip_ability_crystal_maiden_crystal_nova_attackspeed_slow"				"ANGREBSHÆMNING:"
 		"DOTA_Tooltip_ability_crystal_maiden_crystal_nova_radius"						"RADIUS:"
 		"DOTA_Tooltip_ability_crystal_maiden_crystal_nova_nova_damage"					"SKADE:"
+		"DOTA_Tooltip_ability_crystal_maiden_crystal_nova_physical_barrier_amount"		"FYSISK BARRIERE:"
+		"DOTA_Tooltip_ability_crystal_maiden_crystal_nova_physical_barrier_self_amount"	"EGEN FYSISKE BARRIERE:"
+		"DOTA_Tooltip_ability_crystal_maiden_crystal_nova_physical_barrier_duration"	"BARRIEREVARIGHED:"
 		"DOTA_Tooltip_ability_crystal_maiden_frostbite"									"Frostbite"
 		"DOTA_Tooltip_ability_crystal_maiden_frostbite_Description"						"Indkapsler en fjendtlig enhed i is, så den hverken kan bevæge sig eller angribe, og gør skade over tid. Gør %creep_multiplier%x skade på ikke-Ancient-kryb."
 		"DOTA_Tooltip_ability_crystal_maiden_frostbite_Lore"							"Rylai kanaliserer vindene fra Blueheart-gletsjeren, hvilket indespærrer angribere i tykke isblokke."
@@ -2897,11 +2987,14 @@
 		"DOTA_Tooltip_ability_crystal_maiden_brilliance_aura"							"Arcane Aura"
 		"DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_Description"				"Giver ekstra mana-regenerering til alle allierede enheder i banen. Allierede inden for %proximity_bonus_radius% radius af Crystal Maiden får %proximity_bonus_factor% gange denne bonus."
 		"DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_Lore"						"Kolde temperaturer fremmer magiens essens; Rylais tilstedeværelse tillader altså talrigt brug af besværgelser."
+		"DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_Note0"						"Med Arcane Overflow og Aghanim's Scepter, kan ikke aktiveres under kanalisering af Freezing Field."
 		"DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_proximity_bonus_radius"					"RADIUS:"
 		"DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_base_mana_regen"				"MANA-REGENERERING:"
 		"DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_proximity_mana_regen_tooltip"	"MANA-REGENERERING (ALLIEREDE TÆT PÅ):"
 		"DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_Facet_crystal_maiden_arcane_overflow"		"Aktivering af Arcane Aura øger midlertidigt Crystal Maidens evneamplifikation og mana-omkostninger. Mens evnen varer, gendanner Crystal Maiden sine allieredes mana ved brug af evner. Påvirker ikke genstande. Varigheden sættes på pause under kanalisering af Freezing Field."
+		"DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_activation_spell_amp_pct"			"%EVNEAMPLIFIKATION:"
 		"DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_activation_mana_cost_increase_pct"	"%ØGET MANA-OMKOSTNING:"
+		"DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_mana_battery_radius"				"RADIUS FOR MANAGENDANNELSE:"
 		"DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_mana_battery_mana_pct"				"%MANA TILDELT VED BRUG:"
 		"DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_activation_duration"				"VARIGHED:"
 		"DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_activation_cooldown"				"NEDKØLING:"
@@ -2944,6 +3037,8 @@
 
 		"DOTA_Tooltip_modifier_crystal_maiden_crystal_nova"							"Crystal Nova"
 		"DOTA_Tooltip_modifier_crystal_maiden_crystal_nova_Description"				"Bevægelseshastighed reduceret med %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
+		"DOTA_Tooltip_modifier_crystal_maiden_crystal_nova_barrier"					"Glacial Guard"
+		"DOTA_Tooltip_modifier_crystal_maiden_crystal_nova_barrier_Description"		"Absorberer %dMODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_CONSTANT% indkommende fysisk skade."
 		"DOTA_Tooltip_modifier_crystal_maiden_frostbite"							"Frostbite"
 		"DOTA_Tooltip_modifier_crystal_maiden_frostbite_Description"				"Kan ikke bevæge sig eller angribe. Tager %dMODIFIER_PROPERTY_TOOLTIP% skade hvert %fMODIFIER_PROPERTY_TOOLTIP%. sekund."
 		"DOTA_Tooltip_modifier_crystal_maiden_brilliance_aura_effect"				"Arcane Aura"
@@ -2951,14 +3046,19 @@
 		"DOTA_Tooltip_modifier_crystal_maiden_freezing_field_slow"					"Freezing Field-hæmning"
 		"DOTA_Tooltip_modifier_crystal_maiden_freezing_field_slow_Description"		"Bevægelseshastighed reduceret med %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, angrebshastighed reduceret med %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 		"DOTA_Tooltip_modifier_crystal_maiden_freezing_field"						"Freezing Field"
+		"DOTA_Tooltip_modifier_crystal_maiden_arcane_overflow_active"				"Arcane Overflow"
 		"DOTA_Tooltip_modifier_crystal_maiden_arcane_overflow_active_Description"	"Mana-omkostninger øget med %dMODIFIER_PROPERTY_MANACOST_PERCENTAGE_STACKING%%%. Evneamplifikation øget med %dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%%. Gendanner mana hos allierede i nærheden ved brug af evner. Påvirker ikke genstande."
 
 		"DOTA_Tooltip_Facet_crystal_maiden_frozen_expanse"							"Frozen Expanse"		
 		"DOTA_Tooltip_Facet_crystal_maiden_frozen_expanse_Description"				"Freezing Field øger også passivt Crystal Maidens kasterækkevidde og effektområde."
 
+		"DOTA_Tooltip_Facet_crystal_maiden_glacial_guard"							"Glacial Guard"
+		"DOTA_Tooltip_Facet_crystal_maiden_glacial_guard_description"				"Crystal Nova har øget radius og giver allierede helte en barriere mod fysisk skade. Barrieren øges for Crystal Maiden."
+
 		"DOTA_Tooltip_Facet_crystal_maiden_cold_comfort"							"Cold Comfort"		
 		"DOTA_Tooltip_Facet_crystal_maiden_cold_comfort_Description"				"Crystal Maiden gendanner sine allieredes mana, når hun bruger besværgelser. Øger den amplificerede mana-regenerering fra hendes medfødte evne."
 
+		"DOTA_Tooltip_Facet_crystal_maiden_arcane_overflow"							"Arcane Overflow"		
 		"DOTA_Tooltip_Facet_crystal_maiden_arcane_overflow_Description"				"Aktivering af Arcane Aura øger midlertidigt Crystal Maidens evneamplifikation og mana-omkostninger. Mens evnen varer, gendanner Crystal Maiden sine allieredes mana ved brug af evner."
 
 		//KUNKKA
@@ -3066,11 +3166,13 @@
 		"DOTA_Tooltip_ability_warlock_fatal_bonds_Note0"								"Fjender tager den samme type delte skade, som der gøres."		
 		"DOTA_Tooltip_ability_warlock_shadow_word"										"Shadow Word"
 		"DOTA_Tooltip_ability_warlock_shadow_word_Description"							"Warlock hvisker en trylleformular og kaster en besværgelse på en enhed, hvilket får den til at gøre skade på fjendtlige enheder i nærheden og hele allierede enheder i nærheden. Den valgte enhed heles eller skades også, alt efter om den er en allieret eller en fjende."
+		"DOTA_Tooltip_ability_warlock_shadow_word_scepter_Description"					"Øger effektradius. Shadow Word påføres nu på %additional_targets% yderligere enheder indenfor en radius på %cast_aoe% (helte prioriteres). Heling og skade på de yderligere mål reduceres med %secondary_reduction%%%."
 		"DOTA_Tooltip_ability_warlock_shadow_word_Lore"									"Demnoks mystiske kunstarter har utallige anvendelser; de kan både fungere som kraftfulde, venlige fortryllelser eller som skadende forbandelser."
 		"DOTA_Tooltip_ability_warlock_shadow_word_duration"								"VARIGHED:"
 		"DOTA_Tooltip_ability_warlock_shadow_word_spell_aoe"							"EFFEKTRADIUS:"
 		"DOTA_Tooltip_ability_warlock_shadow_word_damage"						"HELING/SKADE:"
 		"DOTA_Tooltip_ability_warlock_upheaval"											"Upheaval"
+		"DOTA_Tooltip_ability_warlock_upheaval_Description"								"KANALISERET – En kraftfuld hæmmende og skadende strøm, som vokser i styrke, jo længere den kanaliseres. Varer op til %abilitychanneltime% sekunder. Fjender hæmmes i %duration% sekund, efter de forlader området, eller besværgelsen slutter."
 		"DOTA_Tooltip_ability_warlock_upheaval_Lore"									"Demnok manipulerer rumtid og svækker hele hære."
 		"DOTA_Tooltip_ability_warlock_upheaval_Note0"									"Hæmningsforøgelsen er baseret på kanaliseringens længde, ikke efter hvor længe en fjende har stået i området."
 		"DOTA_Tooltip_ability_warlock_upheaval_abilitychanneltime"						"MAKS. VARIGHED:"
@@ -3198,9 +3300,12 @@
 		"DOTA_Tooltip_ability_zuus_cloud_Note2"											"Tårne og kryb gør halv skade på Nimbus."
 		"DOTA_Tooltip_ability_zuus_cloud_lore"											"Hvor tordengudens vrede opstår, samles stormskyer hurtigt."
 		"DOTA_Tooltip_ability_zuus_heavenly_jump"                   "Heavenly Jump"
+		"DOTA_Tooltip_ability_zuus_heavenly_jump_Description"       "Zeus udfører et himmelsk hop og springer fremad og giver den nærmeste synlige fjende stød (prioriterer helte), hvilket gør skade og reducerer deres bevægelses- og angrebshastighed. Zeus får %vision_radius% uhindret udsyn omkring sig i 3 sekunder."
+		"DOTA_Tooltip_ability_zuus_heavenly_jump_hop_distance"      "HOPPEAFSTAND:"
 		"DOTA_Tooltip_ability_zuus_heavenly_jump_damage"								"SKADE:"
 		"DOTA_Tooltip_ability_zuus_heavenly_jump_move_slow"								"%BEVÆGELSESHÆMNING:"
 		"DOTA_Tooltip_ability_zuus_heavenly_jump_aspd_slow"								"ANGREBSHÆMNING:"
+		"DOTA_Tooltip_ability_zuus_heavenly_jump_range"									"STØDRÆKKEVIDDE:"
 		"DOTA_Tooltip_ability_zuus_heavenly_jump_duration"								"VARIGHED:"
 		"DOTA_Tooltip_ability_zuus_heavenly_jump_targets"								"ANTAL MÅL:"
 
@@ -3308,6 +3413,7 @@
 		"DOTA_Tooltip_Facet_foundation_Description"				"Tree Grab har ikke et begrænset antal ladninger."
 
 		"DOTA_Tooltip_ability_tiny_insurmountable"			        				"Insurmountable"
+		"DOTA_Tooltip_ability_tiny_insurmountable_Description"	       				"Tiny får status- og hæmningsresistens fra styrke. Hæmningsresistens reduceres også virkningen af angrebshæmninger."
 		"DOTA_Tooltip_ability_tiny_insurmountable_str_to_status_resist_pct"	       	"%STYRKE TIL STATUSRESISTENS:"
 		"DOTA_Tooltip_ability_tiny_insurmountable_str_to_slow_resist_pct"	       	"%STYRKE TIL HÆMNINGSRESISTENS:"
 		"DOTA_Tooltip_Facet_tiny_crash_landing"							"Crash Landing"		
@@ -3439,10 +3545,15 @@
 
 		"DOTA_Tooltip_ability_dazzle_innate_weave"										"Weave"
 		"DOTA_Tooltip_ability_dazzle_innate_weave_Description"							"Dazzles evner påfører Weave på både allierede og fjender, hvilket øger rustning hos allierede og reducerer rustning hos fjender. Flere instanser af effekten kan stables."
+		"DOTA_Tooltip_ability_dazzle_innate_weave_Facet_dazzle_facet_nothl_boon"		"Weave påfører %ally_multiplier%x stablinger til allierede."
+		"DOTA_Tooltip_ability_dazzle_innate_weave_Facet_dazzle_poison_bloom"			"Weave påfører %enemy_multiplier%x stablinger til fjender."
 		"DOTA_Tooltip_ability_dazzle_innate_weave_duration"								"VARIGHED:"
 		"DOTA_Tooltip_ability_dazzle_innate_weave_armor_change"							"RUSTNINGSÆNDRING PER STABLING:"
 
+		"DOTA_Tooltip_ability_dazzle_nothl_projection"									"Nothl Projection"
+		"DOTA_Tooltip_ability_dazzle_nothl_projection_max_duration"						"MAKS. VARIGHED:"
 		"DOTA_Tooltip_Ability_dazzle_nothl_boon"									"Nothl Boon"
+		"DOTA_Tooltip_Ability_dazzle_nothl_boon_Description"						"Dazzles overheling konverteres til en barriere. Weave er stærkere på allierede."
 		"DOTA_Tooltip_Ability_dazzle_nothl_boon_Note0"								"Når Dazzle overheler sig selv eller en allieret, giver det helten en barriere mod fysisk skade svarende til den overhelede mængde i %duration% sekunder. Hvis målet for overhelingen allerede har en større barriere, opdateres varigheden af den i stedet."
 
 		"DOTA_Tooltip_Facet_dazzle_poison_bloom"							"Poison Bloom"
@@ -3472,8 +3583,12 @@
 		"DOTA_Tooltip_modifier_dazzle_bad_juju_manacost"						"Bad Juju"
 		"DOTA_Tooltip_modifier_dazzle_bad_juju_manacost_Description"			"Bad Juju har øget omkostning"
 
+		"DOTA_Tooltip_modifier_dazzle_nothl_projection_physical_body_debuff"				"Nothl Projection"
+		"DOTA_Tooltip_modifier_dazzle_nothl_projection_knockback"							"Nothl Projection"
+		"DOTA_Tooltip_modifier_dazzle_nothl_projection_soul_debuff"							"Nothl Projection"
 		//CLOCKWERK
 		"DOTA_Tooltip_ability_rattletrap_battery_assault"								"Battery Assault"
+		"DOTA_Tooltip_ability_rattletrap_battery_assault_Description"					"Affyrer kraftige sprængstykker mod tilfældige fjendtlige enheder i nærheden, hvilket gør let magisk skade og lammer kortvarigt."
 		"DOTA_Tooltip_ability_rattletrap_battery_assault_Lore"							"Nogle af Rattletraps anordninger virker ikke helt rigtigt, så at detonere dem gør gavn som en offensiv manøvre."
 		"DOTA_Tooltip_ability_rattletrap_battery_assault_Note0"							"Forbliver aktiv, selv hvis Clockwerk er uskadeliggjort."
 		"DOTA_Tooltip_ability_rattletrap_battery_assault_radius"						"RADIUS:"
@@ -3500,6 +3615,7 @@
 		"DOTA_Tooltip_ability_rattletrap_rocket_flare_slow_duration"					"HÆMNINGSVARIGHED:"
 		"DOTA_Tooltip_ability_rattletrap_hookshot"										"Hookshot"
 		"DOTA_Tooltip_ability_rattletrap_hookshot_Description"							"Affyrer en gribeklo med stor hast mod et valgt område. Hvis gribekloen rammer en enhed, trækker Clockwerk sig selv ind mod målet, hvilket lammer og skader alle inden for %stun_radius% radius af målet. Fjender, som Clockwerk kolliderer med undervejs, tager skade og lammes."
+		"DOTA_Tooltip_ability_rattletrap_hookshot_Facet_rattletrap_hookup"				"Hvis der er en anden allieret helt indenfor %radius_ally% af Hookshots mål, får Clockwerk og alle allierede i området ekstra rustning, og de refunderer en del af Hookshots nedkøling og mana-omkostning."
 		"DOTA_Tooltip_ability_rattletrap_hookshot_Lore"									"En noget besværlig anordning; gribekloen sender den ellers klodsede Clockwerk-rustning tværs igennem luften."
 		"DOTA_Tooltip_ability_rattletrap_hookshot_Note0"								"Hookshot vil hægte sig fast og tage Clockwerk til allierede, men vil ikke skade eller disable dem."
 		"DOTA_Tooltip_ability_rattletrap_hookshot_duration"								"LAMMELSESVARIGHED:"
@@ -3518,6 +3634,7 @@
 		"DOTA_Tooltip_ability_rattletrap_overclocking_rocket_flare_cooldown"			"NEDKØLING (ROCKET FLARE):"
 		"DOTA_Tooltip_ability_rattletrap_overclocking_jetpack_bonus_speed"				"%JETPACKHASTIGHED:"
 
+		"DOTA_Tooltip_ability_rattletrap_overclocking_debuff_duration"					"EGEN HÆMNINGSVARIGHED:"
 		"DOTA_Tooltip_ability_rattletrap_jetpack"               "Jetpack"
 		"DOTA_Tooltip_ability_rattletrap_jetpack_Description"   "Clockwerk aktiverer en jetpack og får flyvende bevægelse, flyvende udsyn og øget bevægelseshastighed. Mens Clockwerk flyver, er hans vendehastighed begrænset, og han kan ikke angribe. Jetpacken annulleres, hvis Clockwerk bruger Hookshot."
 		"DOTA_Tooltip_ability_rattletrap_jetpack_duration"      "VARIGHED:"
@@ -3526,6 +3643,8 @@
 		"DOTA_Tooltip_Facet_rattletrap_hookup"									"Hookup"				
 		"DOTA_Tooltip_Facet_rattletrap_expanded_armature"									"Expanded Armature"
 		"DOTA_Tooltip_Facet_rattletrap_expanded_armature_Description"						"Power Cogs dannes i en større radius."
+		"DOTA_Tooltip_Facet_rattletrap_hookup_Description"						"Hvis der er en anden allieret helt indenfor {s:bonus_radius_ally} af Hookshots mål, får Clockwerk og alle allierede i området ekstra rustning, og de refunderer en del af Hookshots nedkøling og mana-omkostning."
+
 		"DOTA_Tooltip_modifier_rattletrap_battery_assault"				"Battery Assault"
 		"DOTA_Tooltip_modifier_rattletrap_battery_assault_Description"	"Gør periodisk skade til enheder i nærheden."
 		"DOTA_Tooltip_modifier_rattletrap_cog_push"						"Cog Push"
@@ -4730,8 +4849,13 @@
 
 
 		"DOTA_Tooltip_Facet_templar_assassin_voidblades"								"Voidblades"		
+		"DOTA_Tooltip_Facet_templar_assassin_voidblades_Description"					"Bonusskaden og rustningsreduktionen fra Meld påføres på alle fjender i delingsrækkevidden."
 		"DOTA_Tooltip_Facet_templar_assassin_refractor"									"Refractor"
         "DOTA_Tooltip_Facet_templar_assassin_refractor_Description"						"Refraction får en skadeladning, hver gang en skjoldladning opbruges."
+		"DOTA_Tooltip_Facet_templar_assassin_hidden_reach"								"Hidden Reach"
+		"DOTA_Tooltip_Facet_templar_assassin_hidden_reach_Description"					"Under Meld øger Templar Assassin sin angrebsrækkevidde med op til yderligere {s:bonus_attack_range_increase_max} rækkevidde over {s:bonus_attack_range_increase_time}s."
+
+
 		"DOTA_Tooltip_ability_templar_assassin_psionic_trap"							"Psionic Trap"
 		"DOTA_Tooltip_ability_templar_assassin_psionic_trap_Lore"						"Ved at kalde på det Skjulte Tempels greb, er der ingen, der kan undslippe tempelridderens syn."
 		"DOTA_Tooltip_ability_templar_assassin_psionic_trap_Description"				"Templar Assassin anbringer mystiske fælder, som usynligt overvåger fjenders bevægelse. Når de udløses efter hendes ønske, gør de en lille mængde skade og påfører en hæmning på %movement_speed_min%%% i området. Fælder lader op til at hæmme med %movement_speed_max%%% efter %trap_max_charge_duration% sekunder. Gør bonusskade, når fælderne er fuldt ladet."
@@ -4793,6 +4917,7 @@
 		"DOTA_Tooltip_ability_viper_nethertoxin"										"Nethertoxin"
 		"DOTA_Tooltip_ability_viper_nethertoxin_Description"							"Viper udsender et giftstof i det valgte område. Enheder i området tager mere og mere skade over tid, afhængigt af hvor længe de bliver der. Enheder i området får hæmmet deres angrebshastighed."
 		"DOTA_Tooltip_ability_viper_nethertoxin_Lore"									"Gift fra de Underjordiske Egne forvandler skade til dødsfald — udmattelse til død."
+		"DOTA_Tooltip_ability_viper_nethertoxin_Note0"									"Flere instanser af Nethertoxin stabler ikke."
 		"DOTA_Tooltip_ability_viper_nethertoxin_attack_slow"							"ANGREBSHÆMNING:"
 		"DOTA_Tooltip_ability_viper_nethertoxin_min_damage"								"MIN. SKADE PER SEK.:"
 		"DOTA_Tooltip_ability_viper_nethertoxin_max_damage"								"MAKS. SKADE PER SEK.:"
@@ -4828,6 +4953,7 @@
 		
 		"DOTA_Tooltip_ability_viper_nose_dive"											"Nosedive"
 		"DOTA_Tooltip_ability_viper_nose_dive_Lore"										"Man troede, at vingerne fra Netherdrakes kun rørte jorden, når de døde, men flere har gættet sig til, at dem, der har bevidnet en bevidst landing, blot ikke har overlevet til at fortælle om det."
+		"DOTA_Tooltip_ability_viper_nose_dive_Description"								"Viper hamrer ned i jorden, hvilket udsender en Nethertoxin og sprøjter alle fjender inden for %corrosive_radius% afstand i %effect_duration% sekunder med effekten fra Corrosive Skin."
 		"DOTA_Tooltip_ability_viper_nose_dive_Note0"									"Kan ikke bruges, mens man er fastgjort eller lænket."
 
 		"DOTA_Tooltip_Facet_viper_poison_burst"                                            "Poison Burst"
@@ -4942,16 +5068,32 @@
 		"DOTA_Tooltip_ability_dragon_knight_breathe_fire_Note1"							"Udløser ikke besværgelsesblokering eller besværgelsesrefleksion."
 		"DOTA_Tooltip_ability_dragon_knight_dragon_tail"								"Dragon Tail"
 		"DOTA_Tooltip_ability_dragon_knight_dragon_tail_Description"					"Dragon Knight slår en fjendtlig enhed inden for rækkevidde med sit skjold, hvilket lammer den og gør skade. Når Elder Dragon Form er aktiv, øges rækkevidden til %dragon_cast_range%."
+		"DOTA_Tooltip_ability_dragon_knight_dragon_tail_Facet_dragon_knight_fire_dragon"	"I drageform påføres Dragon Tail på fjender i en radius på %dragon_aoe%."
 		"DOTA_Tooltip_ability_dragon_knight_dragon_tail_Lore"							"Davions kombination af dragetalenter og ridderlige færdigheder gør ham til en brutal modstander i nærkamp."
 		"DOTA_Tooltip_ability_dragon_knight_dragon_tail_stun_duration"					"LAMMELSESVARIGHED:"
 		"DOTA_Tooltip_ability_dragon_knight_dragon_tail_damage"							"SKADE:"
+		"DOTA_Tooltip_ability_dragon_knight_dragon_tail_aoe"									"OMRÅDE:"
 		"DOTA_Tooltip_ability_dragon_knight_dragon_blood"								"Wyrm's Wrath"
 		"DOTA_Tooltip_ability_dragon_knight_dragon_blood_Lore"							"Slyraks blod løber stadig igennem Davions årer, hvilket giver ham dobbelt så meget livskraft som en almindelig ridder."
 		
 		"DOTA_Tooltip_Facet_dragon_knight_corrosive_dragon"						"Corrosive Dragon"
+		"DOTA_Tooltip_Facet_dragon_knight_corrosive_dragon_Description"			"Dragon Knight har giftige angreb, som bliver stærkere, når Elder Dragon Form er aktiv. Alle hans evner gør fysisk skade."
 		"DOTA_Tooltip_Facet_dragon_knight_fire_dragon"							"Fire Dragon"		
 		"DOTA_Tooltip_Facet_dragon_knight_frost_dragon"							"Frost Dragon"
 		"DOTA_Tooltip_Facet_dragon_knight_frost_dragon_Description"				"Dragon Knight har hæmning og helingsreduktion på sine angreb, som bliver stærkere, når Elder Dragon Form er aktiv."
+
+		"DOTA_Tooltip_ability_dragon_knight_dragon_blood_corrosive_breath_damage"		"GIFT – SKADE PER SEKUND:"
+		"DOTA_Tooltip_ability_dragon_knight_dragon_blood_corrosive_breath_duration"		"GIFT – VARIGHED:"
+		"DOTA_Tooltip_ability_dragon_knight_dragon_blood_corrosive_breath_armor_reduction"		"GIFT – RUSTNINGSREDUKTION:"
+
+		"DOTA_Tooltip_ability_dragon_knight_dragon_blood_magic_damage"			"MAGISK SKADE:"
+		"DOTA_Tooltip_ability_dragon_knight_dragon_blood_bonus_aoe"			"EKSTRA EFFEKTOMRÅDE:"
+
+		"DOTA_Tooltip_ability_dragon_knight_dragon_blood_frost_bonus_movement_speed"	"%FROST – BEVÆGELSESHÆMNING:"
+		"DOTA_Tooltip_ability_dragon_knight_dragon_blood_frost_bonus_attack_speed"		"FROST – ANGREBSHÆMNING:"
+		"DOTA_Tooltip_ability_dragon_knight_dragon_blood_frost_duration"				"FROST – VARIGHED:"
+		"DOTA_Tooltip_ability_dragon_knight_dragon_blood_frost_aoe"						"FROST – SVÆKKELSESRADIUS:"
+		"DOTA_Tooltip_ability_dragon_knight_dragon_blood_frost_healing_reduction"		"%FROST – HELINGSREDUKTION:"
 
 		"DOTA_Tooltip_ability_dragon_knight_elder_dragon_form"							"Elder Dragon Form"
 		"DOTA_Tooltip_ability_dragon_knight_elder_dragon_form_shard_description"        "Tildeler Fireball-evnen, når man bruger Elder Dragon Form."
@@ -4963,6 +5105,7 @@
 		"DOTA_Tooltip_ability_dragon_knight_elder_dragon_form_bonus_attack_range"		"BONUS-ANGREBSRÆKKEVIDDE:"
 		"DOTA_Tooltip_ability_dragon_knight_elder_dragon_form_bonus_attack_damage"		"BONUSANGREBSSKADE:"
 		"DOTA_Tooltip_ability_dragon_knight_elder_dragon_form_ranged_splash_radius"		"EFFEKTENS SPREDNINGSRADIUS:"
+		"DOTA_Tooltip_ability_dragon_knight_elder_dragon_form_ranged_splash_damage_pct"		"%SPREDNINGSSKADE:"
 		"DOTA_Tooltip_ability_dragon_knight_elder_dragon_form_abilitydraft_note"		"Shard: Tildeler evnen Fireball."
 		"DOTA_Tooltip_ability_dragon_knight_fireball"							        "Fireball"
 		"DOTA_Tooltip_ability_dragon_knight_fireball_Description"				        "Antænder et område, hvilket gør skade over tid på ramte fjender. I nærkampsform har evnen reduceret kasterækkevidde."
@@ -5119,6 +5262,7 @@
 
 		"DOTA_Tooltip_ability_clinkz_strafe"											"Strafe"
 		"DOTA_Tooltip_ability_clinkz_strafe_Description"								"Clinkz får angrebshastighed og har ekstra angrebsrækkevidde. Skeletbueskytter, som er indenfor %strafe_skeleton_radius% radius af Clinkz, får også ekstra angrebsrækkevidde og %archer_attack_speed_pct%%% af den øgede angrebshastighed. <br><br> Brug af Strafe afbryder ikke usynligheden fra Skeleton Walk."
+		"DOTA_Tooltip_ability_clinkz_strafe_Facet_clinkz_suppressive_fire"				"Clinkz og hver skeletbueskytte påfører en stablende svækkelse, én stabel per angribende skeletbueskytte, som gør, at målet misser %bonus_blind_pct%%% af sine angreb per stabel i %debuff_duration%s. Påføres også på bygninger."
 		"DOTA_Tooltip_ability_clinkz_strafe_attack_range_bonus"							"ØGET ANGREBSRÆKKEVIDDE:"
 		"DOTA_Tooltip_ability_clinkz_strafe_attack_speed_bonus"							"ANGREBSHASTIGHEDSBONUS:"
 		"DOTA_Tooltip_ability_clinkz_strafe_duration"									"VARIGHED:"
@@ -5133,6 +5277,7 @@
 
 		"DOTA_Tooltip_ability_clinkz_death_pact"										"Death Pact"
 		"DOTA_Tooltip_ability_clinkz_death_pact_Description"							"Clinkz fortærer det valgte fjendtlige kryb eller den valgte allierede Skeleton Archer for at hele og få maks. HP og skaber en Skeleton Archer på samme plads. Afbryder ikke Clinkz' Skeleton Walk.<br><br>Der kan kun hidkaldes én bueskytte fra Death Pact ad gangen."
+		"DOTA_Tooltip_ability_clinkz_death_pact_Facet_clinkz_engulfing_step"			"Death Pact teleporterer Clinkz mod offeret. Reducerer Death Pacts nedkøling. Hvis alternativ tilstand er aktiveret, eller Clinkz er fastgjort eller lænket, teleporteres han ikke til målet."
 		"DOTA_Tooltip_ability_clinkz_death_pact_abilitydraft_note"						"Searing Arrows-evnen skal også vælges, for at bueskytterne fra Burning Army-evnen får ekstra skade."
 		"DOTA_Tooltip_ability_clinkz_death_pact_Lore"									"Sutherex' livs- og dødsbånd er blevet en del af Clinkz, og hans knogler kvikkes op ved repition på mindreværdige væsner."
 		"DOTA_Tooltip_ability_clinkz_death_pact_Note0"									"Hvis målet er en fjende, vil Clinkz få den fulde erfaring og guld."
@@ -5141,6 +5286,8 @@
 		"DOTA_Tooltip_ability_clinkz_death_pact_duration"								"VARIGHED:"
 		"DOTA_Tooltip_ability_clinkz_death_pact_health_gain"							"BONUSHELBRED:"
 		"DOTA_Tooltip_ability_clinkz_death_pact_creep_level"							"MAKS. LEVEL (KRYB):"
+		"DOTA_Tooltip_ability_clinkz_death_pact_AbilityChargeRestoreTime"				"GRUNDTID FØR NY LADNING:"
+
 		"DOTA_Tooltip_ability_clinkz_bone_and_arrow"								"Bone and Arrow"
 		"DOTA_Tooltip_ability_clinkz_bone_and_arrow_Description"	 				"Clinkz hidkalder en Skeleton Archer, når han dør. Skeleton Archers er stationære og dør efter flere angreb fra en helt. De gør en procentdel af Clinkz' skade og gør mindre skade på bygninger. Angrebsrækkevidden er den samme som Clinkz' angrebsrækkevidde.<br><br>Nogle af Clinkz' andre evner kan også hidkalde Skeleton Archers."
 		"DOTA_Tooltip_ability_clinkz_bone_and_arrow_scepter_Description"	 		"Øger skeletbueskytters helbred."
@@ -5209,6 +5356,7 @@
 
 		"DOTA_Tooltip_ability_enchantress_natures_attendants"							"Nature's Attendants"
 		"DOTA_Tooltip_ability_enchantress_natures_attendants_Description"				"Feer heler Enchantress og eventuelle allierede enheder i nærheden."
+		"DOTA_Tooltip_ability_enchantress_natures_attendants_facet_enchantress_overprotective_wisps"			"Når Enchantress tager mere end %overprotective_damage_threshold% skade fra fjendtlige helte, dukker der %overprotective_wisp_count% fe op i %overprotective_wisp_duration%s for at hele hende. Der kan maks. være %overprotective_max_wisps% overbeskyttende feer samtidigt."
 		"DOTA_Tooltip_ability_enchantress_natures_attendants_Lore"						"Løjerlige skovånder besidder en noget diskret helende kraft — men kraften opnår styrke i sit antal."
 		"DOTA_Tooltip_ability_enchantress_natures_attendants_Note0"						"Enheder med fuld HP vil ikke blive valgt til helingen."
 		"DOTA_Tooltip_ability_enchantress_natures_attendants_Note1"						"Evnebrud deaktiverer effekten fra Overprotective Wisps."
@@ -5221,6 +5369,7 @@
 
 
 		"DOTA_Tooltip_ability_enchantress_impetus"										"Impetus"
+		"DOTA_Tooltip_ability_enchantress_impetus_Description"							"Tilfører en fortryllelse til hvert angreb, når evnen er aktiveret, hvilket får angrebene til at gøre ekstra skade baseret på, hvor langt væk målet befinder sig. Jo længere væk målet er, jo større skade gøres der. Gør dobbeltskade på illusioner."
 		"DOTA_Tooltip_ability_enchantress_impetus_Lore"									"Selvom Aiushtha foretrækker fredelige midler, kan hun forårsage voldsomme, magiske angreb på afstand. Hendes spyd får energi fra naturlivet omkring hende."
 		"DOTA_Tooltip_ability_enchantress_impetus_Note0"								"Skaden kan ikke blive større efter %distance_cap% afstand."
 		"DOTA_Tooltip_ability_enchantress_impetus_Note1"								"Afstanden til målet måles, når projektilet rammer."
@@ -5378,6 +5527,8 @@
 		
 		"DOTA_Tooltip_ability_huskar_burning_spear"										"Burning Spear"
 		"DOTA_Tooltip_ability_huskar_burning_spear_Description"							"Huskar sætter ild til sine spyd, hvilket gør skade over tid sammen med hans normale angreb. Adskillige angreb vil stable ekstra skade. Hvert angreb dræner en smule af Huskars livspoint."
+		"DOTA_Tooltip_ability_huskar_burning_spear_Facet_huskar_nothl_conflagration"	"Burning Spears brænder også fjender med en procentdel af deres maks. helbred. Koster maks. helbred i stedet for nuværende helbred."
+		"DOTA_Tooltip_ability_huskar_burning_spear_scepter_description"					"Burning Spears kaster yderligere %multishot_targets% spyd på tilfældige fjender indenfor Huskars angrebsrækkevidde."
 		"DOTA_Tooltip_ability_huskar_burning_spear_Lore"								"Den hellige kriger antænder sit arsenal efter at have afmærket det med sit eget blod — han forårsager på denne måde meget større smerte, end han selv føler."
 		"DOTA_Tooltip_ability_huskar_burning_spear_Note0"								"Burning Spear stables additivt, når evnen bruges flere gange på samme mål. Der er ingen grænse."
 		"DOTA_Tooltip_ability_huskar_burning_spear_Note1"								"Huskar kan ikke dræbe sig selv med denne evne."
@@ -5397,6 +5548,7 @@
 
 		"DOTA_Tooltip_ability_huskar_berserkers_blood"									"Berserker's Blood"
 		"DOTA_Tooltip_ability_huskar_berserkers_blood_Description"						"Huskars skader nærer hans kræfter. Huskar får øget angrebshastighed, magisk resistens og HP-regenerering baseret på manglende helbred. HP-regenereringen svarer til en procentdel af hans styrke."
+		"DOTA_Tooltip_ability_huskar_berserkers_blood_Facet_huskar_cauterize"			"Berserker's Blood kan aktiveres for en helbredsomkostning. Fordriver Huskar, og efter en forsinkelse heles den brugte mængde helbred plus en yderligere bonus per fordrevet svækkelse.\n\nFORDRIVELSESTYPE: Simpel fordrivelse"
 		"DOTA_Tooltip_ability_huskar_berserkers_blood_Lore"								"Efter at have mistet sin umistelige ret vandt Huskar en dødelighed i fysisk kamp, som kun forstærkes, når hans eget blod bliver spildt."
 		"DOTA_Tooltip_ability_huskar_berserkers_blood_Note0"							"Bonusserne gives lineært; ingen bonus ved fuld HP og fuld bonus ved under %hp_threshold_max%%% HP."
 		"DOTA_Tooltip_ability_huskar_berserkers_blood_maximum_attack_speed"     		"MAKS. ANGREBSHASTIGHED:"
@@ -5404,6 +5556,10 @@
 		"DOTA_Tooltip_ability_huskar_berserkers_blood_maximum_magic_resist"				"%MAKS. MAGISK RESISTENS:"
 		"DOTA_Tooltip_ability_huskar_berserkers_blood_hp_threshold_max" 				"%HP FOR MAKS. BONUS:"
 		"DOTA_Tooltip_ability_huskar_berserkers_blood_activation_cooldown"				"NEDKØLING:"
+		"DOTA_Tooltip_ability_huskar_berserkers_blood_activation_healthcost_pct"	 	"%OMKOSTNING AF NUVÆRENDE HP:"
+		"DOTA_Tooltip_ability_huskar_berserkers_blood_activation_delay"	 				"FORSINKELSE:"
+		"DOTA_Tooltip_ability_huskar_berserkers_blood_activation_heal_pct_per_debuff"	 "%MAKS. HP-HELING PER SVÆKKELSE:"
+
 		"DOTA_Tooltip_ability_huskar_life_break"										"Life Break"
 		"DOTA_Tooltip_ability_huskar_life_break_Description"							"Huskar tapper sit eget helbred for at nedbryde fjendens og hopper mod et mål for at splintre en procentdel af heltens nuværende HP og hæmme både heltens bevægelses- og angrebshastighed. Mens han hopper, er Huskar svækkelsesimmun og har 60%% øget magisk resistens.\n\nFORDRIVELSESTYPE: Simpel fordrivelse"
 		"DOTA_Tooltip_ability_huskar_life_break_Facet_huskar_bloodbath"					"Life Break hæmmer også fjender i en radius omkring målet."
@@ -5444,13 +5600,21 @@
 		"DOTA_Tooltip_modifier_huskar_berserkers_blood_transfusion_Description"				"Angrebshastighed øget med %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, magisk skaderesistens med %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%% og HP-regenerering med %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT%."
 		"DOTA_Tooltip_modifier_huskar_berserkers_blood_transfusion_debuff"					"Berserker's Blood – Transfusion"
 		"DOTA_Tooltip_modifier_huskar_berserkers_blood_transfusion_debuff_Description"		"Mister angrebshastighed, magisk resistens og HP-regenerering på grund af transfusion."
+		"DOTA_Tooltip_modifier_huskar_cauterize_delay"										"Cauterize"
+		"DOTA_Tooltip_modifier_huskar_cauterize_delay_Description"							"Heler med %dMODIFIER_PROPERTY_TOOLTIP% HP ved udløb."
+
 		"DOTA_Tooltip_Facet_huskar_bloodbath"							"Bloodbath"		
 		"DOTA_Tooltip_Facet_huskar_bloodbath_Description"				"Life Break hæmmer også fjender i en radius omkring målet."
 		"DOTA_Tooltip_Facet_huskar_nothl_transfusion"					"Nothl Transfusion"
 		"DOTA_Tooltip_Facet_huskar_nothl_transfusion_Description"		"Life Break heler også allierede enheder i en radius omkring målet."
+		"DOTA_Tooltip_Facet_huskar_cauterize"							"Cauterize"
+		"DOTA_Tooltip_Facet_huskar_cauterize_Description"				"Berserker's Blood kan aktiveres for en helbredsomkostning. Fordriver Huskar, og efter en forsinkelse heles den brugte mængde helbred plus en yderligere bonus per fordrevet svækkelse."
 		"DOTA_Tooltip_Facet_huskar_nothl_conflagration"					"Incendiary"
+		"DOTA_Tooltip_Facet_huskar_nothl_conflagration_Description"		"Burning Spears brænder også fjender med en procentdel af deres maks. helbred. Koster maks. helbred i stedet for nuværende helbred."
+
 		//NIGHT STALKER
 		"DOTA_Tooltip_ability_night_stalker_void"										"Void"
+		"DOTA_Tooltip_ability_night_stalker_void_Description"							"Skaber et skadende tomrum, som hæmmer en fjendtlig enhed og gør skade. Om natten lammer evnen også kortvarigt, hvilket afbryder kanaliserende evner, og effekterne varer længere."
 		"DOTA_Tooltip_ability_night_stalker_void_Facet_night_stalker_blinding_void"		"Fjender, som er påvirket af Void, deler ikke udsyn med deres allierede. Påvirkede enheder tager skade per sekund, når deres allierede ikke kan se dem."
 		"DOTA_Tooltip_ability_night_stalker_void_invisible_damage_pers"					"SKADE PER SEKUND VED USYNLIGHED:"
 		"DOTA_Tooltip_ability_night_stalker_void_Lore"									"Balanar skaber en hvirvel af uendelig nat ved voldeligt at rive modstandere ind i det evige mørke, som engang var."
@@ -5470,8 +5634,10 @@
 		"DOTA_Tooltip_ability_night_stalker_crippling_fear_duration_night"				"NATTEVARIGHED:"
 		"DOTA_Tooltip_ability_night_stalker_crippling_fear_dps"							"SKADE PER SEKUND:"
 		"DOTA_Tooltip_ability_night_stalker_crippling_fear_radius"						"RADIUS:"
+		"DOTA_Tooltip_ability_night_stalker_crippling_fear_mana_pct_cost"				"%MANA-OMKOSTNING:"
 		"DOTA_Tooltip_ability_night_stalker_hunter_in_the_night"						"Hunter in the Night"
 		"DOTA_Tooltip_ability_night_stalker_hunter_in_the_night_Description"			"Om natten er Night Stalker i sit rette element og kan angribe og bevæge sig hurtigere."
+		"DOTA_Tooltip_ability_night_stalker_hunter_in_the_night_Facet_night_stalker_dayswap"			"Øger det maksimale level i Hunter in the Night til %max_level_tooltip%. Night Stalker starter med et bonuslevel i Hunter in the Night."
 		"DOTA_Tooltip_ability_night_stalker_hunter_in_the_night_shard_description"		"Hunter in the Night kan bruges på et kryb, hvilket dræber det øjeblikkeligt og gendanner noget af Night Stalkers maks. HP og mana. Kan ikke bruges på Ancient-enheder om dagen."
 		"DOTA_Tooltip_ability_night_stalker_hunter_in_the_night_Lore"					"Balanars jagtdygtighed forbedres, som natten kommer nærmere."
 		"DOTA_Tooltip_ability_night_stalker_hunter_in_the_night_bonus_movement_speed_pct_night"	"%BEVÆGELSESHASTIGHED:"
@@ -5504,7 +5670,9 @@
 		"DOTA_Tooltip_Facet_night_stalker_blinding_void"							"Blinding Void"		
 		"DOTA_Tooltip_Facet_night_stalker_blinding_void_Description"				"Fjender, som er påvirket af Void, deler ikke udsyn med deres allierede. Påvirkede enheder tager skade per sekund, når deres allierede ikke kan se dem."
 		
+		"DOTA_Tooltip_Facet_night_stalker_voidbringer"								"Voidbringer"		
 		"DOTA_Tooltip_Ability_night_stalker_night_reign"				"Night Reign"
+		"DOTA_Tooltip_Ability_night_stalker_night_reign_Description"	"Spillet starter nu om natten i stedet for om dagen. Nat er længere end dag. Night Stalker starter med et bonuslevel i Hunter in the Night."
 		"DOTA_Tooltip_Ability_night_stalker_night_reign_daytime_change"	"DAGSFORKORTELSE:"
 		"DOTA_Tooltip_Ability_night_stalker_night_reign_tooltip_nighttime_change" "NATTEFORLÆNGELSE:"
 		
@@ -5531,6 +5699,7 @@
 		"DOTA_Tooltip_ability_broodmother_sticky_snare_width"							"FÆLDEBREDDE:"
 		"DOTA_Tooltip_ability_broodmother_spin_web"										"Spin Web"
 		
+		"DOTA_Tooltip_ability_broodmother_spin_web_Description"							"Spinder et stort spindelvæv, som giver Broodmother en passiv forøgelse i bevægelseshastighed, øger hendes vendehastighed, når hun er i nærheden, og giver fri bevægelse.<br><br>Spin Web kan bruges fra hvor som helst, så længe det nye spindelvæv rører et eksisterende spindelvæv. Spindelvæv udløber aldrig og kan ødelægges manuelt. Når det maksimale antal spindelvæv overstiges, forsvinder det ældste spindelvæv."
 		"DOTA_Tooltip_ability_broodmother_spin_web_Facet_broodmother_necrotic_webs"		"Reducerer HP-regenerering for fjender i spindelvæv, som er i samme netværk som Broodmother."
 		"DOTA_Tooltip_ability_broodmother_spin_web_Lore"								"Ved at væve en seng af silkefibre beskytter Spindleren sit afkom samtidig med, at fremrykkende modstandere får et ilde varsel."
 		"DOTA_Tooltip_ability_broodmother_spin_web_scepter_description"					"Øger bevægelseshastighed og øger maks. antal ladninger af Spin Web."
@@ -5568,6 +5737,7 @@
 		"DOTA_Tooltip_ability_broodmother_incapacitating_bite_bonus_movespeed"			"%BEVÆGELSESHÆMNING:"
 		"DOTA_Tooltip_ability_broodmother_incapacitating_bite_duration"			"VARIGHED:"		
 		"DOTA_Tooltip_ability_broodmother_insatiable_hunger"							"Insatiable Hunger"
+		"DOTA_Tooltip_ability_broodmother_insatiable_hunger_Description"				"En voldelig lyst efter livsvigtige væsker øger Broodmothers angrebsskade og giver hende vampyriske angreb."
 		"DOTA_Tooltip_ability_broodmother_insatiable_hunger_Facet_broodmother_feeding_frenzy"				"Insatiable Hunger påføres også på Spiderlings i nærheden."
 		"DOTA_Tooltip_ability_broodmother_insatiable_hunger_aura_radius"				"RADIUS (EDDERKOP):"		
 
@@ -5605,6 +5775,7 @@
 		"DOTA_Tooltip_modifier_broodmother_spawn_spiderlings_slow"				"Spawn Spiderlings"
 		"DOTA_Tooltip_modifier_broodmother_spawn_spiderlings_slow_Description"	"Hæmmet med %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 		"DOTA_Tooltip_modifier_broodmother_spin_web"							"Spin Web"
+		"DOTA_Tooltip_modifier_broodmother_spin_web_Description"				"Øger bevægelseshastighed med %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."		
 		"DOTA_Tooltip_modifier_broodmother_spin_web_charge_counter"				"Spin Web – antal ladninger"		
 		"DOTA_Tooltip_modifier_broodmother_spin_web_charge_counter_Description"				"Du kan bruge Spin Web, når der er en ladning tilgængelig."		
 		"DOTA_Tooltip_modifier_broodmother_spin_web_degen"						"Necrotic Webs"		
@@ -5735,7 +5906,9 @@
 		"DOTA_Tooltip_ability_weaver_geminate_attack_Description"			"Gør Weaver i stand til at sende to angreb på samme tid."
 		"DOTA_Tooltip_ability_weaver_geminate_attack_Lore"					"Skitskurrs forhold til tiden er noget varierende, hvorfor hans handlinger opleves - og føles - mere end én gang."
 		"DOTA_Tooltip_ability_weaver_geminate_attack_Note0"					"Ekstra angreb affyres fra Weaver %delay% sekunder efter det forrige angreb, og disse angreb har ingen afstandsgrænse."
+		"DOTA_Tooltip_ability_weaver_geminate_attack_Note1"					"Bonusskade gælder kun det ekstra angreb og ikke det oprindelige angreb."
 		"DOTA_Tooltip_ability_weaver_geminate_attack_tooltip_attack"		"ANTAL EKSTRA ANGREB:"
+		"DOTA_Tooltip_ability_weaver_geminate_attack_bonus_damage"			"BONUSSKADE PÅ EKSTRA ANGREB:"
 		"DOTA_Tooltip_ability_weaver_geminate_attack_shard_description"		"Geminate Attack rammer også enheder inden for %shard_beetle_search_range% afstand af det oprindelige mål, hvis de er ramt af billerne fra The Swarm."
 
 		"DOTA_Tooltip_Facet_weaver_hivemind"								"Hivemind"		
@@ -5783,6 +5956,7 @@
 
 		"DOTA_Tooltip_ability_jakiro_ice_path"								"Ice Path"
 		"DOTA_Tooltip_ability_jakiro_ice_path_Description"					"Skaber en bane af is som lammer og skader fjender, der rører den."
+		"DOTA_Tooltip_ability_jakiro_ice_path_facet_jakiro_ice"				"Jakiro kan vælge at ødelægge Ice Path når som helst, hvilket lammer og skader fjender igen."
 		"DOTA_Tooltip_ability_jakiro_ice_path_Lore"							"Jakiros udspekulerede højre hoved påkalder sin frosne arv og polerer jorden med skærende kulde."
 		"DOTA_Tooltip_ability_jakiro_ice_path_Note0"						"Det tager %path_delay% sekunder for isen at nå sit fulde omfang."
 		"DOTA_Tooltip_ability_jakiro_ice_path_Note1"						"Lammelsen ophører, når isen forsvinder."
@@ -5791,6 +5965,13 @@
 		"DOTA_Tooltip_ability_jakiro_ice_path_path_delay"					"FORMNINGSFORSINKELSE:"
 		"DOTA_Tooltip_ability_jakiro_ice_path_path_radius"					"RADIUS:"
 		"DOTA_Tooltip_ability_jakiro_ice_path_damage"						"SKADE:"
+		"DOTA_Tooltip_ability_jakiro_ice_path_detonate_damage"				"SEKUNDÆR SKADE:"
+		"DOTA_Tooltip_ability_jakiro_ice_path_detonate_stun_duration"		"SEKUNDÆR LAMMELSESVARIGHED:"
+
+		"DOTA_Tooltip_ability_jakiro_ice_path_detonate"						"Destroy Ice Path"
+		"DOTA_Tooltip_ability_jakiro_ice_path_detonate_Description"			"Ødelæg isen, som skader og lammer fjender."
+
+
 		"DOTA_Tooltip_ability_jakiro_liquid_fire"							"Liquid Fire"
 		"DOTA_Tooltip_ability_jakiro_liquid_fire_Lore"						"Jakiros venstre gab åbnes og udrydder alt foran sig."
 		"DOTA_Tooltip_ability_jakiro_liquid_fire_Note0"						"Virker på både enheder og bygninger."
@@ -6626,20 +6807,30 @@
 		"DOTA_Tooltip_ability_invoker_tornado_wex_damage"							"TILFØJET SKADE (<font color='#d671a9'>WEX</font>):"
 		"DOTA_Tooltip_ability_invoker_emp"											"E.M.P."
 		"DOTA_Tooltip_ability_invoker_emp_Description"								"Invoker opbygger en ladning af elektromagnetisk energi et valgfrit sted, som automatisk detonerer efter %delay% sekunder. Detoneringen dækker et område, hvor der drænes mana baseret på antal levels i <font color='#d671a9'>Wex</font>. Gør skade for hvert mana-point, der drænes. Hvis EMP dræner mana fra en fjendtlig helt, modtager Invoker %self_mana_restore_pct%%% af manaen drænet."
-"DOTA_Tooltip_ability_invoker_emp_Lore"										"Endoleons ondsindede uro."
+		//"DOTA_Tooltip_ability_invoker_emp_Facet_invoker_wex_focus"					"E.M.P. deals its damage again to all barriers."
+		"DOTA_Tooltip_ability_invoker_emp_shard_Facet_invoker_wex_focus"			"Øger skade for hvert point mana, der drænes af EMP, og trækker fjendtlige enheder ind mod centrum med %drag_speed% enheder i sekundet."
+		"DOTA_Tooltip_ability_invoker_emp_Lore"										"Endoleons ondsindede uro."
 		"DOTA_Tooltip_ability_invoker_emp_Note0"									"Vil ikke påvirke Cyclone-ramte enheder (Tornado eller Eul's Scepter of Divinity)."
 		"DOTA_Tooltip_ability_invoker_emp_delay"									"LADNINGSTID:"
 		"DOTA_Tooltip_ability_invoker_emp_area_of_effect"							"RADIUS:"
 		"DOTA_Tooltip_ability_invoker_emp_mana_burned"								"MAKS. MANA AFBRÆNDT (<font color='#d671a9'>WEX</font>):\n"
 		"DOTA_Tooltip_ability_invoker_emp_damage_per_mana_pct"						"%BRANDSKADE:"
+		"DOTA_Tooltip_ability_invoker_emp_drag_speed"								"TILTRÆKNINGSHASTIGHED:"
+
 		"DOTA_Tooltip_ability_invoker_alacrity"										"Alacrity"
 		"DOTA_Tooltip_ability_invoker_alacrity_Description"							"Invoker indgyder en allieret med en overvældende energistrøm, hvilket øger enhedens angrebshastighed baseret på antal levels i <font color='#d671a9'>Wex</font> og dens skade baseret på antal levels i <font color='#cabe68'>Exort</font>."
 		"DOTA_Tooltip_ability_invoker_alacrity_Lore"								"Gasters befaling om heftig strid."
 		"DOTA_Tooltip_ability_invoker_alacrity_bonus_attack_speed"					"BONUSANGREBSHASTIGHED (<font color='#d671a9'>WEX</font>):\n"
 		"DOTA_Tooltip_ability_invoker_alacrity_bonus_damage"						"BONUSSKADE (<font color='#cabe68'>EXORT</font>):\n"
 		"DOTA_Tooltip_ability_invoker_alacrity_duration"							"VARIGHED:"
+		"DOTA_Tooltip_ability_invoker_alacrity_bonus_attack_range"					"BONUSANGREBSRÆKKEVIDDE (<font color='#d671a9'>WEX</font>):"
+		"DOTA_Tooltip_ability_invoker_alacrity_Facet_invoker_wex_focus"				"Alacrity giver ekstra angrebsrækkevidde, når evnen bruges på Invoker eller afstandsenheder under hans kontrol."
+
+
 		"DOTA_Tooltip_ability_invoker_chaos_meteor"									"Chaos Meteor"
 		"DOTA_Tooltip_ability_invoker_chaos_meteor_Description"						"Invoker trækker en brændende meteor fra rummet ned på den valgte position. Når meteoren lander, ruller den fremad og gør konstant skade baseret på antal levels i <font color='#cabe68'>Exort</font> og ruller længere baseret på antal levels i <font color='#d671a9'>Wex</font>. Enheder, som rammes af meteoren, brænder kortvarigt og tager skade baseret på antal levels i <font color='#cabe68'>Exort</font>."
+
+		"DOTA_Tooltip_ability_invoker_chaos_meteor_Facet_invoker_exort_focus"		"Chaos Meteor har %bonus_area_of_effect% ekstra radius og %bonus_travel_distance% ekstra rullelængde."
 
 		"DOTA_Tooltip_ability_invoker_chaos_meteor_Lore"							"Taraks ildnedkaldelse."
 		"DOTA_Tooltip_ability_invoker_chaos_meteor_Note0"							"Enheder under meteoren tager fuld skade hvert %damage_interval%. sekund, og meteoren brænder fjender for mindre skade over %burn_duration% sekunder."
@@ -6651,15 +6842,20 @@
 		"DOTA_Tooltip_ability_invoker_chaos_meteor_damage_interval"					"SKADEINTERVAL VED KONTAKT:"
 		"DOTA_Tooltip_ability_invoker_chaos_meteor_burn_duration"					"BRÆNDETID:"
 		"DOTA_Tooltip_ability_invoker_chaos_meteor_burn_dps"						"BRANDSKADE PER SEKUND (<font color='#cabe68'>EXORT</font>):\n"
+		"DOTA_Tooltip_ability_invoker_chaos_meteor_stun_duration"					"LAMMELSESVARIGHED:"
+
 		"DOTA_Tooltip_ability_invoker_sun_strike"									"Sun Strike"
 		"DOTA_Tooltip_ability_invoker_sun_strike_Description"						"Sender en katastrofal stråle af voldsom solenergi mod en valgfri position. Når den lander, afbrænder den alle fjender i området. Gør skade baseret på antal levels i <font color='#cabe68'>Exort</font>, men skaden fordeles ligeligt mellem alle ramte fjender."
 		"DOTA_Tooltip_ability_invoker_sun_strike_Lore"								"Harleks afbrændende besværgelse."
+		"DOTA_Tooltip_ability_invoker_sun_strike_scepter_Facet_invoker_exort_focus"			"Skaber en kataklysme, når der dobbelttrykkes på Sun Strike. Sætter den på %cataclysm_cooldown% sekunders nedkøling. Skaber %cataclysm_count% synlige Sun Strikes med %cataclysm_damage_pct%%% skade indenfor %cataclysm_min_range%-%cataclysm_max_range% rækkevidde af hver fjendtlige helt."
+		"DOTA_Tooltip_ability_invoker_sun_strike_shard_Facet_invoker_exort_focus"			"Hvis Sun Strike skader en fjendtlig helt, skabes der en Forge Spirit med det nuværende level på stedet."
 		"DOTA_Tooltip_ability_invoker_sun_strike_Note0"								"Giver udsyn over målområdet for nedslaget."
 		"DOTA_Tooltip_ability_invoker_sun_strike_Note1"								"Invoker får erfaring fra drab med Sun Strike, selv hvis de sker uden for erfaringsrækkevidde."
 		"DOTA_Tooltip_ability_invoker_sun_strike_area_of_effect"					"RADIUS:"
 		"DOTA_Tooltip_ability_invoker_sun_strike_delay"								"FORSINKELSE:"
 		"DOTA_Tooltip_ability_invoker_sun_strike_damage"							"SKADE (<font color='#cabe68'>EXORT</font>):\n"
 		"DOTA_Tooltip_ability_invoker_forge_spirit"									"Forge Spirit"
+		"DOTA_Tooltip_ability_invoker_forge_spirit_Description"						"Invoker skaber en ånd, som rummer ildens styrke og isens kraft. Skade og rustning er baseret på antal levels i <font color='#cabe68'>Exort</font>, alt imens angrebsrækkevidde, helbred og varighed er baseret på antal levels i <font color='#7998b5'>Quas</font>. Elementaråndens brændende angreb kan smelte fjendtlige heltes rustning. Hvor mange ånder der skabes, afhænger af det laveste level i <font color='#7998b5'>Quas</font> og <font color='#cabe68'>Exort</font>."
 		"DOTA_Tooltip_ability_invoker_forge_spirit_Lore"							"Culweens mest udspekulerede påfund."
 		"DOTA_Tooltip_ability_invoker_forge_spirit_Note0"							"At kaste denne besværgelse erstatter tidligere hidkaldte Forged Spirits."
 		"DOTA_Tooltip_ability_invoker_forge_spirit_spirit_damage"					"SKADE (<font color='#cabe68'>EXORT</font>):\n"
@@ -6667,6 +6863,8 @@
 		"DOTA_Tooltip_ability_invoker_forge_spirit_spirit_attack_range"				"ANGREBSRÆKKEVIDDE (<font color='#7998b5'>QUAS</font>):\n"
 		"DOTA_Tooltip_ability_invoker_forge_spirit_spirit_hp"						"HELBRED (<font color='#7998b5'>QUAS</font>):\n"
 		"DOTA_Tooltip_ability_invoker_forge_spirit_spirit_duration"					"VARIGHED (<font color='#7998b5'>QUAS</font>):\n"
+		"DOTA_Tooltip_ability_invoker_forge_spirit_extra_spirit_count_quas"			"ANTAL ÅNDER (<font color='#7998b5'>QUAS</font>):\n"
+		"DOTA_Tooltip_ability_invoker_forge_spirit_extra_spirit_count_exort"		"ANTAL ÅNDER (<font color='#cabe68'>EXORT</font>):\n"
 		"DOTA_Tooltip_ability_forged_spirit_melting_strike"							"Melting Strike"
 		"DOTA_Tooltip_ability_forged_spirit_melting_strike_Description"				"Smelter rustningen hos fjender, der rammes af åndens angreb. Hver efterfølgende træffer øger mængden af rustning, der smeltes væk."
 		"DOTA_Tooltip_ability_forged_spirit_melting_strike_armor_removed"			"RUSTNING FJERNET PER SLAG:"
@@ -6679,6 +6877,9 @@
 		"DOTA_Tooltip_ability_invoker_ice_wall_slow"								"%HÆMNING (<font color='#7998b5'>QUAS</font>):\n"
 		"DOTA_Tooltip_ability_invoker_ice_wall_slow_duration"						"HÆMNINGSVARIGHED:"	
 		"DOTA_Tooltip_ability_invoker_ice_wall_damage_per_second"					"SKADE PER SEKUND (<font color='#cabe68'>EXORT</font>):\n"	
+		"DOTA_Tooltip_ability_invoker_ice_wall_ally_healing"						"ALLIERET HP-REGENERERING:"
+		"DOTA_Tooltip_ability_invoker_ice_wall_ally_buff_duration"					"ALLIERET STYRKELSESVARIGHED:"
+		"DOTA_Tooltip_ability_invoker_ice_wall_shard_Facet_invoker_quas_focus"		"Fjendtlige helte, som bliver i isvæggen i mere end %root_delay% sekunder, fryser og bliver fastjort i %root_duration% sekunder og tager %root_damage% magisk skade. Isvæggens tykkelse øges også med %bonus_wall_radius% og længden med <b>160</b>."
 		"DOTA_Tooltip_ability_invoker_deafening_blast"								"Deafening Blast"
 		"DOTA_Tooltip_ability_invoker_deafening_blast_Description"					"Invoker frigiver en kraftig lydbølge foran sig, som gør skade mod fjendtlige enheder, den kolliderer med, baseret på antal levels i <font color='#cabe68'>Exort</font>. Sammenstødet med braget skubber fjendtlige enheder tilbage i en varighed baseret på antal levels i <font color='#7998b5'>Quas</font>. De afvæbnes derefter, så de ikke kan angribe, i en varighed baseret på antal levels i <font color='#d671a9'>Wex</font>."
         "DOTA_Tooltip_ability_invoker_deafening_blast_Lore"							"Buluphonts kampudygtiggørende klang."
@@ -6688,12 +6889,14 @@
 		"DOTA_Tooltip_ability_invoker_deafening_blast_disarm_duration"				"AFVÆBNINGSVARIGHED (<font color='#d671a9'>WEX</font>):\n"
 
 		"DOTA_Tooltip_modifier_invoker_quas_instance"							"Quas"
+		"DOTA_Tooltip_modifier_invoker_quas_instance_Description"				"Giver %dMODIFIER_PROPERTY_TOOLTIP% HP-regenerering."
 		"DOTA_Tooltip_modifier_invoker_quas_instance_Description_facet_invoker_agnostic"	"Tillader manipulation af iselementer."
 		"DOTA_Tooltip_modifier_invoker_wex_instance"							"Wex"
 		"DOTA_Tooltip_modifier_invoker_wex_instance_Description"				"Bevægelseshastighed øget med %fMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 		"DOTA_Tooltip_modifier_invoker_wex_instance_Description_facet_invoker_agnostic"		"Tillader manipulation af stormelementer."
 
 		"DOTA_Tooltip_modifier_invoker_exort_instance"							"Exort"
+		"DOTA_Tooltip_modifier_invoker_exort_instance_Description"				"Giver %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% bonusskade."
 		"DOTA_Tooltip_modifier_invoker_exort_instance_Description_facet_invoker_agnostic"	"Tillader manipulation af ildelementer."
 		"DOTA_Tooltip_modifier_invoker_cold_snap"								"Cold Snap"
 		"DOTA_Tooltip_modifier_invoker_cold_snap_Description"					"Når angrebet tages der ekstra skade og forfrysning forekommer kortvarigt."
@@ -6708,6 +6911,7 @@
 		"DOTA_Tooltip_modifier_invoker_chaos_meteor_burn"						"Chaos Meteor-forbrænding"
 		"DOTA_Tooltip_modifier_invoker_chaos_meteor_burn_Description"			"Tager skade hvert sekund."
 		"DOTA_Tooltip_modifier_invoker_ice_wall_slow_debuff"					"Ice Wall"
+		"DOTA_Tooltip_modifier_invoker_ice_wall_slow_debuff_Description"		"Hæmmet og tager skade fra isvæggen."
 		"DOTA_Tooltip_modifier_invoker_deafening_blast_knockback"				"Deafening Blast – Tilbageskub"
 		"DOTA_Tooltip_modifier_invoker_deafening_blast_knockback_Description"	"Vakler tilbage fra den øredøvende eksplosion."
 		"DOTA_Tooltip_modifier_invoker_deafening_blast_disarm"					"Deafening Blast-afvæbning"
@@ -6718,6 +6922,13 @@
 		"DOTA_Tooltip_modifier_invoker_emp_pull_Description"					"Trækkes mod midten af E.M.P."
 		"DOTA_Tooltip_modifier_invoker_magic_amp_debuff"						"Exort"
 		"DOTA_Tooltip_modifier_invoker_magic_amp_debuff_Description"			"Tager øget besværgelsesskade."
+		"DOTA_Tooltip_modifier_invoker_ice_wall_ally_buff"						"Ice Wall"
+		"DOTA_Tooltip_modifier_invoker_ice_wall_ally_buff_Description"			"Heling over tid."
+		
+
+		"DOTA_Tooltip_ability_special_bonus_unique_invoker_cataclysm"				"Kataklysme"
+		"DOTA_Tooltip_ability_special_bonus_unique_invoker_cataclysm_Description"	"Skaber en kataklysme, når der dobbelttrykkes på Sun Strike. Skaber 2 synlige Sun Strikes med 50% skade indenfor 90-180 rækkevidde af hver fjendtlige helt. Nedkøling: 60s."
+
 		// AD version of invoker abilities
 		"DOTA_Tooltip_ability_invoker_cold_snap_ad"								"Cold Snap (AD)"
 		"DOTA_Tooltip_ability_invoker_cold_snap_ad_Description"					"Invoker trækker varmen ud af en fjende og fryser dem helt ind til benet i noget tid. Fjenden tager skade og fryses kortvarigt. Yderligere skade taget i denne tilstand fryser fjenden igen, og fjenden tager bonusskade. Fjenden kan kun fryses med jævne mellemrum, men frysningsnedkølingen reduceres, idet evnens level øges."
@@ -6811,27 +7022,50 @@
 		//Silencer
 		"DOTA_Tooltip_ability_silencer_curse_of_the_silent"							"Arcane Curse"
 		"DOTA_Tooltip_ability_silencer_curse_of_the_silent_Lore"					"Nortroms mangel på besværgelser er et mindre problem for ham selv, end det er for hans modstandere."				
+		"DOTA_Tooltip_ability_silencer_curse_of_the_silent_Description"				"Forbander det valgte område, hvilket skader fjendtlige helte, får dem til at tage skade over tid og hæmmer deres bevægelseshastighed. Evnen hæmmer og skader %penalty_multiplier%x så meget på undertrykte fjender. Hver gang påvirkede fjender kaster en besværgelse, øges varigheden. Varigheden sættes på pause, mens målet er undertrykt."
 		"DOTA_Tooltip_ability_silencer_curse_of_the_silent_Note0"				    "Påvirker kryb."
 		"DOTA_Tooltip_ability_silencer_curse_of_the_silent_damage"			        "SKADE:"
 		"DOTA_Tooltip_ability_silencer_curse_of_the_silent_duration"				"BASISVARIGHED:"
+		"DOTA_Tooltip_ability_silencer_curse_of_the_silent_penalty_multiplier"		"UNDERTRYKT MULTIPLIKATOR:"
+		"DOTA_Tooltip_ability_silencer_curse_of_the_silent_penalty_duration"		"FORØGELSE VED EVNEBRUG:"
 		"DOTA_Tooltip_ability_silencer_curse_of_the_silent_radius"					"RADIUS:"
 		"DOTA_Tooltip_ability_silencer_curse_of_the_silent_movespeed"				"%BEVÆGELSESHÆMNING:"
+		"DOTA_Tooltip_ability_silencer_curse_of_the_silent_application_damage"		"INDLEDENDE SKADE:"
+
 		"DOTA_Tooltip_Facet_silencer_irrepressible"					"Irrepressible"
 		"DOTA_Tooltip_Facet_silencer_irrepressible_Description"		"Silencer kan ikke undertrykkes."
 		"DOTA_Tooltip_Facet_silencer_reverberating_silence"						"Reverberating Silence"		
 		"DOTA_Tooltip_Facet_silencer_reverberating_silence_Description"			"Første gang Global Silence slutter på enhed, påføres den igen."
 
 		"DOTA_Tooltip_ability_silencer_brain_drain"							"Brain Drain"
+		"DOTA_Tooltip_ability_silencer_brain_drain_Description"				"Hvis Silencer dræber en fjendtlig helt, stjæler han permanent intelligens."
+		"DOTA_Tooltip_ability_silencer_brain_drain_permanent_int_steal_amount"	"PERMANENT STJÅLET INT.:"
+		"DOTA_Tooltip_ability_silencer_brain_drain_shard_Description"		"Øger stjålet intelligens per drab."		 
 		"DOTA_Tooltip_ability_silencer_brain_drain_Note0"					"Silencer behøver ikke at udføre det dræbende slag for at stjæle intelligens permanent, så længe den fjendtlige helt dræbes inden for %permanent_int_steal_range% afstand af Silencer eller blev svækket af Silencer på dødstidspunktet."
 
 		"DOTA_Tooltip_ability_silencer_glaives_of_wisdom"							"Glaives of Wisdom"
 		"DOTA_Tooltip_ability_silencer_glaives_of_wisdom_Lore"						"Selvom han er mangelfuld, hvad angår traditionelle besværgelser, giver Nortroms herkomst af Aeol Drias ham en forbløffende klogskab, som han anvender i fysisk kamp."
+		"DOTA_Tooltip_ability_silencer_glaives_of_wisdom_Description"				"Silencer fortryller sine glavind med visdom, så han stjæler sit måls intelligens med hver træffer og gør yderligere skade baseret på hans intelligens."
 		"DOTA_Tooltip_ability_silencer_glaives_of_wisdom_shard_description"			"Øger stjålet intelligens per træffer og stjælevarighed."
 		"DOTA_Tooltip_ability_silencer_glaives_of_wisdom_intellect_damage_pct"		"%INT. GJORT TIL SKADE:"
 		"DOTA_Tooltip_ability_silencer_glaives_of_wisdom_int_steal"					"INT. STJÅLET:"
 		"DOTA_Tooltip_ability_silencer_glaives_of_wisdom_int_steal_duration"		"VARIGHED PÅ STJÅLET INT.:"
 		"DOTA_Tooltip_ability_silencer_last_word"									"Last Word"
 		"DOTA_Tooltip_ability_silencer_last_word_Lore"								"Nortrom sikrer sig, at besværgelserne, som hans modstandere ytrer, bliver de sidste."
+		"DOTA_Tooltip_ability_silencer_last_word_Description"						"Fortryller et mål, hvilket giver udsyn over det, skader og undertrykker det, hvis målet kaster en besværgelse, eller hvis fortryllelsestimeren udløber. Gør ekstra skade afhængigt af forskellen i intelligens mellem Silencer og målet."
+		"DOTA_Tooltip_ability_silencer_last_word_Note0"								"Kanaliserende evner udløser denne effekt, efter kasteren er færdig med at kanalisere."
+		"DOTA_Tooltip_ability_silencer_last_word_damage"							"BASISSKADE:"
+		"DOTA_Tooltip_ability_silencer_last_word_debuff_duration"					"TID FØR SELVAKTIVERING:"
+		"DOTA_Tooltip_ability_silencer_last_word_duration"							"UNDERTRYKKELSESVARIGHED:"
+		"DOTA_Tooltip_ability_silencer_last_word_radius"							"OMRÅDE:"
+
+
+		"DOTA_Tooltip_modifier_silencer_last_word_stack"							"Last Word"
+		"DOTA_Tooltip_modifier_silencer_last_word_stack_Description"				"Når svækkelsen udløber, tager du skade og undertrykkes baseret på antallet af angreb på helten."
+		"dota_hud_error_no_last_word_victims"										"Ingen aktuelle ofre for Last Word"
+
+
+
 		"DOTA_Tooltip_ability_silencer_global_silence"								"Global Silence"
 		"DOTA_Tooltip_ability_silencer_global_silence_Lore"							"Med et stød mod jorden ophører al magi og alle lyde, og Nortrom fuldbyrder sin profeti."
 		"DOTA_Tooltip_ability_silencer_global_silence_Description"					"Silencer stopper alle lyde og forhindrer fjendtlige helte og enheder i banen i at anvende besværgelser."
@@ -6852,6 +7086,8 @@
 		"DOTA_Tooltip_modifier_silencer_last_word_silence_checker"			"Last Word"
 		"DOTA_Tooltip_modifier_silencer_last_word_silence_checker_Description"		"Hæmmet med %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%. Tager %dMODIFIER_PROPERTY_TOOLTIP% skade per sekund."
 		"DOTA_Tooltip_modifier_silencer_last_word_stack_applier"					"Last Word"
+		"DOTA_Tooltip_modifier_silencer_last_word_stack_applier_Description"		"Brug af besværgelser tilføjer en stabling og gør, at Silencer undertrykker og skader helten."
+
 		"DOTA_Tooltip_modifier_silencer_glaives_of_wisdom_buff_counter"		"Glaives of Wisdom"
 		"DOTA_Tooltip_modifier_silencer_glaives_of_wisdom_buff_counter_Description"		"Stjæler midlertidigt intelligens"
 		"DOTA_Tooltip_modifier_silencer_glaives_of_wisdom_silence_debuff_counter"				"Glaives of Wisdom"
@@ -7109,7 +7345,8 @@
 		// LONE DRUID
 		"DOTA_Tooltip_ability_lone_druid_spirit_bear"								"Summon Spirit Bear"
 		"DOTA_Tooltip_ability_lone_druid_spirit_bear_Lore"							"Syllas livslange kompagnon er symbiotisk med hans sjæl og hjerte, og kommer til enhver tid frem for at hjælpe ham, når der er brug for det."
-		//		"DOTA_Tooltip_ability_lone_druid_spirit_bear_scepter_description"			"Allows Spirit Bear to attack at any range from Lone Druid, and to survive if Lone Druid dies."
+		"DOTA_Tooltip_ability_lone_druid_spirit_bear_Description"					"Hidkalder Spirit Bear, en mægtig bjørneledsager, som kan udstyres med genstande.<br><br>Hvis Spirit Bear bevæger sig %bear_attack_leash_range% afstand væk fra Lone Druid, kan den ikke angribe. Hvis Spirit Bear dør, tager Lone Druid %backlash_damage%%% af sit maksimale helbred som skade.\nSpirit Bear besidder evnerne Return, Demolish og Entangling Claws."
+//		"DOTA_Tooltip_ability_lone_druid_spirit_bear_scepter_description"			"Allows Spirit Bear to attack at any range from Lone Druid, and to survive if Lone Druid dies."
 		"DOTA_Tooltip_ability_lone_druid_spirit_bear_Note0"							"De fleste besværgelser virker på samme måde med Spirit Bear, som de gør med helte."
 		"DOTA_Tooltip_ability_lone_druid_spirit_bear_Note1"							"Spirit Bear har 0 basisattributter og får ikke nogen attributter af levels. Attributter modtaget fra effekter eller genstande virker ligesom på universelle helte."
 		"DOTA_Tooltip_ability_lone_druid_spirit_bear_Note2"							"Spirit Bear kan ikke få erfaring. Spirit Bears helbred og skade øges med henholdsvis 90 og 5 med Lone Druids level."
@@ -7158,6 +7395,8 @@
 		"DOTA_Tooltip_ability_lone_druid_spirit_link_lifesteal_percent"						"%DELT LIVSSTJÆL:"
 
 		"DOTA_Tooltip_ability_lone_druid_gift_bearer"								"Gift Bearer"
+		"DOTA_Tooltip_ability_lone_druid_gift_bearer_Description"					"Lone Druids Spirit Bear modtager en kopi af den neutrale genstand, som har sin egen nedkøling."
+
 		"DOTA_Tooltip_ability_lone_druid_bear_necessities"							"Bear Necessities"
 		"DOTA_Tooltip_ability_lone_druid_bear_necessities_Description"				"Lone Druid kan kun bruge de første %item_slots% genstande i sit inventar. Genstandenes passive bonusser er kraftigere. Andre genstandspladser giver ikke bonusser. Den neutrale plads påvirkes ikke."
 		"DOTA_Tooltip_ability_lone_druid_bear_necessities_Note0"					"De følgende attributter kan øges:<br>* Intelligens, styrke og agilitet<br>* HP, mana og undvigelse<br>* Angrebshastighed og bonusskade<br>* HP- og mana-regenerering"
@@ -7512,6 +7751,7 @@
 		//CHAOS KNIGHT
 		"DOTA_Tooltip_ability_chaos_knight_chaos_bolt"					"Chaos Bolt"
 		"DOTA_Tooltip_ability_chaos_knight_chaos_bolt_Description"		"Kaster et mystisk lyn af energi mod den valgte enhed. Dette lammer med tilfældig varighed og gør tilfældig skade."
+		"DOTA_Tooltip_ability_chaos_knight_chaos_bolt_Facet_chaos_knight_cloven_chaos"		"Chaos Bolt deler sig i to, når den rammer sit mål, hvilket lammer en ekstra fjende og skader en anden indenfor %bounce_range_pct%%% af kasterækkevidden. Prioriterer helte. Lammer altid, når den deles til et enkelt mål.<br><br>Yderligere mål skaber ikke Shard-illusioner."
 		"DOTA_Tooltip_ability_chaos_knight_chaos_bolt_shard_description"		"Gør, at Chaos Bolt skaber en illusion af Phantasm, som angriber målet. Illusion en gør %illusion_damage_reduction_pct%%% mindre skade."
 		"DOTA_Tooltip_ability_chaos_knight_chaos_bolt_Lore"				"Selv Chaos Knight kan ikke forudse denne manifestation af uhellig energi."
 		"DOTA_Tooltip_ability_chaos_knight_chaos_bolt_stun_min"			"MIN. LAMMELSE:"
@@ -7535,6 +7775,7 @@
 		"DOTA_Tooltip_ability_chaos_knight_reality_rift_pull_distance"	"TRÆKKEAFSTAND:"
 		"DOTA_Tooltip_ability_chaos_knight_reality_rift_armor_reduction"	"RUSTNINGSREDUKTION:"
 		"DOTA_Tooltip_ability_chaos_knight_chaos_strike"				"Chaos Strike"
+		"DOTA_Tooltip_ability_chaos_knight_chaos_strike_Description"	"Chaos Knight og hans illusioners angreb har chance for at gøre kritisk skade af varierende styrke med ekstra livsstjæl. Livsstjæl fra kryb er reduceret."
 		"DOTA_Tooltip_ability_chaos_knight_chaos_strike_Lore"			"Chaos Knights uhåndterlige kraft banker dem, der står foran ham, og knuser selv den tykkeste rustning."
 		"DOTA_Tooltip_ability_chaos_knight_chaos_strike_chance"	"%CHANCE:"
 		"DOTA_Tooltip_ability_chaos_knight_chaos_strike_crit_min"	"%MIN. KRITISK SKADE:"
@@ -7566,6 +7807,12 @@
 		"DOTA_Tooltip_Facet_chaos_knight_irrationality_Description"					"Reality Rift har lige chance for at påføre evnebrud, afvæbne eller dæmpe med {s:bonus_additional_debuff_duration_percent}% af den grundlæggende svækkelsesvarighed foruden de almindelige effekter."
 		"DOTA_Tooltip_modifier_chaos_knight_chaos_strike_debuff"				"Chaos Strike"
 		"DOTA_Tooltip_modifier_chaos_knight_chaos_strike_debuff_Description"	"Bevægelseshastighed reduceret med %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
+
+		"DOTA_Tooltip_Facet_chaos_knight_facet_fundamental_forging"					"Fundamental Forging"
+		"DOTA_Tooltip_Ability_chaos_knight_fundamental_forging"						"Fundamental Forging"
+		"DOTA_Tooltip_Facet_chaos_knight_cloven_chaos"								"Cloven Chaos"
+		"DOTA_Tooltip_Facet_chaos_knight_cloven_chaos_Description"					"Chaos Bolt deler sig i to, når den rammer sit mål, hvilket lammer en ekstra fjende og skader en anden."
+
 
 		"DOTA_Tooltip_modifier_chaos_knight_reality_rift_debuff"	"Kvæstet"
 		"DOTA_Tooltip_modifier_chaos_knight_reality_rift_debuff_Description"	"Rustning reduceret med %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%."
@@ -7647,6 +7894,8 @@
 		"DOTA_Tooltip_ability_treant_natures_guise_shard_description"	"Gør, at Treant bliver usynlig med Nature's Guise og fastgør fjender ved angreb. Gør skade over tid og fastgør fjender i længere tid, hvis angrebet skete i nærheden af et træ. Samlet skade svarer til %shard_damage% + %attack_damage_pct%%% af Treants grundlæggende angrebsskade."
 		"DOTA_Tooltip_ability_treant_natures_guise_Lore"				"Beskytterne kan ikke altid ses idet de, i deres naturlige tilstand, ligger godt beskyttet blandt deres bladrige brødre."
 		"DOTA_Tooltip_ability_treant_natures_guise_Note0"				"Treant kan bevæge sig uhindret gennem andre træer, når han er påvirket af Nature's Guise."
+		"DOTA_Tooltip_ability_treant_natures_guise_Note1"				"Med Aghanim's Shard brydes usynlighed ved angreb. Brug af evner og genstande bryder ikke usynlighed."
+		"DOTA_Tooltip_ability_treant_natures_guise_movement_bonus"   	"%EKSTRA BEVÆGELSESHASTIGHED:"
 		"DOTA_Tooltip_ability_treant_natures_guise_shard_root_time"			"FASTGØRELSESTID:"
 		"DOTA_Tooltip_ability_treant_natures_guise_shard_by_tree_root_time"	"FASTGØRELSESTID VED TRÆ:"
 		"DOTA_Tooltip_ability_treant_natures_guise_shard_tree_movement_bonus_pct"	"%EKSTRA BEVÆGELSESHASTIGHED (TRÆ):"
@@ -7754,6 +8003,9 @@
 
 		"DOTA_Tooltip_ability_meepo_divided_we_stand_Description"		"Meepo hidkalder en ufuldkommen, halvautonom klon af sig selv, som får guld og erfaring, som han gør, og deler hans erfaring, attributter og evner. Klonerne kan dog ikke anvende nogen genstande udover de støvler, som Meepo selv har på. Hvis én af klonerne dør, dør alle Meepoer. Divided We Stand giver alle Meepoer ekstra magisk resistens."
 		"DOTA_Tooltip_ability_meepo_divided_we_stand_Facet_meepo_more_meepo" "Kan nu opgraderes ved level %required_level% og hvert %bonus_levels_between_upgrades%. level derefter op til level %max_level%. Kloner af Meepo modtager %main_meepo_stats_pct%%% af hoved-Meepoens ekstra attributter."
+		"DOTA_Tooltip_ability_meepo_divided_we_stand_Facet_meepo_codependent" "Alle Meepoer har en aura, som kan stables, der øger angrebshastigheden for Meepoer i nærheden med %support_group_attack_speed_pct%%% og rustning med %support_group_armor%. Radius: %support_radius%."
+
+
 		"DOTA_Tooltip_ability_meepo_divided_we_stand_Lore"				"Kender jeg dig?"
 		"DOTA_Tooltip_ability_meepo_divided_we_stand_Note0"				"Kloner kan ikke bruge Arcane Boots eller Guardian Greaves."
 		"DOTA_Tooltip_ability_meepo_divided_we_stand_tooltip_clones"	"ANTAL MEEPOER:"
@@ -9352,6 +9604,9 @@
 
 		"DOTA_Tooltip_ability_skywrath_mage_arcane_bolt_scepter_description"		"Når Skywrath Mage bruger Arcane Bolt, skabes der %total_bolt_count% lyn: et er rettet mod det oprindelige mål og de andre mod tilfældige fjender indenfor en rækkevidde på %extra_bolt_search_radius% af det oprindelige mål. Helte prioriteres."
 		"DOTA_Tooltip_ability_skywrath_mage_arcane_bolt_shard_description"		"Når Skywrath Mage bruger Arcane Bolt, skabes der %total_bolt_count% lyn: Et er rettet mod det oprindelige mål og de andre mod tilfældige fjender indenfor en rækkevidde på %extra_bolt_search_radius% af det oprindelige mål. Helte prioriteres."
+		"DOTA_Tooltip_ability_skywrath_mage_concussive_shot_scepter_description"	"Når Skywrath Mage bruger Concussive Shot, rammes et andet tilfældigt mål indenfor en rækkevidde på %scepter_radius% af det oprindelige mål med den samme evne. Helte prioriteres."
+		"DOTA_Tooltip_ability_skywrath_mage_ancient_seal_scepter_description"		"Når Skywrath Mage bruger Ancient Seal, påvirkes et andet tilfældigt mål indenfor en rækkevidde på %scepter_radius% af det oprindelige mål med den samme evne. Helte prioriteres."
+		
 		"DOTA_Tooltip_modifier_skywrath_mage_arcane_bolt_lifesteal"				"Arcane Bolt"
 		"DOTA_Tooltip_modifier_skywrath_mage_arcane_bolt_lifesteal_Description"	"Magisk skade fra Skywrath Mage heler ham."
 		"DOTA_Tooltip_modifier_skywrath_mage_concussive_shot_slow"			"Concussive Shot"
@@ -9380,12 +9635,14 @@
 		"DOTA_Tooltip_ability_abaddon_aphotic_shield_damage_absorb"	"SKADEBARRIERE:"
 		"DOTA_Tooltip_ability_abaddon_aphotic_shield_radius"		"SPRÆNGRADIUS:"
 		"DOTA_Tooltip_ability_abaddon_aphotic_shield_absorb_damage_aoe"	"SKADERADIUS:"
+		"DOTA_Tooltip_ability_abaddon_aphotic_shield_AbilityCooldown"	"NEDKØLING:"
 		"DOTA_Tooltip_ability_abaddon_aphotic_shield_Note0"			"Der gøres altid maks. skade, uanset om barrieren ødelægges ved at udløbe eller absorberer skade."
 		"DOTA_Tooltip_ability_abaddon_aphotic_shield_Note1"			"Eksplosionen skader ikke enheder, som er skjult i krigstågen."
 		"DOTA_Tooltip_ability_abaddon_the_quickening"					"The Quickening"
 		"DOTA_Tooltip_ability_abaddon_the_quickening_Description"	"Enheder, der dør i nærheden af Abaddon, reducerer hans nedkølinger."
 		"DOTA_Tooltip_ability_abaddon_the_quickening_Note0"		"Hver gang en enhed dør indenfor %radius% rækkevidde af Abaddon, reduceres alle hans nedkølinger med %cooldown_reduction_creeps% sekunder, hvis det er et kryb, eller %cooldown_reduction_heroes% sekunder, hvis det er en helt."
 		"DOTA_Tooltip_ability_abaddon_withering_mist"				"Withering Mist"
+		"DOTA_Tooltip_ability_abaddon_withering_mist_Description"	"Skade på fjender påfører svækkelsen Withering Mist i %duration%s. HP-regenerering, heling, livsstjæl og evnelivsstjæl reduceres med %heal_reduction_pct%%% hos påvirkede fjender, hvis de er under %hp_threshold_pct%%% HP."
 		"DOTA_Tooltip_ability_abaddon_frostmourne"					"Curse of Avernus"
 		"DOTA_Tooltip_ability_abaddon_frostmourne_Description"		"Abaddon rammer en fjende, hvilket påvirker den med en isnende forbandelse, som hæmmer fjenden og gør skade over tid, og alle angreb på fjenden får øget hastighed. Skade over tid på bygninger er reduceret med %tower_dps_pct%%%."
 		"DOTA_Tooltip_ability_abaddon_frostmourne_shard_description" "Øger hæmning fra Curse of Avernus."
@@ -9571,6 +9828,7 @@
 		
 		"DOTA_Tooltip_ability_legion_commander_duel"							"Duel"
 		"DOTA_Tooltip_ability_legion_commander_duel_Description"				"Legion Commander og den valgte fjendtlige helt tvinges til at angribe hinanden kortvarigt. Ingen af heltene kan bruge genstande eller evner med undtagelse af Legion Commander, som kan bruge Overwhelming Odds. Hvis en af heltene dør i løbet af duellen, får den vindende helt permanent bonusskade."
+		"DOTA_Tooltip_ability_legion_commander_duel_Facet_legion_commander_spoils_of_war"		"Når en duel er vundet, får enheder, der beskadigede taberen under duellen, permanent bonusskade. Hvis Legion Commander vandt duellen, bruger hun automatisk Press the Attack på sig selv og assisterende allierede."
 		"DOTA_Tooltip_ability_legion_commander_duel_duration"					"VARIGHED:"
 		"DOTA_Tooltip_ability_legion_commander_duel_reward_damage"				"BONUSSKADE:"
 		"DOTA_Tooltip_ability_legion_commander_duel_assist_reward_damage"		"ASSISTERET DRAB – EKSTRA SKADE:"
@@ -9603,6 +9861,7 @@
 
 		"DOTA_Tooltip_Facet_legion_commander_stonehall_plate"						"Stonehall Plate"		
 		"DOTA_Tooltip_Facet_legion_commander_spoils_of_war"						"Spoils of War"		
+		"DOTA_Tooltip_Facet_legion_commander_spoils_of_war_Description"			"Når en duel er vundet, får enheder, der beskadigede taberen under duellen, permanent bonusskade. Hvis Legion Commander vandt duellen, bruger hun automatisk Press the Attack på sig selv og assisterende allierede."
 		"DOTA_Tooltip_Facet_legion_commander_stonehall_plate_Description"			"Overwhelming Odds giver en barriere mod al skade baseret på den skade, den gør på fjendtlige helte."
 
 		"DOTA_Tooltip_ability_legion_commander_outfight_them"					"Outfight Them!"
@@ -9612,6 +9871,7 @@
 		//EMBER SPIRIT
 		"DOTA_Tooltip_ability_ember_spirit_searing_chains"								"Searing Chains"
 		"DOTA_Tooltip_ability_ember_spirit_searing_chains_Description"					"Ember Spirit frigiver brændende bolas, som vikler sig rundt om fjender i nærheden, hvilket fastgør dem og gør skade hvert sekund."
+		"DOTA_Tooltip_ability_ember_spirit_searing_chains_Facet_ember_spirit_chain_gang"		"Searing Chains kan påvirke en yderligere fjende. Når Searing Chains bruges, bruges de også rundt om hver Fire Remnant."
 		"DOTA_Tooltip_ability_ember_spirit_searing_chains_duration"						"VARIGHED:"
 		"DOTA_Tooltip_ability_ember_spirit_searing_chains_radius"						"RADIUS:"
 		"DOTA_Tooltip_ability_ember_spirit_searing_chains_damage_per_second"			"SKADE PER SEKUND:"
@@ -9697,8 +9957,11 @@
 		"DOTA_Tooltip_Facet_ember_spirit_double_impact"						"Double Impact"		
 		"DOTA_Tooltip_Facet_ember_spirit_double_impact_Description"			"Sleight of Fist rammer ét af sine mål en ekstra gang."
 		"DOTA_Tooltip_Facet_ember_spirit_chain_gang"					"Chain Gang"		
+		"DOTA_Tooltip_Facet_ember_spirit_chain_gang_Description"		"Searing Chains kan påvirke en yderligere fjende. Når Searing Chains bruges, bruges de også rundt om hver Fire Remnant."
+
 		// EARTH SPIRIT
 		"DOTA_Tooltip_ability_earth_spirit_boulder_smash"					"Boulder Smash"
+		"DOTA_Tooltip_ability_earth_spirit_boulder_smash_Description"		"Earth Spirit slår den valgte fjende eller allierede, hvilket sender den tilbage i den retning, Earth Spirit vender mod. Hvis Earth Spirit vælger et område som mål, vil han slå til den nærmeste enhed inden for %remnant_smash_radius_tooltip% radius, hvoraf Stone Remnants prioriteres. Den slåede enhed eller Remnant skader alle fjendtlige enheder, den rammer. Fjender hæmmes også, hvis de bliver ramt af en Stone Remnant. Stone Remnants bevæger sig længere end andre enheder."
 		"DOTA_Tooltip_ability_earth_spirit_boulder_smash_Lore"				"Det er med et bjergs kraft hvormed Earth Spirit angriber sine fjender."
 		"DOTA_Tooltip_ability_earth_spirit_boulder_smash_rock_search_aoe"			"SLÅRADIUS (REMNANT):"
 		"DOTA_Tooltip_ability_earth_spirit_boulder_smash_rock_damage"		"SKADE:"
@@ -9709,6 +9972,7 @@
 		"DOTA_Tooltip_ability_earth_spirit_boulder_smash_rock_distance"		"AFSTAND (REMNANT):"
 		"DOTA_Tooltip_ability_earth_spirit_rolling_boulder"					"Rolling Boulder"
 		"DOTA_Tooltip_ability_earth_spirit_rolling_boulder_Facet_earth_spirit_stepping_stone"	"Stone Remnants ødelægges ikke, når de rulles over, og nedkølingen for Stone Remnant opdateres, når de er færdige med at rulle."
+		"DOTA_Tooltip_ability_earth_spirit_rolling_boulder_Facet_earth_spirit_ready_to_roll"		"Når Earth Spirit ruller over en allieret helt, får den allierede helt og Earth Spirit %allied_bonus_movespeed%%% ekstra bevægelseshastighed i %allied_bonus_movespeed_duration%s. Hvis Earth Spirit ruller over en allieret helt, bevæger han sig hurtigere og længere og lammer fjender i længere tid."
 		"DOTA_Tooltip_ability_earth_spirit_rolling_boulder_Lore"			"Ved at kalde på sin forbindelse til jorden trækker Earth Spirit løse sten til sig, hvilket former en beskyttende kugle, han kan bruge til at rulle små strækninger."
 		"DOTA_Tooltip_ability_earth_spirit_rolling_boulder_speed"			"HASTIGHED:"
 		"DOTA_Tooltip_ability_earth_spirit_rolling_boulder_rock_speed"		"HASTIGHED (REMNANT):"
@@ -9720,6 +9984,8 @@
 		"DOTA_Tooltip_ability_earth_spirit_rolling_boulder_rock_bonus_duration"	"EKSTRA LAMMELSESVARIGHED (REMNANT):"
 		"DOTA_Tooltip_ability_earth_spirit_rolling_boulder_allied_bonus_stun_duration"	"EKSTRA LAMMELSESVARIGHED (ALLIERET HELT):"
 		"DOTA_Tooltip_ability_earth_spirit_rolling_boulder_Note0"					"At rulle over en Stone Remnant vil ødelægge den."
+		"DOTA_Tooltip_ability_earth_spirit_rolling_boulder_Note1"					"Stenen har en radius på %radius%."
+		"DOTA_Tooltip_ability_earth_spirit_rolling_boulder_Note2"					"Earth Spirit kan ikke vælges som mål og er usårlig, mens han ruller."
 		"DOTA_Tooltip_ability_earth_spirit_geomagnetic_grip"				"Geomagnetic Grip"
 		"DOTA_Tooltip_ability_earth_spirit_geomagnetic_grip_Description"	"Earth Spirit trækker den valgte Stone Remnant til sig. Fjender, der rammes af det flyvende mål, bliver undertrykt og tager skade, hvis det flyvende mål er en Stone Remnant."
 		"DOTA_Tooltip_ability_earth_spirit_geomagnetic_grip_shard_description"	"Kan nu gribe allierede."
@@ -13633,6 +13899,7 @@
 		"DOTA_Tooltip_Ability_item_dragon_scale"		"Dragon Scale"
 		"DOTA_Tooltip_Ability_item_clumsy_net"		"Clumsy Net"
 		"DOTA_Tooltip_Ability_item_enchanted_quiver"		"Enchanted Quiver"
+		"DOTA_Tooltip_Ability_item_ninja_gear:n"		"#|c|#Ninja Gear"
 		"DOTA_Tooltip_Ability_item_illusionsts_cape"		"Illusionist's Cape"
 		"DOTA_Tooltip_Ability_item_havoc_hammer"		"Havoc Hammer"
 		"DOTA_Tooltip_Ability_item_apex"		"Apex"
@@ -13640,6 +13907,7 @@
 		"DOTA_Tooltip_Ability_item_woodland_striders"		"Woodland Striders"
 		"DOTA_Tooltip_Ability_item_trident"		"Trident"
 		"DOTA_Tooltip_Ability_item_recipe_fallen_sky"				"Opskrift: Fallen Sky"
+		"DOTA_Tooltip_Ability_item_pirate_hat:n"		"#|c|#Pirate Hat"
 		"DOTA_Tooltip_Ability_item_dimensional_doorway"		"Dimensional Doorway"
 		"DOTA_Tooltip_Ability_item_ex_machina"		"Ex Machina"
 		"DOTA_Tooltip_Ability_item_faded_broach"		"Faded Broach"
@@ -16382,7 +16650,6 @@
 		"DOTA_Tooltip_Ability_item_trident_spell_lifesteal_amp"				"%+øget evnelivsstjæl"
 
 		
-		"DOTA_Tooltip_Ability_item_fallen_sky_Description"                  "<h1>Anvend: Fallen Sky</h1> Bliv forvandlet til en meteor, som slår ned i det valgte område efter %land_time% sekunder i et effektområde på %impact_radius%, lammer fjender i %stun_duration% sekunder og gør skade ved nedslag. Gør fortsat skade hvert %burn_interval%. sekund på fjendtlige enheder og bygninger i %burn_duration% sekunder.<BR><BR>Bygningsskade ved nedslag: %impact_damage_buildings% <BR>Bygningsskade over tid: %burn_dps_buildings% <BR><BR>Enhedsskade ved nedslag: %impact_damage_units% <BR>Enhedsskade over tid: %burn_dps_units%."
 		"DOTA_Tooltip_modifier_item_fallen_sky_burn"						"Fallen Sky"
 		"DOTA_Tooltip_modifier_item_fallen_sky_burn_Description"			"Tager skade over tid"
 		

@@ -46,7 +46,9 @@
 		"dota_ability_variable_slow_resistance"		"устойчивост срещу забавяне"			// $slow_resistance
 		"dota_ability_variable_aoe_bonus"			"бонус площ на ефекта"					// $aoe_bonus
 		"dota_ability_variable_exclusive_movespeed"	"скорост за движение с ботуши"		// $exclusive_movespeed
-"dota_ability_variable_damage_int_hero"	"щети (интелигентни герои)"
+		"dota_ability_variable_healing_amp"			"усилване на изходящото лечение" // $healing_amp
+
+		"dota_ability_variable_damage_int_hero"	"щети (интелигентни герои)"
 		"dota_ability_variable_damage_agi_hero"	"щети (ловки герои)"
 		"dota_ability_variable_damage_str_hero"	"щети (силови герои)"
 		"dota_ability_variable_damage_universal_hero"	"щети (универсални герои)"
@@ -1029,6 +1031,7 @@
 		"DOTA_Tooltip_ability_mirana_invis_fade_delay"									"ОТЛАГАНЕ НА ИЗБЛЕДНЯВАНЕТО:"
 		"DOTA_Tooltip_ability_mirana_invis_duration"									"ВРЕМЕТРАЕНЕ:"
 		"DOTA_Tooltip_ability_mirana_invis_bonus_movement_speed"						"%СКОРОСТ ЗА ДВИЖЕНИЕ:"
+		"DOTA_Tooltip_ability_mirana_invis_bonus_outgoing_damage_pct"					"%БОНУС ИЗХОДЯЩИ ЩЕТИ (СЕБЕ СИ):"
 		"DOTA_Tooltip_ability_mirana_leap"												"Leap"
 		"DOTA_Tooltip_ability_mirana_leap_Description"									"Mirana връхлита напред към битката, подсилвайки себе си със свиреп рев, който предоставя бонус атака и скорост за движение. Бонусът за скоростта трае %leap_bonus_duration% секунди."
 		"DOTA_Tooltip_ability_mirana_leap_Lore"											"Няма как някой да не разпознае емблематичния бял звяр на Mirana в разгара на битката."
@@ -1102,6 +1105,7 @@
 		"DOTA_Tooltip_ability_life_stealer_feast_Note3"									"Пречупването преустановява придобиването на нови натрупвания."
 		"DOTA_Tooltip_ability_life_stealer_feast_Note4"									"Пречупването не преустановява бонусите от съществуващи натрупвания."
 		
+		"DOTA_Tooltip_ability_life_stealer_feast_hp_leech_percent"						"%ЛЕЧЕНИЕ ОТ МАКС. ЗДРАВЕ НА ЦЕЛТА:"
 		"DOTA_Tooltip_ability_life_stealer_feast_hp_damage_percent"						"%ЩЕТИ (МАКС. ЗДРАВЕ):"
 		"DOTA_Tooltip_ability_life_stealer_feast_bonus_hp_per_creep"					"МАКС. ЗДРАВЕ ПРИ УБИЙСТВО НА КРИЙП:"
 		"DOTA_Tooltip_ability_life_stealer_feast_bonus_hp_per_hero"						"МАКС. ЗДРАВЕ ПРИ УБИЙСТВО НА ГЕРОЙ:"
@@ -1123,6 +1127,7 @@
 		"DOTA_Tooltip_ability_life_stealer_infest_Lore"									"С това опустошение, Н'аикс поглъща живота и кръвта на гостоприемника, възвръщайки се обратно към нечестивата си мощ."
 		"DOTA_Tooltip_ability_life_stealer_infest_Note0"								"Lifestealer придобива опит, докато е под въздействието на Infest."
 		"DOTA_Tooltip_ability_life_stealer_infest_Note1"								"Крийповете, които се контролират, докато са Infested, придобиват бонус скоростта за движение на Infest."
+		"DOTA_Tooltip_ability_life_stealer_infest_Note2"								"Не задейства отразяването на заклинания."
 		"DOTA_Tooltip_ability_life_stealer_infest_damage"								"ЩЕТИ:"
 		"DOTA_Tooltip_ability_life_stealer_infest_radius"								"РАДИУС НА ЩЕТИТЕ:"
 		"DOTA_Tooltip_ability_life_stealer_infest_self_regen"								"%МАКС. РЕГЕН. НА ЗДРАВЕ (СЕБЕ СИ):"
@@ -1831,6 +1836,8 @@
 		"DOTA_Tooltip_modifier_pudge_swallow_Description"		"Погълнат съюзнически герой, който бива лекуван."
 		"DOTA_Tooltip_modifier_pudge_swallow_hide"				"Swallowed"
 		"DOTA_Tooltip_modifier_pudge_swallow_hide_Description"				"Погълнат от Pudge и регенерира %dMODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE%%% здраве в секунда. Издава команда за изхвърляне."
+
+		"DOTA_Tooltip_modifier_pudge_rotten_core_Description"							"Базовите щети са увеличени с %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%%."	
 
 		//BANE
 		"DOTA_Tooltip_ability_bane_enfeeble"											"Enfeeble"
@@ -4562,6 +4569,7 @@
 		"DOTA_Tooltip_ability_faceless_void_time_lock"									"Time Lock"
 		"DOTA_Tooltip_ability_faceless_void_time_lock_Description"						"Дава шанс някоя атака да замрази вражеска единица във времето, докато се нанася втора такава."
 		"DOTA_Tooltip_ability_faceless_void_time_lock_Lore"								"Ударът на Faceless Void се стоварва със силата на преминаване между измеренията."
+		"DOTA_Tooltip_ability_faceless_void_time_lock_Note0"							"Не се натрупва със Skull Basher."
 		"DOTA_Tooltip_ability_faceless_void_time_lock_abilitydraft_note"				"В Ability Draft, <b>не се</b> натрупва със Skull Basher."
 		"DOTA_Tooltip_ability_faceless_void_time_lock_chance_pct"						"%ШАНС:"
 		"DOTA_Tooltip_ability_faceless_void_time_lock_duration"							"ВРЕМЕТРАЕНЕ:"
@@ -4771,6 +4779,7 @@
 		"DOTA_Tooltip_ability_templar_assassin_refraction_Description"					"Templar Assassin става изключително неуловима, придобивайки малка бариера и бонус към своите щети. Ефектите за щетите и избягването са отделни, а броят на инстанциите е ограничен. Ако дадена бариера е изразходван, се създава нова, стига да има останали заряди. Ако дадена инстанция на щети би нанесла повече такива, отколкото остава от бариерата, абсорбират се всичките щети."
 		"DOTA_Tooltip_ability_templar_assassin_refraction_Facet_templar_assassin_refractor"		"Всеки път, когато инстанция от щит бъде изразходвана, Templar Assassin получава инстанция от щети."
 		"DOTA_Tooltip_ability_templar_assassin_refraction_Note0"						"Щетите, като премахване на здраве, пренебрегват Refraction (това не понижава зарядите)."
+		"DOTA_Tooltip_ability_templar_assassin_refraction_Note1"						"Refraction е видимо за враговете."
 		"DOTA_Tooltip_ability_templar_assassin_refraction_instances"				"ИНСТАНЦИИ:"
 		"DOTA_Tooltip_ability_templar_assassin_refraction_bonus_damage"					"БОНУС ЩЕТИ:"
 		"DOTA_Tooltip_ability_templar_assassin_refraction_duration"						"ВРЕМЕТРАЕНЕ:"
@@ -4835,6 +4844,7 @@
 		"DOTA_Tooltip_modifier_templar_assassin_meld_armor"						"Meld — понижаване на бронята"
 		"DOTA_Tooltip_modifier_templar_assassin_meld_armor_Description"			"Бронята е понижена с %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%."
 		"DOTA_Tooltip_modifier_templar_assassin_trap_slow"						"Trap"
+		"DOTA_Tooltip_modifier_templar_assassin_trap_slow_Description"			"Скоростта на движение е намалена с %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 		"DOTA_Tooltip_modifier_templar_assassin_psionic_trap_counter"			"Psionic Trap — брой"
 		"DOTA_Tooltip_modifier_templar_assassin_psionic_trap_counter_Description"	"Psionic Trap — брой"
 
@@ -10426,6 +10436,7 @@
 		"DOTA_Tooltip_modifier_winter_wyvern_splinter_blast_slow_Description"			"Движението е забавено с %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 		"DOTA_Tooltip_modifier_winter_wyvern_cold_embrace"								"Cold Embrace"
 		"DOTA_Tooltip_modifier_winter_wyvern_cold_embrace_Description"					"Имунитет към физически щети и регенериращо се здраве."
+		"DOTA_Tooltip_modifier_winter_wyvern_winterproof_Description"					"Базовите щети са увеличени с %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%%."
 		"DOTA_Tooltip_modifier_winter_wyvern_winters_curse"								"Winter's Curse"
 		"DOTA_Tooltip_modifier_winter_wyvern_winters_curse_Description"					"Не може да различи приятел от неприятел."
 		"DOTA_Tooltip_modifier_winter_wyvern_winters_curse_aura"						"Winter's Curse — цел"
@@ -11344,6 +11355,7 @@
 		"DOTA_Tooltip_ability_dawnbreaker_fire_wreath_Note0"	 							"Dawnbreaker пътува със скорост от %movement_speed% за времетраенето на умението и отнема краткотрайно %self_stun_duration% сек. време за възстановяване след финалния удар."
 		"DOTA_Tooltip_ability_dawnbreaker_fire_wreath_Note1"								"Celestial Hammer или Solar Guardian не могат да бъдат изпълнявани по време на комбинацията."
 		"DOTA_Tooltip_ability_dawnbreaker_fire_wreath_Note2"								"Разсичането не работи с това умение."
+		"DOTA_Tooltip_ability_dawnbreaker_fire_wreath_Note3"								"Можете да изпълнявате върху себе си, за да се придвижвате напред."
 		"DOTA_Tooltip_ability_dawnbreaker_fire_wreath_duration"								"ВРЕМЕТРАЕНЕ НА КОМБИНАЦИЯТА:"
 		"DOTA_Tooltip_ability_dawnbreaker_fire_wreath_swipe_radius"							"ЗАМАХ/РАЗБИВАНЕ (РАДИУС):"
 		"DOTA_Tooltip_ability_dawnbreaker_fire_wreath_swipe_damage"							"ЗАМАХ/РАЗБИВАНЕ (БОНУС ЩЕТИ):"
@@ -14760,6 +14772,8 @@
 		"DOTA_Tooltip_ability_item_abyssal_blade_Note3"									"Следните герои не могат да задействат Bash на този предмет: Spirit Breaker, Faceless Void, Slardar и Kez, докато е в Сай режим."
 		"DOTA_Tooltip_ability_item_abyssal_blade_bonus_damage"							"+$damage"
 		"DOTA_Tooltip_ability_item_abyssal_blade_slow_resistance"						"%+устойчивост срещу забавяне"
+		"DOTA_Tooltip_ability_item_abyssal_blade_hp_regen_amp"							"%+реген. на здраве и усилване на кражбата на здраве"
+
 		//"DOTA_Tooltip_ability_item_abyssal_blade_block_damage_melee"					"BLOCK DAMAGE MELEE:"
 		//"DOTA_Tooltip_ability_item_abyssal_blade_block_damage_ranged"					"BLOCK DAMAGE RANGED:"
 		//"DOTA_Tooltip_ability_item_abyssal_blade_block_chance"							"BLOCK CHANCE:"
@@ -17003,7 +17017,6 @@
 
 		
 		"DOTA_Tooltip_Ability_item_demonicon_Lore"					"Писмен документ от финалната разплата. С една откъсната страница."
-		"DOTA_Tooltip_Ability_item_fallen_sky_Description"                  "<h1>Активно: Fallen Sky</h1>Трансформира в метеор, който нанася нападение по целевата площ след %land_time% секунди в площ на ефекта от %impact_radius%. Зашеметява врагове за %stun_duration% секунди и нанася щети при сблъсък. Продължава да нанася щети на всеки %burn_interval% секунди върху вражески единици и сгради за %burn_duration% секунди.<BR><BR>Щети при сблъсък (сгради): %impact_damage_buildings%.<BR>Щети през време (сгради): %burn_dps_buildings%.<BR><BR>Щети при сблъсък (не срещу сгради): %impact_damage_units%.<BR>Щети през време (не срещу сгради): %burn_dps_units%."
 		"DOTA_Tooltip_Ability_item_fallen_sky_Lore"							"Едно от малкото оцелели творения от последователите на ковачницата на ламите."
 		"DOTA_Tooltip_modifier_item_fallen_sky_burn"						"Fallen Sky"
 		"DOTA_Tooltip_modifier_item_fallen_sky_burn_Description"			"Поемане на щети през време"
