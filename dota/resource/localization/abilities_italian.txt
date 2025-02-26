@@ -25,6 +25,14 @@
 		"dota_ability_variable_evasion"				"di elusività"					// $evasion
 		"dota_ability_variable_spell_resist"		"di resistenza alla magia"			// $spell_resist
 		"dota_ability_variable_spell_lifesteal"		"di prosciugamento dagli incantesimi"			// $spell_lifesteal
+		"dota_ability_variable_spell_lifesteal_hero_attacks" "attacchi sugli Eroi"
+		"dota_ability_variable_spell_lifesteal_hero_spells" "abilità sugli Eroi"
+		"dota_ability_variable_spell_lifesteal_creep_attacks" "attacchi sui creep"
+		"dota_ability_variable_spell_lifesteal_creep_spells" "abilità sui creep"
+		"dota_ability_variable_lifesteal_hero_attacks" "attacchi sugli Eroi"
+		"dota_ability_variable_lifesteal_hero_spells" "abilità sugli Eroi"
+		"dota_ability_variable_lifesteal_creep_attacks" "attacchi sui creep"
+		"dota_ability_variable_lifesteal_creep_spells" "abilità sui creep"
 		"dota_ability_variable_selected_attrib"		"all'attributo selezionato"		// $selected_attribute
 		"dota_ability_variable_attack_range"		"di gittata d'attacco <font color='#7d7d7d'>(solo a distanza)</font>"	// $attack_range
 		"dota_ability_variable_attack_range_melee"	"di gittata d'attacco <font color='#7d7d7d'>(solo da mischia)</font>"	// $attack_range_melee
@@ -38,7 +46,9 @@
 		"dota_ability_variable_slow_resistance"		"di resist. ai rallentamenti"			// $slow_resistance
 		"dota_ability_variable_aoe_bonus"			"di area d'effetto aggiuntiva"					// $aoe_bonus
 		"dota_ability_variable_exclusive_movespeed"	"di velocità di movimento degli Stivali"		// $exclusive_movespeed
-"dota_ability_variable_damage_int_hero"	"di danno (Eroi Intelligenza)"
+		"dota_ability_variable_healing_amp"			"Amplificazione della guarigione in uscita" // $healing_amp
+
+		"dota_ability_variable_damage_int_hero"	"di danno (Eroi Intelligenza)"
 		"dota_ability_variable_damage_agi_hero"	"di danno (Eroi Agilità)"
 		"dota_ability_variable_damage_str_hero"	"di danno (Eroi Forza)"
 		"dota_ability_variable_damage_universal_hero"	"Danno (Eroi Universali)"
@@ -536,8 +546,10 @@
 		"npc_dota_neutral_forest_troll_high_priest"		"Troll di Collina Sacerdote"
 		"npc_dota_neutral_harpy_scout"					"Arpia Esploratrice"
 		"npc_dota_neutral_harpy_storm"					"Arpia Forgiatrice di Tempeste"
+		"npc_dota_neutral_tadpole"						"Pollywog"
 		"npc_dota_neutral_froglet"						"Boglet"
 		"npc_dota_neutral_grown_frog"					"Croaker"
+		"npc_dota_neutral_ancient_frog"					"Antico Croaker"
 		"npc_dota_neutral_froglet_mage"					"Apprendista Mago del Pantano"
 		"npc_dota_neutral_grown_frog_mage"				"Mago del Pantano"
 		"npc_dota_neutral_ancient_frog_mage"			"Antico Mago del Pantano"
@@ -803,10 +815,12 @@
 		"DOTA_Tooltip_ability_antimage_spell_shield_spell_shield_resistance"			"%RESISTENZA:"
 
 		"DOTA_Tooltip_ability_antimage_counterspell_ally"								"Controincantesimo alleato"
+		"DOTA_Tooltip_ability_antimage_counterspell_ally_Facet_antimage_magebanes_mirror"	"Controincantesimo brucia una percentuale del costo di mana dell'incantesimo neutralizzato dell'utilizzatore e infligge danni in base al %damage_from_mana_drain_percent%%% del costo in mana bruciato, fino a un massimo di %max_damage_from_mana_drain% di danni per incantesimo riflesso."
 		"DOTA_Tooltip_ability_antimage_counterspell_ally_Description"					"Nome in inglese: <b><font color='#F2A93E'>Counterspell Ally</font></b>\n \nQuesta abilità può essere attivata per creare uno scudo antimagia intorno a un Eroe alleato in grado di bloccare e riflettere gli incantesimi che lo bersagliano. Verrà creata un'illusione di Anti-Mage accanto al nemico per ogni incantesimo bloccato da Controincantesimo o Controincantesimo alleato."
 		"DOTA_Tooltip_ability_antimage_counterspell_ally_reflected_spell_amp"			"%AMPLIFICAZIONE DEGLI INCANTESIMI RIFLESSI:"
 		"DOTA_Tooltip_ability_antimage_counterspell_ally_mana_drain_percent"			"%PERCENTUALE DI MANA BRUCIATO:"
 		"DOTA_Tooltip_ability_antimage_counterspell"									"Controincantesimo"
+		"DOTA_Tooltip_ability_antimage_counterspell_Facet_antimage_magebanes_mirror"		"Controincantesimo brucia una percentuale del costo di mana dell'incantesimo neutralizzato dell'utilizzatore e infligge danni in base al %damage_from_mana_drain_percent%%% del costo in mana bruciato, fino a un massimo di %max_damage_from_mana_drain% di danni per incantesimo riflesso."
 		"DOTA_Tooltip_ability_antimage_counterspell_Description"						"Nome in inglese: <b><font color='#F2A93E'>Counterspell</font></b>\n\nAumenta passivamente la tua resistenza alla magia. Questa abilità può essere attivata per creare uno scudo antimagia in grado di bloccare e riflettere qualsiasi incantesimo che ti ha bersagliato."
 		"DOTA_Tooltip_ability_antimage_counterspell_shard_description"					"Controincantesimo crea un'aura passiva che riduce il danno degli incantesimi nemici. La riduzione è maggiore per i nemici a distanza ravvicinata."
 		"DOTA_Tooltip_ability_antimage_counterspell_Lore"								"Con la giusta concentrazione, l'Anti-Mago trasforma la sua resistenza innata in una vendetta ben calcolata."
@@ -1046,6 +1060,7 @@
 		"DOTA_Tooltip_ability_mirana_starfall_Note2"									"La Tempesta di stelle sceglierà un nuovo bersaglio per la seconda meteora se il primo muore prima dell'impatto."
 		"DOTA_Tooltip_ability_mirana_starfall_starfall_radius"							"RAGGIO:"
 		"DOTA_Tooltip_ability_mirana_starfall_damage"									"DANNO:"
+		"DOTA_Tooltip_ability_mirana_starfall_secondary_starfall_damage_percent"		"%DANNO DELLA SECONDA METEORA:"
 		"DOTA_Tooltip_ability_mirana_starfall_starstruck_blind_pct"						"%PROBABILITÀ DEI NEMICI DI MANCARE GLI ATTACCHI PER L'ACCECAMENTO:"
 		"DOTA_Tooltip_ability_mirana_starfall_starstruck_duration"						"DURATA DELL'ACCECAMENTO:"
 
@@ -1150,6 +1165,7 @@
 		"DOTA_Tooltip_ability_life_stealer_infest_attack_rate_enemy"					"FREQUENZA D'ATTACCO:"
 		"DOTA_Tooltip_ability_life_stealer_infest_bonus_regen_pct"					"%RIGENERAZIONE AGGIUNTIVA:"
 		"DOTA_Tooltip_ability_life_stealer_infest_infest_duration_enemy"				"DURATA SUI NEMICI:"
+		"DOTA_Tooltip_ability_life_stealer_infest_creep_max_hp_drain_pct_per_second"	"%PERDITA MAX DELLA SALUTE/SEC (CREEP):"
 		"DOTA_Tooltip_ability_life_stealer_infest_dot_damage_as_pct_of_damage_dealt"	"%SALUTE RIMANENTE COME DANNI DA TEMPESTA DI SANGUE:"
 		"DOTA_Tooltip_ability_life_stealer_infest_dot_duration"							"DURATA DELLA TEMPESTA DI SANGUE:"
 		"DOTA_Tooltip_ability_life_stealer_infest_scepter_description"					"Aumenta la gittata di lancio e riduce il tempo di ricarica a %bonus_AbilityCooldown% secondi. Infestazione può bersagliare gli Eroi nemici per un breve periodo, disarmandoli e danneggiandoli dall'interno mentre la velocità di rigenerazione di Lifestealer aumenta."
@@ -1833,6 +1849,7 @@
 		"DOTA_Tooltip_ability_pudge_flesh_heap_duration"								"DURATA:"
 
 		"DOTA_Tooltip_ability_pudge_innate_graft_flesh"									"Ammasso di carne"
+		"DOTA_Tooltip_ability_pudge_innate_graft_flesh_Description"						"La pelle di Pudge si ispessisce permanentemente ogni volta che uccide un Eroe nemico, ottenendo %flesh_heap_strength_buff_amount% di Forza aggiuntiva per ogni istanza."
 		"DOTA_Tooltip_ability_pudge_innate_graft_flesh_Note0"							"L'istanza viene assegnata per tutti gli Eroi nemici che muoiono in un raggio di %flesh_heap_range% da Pudge, indipendentemente da chi li ha uccisi."
 
 		"DOTA_Tooltip_modifier_pudge_innate_graft_flesh"								"Ammasso di carne"
@@ -2057,6 +2074,7 @@
 		
 
 		"DOTA_Tooltip_Facet_sand_king_dust_devil"								"Diavolo di sabbia"		
+		"DOTA_Tooltip_Facet_sand_king_dust_devil_Description"					"Tempesta di sabbia segue Sand King quando si muove."		
 		"DOTA_Tooltip_Facet_sand_king_sandshroud"								"Velo di sabbia"		
 		"DOTA_Tooltip_Facet_sand_king_sandshroud_Description"					"Tempesta di sabbia ha un raggio maggiore e rende Sand King invisibile al suo interno."
 
@@ -2334,6 +2352,7 @@
 		"DOTA_Tooltip_modifier_phantom_assassin_stiflingdagger_Description" "Velocità di movimento ridotta del %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 		"DOTA_Tooltip_modifier_phantom_assassin_stiflingdagger_caster"		"Pugnale opprimente"
 		"DOTA_Tooltip_modifier_phantom_assassin_dagger_recast"				"Dolce liberazione"
+		"DOTA_Tooltip_modifier_phantom_assassin_dagger_recast_Description"	"Morire provoca l'espulsione di pugnali dal proprio corpo!"
 		"DOTA_Tooltip_modifier_phantom_assassin_blur_active"				"Sfocatura"
 		"DOTA_Tooltip_modifier_phantom_assassin_blur_active_Description"	"Svanisce per diventare invisibile agli occhi dei nemici."
 		"DOTA_Tooltip_modifier_phantom_assassin_phantom_strike"				"Colpo fantasma"
@@ -2489,6 +2508,7 @@
 		"DOTA_Tooltip_ability_drow_ranger_wave_of_silence_knockback_duration"			"DURATA DELLA RESPINTA:"
 		"DOTA_Tooltip_ability_drow_ranger_wave_of_silence_knockback_distance_max"		"RESPINTA MASSIMA:"
 		"DOTA_Tooltip_ability_drow_ranger_trueshot"										"Aura da tiratrice"
+		"DOTA_Tooltip_ability_drow_ranger_trueshot_Description"							"Conferisce a Drow Ranger Agilità aggiuntiva in base alla sua Agilità e livello attuali. Gli Eroi nelle vicinanze ricevono il %trueshot_agi_bonus_allies_pct%%% dell'Agilità aggiuntiva."
 		"DOTA_Tooltip_ability_drow_ranger_trueshot_Lore"								"Il tempo speso da Traxex sola nelle foreste della terra dei Drow le ha permesso di insegnare ad altri arcieri ad accrescere la loro abilità con l'arco."
 		"DOTA_Tooltip_ability_drow_ranger_trueshot_trueshot_agi_bonus_base"				"%AGILITÀ DI BASE AGGIUNTIVA:"
 		"DOTA_Tooltip_ability_drow_ranger_trueshot_trueshot_agi_bonus_per_level"		"%BONUS DI AGILITÀ PER LIV.:"
@@ -2598,6 +2618,7 @@
 		"DOTA_Tooltip_ability_morphling_ebb"					"Bassa marea"
 		"DOTA_Tooltip_ability_morphling_ebb_Description"		"Ora <font color='#9acd32'>Agilità</font> diventa l'attributo primario di Morphling."
 		"DOTA_Tooltip_ability_morphling_flow"					"Flusso"
+		"DOTA_Tooltip_ability_morphling_flow_Description"		"Ora <font color='#ff0000'>Forza</font> diventa l'attributo primario di Morphling. Colpo adattivo stordisce in base alla Forza di Morphling. Morphling guadagna il %one_percent_tooltip%%% di amplificazione degli incantesimi per %agi_per_one_spell_amp% di Agilità."
 		"DOTA_Tooltip_ability_morphling_flow_Note0"				"Break disabilita l'amplificazione degli incantesimi per Agilità."
 		"DOTA_Tooltip_ability_morphling_flow_spell_amp_tooltip"	"%AMPLIFICAZIONE DEGLI INCANTESIMI:"
 		
@@ -2669,6 +2690,9 @@
 		"DOTA_Tooltip_ability_bloodseeker_sanguivore"										"Sanguivoro"
 		"DOTA_Tooltip_ability_bloodseeker_sanguivore_Description"							"Quando uccide un'Unità, Bloodseeker recupera una quantità di salute pari a %base_heal% più l'%heal_hp_pct_per_level%%% della salute massima dell'Unità per ogni livello di Bloodseeker.<br><br>Il bonus viene dimezzato se un alleato uccide un Eroe nemico nelle vicinanze."
 		"DOTA_Tooltip_ability_bloodseeker_sanguivore_shard_Description"						"Trasforma passivamente tutta la guarigione in eccesso di Bloodseeker dovuta alle sue abilità in una barriera contro tutti i danni fino al %max_shield_pct%%% della salute sua massima. La quantità di barriera decade del %barrier_decay_pct%%% al secondo."
+		"DOTA_Tooltip_ability_bloodseeker_sanguivore_scepter_Description"						"Bloodseeker guarisce il %pure_damage_lifesteal_pct%%% dei danni <font color=\"#d8ae53\">puri</font> che infligge."
+
+
 		"DOTA_Tooltip_ability_bloodseeker_sanguivore_Note0"								"La salute prosciugata ai creep si riduce del %creep_lifesteal_reduction_pct%%%."
 		"DOTA_Tooltip_ability_bloodseeker_sanguivore_half_bonus_aoe"						"RAGGIO DI DIMEZZAMENTO DELLA CURA:"
 		"DOTA_Tooltip_ability_bloodseeker_sanguivore_max_hp_percent_heal_tooltip"			"%SALUTE RECUPERATA MASSIMA:"
@@ -2803,6 +2827,8 @@
 		"DOTA_Tooltip_modifier_axe_one_man_army_Description"			"Axe converte una percentuale della sua armatura in un bonus di Forza pari a %dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS% finché è da solo."
 		
 		"DOTA_Tooltip_ability_axe_coat_of_blood"							"Armatura di sangue"
+		"DOTA_Tooltip_ability_axe_coat_of_blood_Description"				"Nome in inglese: <b><font color='#F2A93E'>Coat of Blood</font></b>\n\nAxe inzuppa permanentemente la sua lama ogni volta che uccide un Eroe nemico, ottenendo %armor_per_kill% di armatura aggiuntiva per ogni istanza. Uccidere con Lama massacrante conferisce %culling_blade_multiplier%x istanze."
+
 		"DOTA_Tooltip_modifier_axe_coat_of_blood"							"Armatura di sangue"
 		"DOTA_Tooltip_modifier_axe_coat_of_blood_Description"				"Armatura aumentata di %fMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% grazie a Lama massacrante di Axe."
 		"DOTA_Tooltip_modifier_axe_culling_blade_permanent_PostGame"					"Armatura dai nemici uccisi da Axe."
@@ -2812,7 +2838,9 @@
 		"DOTA_Tooltip_ability_phantom_lancer_spirit_lance"								"Lancia spirituale"
 		"DOTA_Tooltip_ability_phantom_lancer_spirit_lance_Description"					"Nome in inglese: <b><font color='#F2A93E'>Spirit Lance</font></b>\n \nScaglia contro l'Unità nemica bersagliata una lancia magica spirituale che danneggia e rallenta, evocando inoltre un'illusione fantasma che si unisce all'attacco."
 		"DOTA_Tooltip_ability_phantom_lancer_spirit_lance_facet_phantom_lancer_lancelot"	"Le illusioni di Lancia spirituale di Phantom Lancer infliggono il %illusion_lance_damage_pct%%% di danni da lancia.<br><br>Non hanno effetto sui danni da lancia dei rimbalzi aggiuntivi dello Scettro di Aghanim."
+		"DOTA_Tooltip_ability_phantom_lancer_spirit_lance_scepter_description"			"Lancia spirituale rimbalza una volta sui nemici, dando priorità agli Eroi. Aumenta il danno delle illusioni di Lancia spirituale."
 		"DOTA_Tooltip_ability_phantom_lancer_spirit_lance_Lore"							"L'abilità di Azwraith nell'infilzare il pesce che sarebbe divenuto il pranzo della sua famiglia si rivela molto utile sul campo di battaglia."
+		"DOTA_Tooltip_ability_phantom_lancer_spirit_lance_Note0"						"L'animazione delle illusioni entro una gittata di %fake_lance_distance% da Phantom Lancer imiterà l'animazione del lancio."
 		"DOTA_Tooltip_ability_phantom_lancer_spirit_lance_duration"						"DURATA DEL RALLENTAMENTO:"
 		"DOTA_Tooltip_ability_phantom_lancer_spirit_lance_movement_speed_pct"			"%RIDUZIONE DELLA VELOCITÀ DI MOVIMENTO:"
 		"DOTA_Tooltip_ability_phantom_lancer_spirit_lance_lance_damage"					"DANNO DELLA LANCIA:"
@@ -2863,6 +2891,9 @@
 		"DOTA_Tooltip_Facet_phantom_lancer_divergence"							"Divergenza"		
 		"DOTA_Tooltip_Facet_phantom_lancer_divergence_Description"				"Le illusioni di Giustapposti compaiono accanto alle Unità vicine e infliggono un danno maggiore, ma non possono essere controllate."
 		"DOTA_Tooltip_Facet_phantom_lancer_lancelot"							"Lancillotto"
+		"DOTA_Tooltip_Facet_phantom_lancer_lancelot_Description"				"Le illusioni di Lancia spirituale di Phantom Lancer infliggono il
+{s:bonus_illusion_lance_damage_pct}% dei danni da lancia."
+
 		"DOTA_Tooltip_modifier_phantom_lancer_spirit_lance"					"Lancia spirituale"
 		"DOTA_Tooltip_modifier_phantom_lancer_spirit_lance_Description"		"Velocità di movimento ridotta del %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 		"DOTA_Tooltip_modifier_phantom_lancer_juxtapose_illusion"			"Fantasma"
@@ -3033,6 +3064,7 @@
 		"DOTA_Tooltip_ability_crystal_maiden_crystal_nova_radius"						"RAGGIO:"
 		"DOTA_Tooltip_ability_crystal_maiden_crystal_nova_nova_damage"					"DANNO:"
 		"DOTA_Tooltip_ability_crystal_maiden_crystal_nova_physical_barrier_amount"		"VALORE DELLA BARRIERA CONTRO I DANNI FISICI:"
+		"DOTA_Tooltip_ability_crystal_maiden_crystal_nova_physical_barrier_self_amount"	"VALORE DELLA BARRIERA CONTRO I DANNI FISICI (UTILIZZATORE):"
 		"DOTA_Tooltip_ability_crystal_maiden_crystal_nova_physical_barrier_duration"	"DURATA DELLA BARRIERA:"
 		"DOTA_Tooltip_ability_crystal_maiden_frostbite"									"Morsa di ghiaccio"
 		"DOTA_Tooltip_ability_crystal_maiden_frostbite_Description"						"Nome in inglese: <b><font color='#F2A93E'>Frostbite</font></b>\n \nRicopre di ghiaccio l'Unità nemica bersagliata, impedendole di muoversi o di attaccare e danneggiandola nel corso del tempo. Infligge un danno %creep_multiplier% volte maggiore ai creep non antichi."
@@ -3106,6 +3138,8 @@
 		"DOTA_Tooltip_modifier_crystal_maiden_freezing_field_slow_Description"		"Velocità di movimento ridotta del %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, velocità di attacco ridotta di %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 		"DOTA_Tooltip_modifier_crystal_maiden_freezing_field"						"Campo congelante"
 		"DOTA_Tooltip_modifier_crystal_maiden_arcane_overflow_active"				"Traboccamento arcano"
+		"DOTA_Tooltip_modifier_crystal_maiden_arcane_overflow_active_Description"	"Il costo in mana è aumentato del %dMODIFIER_PROPERTY_MANACOST_PERCENTAGE_STACKING%%%. Amplificazione degli incantesimi aumentata del %dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%%. Ripristina il mana agli alleati vicini quando vengono gli incantesimi vengono lanciati. Non ha effetto sugli oggetti."
+
 		"DOTA_Tooltip_Facet_crystal_maiden_frozen_expanse"							"Distesa ghiacciata"		
 		"DOTA_Tooltip_Facet_crystal_maiden_frozen_expanse_Description"				"Campo congelante aumenta anche la gittata di lancio e l'area d'effetto di Crystal Maiden in modo passivo."
 
@@ -3114,6 +3148,8 @@
 		"DOTA_Tooltip_Facet_crystal_maiden_cold_comfort_Description"				"Crystal Maiden ripristina il mana dei suoi alleati quando lancia incantesimi. Aumenta l'amplificazione innata della rigenerazione del mana."
 
 		"DOTA_Tooltip_Facet_crystal_maiden_arcane_overflow"							"Traboccamento arcano"		
+		"DOTA_Tooltip_Facet_crystal_maiden_arcane_overflow_Description"				"L'attivazione di Aura arcana aumenta temporaneamente l'amplificazione degli incantesimi e il costo in mana di Crystal Maiden. Crystal Maiden ripristina il mana dei suoi alleati quando lancia gli incantesimi per tutta la durata dell'abilità."
+
 		//KUNKKA
 		"DOTA_Tooltip_ability_kunkka_torrent"											"Torrente"
 		"DOTA_Tooltip_ability_kunkka_torrent_Description"								"Nome in inglese: <b><font color='#F2A93E'>Torrent</font></b>\n \nEvoca un torrente che scaglia le Unità nemiche in aria dopo un leggero ritardo, stordendole, danneggiandole e riducendone la velocità di movimento."
@@ -3219,6 +3255,7 @@
 		"DOTA_Tooltip_ability_warlock_fatal_bonds_Note0"								"Il tipo del danno condiviso è lo stesso di quello inflitto."		
 		"DOTA_Tooltip_ability_warlock_shadow_word"										"Parola d'ombra"
 		"DOTA_Tooltip_ability_warlock_shadow_word_Description"							"Nome in inglese: <b><font color='#F2A93E'>Black Grimoire</font></b>\n \nWarlock lancia un sortilegio contro un'Unità che la costringe a danneggiare i nemici e curare gli alleati nelle vicinanze. Anche l'Unità bersagliata viene danneggiata o curata a seconda che si tratti di un alleato o un nemico."
+		"DOTA_Tooltip_ability_warlock_shadow_word_scepter_Description"					"Aumenta il raggio d'effetto. Ora Parola d'ombra si applica a %additional_targets% Unità aggiuntive in un raggio di %cast_aoe%, dando priorità agli Eroi. La guarigione e i danni inflitti ai bersagli aggiuntivi sono ridotti del %secondary_reduction%%%."
 		"DOTA_Tooltip_ability_warlock_shadow_word_Lore"									"Le arti arcane di Demnok hanno una miriade di applicazioni, spaziando dalle potenti e amichevoli magie alle maledizioni più nocive."
 		"DOTA_Tooltip_ability_warlock_shadow_word_duration"								"DURATA:"
 		"DOTA_Tooltip_ability_warlock_shadow_word_spell_aoe"							"RAGGIO D'EFFETTO:"
@@ -3466,6 +3503,7 @@
 		"DOTA_Tooltip_Facet_foundation_Description"				"Rimuove il limite di cariche di Afferra albero."
 
 		"DOTA_Tooltip_ability_tiny_insurmountable"			        				"Insormontabile"
+		"DOTA_Tooltip_ability_tiny_insurmountable_Description"	       				"Nome in inglese: <b><font color='#F2A93E'>Insurmountable</font></b>\n\nTiny ottiene dalla Forza lo stato e la resistenza ai rallentamenti. Quest'ultima riduce anche l'impatto dei rallentamenti della velocità d'attacco."
 		"DOTA_Tooltip_ability_tiny_insurmountable_str_to_status_resist_pct"	       	"%FORZA CONVERTITA IN RESIST. AGLI STATI:"
 		"DOTA_Tooltip_ability_tiny_insurmountable_str_to_slow_resist_pct"	       	"%FORZA CONVERTITA IN RESIST. AI RALLENTAMENTI:"
 		"DOTA_Tooltip_Facet_tiny_crash_landing"							"Atteraggio di fortuna"		
@@ -3603,12 +3641,14 @@
 		"DOTA_Tooltip_ability_dazzle_innate_weave_armor_change"							"VARIAZIONE DI ARMATURA PER ISTANZA:"
 
 		"DOTA_Tooltip_ability_dazzle_nothl_projection"									"Proiezione di Nothl"
+		"DOTA_Tooltip_ability_dazzle_nothl_projection_Description"						"Nome in inglese: <font color='#F2A93E'>Nothl Projection</font>\n\nDazzle abbandona il proprio corpo, viaggiando attraverso il Regno di Nothl nei panni di uno spirito invulnerabile in grado di lanciare incantesimi, attaccare e usare oggetti, lasciando il suo corpo nel mondo con un legame visibile. Quando sono attive, le abilità di base di Dazzle vengono potenziate: Tocco velenoso maledice i nemici, Sepoltura superficiale guarisce al termine dell'effetto e Onda ombrosa ha un tempo di ricarica più breve. L'effetto può essere interrotto anticipatamente e alla fine Dazzle ritorna al proprio corpo."
 		"DOTA_Tooltip_Ability_dazzle_nothl_projection_Note0"							"Quando lo spirito di Dazzle si trova a più di %leash_start% unità dal corpo, il legame inizierà a tirarlo indietro. La forza della trazione aumenta con la distanza."
 		"DOTA_Tooltip_ability_dazzle_nothl_projection_Shard_Description"				"Proiezione di Nothl può essere utilizzata mentre Dazzle è disabilitato. Aumenta la guarigione ricevuta mentre si trova nel Regno di Nothl."
 		"DOTA_Tooltip_ability_dazzle_nothl_projection_Note1"							"L'anima di Dazzle non può attaccare le strutture."
 		"DOTA_Tooltip_ability_dazzle_nothl_projection_min_duration"						"DURATA MINIMA:"
 		"DOTA_Tooltip_ability_dazzle_nothl_projection_max_duration"						"DURATA MASSIMA:"
 		"DOTA_Tooltip_ability_dazzle_nothl_projection_poison_touch_hex"					"DURATA DELLA MALEDIZIONE:"
+		"DOTA_Tooltip_ability_dazzle_nothl_projection_shallow_grave_heal"				"GUARIGIONE DI SEPOLTURA SUPERFICIALE:"
 		"DOTA_Tooltip_ability_dazzle_nothl_projection_shadow_wave_cdr"					"%RIDUZ. DEI TEMPI DI RICARICA (ONDA OMBROSA):"
 		"DOTA_Tooltip_ability_dazzle_nothl_projection_healing_amp"						"%AMPLIFICAZIONE DELLA CURA:"
 
@@ -3654,6 +3694,8 @@
 		"DOTA_Tooltip_modifier_dazzle_nothl_projection_knockback_Description"				"L'anima si sta separando dal corpo."
 
 		"DOTA_Tooltip_modifier_dazzle_nothl_projection_soul_debuff"							"Proiezione di Nothl"
+		"DOTA_Tooltip_modifier_dazzle_nothl_projection_soul_debuff_Description"				"Invulnerabile, verrai richiamato nel tuo corpo quando ti allontani troppo."
+
 		//CLOCKWERK
 		"DOTA_Tooltip_ability_rattletrap_battery_assault"								"Batteria d'assalto"
 		"DOTA_Tooltip_ability_rattletrap_battery_assault_Description"					"Nome in inglese: <b><font color='#F2A93E'>Battery Assault</font></b>\n\nColpisce le Unità nemiche con potenti schegge che infliggono danni magici lievi e un mini-stordimento."
@@ -3688,6 +3730,8 @@
 		"DOTA_Tooltip_ability_rattletrap_hookshot_Note0"								"Il Rampino collegherà e porterà Clockwerk agli alleati, ma non li danneggerà o disabiliterà."
 		"DOTA_Tooltip_ability_rattletrap_hookshot_duration"								"DURATA DELLO STORDIMENTO:"
 		"DOTA_Tooltip_ability_rattletrap_hookshot_damage"								"DANNO:"
+		"DOTA_Tooltip_ability_rattletrap_hookshot_cooldown_refund_ally"					"%RIMBORSO TEMPO DI RICARICA/COSTO IN MANA:"
+
 		"DOTA_Tooltip_ability_rattletrap_hookshot_ally_shield_duration"						"DURATA DELL'ARMATURA DEGLI ALLEATI:"
 		"DOTA_Tooltip_ability_rattletrap_hookshot_allied_armor_bonus"						"ARMATURA AGGIUNTIVA (ALLEATI):"
 		"DOTA_Tooltip_ability_rattletrap_overclocking"									"Overclock"
@@ -3823,6 +3867,7 @@
 
 
 		"DOTA_Tooltip_ability_lich_ice_spire"						"Spuntone di ghiaccio"
+		"DOTA_Tooltip_ability_lich_ice_spire_Description"			"Nome in inglese: <b><font color='#F2A93E'>Ice Spire</font></b>\n\nCrea uno Spuntone di ghiaccio nel punto bersagliato che rallenta i nemici circostanti. Lo spuntone può subire 5 attacchi dagli Eroi o 10 attacchi dai creep e creerà un'istanza di Esplosione di gelo intorno a sé quando viene distrutto.<br><br>Congelamento a catena può essere usato sullo spuntone e può rimbalzare su di esso, infliggendo su di esso danni pari a 1 attacco dell'Eroe se non ci sono altri nemici nelle vicinanze.<br><br>Lich può usare Scudo di ghiaccio sullo spuntone. Ciascuna istanza di Scudo di ghiaccio guarirà lo spuntone di una quantità equivalente ad 1 attacco degli Eroi."
 		"DOTA_Tooltip_ability_lich_ice_spire_duration"				"DURATA:"
 		"DOTA_Tooltip_ability_lich_ice_spire_aura_radius"			"RAGGIO D'EFFETTO:"
 		"DOTA_Tooltip_ability_lich_ice_spire_impact_damage"			"DANNO D'IMPATTO:"
@@ -3868,6 +3913,7 @@
 		"DOTA_Tooltip_ability_tidehunter_gush_cooldown_scepter"  						"TEMPO DI RICARICA:"
 		"DOTA_Tooltip_ability_tidehunter_gush_scepter_description"						"Getto d'acqua diventa un'abilità senza bersaglio che genera un'onda in grado di colpire tutte le Unità nemiche in linea retta. Diminuisce il tempo di ricarica."
 		"DOTA_Tooltip_ability_tidehunter_kraken_shell"									"Guscio del kraken"
+		"DOTA_Tooltip_ability_tidehunter_kraken_shell_Description"						"Nome in inglese: <b><font color='#F2A93E'>Kraken Shell</font></b>\n\nIspessisce la pelle di Tidehunter per bloccare passivamente una parte del danno fisico d'attacco subito. La quantità di blocco contro i creep è minore.\n\nPuò essere attivata per raddoppiare la quantità di blocco in cambio del %active_move_speed_penalty_pct%%% della velocità di movimento. Dura %aactive_duration% secondi."
 		"DOTA_Tooltip_ability_tidehunter_kraken_shell_Facet_tidehunter_kraken_swell"		"La quantità di danni bloccati da Guscio del kraken aumenta in modo permanente quando un Eroe nemico muore sotto gli effetti di Colpo d'ancora."
 		"DOTA_Tooltip_ability_tidehunter_kraken_shell_Lore"								"I marinai di Cladd raccontano la leggenda di una possente bestia che faceva tremare i sette mari e, per quanto trafitta da innumerevoli lance e spade, continuava a devastare la loro flotta."
 		"DOTA_Tooltip_ability_tidehunter_kraken_shell_Note0"							"Break disattiva l'ottenimento di nuove istanze di Rigonfiamento del kraken."
@@ -3987,6 +4033,7 @@
 		"DOTA_Tooltip_ability_shadow_shaman_voodoo_damage_amp"							"%AMPLIFICAZIONE DEL DANNO:"
 		"DOTA_Tooltip_ability_shadow_shaman_shackles"									"Catene"
 		"DOTA_Tooltip_ability_shadow_shaman_shackles_Description"						"Nome in inglese: <font color='#F2A93E'>Shackles</font>\n \nCANALIZZATA - Incatena magicamente un'Unità nemica, impedendole sia di muoversi che di attaccare e prosciugandone l'energia vitale nel corso del tempo."
+		"DOTA_Tooltip_ability_shadow_shaman_shackles_Scepter_Description"				"La gittata di lancio è maggiore. Ogni %scepter_shock_interval% secondi, le Unità incatenate emettono uno Shock etereo radiale che colpisce tutte le altre Unità entro %scepter_shock_radius% dal bersaglio, infliggendo il %scepter_shock_pct%%% dei danni normali di Shock etereo. Ora le catene possono essere usate anche sugli alleati e sui Guardiani serpenti che si trovano entro %ally_break_range% unità da Shadow Shaman. Le Unità alleate non vengono disabilitate da Catene."
 		"DOTA_Tooltip_ability_shadow_shaman_shackles_Lore"								"Come sortilegio per autodifesa, Rhasta ha sviluppato queste catene dopo che il suo maestro fu ucciso sulle Colline Sanguinanti."
 		"DOTA_Tooltip_ability_shadow_shaman_shackles_total_damage"						"DANNO/CURA TOTALE:"
 		"DOTA_Tooltip_ability_shadow_shaman_shackles_channel_time"						"DURATA MASSIMA:"
@@ -4021,6 +4068,7 @@
 
 		"DOTA_Tooltip_ability_shadow_shaman_fowl_play"									"Gallina in fuga"
 		"DOTA_Tooltip_ability_shadow_shaman_fowl_play_Description"						"Nome in inglese: <b><font color='#F2A93E'>Foul Play</font></b>\n\nQuando subisce danni letali, Shadow Shaman riceve una dissipazione potente e si trasforma in un pollo con 1 punto salute. Il danno subito viene azzerato per %damage_reduction_duration% secondi.<br/><br/>Il tempo di ricarica si azzera alla rinascita.\n\nTIPO DI DISSIPAZIONE: Dissipazione potente"
+		"DOTA_Tooltip_ability_shadow_shaman_fowl_play_Shard_Description"				"Aumenta il tempo durante il quale i danni subiti vengono ridotti a %damage_reduction_duration% secondi. Quando Gallina in fuga viene attivata, Shadow Shaman diventa invulnerabile per %invuln_duration% secondi e vengono create %ally_chicken_images_count% galline incontrollabili aggiuntive che durano %ally_voodoo_duration% secondi. Mentre Shadow Shaman è trasformato, ora può usare gli oggetti."
 		"DOTA_Tooltip_ability_shadow_shaman_fowl_play_Note0"							"Non funziona con i danni letali subiti da Lama massacrante di Axe e Falce del mietitore di Necrophos."
 		"DOTA_Tooltip_ability_shadow_shaman_fowl_play_Note1"							"L'effetto di riduzione del danno subito impedirà a determinate fonti di rimozione della salute di uccidere Shadow Shaman."
 		"DOTA_Tooltip_ability_shadow_shaman_fowl_play_hex_duration"						"DURATA:"
@@ -4033,6 +4081,9 @@
 		"DOTA_Tooltip_modifier_shadow_shaman_fowl_play_damage_reduction_Description"	"Il danno subito viene azzerato."
 
 		"DOTA_Tooltip_modifier_shadow_shaman_serpent_ward_invuln_aura"					"Guardiani serpenti"
+		"DOTA_Tooltip_modifier_shadow_shaman_serpent_ward_invuln_aura_Description"		"I danni subiti sono ridotti del %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%% in prossimità di un Guardiano Serpente."
+
+
 		//RIKI
 		"DOTA_Tooltip_ability_riki_smoke_screen"										"Cortina di fumo"
 		"DOTA_Tooltip_ability_riki_smoke_screen_Description"							"Nome in inglese: <b><font color='#F2A93E'>Smoke Screen</font></b>\n\nLancia una bomba fumogena che silenzia le Unità nemiche e non fa andare a segno i loro attacchi."
@@ -4055,7 +4106,10 @@
 		"DOTA_Tooltip_ability_riki_innate_backstab_Note0"								"Non funziona negando le Unità alleate."
 		"DOTA_Tooltip_ability_riki_innate_backstab_Note1"								"Le illusioni di Riki eseguono Pugnalata alle spalle, ma non infliggono alcun danno aggiuntivo."
 		"DOTA_Tooltip_ability_riki_innate_backstab_damage_multiplier"					"MOLTIPLICATORE DEL DANNO (AGILITÀ):"
+		"DOTA_Tooltip_ability_riki_innate_backstab_bonus_xp_kill"						"ESP AGGIUNTIVA (UCCISIONE EROE):"
 		"DOTA_Tooltip_ability_riki_innate_backstab_bonus_xp_assist"						"ESP AGGIUNTIVA (AIUTO):"
+		"DOTA_Tooltip_ability_riki_innate_backstab_bonus_xp_assist_other"				"ESP AGGIUNTIVA (UCCISIONE GUARDIANO/CORRIERE):"
+
 		"DOTA_Tooltip_Facet_riki_exterminator"											"Sterminatore"        
 		"DOTA_Tooltip_Facet_riki_contract_killer"										"Assassino a chiamata"        
 		"DOTA_Tooltip_Facet_riki_contract_killer_Description"							"Riki riceve un bonus di esperienza per gli aiuti e le uccisioni."
@@ -4119,6 +4173,8 @@
 		"DOTA_Tooltip_ability_enigma_malefice_stun_duration"							"DURATA DELLO STORDIMENTO:"
 		"DOTA_Tooltip_ability_enigma_malefice_damage"									"DANNO PER ISTANZA:"
 		"DOTA_Tooltip_ability_enigma_malefice_stun_instances"							"ISTANZE:"
+		"DOTA_Tooltip_ability_enigma_malefice_shard_description"						"Aumenta di %shard_bonus_stun_duration_tooltip% secondi la durata dello stordimento di Maleficio e crea uno Spettro vicino al bersaglio per ogni istanza dello stordimento di Maleficio. Gli Spettri così creati non possono moltiplicarsi ulteriormente."
+
 		"DOTA_Tooltip_ability_enigma_demonic_conversion"								"Evocazione demoniaca"
 		"DOTA_Tooltip_ability_enigma_demonic_conversion_Description"					"Nome in inglese: <b><font color='#F2A93E'>Demonic Conversion</font></b>\n \nSacrifica la propria salute per evocare tre frammenti di Enigma. La salute degli spettri aumenta di una quantità pari al %current_health_pct%%% della salute attuale di Enigma. Questi spettri sono tutti sotto il suo controllo e gli attacchi andati a segno in successione permettono loro di moltiplicarsi. Quando ciò accade, la salute degli spettri viene ripristinata."
 		"DOTA_Tooltip_ability_enigma_demonic_conversion_Lore"							"Enigma può attirare parti di se stesso da altre dimensioni; il risultato è un trio di spettri oscuri che infestano la dimensione corporea."
@@ -4414,6 +4470,7 @@
 
 		//SLARDAR
 		"DOTA_Tooltip_ability_slardar_seaborn_sentinel"										"Sentinella marina"
+		"DOTA_Tooltip_ability_slardar_seaborn_sentinel_Description"							"Nome in inglese: <font color='#F2A93E'>Seaborn Sentinel</font>\n\nSlardar ottiene un bonus di velocità di movimento, rigenerazione della salute, danno d'attacco e armatura mentre si trova nel fiume, in un sentiero o in una pozza."
 		"DOTA_Tooltip_ability_slardar_seaborn_sentinel_river_speed"							"%VELOCITÀ DI MOVIMENTO AGGIUNTIVA:"
 		"DOTA_Tooltip_ability_slardar_seaborn_sentinel_puddle_regen"						"RIGENERAZIONE DELLA SALUTE:"		
 		"DOTA_Tooltip_ability_slardar_seaborn_sentinel_puddle_armor"						"ARMATURA AGGIUNTIVA:"		
@@ -4448,12 +4505,14 @@
 		"DOTA_Tooltip_ability_slardar_slithereen_crush_shard_amp_duration"				"DURATA DI FUMI CORROSIVI:"
 		"DOTA_Tooltip_ability_slardar_slithereen_crush_shard_bonus_radius"				"RAGGIO AGGIUNTIVO:"
 		"DOTA_Tooltip_ability_slardar_bash"												"Colpo delle profondità"
+		"DOTA_Tooltip_ability_slardar_bash_Description"									"Nome in inglese: <font color='#F2A93E'>Bash of the Deep</font>\n\nDopo %attack_count% attacchi, il tuo prossimo attacco colpirà il bersaglio."
 		"DOTA_Tooltip_ability_slardar_bash_Lore"										"I ladri delle ricchezze dei Profondi si incontrano con la brutalità di una Guardia Viscidosa nel combattimento ravvicinato."
 		"DOTA_Tooltip_ability_slardar_bash_Note0"										"Non è cumulabile con lo Spacca-Crani."
 		"DOTA_Tooltip_ability_slardar_bash_abilitydraft_note"							"In modalità Ability Draft, <b>è cumulabile</b> con l'effetto dello Spacca-Crani."
 		"DOTA_Tooltip_ability_slardar_bash_bonus_damage"								"DANNO AGGIUNTIVO:"
 		"DOTA_Tooltip_ability_slardar_bash_duration"									"DURATA DELLO STORDIMENTO:"
 		"DOTA_Tooltip_ability_slardar_amplify_damage"									"Fumi corrosivi"
+		"DOTA_Tooltip_ability_slardar_amplify_damage_Description"						"Nome in inglese: <b><font color='#F2A93E'>Corrosive Haze</font></b>\n\nRiduce l'armatura dei nemici per amplificare i danni fisici inflitti e applica l'effetto di Vera visione sull'Unità bersagliata, rivelandola se invisibile. L'Unità nemica lascia una scia d'acqua dietro di sé."
 		"DOTA_Tooltip_ability_slardar_amplify_damage_Facet_slardar_brineguard"			"Fumi corrosivi aumenta l'armatura di Slardar di una quantità pari al %armor_pct%%% della riduzione di armatura totale."
 		"DOTA_Tooltip_ability_slardar_amplify_damage_Lore"								"Anche l'armatura più resistente serve a poco contro il potere dell'oceano."
 		"DOTA_Tooltip_ability_slardar_amplify_damage_armor_reduction"					"RIDUZIONE DELL'ARMATURA:"
@@ -10955,6 +11014,8 @@
 		"DOTA_Tooltip_ability_arc_warden_tempest_double_Facet_arc_warden_runed_replica"	"Tempesta doppia è infusa con i bonus delle Rune del Potere per %rune_duration% s quando viene creata.<br><br>Livello 1 - Runa dell'Invisibilità.<br><br>Livello 2 - Rune dell'Invisibilità e Arcana.<br><br>Livello 3 - Rune dell'Invisibilità, Arcana e della Rapidità."
 		"DOTA_Tooltip_ability_arc_warden_tempest_double_Lore"		"Deformato dal potere dei suoi simili, Arc Warden diventa ciò che disprezza di più: disarmonia."
 		"DOTA_Tooltip_ability_arc_warden_tempest_double_bounty"		"RICOMPENSA IN ORO:"
+		"DOTA_Tooltip_ability_arc_warden_tempest_double_max_blind_chance"	"%PROBABILITÀ MAX DI MANCARE GLI ATTACCHI:"
+		"DOTA_Tooltip_ability_arc_warden_tempest_double_max_slow"			"%AUTORALLENTAMENTO MASSIMO:"
 		"DOTA_Tooltip_ability_arc_warden_tempest_double_Note0"		"Tempesta doppia e il Globo del Ristoro non possono essere usati dal clone."
 		"DOTA_Tooltip_ability_arc_warden_tempest_recall"			"Richiamo della tempesta"
 		"DOTA_Tooltip_ability_arc_warden_tempest_recall_Description"	"Nome in inglese: <b><font color='#F2A93E'>Tempest Recall</font></b>\n \nArc Warden prende il posto della sua Tempesta doppia, distruggendola nel frattempo. Arc Warden recupera il %restore_pct% della salute e del mana restanti."
@@ -10972,9 +11033,13 @@
 
 		"DOTA_Tooltip_ability_arc_warden_runic_infusion"								"Infusione runica"
 		"DOTA_Tooltip_ability_arc_warden_runic_infusion_Description"					"L'attivazione di una qualsiasi Runa consente anche di ricevere l'effetto della Runa della Rigenerazione per %duration% secondi."
+		"DOTA_Tooltip_ability_arc_warden_runic_infusion_Facet_arc_warden_power_capture"		"Le Rune del Potere si fondono con Arc Warden, ottenendo +%all_attribute_bonus_per_stack% su tutti gli attributi in modo permanente ogni volta che Arc Warden o Tempesta doppia attivano una Runa del Potere."
 		"DOTA_Tooltip_ability_arc_warden_runic_infusion_Note0"						"La durata è pari al %water_bounty_rune_duration_pct%%% di quella originale quando viene attivata una Runa della Generosità o una Runa d'Acqua."
 
 		"DOTA_Tooltip_modifier_arc_warden_runic_infusion"							"Potenza acquisita"
+		"DOTA_Tooltip_modifier_arc_warden_runic_infusion_Description"				"Le Rune del Potere si sono fuse con Arc Warden. Fa ottenere +%fMODIFIER_PROPERTY_STATS_AGILITY_BONUS% in modo permanente su tutti gli attributi."
+		"DOTA_Tooltip_modifier_arc_warden_runic_infusion_PostGame"					"Rune del Potere fuse con Arc Warden."
+
 		"DOTA_Tooltip_modifier_arc_warden_flux"				"Flusso"
 		"DOTA_Tooltip_modifier_arc_warden_flux_Description"		"È rallentato del %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% e subisce danno quando non si trova vicino alle Unità alleate."	
 		"DOTA_Tooltip_modifier_arc_warden_spark_wraith_purge"										"Spettro Scintilla"
@@ -11758,6 +11823,8 @@
 
 		"DOTA_Tooltip_ability_hoodwink_sharpshooter"					"Tiratrice scelta"
 		"DOTA_Tooltip_ability_hoodwink_sharpshooter_Description"		"Nome in inglese: <b><font color='#F2A93E'>Sharpshooter</font></b>\n\nHoodwink carica e lancia una freccia mortale con la sua balestra, causando danni ingenti e rallentando un Eroe nemico, oltre a disabilitarne tutti gli effetti passivi. Il danno e la durata dell'effetto raggiungono il massimo valore possibile dopo %max_charge_time% secondi e la freccia viene lanciata automaticamente dopo %misfire_time% secondi.\nHoodwink viene respinta all'indietro a una distanza di %recoil_distance% a causa del rinculo della balestra. Il danno inflitto ai creep colpiti dalla freccia è dimezzato."
+		"DOTA_Tooltip_ability_hoodwink_sharpshooter_Scepter_Description"	"Aumenta la velocità delle frecce e la riduzione della velocità di movimento."
+		"DOTA_Tooltip_ability_hoodwink_sharpshooter_Facet_hoodwink_hipshot"	"Tiratrice scelta ha un tempo di ricarica ridotto del %quick_draw_tooltip_pct_cooldown_reduction%%%. I danni, la durata dell'effetto negativo e i tempi di ricarica sono ridotti del %quick_draw_tooltip_efficacy_pct%%%. La velocità di rotazione è aumentata del %turn_rate_tooltip%%%."
 		"DOTA_Tooltip_ability_hoodwink_sharpshooter_Lore"				"Mentre la sua prima balestra è stata una scoperta di fortuna, ora Hoodwink ne ha creata una a cui dedica grande cura. Inutile dire che alcuni dei componenti necessari sono stati trafugati o ottenuti grazie al suo ingegno."
 		"DOTA_Tooltip_ability_hoodwink_sharpshooter_AbilityCooldown"		"TEMPO DI RICARICA:"
 		"DOTA_Tooltip_ability_hoodwink_sharpshooter_max_charge_time"		"TEMPO DI CARICA MASSIMO:"
@@ -11817,6 +11884,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_hoodwink_scurry_evasion"								"Corsa sfrenata: +{s:bonus_bonus_active_evasion}% di elusività mentre è attiva"		
 		"DOTA_Tooltip_ability_special_bonus_unique_hoodwink_sharpshooter_damage"						"Tiratrice scelta: +{s:bonus_max_damage} di danno massimo"
 		"DOTA_Tooltip_ability_special_bonus_unique_hoodwink_scurry_charges"								"Corsa sfrenata: +{s:bonus_AbilityCharges} cariche per abilità"
+		"DOTA_Tooltip_ability_special_bonus_unique_hoodwink_sharpshooter_vision"						"Tiratrice scelta fornisce visione durante la carica"
 		"DOTA_Tooltip_ability_special_bonus_unique_hoodwink_sharpshooter_vision_Description"			"Fornisce anche Vera visione. Non rivela i Guardiani."
 
 		"DOTA_Tooltip_Facet_hoodwink_hunter"				"Fuori di ghianda"		
@@ -11834,7 +11902,10 @@
 		"DOTA_Tooltip_ability_dawnbreaker_solar_guardian_Lore"							"È solo per accorrere in difesa di un alleato che Valora sfrutta le ultime riserve del suo antico potere per volare nel cosmo."
 		"DOTA_Tooltip_ability_dawnbreaker_solar_guardian_Description"				"Nome in inglese: <b><font color='#F2A93E'>Solar Guardian</font></b>\n\nCANALIZZATA - Dawnbreaker crea un effetto pulsante in un'area entro %max_offset_distance% unità da un Eroe alleato situato in qualsiasi punto della mappa, danneggiando i nemici e curando gli alleati ad ogni pulsazione. Dopo un breve periodo, Dawnbreaker vola verso l'area bersagliata, infliggendo danno aggiuntivo e stordendo i nemici quando atterra. Una volta canalizzata, l'abilità non può più essere interrotta."
 		"DOTA_Tooltip_ability_dawnbreaker_solar_guardian_Note0"	 							"L'intervallo tra le pulsazioni è pari a %pulse_interval%s."
+		"DOTA_Tooltip_ability_dawnbreaker_solar_guardian_Note1"	 							"La durata totale del volo è pari a %abilitychanneltime% secondi di canalizzazione + %airtime_duration% secondi di volo."
 		"DOTA_Tooltip_ability_dawnbreaker_solar_guardian_Note2"	 							"Non può essere usata senza il martello."
+		"DOTA_Tooltip_ability_dawnbreaker_solar_guardian_scepter_description"				"Ora l'aura di Guardiano solare dura per %scepter_aura_duration% secondi dopo l'atterraggio e segue Dawnbreaker ovunque vada. La cura per pulsazione di Guardiano solare è aumentata. Il tempo di canalizzazione e il tempo di permanenza in aria sono ridotti."
+
 		"DOTA_Tooltip_ability_dawnbreaker_land"										"Atterraggio di Guardiano solare"
 		"DOTA_Tooltip_ability_dawnbreaker_land_Description"							"Nome in inglese: <b><font color='#F2A93E'>Land Solar Guardian</font></b>\n \nPuò essere utilizzata per far atterrare Dawnbreaker nell'area bersagliata in qualsiasi momento."
 
@@ -11842,12 +11913,15 @@
 		"DOTA_Tooltip_ability_dawnbreaker_unbreakable_Description"							"Se è in ricarica, Guardiano solare torna immediatamente disponibile quando Dawnbreaker rinasce."
 
 		"DOTA_Tooltip_ability_dawnbreaker_break_of_dawn"										"Levata del sole"
+		"DOTA_Tooltip_ability_dawnbreaker_break_of_dawn_Description"							"Quando il sole sorge, Dawnbreaker rivela l'intera mappa agli alleati per %reveal_duration% secondi."
+
 		"DOTA_Tooltip_ability_dawnbreaker_solar_guardian_radius"					"RAGGIO:"
 		"DOTA_Tooltip_ability_dawnbreaker_solar_guardian_tooltip_duration"			"DURATA TOTALE:"
 		"DOTA_Tooltip_ability_dawnbreaker_solar_guardian_base_damage"				"DANNO PER PULSAZIONE:"
 		"DOTA_Tooltip_ability_dawnbreaker_solar_guardian_base_heal"				"CURA PER PULSAZIONE:"
 		"DOTA_Tooltip_ability_dawnbreaker_solar_guardian_scepter_heal"				"CURA PER PULSAZIONE:"
 		"DOTA_Tooltip_ability_dawnbreaker_solar_guardian_miss_rate"					"%ELUSIVITÀ:"
+		"DOTA_Tooltip_ability_dawnbreaker_solar_guardian_scepter_channel_time"		"TEMPO DI CANALIZZAZIONE (SCETTRO):"
 		"DOTA_Tooltip_ability_dawnbreaker_solar_guardian_airtime_duration"			"TEMPO IN ARIA:"
 		"DOTA_Tooltip_ability_dawnbreaker_solar_guardian_land_damage" 				"DANNO ALL'ATTERRAGGIO:"
 		"DOTA_Tooltip_ability_dawnbreaker_solar_guardian_land_stun_duration" 		"DURATA DELLO STORDIMENTO ALL'ATTERRAGGIO:"
@@ -11864,6 +11938,8 @@
 		"DOTA_Tooltip_ability_dawnbreaker_fire_wreath_Note0"	 							"Dawnbreaker si sposta ad una velocità di %movement_speed% per tutta la durata dell'abilità e fa una breve pausa di %self_stun_duration%s per recuperare le forze dopo il colpo finale."
 		"DOTA_Tooltip_ability_dawnbreaker_fire_wreath_Note1"								"Non è possibile usare Martello celeste o Guardiano solare durante la combo."
 		"DOTA_Tooltip_ability_dawnbreaker_fire_wreath_Note2"								"L'effetto di Squarcio non funziona con questa abilità."
+		"DOTA_Tooltip_ability_dawnbreaker_fire_wreath_Note3"								"Può essere lanciata su se stessi per muoversi in avanti."
+		"DOTA_Tooltip_ability_dawnbreaker_fire_wreath_Note4"								"I primi due attacchi rallenteranno la velocità di movimento del nemico del %swipe_slow%%% per %sweep_stun_duration% secondi."
 		"DOTA_Tooltip_ability_dawnbreaker_fire_wreath_duration"								"DURATA DELLA COMBO:"
 		"DOTA_Tooltip_ability_dawnbreaker_fire_wreath_swipe_radius"							"RAGGIO DEGLI ATTACCHI/COLPO FINALE:"
 		"DOTA_Tooltip_ability_dawnbreaker_fire_wreath_swipe_damage"							"DANNO AGGIUNTIVO DEGLI ATTACCHI/COLPO FINALE:"
@@ -11877,6 +11953,7 @@
 		
 		"DOTA_Tooltip_ability_dawnbreaker_celestial_hammer"							"Martello celeste"
 		"DOTA_Tooltip_ability_dawnbreaker_celestial_hammer_Lore"							"Il Martello della Luce è il compagno più vecchio di Valora e rappresenta l'ultimo legame con lo splendore dei suoi creatori."
+		"DOTA_Tooltip_ability_dawnbreaker_celestial_hammer_facet_dawnbreaker_gleaming_hammer" 			"Quando cade a terra, il Martello celeste crea gli effetti di guarigione e di danno di Guardiano solare (ridotti del %hammer_solar_guardian_effectiveness_pct%%%) in un raggio di %hammer_solar_guardian_radius%. Aumenta a %pause_duration% secondi il periodo in cui il martello può rimanere stazionario."
 		"DOTA_Tooltip_ability_dawnbreaker_celestial_hammer_Description"				"Nome in inglese: <b><font color='#F2A93E'>Celestial Hammer</font></b>\n\nDawnbreaker scaglia la sua arma contro un bersaglio, danneggiando tutti i nemici colpiti lungo il cammino. Arrivato a destinazione, il martello si blocca per %pause_duration% secondi per poi tornare indietro creando una scia di fiamme che rallenta i nemici. Dawnbreaker può richiamare il martello in qualsiasi momento, muovendosi nella sua direzione e intercettandolo a metà strada."
 		"DOTA_Tooltip_ability_dawnbreaker_celestial_hammer_Note0"							"Il martello danneggia i nemici sia quando viene lanciato che quando ritorna verso Dawnbreaker."
 		"DOTA_Tooltip_ability_dawnbreaker_celestial_hammer_Note1"							"La distanza percorsa da Dawnbreaker durante Convergenza è limitata alla gittata di lancio dell'abilità."
@@ -11888,10 +11965,15 @@
 		"DOTA_Tooltip_ability_dawnbreaker_celestial_hammer_burn_damage"						"DANNI AL SECONDO DELLA SCIA DI FIAMME:"
 		"DOTA_Tooltip_ability_dawnbreaker_celestial_hammer_flare_debuff_duration"			"DURATA DELLA SCIA DI FIAMME:"
 		"DOTA_Tooltip_ability_dawnbreaker_celestial_hammer_range"							"GITTATA DI LANCIO:"
+		"DOTA_Tooltip_ability_dawnbreaker_celestial_hammer_fire_trail_health_regen"						"%VELOCITÀ DI MOVIMENTO AGGIUNTIVA (SCIA DI FIAMME):"
+		"DOTA_Tooltip_ability_dawnbreaker_celestial_hammer_facet_dawnbreaker_brightmaul_wake" 			"I nemici colpiti da Martello celeste verranno conteggiati come attacchi di Luminosità. Il colpo critico di Luminosità verrà applicato a Martello celeste."
+		
 		"DOTA_Tooltip_Ability_dawnbreaker_luminosity"							"Luminosità"
 		"DOTA_Tooltip_Ability_dawnbreaker_luminosity_Lore"							"Anche se non ha più accesso alla luce rinvigorente dei Primogeniti, Valora può comunque ridare forza a se stessa e agli alleati creando ordine dal caos che risiede in ogni scontro."
 		"DOTA_Tooltip_Ability_dawnbreaker_luminosity_Description"				"Nome in inglese: <b><font color='#F2A93E'>Luminosity</font></b>\n\nDopo un certo numero di attacchi, Dawnbreaker potenzia il suo attacco successivo per renderlo un colpo critico in grado di curare tutti gli Eroi alleati in un raggio di %heal_radius% unità intorno a lei. La salute recuperata dagli alleati è pari al %allied_healing_pct%%% del danno inflitto dal suo attacco, ma questa percentuale si riduce se l'attacco viene sferrato contro un creep (neutrali inclusi)."
 		"DOTA_Tooltip_Ability_dawnbreaker_luminosity_Facet_dawnbreaker_solar_charged"		"Quando Dawnbreaker colpisce un bersaglio con Luminosità a potenza massima, il tempo di ricarica di tutte le sue abilità si riduce."
+		"DOTA_Tooltip_ability_dawnbreaker_luminosity_facet_dawnbreaker_brightmaul_wake" 	"I nemici colpiti da Martello celeste verranno conteggiati come attacchi di Luminosità. Il colpo critico di Luminosità verrà applicato a Martello celeste."
+		"DOTA_Tooltip_ability_dawnbreaker_luminosity_Note0"							"La guarigione di Luminosità aumenta tramite le fonti di amplificazione del prosciugamento di salute."
 		"DOTA_Tooltip_ability_dawnbreaker_luminosity_Note1"						"Break disabilita l'ottenimento di nuove istanze."
 		"DOTA_Tooltip_Ability_dawnbreaker_luminosity_bonus_damage"				"%DANNO DEL COLPO CRITICO:"
 		"DOTA_Tooltip_Ability_dawnbreaker_luminosity_heal_pct"					"%CURA ATTACCANDO GLI EROI:"
@@ -11924,10 +12006,19 @@
 		"DOTA_Tooltip_Facet_dawnbreaker_solar_charged"						"Energia solare"		
 		"DOTA_Tooltip_Facet_dawnbreaker_solar_charged_Description"			"Quando Dawnbreaker colpisce un bersaglio con Luminosità a potenza massima, il tempo di ricarica di tutte le sue abilità si riduce."
 
+		"DOTA_Tooltip_Facet_dawnbreaker_blaze"																"Impennata stellare"
+		"DOTA_Tooltip_Facet_dawnbreaker_blaze_Description"													"Dawnbreaker e gli alleati nelle vicinanze ottengono velocità d'attacco aggiuntiva alla fine di Schianto stellare per ogni colpo inferto agli Eroi nemici."		
+		"DOTA_Tooltip_modifier_dawnbreaker_luminosity_blaze_buff"											"Impennata stellare"
 		"DOTA_Tooltip_modifier_dawnbreaker_luminosity_blaze_buff_Description"								"Velocità d'attacco aumentata di %dMODIFIER_PROPERTY_TOOLTIP%."
 
 		"DOTA_Tooltip_Facet_dawnbreaker_hearthfire"																"Pista di fuoco"
+		"DOTA_Tooltip_Facet_dawnbreaker_hearthfire_Description"													"Camminare lungo la scia di fiamme di Martello celeste aumenta la velocità di movimento aggiuntiva."		
 		"DOTA_Tooltip_modifier_dawnbreaker_hearthfire"															"Pista di fuoco"
+		"DOTA_Tooltip_modifier_dawnbreaker_hearthfire_Description"												"Velocità di movimento aggiuntiva aumentata del %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
+
+		"DOTA_Tooltip_Facet_dawnbreaker_brightmaul_wake"																"Risveglio del Martello della Luce"
+		"DOTA_Tooltip_Facet_dawnbreaker_brightmaul_wake_Description"													"I nemici colpiti da Martello celeste verranno conteggiati come attacchi di Luminosità. Il colpo critico di Luminosità verrà applicato a Martello celeste."		
+		
 		"DOTA_Tooltip_Ability_special_bonus_unique_dawnbreaker_celestial_hammer_damage"					"Martello celeste: +{s:value} danni"
 		"DOTA_Tooltip_Ability_special_bonus_unique_dawnbreaker_fire_wreath_magic_immunity"				"Immunità alla magia durante Schianto stellare"
 		"DOTA_Tooltip_Ability_special_bonus_unique_dawnbreaker_solar_guardian_radius"					"Guardiano solare: +{s:bonus_radius} di raggio"
@@ -11940,6 +12031,10 @@
 		"DOTA_Tooltip_Ability_special_bonus_unique_dawnbreaker_celestial_hammer_slow"	"Martello celeste: +{s:bonus_move_slow}% di rallentamento"
 		"DOTA_Tooltip_Ability_special_bonus_unique_dawnbreaker_fire_wreath_aoe"	"Schianto stellare: +{s:value} di area d'effetto"
 		"DOTA_Tooltip_Ability_special_bonus_unique_dawnbreaker_fire_wreath_cooldown"		"Schianto stellare: -{s:bonus_AbilityCooldown}s di ricarica"
+		"DOTA_Tooltip_Ability_special_bonus_unique_dawnbreaker_break_of_dawn_damage"		"Levata del sole: +{s:bonus_daytime_damage} danni"
+		"DOTA_Tooltip_Ability_special_bonus_unique_dawnbreaker_gleaming_hammer"					"Martello celeste emette l'aura del Guardiano solare"
+		"DOTA_Tooltip_Ability_special_bonus_unique_dawnbreaker_gleaming_hammer_Description"		"Area d'effetto di {s:bonus_hammer_solar_guardian_radius}. Durata di inattività del Martello aumentata di {s:bonus_pause_duration}. I danni e la cura sono pari al {s:bonus_martello_solar_guardiano_efficacia_pct}% di quelli di Guardiano solare."
+
 		// Marci
 		"DOTA_Tooltip_ability_marci_grapple"							"Rimozione"
 		"DOTA_Tooltip_ability_marci_grapple_Description"				"Nome in inglese: <b><font color='#F2A93E'>Dispose</font></b>\n\nMarci afferra un bersaglio, alleato o nemico, e lo lancia dietro di sé, danneggiandolo e rallentandolo se si tratta di un nemico. Anche tutte le Unità nemiche nella zona dell'impatto verranno danneggiate e rallentate."
@@ -12006,6 +12101,7 @@
 		"DOTA_Tooltip_modifier_marci_rebound_barrier_buff"			"Barriera di rimbalzo"
 
 		"DOTA_Tooltip_ability_marci_special_delivery"				"Consegna speciale"
+		"DOTA_Tooltip_ability_marci_special_delivery_Description"	"Marci fischia per evocare istantaneamente il suo corriere.<br><br>Conferisce passivamente a tutti i corrieri alleati %bonus_levels% livelli aggiuntivi e %bonus_hp_tooltip% salute aggiuntiva."
 		"DOTA_Tooltip_ability_marci_special_delivery_Note0"			"Il fischietto di Consegna speciale ha un tempo di lancio di %abilitycastpoint% secondo."
 
 		"DOTA_Tooltip_modifier_marci_special_delivery_teleport_effect"				"Teletrasporto"
@@ -12033,6 +12129,7 @@
 		"DOTA_Tooltip_Facet_marci_bodyguard"						"Faccetta Guardia del corpo"		
 		"DOTA_Tooltip_Facet_marci_bodyguard_Description"			"Marci può proteggere un alleato danneggiando tutti i nemici a portata che lo attaccano."		
 		"DOTA_Tooltip_ability_marci_bodyguard"						"Guardia del corpo"		
+		"DOTA_Tooltip_ability_marci_bodyguard_Description"			"Nome in inglese: <b><font color='#F2A93E'>Bodyguard</font></b>\n\nConferisce passivamente a Marci prosciugamento della salute e danno di attacco aggiuntivo.\n\nMarci protegge un Eroe alleato, e per %bodyguard_duration% secondi l'alleato ottiene anche il %max_partner_penalty%%% di prosciugamento della salute e danno di attacco aggiuntivi. Quando l'alleato attacca o viene attaccato da un nemico, Marci contrattacca quel bersaglio se si trova nella sua gittata di attacco più %bodyguard_attack_range_buffer%."
 		"DOTA_Tooltip_ability_marci_bodyguard_Facet_marci_buddy_system"	"Mentre Guardia del corpo è attiva, Marci e il suo compagno condividono tra loro il %shared_healing_percent%%% di salute recuperata grazie a questa abilità."
 		"DOTA_Tooltip_ability_marci_bodyguard_Note0"				"Marci non può usare Guardia del corpo su se stessa."
 		"DOTA_Tooltip_ability_marci_bodyguard_Note1"				"L'efficacia del prosciugamento della salute è ridotta del %creep_lifesteal_reduction_pct%%% contro i creep."
@@ -12381,6 +12478,8 @@
 		"DOTA_Tooltip_ability_ringmaster_dark_carnival_souvenirs"				"Ciarlatano del circo degli orrori"
 		"DOTA_Tooltip_ability_ringmaster_dark_carnival_souvenirs_Description"	"Ringmaster riceve un souvenir casuale monouso del circo degli orrori ogni volta che un Eroe nemico muore entro %souvenir_collection_range% unità da lui. I souvenir aggiuntivi vengono conservati come cariche.<br><br>Se Ringmaster non ha souvenir quando rinasce, ne riceverà uno.<br><br>"
 		"DOTA_Tooltip_ability_ringmaster_dark_carnival_souvenirs_facet_ringmaster_carny_classics"	"I souvenir di Ringmaster sono <b color='white'>Specchio magico</b>, <b color='white'>Tonico del forzuto</b> e <b color='white'>Petofono</b>."
+		"DOTA_Tooltip_ability_ringmaster_dark_carnival_souvenirs_facet_ringmaster_sideshow_secrets"	"I souvenir di Ringmaster sono <b color='white'>Sfera di cristallo</b>, <b color='white'>Monociclo</b> e <b color='white'>Torta in faccia</b>."
+
 		"DOTA_Tooltip_ability_ringmaster_funhouse_mirror"						"Specchio magico"
 		"DOTA_Tooltip_ability_ringmaster_funhouse_mirror_Description"			"<h1>Uso: Distorsione delle proporzioni</h1>Crea %images_count% immagine imperfetta del tuo Eroe che dura %illusion_duration% secondi. La tua illusione infligge il %tooltip_damage_outgoing_ranged%%% del danno e subisce il %tooltip_damage_incoming_total_pct%%% del danno."
 		"DOTA_Tooltip_ability_ringmaster_funhouse_mirror_Note0"					"Ha un tempo di lancio di %invuln_duration% secondi durante il quale sei invulnerabile."
@@ -12391,9 +12490,19 @@
 		"DOTA_Tooltip_ability_ringmaster_strongman_tonic"						"Tonico del forzuto"
 		"DOTA_Tooltip_ability_ringmaster_strongman_tonic_Description"			"<h1>Uso: Bevuta forzata</h1>Aumenta temporaneamente la Forza di un Eroe alleato di %strength_bonus_base% più %strength_bonus_per_level% per livello di Ringmaster per %duration% secondi. L'effetto dura %effect_strength_max_duration% secondi e poi si deteriora nel corso della durata."
 
+		"DOTA_Tooltip_ability_ringmaster_weighted_pie"						"Torta in faccia"
 		"DOTA_Tooltip_ability_ringmaster_weighted_pie_Description"			"<h1>Uso: Lancio della torta</h1>Respinge i nemici, riducendone la visione di %vision_radius% e recuperandola in %blind_duration% secondi. Impedisce loro di ricevere la visione dagli alleati durante l'effetto. Uccide istantaneamente i creep non antichi.\n\nNome in inglese: <b><font color='#F2A93E'>Weighted Pie</font></b>"
 
 		"DOTA_Tooltip_ability_ringmaster_summon_unicycle"						"Monociclo"
+		"DOTA_Tooltip_ability_ringmaster_summon_unicycle_Description"			"<h1>Uso: In sella</h1>Evoca un veloce monociclo su cui pedalare per %mount_duration% secondi. Colpire gli alberi li distruggerà e rallenterà il monociclo. Attaccare, usare le abilità, ricevere danni, raccogliere Rune o colpire Unità e altri ostacoli terminerà la pedalata.\n\nNome in inglese: <b><font color='#F2A93E'>Unicycle</font></b>%mount_duration%"
+
+		"DOTA_Tooltip_ability_ringmaster_crystal_ball"						"Sfera di cristallo"
+		"DOTA_Tooltip_Facet_ringmaster_carny_classics"							"I classici del giostraio"
+		"DOTA_Tooltip_Facet_ringmaster_carny_classics_Description"				"I souvenir di Ringmaster sono <b color='white'>Specchio magico</b>, <b color='white'>Tonico del forzuto</b> e <b color='white'>Petofono</b>."
+
+		"DOTA_Tooltip_Facet_ringmaster_sideshow_secrets"						"Segreti secondari"
+		"DOTA_Tooltip_Facet_ringmaster_sideshow_secrets_Description"			"I souvenir di Ringmaster sono <b color='white'>Sfera di cristallo</b>, <b color='white'>Monociclo</b> e <b color='white'>Torta in faccia</b>."
+
 		"DOTA_Tooltip_Facet_ringmaster_default"									"Centro della scena"
 		"DOTA_Tooltip_Facet_ringmaster_default_Description"				"Ringmaster non è ancora abituato a stare sotto i riflettori. Questa faccetta non fa nulla... per ora."
 
@@ -12426,6 +12535,11 @@
 		"DOTA_Tooltip_modifier_ringmaster_whoopee_cushion_debuff"	"Petofono"
 		"DOTA_Tooltip_modifier_ringmaster_whoopee_cushion_debuff_Description"	"Velocità di movimento ridotta del '%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 
+		"DOTA_Tooltip_modifier_ringmaster_unicycle_movement"	"Monociclo"
+		"DOTA_Tooltip_modifier_ringmaster_unicycle_movement_Description"	"Andare in monociclo"
+
+		"DOTA_Tooltip_modifier_ringmaster_weighted_pie_debuff"	"Torta in faccia"
+		"DOTA_Tooltip_modifier_ringmaster_weighted_pie_debuff_Description"	"Unità respinta da una torta in faccia."
 		"DOTA_Tooltip_Ability_special_bonus_unique_ringmaster_whip_radius"	"Raggio di Domatore: +{s:bonus_start_width}"
 		"DOTA_Tooltip_Ability_special_bonus_unique_ringmaster_box_cast_range"	"Escapologia: +{s:bonus_AbilityCastRange} di gittata di lancio"
 		"DOTA_Tooltip_Ability_special_bonus_unique_ringmaster_wheel_radius"				"Ruota delle meraviglie: +{s:bonus_mesmerize_radius} di raggio e gittata"
@@ -14159,6 +14273,8 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_wisp_9"	"Immune ai rallentamenti durante Sovraccarico"
 		"DOTA_Tooltip_ability_special_bonus_unique_wisp_10"	"Sovraccarico: +{s:bonus_hp_regen}% di rigen. in base alla salute max"
 		"DOTA_Tooltip_ability_special_bonus_unique_wisp_11"	"Legame: +{s:bonus_slow}% di riduz. di movimento/attacco"
+		"DOTA_Tooltip_ability_special_bonus_unique_wisp_overcharge_duration"	"Sovraccarico: +{s:bonus_duration}s alla durata"
+
 		"DOTA_Tooltip_ability_special_bonus_unique_techies"	"Partenza col botto: +{s:bonus_damage} danni"
 		"DOTA_Tooltip_ability_special_bonus_unique_techies_2"	"Bomba adesiva: +{s:bonus_radius} di raggio di adesione/esplosione"
 		"DOTA_Tooltip_ability_special_bonus_unique_techies_3"	"Mine di prossimità: -{s:bonus_AbilityChargeRestoreTime}s di ricarica"
@@ -14166,8 +14282,12 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_techies_5"	"Partenza col botto: -{s:bonus_AbilityCooldown}s di ricarica"
 		"DOTA_Tooltip_ability_special_bonus_unique_arc_warden"	"Spettro Scintilla: +{s:bonus_spark_damage_base}% di danno"
 		"DOTA_Tooltip_ability_special_bonus_unique_arc_warden_2"	"Flusso: +{s:bonus_damage_per_second} danni"
+		"DOTA_Tooltip_ability_special_bonus_unique_arc_warden_3"	"Campo magnetico: +{s:bonus_attack_speed_bonus} di vel. d'attacco"
+		"DOTA_Tooltip_ability_special_bonus_unique_arc_warden_4"	"Flusso: +{s:bonus_move_speed_slow_pct}% di rallentamento"
 		"DOTA_Tooltip_ability_special_bonus_unique_arc_warden_5"	"Flusso: +{s:bonus_AbilityCastRange} di gittata di lancio"
 		"DOTA_Tooltip_ability_special_bonus_unique_arc_warden_6"	"Tempesta doppia: +{s:bonus_duration}s alla durata"
+		"DOTA_Tooltip_ability_special_bonus_unique_arc_warden_7"	"Spettro Scintilla: -{s:bonus_base_activation_delay}s di ritardo di attivazione"
+		"DOTA_Tooltip_ability_special_bonus_unique_arc_warden_8"	"Nessuna penalità per Tempesta doppia"
 		"DOTA_Tooltip_ability_special_bonus_unique_arc_warden_9"	"Campo magnetico: -{s:bonus_AbilityCooldown}s di ricarica"
 		"DOTA_Tooltip_ability_special_bonus_unique_arc_warden_flux_silences"			"Flusso silenzia quando il bersaglio è solo"
 		"DOTA_Tooltip_ability_special_bonus_unique_meepo"	"Puff: +{s:bonus_slow}% di rallentamento"
@@ -14198,6 +14318,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_dark_willow_3"			"Labirinto di rovi: -{s:bonus_AbilityCooldown}s di ricarica"
 		"DOTA_Tooltip_ability_special_bonus_unique_dark_willow_4"			"Pandemonio: +{s:bonus_attack_damage} danni"
 		"DOTA_Tooltip_ability_special_bonus_unique_dark_willow_5"			"Regno delle ombre: -{s:bonus_AbilityCooldown}s di ricarica"
+		"DOTA_Tooltip_ability_special_bonus_unique_dark_willow_6"			"Pandemonio: +{s:bonus_roaming_duration}s alla durata"
 		"DOTA_Tooltip_ability_special_bonus_unique_dark_willow_7"			"Corona maledetta: +{s:bonus_stun_radius} di area d'effetto"
 		"DOTA_Tooltip_ability_special_bonus_unique_dark_willow_bedlam_targets"	"Pandemonio: +{s:bonus_target_count} bersagli"
 		"DOTA_Tooltip_ability_special_bonus_unique_pangolier"			"Raffica di affondi: +{s:bonus_range} di gittata dei colpi"
@@ -14268,6 +14389,7 @@
 		"DOTA_Tooltip_Ability_item_spirit_helix"				"Elica Spirituale"
 		"DOTA_Tooltip_Ability_item_tome_of_knowledge"				"Tomo della Conoscenza"
 		"DOTA_Tooltip_Ability_item_wind_lace"				"Lama del Vento"
+		"DOTA_Tooltip_Ability_item_blight_stone"			"Globo del Flagello"
 		"DOTA_Tooltip_Ability_item_dragon_lance"				"Lancia del Drago"
 		"DOTA_Tooltip_Ability_item_aether_lens"				"Lente Eterea"
 		"DOTA_Tooltip_Ability_item_aetherial_halo"			"Martello Etereo"
@@ -14690,6 +14812,7 @@
 		"DOTA_Tooltip_Ability_item_enhancement_greedy"		"Avido"
 		"DOTA_Tooltip_Ability_item_enhancement_vampiric"		"Vampirico"
 		"DOTA_Tooltip_Ability_item_enhancement_timeless"		"Intramontabile"
+		"DOTA_Tooltip_Ability_item_enhancement_titanic"		"Titanico"
 		"DOTA_Tooltip_Ability_item_enhancement_crude"			"Rozzo"
 		"DOTA_Tooltip_Ability_item_enhancement_feverish"		"Febbrile"
 		"DOTA_Tooltip_Ability_item_enhancement_fleetfooted"	"Veloce"
@@ -15442,8 +15565,12 @@
 		"DOTA_Tooltip_ability_big_thunder_lizard_wardrums_aura_radius"					"RAGGIO:"
 		
 		"DOTA_Tooltip_modifier_big_thunder_lizard_wardrums_aura"							"Aura dei tamburi di guerra"
+		"DOTA_Tooltip_modifier_big_thunder_lizard_wardrums_aura_Description"				"Velocità di attacco aumentata di %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, e precisione aumentata."
+
+
 		//Frogmen: Riverborn Aura
 		"DOTA_Tooltip_ability_frogmen_riverborn_aura"								"Aura nata dal fiume"
+		"DOTA_Tooltip_ability_frogmen_riverborn_aura_Description"					"Nome in inglese: <b><font color='#F2A93E'>Riverborn Aura</font></b>\n\nOgni volta che la rana è in acqua, aumenta la velocità di movimento degli alleati e i danni inflitti."		
 		"DOTA_Tooltip_ability_frogmen_riverborn_aura_bonus_movement_speed"		"%VELOCITÀ DI MOVIMENTO AGGIUNTIVA:"
 		"DOTA_Tooltip_ability_frogmen_riverborn_aura_bonus_outgoing_damage"		"%DANNO INFLITTO:"
 		"DOTA_Tooltip_ability_frogmen_riverborn_aura_radius"		"RAGGIO:"
@@ -15477,9 +15604,11 @@
 		"DOTA_Tooltip_ability_frogmen_water_bubble_small_damage_absorb"					"DANNO ASSORBITO:"
 
 		"DOTA_Tooltip_ability_frogmen_water_bubble_medium"							"Bolla d'acqua (media)"
+		"DOTA_Tooltip_ability_frogmen_water_bubble_medium_Description"					"Nome in inglese: <b><font color='#F2A93E'>Water Bubble (medium)</font></b>\n\nCrea una barriera a forma di bolla che protegge il bersaglio dai danni magici per %duration% secondi. Al termine, cura il bersaglio per il %heal_pct%%% della quantità assorbita."
 		"DOTA_Tooltip_ability_frogmen_water_bubble_medium_damage_absorb"					"DANNO ASSORBITO:"
 
 		"DOTA_Tooltip_ability_frogmen_water_bubble_large"							"Bolla d'acqua (grande)"
+		"DOTA_Tooltip_ability_frogmen_water_bubble_large_Description"					"Nome in inglese: <b><font color='#F2A93E'>Water Bubble (large)</font></b>\n\nCrea una barriera a forma di bolla che protegge il bersaglio dai danni magici per %duration% secondi. Al termine, cura il bersaglio e gli alleati in un'area d'effetto di %radius% per il %heal_pct%%% della quantità assorbita."
 		"DOTA_Tooltip_ability_frogmen_water_bubble_large_damage_absorb"					"DANNO ASSORBITO:"
 
 		"DOTA_Tooltip_modifier_frogmen_water_bubble"								"Bolla d'acqua"
@@ -15505,7 +15634,15 @@
 		//"DOTA_Tooltip_ability_item_abyssal_blade_block_damage_ranged"					"BLOCK DAMAGE RANGED:"
 		//"DOTA_Tooltip_ability_item_abyssal_blade_block_chance"							"BLOCK CHANCE:"
 		"DOTA_Tooltip_ability_item_abyssal_blade_bonus_strength"						"+$str"
-"DOTA_Tooltip_ability_item_arcane_ring_Lore"							"Un tempo era un prezioso cimelio di una modesta famiglia nobile."
+		//"DOTA_Tooltip_ability_item_abyssal_blade_bash_chance_melee"					"%BASH MELEE CHANCE:"
+		//"DOTA_Tooltip_ability_item_abyssal_blade_bash_chance_ranged"					"%BASH RANGED CHANCE:"
+		//"DOTA_Tooltip_ability_item_abyssal_blade_bash_duration"								"BASH STUN DURATION:"
+		//"DOTA_Tooltip_ability_item_abyssal_blade_bonus_chance_damage"				"BASH BONUS DAMAGE:"
+		//"DOTA_Tooltip_ability_item_abyssal_blade_stun_duration"							"OVERWHELM STUN DURATION:"
+
+
+		"DOTA_Tooltip_ability_item_arcane_ring_Description"						"<h1>Attiva: Riempimento del mana</h1> Recupera una quantità di mana pari al %mana_restore% + %mana_restore_pct%%% della riserva di mana massimo dell'utilizzatore per tutti gli alleati vicini. <br><br> Raggio: %radius%\n\nNome in inglese: <b><font color='#F2A93E'>Arcane Ring</font></b>"
+		"DOTA_Tooltip_ability_item_arcane_ring_Lore"							"Un tempo era un prezioso cimelio di una modesta famiglia nobile."
 		
 		"DOTA_Tooltip_ability_item_armlet_Description"							"<h1>Abilita/Disabilita: Forza demoniaca</h1>Quando è attiva, Forza demoniaca aumenta il danno di %unholy_bonus_damage%, la Forza di %unholy_bonus_strength% e l'armatura di %unholy_bonus_armor%, ma consuma %unholy_health_drain_per_second% punti salute al secondo.<br><br> Non puoi morire né per la perdita della Forza aggiuntiva quando Forza demoniaca viene disabilitata, né per il consumo di salute al secondo quando Forza demoniaca viene attivata.\n\nNome in inglese: <b><font color='#F2A93E'>Armlet of Mordiggian</font></b>"
 		"DOTA_Tooltip_ability_item_armlet_Lore"									"L'arma preferita dai bruti, il portatore sacrifica la sua energia vitale in cambio di immensa forza e potere."
