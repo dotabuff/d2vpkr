@@ -21,7 +21,15 @@
 		"dota_ability_variable_move_speed"			"Bewegingssnelheid"			// $move_speed
 		"dota_ability_variable_evasion"				"Ontwijking"					// $evasion
 		"dota_ability_variable_spell_resist"		"Magieweerstand"			// $spell_resist
-"dota_ability_variable_selected_attrib"		"Geselecteerde eigenschap"		// $selected_attribute
+"dota_ability_variable_spell_lifesteal_hero_attacks" "bij aanvallen op helden"
+		"dota_ability_variable_spell_lifesteal_hero_spells" "bij vaardigheden op helden"
+		"dota_ability_variable_spell_lifesteal_creep_attacks" "bij aanvallen op creeps"
+		"dota_ability_variable_spell_lifesteal_creep_spells" "bij vaardigheden op creeps"
+		"dota_ability_variable_lifesteal_hero_attacks" "bij aanvallen op helden"
+		"dota_ability_variable_lifesteal_hero_spells" "bij vaardigheden op helden"
+		"dota_ability_variable_lifesteal_creep_attacks" "bij aanvallen op creeps"
+		"dota_ability_variable_lifesteal_creep_spells" "bij vaardigheden op creeps"
+		"dota_ability_variable_selected_attrib"		"Geselecteerde eigenschap"		// $selected_attribute
 		"dota_ability_variable_attack_range"		"Aanvalsbereik <font color='#7d7d7d'>(enkel afstand)</font>"	// $attack_range
 		"dota_ability_variable_attack_range_melee"	"Aanvalsbereik <font color='#7d7d7d'>(alleen melee)</font>"	// $attack_range_melee
 "dota_ability_variable_cast_range"			"Spreukbereik"				// $cast_range
@@ -29,7 +37,10 @@
 		"dota_ability_variable_projectile_speed"	"Projectielsnelheid"			// $projectile_speed
 		"dota_ability_variable_manacost_reduction"	"Vermindering manakosten"		// $manacost_reduction
 "dota_ability_variable_aoe_bonus"			"Effectgebiedsbonus"					// $aoe_bonus
-// Hero Names
+		"dota_ability_variable_exclusive_movespeed"	"Bewegingssnelheid met laarzen"		// $exclusive_movespeed
+		"dota_ability_variable_healing_amp"			"Uitgaande genezingsversterking" // $healing_amp
+
+		// Hero Names
 		// The "__en" versions are for the "Classic Hero Names" option.  These are still separate tokens for languages that want to add compatibility annotations
 		"npc_dota_hero_none:n"							"--"
 		"npc_dota_hero_none__en:n"						"--"
@@ -516,6 +527,7 @@
 		"npc_dota_neutral_forest_troll_high_priest"		"Hill Troll Priest"
 		"npc_dota_neutral_harpy_scout"					"Harpy Scout"
 		"npc_dota_neutral_harpy_storm"					"Harpy Stormcrafter"
+		"npc_dota_neutral_tadpole"						"Pollywog"
 		// Towns
 		"dota_fountain"					"Fontein"
 		"npc_dota_goodguys_tower1_top"	"Toren"
@@ -923,6 +935,7 @@
 		
 		"DOTA_Tooltip_ability_life_stealer_infest"										"Infest"
 		"DOTA_Tooltip_ability_life_stealer_infest_Lore"									"Met deze plaag voedt N'aix zich met het levensbloed van de gastheer, waardoor hij weer herstelt wordt tot volledige onheilige kracht."
+		"DOTA_Tooltip_ability_life_stealer_infest_Note2"								"Activeert geen spreukreflectie."
 		"DOTA_Tooltip_ability_life_stealer_infest_damage"								"SCHADE:"
 		"DOTA_Tooltip_ability_life_stealer_infest_radius"								"SCHADESTRAAL:"
 		"DOTA_Tooltip_ability_life_stealer_infest_self_regen"								"%MAX. HP-HERSTEL (ZELF):"
@@ -996,6 +1009,7 @@
 		"DOTA_Tooltip_ability_furion_force_of_nature_Description"						"Zet een gebied van bomen om in Treants die onder de controle van Nature's Prophet staan."
 		"DOTA_Tooltip_ability_furion_force_of_nature_Lore"								"Verodicia schonk de Prophet de vaardigheid om de Treant Guard op te roepen, een mythisch leger uit de wildernis."
 		"DOTA_Tooltip_ability_furion_force_of_nature_Note0"								"Nature's Call kan alleen maar evenveel treants maken als dat er bomen zijn in de doelwitlocatie."
+		"DOTA_Tooltip_ability_furion_force_of_nature_treant_movespeed"					"BEWEGINGSSNELHEID TREANT:"
 		"DOTA_Tooltip_ability_furion_curse_of_the_forest_duration"						"DUUR:"
 		"DOTA_Tooltip_ability_furion_wrath_of_nature"									"Wrath of Nature"
 		"DOTA_Tooltip_ability_furion_wrath_of_nature_Description"						"Schadelijke energie kaatst de map rond en raakt vijanden die zichtbaar zijn, beginnend met degenen die het dichtst bij het gebruikspunt staan. Met elke vijand die na de eerste geraakt wordt, neemt de schade toe. De maximale schade wordt na %max_targets% sprongen bereikt."
@@ -1049,6 +1063,7 @@
 		"DOTA_Tooltip_ability_windrunner_focusfire_Note0"								"Door de opdracht 'Positie vasthouden' te geven, worden de aanvallen van Windranger gepauzeerd."
 		"DOTA_Tooltip_ability_windrunner_focusfire_Note1"								"Windranger kan bewegen tijdens het aanvallen."
 		"DOTA_Tooltip_ability_windrunner_focusfire_bonus_attack_speed" 					"BONUSAANVALSSNELHEID:"
+		"DOTA_Tooltip_ability_windrunner_focusfire_attacks_per_second" 					"AANVALLEN PER SECONDE:"
 		"DOTA_Tooltip_ability_windrunner_focusfire_bonus_range" 						"BONUSAANVALSBEREIK:"
 		"DOTA_Tooltip_ability_windrunner_focusfire_focusfire_damage_reduction" 			"%SCHADEVERMINDERING:"
 		"DOTA_Tooltip_ability_windrunner_focusfire_abilityduration"						"DUUR:"		
@@ -1076,6 +1091,7 @@
 		"DOTA_Tooltip_ability_windrunner_windrun_evasion_pct_tooltip"					"%ONTWIJKING:"
 //		"DOTA_Tooltip_ability_windrunner_windrun_enemy_movespeed_bonus_pct"				"%ENEMY SLOW:"
 		"DOTA_Tooltip_ability_windrunner_windrun_radius"								"STRAAL:"
+		"DOTA_Tooltip_ability_windrunner_windrun_ally_movespeed_bonus_pct"				"%BEWEGINGSSNELHEIDSBONUS BONDGENOTEN:"
 		"DOTA_Tooltip_ability_windrunner_windrun_duration"								"DUUR:"
 		"DOTA_Tooltip_ability_windrunner_windrun_scepter_radius"				"SCEPTER - STRAAL:"
 		"DOTA_Tooltip_ability_windrunner_windrun_movespeed_bonus_pct"					"%BEWEGINGSSNELHEIDBONUS:"
@@ -1120,6 +1136,7 @@
 		"DOTA_Tooltip_ability_lion_voodoo_duration"										"DUUR:"
 		"DOTA_Tooltip_ability_lion_mana_drain"											"Mana Drain"
 		"DOTA_Tooltip_ability_lion_mana_drain_Lore"										"Lagere magiërs zijn niets meer dan een bron van magische herstelling voor de Demon Witch."
+		"DOTA_Tooltip_ability_lion_mana_drain_Note0"									"Voorkomt dat helden onzichtbaar worden."
 		"DOTA_Tooltip_ability_lion_mana_drain_duration"									"OPROEPTIJD:"
 		"DOTA_Tooltip_ability_lion_mana_drain_mana_per_second"							"MANA PER SECONDE:"
 		"DOTA_Tooltip_ability_lion_mana_drain_break_distance"							"BREEKAFSTAND:"
@@ -1130,6 +1147,9 @@
 		"DOTA_Tooltip_ability_lion_finger_of_death_damage"								"SCHADE:"
 		"DOTA_Tooltip_ability_lion_finger_of_death_damage_scepter"						"SCHADE:"
 		"DOTA_Tooltip_ability_lion_finger_of_death_damage_per_kill"						"SCHADE PER KILL:"
+		"DOTA_Tooltip_ability_lion_finger_of_death_punch_duration"						"DUUR (VUIST):"
+		"DOTA_Tooltip_ability_lion_finger_of_death_punch_bonus_damage_base"				"BONUS EERSTE SCHADE:"
+		"DOTA_Tooltip_ability_lion_finger_of_death_punch_bonus_damage_per_stack"		"BONUS EERSTE SCHADE PER LADING:"
 		"DOTA_Tooltip_ability_lion_finger_of_death_cleave_damage"						"%SPLIJTSCHADE:"
 		"DOTA_Tooltip_ability_lion_finger_of_death_cooldown_scepter"					"AFKOELTIJD:"
 
@@ -1151,6 +1171,7 @@
 		"DOTA_Tooltip_Facet_lion_essence_eater_Description"			"Mana Drain richt schade aan die gelijk is aan {s:bonus_damage_pct}% van de gestolen mana."
 		
 		"DOTA_Tooltip_ability_lion_to_hell_and_back"							"To Hell and Back"
+		"DOTA_Tooltip_modifier_lion_finger_punch"									"Fist of Death"
 		//VENGEFUL
 		"DOTA_Tooltip_ability_vengefulspirit_magic_missile"								"Magic Missile"
 		"DOTA_Tooltip_ability_vengefulspirit_magic_missile_Description"					"Vuurt een magische raket af op een vijandelijke eenheid, wat het verlamt en schade aanricht."
@@ -1262,7 +1283,6 @@
 		"DOTA_Tooltip_ability_leshrac_lightning_storm_damage"						"SCHADE:"
 		"DOTA_Tooltip_ability_leshrac_lightning_storm_jump_count"						"BLIKSEMINSLAGEN:"
 		"DOTA_Tooltip_ability_leshrac_lightning_storm_movespeed_slow"			        "%BEWEGINGSVERTRAGING:"
-		"DOTA_Tooltip_ability_leshrac_lightning_storm_attackspeed_slow"			        "AANVALSVERTRAGING:"
 		"DOTA_Tooltip_ability_leshrac_lightning_storm_slow_duration"					"VERTRAGINGSDUUR:"
 		"DOTA_Tooltip_ability_leshrac_lightning_storm_radius"							"SPRONGSTRAAL BLIKSEM:"
 		"DOTA_Tooltip_ability_leshrac_greater_lightning_storm"							"Nihilism"
@@ -1502,6 +1522,7 @@
 		"DOTA_Tooltip_modifier_sand_king_epicenter_slow"				"Epicenter - vertraging"
 		"DOTA_Tooltip_modifier_sand_king_epicenter_slow_Description"	"Verlaagt bewegingssnelheid met %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%. Verlaagt aanvalssnelheid met %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 		"DOTA_Tooltip_modifier_sandking_sand_storm_slow"				"Sand Storm"
+		"DOTA_Tooltip_modifier_sand_king_scorpion_strike_slow"				"Stinger"
 		"DOTA_Tooltip_modifier_sand_king_scorpion_strike_slow_Description"	"Verlaagt bewegingssnelheid met %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 
 		//NEVERMORE
@@ -1731,6 +1752,7 @@
 		//MORPHLING
 		"DOTA_Tooltip_ability_morphling_waveform"										"Waveform"
 		"DOTA_Tooltip_ability_morphling_waveform_Lore"									"Een stortvloed vernietigt vijanden met grote kracht."
+		"DOTA_Tooltip_ability_morphling_adaptive_strike_agi_Facet_morphling_str"		"De verlamming die Adaptive Strike veroorzaakt is afhankelijk van Morphlings kracht."
 		"DOTA_Tooltip_ability_morphling_adaptive_strike_agi_Lore"						"De Morphling roept zijn elementen op om zijn vijanden met golven te verpletteren."
 		"DOTA_Tooltip_ability_morphling_adaptive_strike_agi_Note0"						"Projectiel beweegt met een snelheid van %projectile_speed%."
 		"DOTA_Tooltip_ability_morphling_adaptive_strike_agi_damage_base"				"BASISSCHADE:"
@@ -1810,6 +1832,7 @@
 		"DOTA_Tooltip_modifier_bloodseeker_thirst_vision"				"Thirst"
 		"DOTA_Tooltip_modifier_bloodseeker_thirst_vision_Description"				"Bloodseeker voelt je verwondingen aan en weet precies waar je bent."
 		"DOTA_Tooltip_modifier_bloodseeker_thirst_active"				"Bloodrush"
+		"DOTA_Tooltip_modifier_bloodseeker_thirst_active_Description"	"Verhoogde bewegingssnelheid en genezing van Sanguivore."
 		"DOTA_Tooltip_modifier_bloodseeker_rupture"						"Rupture"
 		"DOTA_Tooltip_modifier_bloodseeker_rupture_Description"			"Richt een percentage van de afstand die je aflegt aan als schade"		
 		
@@ -1886,6 +1909,7 @@
 		"DOTA_Tooltip_ability_phantom_lancer_illusory_armaments_Description"				"Items, vaardigheden en aura's die bonusschade geven, geven in plaats daarvan basisschade."		
 		"DOTA_Tooltip_ability_phantom_lancer_illusory_armaments_bonus_to_base_illusions"	"%BONUSBASISSCHADE (ILLUSIES):"
 
+		"DOTA_Tooltip_Facet_phantom_lancer_lancelot"							"Lancelot"
 		"DOTA_Tooltip_modifier_phantom_lancer_spirit_lance"					"Spirit Lance"
 		"DOTA_Tooltip_modifier_phantom_lancer_spirit_lance_Description"		"Verlaagt bewegingssnelheid met %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
 		"DOTA_Tooltip_modifier_phantom_lancer_juxtapose_illusion"			"Phantom"
@@ -1937,6 +1961,7 @@
 		"DOTA_Tooltip_modifier_razor_plasma_field_slow"	"Plasma Field"
 		"DOTA_Tooltip_modifier_razor_plasma_field_slow_Description"	"Bewegingssnelheid verlaagd met %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 
+		"DOTA_Tooltip_Ability_razor_dynamo"											"Dynamo"
 		"DOTA_Tooltip_Ability_razor_dynamo_total_spell_amp"							"%SPREUKVERSTERKING PER AANVALSSCHADE:"
 
 		"DOTA_Tooltip_Ability_razor_unstable_current"								"Unstable Current"
@@ -2365,7 +2390,8 @@
 		"DOTA_Tooltip_ability_rattletrap_hookshot_allied_armor_bonus"						"PANTSERBONUS BONDGENOTEN:"
 		"DOTA_Tooltip_ability_rattletrap_overclocking"									"Overclocking"
 		"DOTA_Tooltip_ability_rattletrap_overclocking_buff_duration"					"DUUR:"
-"DOTA_Tooltip_ability_rattletrap_jetpack"               "Jetpack"
+"DOTA_Tooltip_ability_rattletrap_overclocking_debuff_duration"					"VERTRAGINGSDUUR (ZELF):"
+		"DOTA_Tooltip_ability_rattletrap_jetpack"               "Jetpack"
 		"DOTA_Tooltip_ability_rattletrap_jetpack_duration"      "DUUR:"
 		"DOTA_Tooltip_ability_rattletrap_jetpack_bonus_speed"	"%BONUSSNELHEID:"
 
@@ -2438,7 +2464,15 @@
 		"DOTA_Tooltip_ability_lich_chain_frost_slow_attack_speed"						"AANVALSVERTRAGING:"
 		"DOTA_Tooltip_ability_lich_chain_frost_slow_duration"							"VERTRAGINGSDUUR:"		
 		"DOTA_Tooltip_ability_lich_chain_frost_bonus_jump_damage"						"SCHADEVERHOGING:"
+		"DOTA_Tooltip_ability_lich_chain_frost_bonus_jumps_per_hero_killed"				"BONUSSPRONGEN PER GEDODE HELD:"
+		"DOTA_Tooltip_ability_lich_chain_frost_bonus_jumps_per_creep_killed"			"BONUSSPRONGEN PER GEDODE CREEP:"
+		"DOTA_Tooltip_ability_lich_chain_frost_frostbound_duration"						"DUUR FROSTBOUND:"
+
 		"DOTA_Tooltip_Facet_lich_frostbound"									"Frostbound"		
+		"DOTA_Tooltip_modifier_lich_chainfrost_frostbound"								"Frostbound"
+		"DOTA_Tooltip_modifier_lich_chainfrost_frostbound_Description"					"Chain Frost blijft stuiteren als een ander doelwit binnen bereik komt."
+
+
 		"DOTA_Tooltip_ability_lich_ice_spire"						"Ice Spire"
 		"DOTA_Tooltip_ability_lich_ice_spire_duration"				"DUUR:"
 		"DOTA_Tooltip_ability_lich_ice_spire_aura_radius"			"EFFECTSTRAAL:"
@@ -2476,6 +2510,7 @@
 		"DOTA_Tooltip_ability_tidehunter_kraken_shell"									"Kraken Shell"
 		"DOTA_Tooltip_ability_tidehunter_kraken_shell_Lore"								"Claddish-zeelui vertellen verhalen over een machtig zeevarend beest dat geleden heeft onder speer en zwaard, maar doorging met het verwoesten van de vloot."
 		"DOTA_Tooltip_ability_tidehunter_kraken_shell_damage_reduction"					"SCHADEAFWEER:"
+		"DOTA_Tooltip_ability_tidehunter_kraken_shell_bonus_reduction_per_kill"			"SCHADEAFWEER PER KILL:"
 		"DOTA_Tooltip_ability_tidehunter_anchor_smash"									"Anchor Smash"
 		"DOTA_Tooltip_ability_tidehunter_anchor_smash_Lore"								"Leviathans zware anker, dat hij stal van één van de vlaggenschippen van Admiral Kunkka, blijkt een nuttig slagwapen te zijn."
 		"DOTA_Tooltip_ability_tidehunter_anchor_smash_attack_damage"					"BONUSAANVALSSCHADE:"
@@ -2535,6 +2570,8 @@
 		"DOTA_Tooltip_ability_shadow_shaman_fowl_play"									"Fowl Play"
 		"DOTA_Tooltip_ability_shadow_shaman_fowl_play_Shard_Description"				"Verlengt de tijd dat inkomende schade wordt verlaagd naar %damage_reduction_duration% seconden. Wanneer Fowl Play is geactiveerd, wordt Shadow Shaman gedurende %invuln_duration% seconden onkwetsbaar en komen er %ally_chicken_images_count% oncontroleerbare kippen bij die %ally_voodoo_duration% seconden actief zijn. Terwijl Shadow Shaman is getransformeerd, kan hij items gebruiken."
 		"DOTA_Tooltip_ability_shadow_shaman_fowl_play_hex_duration"						"DUUR:"
+		"DOTA_Tooltip_ability_shadow_shaman_fowl_play_movespeed_bonus_pct"				"%BEWEGINGSSNELHEIDSBONUS:"
+
 		"DOTA_Tooltip_modifier_shadow_shaman_self_hex"									"Fowl Play"
 		"DOTA_Tooltip_modifier_shadow_shaman_fowl_play_damage_reduction"				"Fowl Play"
 		//RIKI
@@ -2548,6 +2585,7 @@
 		"DOTA_Tooltip_ability_riki_backstab"											"Cloak and Dagger"
 		"DOTA_Tooltip_ability_riki_backstab_Lore"										"Riki komt je halen."
 		"DOTA_Tooltip_ability_riki_backstab_fade_delay"									"VERVAGINGSVERTRAGING:"
+		"DOTA_Tooltip_ability_riki_innate_backstab"										"Backstab"
 		"DOTA_Tooltip_ability_riki_innate_backstab_damage_multiplier"					"SCHADEVERMENIGVULDIGER BEHENDIGHEID:"
 		"DOTA_Tooltip_ability_riki_permanent_invisibility"								"Permanent Invisibility"
 		"DOTA_Tooltip_ability_riki_permanent_invisibility_Description"					"Riki verdwijnt in de schaduw en wordt onzichtbaar. Elke keer dat Riki een vijand aanvalt wordt hij zichtbaar. Geeft bonusbewegingssnelheid."
@@ -2724,9 +2762,11 @@
 		"DOTA_Tooltip_ability_necrolyte_heartstopper_aura_aura_radius"					"STRAAL:"
 		"DOTA_Tooltip_ability_necrolyte_heartstopper_aura_aura_damage"					"%GEZONDHEIDSVERVAL:"
 
+		"DOTA_Tooltip_ability_necrolyte_sadist"											"Sadist"
 		"DOTA_Tooltip_ability_necrolyte_sadist_health_regen"					"GEZONDHEIDSHERSTEL PER KILL:"
 		"DOTA_Tooltip_ability_necrolyte_sadist_mana_regen"					"MANAHERSTEL PER KILL:"
 		"DOTA_Tooltip_ability_necrolyte_sadist_regen_duration"				"DUUR:"		
+		"DOTA_Tooltip_ability_necrolyte_sadist_bonus_aoe"					"BONUSEFFECTGEBIED PER KILL:"
 		"DOTA_Tooltip_ability_necrolyte_ghost_shroud"											"Ghost Shroud"
 		"DOTA_Tooltip_ability_necrolyte_ghost_shroud_Description"								"Necrophos glipt in het rijk dat de levenden van de doden scheidt. Hij kan niet aanvallen of worden aangevallen en zendt een aura uit die vijanden om hem heen vertraagt. Hij ontvangt extra magische schade in deze vorm, maar zijn herstellende krachten worden versterkt."
 		"DOTA_Tooltip_ability_necrolyte_ghost_shroud_abilitydraft_note"						"Ghost Shroud wordt gestopt zodra je een spreuk met magie-immuniteit gebruikt (Blade Fury, Rage, etc.)"
@@ -2776,6 +2816,7 @@
 		"DOTA_Tooltip_ability_slardar_sprint_Note0"										"Het activeren van deze vaardigheid onderbreekt oproepvaardigheden niet."
 		"DOTA_Tooltip_ability_slardar_sprint_bonus_speed"								"%BONUSBEWEGINGSSNELHEID:"
 		"DOTA_Tooltip_ability_slardar_sprint_duration"									"DUUR:"		
+		"DOTA_Tooltip_ability_slardar_sprint_slow_resistance_tooltip"					"%VERTRAGINGSWEERSTAND:"
 		"DOTA_Tooltip_ability_slardar_slithereen_crush"									"Slithereen Crush"
 		"DOTA_Tooltip_ability_slardar_slithereen_crush_Lore"							"Een snelle verplettering van kracht en water breekt zelfs de sterkste verdedigingen."
 		"DOTA_Tooltip_ability_slardar_slithereen_crush_crush_damage"					"SCHADE:"
@@ -2794,6 +2835,9 @@
 		"DOTA_Tooltip_ability_slardar_amplify_damage_Lore"								"Zelfs het sterkste pantser betekent weinig wanneer het aan de pekel in de zee wordt overgelaten."
 		"DOTA_Tooltip_ability_slardar_amplify_damage_armor_reduction"					"PANTSERVERMINDERING:"
 		"DOTA_Tooltip_ability_slardar_amplify_damage_duration"							"DUUR:"
+		"DOTA_Tooltip_ability_slardar_amplify_damage_puddle_radius"						"STRAAL SPOOR:"
+		"DOTA_Tooltip_ability_slardar_amplify_damage_puddle_duration"					"DUUR SPOOR:"
+
 		"DOTA_Tooltip_modifier_slardar_sprint"				"Guardian Sprint"
 		"DOTA_Tooltip_modifier_slardar_sprint_Description"	"Verhoogt bewegingssnelheid met %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 		"DOTA_Tooltip_modifier_slardar_amplify_damage"		"Corrosive Haze"
@@ -2859,6 +2903,7 @@
 		"DOTA_Tooltip_modifier_beastmaster_axe_stack_counter_description"	"Ontvangt verhoogde schade van Beastmaster en zijn eenheden."
 		"DOTA_Tooltip_modifier_beastmaster_inner_beast"						"Inner Beast"
 		"DOTA_Tooltip_modifier_beastmaster_inner_beast_Description"			"Verhoogt aanvalssnelheid met %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%"
+		"DOTA_Tooltip_modifier_beastmaster_inner_beast_berserk_Description"		"Verhoogt aanvalssnelheid met %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%. Iedere aanval past Wild Axes-ladingen toe."
 		"DOTA_Tooltip_modifier_beastmaster_primal_roar_slow"				"Primal Roar - vertraging"
 		"DOTA_Tooltip_modifier_beastmaster_primal_roar_slow_Description"	"Verlaagt bewegingssnelheid met %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% en aanvalssnelheid met %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 		"DOTA_Tooltip_modifier_beastmaster_hawk_invisibility"				"Invisibility"
@@ -2951,6 +2996,8 @@
 		"DOTA_Tooltip_Facet_faceless_void_chronosphere"									"Chronosphere"
 		"DOTA_Tooltip_ability_faceless_void_time_zone_radius"						"STRAAL:"
 		"DOTA_Tooltip_ability_faceless_void_time_zone_duration"						"DUUR:"			
+		"DOTA_Tooltip_ability_faceless_void_time_zone_cooldown_acceleration"		"%AFKOELTIJDSVERSNELLING:"
+
 		"DOTA_Tooltip_modifier_faceless_void_time_walk_slow"					"Time Walk - vertraging"
 		"DOTA_Tooltip_modifier_faceless_void_time_walk_slow_Description"		"Vertraagt bewegingssnelheid met %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 		"DOTA_Tooltip_modifier_faceless_void_time_walk_shardbuff"				"Time Walk"
@@ -3525,6 +3572,7 @@
 		"DOTA_Tooltip_ability_night_stalker_crippling_fear_duration_night"				"DUUR 'S NACHTS:"
 		"DOTA_Tooltip_ability_night_stalker_crippling_fear_dps"							"SCHADE PER SECONDE:"
 		"DOTA_Tooltip_ability_night_stalker_crippling_fear_radius"						"AURASTRAAL:"
+		"DOTA_Tooltip_ability_night_stalker_crippling_fear_mana_pct_cost"				"%MANAKOSTEN:"
 		"DOTA_Tooltip_ability_night_stalker_hunter_in_the_night"						"Hunter in the Night"
 		"DOTA_Tooltip_ability_night_stalker_hunter_in_the_night_Description"			"'s Nachts is Night Stalker in zijn element, waardoor hij sneller aanvalt en beweegt."
 		"DOTA_Tooltip_ability_night_stalker_hunter_in_the_night_Lore"					"Balanars jachtdapperheid verbetert wanneer de nacht aanbreekt."
@@ -3547,6 +3595,7 @@
 		"DOTA_Tooltip_modifier_nightstalker_darkness_blind_Description"		"Geeft je verminderd zicht."
 		"DOTA_Tooltip_modifier_night_stalker_hunter_in_the_night_flight" "Flight"
 		"DOTA_Tooltip_modifier_night_stalker_hunter_in_the_night_flight_Description" "Vliegt onbelemmerd."
+		"DOTA_Tooltip_Facet_night_stalker_voidbringer"								"Voidbringer"		
 		//BROODMOTHER
 		"DOTA_Tooltip_ability_broodmother_spawn_spiderlings"							"Spawn Spiderlings"
 		"DOTA_Tooltip_ability_broodmother_spawn_spiderlings_Lore"						"Black Arachnia gaat verder met het opvoeden van haar jong, zelfs in het midden van het slagveld. Het kroost leert snel hoe het hun moeder kan ondersteunen."
@@ -3720,7 +3769,7 @@
 		"DOTA_Tooltip_ability_jakiro_ice_path_stun_duration"				"MAX. VERLAMMINGSDUUR:" 
 		"DOTA_Tooltip_ability_jakiro_ice_path_path_delay"					"FORMATIEVERTRAGING:"
 		"DOTA_Tooltip_ability_jakiro_ice_path_path_radius"					"STRAAL:"
-		"DOTA_Tooltip_ability_jakiro_ice_path_damage"						"SCHADE:"
+		"DOTA_Tooltip_ability_jakiro_ice_path_detonate_damage"				"SECUNDAIRE SCHADE:"
 		"DOTA_Tooltip_ability_jakiro_liquid_fire"							"Liquid Fire"
 		"DOTA_Tooltip_ability_jakiro_liquid_fire_Lore"						"De linkermuil van Jakiro opent, waardoor iedereen op zijn pad wordt vermorzeld."
 		"DOTA_Tooltip_ability_jakiro_liquid_fire_Note0"						"Werkt op eenheden en gebouwen."
@@ -3755,6 +3804,8 @@
 		"DOTA_Tooltip_modifier_jakiro_macropyre_burn"				"Macropyre"
 		"DOTA_Tooltip_modifier_jakiro_macropyre_burn_Description"				"Wordt beïnvloed door Macropyre van Jakiro en ontvangt elke seconde schade."
 		"DOTA_Tooltip_modifier_jakiro_macropyre_ice_edge_slow"		"Macropyre"
+		"DOTA_Tooltip_facet_jakiro_twin_terror_Description"			"Jakiro richt meer schade aan met zijn dubbele aanvallen."
+		"DOTA_Tooltip_ability_jakiro_double_trouble_facet_jakiro_twin_terror"	"Jakiro richt meer schade aan met zijn dubbele aanvallen."
 		//BATRIDER
 		"DOTA_Tooltip_ability_batrider_sticky_napalm"						"Sticky Napalm"
 		"DOTA_Tooltip_ability_batrider_sticky_napalm_Lore"					"Het is niet ongewoon om de Rider te horen kakelen als hij de ontvlambaarheid van zijn tegenstanders verhoogt."
@@ -4178,7 +4229,6 @@
 		"DOTA_Tooltip_modifier_item_ultimate_scepter_consumed_alchemist"		"Aghanim's Blessing (Alchemist)"
 		"DOTA_Tooltip_modifier_item_ultimate_scepter_consumed_alchemist_Description"	"Heeft permanent de heldupgrade en statistiekbonussen van Aghanim's Scepter ontvangen."
 		"DOTA_Tooltip_modifier_alchemist_scepter_bonus_damage"				"Aghanim's Scepter toegekend" 
-		"DOTA_Tooltip_modifier_alchemist_scepter_bonus_damage_Description"	"Ontvangt %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% aanvalsschade en %dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% spreukversterking van Aghanim's Scepters die aan bondgenoten zijn gegeven." 
 		"DOTA_Tooltip_modifier_alchemist_berserk_potion"				"Berserk Potion"
 		"DOTA_Tooltip_modifier_alchemist_berserk_potion_Description"	"Geeft bonusaanvalssnelheid en -gezondheidsherstel."
 
@@ -4187,15 +4237,19 @@
 		"DOTA_Tooltip_ability_invoker_quas"											"Quas"
 		"DOTA_Tooltip_ability_invoker_quas_Lore"									" "
 		"DOTA_Tooltip_ability_invoker_quas_Note0"									"Invoker kan maar 3 instanties hebben."
+		"DOTA_Tooltip_ability_invoker_quas_max_level"								"MAX. LEVEL:"
 		"DOTA_Tooltip_ability_invoker_wex"											"Wex"
 		"DOTA_Tooltip_ability_invoker_wex_Lore"										" "
 		"DOTA_Tooltip_ability_invoker_wex_Note0"									"Invoker kan maar 3 instanties hebben."
 		"DOTA_Tooltip_ability_invoker_wex_Note1"									"Onderbreekt onzichtbaarheid niet en kan worden gebruikt tijdens het oproepen."
+		"DOTA_Tooltip_ability_invoker_wex_max_level"								"MAX. LEVEL:"
 		"DOTA_Tooltip_ability_invoker_wex_move_speed_per_instance"					"%BEWEGINGSSNELHEID PER INSTANTIE:"
 		"DOTA_Tooltip_ability_invoker_wex_intrinsic_attack_speed"					"AANVALSSNELHEID:"
 		"DOTA_Tooltip_ability_invoker_exort"										"Exort"
 		"DOTA_Tooltip_ability_invoker_exort_Lore"									" "
 		"DOTA_Tooltip_ability_invoker_exort_Note0"									"Invoker kan maar 3 instanties hebben."
+		"DOTA_Tooltip_ability_invoker_exort_max_level"								"MAX. LEVEL:"
+		"DOTA_Tooltip_ability_invoker_exort_bonus_damage_per_instance"				"AANVALSSCHADE PER INSTANTIE:"
 		"DOTA_Tooltip_ability_invoker_empty1"										"Invoke-spreuk"
 		"DOTA_Tooltip_ability_invoker_empty1_Description"							"Door Invoke te gebruiken zal deze plaats worden vervangen door een van de tien unieke spreuken, gebaseerd op de huidige <font color='#7998b5'>Quas</font>-, <font color='#d671a9'>Wex</font>- en <font color='#cabe68'>Exort</font>-buffs van Invoker."
 		"DOTA_Tooltip_ability_invoker_empty2"										"Invoke-spreuk"
@@ -4241,6 +4295,7 @@
 		"DOTA_Tooltip_ability_invoker_alacrity_bonus_attack_speed"					"AANVALSSNELHEIDBONUS (<font color='#d671a9'>WEX</font>):\n"
 		"DOTA_Tooltip_ability_invoker_alacrity_bonus_damage"						"BONUSSCHADE (<font color='#cabe68'>EXORT</font>):\n"
 		"DOTA_Tooltip_ability_invoker_alacrity_duration"							"DUUR:"
+		"DOTA_Tooltip_ability_invoker_alacrity_bonus_attack_range"					"AANVALSBEREIKBONUS (<font color='#d671a9'>WEX</font>):"
 		"DOTA_Tooltip_ability_invoker_chaos_meteor"									"Chaos Meteor"
 		"DOTA_Tooltip_ability_invoker_chaos_meteor_Description"						"Invoker trekt een brandende meteoor vanuit de ruimte naar de gekozen locatie. Bij de landing rolt de meteoor naar voren en richt constant schade aan, op basis van het level van <font color='#cabe68'>Exort</font>, terwijl het level van <font color='#d671a9'>Wex</font> de rolafstand bepaalt. Eenheden die door de meteoor worden geraakt, worden tijdelijk in brand gezet en ontvangen extra schade op basis van het level van <font color='#cabe68'>Exort</font>."
 
@@ -5021,6 +5076,7 @@
 		"DOTA_Tooltip_ability_visage_grave_chill_Note2"					"Familiars binnen een bereik van %radius% van Visage profiteren ook van de bonussen van Grave Chill."
 		"DOTA_Tooltip_ability_visage_grave_chill_movespeed_bonus"		"%BEWEGINGSSNELHEIDWEGNAME:"
 		"DOTA_Tooltip_ability_visage_grave_chill_attackspeed_bonus"		"AANVALSSNELHEIDWEGNAME:"
+		"DOTA_Tooltip_ability_visage_grave_chill_target_radius"			"EFFECTGEBIED:"
 		"DOTA_Tooltip_ability_visage_grave_chill_chill_duration"		"DUUR:"
 		"DOTA_Tooltip_ability_visage_soul_assumption"					"Soul Assumption"
 		"DOTA_Tooltip_ability_visage_soul_assumption_Description"		"Visage verzamelt elke keer dat nabije helden meer dan %damage_limit% schade ontvangen ladingen zielenessentie. Wanneer de essentie wordt losgelaten veroorzaakt het basisschade, plus schade voor elke verzamelde zielenlading."
@@ -5046,6 +5102,7 @@
 		"DOTA_Tooltip_ability_visage_gravekeepers_cloak_minimum_damage"	"MINIMALE SCHADE:"
 		"DOTA_Tooltip_ability_visage_gravekeepers_cloak_max_damage_reduction"	"%MAX. SCHADEVERMINDERING:"
 		"DOTA_Tooltip_ability_visage_summon_familiars"						"Summon Familiars"
+		"DOTA_Tooltip_ability_visage_summon_familiars_Description"			"Roept %familiar_count% blinde Familiars op om te vechten voor Visage. Familiars beschikken over de Stone Form-vaardigheid waardoor ze in steen kunnen veranderen en vijanden bewusteloos kunnen slaan bij het landen. In hun stenen gedaante zijn Familiars onkwetsbaar en ze herstellen hun gezondheid snel. Familiars leveren een hoge bonus op als ze gedood worden."
 		"DOTA_Tooltip_ability_visage_lurker_Description"						"De afkoeltijden van de vaardigheden van Visage worden versneld zolang hij geen schade oploopt.<br><br>Elke %stack_gain_time%s dat dat het geval is, ontvangt hij een lading. Elke lading geeft %cooldown_speed_per_stack%%% afkoeltijdsversnelling met een maximum van %max_stacks% ladingen. Wanneer hij schade ontvangt, vervagen ladingen na %linger_duration%s."
 		"DOTA_Tooltip_modifier_visage_lurker_Description"							"Ontvangt %dMODIFIER_PROPERTY_TOOLTIP%%% afkoeltijdsversnelling."
 
@@ -6026,7 +6083,9 @@
 		"DOTA_Tooltip_modifier_skywrath_mage_concussive_shot_slow_Description"	 "Vertraagd met %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 		"DOTA_Tooltip_modifier_skywrath_mage_ancient_seal"						"Ancient Seal"
 		"DOTA_Tooltip_modifier_skywrath_mage_ancient_seal_Description"	 "Het zwijgen opgelegd en de magische schade verhoogd met %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%."
-"DOTA_Tooltip_ability_abaddon_death_coil"					"Mist Coil"
+		//ABADDON
+		"DOTA_Tooltip_ability_abaddon_soul_suck"					"Soul Suck"
+		"DOTA_Tooltip_ability_abaddon_death_coil"					"Mist Coil"
 		"DOTA_Tooltip_ability_abaddon_death_coil_Description"		"Abaddon laat een spiraal van mist los die een vijandelijke eenheid schade toe kan brengen of een vriendelijke eenheid kan genezen ten koste van Abaddons gezondheid."
 		"DOTA_Tooltip_ability_abaddon_death_coil_Lore"				"Een mysterieuze damp van het Font of Avernus doordringt de adem van Abaddon, die hij naar believen gebruikt."
 		"DOTA_Tooltip_ability_abaddon_death_coil_target_damage"		"SCHADE/GENEZING:"
@@ -6049,7 +6108,6 @@
 		"DOTA_Tooltip_ability_abaddon_borrowed_time_hp_threshold"	"GEZONDHEIDSDREMPEL:"
 		"DOTA_Tooltip_ability_abaddon_borrowed_time_duration"		"DUUR:"
 		"DOTA_Tooltip_ability_abaddon_borrowed_time_duration_scepter"		"DUUR:"
-		"DOTA_Tooltip_ability_abaddon_borrowed_time_redirect_range_scepter"		"BEREIK:"
 		"DOTA_Tooltip_ability_abaddon_borrowed_time_ally_threshold_scepter"		"SCHADEDREMPEL:"
 		"DOTA_Tooltip_modifier_abaddon_deathcoil_effect"				"Mist Coil"
 		"DOTA_Tooltip_modifier_abaddon_borrowed_time"					"Borrowed Time"
@@ -6395,6 +6453,8 @@
 		"DOTA_Tooltip_ability_abyssal_underling_archer_purge_Note0"							"Kan worden ingezet op onkwetsbare eenheden."
 		"DOTA_Tooltip_ability_abyssal_underling_archer_purge_Note1"							"De vertraging begint met 100%% en vermindert langzaamaan naar 20%%."
 		"DOTA_Tooltip_modifierabyssal_underling_archer_purge"								"Purge"
+		"DOTA_Tooltip_modifierabyssal_underling_archer_purge_Description"					"Verlaagt verplaatsingssnelheid met %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
+
 		"DOTA_Tooltip_ability_abyssal_underling_archer_aoe"									"Archer Aura"
 		"DOTA_Tooltip_ability_abyssal_underling_archer_aoe_Description"						"Verhoogt bewegingssnelheid van nabije eenheden."
 		"DOTA_Tooltip_ability_abyssal_underling_archer_aoe_radius"							"STRAAL:"
@@ -6669,6 +6729,7 @@
 		"DOTA_Tooltip_ability_winter_wyvern_cold_embrace_Lore"							"Uit het hart van de winter komt een koude, genezende omarming. Het ijs vertraagt het bloed en laat de spreuk beter zijn werk doen."
 		"DOTA_Tooltip_ability_winter_wyvern_cold_embrace_duration"						"DUUR:"
 		"DOTA_Tooltip_ability_winter_wyvern_cold_embrace_heal_additive"					"BASISHERSTEL PER SECONDE:"
+		"DOTA_Tooltip_ability_winter_wyvern_cold_embrace_damage_buff_pct"				"%BONUSAANVALSSCHADE:"
 		"DOTA_Tooltip_ability_winter_wyvern_winters_curse"								"Winter's Curse"
 		"DOTA_Tooltip_ability_winter_wyvern_winters_curse_Lore"							"De oudste spreuk van de boekenwurm. Deze vloek bewijst het oude gezegde: soms is de vijand van mijn vijand ook gewoon mijn vijand."
 		"DOTA_Tooltip_ability_winter_wyvern_winters_curse_radius"						"STRAAL VLOEK:"
@@ -6688,9 +6749,7 @@
 		"DOTA_Tooltip_modifier_winter_wyvern_winters_curse_Description"					"Kan vriend niet van vijand onderscheiden."
 		"DOTA_Tooltip_modifier_winter_wyvern_winters_curse_aura"						"Doelwit Winter's Curse"
 		"DOTA_Tooltip_modifier_winter_wyvern_winters_curse_aura_Description"			"Vastgevroren en zal aangevallen worden door nabije teamleden."
-"DOTA_Tooltip_Facet_winter_wyvern_recursive_Description"						"Winter's Curse wordt opnieuw gebruikt op de vijandelijke held met de laagste gezondheid als het primaire doelwit sterft. Vervloekte vijanden lopen {s:bonus_damage_amplification_tooltip}% fysieke, magische en pure schade op door Winter Wyvern."
-
-		// Arc Warden
+// Arc Warden
 		"DOTA_Tooltip_ability_arc_warden_flux"				"Flux"
 		"DOTA_Tooltip_ability_arc_warden_flux_Lore"			"Een oneindige fractie van de kracht die de Ancients gevangen heeft gezet."
 		"DOTA_Tooltip_ability_arc_warden_flux_duration"			"DUUR:"
@@ -6977,6 +7036,7 @@
 		"DOTA_Tooltip_modifier_grimstroke_shard_buff"					"Ink Over"
 		"DOTA_Tooltip_modifier_grimstroke_shard_buff_Description"		"Ontvangt elke %fMODIFIER_PROPERTY_TOOLTIP% seconden %dMODIFIER_PROPERTY_TOOLTIP% schade. Verlaagt bewegingssnelheid met %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% en aanvalssnelheid met %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 
+		"DOTA_Tooltip_ability_grimstroke_ink_trail"					    "Ink Trail"
 		"DOTA_Tooltip_modifier_grimstroke_soul_chain"					"Soulbind"
 		"DOTA_Tooltip_modifier_grimstroke_scepter_buff"					"Dark Portrait"
 		"DOTA_Tooltip_modifier_grimstroke_scepter_buff_Description"		"Richt bonusschade aan. Bewegingssnelheid verhoogd met %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
@@ -7278,6 +7338,7 @@
 		"DOTA_Tooltip_ability_dawnbreaker_fire_wreath_Note0"	 							"Dawnbreaker reist tijdens de duur van de vaardigheid met een snelheid van %movement_speed% en heeft %self_stun_duration% seconden na de laatste slag nodig om zich te herstellen."
 		"DOTA_Tooltip_ability_dawnbreaker_fire_wreath_Note1"								"Celestial Hammer en Solar Guardian kunnen niet worden gebruikt tijdens de combo."
 		"DOTA_Tooltip_ability_dawnbreaker_fire_wreath_Note2"								"Cleave werkt niet met deze vaardigheid."
+		"DOTA_Tooltip_ability_dawnbreaker_fire_wreath_Note3"								"Kan op zichzelf worden gebruikt om vooruit te bewegen."
 		"DOTA_Tooltip_ability_dawnbreaker_fire_wreath_duration"								"COMBODUUR:"
 		"DOTA_Tooltip_ability_dawnbreaker_fire_wreath_smash_stun_duration"					"VERLAMMINGSDUUR SLAG:"
 "DOTA_Tooltip_ability_dawnbreaker_converge"							"Converge"
@@ -7323,6 +7384,7 @@
 		"DOTA_Tooltip_Ability_special_bonus_unique_dawnbreaker_solar_guardian_cooldown"					"-{s:bonus_AbilityCooldown}s afkoeltijd Solar Guardian"
 		"DOTA_Tooltip_Ability_special_bonus_unique_dawnbreaker_luminosity_attack_count"	"-{s:bonus_attack_count} aanvallen nodig voor Luminosity"
 		"DOTA_Tooltip_Ability_special_bonus_unique_dawnbreaker_celestial_hammer_slow"	"+{s:bonus_move_slow}% vertraging Celestial Hammer"
+		"DOTA_Tooltip_Ability_special_bonus_unique_dawnbreaker_break_of_dawn_damage"		"+{s:bonus_daytime_damage} schade Break of Dawn"
 		// Marci
 		"DOTA_Tooltip_ability_marci_grapple"							"Dispose"
 		"DOTA_Tooltip_ability_marci_grapple_Lore"				"Marci ruimt obstakels op het pad van prinses Mirana op briljante wijze op."
@@ -7330,6 +7392,7 @@
 		"DOTA_Tooltip_ability_marci_grapple_debuff_duration"				"VERTRAGINGSDUUR:"
 		"DOTA_Tooltip_ability_marci_grapple_movement_slow_pct"				"%BEWEGINGSVERTRAGING:"
 		"DOTA_Tooltip_ability_marci_grapple_impact_damage"				"IMPACTSCHADE:"
+		"DOTA_Tooltip_modifier_marci_dispose_self_buff"							"Een bondgenoot gered"
 		"DOTA_Tooltip_ability_marci_unleash"						"Unleash"
 		"DOTA_Tooltip_ability_marci_unleash_Note0"					"Zodra een Fury-combo is gestart, moet elke aanval binnen 1 seconde volgen. De Fury-combo eindigt als dat niet gebeurt."
 		"DOTA_Tooltip_ability_marci_unleash_Lore"					"Marci verwerpt alle pogingen om de bron van haar kracht vast te stellen, hoewel sommigen dat toch probeerden."
@@ -7356,12 +7419,13 @@
 
 		"DOTA_Tooltip_ability_marci_companion_run"						"Rebound"
 		"DOTA_Tooltip_ability_marci_companion_run_Lore"			"Met een vriendelijk of brutaal zetje vindt Marci haar weg wel naar het midden van elk gevecht."
-		"DOTA_Tooltip_ability_marci_companion_run_Note0"				"Heeft een minimale sprongafstand van %min_jump_distance%."
-		"DOTA_Tooltip_ability_marci_companion_run_Note1"				"Marci's oorspronkelijke stormloop naar haar doeleenheid kan worden ontweken."
-		"DOTA_Tooltip_ability_marci_companion_run_Note2"				"Activeert geen spreukreflectie."
 		"DOTA_Tooltip_ability_marci_companion_run_impact_damage"		"IMPACTSCHADE:"
 		"DOTA_Tooltip_ability_marci_companion_run_debuff_duration"		"VERLAMMINGSDUUR:"
 		"DOTA_Tooltip_ability_marci_companion_run_max_jump_distance"	"MAX. SPRONGAFSTAND:"
+		"DOTA_Tooltip_ability_marci_companion_run_damage_barrier"		"SCHADEBARRIÈRE:"
+
+		"DOTA_Tooltip_modifier_marci_special_delivery_teleport_effect_Description"	"Speciale levering voor Marci!"
+
 		"DOTA_Tooltip_modifier_marci_lunge_debuff"						"Rebound"
 		"DOTA_Tooltip_modifier_marci_lunge_debuff_Description"			"Deze eenheid beweegt langzamer."
 
@@ -7376,6 +7440,7 @@
 		"DOTA_Tooltip_ability_marci_guardian_lifesteal_pct"			"%LEVENSDIEFSTAL:"
 		"DOTA_Tooltip_Facet_marci_sidekick"							"Sidekick"		
 		"DOTA_Tooltip_Facet_marci_bodyguard"						"Bodyguard"		
+		"DOTA_Tooltip_ability_marci_bodyguard"						"Bodyguard"		
 		"DOTA_Tooltip_ability_marci_bodyguard_lifesteal_pct"		"%LEVENSDIEFSTAL:"
 		"DOTA_Tooltip_modifier_marci_guardian_buff"					"Sidekick"
 		"DOTA_Tooltip_modifier_marci_guardian_buff_Description"		"Deze eenheid heeft levensdiefstal en richt bonusschade aan."
@@ -7388,6 +7453,8 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_marci_unleash_pulse_damage"	"+{s:value} pulsschade Unleash"
     	"DOTA_Tooltip_ability_special_bonus_unique_marci_unleash_pulse_lunge_refresh"	"Puls van Unleash vernieuwt Rebound"
     	"DOTA_Tooltip_ability_special_bonus_unique_marci_unleash_silence"		"{s:value}s zwijgen opgelegd door puls van Unleash"
+    	"DOTA_Tooltip_ability_special_bonus_unique_marci_guardian_lifesteal"	"+{s:bonus_lifesteal_pct}% levensdiefstal Bodyguard"
+		"DOTA_Tooltip_ability_special_bonus_unique_marci_guardian_damage"	"+{s:bonus_bonus_damage}% schade Bodyguard"
 "DOTA_Tooltip_ability_primal_beast_trample"			"Trample"
 		"DOTA_Tooltip_ability_primal_beast_trample_Facet_primal_beast_romp_n_stomp" "Wanneer Trample actief is, geeft het Primal Beast en zijn bondgenoten bonusbewegingssnelheid."
 		"DOTA_Tooltip_ability_primal_beast_trample_base_damage"			"BASISSCHADE:"
@@ -7414,11 +7481,11 @@
 		"DOTA_Tooltip_ability_primal_beast_uproar_stack_limit"								"MAX. LADINGEN:"
 "DOTA_Tooltip_ability_primal_beast_uproar_slow_duration"				"VERTRAGINGSDUUR:"
 		"DOTA_Tooltip_Facet_primal_beast_romp_n_stomp_Description"				"Wanneer Trample actief is, geeft het Primal Beast en zijn bondgenoten bonusbewegingssnelheid."
-"DOTA_Tooltip_Ability_muerta_dead_shot_damage"							"SCHADE:"
+"DOTA_Tooltip_ability_special_bonus_unique_muerta_dead_shot_range"						"+{s:bonus_AbilityCastRange} spreukbereik  Dead Shot"
+		"DOTA_Tooltip_Ability_muerta_dead_shot_damage"							"SCHADE:"
 		"DOTA_Tooltip_Ability_muerta_the_calling_duration"						"DUUR:"
 		"DOTA_Tooltip_Ability_muerta_the_calling_damage"						"SCHADE:"
 		"DOTA_Tooltip_Ability_muerta_the_calling_aura_movespeed_slow"			"%BEWEGINGSVERTRAGING:"
-		"DOTA_Tooltip_Ability_muerta_the_calling_aura_attackspeed_slow"			"AANVALSVERTRAGING:"
 		"DOTA_Tooltip_Ability_muerta_pierce_the_veil_duration"					"DUUR:"
 		"DOTA_Tooltip_Ability_muerta_pierce_the_veil_bonus_damage"				"BONUSAANVALSSCHADE:"
 		"DOTA_Tooltip_ability_muerta_pierce_the_veil_shard_description"			"Muerta krijgt %spell_lifesteal%%% levensdiefstal van spreuken tijdens Pierce the Veil.<br>Terwijl Pierce the Veil actief is, krijgt Muerta permanent %spell_amp_steal%% spreukversterking elke keer dat ze vijandelijke helden doodt of als ze sterven in haar buurt. Bonus geldt met terugwerkende kracht."
@@ -7449,10 +7516,9 @@
 		"DOTA_Tooltip_ability_ringmaster_impalement_bleed_duration"		"DUUR:"
 		"DOTA_Tooltip_ability_ringmaster_impalement_slow_percent"		"%BEWEGINGSVERTRAGING:"
 		"DOTA_Tooltip_ability_ringmaster_impalement_slow_duration"		"VERTRAGINGSDUUR:"
+"DOTA_Tooltip_Ability_special_bonus_unique_ringmaster_box_cast_range"	"+{s:bonus_AbilityCastRange} spreukbereik Escape Act"
 "DOTA_Tooltip_Facet_kez_flutter"								"Flutter"
 		"DOTA_Tooltip_Facet_kez_flutter_Description"					"Kez brengt extra schade toe bij de eerste aanval of vaardigheid na het overschakelen naar Katana, en krijgt bonusbewegingssnelheid na het overschakelen naar Sai."
-		"DOTA_Tooltip_Facet_kez_shadowhawk"								"Shadowhawk"
-		"DOTA_Tooltip_Facet_kez_shadowhawk_Description"					"Als een Shodo Sai Mark geactiveerd wordt vanuit onzichtbaarheid, wordt er kritische bonusschade toegekend. Als Kez een Shodo Sai Mark activeert, wordt de afkoeltijd van Shodo Sai en Kazurai Katana verminderd."
 "DOTA_Tooltip_ability_kez_switch_weapons_Facet_kez_flutter"					"Kez brengt extra schade toe bij de eerste aanval of vaardigheid na het overschakelen naar Katana, en krijgt bonussnelheid na het overschakelen naar Sai."
 		"DOTA_Tooltip_ability_kez_switch_weapons_katana_swap_bonus_damage"		"%BONUSSCHADE NA WAPENWISSEL (KATANA):"
 		"DOTA_Tooltip_ability_kez_switch_weapons_sai_swap_bonus_movement_speed"		"%BONUS BEWEGINGSSNELHEID NA WAPENWISSEL (SAI):"
@@ -7482,10 +7548,7 @@
 		"DOTA_Tooltip_ability_kez_kazurai_katana_katana_bleed_attack_damage_pct"			"%SCHADE PER SECONDE:"
 		"DOTA_Tooltip_ability_kez_kazurai_katana_katana_bleed_duration"						"DUUR:"	
 		"DOTA_Tooltip_ability_kez_kazurai_katana_heal_reduction_pct"						"%HERSTELVERMINDERING:"
-		"DOTA_Tooltip_ability_kez_kazurai_katana_facet_kez_shadowhawk"				"Als een Shodo Sai Mark geactiveerd wordt vanuit onzichtbaarheid, wordt er kritische bonusschade toegekend. Als Kez een Shodo Sai Mark activeert, wordt de afkoeltijd van Kazurai Katana verminderd."
-		"DOTA_Tooltip_ability_kez_kazurai_katana_mark_trigger_cd_reduction" 	"%AFKOELTIJDSVERMINDERING MARK.:"
-
-		"DOTA_Tooltip_modifier_kez_sai"											"Shodo Sai"
+"DOTA_Tooltip_modifier_kez_sai"											"Shodo Sai"
 		"DOTA_Tooltip_modifier_kez_sai_Description"								"Bewegingssnelheid verhoogd met %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT_UNIQUE%%%."
 
 		"DOTA_Tooltip_ability_kez_raptor_dance_radius"					"STRAAL:"
@@ -7500,11 +7563,7 @@
 		"DOTA_Tooltip_modifier_kez_talon_toss_silence_Description"			"Zwijgen opgelegd"
 
 		"DOTA_Tooltip_ability_kez_shodo_sai_Description"			"De aanvallen en vaardigheden van Kez met de Sai kunnen vijanden markeren. De volgende aanval of vaardigheidsschade van Kez wint True Strike, verlamt de vijand en deelt een kritieke treffer uit waarbij de buff wordt verbruikt.<br><br>Kez kan de vaardigheid activeren om zichzelf te ontwapenen, zijn gezichtsveld te vergrendelen en aanvallen en aanvalseffecten vanuit de doelrichting af te weren voor de duur van %parry_duration% seconden. Als een aanval van een vijandelijke held op deze manier wordt afgeweerd, wordt deze held verlamd en gemarkeerd. De vijandelijke held krijgt ook bijkomende kritieke schade en verlamming als de debuff wordt geactiveerd.<br><br>De alternatieve vaardigheid kan gebruikt worden om de blokkering vroegtijdig te stoppen."
-"DOTA_Tooltip_ability_kez_shodo_sai_facet_kez_shadowhawk"			"Als een Shodo Sai Mark geactiveerd wordt vanuit onzichtbaarheid, wordt er kritische bonusschade toegekend. Als Kez een Shodo Sai Mark activeert, wordt de afkoeltijd van Shodo Sai verminderd."
-		"DOTA_Tooltip_ability_kez_shodo_sai_mark_trigger_cd_reduction" "%AFKOELTIJDSVERMINDERING MARK.:"
-		"DOTA_Tooltip_ability_kez_shodo_sai_invis_bonus_crit"			"%KRIT. BONUSSCHADE (ONZICHTBAAR):"
-
-		"DOTA_Tooltip_ability_kez_shodo_sai_parry_cancel"					"Annuleren"
+"DOTA_Tooltip_ability_kez_shodo_sai_parry_cancel"					"Annuleren"
 		"DOTA_Tooltip_ability_kez_shodo_sai_parry_cancel_Description"		"Stop het blokkeren van fysieke aanvallen."
 
 		"DOTA_Tooltip_ability_kez_ravens_veil_Description"					"Kez stoot een rookwolk uit die nabije vijanden markeert, waardoor hun zicht kortstondig wordt verminderd. Kez ontvangt een standaardverdrijving en krijgt bonusbewegingssnelheid en onzichtbaarheid totdat hij aanvalt of een spreuk gebruikt."
@@ -7512,6 +7571,7 @@
 		"DOTA_Tooltip_ability_kez_ravens_veil_bonus_ms"						"%BONUSBEWEGINGSSNELHEID:"
 		"DOTA_Tooltip_ability_kez_ravens_veil_blind_duration"				"VERBLINDINGSDUUR:"
 
+		"DOTA_Tooltip_ability_special_bonus_unique_kez_grapple_cast_range"					"+{s:bonus_AbilityCastRange} spreukbereik Grappling Claw"
 		"DOTA_Tooltip_ability_special_bonus_unique_kez_ravens_veil_mark_parry_bonus"		"Raven's Veil-markering levert pareerbonus op"
 
 
@@ -7957,6 +8017,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_queen_of_pain_6"	"-{s:value}s afkoeltijd Blink"
 		"DOTA_Tooltip_ability_special_bonus_unique_queen_of_pain_strike_heal"		"+{s:bonus_duration_heal} genezing per tik Shadow Strike"
 		"DOTA_Tooltip_ability_special_bonus_unique_antimage"	"-{s:bonus_AbilityCooldown}s afkoeltijd Blink"
+		"DOTA_Tooltip_ability_special_bonus_unique_antimage_3"	"+{s:bonus_AbilityCastRange} spreukbereik Blink"
 		"DOTA_Tooltip_ability_special_bonus_unique_mirana_2_Description"	"De extra pijlen worden in een kegelvorm afgeschoten, {s:bonus_extra_arrows_angle} graden naar links en rechts van de oorspronkelijke pijl. Ze kunnen niet hetzelfde doelwit raken."
 		"DOTA_Tooltip_ability_special_bonus_unique_mirana_4"		"-{s:bonus_AbilityCooldown}s afkoeltijd Moonlight Shadow"
 		"DOTA_Tooltip_ability_special_bonus_unique_mirana_5"		"Moonlight Shadow geeft +{s:bonus_evasion}% ontwijking"
@@ -7995,6 +8056,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_rubick_5"	"+{s:value}% spreukversterk. gestolen spreuken"
 		"DOTA_Tooltip_ability_special_bonus_unique_rubick_6"	"-{s:value}% afkoeltijd gestolen spreuken"
 		"DOTA_Tooltip_ability_special_bonus_unique_rubick_8"	"+{s:value} landingsschade Telekinesis"
+		"DOTA_Tooltip_ability_special_bonus_unique_sven"	"+{s:bonus_bonus_damage_pct}% bonusschade Vanquisher"
 		"DOTA_Tooltip_ability_special_bonus_unique_sven_2"	"+{s:bonus_gods_strength_damage}% schade God's Strength"
 		"DOTA_Tooltip_ability_special_bonus_unique_sven_4"	"+{s:bonus_bolt_stun_duration}s verlammingsduur Storm Hammer"
 		"DOTA_Tooltip_ability_special_bonus_unique_sven_5"	"+{s:bonus_duration}s duur Warcry"
@@ -8015,6 +8077,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_dark_seer_13""-{s:value}s afkoeltijd Wall of Replica"
 		"DOTA_Tooltip_ability_special_bonus_unique_dazzle_2""+{s:bonus_damage} genezing/schade Shadow Wave"
 		"DOTA_Tooltip_ability_special_bonus_unique_dazzle_5""+{s:value} genezing bij einde Shallow Grave"
+		"DOTA_Tooltip_Ability_special_bonus_unique_dazzle_shadow_wave_cast_range"					"+{s:bonus_AbilityCastRange} spreukbereik Shadow Wave"
 		"DOTA_Tooltip_ability_special_bonus_unique_shadow_shaman_2""+{s:bonus_channel_time}s duur Shackles"
 		"DOTA_Tooltip_ability_special_bonus_unique_shadow_shaman_3""+{s:bonus_damage} schade Ether Shock"
 		"DOTA_Tooltip_ability_special_bonus_unique_shadow_shaman_5""-{s:value}s afkoeltijd Hex"
@@ -8029,15 +8092,19 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_warlock_9""+{s:value} doelwitten Fatal Bonds"
 		"DOTA_Tooltip_ability_special_bonus_unique_warlock_10""+{s:value} aanvalssnelheid per sec. bondgenoten Upheaval"
 		"DOTA_Tooltip_ability_special_bonus_unique_warlock_10_Description" "Maximaal +70 aanvalssnelheid."
+		"DOTA_Tooltip_ability_special_bonus_unique_warlock_shadow_word_duration"		"+{s:bonus_duration}s duur Shadow Word"
+
 		"DOTA_Tooltip_ability_special_bonus_unique_vengeful_spirit_2""+{s:bonus_bonus_base_damage}% basisschadebonus Vengeance Aura"
 		"DOTA_Tooltip_ability_special_bonus_unique_vengeful_spirit_5""-{s:value}s afkoeltijd Magic Missile"
 		"DOTA_Tooltip_ability_special_bonus_unique_vengeful_spirit_6""-{s:value}s afkoeltijd Wave of Terror"
 		"DOTA_Tooltip_ability_special_bonus_unique_vengeful_spirit_7""Illusie van Vengeance Aura kan spreuken gebruiken"
 		"DOTA_Tooltip_ability_special_bonus_unique_vengeful_spirit_8""+{s:value} aanvalsbereik Vengeance Aura"
 		"DOTA_Tooltip_ability_special_bonus_unique_vengeful_spirit_9""-{s:value}s afkoeltijd Nether Swap"
+		"DOTA_Tooltip_ability_special_bonus_unique_vengeful_spirit_missile_castrange"		"+{s:bonus_AbilityCastRange} spreukbereik Magic Missile"
 		"DOTA_Tooltip_ability_special_bonus_unique_venomancer""{s:bonus_ward_hp_tooltip}x gezondheid/schade Plague Ward"
 		"DOTA_Tooltip_ability_special_bonus_unique_venomancer_6""+{s:value} effectgebied Poison Nova"
 		"DOTA_Tooltip_ability_special_bonus_unique_venomancer_7""+{s:value}s duur Plague Ward"
+		"DOTA_Tooltip_ability_special_bonus_unique_morphling_1""+{s:bonus_AbilityCastRange} bereik Waveform"
 		"DOTA_Tooltip_ability_special_bonus_unique_morphling_2""-{s:value}s afkoeltijd Morph"
 		"DOTA_Tooltip_ability_special_bonus_unique_morphling_3""+{s:value} doelen Adaptive Strike"
 		"DOTA_Tooltip_ability_special_bonus_unique_morphling_3_Description"		"Een aantal vijandelijke helden binnen het spreukbereik worden ook door Adaptive Strike geraakt."
@@ -8056,6 +8123,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_bane_4_Description"	"Bane ontvangt de gestolen aanvalssnelheid als bonusaanvalssnelheid voor de duur van Enfeeble."
 		"DOTA_Tooltip_ability_special_bonus_unique_bane_6"	"+{s:value}% herstelvermindering Enfeeble"
 		"DOTA_Tooltip_ability_special_bonus_unique_bane_7"	"Brain Sap wordt puur en gaat door immuniteit"
+		"DOTA_Tooltip_ability_special_bonus_unique_bane_8"	"+{s:bonus_AbilityCastRange} spreukbereik Brain Sap"
 		"DOTA_Tooltip_ability_special_bonus_unique_nevermore_1"	"+{s:bonus_necromastery_damage_per_soul} schade per ziel"
 		"DOTA_Tooltip_ability_special_bonus_unique_nevermore_2"	"+{s:bonus_shadowraze_damage} schade Shadowraze"
 		"DOTA_Tooltip_ability_special_bonus_unique_nevermore_5"	"{s:value} pantser Presence Aura"
@@ -8063,6 +8131,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_templar_assassin_4_Description"	"Past een standaardverdrijving toe op Templar Assassin."
 		"DOTA_Tooltip_ability_special_bonus_unique_templar_assassin_6"	"+{s:value} Psionic Traps"
 		"DOTA_Tooltip_ability_special_bonus_unique_templar_assassin_7"	"{s:bonus_bash_duration}s verlamming bij aanval Meld"
+		"DOTA_Tooltip_ability_special_bonus_unique_crystal_maiden_frostbite_castrange"			"+{s:bonus_AbilityCastRange} spreukbereik Frostbite"
 		"DOTA_Tooltip_ability_special_bonus_unique_doom_1"	"+{s:bonus_burn_damage_pct}% max. HP als schade Infernal Blade"
 		"DOTA_Tooltip_ability_special_bonus_unique_doom_2"	"Devour kan op Ancients worden gebruikt"
 		"DOTA_Tooltip_ability_special_bonus_unique_doom_8"	"Permanente Scorched Earth"
@@ -8071,11 +8140,12 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_brewmaster_3"	"+{s:value}s vertraging Thunder Clap"
 		"DOTA_Tooltip_ability_special_bonus_unique_brewmaster_5"	"+{s:bonus_total_ignite_damage}% schade/duur Cinder Brew"
 		"DOTA_Tooltip_ability_special_bonus_unique_brewmaster_6"	"Brewlings krijgen passieve bonussen Drunken Brawler"
-		"DOTA_Tooltip_ability_special_bonus_unique_brewmaster_7"	"+{s:bonus_radius} effectgebied Thunder Clap"
 		"DOTA_Tooltip_ability_special_bonus_unique_bristleback"	"+{s:value} max. ladingen Goo"
 		"DOTA_Tooltip_ability_special_bonus_unique_bristleback_2"	"+{s:bonus_quill_stack_damage} schade Quill Spray-lading"
 		"DOTA_Tooltip_ability_special_bonus_unique_bristleback_3"	"+{s:bonus_damage_per_stack} schade per lading Warpath"
+		"DOTA_Tooltip_ability_special_bonus_unique_bristleback_5"	"+{s:bonus_AbilityCastRange} spreukbereik Goo"
 		"DOTA_Tooltip_ability_special_bonus_unique_furion"	"{s:bonus_treant_health}x HP/schade Treants"
+		"DOTA_Tooltip_ability_special_bonus_unique_furion_description"	"Werkt ook op Spirit of the Forest."
 		"DOTA_Tooltip_ability_special_bonus_unique_furion_3"	"Geen afkoeltijd Teleportation"
 		"DOTA_Tooltip_ability_special_bonus_unique_furion_4"	"+{s:bonus_sprout_damage} schade Sprout"
 		"DOTA_Tooltip_ability_special_bonus_unique_furion_5"	"+{s:bonus_damage} basisschade Wrath of Nature"
@@ -8123,6 +8193,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_juggernaut_3"	"+{s:bonus_front_damage_increase}% schade Duelist"
 		"DOTA_Tooltip_ability_special_bonus_unique_juggernaut_4"	"+{s:bonus_blade_dance_crit_mult}% kritieke schade Blade Dance"
 		"DOTA_Tooltip_ability_special_bonus_unique_juggernaut_5"	"-{s:bonus_AbilityCooldown}s afkoeltijd Healing Ward"
+		"DOTA_Tooltip_ability_special_bonus_unique_juggernaut_omnislash_cast_range"	"+{s:bonus_AbilityCastRange} spreukbereik Omnislash"
 		"DOTA_Tooltip_ability_special_bonus_unique_juggernaut_blade_fury_movespeed"				"+{s:bonus_bonus_movespeed} bewegingssnelheid tijdens Blade Fury"
 		"DOTA_Tooltip_ability_special_bonus_unique_juggernaut_healing_ward_heal"	"+{s:bonus_healing_ward_heal_amount}% genezing Healing Ward"
 
@@ -8210,6 +8281,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_tiny"	"+{s:bonus_avalanche_damage} schade Avalanche"
 		"DOTA_Tooltip_ability_special_bonus_unique_tiny_2"	"{s:bonus_AbilityCharges} ladingen Toss"
 		"DOTA_Tooltip_ability_special_bonus_unique_tiny_3"	"-{s:value}s afkoeltijd Avalanche"
+		"DOTA_Tooltip_ability_special_bonus_unique_tiny_4"	"+{s:bonus_AbilityCastRange} spreukbereik Avalanche"
 		"DOTA_Tooltip_ability_special_bonus_unique_tiny_5"	"Toss heeft geen doelwit nodig"
 		"DOTA_Tooltip_ability_special_bonus_unique_tiny_5_Description"	"Toss kan zowel op de grond als op vijandelijke eenheden worden gericht."
 		"DOTA_Tooltip_ability_special_bonus_unique_troll_warlord"	"+{s:bonus_bonus_armor} pantser Berserker's Rage"
@@ -8259,6 +8331,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_death_prophet_silence_slow"					"-{s:bonus_movement_slow}% vertraging bewegingssnelheid Silence"
 		"DOTA_Tooltip_ability_special_bonus_unique_phantom_assassin"	"Driedubbele Stifling Dagger"
 		"DOTA_Tooltip_ability_special_bonus_unique_phantom_assassin_Description"	"Laat twee extra Stifling Daggers los richting willekeurige zichtbare vijanden in het spreukbereik."
+		"DOTA_Tooltip_ability_special_bonus_unique_phantom_assassin_6"	"+{s:bonus_AbilityCastRange} spreukbereik Phantom Strike"
 		"DOTA_Tooltip_ability_special_bonus_unique_phantom_assassin_7"	"-{s:bonus_AbilityCooldown}s afkoeltijd Stifling Dagger"
 		"DOTA_Tooltip_ability_special_bonus_unique_phantom_assassin_8"	"+{s:value} bereik Stifling Dagger en te gebruiken op grond"
 		"DOTA_Tooltip_ability_special_bonus_unique_phantom_assassin_8_Description"	"Kan Blink Strike op Stifling Dagger gebruiken. Geeft 800 zicht. Duurt 2 minuten."
@@ -8333,7 +8406,6 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_keeper_of_the_light_6"	"+{s:value} effectgebied Will-O-Wisp"
 		"DOTA_Tooltip_ability_special_bonus_unique_keeper_of_the_light_8"	"+{s:bonus_miss_rate}% miskans Blinding Light"
 		"DOTA_Tooltip_ability_special_bonus_unique_keeper_of_the_light_9"	"+{s:value}% genezing overdag Illuminate"
-		"DOTA_Tooltip_ability_special_bonus_unique_keeper_of_the_light_11"	"+{s:bonus_duration}s duur Spirit Form"
 		"DOTA_Tooltip_ability_special_bonus_unique_keeper_of_the_light_12"	"{s:value} ladingen Blinding Light"
 		"DOTA_Tooltip_ability_special_bonus_unique_keeper_of_the_light_13"	"{s:value} ladingen Solar Bind"
 		"DOTA_Tooltip_ability_special_bonus_unique_legion_commander_2"	"+{s:bonus_radius} straal Overwhelming Odss"
@@ -8349,6 +8421,7 @@
 
 		"DOTA_Tooltip_ability_special_bonus_unique_timbersaw_4"	"+{s:bonus_slow}% vertraging Chakram"
 		"DOTA_Tooltip_ability_special_bonus_unique_timbersaw_reactive_armor_regen_per_stack"		"+{s:bonus_bonus_hp_regen} herstel per lading Reactive Armor "
+		"DOTA_Tooltip_ability_special_bonus_unique_bloodseeker_3"	"+{s:bonus_AbilityCastRange} spreukbereik Rupture"
 		"DOTA_Tooltip_ability_special_bonus_unique_outworld_devourer_4"	"+{s:bonus_damage_multiplier} vermenigvuldiger manaverschil Sanity's Eclipse"
 		"DOTA_Tooltip_ability_special_bonus_unique_outworld_devourer_5"	"-{s:value}s afkoeltijd Sanity's Eclipse"
 		"DOTA_Tooltip_ability_special_bonus_unique_broodmother_5"	"-{s:bonus_AbilityChargeRestoreTime}s hersteltijd lading Spin Web"
@@ -8371,6 +8444,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_wisp_7"	"Spirits vertragen"
 		"DOTA_Tooltip_ability_special_bonus_unique_techies"	"+{s:bonus_damage} schade Blast Off!"
 		"DOTA_Tooltip_ability_special_bonus_unique_techies_5"	"-{s:bonus_AbilityCooldown}s afkoeltijd Blast Off!"
+		"DOTA_Tooltip_ability_special_bonus_unique_arc_warden_5"	"+{s:bonus_AbilityCastRange} spreukbereik Flux"
 		"DOTA_Tooltip_ability_special_bonus_unique_meepo_3"	"-{s:value}s afkoeltijd Earthbind"
 		"DOTA_Tooltip_ability_special_bonus_unique_meepo_5"	"+{s:value} kloon Divided We Stand"
 		"DOTA_Tooltip_ability_special_bonus_unique_meepo_6"	"+{s:bonus_health_steal_heroes} gezondheidsdiefstal Ransack"
@@ -9255,7 +9329,14 @@
 		"DOTA_Tooltip_ability_big_thunder_lizard_wardrums_aura_radius"					"STRAAL:"
 		
 		"DOTA_Tooltip_modifier_big_thunder_lizard_wardrums_aura"							"War Drums Aura"
-//Items
+"DOTA_Tooltip_ability_frogmen_tendrils_of_the_deep"							"Tendrils of the Deep"
+		"DOTA_Tooltip_ability_frogmen_congregation_of_the_deep"							"Congregations of the Deep"
+		"DOTA_Tooltip_modifier_frogmen_arm_of_the_deep_stun_Description"			"Verlamd door een tentakel."
+
+		"DOTA_Tooltip_ability_frogmen_water_bubble_small"							"Water Bubble (klein)"
+		"DOTA_Tooltip_ability_frogmen_water_bubble_medium"							"Water Bubble (gemiddeld)"
+		"DOTA_Tooltip_ability_frogmen_water_bubble_large"							"Water Bubble (groot)"
+		//Items
 
 		"DOTA_Tooltip_ability_item_aegis_Description"							"<h1>Passief: Reincarnation</h1>Brengt je %reincarnate_time% seconden nadat je bent gedood weer tot leven met volledige gezondheid en mana op de locatie waar je doodging.<br><br>Reincarnation moet binnen %disappear_time_minutes_tooltip% minuten worden gebruikt of de Aegis of the Immortal verdwijnt. Als het verdwijnt, geneest het je voor 5 seconden (stopt bij schade)."
 		"DOTA_Tooltip_ability_item_aegis_Lore"									"Er werd gezegd dat de Immortal een schild bezat dat hem beschermde van de dood zelfe."
@@ -10756,6 +10837,7 @@
 		"DOTA_Tooltip_ability_item_devastator_bonus_mana_regen"				"+$mana_regen"
 		"DOTA_Tooltip_ability_item_devastator_projectile_speed"			"+$projectile_speed"
 		
+		"DOTA_Tooltip_Ability_item_revenants_brooch_Note1"						"Phantom Critical werkt niet op gebouwen."
 		"DOTA_Tooltip_ability_item_revenants_brooch_bonus_damage"				"+$damage"
 		"DOTA_Tooltip_ability_item_revenants_brooch_spell_lifesteal"		"%+$spell_lifesteal"
 		
@@ -11028,6 +11110,7 @@
 		"DOTA_Tooltip_Ability_item_chipped_vest_hp_regen"		"+$hp_regen"
 
 		"DOTA_Tooltip_Ability_item_orb_of_corrosion_Lore"				"Afscheiding uit de wonden van een krijgergodheid die na een wrede slachtcampagne is verzegeld in de bol van een arcanist."
+		"DOTA_Tooltip_Ability_item_orb_of_corrosion_Note0"				"Pantservermindering werkt niet samen met de componenten daarvan, en ook niet met Desolator of Stygian Desolator."
 		"DOTA_Tooltip_modifier_orb_of_corrosion_debuff"		            "Orb of Corrosion"
 		"DOTA_Tooltip_Ability_item_wizard_glass_Description"		"<h1>Actief</h1>Richt %damage% schade aan maximaal %count% willekeurige vijandelijke eenheden in een straal van %radius% aan."
         "DOTA_Tooltip_Ability_item_wizard_glass_debuff_amp"		    "%+$debuff_amp"
@@ -11159,6 +11242,7 @@
 		"DOTA_Tooltip_ability_item_enhancement_audacious_magic_damage"					"+Magieschade"
 		"DOTA_Tooltip_ability_item_enhancement_audacious_incoming_damage"				"%+<font color='#e03e2e'>Inkomende schade</font>"
 
+		"DOTA_Tooltip_ability_item_hellbear_totem_heal_increase"				"%+$healing_amp"
 		"DOTA_Tooltip_ability_item_enhancement_mystical_mana_regen"				"+$mana_regen"
 		"DOTA_Tooltip_ability_item_enhancement_mystical_magic_res"				"%+$spell_resist"
 
@@ -11174,6 +11258,9 @@
 		"DOTA_Tooltip_Ability_item_enhancement_feverish_cooldown_reduction"		"%+$cooldown_reduction"
 		"DOTA_Tooltip_Ability_item_enhancement_feverish_cost_increase"			"%+<font color='#e03e2e'>Manakosten/Verhoogd manaverlies</font>"
 
+		"DOTA_Tooltip_ability_item_enhancement_crude_slow_resistance"			"%+$slow_resistance"
+		"DOTA_Tooltip_ability_item_enhancement_crude_intelligence_pct"			"%-<font color='#e03e2e'>Intelligentie</font>"
+
 		"DOTA_Tooltip_Ability_item_enhancement_keen_eyed_cast_range_bonus"		"+$cast_range"
 		"DOTA_Tooltip_Ability_item_enhancement_keen_eyed_bonus_mana_regen"		"+$mana_regen"
 		"DOTA_Tooltip_Ability_item_enhancement_keen_eyed_mana_reduction_pct"		"%-<font color='#e03e2e'>Max. mana</font>"
@@ -11184,6 +11271,8 @@
 		"DOTA_tooltip_ability_item_enhancement_wise_bonus_xpm"					"+Ervaring per minuut"
 
 		"DOTA_Tooltip_ability_item_crippling_crossbow_Description"				"<h1>Actief: Hobble</h1>Raakt een vijand met %damage% schade, vertraagt hem vervolgens met %slow_pct%%% en vermindert het genezingseffect met %heal_reduce%%% gedurende %duration% seconden. De vertraging verdwijnt geleidelijk aan gedurende het gebruik van de spreuk."
+
+		"DOTA_Tooltip_modifier_item_rippers_lash_Description"					"Loopt extra schade op bij een aanval."
 
 		"DOTA_Tooltip_Ability_item_polliwog_charm_Description"					"<h1>Actief: Ribbit</h1> Verhoogt het gezondheidsherstel van bondgenoten met %regen_boost% gedurende %duration% seconden. Terwijl de eenheid in het water staat, beweegt deze ook %water_movespeed%%% sneller."
 
