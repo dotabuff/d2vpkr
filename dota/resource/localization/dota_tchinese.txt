@@ -1146,6 +1146,8 @@
 		"DOTA_Chat_Jungle_Camp_Timer_RecentlyOccurred"			"<font color='#C4A484'>野怪營地</font>在 %s1 前剛出現。（下一個：%s2）"
 		"DOTA_Chat_Rune_XP_Time_Remaining_RecentlyOccurred"		"<font color='#c642fe'>睿智神壇</font>在 %s1 前啟動了。（下一次：%s2）"
 
+		"DOTA_Timer_Jungle_Camps_Title"		"野怪營地"
+
 		"DOTA_Chat_Item_Spotted" "<font color='%s1'>%s2</font>掉落於此。"
 		"DOTA_Chat_Item_Alert" "快過來我這使用<font color='%s1'>%s2</font>。"
 
@@ -2254,6 +2256,8 @@
 		"DOTA_InventoryMenu_TeleportToNeutralStash"		"傳送至中立貯藏"
 		"DOTA_InventoryMenu_DropImmediate"				"放到此處"
 		"DOTA_InventoryMenu_ConsumeItem"				"消耗道具"
+		"DOTA_InventoryMenu_MarkForSell"			    "標記待售"
+		"DOTA_InventoryMenu_UnmarkForSell"			    "取消待售標記"
 		"DOTA_InventoryMenu_MarkForSell_Tooltip"	    "道具會在情況許可時立即出售。（活著的狀態、位於基地、在祕密商店或透過信使）"
 
 		"DOTA_Inventory_KDA"					"殺 / 死 / 助"     // kills / deaths / assists
@@ -17756,6 +17760,8 @@
 		"DOTA_HUD_BackpackHintTitle"	"背包"
 		"DOTA_HUD_BackpackHint"			"這些是額外的物品欄位，但放在這的東西將不會發揮任何效用。"
 		"DOTA_HUD_TeleportTime"			"{s:teleport_channel_time} 秒"
+		"DOTA_HUD_AlchemistGrantedScepter"	"{s:alchemist_name} 把{s:scepter_icon}贈予 {s:grantee_name}"
+		"DOTA_HUD_ProtectorSpawned"		"{s:player_name}{s:protector_icon}召喚了衛士"
 		"DOTA_HUD_Crafting_XP"				"{s:player_name}{s:rune_icon}<font color='#FFC0CB'>中立道具</font>（{d:xp} 經驗）"
 
 		"DOTA_Guide_WorkshopSubtitle"	"{g:dota_persona:nl:guide_creator}"
@@ -18023,7 +18029,9 @@
 		"DOTA_Location_Name_Statue"		"石像"
 		"DOTA_Location_Name_Graveyard"	"墳地"
 		"DOTA_Location_Name_Tormentor" "折磨者"
+		"DOTA_Location_Name_LotusPool:p" "<font color='#58C0F1'>蓮花池</font> %s1 %s2 朵<font color='#58C0F1'>蓮花</font>，下一朵於 %s3後產生（時間：%s4）#|#<font color='#58C0F1'>蓮花池</font> %s1 %s2 朵<font color='#58C0F1'>蓮花</font>，下一朵於 %s3後產生（時間： %s4）"
 		"DOTA_Location_Name_LotusPoolMax:p" "<font color='#58C0F1'>蓮花池</font> %s1 %s2 朵<font color='#58C0F1'>蓮花</font>#|#<font color='#58C0F1'>蓮花池</font> %s1 %s2 朵<font color='#58C0F1'>蓮花</font>"
+		"DOTA_Location_Name_LotusPool_Fog" "<font color='#58C0F1'>蓮花池</font> %s1 下一朵<font color='#58C0F1'>蓮花</font>於 %s2 後產生 （時間：%s3）"
 		"DOTA_Location_Name_TwinGate" "雙子門"
 		"DOTA_Location_Name_NotFound" "這裡"
 
@@ -31381,6 +31389,8 @@
 	"DOTA_Chat_RoshanTimerMessage_RoshanIsAlive"	"羅煞 %s1 存活中，位於%s2巢穴。"
 	"DOTA_Chat_RoshanTimerMessage_BaseTime"		    "羅煞 %s1 可能在 %s3後重生。"
 	"DOTA_Chat_RoshanTimerMessage_VisibleTime"      "羅煞 %s1 將於 %s3後於%s2巢穴重生。"
+	"DOTA_Chat_RoshanTimerMessage_VariableTime"	    "羅煞 %s1可能仍然存活，位於%s2巢穴中，或會於 %s3後重生。"
+
 	"DOTA_Chat_RoshanTimerMessage_AttackRoshan"					"羅煞 %s1 快去%s2巢穴討伐他！"
 	"DOTA_Chat_RoshanTimerMessage_WaitForRoshanToRespawn"		"羅煞 %s1 等他重生吧。"
 
@@ -34943,6 +34953,9 @@
 	"DOTA_Plus_Winter2024_Update_Title"						"2024 冬季季度更新"
 	"DOTA_Plus_Winter2024_Update_Desc"						"新一季任務已加入 Dota Plus。"
 
+	"DOTA_Plus_Spring2025_Update_Title"						"2025 春季季度更新"
+	"DOTA_Plus_Spring2025_Update_Desc"						"新一季任務已加入 Dota Plus。"
+
 	"DOTA_Plus_Autumn_Assitant_Title"						"新助理功能"
 	"DOTA_Plus_Autumn_Assitant_Desc"						"Plus 會員現在可使用黑名單工具、相剋指標建議器、守衛建議和其它輔助功能。"
 
@@ -36553,6 +36566,7 @@
 		"DOTA_Glossary_Items_Inventory_BackpackSlots"			"背包欄位"
 		"DOTA_Glossary_Items_Inventory_BackpackSlots_Desc"		"每個英雄的背包都有 {d:DOTA_ITEM_BACKPACK_SIZE} 個道具欄位。主道具欄位放滿時，道具會自動進入背包欄位中。背包中的道具將跟隨英雄一起移動，但處於非活躍狀態因此無法使用。道具可以從背包換至使用中的道具欄位上，但有 {d:DOTA_ITEM_BACKPACK_SWAP_COOLDOWN} 秒的冷卻時間。"
 		"DOTA_Glossary_Items_Inventory_NeutralItemSlot"			"中立道具欄位"
+		"DOTA_Glossary_Items_Inventory_NeutralItemSlot_Desc"		"每位英雄都有一個專用的道具欄位，用於裝備目前的中立道具。合成中立道具後便會放置到該欄位中。合成下一階中立道具會取代現有的道具。"
 		"DOTA_Glossary_Items_Inventory_TownPortalScrollSlot"			"傳送卷軸欄位"
 		"DOTA_Glossary_Items_Inventory_TownPortalScrollSlot_Desc"		"每位英雄都有一個專門擺放傳送卷軸的道具欄位。當傳送卷軸放在玩家的道具欄時，它們將被存放在該處而不是主道具欄的欄位中。"
 		"DOTA_Glossary_Items_Inventory_Stash"			"貯藏庫"
@@ -36756,6 +36770,7 @@
 		"DOTA_Glossary_Map_Structures_Ancient"			"遺跡"
 		"DOTA_Glossary_Map_Structures_Ancient_Desc"		"摧毀敵方基地中央的遺跡即可為您的隊伍取得勝利。儘管遺跡會緩慢地恢復生命，它們卻沒有防禦能力，所以您必須不計代價保護它。"
 		"DOTA_Glossary_Map_Structures_Twin_Gate"				"雙子門"
+		"DOTA_Glossary_Map_Structures_Twin_Gate_Desc"			"雙子門是位於地圖左上角和右下角的傳送門。這些傳送門可用於快速地穿越地圖，並在短暫持續施法後將您傳送至另一道雙子門。"
 		"DOTA_Glossary_Map_Structures_Shrine_Of_Wisdom"			"睿智神壇"
 		"DOTA_Glossary_Map_Structures_Shrine_Of_Wisdom_Desc"	"睿智神壇位於地圖的左右兩側。每個神壇每 7 分鐘會啟動一次。啟動後，英雄可站在神壇旁，為自己和隊伍中等級最低的隊友獲得經驗值。"
 		"DOTA_Glossary_Map_Structures_Towers"		"防禦塔"
@@ -43897,12 +43912,16 @@
 		"DOTA_MadstoneStatus_AltDescription"			"時間點和隊伍狀態"
 		"DOTA_Madstone_Explaination_1"					"完全清除一個中立野怪營地以為自己獲取 2 顆瘋石和為一名隨機隊友獲得 1 顆（遠古營地可獲得 3 顆，隨機隊友獲得 2 顆）。"
 		"DOTA_Madstone_Explaination_2"					"獲得足夠的瘋石來合成中立道具：<br>- 1 階需要 5 顆瘋石。<br>- 2、3、4、5 階需要 10 顆瘋石。"
+		"DOTA_Madstone_Explaination_3"					"達到該階數量上限後仍可繼續為隊友賺取瘋石。"
+
 		"DOTA_AdjNounWordOrder"							"{s:adj}{s:noun}"
 
 		"DOTA_Chat_MadstoneAlert_NeedMadstone_Self"		"<font color='#4BEE81'>瘋石</font> %s1 我還需要 %s2 顆來合成我的 <font color='%s4'>%s3 階</font>中立道具。"
 		"DOTA_Chat_MadstoneAlert_NeedMadstone_Ally"		"<font color='#4BEE81'>瘋石</font> %s1 <font color='%s5'>%s6</font> 還需要 %s2 顆來合成他的 <font color='%s4'>%s3 階</font>中立道具。"
 		"DOTA_Chat_MadstoneAlert_CanCraft_Self"			"我可以合成我的 <font color='%s2'>%s1 階</font>中立道具。"
 		"DOTA_Chat_MadstoneAlert_CanCraft_Ally"			"<font color='%s3'>%s4</font> 可合成他的 <font color='%s2'>%s1 階</font>中立道具。"
+		"DOTA_Chat_MadstoneAlert_WaitingForNextTier"	"用來合成 <font color='%s3'>%s2 階</font>中立道具的<font color='#4BEE81'>瘋石</font> %s1 將於 %s4 後開始出現。"
+
 		"DOTA_NeutralCrafting_TooltipHeader"			"中立道具"
 		"DOTA_NeutralCraft_TierName"					"{d:neutral_item_tier} 級"
 		"DOTA_NeutralCrafting_TooltipExplain"			"完全清除中立野怪營地以獲得瘋石，讓隊伍能合成中立道具。"
@@ -43955,5 +43974,10 @@
 		"DOTA_Shop_CraftingStatus"										"合成狀態"
 
 
-		}
+		"DOTA_HUD_Shop_Neutral_Tier1"									"1 階"
+		"DOTA_HUD_Shop_Neutral_Tier2"									"2 階"
+		"DOTA_HUD_Shop_Neutral_Tier3"									"3 階"
+		"DOTA_HUD_Shop_Neutral_Tier4"									"4 階"
+		"DOTA_HUD_Shop_Neutral_Tier5"									"5 階"
+	}
 } 
