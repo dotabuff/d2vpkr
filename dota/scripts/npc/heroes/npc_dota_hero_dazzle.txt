@@ -129,7 +129,7 @@
 			"attack_range_bonus"		
 			{
 				"value"							"0"
-				"special_bonus_unique_dazzle_poison_touch_attack_range_bonus"			"+300"
+				"special_bonus_unique_dazzle_poison_touch_attack_range_bonus"			"+200"
 			}	
 
 			"split_radius"			
@@ -139,11 +139,12 @@
 			}
 			"split_damage"				
 			{
-				"value"				"0"
-				"special_bonus_facet_dazzle_poison_bloom"			"=30 =60 =90 =120"
-				"special_bonus_unique_dazzle_3"	"+60"
-				"RequiresFacet"						"dazzle_poison_bloom"
-			}			
+				"special_bonus_facet_dazzle_poison_bloom"
+				{
+					"value"								"=30 =60 =90 =120"
+					"special_bonus_unique_dazzle_3"		"+60"
+				}
+			}
 			"attacks_to_split"	
 			{
 				"value"				"0"
@@ -262,7 +263,7 @@
 				"special_bonus_unique_dazzle_2" "+45"
 			}
 
-			"scepter_heal_pct"			"150"
+			"scepter_heal_pct"			"100"
 			"scepter_cd_increase"		"2"
 		}
 
@@ -381,8 +382,7 @@
 				"cooldown_reduction"		"1 1.5 2"
 				"item_cooldown_reduction"		
 				{
-					"value"		"50"
-					"RequiresScepter"	"1"
+					"special_bonus_scepter"		"50"
 				}
 				"scepter_mana_cost"			"250"
 				"scepter_cooldown"			"180"
@@ -412,20 +412,24 @@
 		//-------------------------------------------------------------------------------------------------------------	
 		"AbilityCooldown"				"70 60 50"
 		"AbilityManaCost"				"100 150 200"
-		"AbilityCastRange"				"600"
+		"AbilityCastRange"				"450"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{	
 			"min_duration"				"5"
-			"max_duration"				"15"
+			"max_duration"
+			{
+				"value"					"12"
+				"special_bonus_unique_dazzle_nothl_projection_duration" "+5"
+			}
 			"initial_travel_speed"		"1200"
 			"soul_return_time"			"0.75"
 			"soul_return_min_speed"		"500"
 			"leash_start"				"1600"
 			"base_leash_pull"			"50"
-			"leash_increase"			".5"
+			"leash_increase"			"1.5"
 			"poison_touch_hex"			"1.4 1.6 1.8"
 			"shallow_grave_heal"		"225 300 375"
 			"shadow_wave_cdr"			"30 40 50"
@@ -438,7 +442,6 @@
 			"healing_amp"
 			{
 				"special_bonus_shard"	"20"
-				"RequiresShard"			"1"
 			}
 		}
 	}
