@@ -1135,6 +1135,15 @@
 
 		"DOTA_Chat_Rune_XP_Time_Remaining"		"<font color='#c642fe'>Shrine of Wisdom</font> aktiveras om %s1 (%s2)"
 
+		"DOTA_Chat_Power_Rune_Timer"		"<font color='#82CAFF'>En kraftruna</font> dyker upp om %s1 (vid %s2)"
+		"DOTA_Chat_Bounty_Rune_Timer"		"<font color='#FF7800'>Belöningsrunor</font> dyker upp om %s1 (vid %s2)"
+		"DOTA_Chat_Lotus_Pool_Timer"		"<font color='#58C0F1'>Lotusar</font> dyker upp om %s1 (vid %s2)"
+		"DOTA_Chat_Jungle_Camp_Timer"		"<font color='#C4A484'>Djungelläger</font> dyker upp igen om %s1 (vid %s2)"
+
+		"DOTA_Chat_Power_Rune_Timer_RecentlyOccurred"			"<font color='#82CAFF'>En kraftruna</font> dök upp för %s1 sedan (nästa vid %s2)"
+		"DOTA_Chat_Bounty_Rune_Timer_RecentlyOccurred"			"<font color='#FF7800'>Belöningsrunor</font> dök upp för %s1 sedan (nästa vid %s2)"
+		"DOTA_Chat_Lotus_Pool_Timer_RecentlyOccurred"			"<font color='#58C0F1'>Lotusar</font> dök upp för %s1 sedan (nästa vid %s2)"
+		"DOTA_Chat_Jungle_Camp_Timer_RecentlyOccurred"			"<font color='#C4A484'>Djungelläger</font> dök upp för %s1 sedan (nästa vid %s2)"
 		"DOTA_Chat_Rune_XP_Time_Remaining_RecentlyOccurred"		"<font color='#c642fe'>Shrine of Wisdom</font> aktiverades för %s1 sedan (nästa vid %s2)"
 
 		"DOTA_Timer_Jungle_Camps_Title"		"Djungelläger"
@@ -2293,6 +2302,7 @@ rikoschetter</b> och <b>framkallar gengångare</b> för att överväldiga sina m
 		"DOTA_InventoryMenu_DropImmediate"				"Släpp här"
 		"DOTA_InventoryMenu_ConsumeItem"				"Förbruka föremål"
 		"DOTA_InventoryMenu_MarkForSell"			    "Markera för försäljning"
+		"DOTA_InventoryMenu_UnmarkForSell"			    "Ta bort från försäljning"
 		"DOTA_InventoryMenu_MarkForSell_Tooltip"	    "Föremålet säljs omedelbart när det är möjligt (levande, på basen, i den hemliga butiken eller via kurir)."
 
 		"DOTA_Inventory_KDA"					"K / D / A"     // kills / deaths / assists
@@ -5413,6 +5423,8 @@ rikoschetter</b> och <b>framkallar gengångare</b> för att överväldiga sina m
 		"dota_hud_error_no_hats_to_gift"				"Ingen hatt att ge"
 		"dota_hud_error_no_hat_buff"					"Enheten kan inte bära hattar"
 		"dota_hud_error_cant_attack_building"			"Kan inte attackera byggnader"
+		"dota_hud_error_magnataur_already_empowered"	"Du är redan stärkt av Empower"
+
 		"dota_cursor_silenced"							"Tystad!"
 		"dota_cursor_muted"								"Dämpad!"
 		"dota_cursor_cooldown"							"%s1 cooldown kvar!"
@@ -6842,6 +6854,8 @@ rikoschetter</b> och <b>framkallar gengångare</b> för att överväldiga sina m
 		"Notification_Compendium2023ExploitedRewards"		"Vi upptäckte nyligen ett problem där ett litet antal spelare kunde tillämpa fler nivåer än tänkt mot sina belöningar i kompendiet. De flesta av de spelarna löste endast ut ett litet antal extrabelöningar, men det har uppdagats att ditt konto avsiktligen har utnyttjat problemet. Ditt konto har därför fått en spelavstängning som förhindrar spelande online och åtkomst till förrådet."
 		"Notification_AccountSharingBan"		"Ditt konto har stängts av permanent för kontodelning och/eller spel på flera konton."
 		"Notification_GiftOpened"				"{g:dota_persona:target_accountid} öppnade {g:dota_item_name:result_item_def} från {g:dota_item_name:gift_item_def} som var en gåva från dig!"
+		"Notification_RecyclingShardsRefunded"	"Vi ber om ursäkt för återvinningsfelet med Dota Plus-skatten. Spenderade skärvor har återbetalats."
+
 		//-------------------------------------------------------------------------------------------
 		// Economy
 		"ItemTypeDesc"						"Nivå %s1 %s2"			// s1 is the level number, s2 is the item type. Example: "Level 4 Medigun"
@@ -19883,6 +19897,8 @@ För att gå med i kanalen som en erfaren spelare måste du ha spelat minst {d:n
 	"DOTA_Chat_RequestAbility"		"vill välja <span class=\"RequestedAbility\" >[{g:dota_ability_name:ability_name}]</span>."
 	"DOTA_Chat_SuggestAbility"		"föreslår att <span class=\"RequestedAbility\" >[{g:dota_ability_name:ability_name}]</span> ska draftas."
 	"DOTA_Chat_AbilityDraft_RequestHero"		"vill välja <span class=\"RequestedAbility\" >[{g:dota_hero_name:hero_id}]</span>."
+	"DOTA_Chat_AbilityDraft_SuggestHero"		"föreslår att välja <span class=\"RequestedAbility\" >[{g:dota_hero_name:hero_id}]</span>."
+	
 	"DOTA_Chat_PrivateCoachConnected" "%s1 har anslutit sig som privat coach. Använd coachkontrollerna uppe till höger för att kommunicera med hen."
 
 	"DOTA_ChatHelp_Targets"			"Mål"
@@ -22709,6 +22725,9 @@ spindelväv#|#<span class='highlight'>{d:detailvalue}</span> kills i spindelväv
 	"dota_tooltip_settings_target_filter_is_toggle_details"	"När detta alternativ är aktiverat fortsätter filtren att användas tills du trycker på Växla filtersnabbknappar igen. Annars används filtren endast när du håller ned filtersnabbknappen."
 
 	"dota_settings_labs_minimap_section"			    "Minikarta"
+	"dota_settings_alt_minimap_move"					"Förflyttning på minikartan med högerklick kräver att Alt trycks ner"
+	"dota_settings_alt_minimap_move_hint"				"När det är aktiverat måste Alt tryckas ner för förflyttning med högerklick på minikartan."
+
 	"dota_settings_labs_misc_section"				"Diverse"
 	"dota_settings_alt_right_range_hint"			"Ihållande räckviddsindikationer"
 	"dota_tooltip_settings_alt_right_range_hint"	"Om du håller in Alt och högerklickar på HUD-element som visar en radie runt din hjälte när du håller över hen (t.ex. förmågor, föremål, erfarenhet, attackräckvidd), skapas en bestående synlig ring som spårar den aktuella radien för effekten. Radien uppdateras automatiskt för att återspegla buffar eller föremål på din hjälte."
@@ -30272,6 +30291,7 @@ Med hjältar som sätter press tidigt som Zeus och Death Prophet, split-pushare 
 	"DOTA_Tooltip_RoshanTimer_VisibleTime"	"Roshan kommer återskapas om:"
 	
 	"DOTA_Tooltip_RoshanTimerMessage_RoshanIsAlive"	"Roshan är vid liv i den {s:roshan_cave_location} gropen."
+	"DOTA_Tooltip_RoshanTimerMessage_BaseTime"		"Roshan är död.\nKan återskapas om {s:roshan_respawn_time}."
 	"DOTA_Tooltip_RoshanTimerMessage_VisibleTime"   "Roshan återskapas om {s:roshan_respawn_time} i den {s:roshan_cave_location} gropen."
 	"DOTA_Tooltip_RoshanTimerMessage_VariableTime"	"Roshan är möjligtvis vid liv i den {s:roshan_cave_location} gropen. Återskapas garanterat om {s:roshan_respawn_time}."
 	
@@ -30721,6 +30741,8 @@ Med hjältar som sätter press tidigt som Zeus och Death Prophet, split-pushare 
 	"DOTA_737d_Update"	  "Speluppdatering 7.37d"
 	"DOTA_737d"			  "7.37d"
 	"DOTA_737e_Update"	  "Speluppdatering 7.37e"
+	"DOTA_738_Update"	  "Speluppdatering 7.38"
+	"DOTA_738b_Update"	  "Speluppdatering 7.38b"
 	"DOTA_738c_Update"	  "Speluppdatering 7.38c"
 
 	"DOTA_Settings_Tooltip_NetworkLatency" "Om du har en nätverksanslutning med packet loss kan du sätta detta till \"LÅG\" för att öka fördröjning men få en jämnare upplevelse."
@@ -34591,6 +34613,9 @@ Med hjältar som sätter press tidigt som Zeus och Death Prophet, split-pushare 
 	"DOTA_Plus_Winter2024_Update_Title"						"Säsongsuppdatering vintern 2024"
 	"DOTA_Plus_Winter2024_Update_Desc"						"En ny säsong med uppdrag har lagts till för Dota Plus."
 
+	"DOTA_Plus_Spring2025_Update_Title"						"Säsongsuppdatering våren 2025"
+	"DOTA_Plus_Spring2025_Update_Desc"						"En ny säsong med uppdrag har lagts till för Dota Plus."
+
 	"DOTA_Plus_Autumn_Assitant_Title"						"Nya assistentfunktioner"
 	"DOTA_Plus_Autumn_Assitant_Desc"						"Plus-abonnenter kan nu använda funktionerna Undvik spelare och Friends and Foes, samt förslag på Wards och andra assistentfunktioner."
 
@@ -34601,6 +34626,8 @@ Med hjältar som sätter press tidigt som Zeus och Death Prophet, split-pushare 
 
 	"DOTA_FoundNeutralItem_ItemTier"						"<span class=\"TierLabel\">Neutralt föremål:</span> nivå {d:tier_number}"
 	"DOTA_FoundNeutralItem_ItemTierCount"					"<span class=\"TierFound\">[ Hittade {d:tier_item_count} / {d:tier_item_max_count} ]</span>"
+	"DOTA_FoundNeutralItem_FoundBy"							"Tillverkades av {g:dota_player_name:nh:nc:nt:player_id}"
+
 	"DOTA_NeutralItemTier"									"<span class=\"TierLabel\">Neutralt föremål:</span> nivå {d:neutral_item_tier_number}"
 
 	"DOTA_NeutralItemTierToast_Header"						"Neutrala föremål <span class=\"TierLabel\">nivå {d:tier_number}</span>"
@@ -34656,6 +34683,7 @@ Med hjältar som sätter press tidigt som Zeus och Death Prophet, split-pushare 
 	"DOTA_TeamNeutralItems_Hint"							"<span class=\"ShortcutLabel\">Alt+klicka</span> för att be en lagkamrat om ett föremål."
 	"DOTA_TeamNeutralItems_ViewAll"							"Visa alla neutrala föremål"
 	"DOTA_TeamNeutralItems_ViewTeam"						"Visa lagets neutrala föremål"
+	"DOTA_TeamNeutralItems_ViewCrafting"					"Visa lagets neutrala tillverkning"
 	"DOTA_TeamNeutralItems_Enhancements"					"Neutrala förtrollningar"
 
 	"DOTA_NeutralItemSlot_Title"							"Neutral föremålsplats"
@@ -35847,6 +35875,11 @@ Med hjältar som sätter press tidigt som Zeus och Death Prophet, split-pushare 
 		"DOTA_PlusSeason_SeasonWinter2024_Quests"				"Vintern 2024 – uppdrag"
 		"DOTA_PlusSeason_SeasonWinter2024_Subtitle"				"Vintersäsongen 2024 avslutas den 4 mars 2025."
 
+		"DOTA_PlusSeason_SeasonSpring2025_Name"					"Våren 2025"
+		"DOTA_PlusSeason_SeasonSpring2025_Quests"				"Våren 2025 – uppdrag"
+		"DOTA_PlusSeason_SeasonSpring2025_Subtitle"				"Vårsäsongen 2025 avslutas den 3 juni 2025."
+		"DOTA_PlusSeason_SeasonSpring2025_TreasureDescription"	"Exklusivt tillgänglig fram till slutet av vårsäsongen 2025, den 3 juni 2025."
+
 		"DOTA_MatchRewards"							"Matchbelöningar"
 		"DOTA_MatchRewards_YourShards"				"Dina skärvor"
 		"DOTA_MatchRewards_TotalShards"				"Totalt antal skärvor"
@@ -36541,6 +36574,7 @@ Om det känns som att du inte kunde lägga tillräckligt mycket uppmärksamhet p
 		"DOTA_Glossary_Advanced_CommonBuffs_AttackModifiers"			"Attackmodifierare"
 		"DOTA_Glossary_Advanced_CommonBuffs_AttackModifiers_Desc"		"Många förmågor och föremål ger specialeffekter på varje grundläggande attack. Några av de vanligaste effekterna som delas mellan en mängd olika föremål och förmågor listas nedan:"
 		"DOTA_Glossary_Advanced_CommonBuffs_CriticalStrike"				"Kritisk träff"
+		"DOTA_Glossary_Advanced_CommonBuffs_CriticalStrike_Desc"		"Attacker har en procentuell chans att göra extra skada som en multiplikator av den normala skadan."
 		"DOTA_Glossary_Advanced_CommonBuffs_TrueStrike"				"True Strike"
 		"DOTA_Glossary_Advanced_CommonBuffs_TrueStrike_Desc"		"Attacker med True Strike missar inte på grund av undvikande eller andra effekter som får attacker att missa."
 		"DOTA_Glossary_Advanced_CommonBuffs_LifeSteal"			"Livstjälande"
@@ -36682,6 +36716,7 @@ Om det känns som att du inte kunde lägga tillräckligt mycket uppmärksamhet p
 		"DOTA_Glossary_Gold_Passive"	"Guld intjänas också passivt med tiden."
 		"DOTA_Glossary_Gold_HeroBounty"	"Guldbelöningar utdelas vid dödande av fiendehjältar eller vid assister till andra allierade som dödar dem."
 		"DOTA_Glossary_Gold_KillStreak"		"Fiender som har dödat flera hjältar i rad utan att själv dö (en så kallad kill streak, eller dödandeserie), ger extra guld som motsvarar seriens längd."
+		"DOTA_Glossary_Gold_BountyRunes"	"Belöningsrunor dyker upp var 4 minut i varje lags djungel. Guld ges till varje spelare i laget när en allierad plockar upp runorna."
 		"DOTA_Glossary_Experience_Header"	"Erfarenhet"
 		"DOTA_Glossary_Experience_Intro"	"Erfarenhet, eller XP, fås när man är nära en fiende eller neutral enhet när de dör, oavsett vem som utförde dödsstöten."
 		"DOTA_Glossary_Experience_Hero"		"Att döda hjältar ger också erfarenhetspoäng. Ju högre nivå hjältarna har i jämförelse med dig, desto mer XP fås när de dödas."
@@ -36846,6 +36881,8 @@ Om det känns som att du inte kunde lägga tillräckligt mycket uppmärksamhet p
 		"DOTA_Glossary_Map_Runes_Power"			"Kraftrunor"
 		"DOTA_Glossary_Map_Roshan"				"Roshan"
 		"DOTA_Glossary_Map_Roshan_Aegis_Desc"		"När Roshan dör släpper han Aegis of the Immortal."
+		"DOTA_Glossary_Map_Roshan_Shards_Desc"		"Den tredje gången han besegras och därefter släpper han också Refresher Shard."
+
 		"DOTA_Glossary_Map_Tormentor"				"Tormentor"
 		"DOTA_Glossary_Map_Tormentor_Desc"			"Tormentor är en kraftfull, mystisk struktur som är belägen nära Radients och Dires säkra väg. Den har en kraftfull sköld och skadereflekteringsförmågor som gör den svår att förstöra, och den ger en Aghanim's Shard när den besegras. Tormentor återskapas 10 minuter efter att den har dött."
 
@@ -41654,6 +41691,7 @@ Om det känns som att du inte kunde lägga tillräckligt mycket uppmärksamhet p
 		"DOTA_MapUpdate2023_Matchmaking"		"Matchning"
 		"DOTA_MapUpdate2023_UserInterface"		"Användargränssnitt"
 		"DOTA_NeutralItemPicker_Title"		"<span class=\"NeutralItemTier\">Nivå {d:neutral_item_tier}</span>"
+		"DOTA_NeutralItemPicker_Subtitle"	"Tillverka neutralt föremål"
 		"DOTA_NeutralItemPicker_Reroll"		"Nytt utbud"
 		"DOTA_Miniboss_Shard"				"%s1 mottog en Aghanim's Shard"
 "DOTA_PlayerDraft_Intro_Versus"				"VS"
@@ -43301,7 +43339,12 @@ Om det känns som att du inte kunde lägga tillräckligt mycket uppmärksamhet p
 		
 		"DOTA_FrontPageCell_738_Header"					"Speluppdatering <b>7.38</b>"
 		"DOTA_FrontPageCell_738_Title"					"Wandering Waters"
+		"DOTA_FrontPageCell_738_Description"			"Vi presenterar en ny karta, förändringar av neutrala föremål, hjälte- och föremålsuppdateringar och mer."
 		"DOTA_FrontPageCell_738_Patchnotes"				"Visa uppdateringsanteckningar"
+		"DOTA_FrontPageCell_738_Patchnotes_Button"		"Uppdateringsanteckningar för 7.38"
+
+		"DOTA_FrontPageCell_DotaPlusSpring2025_Description"				"Uppdaterade säsongsuppdrag och -belöningar."
+
 		"DOTA_HUD_Pregame_TokenRewards"					"{s:act_number} pollettbelöningar"
 		"DOTA_HUD_Pregame_TurboTokenRewardsTooltip"		"Turbospel ger 2 polletter vid vinst. Välj de polletter du vill ha."
 
@@ -44882,9 +44925,12 @@ Om det känns som att du inte kunde lägga tillräckligt mycket uppmärksamhet p
 		// New Neutrals
 		"DOTA_NeutralCurrencyName"						"Madstone"
 		"DOTA_NeutralTooltip_Title"						"{s:item_affix} {s:item_name}"
+		"DOTA_NeutralTooltip_Subtitle_Both"				"Neutralt föremål på <span class=\"NeutralItemTier\">nivå {d:neutral_item_tier}</span>"
 		"DOTA_NeutralTooltip_Subtitle_Trinket"			"<span class=\"NeutralItemTier\">Nivå {d:neutral_item_tier}</span> – artefakt"
 		"DOTA_NeutralTooltip_Subtitle_Enhancement"		"<span class=\"NeutralItemTier\">Nivå {d:neutral_item_tier}</span> – förtrollning"
 		"DOTA_NeutralTooltip_EnhancementSeparatorTitle" "Förtrollning"
+		"DOTA_MadstoneStatus_AcquiredMax"				"Lagets Madstone-gräns: {d:madstone_acquired}/{d:max_madstone_acquired}"
+		"DOTA_CraftHUD_Craft"							"Tillverka neutralt föremål"
 		"DOTA_CraftHUD_ChooseOption"					"Välj en artefakt och förtrollning"
 		"DOTA_CraftHUD_ChooseTrinket"					"Artefaktalternativ"
 		"DOTA_CraftHUD_ChooseEnhancement"				"Förtrollningsalternativ"
@@ -44894,9 +44940,12 @@ Om det känns som att du inte kunde lägga tillräckligt mycket uppmärksamhet p
 		"DOTA_NeutralCraft_TrinketHeader"				"Artefakt"
 		"DOTA_NeutralCraft_EnhancementHeader"			"Förtrollning"
 		"DOTA_NeutralCraft_HoverTooltip_NonObtainable"	"Rensa läger med neutrala creeps helt för att få en Madstone. Du kan börja få Madstones vid {s:madstone_start_time_string}."
+		"DOTA_NeutralCraft_HoverTooltip_Default"		"Rensa läger med neutrala creeps helt för att få en Madstone. Antalet som du kan få ökar med {d:madstone_interval_amount} var {d:madstone_interval_s} sekund. Du kan för närvarande få {d:madstone_obtainable} till Madstones."
 		"DOTA_NeutralCraft_HoverTooltip_Limited"		"Rensa läger med neutrala creeps helt för att få en Madstone. Antalet som du kan få är låst fram till {s:madstone_unlimited_time}. Du kan för närvarande endast få {d:madstone_obtainable} till Madstones."
+		"DOTA_NeutralCraft_HoverTooltip_NoLimit"		"Rensa läger med neutrala creeps helt för att få en Madstone. Det finns ingen gräns för hur många Madstones du kan få."
 		"DOTA_FoundNeutralItem_EnhancedWith"			"Förtrollad med <span class=\"EnhancementName\">{s:item_affix}</span>"
 		"DOTA_MadstoneStatus_MadstoneCount"				"<b>{d:current_madstone}</b>/{d:madstone_craft_amount}"
+		"DOTA_MadstoneStatus_FarmCountdown"				"Kan tjänas om <b>{s:madstone_unlock_time} s</b>"
 		"DOTA_MadstoneStatus_AltDescription"			"Tidpunkter och lagstatus"
 		"DOTA_Madstone_Explaination_1"					"Rensa ett läger med neutrala creeps helt för att få 2 Madstones till dig själv och 1 till en slumpvald allierad (Ancient-läger ger 3 till dig och 2 till slumpvalda allierade)."
 		"DOTA_Madstone_Explaination_2"					"Tjäna tillräckligt många Madstones för att tillverka neutrala föremål: <br>–Nivå 1 kräver 5 Madstones.<br>–Nivå 2, 3, 4 och 5 kräver 10 Madstones."
@@ -44911,6 +44960,8 @@ Om det känns som att du inte kunde lägga tillräckligt mycket uppmärksamhet p
 		"DOTA_Chat_MadstoneAlert_WaitingForNextTier"	"<font color='#4BEE81'>Madstone</font> %s1 börjar dyka upp om %s4 för neutrala föremål på <font color='%s3'>nivå %s2</font>."
 
 		"DOTA_NeutralCrafting_TooltipHeader"			"Neutrala föremål"
+		"DOTA_NeutralCraft_TierName"					"Nivå {d:neutral_item_tier}"
+		"DOTA_NeutralCrafting_TooltipExplain"			"Rensa läger med neutrala creeps helt för att tjäna Madstones så att ditt lag kan tillverka neutrala föremål."
 		"DOTA_NeutralCrafting_TooltipTeamHeader"		"Lagets neutrala föremål"
 		
 		"DOTA_Crownfall_Archive"						"Arkiv"
