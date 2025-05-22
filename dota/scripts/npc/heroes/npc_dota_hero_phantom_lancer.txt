@@ -18,7 +18,7 @@
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_PhantomLancer.SpiritLance.Throw"
 
-        "HasScepterUpgrade"               "1"
+        "HasScepterUpgrade"               "0"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -44,6 +44,7 @@
 			"lance_damage"
 			{
 				"value"				"70 140 210 280"
+				
 			}
 			"lance_speed"				"1000 1000 1000 1000"
 			"duration"			
@@ -57,23 +58,31 @@
 				"value"				"-14 -21 -28 -35"
 			}
 			"illusion_duration"			"3.5 5.0 6.5 8.0"
-			"illusion_damage_out_pct"	"-85"
-			"tooltip_illusion_damage"	"15"
+			"illusion_damage_out_pct"	
+			{
+				"value"						"-85"
+				"special_bonus_unique_phantom_lancer_lance_illusion_damage" "+15"
+			}
+			"tooltip_illusion_damage"	
+			{
+				"value"					"15"
+				"special_bonus_unique_phantom_lancer_lance_illusion_damage" "+15"
+			}
 			"illusion_damage_in_pct"	"300 300 300 300"
 			"tooltip_illusion_total_damage_in_pct"	"400 400 400 400"
 			"fake_lance_distance"		"675"
 			"scepter_bounce_radius"
 			{
-				"special_bonus_scepter"						"750"
+				"special_bonus_scepter"						"0"
 				"affected_by_aoe_increase"	"1"
 			}
 			"scepter_bonus_illusion_damage"
 			{
-				"special_bonus_scepter"						"30"
+				"special_bonus_scepter"						"0"
 			}
 			"scepter_total_hits"
 			{
-				"special_bonus_scepter"						"1"
+				"special_bonus_scepter"						"0"
 			}
 			"illusion_lance_damage_pct"
 			{
@@ -233,7 +242,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
 		"AbilitySound"			"Hero_PhantomLancer.PhantomEdge"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"HasScepterUpgrade"				"0"		
+		"HasScepterUpgrade"				"1"		
 		"MaxLevel"						"4"
 		"IsBreakable"					"1"
 
@@ -249,7 +258,7 @@
 			"max_distance"				
 			{
 				"value"				"600 675 750 825"
-				"special_bonus_unique_phantom_lancer" "+300"
+				"special_bonus_scepter"			"+625"
 			}
 			"bonus_speed"		"800"
 			"bonus_agility"		
@@ -262,6 +271,10 @@
 			{
 				"value"			"2"
 				"special_bonus_unique_phantom_lancer_2"		"+2.5"
+			}
+			"illusion_spawn_radius"
+			{
+				"special_bonus_scepter"			"75"				
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -320,7 +333,6 @@
 			"value"
 			{
 				"value" "100"
-				"ad_linked_abilities" "phantom_lancer_phantom_edge"
 			}
 		}
 	}
@@ -339,7 +351,6 @@
 			"value"
 			{
 				"value" "4"
-				"ad_linked_abilities" "phantom_lancer_doppelwalk"
 			}
 		}
 	}
@@ -358,7 +369,6 @@
 			"value"
 			{
 				"value" "1"
-				"ad_linked_abilities" "phantom_lancer_spirit_lance"
 			}
 		}
 	}
@@ -397,7 +407,6 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"special_bonus_base"
-		"ad_linked_abilities"			"phantom_lancer_phantom_edge"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 	}
 
 	//=================================================================================================================

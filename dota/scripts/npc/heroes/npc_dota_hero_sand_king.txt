@@ -10,7 +10,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_ALT_CASTABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_ALT_CASTABLE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
@@ -58,13 +58,18 @@
 				"value"								"525 600 675 750"
 				"special_bonus_unique_sand_king_8"	"+150"
 			}
-			"burrow_speed_scepter"
+			"mound_duration"				
 			{
-				"special_bonus_scepter"		"3000"
+				"special_bonus_facet_sand_king_deeper_underground"			"=0"
 			}
-			"scepter_channel_time"			"2"
-			"scepter_max_power"				"2"
-
+			"is_vector_target"			
+			{
+				"special_bonus_facet_sand_king_deeper_underground"			"1"
+			}
+			"underground_distance_pct"	
+			{
+				"special_bonus_facet_sand_king_deeper_underground"			"60"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -108,8 +113,7 @@
 			}
 			"sand_storm_radius"
 			{
-				"value"		"350 400 450 500"
-				"special_bonus_facet_sand_king_sandshroud"			"=575 =650 =725 =800"
+				"value"		"425 500 575 650"
 				"affected_by_aoe_increase"	"1"
 			}
 			"sand_storm_damage"
@@ -119,23 +123,18 @@
 			}
 			"fade_delay"		
 			{
-				"value"				"-1"
-				"special_bonus_facet_sand_king_sandshroud"			"=0.7"
+				"value"				"0.7"
 			}
-			"sand_storm_move_speed_pct"
+			"blind_pct"
 			{
-				"value"		"0"
-				"special_bonus_facet_sand_king_dust_devil"	"+70"
+				"special_bonus_facet_sand_king_obscurity"			"20 30 40 50"
 			}
-			"sand_storm_max_distance_from_caster"
+			"blind_debuff_duration"
 			{
-				"special_bonus_facet_sand_king_dust_devil"	"+2500"
-			}				
-			"sand_storm_move_speed_bonus_when_outside_radius"
-			{
-				"special_bonus_facet_sand_king_dust_devil"	"+55"
-			}				
+				"special_bonus_facet_sand_king_obscurity"			"5"
+			}
 			
+
 
 
 		}
@@ -169,41 +168,13 @@
 					"special_bonus_unique_sand_king_caustic_finale_radius"				"+100"
 					"affected_by_aoe_increase"	"1"
 				}
-				"caustic_finale_damage_base"		"15 35 55 75"
-				"caustic_finale_damage_pct"		"4 8 12 16"
+				"caustic_finale_damage_base"		"20 40 60 80"
+				"caustic_finale_damage_pct"		"3 7 11 15"
 				"caustic_finale_duration"		"4.5 5 5.5 6"
 
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
-	//=================================================================================================================
-	// Ability: Sand King Caustic Finale Impediment
-	//=================================================================================================================
-	"sandking_innate_caustic_impediment"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"MaxLevel"						"1"
-	}
-	//=================================================================================================================
-	// Ability: Sand King Caustic Finale Volatility
-	//=================================================================================================================
-	"sandking_innate_caustic_volatility"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"MaxLevel"						"1"
-		"AbilityValues"
-		{
-			"radius"			"200"
-		}
-	}	
 
 	//=================================================================================================================
 	// Ability: Sand King Epicenter
@@ -261,13 +232,13 @@
 			"epicenter_radius_base"
 			{
 				"value"		"500"
-				"special_bonus_unique_sand_king_5"	"+100"
+				"special_bonus_unique_sand_king_5"	"+75"
 				"affected_by_aoe_increase"	"1"
 			}
 			"epicenter_radius_increment"
 			{
 				"value"		"13"
-				"special_bonus_unique_sand_king_5"	"+12"
+				"special_bonus_unique_sand_king_5"	"+7"
 			}
 			"epicenter_slow"	
 			{
@@ -349,7 +320,7 @@
 
 			"radius"		
 			{
-				"value"			"225 255 285 315"
+				"value"			"230 250 270 290"
 				"affected_by_aoe_increase"	"1"
 			}
 			"inner_radius"
@@ -357,10 +328,17 @@
 				"value"			"125"
 				"affected_by_aoe_increase"	"1"
 			}
-			"inner_radius_bonus_damage_pct"				"40"
+			"inner_radius_bonus_damage_pct"				
+			{
+				"value"			"40"
+			}
+			"inner_radius_procs_caustic"
+			{
+				"special_bonus_facet_sand_king_pinpoint"				"=1"
+			}
 			"attack_damage"				
 			{
-				"value"															"35 70 105 140"
+				"value"															"50 75 100 125"
 				"special_bonus_unique_sand_king_scorpion_strike_damage"			"+40"
 			}
 			"debuff_duration"				"4 5 6 7"
@@ -368,6 +346,10 @@
 			{
 				"value"					"10 12 14 16"
 				"special_bonus_unique_sand_king_3"	"+8"
+			}
+			"caustic_damage_pct"
+			{
+				"special_bonus_facet_sand_king_pinpoint"			"50"
 			}
 		}
 	}
@@ -422,8 +404,7 @@
 		{
 			"value"
 			{
-				"value" "35"
-				"ad_linked_abilities" "sandking_sand_storm"
+				"value" "45"
 			}
 		}
 	}
@@ -442,7 +423,6 @@
 			"value"
 			{
 				"value" "20"
-				"ad_linked_abilities" "sandking_epicenter"
 			}
 		}
 	}

@@ -1,0 +1,75 @@
+"venomancer_noxious_plague_two_heroes_spread"
+{
+	"image"				"images/spellicons/venomancer_noxious_plague.png"
+	"requiredhero"		"venomancer"
+	"events"
+	{
+		"matching_type"		"timeblock_accumulate_after_trigger"
+		"query"
+		{
+			"trigger"
+			{
+				"event"			"ability"
+				"caster"		"!hero"
+				"ability"		"venomancer_noxious_plague"
+			}
+			"time_block_after_trigger"		"6"
+			"accumulate_event"
+			{
+				"event"					"modifier_add"
+				"modifier"				"modifier_venomancer_noxious_plague_secondary"
+				"caster"				"!hero"
+				"target_must_be_hero"	"1"
+				"storage"
+				{
+					"1"
+					{
+						"aggregator"	"increment"
+					}
+				}
+			}
+		}
+		"postmatch_increments"
+		{
+			"pre_storage_test"
+			{
+				"test_noxious_plague_heroes_per_cast"
+				{
+					"storage"		"1"
+					"compare"		">="
+					"amount"		"2"
+				}
+			}
+			"storage"
+			{
+				"2"
+				{
+					"aggregator"		"increment"
+				}
+			}
+		}
+		"clear_storage_per_trigger_or_pre_test_pass"
+		{
+			"1"			"1"
+			"2"			"0"
+		}
+		"progress_stored_in"	"2"
+		"post_tests"
+		{
+			"test_two_heroes_spread"
+			{
+				"storage"		"2"
+				"compare"		">="
+				"amount"		"<two_heroes_spread>"
+			}
+		}
+	}
+	"variables"
+	{
+		"<two_heroes_spread>"
+		{
+			"format"	"int"
+			"index"		"0"
+		}
+	}
+}

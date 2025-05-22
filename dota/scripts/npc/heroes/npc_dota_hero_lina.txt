@@ -37,25 +37,7 @@
 
 			"dragon_slave_damage"
 			{
-				"value"							"85 165 245 325"
-				"LinkedSpecialBonus"			"lina_slow_burn"
-				"LinkedSpecialBonusField"		"impact_damage_pct"
-				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
-			}
-			"dragon_slave_burn_damage_tooltip"
-			{
-				"value"							"0"
-				"special_bonus_facet_lina_dot"	"=85 =165 =245 =325"
-				"LinkedSpecialBonus"			"lina_slow_burn"
-				"LinkedSpecialBonusField"		"burn_percent_tooltip"
-				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
-			}
-			"dragon_slave_burn_duration_tooltip"
-			{
-				"value"							"0"
-				"LinkedSpecialBonus"			"lina_slow_burn"
-				"LinkedSpecialBonusField"		"burn_duration"
-				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_ADD"
+				"value"							"85 165 245 325"				
 			}
 			"dragon_slave_speed"		"1200"
 			"dragon_slave_width_initial"	
@@ -118,26 +100,7 @@
 				"light_strike_array_damage"	
 				{
 					"value"							"110 160 210 260"
-					"special_bonus_unique_lina_3"	"+150"
-					"LinkedSpecialBonus"			"lina_slow_burn"
-					"LinkedSpecialBonusField"		"impact_damage_pct"
-					"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
-				}
-				"light_strike_array_burn_damage_tooltip"
-				{
-					"value"							"0"
-					"special_bonus_unique_lina_3"	"+150"
-					"special_bonus_facet_lina_dot"	"=110 =160 =210 =260"
-					"LinkedSpecialBonus"			"lina_slow_burn"
-					"LinkedSpecialBonusField"		"burn_percent_tooltip"
-					"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
-				}
-				"light_strike_array_burn_duration_tooltip"
-				{
-					"value"							"0"
-					"LinkedSpecialBonus"			"lina_slow_burn"
-					"LinkedSpecialBonusField"		"burn_duration"
-					"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_ADD"
+					"special_bonus_unique_lina_3"	"+150"					
 				}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -242,8 +205,10 @@
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Ability.LagunaBladeImpact"
 		 "HasShardUpgrade"				"1"
-
-		"AbilityDraftUltScepterAbility" "lina_flame_cloak"
+		"AbilityDraftExtraAbilities"
+		{
+			"lina_flame_cloak" "scepter"
+		}
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -268,25 +233,7 @@
 		{
 			"damage"
 			{
-				"value"							"500 700 900"
-				"LinkedSpecialBonus"			"lina_slow_burn"
-				"LinkedSpecialBonusField"		"impact_damage_pct"
-				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
-			}
-			"burn_damage_tooltip"
-			{
-				"value"							"0"
-				"special_bonus_facet_lina_dot"	"=500 =700 =900"
-				"LinkedSpecialBonus"			"lina_slow_burn"
-				"LinkedSpecialBonusField"		"burn_percent_tooltip"
-				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
-			}
-			"burn_duration_tooltip"
-			{
-				"value"							"0"
-				"LinkedSpecialBonus"			"lina_slow_burn"
-				"LinkedSpecialBonusField"		"burn_duration"
-				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_ADD"
+				"value"							"500 750 1000"				
 			}
 			"damage_delay"				"0.25"
 			"AbilityCooldown"
@@ -335,20 +282,9 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"impact_damage_pct"						
-			{
-				"special_bonus_facet_lina_dot"		"0.6"
-			}
-			"damage_penalty_tooltip"				"60"		// show as int on tooltip
-
-			"burn_percent"							"36"
-			"burn_percent_tooltip"								// used for other skills' tooltips in LinkedSpecialBonus			= impact_damage_pct * burn_percent / 100
-			{
-				"special_bonus_facet_lina_dot" "0.22"	
-			}
-
-			"burn_percent_tooltip_damage"			"65"		// burn_percent_tooltip * duration
-			"total_damage_tooltip"					"125"		// damage_penalty_tooltip + impact_damage_pct * burn_percent * duration
+			"impact_damage_pct"						"60"		// show as int on tooltip
+			"burn_damage_pct"						"65"
+			"total_damage_tooltip"					"125"		// impact_damage_pct + impact_damage_pct * burn_percent * duration
 
 			"burn_duration"							
 			{
@@ -380,7 +316,7 @@
 			"damage_threshold"			"175"
 			"damage"
 			{
-				"value"							"10 30 50 70"
+				"value"							"15 35 55 75"
 				"special_bonus_unique_lina_7"	"+60%"
 			}
 			"damage_illusions"

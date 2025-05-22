@@ -189,7 +189,8 @@
 			}
 			"mana_burn"		
 			{
-				"value"				"35 70 105 140"
+				"value"								"35 70 105 140"
+				"special_bonus_unique_clockwerk_2"	"+70"
 			}
 			"mana_burn_as_damage_pct"				"50"
 			"magic_barrier"
@@ -293,7 +294,6 @@
 			"damage"
 			{
 				"value"			"80 120 160 200"
-				"special_bonus_unique_clockwerk_flare_damage"	"+75"
 				"CalculateSpellDamageTooltip" "1"
 			}
 			"AbilityCooldown"				
@@ -327,8 +327,11 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Rattletrap.Hookshot.Fire"
-
-		"AbilityDraftUltScepterAbility"		"rattletrap_overclocking"
+		"AbilityDraftExtraAbilities"
+		{
+			"rattletrap_overclocking" "scepter"
+			"rattletrap_jetpack" "shard"
+		}
 		"AbilityDraftUltShardAbility"		"rattletrap_jetpack"
 
 		// Casting
@@ -402,6 +405,35 @@
 		"AbilityValues"
 		{
 			"damage_per_armor"			"0.25"
+			"damage_tooltip"
+			{
+				"dynamic_value"						"true"
+			}
+			
+			"can_consume_chainmail"
+			{
+				"special_bonus_facet_rattletrap_junk_mail"	"=1"
+			}
+
+			"armor_per_chainmail"
+			{
+				"special_bonus_facet_rattletrap_junk_mail"	"=4"
+			}
+
+			"model_scale_per_chainmail"
+			{
+				"special_bonus_facet_rattletrap_junk_mail"	"=3"
+			}
+
+			"model_scale_maximum"
+			{
+				"special_bonus_facet_rattletrap_junk_mail"	"=150"
+			}
+
+			"health_bar_offset_per_stack"
+			{
+				"special_bonus_facet_rattletrap_junk_mail"	"=3.5"
+			}
 		}
 	}
 	//=================================================================================================================
@@ -431,7 +463,6 @@
 			"value"
 			{
 				"value" "24"
-				"ad_linked_abilities" "rattletrap_battery_assault"
 			}
 		}
 	}
@@ -451,7 +482,6 @@
 			"value"
 			{
 				"value" "0"
-				"ad_linked_abilities" "rattletrap_rocket_flare"
 			}
 		}
 	}
@@ -479,7 +509,6 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"special_bonus_base"
-		"ad_linked_abilities"			"rattletrap_power_cogs"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 	}
 
 	//=================================================================================================================

@@ -247,8 +247,10 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Spirit_Breaker.NetherStrike.Begin"
-
-		"AbilityDraftUltScepterAbility"   "spirit_breaker_planar_pocket"
+		"AbilityDraftExtraAbilities"
+		{
+			"spirit_breaker_planar_pocket" "scepter"
+		}
 
 
 		// Casting
@@ -308,9 +310,11 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_DoomBringer.ScorchedEarthAura"
 		"IsGrantedByScepter"				"1"
@@ -321,12 +325,12 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"900"
-		"AbilityCooldown"				"20"
+		"AbilityCastRange"				"700"
+		"AbilityCooldown"				"25"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"75"
+		"AbilityManaCost"				"100"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -337,7 +341,7 @@
 				"value"		"900"
 				"affected_by_aoe_increase"	"1"
 			}
-			"duration"				"7"
+			"duration"				"6"
 			"magic_resistance"		"75"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_5"
@@ -404,7 +408,6 @@
 			"value"
 			{
 				"value" "3"
-				"ad_linked_abilities" "spirit_breaker_bulldoze"
 			}
 		}
 	}
@@ -443,7 +446,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ad_linked_abilities"			"spirit_breaker_bulldoze"	
 		"BaseClass"						"special_bonus_base"
 	}
 }

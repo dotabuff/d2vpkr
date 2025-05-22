@@ -26,7 +26,12 @@
 		{			
 			"katana_attack_range"								"225"
 			"katana_base_attack_time"							"2.0"
-			"katana_bonus_damage"								"12"
+			"katana_agility_bonus_base_damage"					
+			{
+				"value" 											"20"
+				"DamageTypeTooltip"										"DAMAGE_TYPE_PHYSICAL"
+				"CalculateSpellDamageTooltip"							"0"
+			}
 			"katana_swap_bonus_damage"		
 			{
 				"special_bonus_facet_kez_flutter"				"12"
@@ -68,7 +73,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20 18 16 14"
+		"AbilityCooldown"				"21 18 15 12"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -86,7 +91,7 @@
 			}
 			"echo_hero_damage"				
 			{
-				"value"													"25 45 65 85"
+				"value"													"20 40 60 80"
 				"DamageTypeTooltip"										"DAMAGE_TYPE_PHYSICAL"
 				"CalculateSpellDamageTooltip"							"0"
 			}
@@ -137,29 +142,32 @@
 		"AbilityCastPoint"				"0.0"
 		"AbilityCastGestureSlot"		"DEFAULT"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
-		
+		"AbilityCastRange"				"650 750 850 950"	
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"50"
+		"AbilityManaCost"				"40"
+		"AbilityCooldown"				"13 11 9 7"	
+		
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"AbilityCooldown"			"16 13 10 7"		
-
-			"AbilityCastRange"			"700 800 900 1000"	
-			
 			"land_distance"					"75"
 			"projectile_speed"				"3000"
 			"grapple_speed"					"1800"
 			"max_distance_break"			"2000"
 			
 			"bonus_flat_lifesteal"			"0"
-			"lifesteal_pct"					"65 85 105 125"
-			"creep_lifesteal_reduction_pct"				"40"
-			"katana_ms_slow_pct"			"80"		
+			"lifesteal_pct"					
+			{
+				"value" "0"
+				"special_bonus_unique_kez_grappling_claw_lifesteal" "0"
+			}
+			"creep_lifesteal_reduction_pct"				"0"
+			"debuff_duration"				"0.7 0.8 0.9 1.0"
+			"katana_ms_slow_pct"			"70 80 90 100"		
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -171,7 +179,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_ATTACK | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC" 
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -188,7 +196,10 @@
 		"AbilityCastGestureSlot"		"DEFAULT"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCastRange"				"200"
-		"AbilityCooldown"	 			"0.0"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50"
+		"AbilityCooldown"				"20 15 10 5"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -196,38 +207,40 @@
 		{
 			"katana_attack_range"							"225"
 			"katana_base_attack_time"						"2.0"
-			"katana_bonus_damage"							"12"
-			"katana_bleed_duration"							"5.0 6.0 7.0 8.0"
+			"katana_agility_bonus_base_damage"					"20"
+			"katana_bleed_duration"							"7" 
 			"katana_bleed_attack_damage_pct"						
 			{
-				"value" 														"6 7 8 9"   
+				"value" 														"5 7 9 11"   
 				"DamageTypeTooltip"												"DAMAGE_TYPE_PHYSICAL"	
-				"special_bonus_unique_kez_kazura_katana_bleed_damage"			"+5.0"
+				"special_bonus_unique_kez_kazura_katana_bleed_damage"			"+4.0"
 			}	
-			"heal_reduction_pct"												"20 25 30 35"
 	
-			// Shard
-			"shard_cooldown"				
-			{
-				"special_bonus_shard"		"20 15 10 5"
-			}
-			"AbilityManaCost"				
-			{
-				"special_bonus_shard"		"50"
-			}
-			"stun_duration"					
-			{
-				"special_bonus_shard"		"0.6"
-			}
+			"impale_duration"				"0.6"	
 			"bleed_as_rupture_pct"			
 			{
-				"special_bonus_shard"		"100"
+				"value"		"50"
 				"DamageTypeTooltip"			"DAMAGE_TYPE_PHYSICAL"
+			}
+			"lifesteal_pct"					
+			{
+				"value" "0"
+				"special_bonus_shard" "+100"
+			}
+			"creep_lifesteal_reduction_pct"				
+			{
+				"value" 	"0"
+				"special_bonus_shard" "+40"
 			}
 			"katana_swap_bonus_damage"		
 			{
 				"special_bonus_facet_kez_flutter"	"12"
-				"DamageTypeTooltip"			"DAMAGE_TYPE_PHYSICAL"
+				"DamageTypeTooltip"					"DAMAGE_TYPE_PHYSICAL"
+			}
+			"backstab_angle"			
+			{
+				"value"						"0"
+				"special_bonus_shard"		"+105"
 			}
 		}
 	}
@@ -239,7 +252,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC" 
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
@@ -251,11 +264,11 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"1.0"
 
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------	
-		"AbilityChannelTime"			"1.0"
+		"AbilityChannelTime"			"0.0"
 		
 
 		// Cost
@@ -269,11 +282,14 @@
 			"AbilityCooldown"				
 			{
 				"value"		"40 35 30"
-				"special_bonus_unique_kez_ultimate_cooldown"		"-4"
 			}
 			
 			"strike_interval"										"0.25"
-			"strikes"												"2 3 4"
+			"strikes"												
+			{
+				"value"				"4"
+				"special_bonus_unique_kez_raptor_dance_strikes"  "+1"
+			}
 			"radius"						
 			{
 				"value"												"450"
@@ -282,21 +298,22 @@
 			}	
 			"base_damage"				
 			{
-				"value" 				"75"
+				"value" 				"30 60 90"
 				"DamageTypeTooltip"		"DAMAGE_TYPE_PURE"
 			}
 			"max_health_damage_pct"		
 			{
-				"value" 				"4"
+				"value" 				"3"
 				"DamageTypeTooltip"		"DAMAGE_TYPE_PURE"
 			}
 			"lifesteal_pct"				"100"
+			"illusion_lifesteal_pct"	"20"
 			"invuln_period"		"0.2"
 			"magic_resist"		"100"
 			"hard_dispel"		"0"
 			"basic_dispel"		"1"
 		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCastAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
 	}
 
 	//=================================================================================================================
@@ -308,7 +325,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_Kez.FalconRush.Sai.Cast"
@@ -323,7 +339,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20 18 16 14"
+		"AbilityCooldown"				"21 18 15 12"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -333,35 +349,29 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+			"rush_range"					"525"			
+			"rush_speed"					"1000"
+			"echo_damage"				
+			{
+				"value"						"45 55 65 75"
+				"DamageTypeTooltip"			"DAMAGE_TYPE_PHYSICAL"
+			}
+			"slow_resist"					"15 30 45 60"
 			"duration"					
 			{
-				"value" 												"3.0 4.0 5.0 6.0"
-				"special_bonus_unique_kez_falcon_rush_duration"			"+2.0"
-			}
-			"rush_range"			
-			{	
-				"value"									"525"
-				"affected_by_aoe_increase"				"1"	
-			}
-			
-			"buff_evasion_pct"			
-			{
-				"value"													"0"
-				"special_bonus_unique_kez_falcon_rush_evasion"			"+50"
-			}
-			"rush_speed"				"1000"
-			"base_attack_rate_katana"		"1.5 1.4 1.3 1.2"
-			"base_attack_rate_sai"			"1.3 1.2 1.1 1.0"
+				"value" 												"3 4 5 6"
+				"special_bonus_unique_kez_falcon_rush_duration"			"+2"
+			}	
+			"base_attack_rate"				"1.3 1.2 1.1 1.0"		// if changing this, change base_attack_rate_katana_tooltip
+			"katana_attack_rate_penalty"	"0.2"					// if changing this, change base_attack_rate_katana_tooltip
+			"base_attack_rate_katana_tooltip"	"1.5 1.4 1.3 1.2"
+				
 			"attack_speed_factor"				"6 8 10 12"
 			"current_attack_rate_tooltip"
 			{
 				"dynamic_value"			"true"
 			}
-			"echo_damage"				
-			{
-				"value"					"100"
-				"DamageTypeTooltip"		"DAMAGE_TYPE_PHYSICAL"
-			}
+			
 		}
 	}
 
@@ -398,7 +408,7 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"75"	
-		"AbilityCooldown"				"16 13 10 7"		
+		"AbilityCooldown"				"13 11 9 7"		
 
 
 		// Values
@@ -407,16 +417,21 @@
 		{	
 			"radius"					
 			{
-				"value" 								"275"
+				"value" 								"0"
 				"affected_by_aoe_increase"				"1"	
 			}
 			"damage"					
 			{
-				"value" 				"75 125 175 225"
+				"value" 				"60 120 180 240"
 				"DamageTypeTooltip"		"DAMAGE_TYPE_PHYSICAL"
 			}
 			"speed"						"2000"
-			"silence_duration"			"1.75 2.0 2.25 2.5"
+			"silence_duration"			"2.0 2.25 2.5 2.75"
+			"attack_factor"				
+			{
+				"value"									"0"
+				"special_bonus_unique_kez_talon_toss_attack_factor"		"+50"
+			}
 		}
 	}
 
@@ -458,7 +473,7 @@
 		{
 			"sai_attack_range"									"150"
 			"sai_base_attack_time"								"1.5"
-			"sai_proc_vuln_chance"								"17"
+			"sai_proc_vuln_chance"								"18"
 			
 			"vuln_slow"											"0"
 			"vuln_duration"										"8.0"
@@ -467,14 +482,18 @@
 				"value"												"140 160 180 200"
 				"special_bonus_unique_kez_mark_damage"				"+100"
 			}
-			"stun_duration"											"0.5"
+			"stun_duration"										"0.5"
 
 
 			// Parry below here                   
 			"forward_angle"											"180"				
 			"speed_penalty"											"25"
 			"parry_duration"										"2.0"
-			"parry_bonus_crit"										"25 50 75 100"
+			"parry_bonus_crit"										
+			{
+				"value"												"0"
+				"special_bonus_unique_kez_mark_damage"				"+0"
+			}
 			"parry_stun_duration"									"0.5"
 
 			"sai_swap_bonus_movement_speed"		
@@ -540,7 +559,6 @@
 			"AbilityCooldown"				
 			{
 				"value"		"40 35 30"
-				"special_bonus_unique_kez_ultimate_cooldown"		"-4"
 			}
 			
 			"blast_radius"											
@@ -549,9 +567,14 @@
 				"affected_by_aoe_increase"	"1"	
 			}
 			"blast_speed"											"1500"
-			"buff_duration"											"7 8 9"
+			"buff_duration"											
+			{
+				"value"												"7 8 9"
+				"special_bonus_facet_kez_shadowhawk"				"+1"
+			}
 			"blind_duration"										"4.0"
 			"bonus_ms"												"15 25 35"
+			"slow"													"0"
 			"basic_dispel"											"1"										
 			"fade_delay"											"0.0"
 			"apply_parry_bonus"										
@@ -577,15 +600,15 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		"MaxLevel"						"4"
+		"MaxLevel"						"5"
 		"DependentOnAbility"			"kez_ravens_veil"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"mark_trigger_cd_reduction"			"20 30 40 50"
-			"invis_bonus_crit"				"40 60 80 100"
+			"invis_bonus_duration"				"1"
+			"invis_bonus_crit"					"30 45 60 75"
 		}
 	}
 }

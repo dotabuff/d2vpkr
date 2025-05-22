@@ -1,0 +1,46 @@
+"venomancer_noxious_plague_damage"
+{
+	"image"				"images/spellicons/venomancer_noxious_plague.png"
+	"requiredhero"		"venomancer"
+	"events"
+	{
+		"matching_type"		"linear_series"
+		"query"
+		{
+			"accumulate_event"
+			{
+				"event"					"damage"
+				"attack"				"venomancer_noxious_plague"
+				"damage_source"			"!hero"
+				"target_team"			"!enemyteam"
+				"target_must_be_hero"	"1"
+				"storage"
+				{
+					"1"
+					{
+						"key"			"value"
+						"aggregator"	"sum"
+					}
+				}
+			}
+		}
+		"progress_stored_in"	"1"
+		"post_tests"
+		{
+			"test_damage"
+			{
+				"storage"		"1"
+				"compare"		">="
+				"amount"		"<damage>"
+			}
+		}
+	}
+	"variables"
+	{
+		"<damage>"
+		{
+			"format"	"int"
+			"index"		"0"
+		}
+	}
+}

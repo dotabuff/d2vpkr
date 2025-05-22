@@ -33,7 +33,6 @@
 		
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"800"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -47,17 +46,23 @@
 				"attack_speed"				
 				{
 					"value"		"60 90 120 150"
-					"special_bonus_unique_bloodseeker_5" "+25"
 				}
 				"spell_amp"				
 				{
 					"value"		"15 20 25 30"
 					"special_bonus_unique_bloodseeker_6"	"+15"
+					"special_bonus_facet_bloodseeker_old_blood"			"=0"
+
 				}
 				"damage_pct"				
 				{
-					"value"		"1.4"
+					"value"		"1.4"	// NOTE: if changing this, change damage_pct_enemies
 					"special_bonus_unique_bloodseeker"		"-0.7"
+					"DamageTypeTooltip"			"DAMAGE_TYPE_PURE"
+				}
+				"damage_pct_enemies"	// NOTE: Separate value here so that the talent doesn't buff it for enemies
+				{
+					"value"		"1.4"
 					"DamageTypeTooltip"			"DAMAGE_TYPE_PURE"
 				}
 				"max_health_dmg_pct"	
@@ -69,6 +74,27 @@
 				{
 					"value"			"0"
 				}
+				"can_silence"
+				{
+					"special_bonus_facet_bloodseeker_old_blood"			"1"
+				}
+				"base_damage_amp"
+				{
+					"special_bonus_facet_bloodseeker_old_blood"			"=10 =15 =20 =25"
+					"special_bonus_unique_bloodseeker_6"				"+15"
+				}
+				"AbilityManaCost"
+				{
+					"value"   "0"
+					"special_bonus_facet_bloodseeker_old_blood"			"=60"
+				}
+				"AbilityCastRange"				
+				{
+					"value"   "800"
+					"special_bonus_facet_bloodseeker_old_blood"			"=400"
+				}
+
+
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityCastGestureSlot"		"DEFAULT"
@@ -216,8 +242,10 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"hero_bloodseeker.rupture"
-		
-		"AbilityDraftUltScepterAbility"		"bloodseeker_blood_mist"
+		"AbilityDraftExtraAbilities"
+		{
+			"bloodseeker_blood_mist" "scepter"
+		}
 
 
 		// Casting

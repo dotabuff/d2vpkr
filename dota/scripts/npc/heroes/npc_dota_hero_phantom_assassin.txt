@@ -14,7 +14,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"MaxLevel"						"1"
 		"FightRecapLevel"				"1"
-		"IsGrantedByShard"			"1"
+		"IsGrantedByScepter"			"1"
 		"AbilitySound"					"Ability.Torrent"
 
 		// Casting
@@ -24,7 +24,7 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20"
+		"AbilityCooldown"				"14"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -34,10 +34,10 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"pct_health_damage_initial"			"28"
+				"pct_health_damage_initial"			"30"
 				"pct_health_damage"			"2"
 				"degen"			"-50"
-				"duration"		"3"
+				"duration"		"4"
 				"radius"			
 				{
 					"value"			"550"
@@ -177,22 +177,16 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"MaxLevel"						"1"
-		"Innate"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"4"
 		"IsBreakable"					"1"
 
 		"AbilityValues"
 		{
-			"evasion_base"			
-			{
-				"value"		"20"
+			"evasion"		
+			{	
+				"value"				"20 30 40 50"
 				"special_bonus_unique_phantom_assassin_3"	"+15"
-			}
-			"evasion_per_level"		"1"
-			"evasion_tooltip"
-			{
-				"dynamic_value"		"true"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -206,16 +200,20 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"	
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-        "HasScepterUpgrade" 		    "1"
+        "HasShardUpgrade" 		 	   "1"
 		"MaxLevel"						"4"
+		"Innate"						"1"
+		"DependentOnAbility"			"phantom_assassin_coup_de_grace"
+
+
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60 55 50 45"
+
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -237,10 +235,6 @@
 			"duration"			"30"
 			"radius"				"625 550 475 400"
 			"fade_duration"			"0.4 0.6 0.8 1.0"
-			"scepter_cooldown"
-			{
-				"special_bonus_scepter"					"50"
-			}
 			"break_on_attack"							"0"
 			"manacost_reduction_during_blur_pct"
 			{
@@ -258,6 +252,24 @@
 				"special_bonus_facet_phantom_assassin_veiled_one"	"100"
 			}
 			"active_movespeed_bonus"				"3 6 9 12"
+			"immediate_cast"
+			{
+				"special_bonus_shard"				"0"
+			}
+			"purge_on_cast"
+			{
+				"special_bonus_shard"				"0"
+			}			
+			"cooldown_refund_pct"
+			{
+				"special_bonus_shard"				"60"
+			}
+			"AbilityCooldown"				
+			{
+				"value"					"60 55 50 45"
+				"special_bonus_shard"		"-10"
+			}
+
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -276,8 +288,10 @@
 		"IsBreakable"					"1"
 
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
-
-		"AbilityDraftUltShardAbility"		"phantom_assassin_fan_of_knives"
+		"AbilityDraftExtraAbilities"
+		{
+			"phantom_assassin_fan_of_knives" "shard"
+		}
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -353,7 +367,6 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"special_bonus_base"		
-		"ad_linked_abilities"			"phantom_assassin_coup_de_grace"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 	}
 
 	//=================================================================================================================

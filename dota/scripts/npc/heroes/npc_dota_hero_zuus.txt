@@ -89,7 +89,10 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilitySound"					"Hero_Zuus.ArcLightning.Cast"
 		
-		"AbilityDraftShardAbility"		"zuus_lightning_hands"
+		"AbilityDraftExtraAbilities"
+		{
+			"zuus_lightning_hands" "shard"
+		}
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -98,7 +101,6 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"1.6"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -108,6 +110,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+			"AbilityCooldown"
+			{
+				"value"							"1.6"
+				"special_bonus_unique_zeus_6"	"-0.4"
+			}
 			"arc_damage"
 			{
 				"value"			"90 120 150 180"
@@ -274,7 +281,7 @@
 				"damage_health_pct"
 				{
 					"value"								"2.5 3.0 3.5 4.0"
-					"special_bonus_unique_zeus_static_field_dmg"		"+1"
+					"special_bonus_unique_zeus_static_field_dmg"		"+1.5"
 					"special_bonus_facet_zuus_livewire"	"=0"
 				}
 
@@ -283,7 +290,7 @@
 					"special_bonus_facet_zuus_livewire"
 					{
 						"value"											"=5 =6 =7 =8"
-						"special_bonus_unique_zeus_static_field_dmg"	"+1"
+						"special_bonus_unique_zeus_static_field_dmg"	"+1.5"
 					}
 				}
 				"damage_health_pct_min_close"
@@ -291,7 +298,7 @@
 					"special_bonus_facet_zuus_livewire"
 					{
 						"value"											"=2.5 =3.0 =3.5 =4.0"
-						"special_bonus_unique_zeus_static_field_dmg"	"+1"
+						"special_bonus_unique_zeus_static_field_dmg"	"+1.5"
 					}
 				}
 				"distance_threshold_min"
@@ -323,8 +330,10 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Zuus.GodsWrath"
-
-		"AbilityDraftUltScepterAbility"		"zuus_cloud"
+		"AbilityDraftExtraAbilities"
+		{
+			"zuus_cloud" "scepter"
+		}
 	
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -483,11 +492,23 @@
 			"value"
 			{
 				"value" "325"
-				"ad_linked_abilities" "zuus_lightning_bolt"
 				"affected_by_aoe_increase"	"1"
 			}
 		}
 	}
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_zeus_6"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
+
 	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================

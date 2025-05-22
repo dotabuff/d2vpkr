@@ -232,11 +232,10 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0"
-		"AbilityCastRange"				"1000"
+		"AbilityCastRange"				"800"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"18 16 14 12"
 		"AbilityChannelTime"			"1.75"
 
 		// Cost
@@ -247,18 +246,24 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"impact_damage"			
-				{
-					"value"		"110 200 290 380"
-					"special_bonus_unique_monkey_king_3"		"+100"
-				}
-				"impact_movement_slow"	"35 50 65 80"
-				"impact_slow_duration"	"4.0"
-				"impact_radius"			
-				{
-					"value"		"375"
-					"affected_by_aoe_increase"	"1"		
-				}
+			"AbilityCooldown"
+			{
+				"value" "18 16 14 12"
+				"special_bonus_unique_monkey_king_8" "=0"
+			}
+
+			"impact_damage"			
+			{
+				"value"		"110 200 290 380"
+				"special_bonus_unique_monkey_king_3"		"+100"
+			}
+			"impact_movement_slow"	"35 50 65 80"
+			"impact_slow_duration"	"4.0"
+			"impact_radius"			
+			{
+				"value"		"375"
+				"affected_by_aoe_increase"	"1"		
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -295,8 +300,6 @@
 		"AbilitySound"					"Hero_MonkeyKing.FurArmy"
         "HasScepterUpgrade"			"1"
 
-		"AbilityDraftPreAbility"		"monkey_king_mischief"
-
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"1.0"
@@ -325,8 +328,17 @@
 					"value"		"750"
 					"affected_by_aoe_increase"	"1"		
 				}
+				"third_radius"
+				{
+					"special_bonus_unique_monkey_king_6"	"=1100"
+					"affected_by_aoe_increase"	"1"
+				}
 				"num_first_soldiers"				"5"
 				"num_second_soldiers"				"9"
+				"num_third_soldiers"
+				{
+					"special_bonus_unique_monkey_king_6"	"=7"
+				}
 				"move_speed"						"700"
 				"bonus_armor"						
 				{
@@ -398,7 +410,7 @@
 					"value"			"4"
 					"special_bonus_unique_monkey_king_11"	"-1"
 				}
-				"counter_duration"			"7 8 9 10"
+				"counter_duration"			"5.5 7.0 8.5 10.0"
 				"charges"	"4"
 				"bonus_damage"
 				{
@@ -411,119 +423,38 @@
 		}
 	}
 
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_monkey_king_2"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass" "special_bonus_base"
-	}
+
 
 	//=================================================================================================================
-	// Ability: Special Bonus
+	// Monkey King: Transfiguration (Fur army transform)
 	//=================================================================================================================
-	"special_bonus_unique_monkey_king_3"
+	"monkey_king_transfiguration"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"						"special_bonus_base"
-	}
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES "
 
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_monkey_king_6"
-	{
-		// General
+		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_4"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastPoint"				"0.3"
+		"MaxLevel"						"1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityCooldown"				"3"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"25"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"value"
-			{
-				"value" "1100"
-				"affected_by_aoe_increase" "1"
-				"ad_linked_abilities" "monkey_king_wukongs_command"
-			}
-			"value2"
-			{
-				"value" "7"
-				"ad_linked_abilities" "monkey_king_wukongs_command"
-			}
+			"transfiguration_duration"			"1.5"
+			"initial_cooldown"					"0.5"
 		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_monkey_king_7"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_monkey_king_8"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityValues"
-		{
-			"value"
-			{
-				"value" "0"
-				"ad_linked_abilities" "monkey_king_tree_dance"
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_monkey_king_9"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"						"special_bonus_base"
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_monkey_king_10"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-	}
-	
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_monkey_king_11"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		
 	}
 }

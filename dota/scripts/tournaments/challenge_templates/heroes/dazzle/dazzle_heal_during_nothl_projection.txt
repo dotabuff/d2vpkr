@@ -1,0 +1,61 @@
+"dazzle_heal_during_nothl_projection"
+{
+	"desc"		"#DOTA_ChallengeDesc_Dazzle_HealDuringNothlProjection"
+	"status_text"		"#DOTA_ChallengeStatusText_Dazzle_HealDuringNothlProjection"
+	"requiredhero"		"dazzle"
+	"image"			"images/spellicons/dazzle_nothl_projection.png"
+	"events"
+	{
+		"matching_type"		"timeblock_accumulate_between_events"
+		"query"
+		{
+			"start_event"
+			{
+				"event"			"modifier_add"
+				"modifier"		"modifier_dazzle_nothl_projection_soul_debuff"
+				"target"		"!hero"
+			}
+
+			"accumulate_event"
+			{
+				"event"		"heal"
+				"healer"	"!hero"
+				"target_must_be_hero"		"1"
+				"storage"
+				{
+					"1"
+					{
+						"key"				"value"
+						"aggregator"		"sum"
+					}
+				}
+			}
+
+			"end_event"
+			{
+				"event"			"modifier_remove"
+				"modifier"		"modifier_dazzle_nothl_projection_soul_debuff"
+				"target"		"!hero"
+			}
+		}
+
+		"progress_stored_in"		"1"
+		"post_tests"
+		{
+			"test_total_healing"
+			{
+				"storage"		"1"
+				"compare"		">="
+				"amount"		"<total_healing>"
+			}
+		}
+	}
+	"variables"
+	{
+		"<total_healing>"
+		{
+			"format"	"int"
+			"index"		"0"
+		}
+	}
+}

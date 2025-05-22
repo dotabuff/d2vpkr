@@ -142,7 +142,11 @@
 				"value"				"6"
 			}
 			"bonus_armor"			"5 10 15 20"
-			"heal_amp"				"5 10 15 20"
+			"heal_amp"
+			{
+				"value"				"5 10 15 20"
+				"special_bonus_unique_chen_divine_favor_healing" "+20"
+			}
 			"creep_bonus"			"1"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -194,7 +198,6 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilitySound"					"Hero_Chen.HolyPersuasionCast"
-		"HasScepterUpgrade"				"1"
 		"HasShardUpgrade"				"1"		
 
 		// Casting
@@ -219,25 +222,23 @@
 			"health_min"			
 			{
 				"value"						"400"
-				"special_bonus_unique_chen_4"	"+1200"
+				"special_bonus_unique_chen_4"	"+1300"
 			}
 			"bonus_health_per_level" "50"
 			"gold_pct"			"25 50 75 100"
 			"movement_speed_bonus"	"5 10 20 30"
 			"damage_bonus"	
 			{
-				"value"					"2 7 11 15"
-				"special_bonus_unique_chen_5"		"+12"
+				"value"					"4 8 12 16"
+				"special_bonus_unique_chen_5"		"+14"
 			}
 			"is_martyr"
 			{
 				"value"							"0"
-				"special_bonus_scepter"			"+1"
 			}
 			"current_hp_pct_tooltip"
 			{
 				"value"							"0"
-				"special_bonus_scepter"			"+30.0"	// TOOLTIP ONLY, reflects current_hp_pct in chen_martyrdom
 			}
 			"creep_ability_level"
 			{
@@ -298,14 +299,17 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Chen.HandOfGodHealHero"
+		"HasScepterUpgrade"				"1"
+
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.3 0.3 0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityChannelAnimation"       "ACT_DOTA_CHANNEL_ABILITY_4"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"150 130 110"
+		
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -315,6 +319,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+			"AbilityCooldown"
+			{
+				"value"							"150 130 110"
+				"special_bonus_scepter"			"-40"
+			}
+
 			"heal_amount"
 			{
 				"value"							"200 300 400"
@@ -335,6 +345,27 @@
 			"full_heal_on_chen_and_creeps"
 			{
 				"special_bonus_unique_chen_2"	"=1"
+			}
+
+			"AbilityChannelTime"
+			{
+				"special_bonus_scepter"			"=6"
+			}
+
+			"debuff_immune_radius"
+			{
+				"special_bonus_scepter"			"=800"
+				"affected_by_aoe_increase"		"1"
+			}
+
+			"debuff_immune_resist"
+			{
+				"special_bonus_scepter"			"60"
+			}
+
+			"nearby_hot_boost"
+			{
+				"special_bonus_scepter"			"200"
 			}
 		}
 	}
@@ -419,7 +450,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ad_linked_abilities"			"chen_hand_of_god"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 	}
 
 	//=================================================================================================================
@@ -472,7 +502,6 @@
 			"value"
 			{
 				"value" "30"
-				"ad_linked_abilities" "chen_hand_of_god"
 			}
 		}
 	}

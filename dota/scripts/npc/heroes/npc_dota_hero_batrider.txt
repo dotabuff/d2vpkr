@@ -36,6 +36,15 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+			"max_level"
+			{
+				"value"									"4"
+				"special_bonus_facet_batrider_arsonist" "+1"
+			}
+			"max_level_tooltip"
+			{
+				"special_bonus_facet_batrider_arsonist" "=5"
+			}
 			"AbilityCooldown"
 			{
 				"value"			"3.0"
@@ -44,10 +53,11 @@
 			{
 				"value"				"600"
 			}
+			"stacks_per_cast"						"2"
 			"damage"
 			{
-				"value"	"5 10 15 20"
-				"special_bonus_unique_batrider_4"	"+20"
+				"value"								"2.5 5 7.5 10 10"
+				"special_bonus_unique_batrider_4"	"+10"
 				"CalculateSpellDamageTooltip"		"1"
 			}
 			"radius"
@@ -57,40 +67,30 @@
 				"affected_by_aoe_increase"	"1"				
 			}
 			"duration"					"6"
-			"movement_speed_pct"		"-1.5 -3 -4.5 -6"			
-			"turn_rate_pct"				"-10 -30 -50 -70"
-			"max_stacks"				"10 10 10 10"
-			"creep_damage_pct"			"20"
-			"shard_napalm_on_attack_chance_pct"		
-			{
-				"special_bonus_shard"	"50"
-			}
-			"application_damage"		"5 10 15 20"
-			"is_passive"
-			{
-				"value"						"0"
-				"special_bonus_facet_1"	"0"
-			}
-			"base_applications_every_attack"
-			{
-				"value"						"0"
-				"special_bonus_facet_1"	"0"				
-			}
-			"bonus_applications_every_other_attack"
-			{
-				"value"						"0"
-				"special_bonus_shard"		"+1"
-			}
-			"attacks_apply_napalm_in_aoe"
-			{
-				"value"						"0"
-				"special_bonus_shard"		"0"				
-			}
-			"building_damage_pct"
+			"movement_speed_pct"		"-.75 -1.5 -2.25 -3 -3"			
+			"turn_rate_pct"				"-5 -15 -25 -35 -35"
+			"max_stacks"				"20"
+			"unlimited_stacks"
 			{
 				"value"					"0"
-				"special_bonus_facet_batrider_arsonist"			"+45"
-			}				
+				"special_bonus_shard"	"1"
+			}
+			"creep_damage_pct"			"20"
+			"application_damage"		"5 10 15 20 20"
+			"building_damage_pct"
+			{
+				"value"						"0"
+				"special_bonus_shard"		"+35"
+			}
+			"napalm_stacks_on_attack"
+			{
+				"value"									"0"
+				"special_bonus_facet_batrider_arsonist"	"=0 =0 =0 =0 =1"
+			}
+			"napalm_stacks_on_attack_tooltip"
+			{
+				"special_bonus_facet_batrider_arsonist"	"1"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -233,7 +233,7 @@
 			"napalm_stacks"
 			{
 				"value"				"0"
-				"special_bonus_unique_batrider_2"	"+2"
+				"special_bonus_unique_batrider_2"	"+4"
 			}
 			"AbilityCooldown"		
 			{
@@ -298,7 +298,24 @@
 				"value"			"100"
 				"affected_by_aoe_increase"	"1"
 			}
-			"bonus_slow_resistance"		"0"
+			
+			"self_burn_buff"
+			{
+				"special_bonus_facet_batrider_buff_on_displacement"		"=1"
+			}
+			"movement_speed_pct_total"
+			{
+				"special_bonus_facet_batrider_buff_on_displacement"		"=25 =30 =35 =40"
+			}
+			"spell_amplification_total"
+			{
+				"special_bonus_facet_batrider_buff_on_displacement"		"=20"
+			}
+			"hp_cost_per_second"
+			{
+				"special_bonus_facet_batrider_buff_on_displacement"		"=2.0"
+				"DamageTypeTooltip"										"DAMAGE_TYPE_MAGICAL"
+			}
 		}
 	}
 
@@ -320,8 +337,7 @@
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Batrider.FlamingLasso.Cast"
 
-		"HasScepterUpgrade"			"1"
-		"HasShardUpgrade"			"1"
+		"HasScepterUpgrade"				"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -360,7 +376,6 @@
 				"special_bonus_unique_batrider_6"			"-7"
 			}
 			"tick_rate"			"0.5"
-
 		}
 	}
 

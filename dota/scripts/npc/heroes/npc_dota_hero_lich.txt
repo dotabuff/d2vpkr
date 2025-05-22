@@ -102,11 +102,12 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"Innate"						"1"
-		"MaxLevel"						"1"
-				
+        "RestrictValuesToMaxLevel"		"1"
+		"DependentOnAbility"			"lich_chain_frost"
+
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1500"
@@ -122,6 +123,30 @@
 			}
 			"mana_restore_pct_from_creep"		"2.5"
 			"mana_restore_pct_from_hero"		"15"
+			"max_level"
+			{
+				"value"				"1"
+				"special_bonus_facet_lich_ritualist"				"=4"
+			}
+			"AbilityCooldown"		
+			{
+				"value"				"60 50 40 30"				
+			}
+			
+				
+			"health_conversion"		
+			{
+			
+				"value"									"0"
+				"special_bonus_facet_lich_ritualist"	"=0 =70 =85 =100"
+			}
+			"xp_multiplier"
+			{
+				"value"									"0"
+				"special_bonus_facet_lich_ritualist"	"=0 =100 =125 =150"
+
+			}
+
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -169,20 +194,29 @@
 			{
 				"value" "1.10 1.4 1.7 2.0"
 				"special_bonus_unique_lich_2" "+0.3"
-			}
+			}		
 			"destination"		"32 38 44 50"
-			"mana_drain"		"15"
+			"mana_drain"		"20"
 			"aoe_scepter"
 			{
 				"special_bonus_scepter" "+400"
 					"affected_by_aoe_increase"	"1"
 			}
-			"creep_duration_multiplier"				"2"
-
-			"frost_blast_damage_percent"
+			"damage"
 			{
-				"value" "0"			
+				"special_bonus_facet_lich_cryophobia"		"10 15 20 25"
+				"CalculateSpellDamageTooltip"				"0"
+				"DamageTypeTooltip"							"DAMAGE_TYPE_MAGICAL"
 			}
+			"slow_resistance"
+			{
+				"special_bonus_facet_lich_cryophobia"				"50"
+			}
+			"post_gaze_debuff_duration_multiplier"
+			{
+				"special_bonus_facet_lich_cryophobia"				"=2"
+			}
+
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -349,8 +383,10 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Lich.ChainFrost"
-
-		"AbilityDraftUltShardAbility"		"lich_ice_spire"
+		"AbilityDraftExtraAbilities"
+		{
+			"lich_ice_spire" "shard"
+		}
 
 		
 		// Casting
@@ -421,7 +457,7 @@
 			}
 			"frostbound_duration"						
 			{
-				"value"							"0"
+				"value"							"2"
 				"special_bonus_facet_lich_frostbound"			"=2 =2.75 =3.5"				
 			}
 		}			
@@ -469,8 +505,8 @@
 				"value"						"550"
 				"affected_by_aoe_increase"	"1"
 			}
-			"max_hero_attacks"			"5"
-			"max_creep_attacks"			"10"
+			"max_hero_attacks"			"4"
+			"max_creep_attacks"			"8"
 			"duration"					"15.0"
 			"slow_duration"				"0.5"				
 		}
@@ -485,7 +521,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ad_linked_abilities"			"lich_frost_shield"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 	}
 
 	//=================================================================================================================
@@ -502,7 +537,6 @@
 			"value"
 			{
 				"value" "0.4"
-				"ad_linked_abilities" "lich_sinister_gaze"
 			}
 		}
 	}
@@ -516,7 +550,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ad_linked_abilities"			"lich_frost_nova"
 	}
 
 	//=================================================================================================================
@@ -528,7 +561,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ad_linked_abilities"			"lich_frost_shield"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 	}
 
 	//=================================================================================================================
@@ -545,7 +577,6 @@
 			"value"
 			{
 				"value" "1"
-				"ad_linked_abilities" "lich_chain_frost"
 			}
 		}
 	}
@@ -559,7 +590,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ad_linked_abilities"			"lich_frost_nova"
 	}
 
 	//=================================================================================================================
@@ -571,7 +601,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ad_linked_abilities"			"lich_chain_frost"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 	}
 
 	//=================================================================================================================
@@ -583,7 +612,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"	
-		"ad_linked_abilities"			"lich_frost_shield"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 	}
 
 	//=================================================================================================================
