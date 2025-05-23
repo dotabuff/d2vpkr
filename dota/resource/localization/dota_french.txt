@@ -753,6 +753,7 @@
 		"DOTA_Item_ContextMenu_AddToDisliked"			"Ajouter aux objets à éviter"
 		"DOTA_Item_ContextMenu_RemoveFromLiked"			"Supprimer des préférences"
 		"DOTA_Item_ContextMenu_RemoveFromDisliked"		"Supprimer des objets à éviter"
+		"DOTA_Item_ContextMenu_MarkForBuy"				"Marquer pour l'achat"
 		"DOTA_BuyBackStateAlert_Ready"				"Rachat %s1Prêt"
 		"DOTA_BuyBackStateAlert_Gold"				"Rachat %s1Or insuffisant (%s2 manquant)"
 		"DOTA_BuyBackStateAlert_Cooldown"			"Rachat %s1en cours de recharge (durée restante : %s2)"
@@ -2269,10 +2270,7 @@ L'influence culturelle de chaque pierre se propagea puis, un jour, entra en conf
 		"DOTA_Item_Build_Variant0"				"Option 1"
 		"DOTA_Item_Build_Variant1"				"Option 2"
 		"DOTA_Item_Build_Variant2"				"Option 3"
-		"DOTA_Item_Build_PreferredItemsInfo"	"Faites glisser jusqu'à trois objets dans cette zone pour indiquer que vous souhaitez qu'ils apparaissent plus souvent dans vos builds recommandés. Cliquez ou faites-les glisser vers l'extérieur de la zone pour les supprimer.<br><br>Ces préférences sont sauvegardées pour chaque unité héroïque."
 		"DOTA_Item_Build_DislikedItemsEmpty"	"Faites glisser des objets ici pour indiquer que vous souhaitez qu'ils soient moins souvent recommandés."
-		"DOTA_Item_Build_DislikedItemsInfo"		"Faites glisser jusqu'à trois objets dans cette zone pour indiquer que vous souhaitez qu'ils apparaissent moins souvent dans vos builds recommandés. Cliquez ou faites-les glisser vers l'extérieur de la zone pour les supprimer.<br><br>Ces préférences sont sauvegardées pour chaque unité héroïque."
-
 		"DOTA_Item_Build_Core_Items_Secondary"	"Objets essentiels (Ours)"
 		"DOTA_Item_Build_Luxury"				"Objets contextuels"		
 		"dota_item_build_title_default"			"Guide par défaut"
@@ -2343,7 +2341,9 @@ L'influence culturelle de chaque pierre se propagea puis, un jour, entra en conf
 		"DOTA_InventoryMenu_MarkForSell_Tooltip"	    "L'objet sera immédiatement vendu dans la mesure du possible (en vie dans la base, dans une échoppe secrète ou par coursier)."
 
 		"DOTA_Inventory_KDA"					"V / M / C"     // kills / deaths / assists
-"Inventory_Default_Courier"				"Coursier par défaut"
+		"DOTA_Inventory_LHD"					"CF / Sac."        // last hits / denies
+		
+		"Inventory_Default_Courier"				"Coursier par défaut"
 		"DOTA_Inventory_Courier_Purchaser"		"Appartient à : %s1"		
 		"DOTA_Inventory_Courier_Delivery"		"Livrer les objets"		
 
@@ -5568,6 +5568,7 @@ L'influence culturelle de chaque pierre se propagea puis, un jour, entra en conf
 		"DOTA_Shop_Tip_EditCommonItems"		"Modifier vos objets épinglés<br>Les objets épinglés sont les mêmes pour toutes les unités héroïques."
 		"DOTA_Shop_Tip_PinnedItems"			"Les items épinglés seront toujours affichés. Pour modifier la liste, faites glisser des éléments vers ou hors des emplacements d'objets épinglés."
 		"DOTA_Shop_Title_PinnedItems"		"Objets épinglés"
+		"DOTA_Shop_Tip_WatchedItems"			"Les objets de l'équipe indiquent si des membres de l'équipe ont acheté des objets ou les ont mis dans la file d'achat rapide."
 		"DOTA_Shop_Title_WatchedItems"			"Objets d'éqp."
 		"DOTA_Shop_Tip_RequestSuggestion"	"Demander des suggestions d'achats<br>Les membres de votre équipe peuvent vous suggérer des objets à acheter en appuyant sur <font color='#E769DA'>Ctrl+Alt</font> et en cliquant sur des objets."
 
@@ -24014,6 +24015,7 @@ Pour y participer en tant que personne expérimentée, vous devez avoir joué au
 	"dota_page_match_details_unit_kills"	"Unités"
 	"dota_page_match_details_structure_kills"	"Bâtiments"
 	"dota_page_match_details_hide_kills"	"---"
+	"dota_page_match_details_kill_info_tooltip"		"%s1 a été tué(e) par %s2 (+%s3 d'or)."
 	"dota_page_match_details_kill_info_barracks"		"Casernes"
 	"dota_page_match_details_kill_info_tower"		"Tour"
 	"dota_page_match_details_kill_info_roshan"		"Roshan"
@@ -24745,6 +24747,7 @@ du Compendium d'Automne 2015"
 	"DOTA_Treasure_HelpHeaderPWZoomedOut"	"Item disponible"
 	"DOTA_Treasure_HelpHeaderPWZoomedOutPlural"	"Items disponibles"
 	"DOTA_Treasure_HelpHeaderGrantsAll"	"Chaque trésor contient tous ces items"
+	"DOTA_Treasure_HelpHeaderUnusuals"			"Les objets de ce trésor ont des variantes inhabituelles"
 	"DOTA_TreasureOdds_Header"			"Taux d'obtention"
 
 	"DOTA_tooltip_treasure_marketprice_disclaimer"	"L'estimation du prix se base sur un échantillon récent des items au prix le plus bas sur le marché de la communauté. Le prix définitif peut varier."
@@ -28918,6 +28921,16 @@ L'influence de Sélémène étant au plus bas, la déesse de la lune demande l'a
 	"DOTA_HUD_UnreliableGold"				"Or non fiable"
 	"DOTA_HUD_QuickbuyCost_Needed"			"Achat rapide"
 	"DOTA_HUD_QuickbuyCost_Surplus"			"Achat rapide"
+	"DOTA_HUD_DeathCost"					"Cout de la mort"
+	"DOTA_HUD_DeathTime"					"Durée avant réapparition"
+	"DOTA_HUD_BuybackCost"					"Cout du rachat"
+	"DOTA_HUD_BuybackCooldownReady"			"Rachat disponible"
+	"DOTA_HUD_BuybackCost_Needed"			"Or nécessaire pour le rachat"
+	"DOTA_HUD_BuybackCost_Surplus"			"Excédent"
+	"DOTA_HUD_QuickbuyAndBuybackCost_Needed"	"Achat rapide et rachat"
+	"DOTA_HUD_QuickbuyAndBuybackCost_Surplus"	"Achat rapide et rachat"
+	"DOTA_HUD_BuybackAvailable"				"Rachat disponible"
+	
 	"DOTA_HUD_Item_Owned_By"				"Possédé par : {s:owned_by}"
 	"DOTA_HUD_Item_Tooltip_Sell_Price"		"Prix ​​de vente :  {u:sell_price}"
 	"DOTA_HUD_Item_Tooltip_Sell_Price_Time"	"Prix ​​de vente : {u:sell_price} ( {s:sell_time} )"
@@ -30343,6 +30356,8 @@ Grâce à des héros early pressure tels que Zeus et Death Prophet, des split-pu
 	"DOTA_SpectatorLobby_Private_Description" "Mot de passe requis"
 
     "DOTA_SpectatorGraph_Levels" "niveaux"
+	"DOTA_SpectatorGraph_ClickToJump"	"%s1<br><br>Cliquez pour naviguer vers l'évènement."
+
 	"DOTA_FriendCount:p{friend_count}"	"{d:friend_count} contact#|#{d:friend_count} contacts"
 
 	"DOTA_DownloadingReplay"	"Téléchargement du replay..."
@@ -31170,6 +31185,8 @@ Grâce à des héros early pressure tels que Zeus et Death Prophet, des split-pu
 	"DOTA_738_Update"	  "Mise à jour du gameplay 7.38"
 	"DOTA_738b_Update"	  "Mise à jour du gameplay 7.38b"
 	"DOTA_738c_Update"	  "Mise à jour du gameplay 7.38c"
+	"DOTA_739_Update"	  "Mise à jour du gameplay 7.39"
+
 	"DOTA_Settings_Tooltip_NetworkLatency" "Si votre connexion réseau est sujette à des pertes de paquets, choisir « J'ai un réseau lent » dans les paramètres augmentera la latence au profit de la fluidité."
 
 	"DOTA_Popup_RankCalibration_Congrats" "Félicitations !"
@@ -48439,13 +48456,26 @@ Le colosse, qui ne peut pas être commandé, attaquera les unités qu'il voit da
 
 		"Tooltip_TeammateItems_Bought"									"Acheté"
 		"Tooltip_TeammateItems_Quickbuy"								"Dans la file d'achat rapide"
+		"Tooltip_TeammateItems_MajorComponent"							"Composant d'objet surveillé :"
+		"Tooltip_TeammateItems_PrimaryItem"								"Composant d'objet surveillé :"
+
+		"DOTA_SettingsShortcut_Options"									"Gérer les options ({s:settings_category})"
+		"DOTA_SettingsShortcut_Hotkeys"									"Gérer les raccourcis ({s:settings_category})"
 		"DOTA_SettingsShortcut_CourierCategory"							"Coursier"
 		"DOTA_SettingsShortcut_ShopCategory"							"Magasin"
 
+		"dota_settings_bind_HeroSelect"                         "Sélectionner l'unité héroïque"
+		"dota_settings_bind_SelectAll"                          "Sélectionner toutes les unités contrôlées"
+		"dota_settings_bind_HeroAttack"                         "Se déplacer et attaquer / Forcer l'attaque"
 		"dota_settings_bind_HeroHold"                           "Tenir la position"
 		"dota_settings_bind_LearnAbilities"                     "Acquérir une capacité"
 		"dota_settings_bind_LearnStats"                         "Améliorer les talents"
+		"dota_settings_bind_TalentUpgradeStatLeft"              "Améliorer le talent de gauche"
+		"dota_settings_bind_TalentUpgradeStatRight"             "Améliorer le talent de droite"
+		"dota_settings_bind_TalentUpgradeAttribute"             "Améliorer les attributs"
+		"dota_settings_bind_HeroMove"                           "Se déplacer"
 		"dota_settings_bind_HeroMoveDirection"                  "Mouvement directionnel"
+		"dota_settings_bind_HeroPatrol"                         "Patrouiller"
 		"dota_settings_bind_HeroStop"                           "Annuler l'action"
 		"dota_settings_bind_SelectAllOthers"                    "Sélectionner toutes les autres unités"
 		"dota_settings_bind_ActivateGlyph"                      "Activer Glyph of Fortification"
@@ -48519,6 +48549,9 @@ Le colosse, qui ne peut pas être commandé, attaquera les unités qu'il voit da
 		"dota_settings_bind_ChatWheelGetPush"                   "Push"
 		"dota_settings_bind_ChatWheelGoodJob"                   "Bien joué"
 		"dota_settings_bind_ChatWheelMissing"                   "Absence (ss)"
+		"dota_settings_bind_ChatWheelMissingTop"                "Personne en haut (ss top)"
+		"dota_settings_bind_ChatWheelMissingBottom"             "Personne en bas (ss bot)"
+		
 		"dota_settings_bind_Inventory1"             "Activer l'emplacement de l'inventaire n°1"
 		"dota_settings_bind_Inventory2"             "Activer l'emplacement de l'inventaire n°2"
 		"dota_settings_bind_Inventory3"             "Activer l'emplacement de l'inventaire n°3"
@@ -48544,11 +48577,20 @@ Le colosse, qui ne peut pas être commandé, attaquera les unités qu'il voit da
 		"dota_settings_bind_AbilitySecondary2"           "Lancer la capacité n°5"
 		"dota_settings_bind_AbilityUltimate"             "Lancer la capacité ultime"
 
+		"dota_settings_bind_AbilityPrimary1QuickCast"    "Utilisation rapide de la capacité n°1"
+		"dota_settings_bind_AbilityPrimary2QuickCast"    "Utilisation rapide de la capacité n°2"
+		"dota_settings_bind_AbilityPrimary3QuickCast"    "Utilisation rapide de la capacité n°3"
+		"dota_settings_bind_AbilitySecondary1QuickCast"  "Utilisation rapide de la capacité n°4"
+		"dota_settings_bind_AbilitySecondary2QuickCast"  "Utilisation rapide de la capacité n°5"
+		"dota_settings_bind_AbilityUltimateQuickCast"    "Utilisation rapide de la capacité ultime"
+
 		"dota_settings_bind_AbilityPrimary1AutoCastAlternate"    "Auto-utilisation capacité 1"
 		"dota_settings_bind_AbilityPrimary2AutoCastAlternate"    "Auto-utilisation capacité 2"
 		"dota_settings_bind_AbilityPrimary3AutoCastAlternate"    "Auto-utilisation capacité 3"
 		"dota_settings_bind_AbilitySecondary1AutoCastAlternate"  "Auto-utilisation capacité 4"
 		"dota_settings_bind_AbilitySecondary2AutoCastAlternate"  "Auto-utilisation capacité 5"
+		"dota_settings_bind_AbilityUltimateAutoCastAlternate"    "Auto-utilisation de la capacité ultime"
+
 		"dota_settings_bind_SpectatorCameraUp"                 "Caméra vers le haut"
 		"dota_settings_bind_SpectatorCameraDown"               "Caméra vers le bas"
 		"dota_settings_bind_SpectatorCameraLeft"               "Caméra vers la gauche"
@@ -48559,6 +48601,13 @@ Le colosse, qui ne peut pas être commandé, attaquera les unités qu'il voit da
 		"dota_settings_bind_SpectatorScoreboard"               "Tableau des scores"
 		"dota_settings_bind_SpectatorBroadcasterMenu"          "Ouvrir le menu de commentateur"
 		"dota_settings_bind_SpectatorStatsItem"                "Statistiques de l'objet"
+		"dota_settings_bind_SpectatorStatsGold"                "Graphique de l'or"
+		"dota_settings_bind_SpectatorStatsXP"                  "Graphique de l'expérience"
+		"dota_settings_bind_SpectatorStatsWinChance"           "Graphique de probabilité de victoire"
+		"dota_settings_bind_SpectatorFOWRadient"               "Brouillard : Radiant"
+		"dota_settings_bind_SpectatorFOWDire"                  "Brouillard : Dire"
+		"dota_settings_bind_SpectatorIncreaseReplaySpeed"      "Accélérer le replay"
+		"dota_settings_bind_SpectatorDecreaseReplaySpeed"      "Ralentir le replay"
 		"dota_settings_bind_SpectatorCameraSavedPosition1"     "Position 1"
 		"dota_settings_bind_SpectatorCameraSavedPosition2"     "Position 2"
 		"dota_settings_bind_SpectatorCameraSavedPosition3"     "Position 3"
@@ -48569,12 +48618,17 @@ Le colosse, qui ne peut pas être commandé, attaquera les unités qu'il voit da
 		"dota_settings_bind_SpectatorCameraSavedPosition8"     "Position 8"
 		"dota_settings_bind_SpectatorCameraSavedPosition9"     "Position 9"
 		"dota_settings_bind_SpectatorCameraSavedPosition10"    "Position 10"
+		"dota_settings_bind_SpectatorDropdown_Sort"            "Modifier l'ordre"
 		"dota_settings_bind_SpectatorDropdown_Close"           "Masquer la catégorie"
+		"dota_settings_bind_SpectatorDropdown_KDA"             "Victimes / Morts / Coop."
+		"dota_settings_bind_SpectatorDropdown_Lasthits_Denies" "Coups fatals / Sacrifices"
+		"dota_settings_bind_SpectatorDropdown_Level"           "Niveau héroïque"
 		"dota_settings_bind_SpectatorDropdown_HeroFacet"       "Facette héroïque"
 		"dota_settings_bind_SpectatorDropdown_XP_Per_Min"      "XP par minute"
 		"dota_settings_bind_SpectatorDropdown_Gold"            "Or actuel"
 		"dota_settings_bind_SpectatorDropdown_Networth"        "Valeur nette"
 		"dota_settings_bind_SpectatorDropdown_Gold_Per_Min"    "Or par minute"
+		"dota_settings_bind_SpectatorDropdown_Buyback"         "État du rachat"
 		"dota_settings_bind_SpectatorDropdown_Fantasy"         "Scores Fantasy"
 		"dota_settings_bind_SpectatorCoach_ViewToggle"         "Activer/désactiver la vue élève"
 
@@ -48584,6 +48638,8 @@ Le colosse, qui ne peut pas être commandé, attaquera les unités qu'il voit da
 		"dota_settings_bind_FilterNonHero" "N'agir que sur les unités non héroïques"
 
 		"dota_settings_bind_OverlayMapToggle"			"Afficher la carte en transparence"
+		"dota_settings_test_mic"						"Tester le micro"
+		"dota_settings_stop_test_mic"						"Arrêter le test"
 		"dota_settings_open_ping_wheel"			"+ maintien clic gauche"
 		"dota_settings_do_standard_ping"			"+ clic gauche"
 		"dota_settings_do_alternative_ping"			"+ clic droit"
@@ -48597,5 +48653,17 @@ Le colosse, qui ne peut pas être commandé, attaquera les unités qu'il voit da
 		"dota_settings_reset_ping_wheel_title"			"Réinitialiser la roue des pings ?"
 		"dota_settings_reset_ping_wheel_body"			"Votre roue des pings sera réinitialisée à sa configuration par défaut. Voulez-vous vraiment continuer ?"
 
-		}
+		"dota_settings_abilitybar_default"		"Par défaut"
+		"dota_settings_abilitybar_courier"		"Coursier"
+		"dota_settings_keybinder_confirm"		"Confirmer"
+
+		"dota_settings_video_resolution"		"Résolution"
+		"dota_settings_video_rendering"		"Rendu"
+
+		"dota_settings_resolution_classic"		"Classique"
+		"dota_settings_resolution_widescreen"		"Écran large"
+		"dota_settings_channels"		"Canaux"
+
+		"DOTA_DashboardGames_Title"								"Minijeux pour s'amuser pendant l'attente"
+	}
 } 
