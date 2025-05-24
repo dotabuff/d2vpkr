@@ -849,6 +849,7 @@
 		"DOTA_QuickBuyAlert_Enough"			"%s1J'ai assez d'or pour acheter <font color='%s2'>%s3</font>%s4"		
 		"DOTA_QuickBuyAlert_Buyback"				"%s1J'ai besoin de %s2 d'or pour acheter <font color='%s3'>%s4</font>%s5 et <font color='#00FF00'>me racheter</font>"		
 		"DOTA_QuickBuyAlert_Enough_Buyback"			"%s1J'ai assez d'or pour acheter <font color='%s2'>%s3</font>%s4 et <font color='#00FF00'>me racheter</font>"
+		"DOTA_Buyback_Protection"			"Protection de rachat ({s:buyback_protection_status})<br/>Maintenez <font color='#E769DA'>MAJ</font> pour activer/désactiver temporairement"
 		"DOTA_Buyback_Protection_On"			"oui"
 		"DOTA_Buyback_Protection_Off"			"non"
 
@@ -2274,7 +2275,10 @@ L'influence culturelle de chaque pierre se propagea puis, un jour, entra en conf
 		"DOTA_Item_Build_Variant1"				"Option 2"
 		"DOTA_Item_Build_Variant2"				"Option 3"
 		"DOTA_Item_Build_PreferredItemsEmpty"	"Faites glisser des objets ici pour indiquer que vous souhaitez qu'ils soient recommandés plus souvent."
+		"DOTA_Item_Build_PreferredItemsInfo"	"Faites glisser jusqu'à trois objets dans cette zone pour indiquer que vous souhaitez qu'ils apparaissent plus souvent dans vos builds recommandés. Faites-les glisser vers l'extérieur de la zone pour les supprimer.<br><br>Ces préférences sont sauvegardées pour chaque unité héroïque."
 		"DOTA_Item_Build_DislikedItemsEmpty"	"Faites glisser des objets ici pour indiquer que vous souhaitez qu'ils soient moins souvent recommandés."
+		"DOTA_Item_Build_DislikedItemsInfo"		"Faites glisser jusqu'à trois objets dans cette zone pour indiquer que vous souhaitez qu'ils apparaissent moins souvent dans vos builds recommandés. Faites-les glisser vers l'extérieur de la zone pour les supprimer.<br><br>Ces préférences sont sauvegardées pour chaque unité héroïque."
+
 		"DOTA_Item_Build_Core_Items_Secondary"	"Objets essentiels (Ours)"
 		"DOTA_Item_Build_Luxury"				"Objets contextuels"		
 		"dota_item_build_title_default"			"Guide par défaut"
@@ -2285,6 +2289,7 @@ L'influence culturelle de chaque pierre se propagea puis, un jour, entra en conf
 		"dota_item_build_save_success"		"Build sauvegardé"
 		"dota_item_build_common_items"		"Objets épinglés"
 		"dota_item_build_team_items"		"Objets d'éqp."
+		"dota_item_build_team_items_empty"	"<img src=\"file://{images}/control_icons/24px/help.svg\" scaling=\"stretch-to-fit-preserve-aspect\" /><span class=\"LearnMoreSpan\">Plus d'informations</span>"
 		"dota_item_build_player_suggestions" "Suggestions de l'équipe"
 		"dota_item_build_common_starting_items"		"Objets communs"
 		"dota_item_build_common_shared_items"		"Objets partagés"
@@ -2354,6 +2359,9 @@ L'influence culturelle de chaque pierre se propagea puis, un jour, entra en conf
 		// Auto Courier
 		"DOTA_AutoCourier_AutoBurst"			"Lancer automatiquement Pointe de vitesse quand la capacité est disponible"
 		"DOTA_AutoCourier_BuybackProtection"	"Protection de rachat après le niveau :"
+		"DOTA_AutoCourier_TurnOn"	"Activer la livraison automatique"
+		"DOTA_AutoCourier_TurnOff"	"Désactiver la livraison automatique"
+		
 		// Scoreboard
 		"DOTA_Scoreboard_GoodGuys"				"LE RADIANT"
 		"DOTA_Scoreboard_BadGuys"				"LE DIRE"
@@ -5462,6 +5470,8 @@ L'influence culturelle de chaque pierre se propagea puis, un jour, entra en conf
 		"dota_hud_error_cant_attack_building"			"Impossible d'attaquer les bâtiments"
 		"dota_hud_error_magnataur_already_empowered"	"Déjà sous l'effet d'Empower"
 		"dota_hud_error_not_available_before_game_start"	"Non disponible avant le début de la partie"
+		"dota_hud_error_not_enough_gold_buyback_protected"	"Or insuffisant (protection de rachat activée)"
+
 		"dota_cursor_silenced"							"Réduit au silence !"
 		"dota_cursor_muted"								"Mode muet activé !"
 		"dota_cursor_cooldown"							"%s1 seconde(s) restantes !"
@@ -12380,6 +12390,9 @@ L'influence culturelle de chaque pierre se propagea puis, un jour, entra en conf
 		"DOTA_AbilityDraftYourTurn"			"Sélectionnez une capacité :"
 		"DOTA_AbilityDraft_NoHero"			"Aucune unité"
 		"DOTA_AbilityDraft_NoInnate"		"La capacité innée de cette unité est désactivée en mode Ability Draft."
+		"DOTA_AbilityDraft_NoFacetName"		"Aucune facette"
+		"DOTA_AbilityDraft_NoFacetTooltip"	"Sélectionnez cette option pour ne donner aucune facette à votre unité héroïque."
+
 		"DOTA_SpringBoosterPurchaseHeader"	"Acheter et activer une Faveur du Fortuné ?"
 		"DOTA_SpringBoosterPurchaseDesc"	"Activez votre Faveur du fortuné pour obtenir des jetons de Jade en plus de lingots de Flamesalt bonus."
 
@@ -16809,7 +16822,6 @@ Provocation spéciales des Techies"
 
 		"DOTA_Guide_WorkshopSubtitle"	"{g:dota_persona:nl:guide_creator}"
 		"DOTA_Guide_WorkshopAuthor"		"{g:dota_persona:nl:guide_creator}"
-		"DOTA_Guide_WorkshopUpdateTime"	"Mis à jour le {t:s:M:updated_date}"
 		"DOTA_Guide_Subtitle"			"{s:guide_subtitle}"
 		"DOTA_Guide_PlayerRating"		"Évaluation des joueurs"
 		"DOTA_Guide_Subscribers"		"Abonné(e)s"
@@ -16974,9 +16986,6 @@ Provocation spéciales des Techies"
 		"DOTA_Workshop_UnableToChangeVisibility"	"Impossible de modifier la visibilité de l'article sur le Workshop Steam. Vous ne pouvez modifier que la visibilité des articles que vous avez créés. Veuillez réessayer une fois Steam de nouveau opérationnel."
 
 		"DOTA_HeroGuideViewer_Title"		"{g:dota_filtered_string:guide_name} par {g:dota_persona:nl:guide_creator}"
-		"DOTA_HeroGuideViewer_SubTitle"		"Mis à jour le : {t:s:M:updated_date} Parties jouées : {d:num_games} Abonné(e)s : {d:subscriber_count}"
-		"DOTA_HeroGuideViewer_SubTitleOriginalCreator"	"À partir d'un guide créé par {g:dota_persona:nl:guide_original_creator}, mis à jour le {t:s:M:updated_date}"
-		"DOTA_HeroGuideViewer_SubTitleCloud"	"Mis à jour le {t:s:M:updated_date}"
 		"DOTA_HeroGuideViewer_Rating"		"Note : {s:player_rating}"
 
 		"DOTA_HeroGuideViewer_GameplayVersion"	"{g:dota_gameplay_version:gameplay_version}"
@@ -20151,6 +20160,7 @@ Pour y participer en tant que personne expérimentée, vous devez avoir joué au
 	"DOTA_Chat_PlayerDraftPick_Dire"	"a choisi {g:dota_player_name:nh:proname:target_player_id} pour le <font color='#FE2142'>Dire</font>."
 
 
+	"DOTA_Chat_Ability_Draft_Start"    "<font color='#8FA7BB'>Maintenez les touches <font color='#C5D1DC'><b>CTRL</b></font> et <font color='#C5D1DC'><b>ALT</b></font> simultanément pour voir les améliorations de l'Aghanim et les facettes disponibles. <font color='#8FA7BB'>Maintenez la touche <font color='#C5D1DC'><b>ALT</b></font> et cliquez sur une capacité pour indiquer vos choix à votre équipe.<br>Maintenez la touche <font color='#C5D1DC'><b>CTRL</b></font> et cliquez sur une capacité pour la suggérer à votre équipe.</font>"
 	"DOTA_Chat_Ability_Draft_Randomed" "%s1 a attribué la capacité <font color='#FAEAC9'><b>[%s2]</b></font> au hasard."
 	"DOTA_Chat_RequestAbility"		"souhaiterait choisir <span class=\"RequestedAbility\" >[{g:dota_ability_name:ability_name}]</span>."
 	"DOTA_Chat_SuggestAbility"		"suggère à l'équipe de choisir <span class=\"RequestedAbility\" >[{g:dota_ability_name:ability_name}]</span>."
@@ -22223,6 +22233,8 @@ Pour y participer en tant que personne expérimentée, vous devez avoir joué au
 	"ranked_mmr_support_no_data"		"{i:support_calibrating_required_games} matchs requis pour calibrer"
 	"ranked_mmr_unlock_explain:p{ranked_required_play_time_hrs_for_unlock}"			"Débloqué après {i:ranked_required_play_time_hrs_for_unlock} heure en mode non classé#|#Débloqué après {i:ranked_required_play_time_hrs_for_unlock} heures en mode non classé"
 	"ranked_mmr_locked_explain_1"		"Matchmaking classé :"
+	"ranked_mmr_locked_explain_2"		"Un mode plus compétitif où vous choisissez un rôle et gagnez des matchs pour augmenter votre rang. Votre progression est indiquée par une médaille sur votre profil."
+	"ranked_mmr_locked_explain:p{ranked_required_play_time_hrs_for_unlock}"			"Matchmaking classé :\ndébloqué après {i:ranked_required_play_time_hrs_for_unlock} heure en mode non classé.\n\nMode plus compétitif où vous choisissez un rôle et où votre progression est indiquée par une médaille. Un numéro de téléphone doit être lié à votre compte pour jouer à ce mode de jeu, et chaque numéro de téléphone ne permet d'activer le matchmaking classé que pour un seul compte Dota.#|#Matchmaking classé :\ndébloqué après {i:ranked_required_play_time_hrs_for_unlock} heures en mode non classé.\n\nMode plus compétitif où vous choisissez un rôle et où votre progression est indiquée par une médaille. Un numéro de téléphone doit être lié à votre compte pour jouer à ce mode de jeu, et chaque numéro de téléphone ne permet d'activer le matchmaking classé que pour un seul compte Dota."
 	"ranked_mmr_lock_progress"			"{s:mmr_unlock_progress} heure(s) de jeu"
 
 	"ranked_mmr_label"				"MMR"
@@ -22501,6 +22513,7 @@ Pour y participer en tant que personne expérimentée, vous devez avoir joué au
 	"dota_settings_quickcast"					"Util. rapide"
 	"dota_settings_quickcast_down"				"Utilisation rapide : touche enfoncée"
 	"dota_settings_quickcast_up"				"Utilisation rapide : touche relâchée"
+	"dota_settings_mirror"						"Copier les raccourcis standards pour le mode spectateur"
 	"dota_settings_abilitylearn"				"Acquérir une capacité"
 	"dota_settings_upgradestats"				"Améliorer les statistiques"
 	"dota_settings_upgradetalents"				"Améliorer les talents"
@@ -22600,6 +22613,7 @@ Pour y participer en tant que personne expérimentée, vous devez avoir joué au
 	"dota_settings_chatwheel_page"				"Personnaliser la roue des dialogues"
 	"dota_settings_pingwheel_page"				"Personnaliser la roue de ping"
 	"dota_settings_itemspecificbinds_page"		"Personnaliser l'utilisation rapide pour les objets"
+	"dota_settings_itemspecificbinds_button_tooltip"		"Configurez l'utilisation rapide pour chaque objet :"
 	"dota_settings_itemspecificbinds_button_label"			"Ajustements par objet"
 	"dota_settings_itemspecificbinds_button_label_alt"		"Utilisation rapide par objet"
 	"dota_settings_itemspecificbinds_grouplabel_consumables"			"Consommables"
@@ -22735,7 +22749,10 @@ Pour y participer en tant que personne expérimentée, vous devez avoir joué au
 	"dota_settings_item_doubletapself"			"Double-clic ou double-appui pour utiliser sur soi"
 	"dota_settings_smart_doubletap"				"Double appui intelligent"
 	"dota_settings_unifiedorders"				"Ordres globaux avec CTRL"
+	"dota_settings_teleportrequireshalt"		"Téléportations"
+	"dota_settings_channelrequireshalt"			"Capacités"
 	"dota_settings_interactionrequireshalt"		"Interactions avec les structures"
+	"dota_settings_interactionrequireshalt_new_setting_title"		"Interactions avec les structures"
 	"dota_settings_showqueuedorders"			"Afficher les ordres donnés au-dessus du HUD"
 	"dota_settings_force_right_click_attack"	"Clic droit sur les unités alliées :"
 	"dota_settings_force_right_click_attack_0"	"Pour suivre"
@@ -23132,6 +23149,9 @@ Pour y participer en tant que personne expérimentée, vous devez avoir joué au
 	"DOTA_Hotkeys_Tooltip_Group"  "Sélectionne un groupe de contrôle d'unités prédéfini. Pour définir un groupe de contrôle, sélectionnez les unités désirées et maintenez CTRL + un de ces raccourcis clavier de groupe."
 	"DOTA_Hotkeys_Tooltip_Legacy"  "Si cette option est activée, les raccourcis de Dota 1 seront définis. Les raccourcis des capacités varient en fonction de l'unité héroïque."
 	"DOTA_Hotkeys_Tooltip_PerUnitHotkeys"  "Permet d'utiliser plusieurs raccourcis de capacités différents par unité."
+	"DOTA_Hotkeys_Tooltip_Quickcast"  "Une capacité lancée via l'utilisation rapide se déclenche à la position du curseur de la souris dès l'activation du raccourci.<br><br>Vous pouvez également associer des touches spécifiques pour l'utilisation rapide et automatique."
+	"DOTA_Hotkeys_Tooltip_Quickcast_Items"  "Un objet déclenché via l'utilisation rapide se déclenche à la position du curseur de la souris dès l'activation du raccourci.<br><br>Vous pouvez également associer des touches spécifiques pour l'utilisation rapide."
+	"DOTA_Hotkeys_Tooltip_Autocast"  "L'utilisation automatique concerne un nombre limité de capacités. Quand une capacité est automatisée, elle est lancée automatiquement à la fin du temps de recharge (par exemple, l'attaque Poison de Viper) ou elle s'applique sur l'unité héroïque elle-même (par exemple, Bloodseeker se lancera Bloodrage sur lui-même)."
 	"DOTA_Hotkeys_Tooltip_Cast"  "Raccourci pour utiliser une capacité du héros."
 	"DOTA_Hotkeys_Tooltip_AbilityCast"  "Raccourci pour utiliser une capacité du héros."
 	"DOTA_Hotkeys_Tooltip_ItemCast"  "Raccourci pour utiliser un objet de votre inventaire."
@@ -31079,9 +31099,11 @@ Grâce à des héros early pressure tels que Zeus et Death Prophet, des split-pu
 	"DOTA_VoidPack_Music_Pack_Title"		"Pack de musiques « Void »"
 	"DOTA_VoidPack_Music_Pack_Text"		"Un nouveau pack de musiques au style heavy métal composé par Humanity's Last Breath."
 
+	"DOTA_SeasonRank_Tooltip_Title" "Médailles de rangs"
 	"DOTA_SeasonRank_Tooltip_YourMedalsSubtitle" "Votre médaille actuelle"
 	"DOTA_SeasonRank_Tooltip_TitleCore" "Médailles de rangs saisonniers : médaille Core"
 	"DOTA_SeasonRank_Tooltip_TitleSupport" "Médailles de rangs saisonniers : médaille Support"
+	"DOTA_SeasonRank_Tooltip_Text1" "Vos performances sont représentées par une médaille de rang."
 	"DOTA_SeasonRank_Tooltip_Text2" "Vous devez obtenir cinq étoiles avant de passer à la médaille suivante."
 	"DOTA_SeasonRank_Tooltip_Text3" "Pour obtenir une médaille, vous devez participer à des matchs classés.\nTout le monde peut voir les médailles des autres avant et pendant chaque match."
 
@@ -34870,6 +34892,9 @@ Grâce à des héros early pressure tels que Zeus et Death Prophet, des split-pu
 	"DOTA_Winter2024_HeroesHoard_TitleShort"			"Butin héroïque"
 	"DOTA_Winter2024_HeroesHoard_Cell_Description"		"Découvrez 17 nouveaux ensembles héroïques, dont de nouveaux objets immortels, un nouvel animal de compagnie, des railleries et bien plus encore."
 	"DOTA_Winter2024_NewForTheHolidays"					"NOUVEAUTÉS POUR LES FÊTES !"
+
+	"DOTA_Winter2025_HeroesHoard_Spring2025"			"PRINTEMPS 2025"	
+	"DOTA_Spring2025_HeroesHoard_Description"			"Apprêtez-vous pour la nouvelle saison avec 16 nouveaux ensembles héroïques, dont de nouveaux objets immortels, des personas, des railleries et bien plus encore."
 
 	"DOTA_TI10_Collectors_Cache_Loading"				"Chargement des informations..."
 	"DOTA_TI10_Collectors_Cache_Remaining"				"restant(s) pour acheter"
@@ -48700,13 +48725,23 @@ Le colosse, qui ne peut pas être commandé, attaquera les unités qu'il voit da
 		"dota_settings_abilitybar_courier"		"Coursier"
 		"dota_settings_abilitybar_neutrals"		"Objets neutres"
 
+		"dota_settings_doubletap"		"Double appui"
+
+		"dota_settings_keybinder_bindanyway"		"Confirmer quand même"
 		"dota_settings_keybinder_confirm"		"Confirmer"
 
+		"dota_settings_direct_cast_bindings"		"Raccourcis d'incantation"
+		"dota_settings_direct_cast_bindings_tooltip"		"Les raccourcis d'incantation vous permettent d'associer des touches directement au lancement d'une capacité, de son utilisation rapide ou son auto-utilisation."
+
+		"dota_settings_video_screen"		"Écran"
 		"dota_settings_video_resolution"		"Résolution"
 		"dota_settings_video_rendering"		"Rendu"
 
 		"dota_settings_resolution_classic"		"Classique"
+		"dota_settings_resolution_laptop"		"Ordinateur portable"
 		"dota_settings_resolution_widescreen"		"Écran large"
+		"dota_settings_resolution_ultrawide"		"Ultralarge"
+
 		"dota_settings_attack_category"		"Attaque"
 		"dota_settings_channels"		"Canaux"
 
