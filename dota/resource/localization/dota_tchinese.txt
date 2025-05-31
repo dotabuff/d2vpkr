@@ -2311,11 +2311,7 @@
 "Inventory_Default_Courier"				"預設信使"
 		"DOTA_Inventory_Courier_Purchaser"		"擁有者：%s1"		
 		"DOTA_Inventory_Courier_Delivery"		"信使遞送物品"		
-
-		// Auto Courier
-		"DOTA_AutoCourier_AutoBurst"			"可用時自動施放爆衝"
-		"DOTA_AutoCourier_BuybackProtection"	"買活保障開始等級："
-		// Scoreboard
+// Scoreboard
 		"DOTA_Scoreboard_GoodGuys"				"聖輝"
 		"DOTA_Scoreboard_BadGuys"				"魔魘"
 		"DOTA_Scoreboard_Header_PLAYER"			"玩家"
@@ -22583,6 +22579,8 @@
 	"dota_settings_unifiedorders"				"「Ctrl 鍵」下達統一單位命令"
 	"dota_settings_teleportrequireshalt"		"僅有「堅守原位」和「取消當下動作」可打斷傳送"
 	"dota_settings_channelrequireshalt"			"僅有「堅守原位」和「取消當下動作」可打斷技能"
+	"dota_settings_interactionrequireshalt"		"僅有「堅守原位」和「取消當下動作」可打斷佔領建築"
+	"dota_settings_interactionrequireshalt_new_setting_title"		"僅有「堅守原位」和「取消當下動作」可打斷佔領建築"
 	"dota_settings_showqueuedorders"			"在 HUD 介面中顯示命令佇列"
 	"dota_settings_force_right_click_attack"	"右鍵點擊隊友："
 	"dota_settings_force_right_click_attack_0"	"跟隨"
@@ -22977,9 +22975,9 @@
 	"DOTA_Hotkeys_Tooltip_DotaAlt"	"按下此命令綁定的按鍵形同按下「左 Alt 鍵」"
 	"DOTA_Hotkeys_Tooltip_DotaAlternativeCastSwitch"	"重新綁定按鍵，以在不用切換施放方式的情況下，使用另一個方式來施放有次要施放方式的技能（預設下為 CTRL）"
 	"DOTA_Hotkeys_Tooltip_Group"  "用於迅速選擇一組單位。編組方法為：選擇若干單位，按住「Ctrl」鍵和其中一個控制組的快捷鍵。"
-	"DOTA_Hotkeys_Tooltip_Legacy"  "使用 Dota 傳統快捷鍵設定；各英雄快捷鍵不盡相同。"
 	"DOTA_Hotkeys_Tooltip_PerUnitHotkeys"  "准許不同單位使用各自的技能快捷鍵。"
 	"DOTA_Hotkeys_Tooltip_Quickcast"  "只要在滑鼠游標的目前位置按下快捷鍵，就會觸發快速施放技能。<br><br>啟用直接施放配置能讓您為快速施放和自動施放綁定特定按鍵。"
+	"DOTA_Hotkeys_Tooltip_Quickcast_Items"  "只要在滑鼠游標的目前位置按下快捷鍵，就會觸發快速施放道具。<br><br>啟用直接施放配置能讓您為快速施放綁定特定按鍵。"
 	"DOTA_Hotkeys_Tooltip_Cast"  "用於施放英雄技能的快捷鍵。"
 	"DOTA_Hotkeys_Tooltip_AbilityCast"  "使用英雄技能的快捷鍵。"
 	"DOTA_Hotkeys_Tooltip_ItemCast"  "對應著各個裝備欄的快捷鍵。"
@@ -34997,8 +34995,6 @@
 		"DOTA_Plus_RoleAssistant_Updated"	"更新時間：{t:s:roles_end_timestamp}"  
 
 		"DOTA_Plus_ItemAssistant_Title"			"道具助理"
-		"DOTA_Plus_ItemAssistant_Help"			"左鍵點擊以檢視其它選項。"
-
 		"DOTA_Plus_NeutralItemAssistant_Title"			"中立道具助理"
 		"DOTA_Plus_NeutralItemAssistant_Instructions"	"點擊以收回物品。"
 		"DOTA_Plus_NeutralItemAssistant_Help"					"點擊以檢視 Dota Plus 建議的中立道具。"
@@ -37997,6 +37993,14 @@
 
 
 	   "DOTA_Tooltip_ability_aghsfort_special_gyrocopter_homing_missile_ride_Description"		"任何隊友都能夠騎上追蹤飛彈。飛彈行徑時穿越的敵人將受到暈眩及 %damage_mult% 倍的飛彈傷害。無法跨越特定地形。"
+	   "DOTA_Tooltip_ability_aghsfort_special_gyrocopter_flak_cannon_first_strike_Description"	"高射火砲的首次攻擊會擊中地圖上所有可見的敵方單位。"
+	   "DOTA_Tooltip_ability_aghsfort_special_gyrocopter_flak_cannon_side_gunner"				"副砲手"
+	   "DOTA_Tooltip_ability_aghsfort_special_gyrocopter_flak_cannon_side_gunner_Description"	"增添一個副砲手，以 %fire_rate% 攻速隨機攻擊自轉旋翼機附近的敵方單位。優先攻擊 %scepter_radius% 範圍內最遠的單位。"
+	   "DOTA_Tooltip_ability_aghsfort_special_gyrocopter_flak_cannon_missiles"					"火砲飛彈"
+	   "DOTA_Tooltip_ability_aghsfort_special_gyrocopter_flak_cannon_missiles_Description"		"高射火砲的第一次攻擊會朝所有被擊中的次要敵人發射追蹤飛彈，造成追蹤飛彈的 %value%%% 傷害並使其暈眩。"
+	   "DOTA_Tooltip_ability_aghsfort_special_gyrocopter_flak_cannon_fire_trail"				"燃油軌跡"
+	   "DOTA_Tooltip_ability_aghsfort_special_gyrocopter_flak_cannon_fire_trail_Description"	"高射火砲的次要射擊都會在下方留下一道火焰軌跡，每 %burn_interval% 秒造成自轉旋翼機的 %damage_pct%%% 攻擊傷害。"
+	   "DOTA_Tooltip_ability_aghsfort_special_gyrocopter_call_down_attack_buff"					"友方砲火"
 	   "aghsfort_gyrocopter_rocket_barrage_mana_cost_cooldown"							"{s:ability_name}冷卻 / 魔耗減免 {s:value1}%"
 
 
@@ -38367,10 +38371,32 @@
         "DOTA_Tooltip_ability_aghsfort_special_phoenix_sun_ray_focus_point_Description"	"烈日炙烤末端造成多 %damage_pct%%% 的傷害，以及多 %heal_pct%%% 的治療。"
 
 		"DOTA_Tooltip_ability_aghsfort_talent_phoenix_supernova_bonus_dps"			"超新星每秒傷害 +{s:value}"
+		"DOTA_Tooltip_ability_aghsfort_talent_phoenix_sun_ray_damage"				"烈日炙烤每次間隔傷害 +{s:bonus_base_damage}"
+		"DOTA_Tooltip_ability_aghsfort_talent_phoenix_supernova_attacks_to_kill"	"摧毀超新星所需攻擊次數 +{s:bonus_attacks_to_kill}"
+
 		"aghsfort_phoenix_icarus_dive_mana_cost_cooldown"	"{s:ability_name}冷卻 / 魔耗減免 {s:value1}%"
-"aghsfort_phoenix_fire_spirits_mana_cost_cooldown"	"{s:ability_name}冷卻 / 魔耗減免 {s:value1}%"
+		//"aghsfort_phoenix_icarus_dive_dash_length"			"+{s:value} {s:ability_name} Dash Length"
+		"aghsfort_phoenix_icarus_dive_burn_duration"		"{s:ability_name}燃燒持續時間 +{s:value} 秒"
+		"aghsfort_phoenix_icarus_dive_damage_per_second"	"{s:ability_name}每秒傷害 +{s:value}"
+		"aghsfort_phoenix_icarus_dive_move_slow"			"{s:ability_name}緩速效果 +{s:value}%"
+
+		"aghsfort_phoenix_fire_spirits_mana_cost_cooldown"	"{s:ability_name}冷卻 / 魔耗減免 {s:value1}%"
+		"aghsfort_phoenix_fire_spirits_spirit_count"		"{s:ability_name}的精靈數 +{s:value}"
+		"aghsfort_phoenix_fire_spirits_radius"				"{s:ability_name}範圍 +{s:value}"
+		"aghsfort_phoenix_fire_spirits_burn_duration"		"{s:ability_name}燃燒持續時間 +{s:value} 秒"
+		"aghsfort_phoenix_fire_spirits_attackspeed_slow"	"{s:ability_name}攻速減緩 +{s:value}%"
+		"aghsfort_phoenix_fire_spirits_damage_per_second"	"{s:ability_name}每秒傷害 +{s:value}"
+
 		"aghsfort_phoenix_sun_ray_mana_cost_cooldown"		"{s:ability_name}冷卻 / 魔耗減免 {s:value1}%"
+		"aghsfort_phoenix_sun_ray_base_damage"				"{s:ability_name}每秒傷害 +{s:value}"
+		"aghsfort_phoenix_sun_ray_hp_perc_heal"				"{s:ability_name}作為治療的最大生命百分比 +{s:value}%"
+
 		"aghsfort_phoenix_supernova_mana_cost_cooldown"		"{s:ability_name}冷卻 / 魔耗減免 {s:value1}%"
+		"aghsfort_phoenix_supernova_damage_per_sec"			"{s:ability_name}每秒傷害 +{s:value}"
+		"aghsfort_phoenix_supernova_stun_duration"			"{s:ability_name}暈眩時間 +{s:value} 秒"
+		"aghsfort_phoenix_supernova_attacks_to_kill"		"摧毀{s:ability_name}所需攻擊次數 +{s:value}"
+		"aghsfort_phoenix_supernova_aura_radius"			"{s:ability_name}範圍 +{s:value}"
+
 		// PHOENIX HERO END
 		
 
@@ -38387,6 +38413,18 @@
 		"DOTA_Tooltip_modifier_aghsfort_clinkz_burning_barrage"						"骨隱步"
 		"DOTA_Tooltip_modifier_aghsfort_clinkz_burning_barrage_Description"			"攻擊速度提升 %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%。"
 
+		"DOTA_Tooltip_ability_aghsfort_clinkz_searing_arrows"					"灼熱之箭"
+		"DOTA_Tooltip_ability_aghsfort_clinkz_searing_arrows_Description"		"克林克茲讓自己的箭矢帶有火焰以造成更多傷害。被灼熱之箭射中的敵人的攻擊速度會降低 %debuff_duration% 秒。"
+		"DOTA_Tooltip_ability_aghsfort_clinkz_searing_arrows_Lore"				"克林克茲的箭矢只是用了他的熾烈本質點燃便頗具破壞力。"
+		"DOTA_Tooltip_ability_aghsfort_clinkz_searing_arrows_Note0"				"灼熱之箭可對建築物造成傷害。"
+		"DOTA_Tooltip_ability_aghsfort_clinkz_searing_arrows_Note1"				"傷害直接加進克林克茲的普攻傷害裡，計為物理傷害。"
+		"DOTA_Tooltip_ability_aghsfort_clinkz_searing_arrows_damage_bonus"		"傷害加成："
+		"DOTA_Tooltip_ability_aghsfort_clinkz_searing_arrows_attack_slow"		"攻擊速度降低："
+
+		"DOTA_Tooltip_modifier_aghsfort_clinkz_searing_arrows_debuff"				"灼熱之箭"
+		"DOTA_Tooltip_modifier_aghsfort_clinkz_searing_arrows_debuff_Description"	"攻擊速度受到降低。"
+
+		"DOTA_Tooltip_ability_aghsfort_clinkz_skeleton_walk"						"骨隱步"
 		"DOTA_Tooltip_ability_aghsfort_clinkz_skeleton_walk_Description"			"克林克茲進入隱形狀態，可穿過單位移動還有魔法抗性加成，直到他攻擊或使用道具時才會解除隱形。"
 		"DOTA_Tooltip_ability_aghsfort_clinkz_skeleton_walk_Lore"					"伴隨著一團火焰和一縷青煙，骷髏弓箭手遁入無形。"
 		"DOTA_Tooltip_ability_aghsfort_clinkz_skeleton_walk_Note0"					"隱形延遲時間 %fade_time% 秒。"
@@ -38465,8 +38503,14 @@
 
 		"aghsfort_clinkz_skeleton_walk_mana_cost_cooldown"	"{s:ability_name}冷卻 / 魔耗減免 {s:value1}%"
 		"aghsfort_clinkz_burning_army_mana_cost_cooldown"	"{s:ability_name}冷卻 / 魔耗減免 {s:value1}%"
-		"DOTA_Tooltip_ability_aghsfort_talent_clinkz_6"    "死亡契約生命 +{s:value}"
+		"DOTA_Tooltip_ability_aghsfort_talent_clinkz_4"    "燃燒軍隊全力一擊"
+        "DOTA_Tooltip_ability_aghsfort_talent_clinkz_5"    "燃燒軍隊冷卻時間 -{s:value} 秒"
+        "DOTA_Tooltip_ability_aghsfort_talent_clinkz_6"    "死亡契約生命 +{s:value}"
+        "DOTA_Tooltip_ability_aghsfort_talent_clinkz_7"    "掃射攻擊速度 +{s:value}"
         "DOTA_Tooltip_ability_aghsfort_talent_clinkz_8"    "死亡契約生命 / 傷害 +{s:value}/{s:value2}%"
+        "DOTA_Tooltip_ability_aghsfort_talent_clinkz_9"    "脫離骨隱步狀態召喚一支燃燒軍隊骷髏弓箭手"
+        "DOTA_Tooltip_ability_aghsfort_talent_clinkz_10"   "骨隱步冷卻時間 -{s:value} 秒"
+        "DOTA_Tooltip_ability_aghsfort_talent_clinkz_11"   "擊殺重置死亡契約冷卻"
         "DOTA_Tooltip_ability_aghsfort_talent_clinkz_12"   "狂熱連射箭矢數 +{s:value}"
 
 		
@@ -38645,6 +38689,20 @@
 		"DOTA_Tooltip_ability_aghsfort_special_kunkka_no_quarter_Description"					"獲得 %value% 次的潮汐使者使用次數。每個被潮汐使者波及的敵人會給昆卡持續 %duration% 秒的 %movespeed_increase_per_cleaved_unit_pct%%% 額外移動速度和 %damage_pct_increase_per_cleave_stack%%% 額外傷害。最高可疊加至 %max_stacks% 次。"
 
 		"aghsfort_kunkka_ghost_ship_mana_and_cooldown"			"{s:ability_name}冷卻 / 魔耗減免 {s:value1}%"
+		"aghsfort_kunkka_ghost_ship_width"						"{s:ability_name}撞毀範圍 +{s:value}"
+		"aghsfort_kunkka_ghost_ship_movespeed"					"{s:ability_name}移速 +{s:value}"
+		"aghsfort_kunkka_ghost_ship_buff_duration"				"{s:ability_name}蘭姆酒持續時間 +{s:value} 秒"
+		"aghsfort_kunkka_ghost_ship_stun_duration"				"{s:ability_name}暈眩時間 +{s:value} 秒"
+		"aghsfort_kunkka_ghost_ship_speed"						"{s:ability_name}移速 +{s:value}"
+		"aghsfort_kunkka_ghost_ship_absorb"						"{s:ability_name}蘭姆酒傷害吸收 +{s:value}%"
+		"aghsfort_kunkka_torrent_mana_and_cooldown"				"{s:ability_name}冷卻 / 魔耗減免 {s:value1}%"
+		"aghsfort_kunkka_torrent_movespeed_bonus"				"{s:ability_name}移速加成 {s:value}%"
+		"aghsfort_kunkka_torrent_slow_duration"					"{s:ability_name}緩速持續時間 +{s:value} 秒"
+		"aghsfort_kunkka_torrent_stun_duration"					"{s:ability_name}暈眩時間 +{s:value} 秒"
+		"aghsfort_kunkka_torrent_delay"							"{s:ability_name}延遲 {s:value}%"
+		"aghsfort_kunkka_torrent_damage"						"{s:ability_name}傷害 +{s:value}"
+		"aghsfort_kunkka_tidebringer_width"						"{s:ability_name}單位波及寬度 +{s:value}"
+		"aghsfort_kunkka_tidebringer_distance"					"{s:ability_name}波及距離 +{s:value}"
 		"aghsfort_kunkka_ghost_ship_damage"						"{s:ability_name}傷害 +{s:value}"
 
 		"DOTA_Tooltip_modifier_aghsfort_kunkka_tidebringer"								"潮汐使者"
@@ -45205,6 +45263,7 @@
 		"dota_settings_direct_cast_bindings"		"直接施放配置"
 		"dota_settings_direct_cast_bindings_tooltip"		"直接施放配置讓您能將技能與按鍵綁定，以施放、快速施放或自動施放技能。"
 
+		"dota_settings_per_unit_keybindings_disabled_during_custom_games" "停用在自訂遊戲中的個別單位快捷鍵"
 		"DOTA_DashboardGames_Title"								"小遊戲，讓佇列等待的時光不再無聊"
 	}
 } 

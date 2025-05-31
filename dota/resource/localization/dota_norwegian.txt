@@ -867,10 +867,8 @@
 		"DOTA_Modifier_Alert_Ally_SB_ChargeOfDarknessTarget"	"<font color='%s4'>%s5</font> (alliert) %s3 stormer mot %s3 <font color='%s6'>%s7</font>"
 		"DOTA_Modifier_Alert_Enemy_SB_ChargeOfDarknessTarget"	"<font color='%s4'>%s5</font> (fiendtlig) påvirket av: <font color='%s1'>%s2</font>"
 
-		"DOTA_Modifier_Alert_Oracle_Rune_Top"					"øvre"
-		"DOTA_Modifier_Alert_Oracle_Rune_Bottom"				"nedre"
-
-
+		"DOTA_Modifier_Alert_Oracle_Rune_Prediction"			"Prognosticate %s1 %s2 <font color='%s3'>%s4</font> på %s5. <font color='%s6'>%s7</font> er forutsagt å være på %s8 ved %s9."
+		"DOTA_Modifier_Alert_Oracle_Rune_Prediction_FirstSpawn"	"Prognosticate %s1 %s2 Første runer er <font color='#FF7800'>dusørruner</font>, etterfulgt av <font color='#0ba0c1'>vannruner</font> et par ganger."
 		"DOTA_Modifier_Alert_Time_Remaining"	" (%s1 sekunder igjen)"
 
 		"DOTA_EmptyTeleport_Alert_Self_Ready"		"Jeg har ikke en <font color='#FFFFFF'>Town Portal Scroll</font>"
@@ -2194,8 +2192,6 @@
 		"DOTA_Inventory_Courier_Delivery"		"Lever kurergjenstander"		
 
 		// Auto Courier
-		"DOTA_AutoCourier_AutoBurst"			"Bruk spurt automatisk når tilgjengelig"
-		"DOTA_AutoCourier_BuybackProtection"	"Tilbakekjøpsvern etter nivå:"
 		"DOTA_AutoCourier_TurnOn"	"Slå på automatisk levering"
 		"DOTA_AutoCourier_TurnOff"	"Slå av automatisk levering"
 		
@@ -15404,6 +15400,8 @@
 	"DOTA_LearnTabName_Updates"		"Oppdateringer"
 	"DOTA_LearnTabName_Glossary"	"Ordliste"
 	"DOTA_LearnTabName_PastEvents"	"Tidligere begivenheter"
+	"DOTA_LearnTabName_Credits"	"Medvirkende"
+
 	"DOTA_Tutorial_Multiplayer_Match"   "Flerspillerkamp"
 	"DOTA_Tutorial_Mechanics"   "Mekanismer"
 	"DOTA_Tutorial_Mechanics_Desc"   "Lær det grunnleggende i Dota, fra å kontrollere helten til å bruke butikken med mer. Du får en generell forståelse av spillets grunnbegreper gjennom denne korte introduksjonen."
@@ -18234,6 +18232,8 @@ Du må ha minst {d:new_player_req_games_played} spilte kamper og en kommunikasjo
 	"dota_settings_unifiedorders"				"Felles enhetsordre med CTRL"
 	"dota_settings_teleportrequireshalt"		"Teleportering krever hold/avbryt for å stoppe"
 	"dota_settings_channelrequireshalt"			"Evner krever hold/avbryt for å stoppe"
+	"dota_settings_interactionrequireshalt"		"Erobring av bygninger krever hold/avbryt for å stoppe"
+	"dota_settings_interactionrequireshalt_new_setting_title"		"Erobring av bygninger krever hold/avbryt for å stoppe"
 	"dota_settings_showqueuedorders"			"Vis køen med ordre i grensesnittet"
 	"dota_settings_force_right_click_attack"	"Høyreklikk allierte for å:"
 	"dota_settings_force_right_click_attack_0"	"Følge"
@@ -18478,7 +18478,7 @@ Du må ha minst {d:new_player_req_games_played} spilte kamper og en kommunikasjo
 	"dota_settings_auto_cursor_scale"				"Velg markørstørrelse automatisk"
 	"dota_settings_cursor_scale"					"Markørstørrelse"
 	"dota_settings_cursor_scale_overridden"			"Hvis startinnstillingen -cursor_scale_percent brukes, overskriver den innstillingen med markørstørrelsen."
-	"dota_settings_hud_query_panel"					"Enhetsforespørsel overstyrer helters kontrollkonsoll"
+	"dota_settings_hud_query_panel"					"Enhetsforespørsel overstyrer heltepanelet"
 	"dota_settings_hud_query_panel_tooltip"			"Hvis du velger en annen enhet, vises detaljene dens i hovedgrensesnittet i stedet for i en atskilt visning."
 	"dota_settings_help_tips"					"Vis hjelpetips"
 	"dota_settings_help_tips_tooltip"			"Hjelpetips er overlegg som fremhever og forklarer innhold i brukergrensesnittet."
@@ -18628,7 +18628,6 @@ Du må ha minst {d:new_player_req_games_played} spilte kamper og en kommunikasjo
 	"DOTA_Hotkeys_Tooltip_DotaAlt"	"Bind Alt-endringstasten til noe annet."
 	"DOTA_Hotkeys_Tooltip_DotaAlternativeCastSwitch"	"Bind tasten for å bruke den ikke-valgte versjonen av en evne som har alternativt bruk, uten å måtte veksle til det (CTRL som standard)."
 	"DOTA_Hotkeys_Tooltip_Group"  "Velg en forhåndsinnstilt kontrollgruppe med enheter. For å definere en kontrollgruppe, velg de ønskede enhetene og hold nede CTRL + én av disse gruppe-hurtigtastene."
-	"DOTA_Hotkeys_Tooltip_Legacy"  "Bruk hurtigtaster fra Dota 1. Evners hurtigtaster vil variere etter helt."
 	"DOTA_Hotkeys_Tooltip_PerUnitHotkeys"  "Slå på ulike evnehurtigtaster for hver enhet."
 	"DOTA_Hotkeys_Tooltip_Quickcast"  "Evner med hurtigbruk utløses på musepekerens gjeldende plassering så snart det trykkes på hurtigtasten.<br><br>Du kan slå på direktebruksbindinger for å binde spesifikke taster for hurtigbruk og autobruk."
 	"DOTA_Hotkeys_Tooltip_Quickcast_Items"  "Gjenstander med hurtigbruk utløses på musepekerens gjeldende plassering så snart det trykkes på hurtigtasten.<br><br>Du kan slå på direktebruksbindinger for å binde spesifikke taster for hurtigbruk."
@@ -18662,7 +18661,10 @@ Du må ha minst {d:new_player_req_games_played} spilte kamper og en kommunikasjo
 	"DOTA_Settings_Tooltip_DoubleTapItem"						"Dobbeltklikk på en gjenstand eller dobbelttrykk på hurtigtasten bruker den på deg selv når mulig."
 	"DOTA_Settings_Tooltip_Smart_Doubletap"				"Hvis du holder nede ALT mens du trykker på en evne eller gjenstand, utføres et dobbeltrykk hvis det er mulig."
 	"DOTA_Settings_Tooltip_UnifiedOrders"						"Hvis du holder nede CTRL når du sender en ordre, sendes den til alle enhetene du kontrollerer."
+	"DOTA_Settings_Tooltip_TeleportStop"						"En pågående teleportering avbrytes ikke hvis du flytter deg eller bruker en formel. Gjelder Town Portal Scroll, Boots of Travel, tvillingporter og Underlords Fiend's Gate. "
 	"DOTA_Settings_Tooltip_ChannelStop"						"En pågående kanalisering avbrytes ikke hvis du flytter deg eller bruker en formel. Gjelder alle kanaliserte gjenstander og evner, unntatt Town Portal Scroll og Boots of Travel."
+	"DOTA_Settings_Tooltip_InteractionStop"						"En pågående kanalisering som erobrer bygninger i verden, avbrytes ikke hvis du flytter deg eller bruker en formel. Gjelder våkelys og utposter."
+	"DOTA_Settings_Tooltip_InteractionStop_NewSettingDescription"	"Bestem hvordan helten skal oppføre seg ved erobring av bygninger, slik som våkelys."
 	"DOTA_Settings_Tooltip_Force_Right_Click_Attack_0"			"Hvis du høyreklikker på en alliert enhet, følger helten din enheten."
 	"DOTA_Settings_Tooltip_Force_Right_Click_Attack"			"Hvis du høyreklikker på en alliert enhet, prøver helten din å angripe enheten."
 	"DOTA_Settings_Tooltip_Force_Right_Click_Attack_2"			"Hvis du høyreklikker på en alliert enhet, prøver helten din å berøve enheten hvis den kan berøves. Ellers følger den enheten."
@@ -19950,6 +19952,7 @@ Du må ha minst {d:new_player_req_games_played} spilte kamper og en kommunikasjo
 	"DOTA_ChangeLog_Patch743eUpcoming" "Denne uken er siste sjanse til å spille heltene og strategiene som utviklet seg under The International 2023 før spilloppdatering 7.34e kommer på mandag 20. november."
 	"DOTA_ChangeLog_Frostivus2024Ended" "Frostivus 2024 er over. Trykk her for å lage eventuelle siste belønninger i Frostivussmia."
 
+	"DOTA_Credits"			"Medvirkende"
 	"DOTA_Credits_EnglishVoices"	"Engelske stemmeskuespillere"
 	"DOTA_Credits_RussianVoices"	"Russiske stemmeskuespillere"
 	"DOTA_Credits_DefaultAnnouncer_Extra"	"og standardoppleseren"
@@ -22663,6 +22666,18 @@ Du må ha minst {d:new_player_req_games_played} spilte kamper og en kommunikasjo
 	"DOTA_HUD_rune_spawned_top"				"Øvre rune dukket opp"
 	"DOTA_HUD_rune_spawned_bottom"			"Nedre rune dukket opp"
 
+	"DOTA_HUD_Prognosticate_Bounty"				"Dusør"
+	"DOTA_HUD_Prognosticate_Water"				"Vann"
+	"DOTA_HUD_Prognosticate_Power"				"Kraft"
+	"DOTA_HUD_Prognosticate_DoubleDamage"		"Skadelyst"
+	"DOTA_HUD_Prognosticate_Arcane"				"Mystisk"
+	"DOTA_HUD_Prognosticate_Haste"				"Hastverk"
+	"DOTA_HUD_Prognosticate_Illusion"			"Illusjon"
+	"DOTA_HUD_Prognosticate_Invisibility"		"Usynlighet"
+	"DOTA_HUD_Prognosticate_Regeneration"		"Regenerasjon"
+	"DOTA_HUD_Prognosticate_Shield"				"Skjold"
+	"DOTA_HUD_Prognosticate_Wisdom"				"Visdom"
+
 	"DOTA_HUD_stat_branch_10"				"10"
 	"DOTA_HUD_stat_branch_15"				"15"
 	"DOTA_HUD_stat_branch_20"				"20"
@@ -24082,6 +24097,8 @@ Du må ha minst {d:new_player_req_games_played} spilte kamper og en kommunikasjo
 	"DOTA_738b_Update"	  "Spilloppdatering 7.38b"
 	"DOTA_738c_Update"	  "Spilloppdatering 7.38c"
 	"DOTA_739_Update"	  "Spilloppdatering 7.39"
+	"DOTA_739b_Update"	  "Spilloppdatering 7.39b"
+
 	"DOTA_Settings_Tooltip_NetworkLatency" "Hvis du har en nettverksforbindelse med pakketap, så kan du få økt forsinkelse ved å velge «dårlig nettverk», men det kan gi en jevnere opplevelse."
 
 	"DOTA_Popup_RankCalibration_Congrats" "Gratulerer!"
@@ -28593,7 +28610,6 @@ Hver region har en ledertabell som brukes til å beregne gildets grad ved ukeslu
 
 		"DOTA_Plus_ItemAssistant_Title"			"Gjenstandsassistent"
 		"DOTA_Plus_ItemAssistant_Instructions"	"Venstreklikk for å angi hurtigkjøp.<br />Høyreklikk for å kjøpe."
-		"DOTA_Plus_ItemAssistant_Help"			"Venstreklikk for å se andre valg."
 
 		"DOTA_Plus_NeutralItemAssistant_Title"			"Nøytral gjenstand-assistent"
 		"DOTA_Plus_NeutralItemAssistant_Instructions"	"Trykk for å hente gjenstand."
@@ -40552,6 +40568,8 @@ Drap av målet i Dead Reckoning gir 2 poeng. Medvirkninger gir 1 poeng."
 		"dota_settings_alt"				"Alt"
 		"dota_settings_tips"		"Tips"
 		"dota_settings_hud"		"Grensesnitt"
+		"dota_settings_mark_for_buy_title"				"Marker for kjøp"
+
 		"dota_settings_language"		"Språk"
 
 		"dota_settings_per_unit_keybindings_disabled_during_custom_games" "Deaktiver hurtigtaster per enhet under tilpassede spill"

@@ -867,6 +867,8 @@
 		"DOTA_Modifier_Alert_Ally_SB_ChargeOfDarknessTarget"	"아군 <font color='%s4'>%s5</font> 님이 %s3 돌진 중 %s3 <font color='%s6'>%s7</font>"
 		"DOTA_Modifier_Alert_Enemy_SB_ChargeOfDarknessTarget"	"적 <font color='%s4'>%s5</font>|이|가| 영향받음: <font color='%s1'>%s2</font>"
 
+		"DOTA_Modifier_Alert_Oracle_Rune_Prediction"			"예견 %s1 %s2 <font color='%s3'>%s4</font> 룬이 %s5에 있다. %s9에 <font color='%s6'>%s7</font> 룬이 %s8에 생길 것으로 예측된다."
+		"DOTA_Modifier_Alert_Oracle_Rune_Prediction_FirstSpawn"	"예견 %s1 %s2 첫 번째 룬은 <font color='#FF7800'>풍요</font> 눈이며, 이후 <font color='#0ba0c1'>수력</font> 룬이 두 번 생성된다."
 		"DOTA_Modifier_Alert_Oracle_Rune_Top"					"상부"
 		"DOTA_Modifier_Alert_Oracle_Rune_Bottom"				"하부"
 
@@ -2354,10 +2356,8 @@
 		"DOTA_Inventory_Courier_Delivery"		"짐꾼 배달 아이템"		
 
 		// Auto Courier
-		"DOTA_AutoCourier_AutoBurst"			"가능할 때 순간 가속을 자동 시전"
-		"DOTA_AutoCourier_BuybackProtection"	"골드 부활 보호 시작 레벨:"
-		"DOTA_AutoCourier_TurnOn"	"자동 전달 켜기"
-		"DOTA_AutoCourier_TurnOff"	"자동 전달 끄기"
+		"DOTA_AutoCourier_TurnOn"	"자동 배달 켜기"
+		"DOTA_AutoCourier_TurnOff"	"자동 배달 끄기"
 		
 		// Scoreboard
 		"DOTA_Scoreboard_GoodGuys"				"래디언트"
@@ -4707,7 +4707,7 @@
 		"DOTA_Hotkeys_PlayerActions"								"플레이어 동작"
 		"DOTA_Hotkeys_ControlGroups"								"부대 지정"
 		"DOTA_Hotkeys_Spectator"									"관전자 / 리플레이 조작"
-		"DOTA_Hotkeys_Stats"										"통계 드롭다운"
+		"DOTA_Hotkeys_Stats"										"통계 펼침 메뉴"
 		"DOTA_Hotkeys_Coaching"										"멘토링"
 		"DOTA_Hotkeys_Phrases"										"단축키 지정"
 
@@ -4844,7 +4844,7 @@
 		"UI_QUICKCAST"  "빠른 시전"
 
 		"UI_Spectator_Controls"											"컨트롤"
-		"UI_Spectator_Stats"											"통계 드롭다운"
+		"UI_Spectator_Stats"											"통계 펼침 메뉴"
 		"UI_Searching"													"검색 중..."
 
 		"waiting_for_players_title"										"다른 플레이어를 기다리는 중"
@@ -16697,7 +16697,7 @@
 
 		"DOTA_HUD_SelectCourier"	"짐꾼 선택 ({s:select_courier_hotkey})"
 		"DOTA_HUD_CourierDeliver"	"짐꾼 전달 아이템({s:courier_deliver_hotkey})<br/>오른 클릭으로 선택 사항 확인"
-		"DOTA_HUD_AutoCourier"		"짐꾼 자동 전달({s:courier_autocourier_hotkey})"
+		"DOTA_HUD_AutoCourier"		"짐꾼 자동 배달({s:courier_autocourier_hotkey})"
 		"DOTA_HUD_AutoCourierDesc"	"오른 클릭으로 자세한 선택 사항 보기"
 		"DOTA_HUD_CourierBurst"		"짐꾼 순간 가속({s:courier_burst_hotkey})"
 		"DOTA_HUD_CourierShield"		"짐꾼 보호막({s:courier_shield_hotkey})"
@@ -22524,7 +22524,7 @@
 	"dota_settings_spectatorfowboth"			"관전자 전장의 안개 양 팀 모두"
 	"dota_settings_spectatorfowradient"			"관전자 전장의 안개 래디언트"
 	"dota_settings_spectatorfowdire"			"관전자 전장의 안개 다이어"
-	"dota_settings_statsdropdown"				"통계 드롭다운"
+	"dota_settings_statsdropdown"				"통계 펼침 메뉴"
 	"dota_settings_spectatordropdown_sort"		"정렬 변경"
 	"dota_settings_spectatordropdown_close"		"범주 지우기"
 	"dota_settings_spectatordropdown_kda"		"처치 / 죽음 / 도움"
@@ -22615,7 +22615,7 @@
 	"dota_settings_hud_disable_damage_numbers"	"피해 수치 감추기"
 	"dota_settings_reducedflash"				"번쩍임 감소"
 	"dota_settings_courier"						"짐꾼"
-	"dota_settings_auto_deliver"				"짐꾼 자동 전달"
+	"dota_settings_auto_deliver"				"짐꾼 자동 배달"
 	"dota_settings_shop"						"상점"
 	"dota_settings_windowfocus"					"창 초점"
 	"dota_settings_displaysection"				"디스플레이"
@@ -22827,15 +22827,15 @@
 	"dota_settings_help_tips_reset_success_title"	"도움말 팁 초기화"
 	"dota_settings_help_tips_reset_success_text"	"이전에 보지 않도록 했던 도움말 팁이 초기화되어 다시 보입니다."
 	"dota_settings_plus_use_assistant"			"기본 길잡이 대신 플러스 도우미 사용"
-	"dota_settings_auto_courier_autodeliver_customize"		"자동 전달이 켜져 있을 때:"
-	"dota_settings_auto_courier_autodeliver_description"		"가방이나 보관함에 아이템이 있을 때마다 짐꾼이 영웅에게 전달합니다. 추가로, 다음 구매 예정 아이템이 비밀 상점에 있다면 짐꾼은 자동으로 비밀 상점으로 이동합니다."
-	"dota_settings_auto_courier_autodeliver"		"일반 게임에서 자동 전달이 활성화됩니다"
-	"dota_settings_auto_courier_autodeliver_tooltip"		"자동 전달은 게임에서 짐꾼 능력 표시줄로 켜고 끌 수 있습니다."
-	"dota_settings_auto_courier_autodeliver_on_status"		"자동 전달"
-	"dota_settings_auto_courier_autodeliver_new_setting_description" "자동으로 영웅에게 아이템을 전달하고 비밀 상점으로 이동합니다"
-	"dota_settings_turbo_courier_default_auto_deliver"	"쾌속 게임에서 자동 전달이 활성화됩니다"
-	"dota_settings_auto_courier_auto_burst"			"자동 전달은 순간 가속을 쿨다운 없이 사용합니다"
-	"dota_settings_auto_courier_deliver_visible_only"	"영웅이 투명 상태일 때는 자동 전달이 적용되지 않습니다."
+	"dota_settings_auto_courier_autodeliver_customize"		"자동 배달이 켜져 있다면:"
+	"dota_settings_auto_courier_autodeliver_description"		"가방이나 보관함에 아이템이 있을 때마다 짐꾼이 영웅에게 배달합니다. 추가로, 다음 구매 예정 아이템이 비밀 상점에 있다면 짐꾼은 자동으로 비밀 상점으로 이동합니다."
+	"dota_settings_auto_courier_autodeliver"		"일반 게임에서 자동 배달이 활성화됩니다"
+	"dota_settings_auto_courier_autodeliver_tooltip"		"자동 배달은 게임에서 짐꾼 능력 표시줄로 켜고 끌 수 있습니다."
+	"dota_settings_auto_courier_autodeliver_on_status"		"자동 배달"
+	"dota_settings_auto_courier_autodeliver_new_setting_description" "자동으로 영웅에게 아이템을 배달하고 비밀 상점으로 이동합니다"
+	"dota_settings_turbo_courier_default_auto_deliver"	"쾌속 게임에서 자동 배달이 활성화됩니다"
+	"dota_settings_auto_courier_auto_burst"			"자동 배달 시 순간 가속을 쿨다운 없이 사용합니다"
+	"dota_settings_auto_courier_deliver_visible_only"	"영웅이 투명 상태일 때는 자동 배달이 적용되지 않습니다."
 	"dota_settings_experimental_controller_support"	"실험적 컨트롤러 지원을 활성화합니다."
 	"dota_settings_chat_filter_onlyfriends"		"친구, 파티, 길드 대화만 보입니다"
 	"dota_settings_text_filter_filtered"		"문구 필터 사용 가능"
@@ -22968,7 +22968,6 @@
 	"DOTA_Hotkeys_Tooltip_DotaAlt"	"Alt 변경 단축키 재지정"
 	"DOTA_Hotkeys_Tooltip_DotaAlternativeCastSwitch"	"교체 시전이 가능한 능력에서 선택하지 않은 능력을 켜기/끄기를 하지 않고 시전하는 단축키를 재지정합니다(기본 키: CTRL)"
 	"DOTA_Hotkeys_Tooltip_Group"  "미리 지정된 유닛 부대를 선택합니다. (원하는 유닛들을 선택하고 Ctrl 키를 누른 다음 부대 지정 단축키를 누르면, 해당 유닛들을 부대로 지정할 수 있습니다.)"
-	"DOTA_Hotkeys_Tooltip_Legacy"  "도타 1의 모든 단축키를 그대로 사용합니다. 영웅별로 능력 단축키가 달라질 수 있습니다."
 	"DOTA_Hotkeys_Tooltip_PerUnitHotkeys"  "유닛마다 다른 능력 단축키 설정 허용"
 	"DOTA_Hotkeys_Tooltip_Quickcast"  "능력 빠른 시전은 마우스 커서의 현재 위치에서 단축키를 누르자마자 발동합니다.<br><br>직접 시전 단축키를 활성화하면 특정 키를 빠른 시전과 자동 시전에 지정할 수 있습니다."
 	"DOTA_Hotkeys_Tooltip_Quickcast_Items"  "아이템 빠른 시전은 마우스 커서의 현재 위치에서 단축키를 누르자마자 발동합니다.<br><br>직접 시전 단축키를 활성화하면 특정 키를 빠른 시전에 지정할 수 있습니다."
@@ -23009,7 +23008,7 @@
 	"DOTA_Settings_Tooltip_Force_Right_Click_Attack_0"			"아군 유닛을 오른 클릭하면 영웅이 해당 유닛을 따라다닙니다."
 	"DOTA_Settings_Tooltip_Force_Right_Click_Attack"			"아군 유닛을 오른 클릭하면 영웅이 해당 유닛을 공격하려 합니다."
 	"DOTA_Settings_Tooltip_Force_Right_Click_Attack_2"			"아군 유닛을 오른 클릭하면 해당 유닛이 디나이될 수 있는 상태일 때는 디나이하고, 그렇지 않은 상태일 때는 따라다닙니다."
-	"DOTA_Settings_Tooltip_BroadcasterStats"				"게임 관전 중에 중계자가 사용하는 통계 드롭다운 창을 봅니다."
+	"DOTA_Settings_Tooltip_BroadcasterStats"				"게임 관전 중에 중계자가 사용하는 통계 펼침 메뉴 창을 봅니다."
 	"DOTA_Settings_Tooltip_Deceleration"						"카메라가 이동 후 정지하는 속도입니다. 수가 클수록 더 빠르게 정지합니다."
 	"DOTA_Settings_Tooltip_Screenshake"						"일부 주문과 기절 효과 발생 시 화면이 흔들립니다."
 	"DOTA_Settings_Tooltip_CameraRespawn"					"영웅이 부활하면 즉시 카메라 초점을 영웅에게 옮깁니다."
@@ -23031,7 +23030,7 @@
 	"DOTA_Settings_Tooltip_AutoRepeatRightMouse"		"오른쪽 마우스 버튼을 누르고 있으면 오른 클릭이 반복됩니다."
 	"DOTA_Settings_Tooltip_ShopSearchFocusOnOpen"		"활성화하면, 상점을 열 때 곧바로 검색 창에 커서가 놓입니다."
 	"DOTA_Settings_Tooltip_PlusUseAssistant"			"활성화하면, 기본 길잡이 대신 플러스 도우미를 사용합니다."
-	"DOTA_Settings_Tooltip_TurboAutoCourier"			"쾌속: 활성화하면, 기본으로 짐꾼이 아이템을 자동 전달합니다. 게임 중 해당 기능을 번갈아 전환하여 켜고 끌 수 있습니다."
+	"DOTA_Settings_Tooltip_TurboAutoCourier"			"쾌속: 활성화하면, 기본으로 짐꾼이 아이템을 자동 배달합니다. 게임 중 해당 기능을 번갈아 전환하여 켜고 끌 수 있습니다."
 
 	"DOTA_Settings_Tooltip_BroadcastChannelChat"	"기본으로, 한 채널에서 받은 메시지를 다른 채널 탭 전체에 표시합니다."
 	"DOTA_Settings_Tooltip_EnglishHeroNames"		"번역된 영웅 이름과 영어 원문 이름을 번갈아 표시합니다."
@@ -28882,6 +28881,18 @@
 
 	"DOTA_HUD_rune_spawned_top"				"상부에 룬 생성됨"
 	"DOTA_HUD_rune_spawned_bottom"			"하부에 룬 생성됨"
+
+	"DOTA_HUD_Prognosticate_Bounty"				"풍요"
+	"DOTA_HUD_Prognosticate_Water"				"수력"
+	"DOTA_HUD_Prognosticate_Power"				"강화"
+	"DOTA_HUD_Prognosticate_DoubleDamage"		"피해 증폭"
+	"DOTA_HUD_Prognosticate_Arcane"				"신비"
+	"DOTA_HUD_Prognosticate_Haste"				"신속화"
+	"DOTA_HUD_Prognosticate_Illusion"			"환영화"
+	"DOTA_HUD_Prognosticate_Invisibility"		"투명화"
+	"DOTA_HUD_Prognosticate_Regeneration"		"재생화"
+	"DOTA_HUD_Prognosticate_Shield"				"보호"
+	"DOTA_HUD_Prognosticate_Wisdom"				"지혜"
 
 	"DOTA_HUD_stat_branch_10"				"10"
 	"DOTA_HUD_stat_branch_15"				"15"
@@ -36250,7 +36261,6 @@
 
 		"DOTA_Plus_ItemAssistant_Title"			"아이템 도우미"
 		"DOTA_Plus_ItemAssistant_Instructions"	"왼 클릭으로 예약 품목에 추가합니다.<br />오른 클릭으로 구매합니다."
-		"DOTA_Plus_ItemAssistant_Help"			"왼 클릭으로 다른 선택지를 확인합니다."
 
 		"DOTA_Plus_NeutralItemAssistant_Title"			"중립 아이템 도우미"
 		"DOTA_Plus_NeutralItemAssistant_Instructions"	"클릭하여 아이템을 가져옵니다."
