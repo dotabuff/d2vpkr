@@ -1,0 +1,578 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	id                  = "custom_wearable.gyrocopter.ability3"
+	name                = "#LoadoutSlot_Gyrocopter_SideGunner"
+	directory           = "gyrocopter/sidegunner"
+	template_group      = "#DOTA_Workshop_SubmissionType_CustomWearable"
+	template_subgroup   = "#npc_dota_hero_gyrocopter"
+	game_unit			= "npc_dota_hero_gyrocopter"
+
+	models = 
+	[
+		{
+			id = "model_gyrocopter_sidegunner"
+			auto_hitbox_set_name = "default"
+			root_bone_name = "root_JNT"
+			default_portrait_model = "models/heroes/gyro/gyro_sidegunner.vmdl"
+
+			lod_list = 
+			[
+				{
+					id = "mesh_portrait"
+					name = "#DOTA_Workshop_LOD0Title"
+					desc = "#DOTA_Workshop_LOD0Desc"
+					optional = true
+					max_polygons = 3500
+				},
+				{
+					id = "mesh_world"
+					name = "#DOTA_Workshop_LOD1Title"
+					desc = "#DOTA_Workshop_LOD1Desc"
+					max_polygons = 1400
+				},
+			]
+			material_list = 
+			[
+				{
+					id = "material_wearable"
+					name = "#DOTA_Workshop_Mat0Title"
+					desc = "#DOTA_Workshop_Mat0Desc"
+					template_vmat = "materials/models/heroes/gyro/gyro_sidegunner.vmat"
+					material_group_name = "0"
+					s1_legacy_name = "vmt0"
+					max_tex_width = 512
+					max_tex_height = 512
+				},
+			]
+
+            attach_list =
+            [
+                {
+                    id = "attachment_attackpoint"
+                    s1_legacy_name = "attachment1"
+                    name = "#DOTA_Workshop_Attachment_AttackPoint"
+                    desc = "#DOTA_Workshop_Attachment_AttackPoint_Autofill_Desc"
+                    attach_name = "attach_attack1"
+                    attach_joint = "gun_03_JNT"
+                    default_offset = [ 0.0, 0.0, 0.0 ]
+                    default_rotation = [ 0.0, 0.0, 0.0 ]
+                },
+                {
+                    id = "attachment_hitlocation"
+                    s1_legacy_name = "attachment0"
+                    name = "#DOTA_Workshop_Attachment_HitLocation"
+                    desc = "#DOTA_Workshop_Attachment_HitLocation_Autofill_Desc"
+                    attach_name = "attach_hitloc"
+                    attach_joint = "root_JNT"
+                    default_offset = [ 0.0, 0.0, 0.0 ]
+                    default_rotation = [ 0.0, 0.0, 0.0 ]
+                },
+            ]
+
+
+            anim_list =
+            [
+                {
+                    id = "propellor_spin"
+                    activity_name = "ACT_DOTA_CONSTANT_LAYER"
+                    name = "#DOTA_Workshop_Animation_Layer"
+                    desc = "#DOTA_Workshop_Animation_Layer_Desc"
+                    sequence_name = "propellor_spin"
+                    default = "scripts/workshop_import_templates/default_content/gyro/sidegunner/sgun_idle.dmx"
+                    anim_length = 1
+                    suffix = "_propellor_spin"
+                    looping = "true"
+                    always_use_default_anim = true
+                    bone_weight_list = 
+                    [
+                        { bone_name = "propellor_02_JNT"	bone_weight = 0.0 }, 
+                        { bone_name = "propellor_blades_JNT"	bone_weight = 1.0 }, 
+                        { bone_name = "propellor_cap_JNT"	bone_weight = 0.0 }, 
+                    ]
+                },
+                {
+                    id = "sgun_idle"
+                    activity_name = "ACT_DOTA_IDLE"
+                    name = "#DOTA_Workshop_Animation_Idle"
+                    desc = "#DOTA_Workshop_Animation_Idle_Desc"
+                    sequence_name = "sgun_idle"
+                    default = "scripts/workshop_import_templates/default_content/gyro/sidegunner/sgun_idle.dmx"
+                    anim_length = 1
+                    suffix = "_sgun_idle"
+                    looping = "true"
+                    always_use_default_anim = true
+                    bone_weight_list = 
+                    [
+                        { bone_name = "propellor_02_JNT"	bone_weight = 1.0 }, 
+                        { bone_name = "propellor_blades_JNT"	bone_weight = 0.0 }, 
+                        { bone_name = "propellor_cap_JNT"	bone_weight = 1.0 }, 
+                        { bone_name = "root_JNT"	bone_weight = 1.0 }, 
+                    ]
+                },
+                {
+                    id = "sgun_run"
+                    activity_name = "ACT_DOTA_RUN"
+                    name = "#DOTA_Workshop_Animation_Run"
+                    desc = "#DOTA_Workshop_Animation_Run_Desc"
+                    sequence_name = "sgun_run"
+                    default = "scripts/workshop_import_templates/default_content/gyro/sidegunner/sgun_run.dmx"
+                    anim_length = 1
+                    suffix = "_sgun_run"
+                    looping = "true"
+                    always_use_default_anim = true
+                    bone_weight_list = 
+                    [
+                        { bone_name = "propellor_02_JNT"	bone_weight = 1.0 }, 
+                        { bone_name = "propellor_blades_JNT"	bone_weight = 0.0 }, 
+                        { bone_name = "propellor_cap_JNT"	bone_weight = 1.0 }, 
+                        { bone_name = "root_JNT"	bone_weight = 1.0 }, 
+                    ]
+                },
+                {
+                    id = "sgun_spawn"
+                    activity_name = "ACT_DOTA_SPAWN"
+                    name = "#DOTA_Workshop_Animation_Spawn"
+                    desc = "#DOTA_Workshop_Animation_Spawn_Desc"
+                    sequence_name = "sgun_spawn"
+                    default = "scripts/workshop_import_templates/default_content/gyro/sidegunner/sgun_spawn.dmx"
+                    anim_length = 1
+                    suffix = "_sgun_spawn"
+                    looping = "false"
+                    always_use_default_anim = true
+                    bone_weight_list = 
+                    [
+                        { bone_name = "propellor_02_JNT"	bone_weight = 1.0 }, 
+                        { bone_name = "propellor_blades_JNT"	bone_weight = 0.0 }, 
+                        { bone_name = "propellor_cap_JNT"	bone_weight = 1.0 }, 
+                        { bone_name = "root_JNT"	bone_weight = 1.0 }, 
+                    ]
+                },
+                {
+                    id = "sgun_death_explode"
+                    activity_name = "ACT_DOTA_DIE"
+                    name = "#DOTA_Workshop_Animation_Die"
+                    desc = "#DOTA_Workshop_Animation_Die_Desc"
+                    sequence_name = "sgun_death_explode"
+                    default = "scripts/workshop_import_templates/default_content/gyro/sidegunner/sgun_death_explode.dmx"
+                    anim_length = 1
+                    suffix = "_sgun_death_explode"
+                    looping = "false"
+                    always_use_default_anim = true
+                    bone_weight_list = 
+                    [
+                        { bone_name = "propellor_02_JNT"	bone_weight = 1.0 }, 
+                        { bone_name = "propellor_blades_JNT"	bone_weight = 0.0 }, 
+                        { bone_name = "propellor_cap_JNT"	bone_weight = 1.0 }, 
+                        { bone_name = "root_JNT"	bone_weight = 1.0 }, 
+                    ]
+                },
+                {
+                    id = "sgun_death_explode_alt"
+                    activity_name = "ACT_DOTA_DIE"
+                    name = "#DOTA_Workshop_Animation_Die"
+                    desc = "#DOTA_Workshop_Animation_Die_Desc"
+                    sequence_name = "sgun_death_explode_alt"
+                    default = "scripts/workshop_import_templates/default_content/gyro/sidegunner/sgun_death_explode_alt.dmx"
+                    anim_length = 1
+                    suffix = "_sgun_death_explode_alt"
+                    looping = "false"
+                    always_use_default_anim = true
+                    bone_weight_list = 
+                    [
+                        { bone_name = "propellor_02_JNT"	bone_weight = 1.0 }, 
+                        { bone_name = "propellor_blades_JNT"	bone_weight = 0.0 }, 
+                        { bone_name = "propellor_cap_JNT"	bone_weight = 1.0 }, 
+                        { bone_name = "root_JNT"	bone_weight = 1.0 }, 
+                    ]
+                },
+                {
+                    id = "sgun_attack"
+                    activity_name = "ACT_DOTA_ATTACK"
+                    name = "#DOTA_Workshop_Animation_Attack"
+                    desc = "#DOTA_Workshop_Animation_Attack_Desc"
+                    sequence_name = "sgun_attack"
+                    default = "scripts/workshop_import_templates/default_content/gyro/sidegunner/sgun_attack.dmx"
+                    anim_length = 1
+                    suffix = "_sgun_attack"
+                    looping = "false"
+                    has_attack_point = true
+                    always_use_default_anim = true
+                    bone_weight_list = 
+                    [
+                        { bone_name = "propellor_02_JNT"	bone_weight = 1.0 }, 
+                        { bone_name = "propellor_blades_JNT"	bone_weight = 0.0 }, 
+                        { bone_name = "propellor_cap_JNT"	bone_weight = 1.0 }, 
+                        { bone_name = "root_JNT"	bone_weight = 1.0 }, 
+                    ]
+                },
+                {
+                    id = "sgun_attack_flak_cannon"
+                    activity_name = "ACT_DOTA_ATTACK"
+                    name = "#DOTA_Workshop_Animation_Attack"
+                    desc = "#DOTA_Workshop_Animation_Attack_Desc"
+                    sequence_name = "sgun_attack_flak_cannon"
+                    default = "scripts/workshop_import_templates/default_content/gyro/sidegunner/sgun_attack_flak_cannon.dmx"
+                    anim_length = 1
+                    suffix = "_sgun_attack_flak_cannon"
+                    looping = "false"
+                    has_attack_point = true
+                    always_use_default_anim = true
+                    bone_weight_list = 
+                    [
+                        { bone_name = "propellor_02_JNT"	bone_weight = 1.0 }, 
+                        { bone_name = "propellor_blades_JNT"	bone_weight = 0.0 }, 
+                        { bone_name = "propellor_cap_JNT"	bone_weight = 1.0 }, 
+                        { bone_name = "root_JNT"	bone_weight = 1.0 }, 
+                    ]
+                    modifiers = 
+                    [
+                        { modifier_name = "flak_cannon" }, 
+                    ]
+                },
+                {
+                    id = "sgun_idle_alt"
+                    activity_name = "ACT_DOTA_IDLE"
+                    name = "#DOTA_Workshop_Animation_Idle"
+                    desc = "#DOTA_Workshop_Animation_Idle_Desc"
+                    sequence_name = "sgun_idle_alt"
+                    default = "scripts/workshop_import_templates/default_content/gyro/sidegunner/sgun_idle_alt.dmx"
+                    anim_length = 1
+                    suffix = "_sgun_idle_alt"
+                    looping = "true"
+                    always_use_default_anim = true
+                    bone_weight_list = 
+                    [
+                        { bone_name = "propellor_02_JNT"	bone_weight = 1.0 }, 
+                        { bone_name = "propellor_blades_JNT"	bone_weight = 0.0 }, 
+                        { bone_name = "propellor_cap_JNT"	bone_weight = 1.0 }, 
+                        { bone_name = "root_JNT"	bone_weight = 1.0 }, 
+                    ]
+                },
+                {
+                    id = "sgun_run_alt"
+                    activity_name = "ACT_DOTA_RUN"
+                    name = "#DOTA_Workshop_Animation_Run"
+                    desc = "#DOTA_Workshop_Animation_Run_Desc"
+                    sequence_name = "sgun_run_alt"
+                    default = "scripts/workshop_import_templates/default_content/gyro/sidegunner/sgun_run_alt.dmx"
+                    anim_length = 1
+                    suffix = "_sgun_run_alt"
+                    looping = "true"
+                    always_use_default_anim = true
+                    bone_weight_list = 
+                    [
+                        { bone_name = "propellor_02_JNT"	bone_weight = 1.0 }, 
+                        { bone_name = "propellor_blades_JNT"	bone_weight = 0.0 }, 
+                        { bone_name = "propellor_cap_JNT"	bone_weight = 1.0 }, 
+                        { bone_name = "root_JNT"	bone_weight = 1.0 }, 
+                    ]
+                },
+                {
+                    id = "sgun_run_alt_02"
+                    activity_name = "ACT_DOTA_RUN"
+                    name = "#DOTA_Workshop_Animation_Run"
+                    desc = "#DOTA_Workshop_Animation_Run_Desc"
+                    sequence_name = "sgun_run_alt_02"
+                    default = "scripts/workshop_import_templates/default_content/gyro/sidegunner/sgun_run_alt_02.dmx"
+                    anim_length = 1
+                    suffix = "_sgun_run_alt_02"
+                    looping = "true"
+                    always_use_default_anim = true
+                    bone_weight_list = 
+                    [
+                        { bone_name = "propellor_02_JNT"	bone_weight = 1.0 }, 
+                        { bone_name = "propellor_blades_JNT"	bone_weight = 0.0 }, 
+                        { bone_name = "propellor_cap_JNT"	bone_weight = 1.0 }, 
+                        { bone_name = "root_JNT"	bone_weight = 1.0 }, 
+                    ]
+                },
+                {
+                    id = "sgun_capture"
+                    activity_name = "ACT_DOTA_CAPTURE"
+                    name = "#DOTA_Workshop_Animation_Capture"
+                    desc = "#DOTA_Workshop_Animation_Capture_Desc"
+                    sequence_name = "sgun_capture"
+                    default = "scripts/workshop_import_templates/default_content/gyro/sidegunner/sgun_idle.dmx"
+                    anim_length = 1
+                    suffix = "_sgun_capture"
+                    looping = "true"
+                    always_use_default_anim = true
+                },
+                {
+                    id = "sgun_idle_loadout"
+                    activity_name = "ACT_DOTA_LOADOUT"
+                    name = "#DOTA_Workshop_Animation_Loadout"
+                    desc = "#DOTA_Workshop_Animation_Loadout_Desc"
+                    sequence_name = "sgun_idle_loadout"
+                    default = "scripts/workshop_import_templates/default_content/gyro/sidegunner/sgun_idle.dmx"
+                    anim_length = 1
+                    suffix = "_sgun_idle_loadout"
+                    looping = "true"
+                    always_use_default_anim = true
+                },
+                {
+                    id = "sgun_loadout_rare"
+                    activity_name = "ACT_DOTA_LOADOUT_RARE"
+                    name = "#DOTA_Workshop_Animation_Rare"
+                    desc = "#DOTA_Workshop_Animation_Rare_Desc"
+                    sequence_name = "sgun_loadout_rare"
+                    default = "scripts/workshop_import_templates/default_content/gyro/sidegunner/sgun_idle_alt.dmx"
+                    anim_length = 1
+                    suffix = "_sgun_loadout_rare"
+                    looping = "false"
+                    always_use_default_anim = true
+                },
+                {
+                    id = "sgun_spawn_loadout"
+                    activity_name = "ACT_DOTA_SPAWN"
+                    name = "#DOTA_Workshop_Animation_Spawn"
+                    desc = "#DOTA_Workshop_Animation_Spawn_Desc"
+                    sequence_name = "sgun_spawn_loadout"
+                    default = "scripts/workshop_import_templates/default_content/gyro/sidegunner/sgun_spawn.dmx"
+                    anim_length = 1
+                    suffix = "_sgun_spawn_loadout"
+                    looping = "false"
+                    always_use_default_anim = true
+                    modifiers = 
+                    [
+                        { modifier_name = "loadout" }, 
+                    ]
+                },
+                {
+                    id = "sgun_idle_agg"
+                    activity_name = "ACT_DOTA_IDLE"
+                    name = "#DOTA_Workshop_Animation_Idle"
+                    desc = "#DOTA_Workshop_Animation_Idle_Desc"
+                    sequence_name = "sgun_idle_agg"
+                    default = "scripts/workshop_import_templates/default_content/gyro/sidegunner/sgun_idle_agg.dmx"
+                    anim_length = 1
+                    suffix = "_sgun_idle_agg"
+                    looping = "true"
+                    always_use_default_anim = true
+                    bone_weight_list = 
+                    [
+                        { bone_name = "propellor_02_JNT"	bone_weight = 1.0 }, 
+                        { bone_name = "propellor_blades_JNT"	bone_weight = 0.0 }, 
+                        { bone_name = "propellor_cap_JNT"	bone_weight = 1.0 }, 
+                        { bone_name = "root_JNT"	bone_weight = 1.0 }, 
+                    ]
+                    modifiers = 
+                    [
+                        { modifier_name = "aggressive" }, 
+                    ]
+                },
+                {
+                    id = "sgun_run_agg"
+                    activity_name = "ACT_DOTA_RUN"
+                    name = "#DOTA_Workshop_Animation_Run"
+                    desc = "#DOTA_Workshop_Animation_Run_Desc"
+                    sequence_name = "sgun_run_agg"
+                    default = "scripts/workshop_import_templates/default_content/gyro/sidegunner/sgun_run_agg.dmx"
+                    anim_length = 1
+                    suffix = "_sgun_run_agg"
+                    looping = "true"
+                    always_use_default_anim = true
+                    bone_weight_list = 
+                    [
+                        { bone_name = "propellor_02_JNT"	bone_weight = 1.0 }, 
+                        { bone_name = "propellor_blades_JNT"	bone_weight = 0.0 }, 
+                        { bone_name = "propellor_cap_JNT"	bone_weight = 1.0 }, 
+                        { bone_name = "root_JNT"	bone_weight = 1.0 }, 
+                    ]
+                    modifiers = 
+                    [
+                        { modifier_name = "aggressive" }, 
+                    ]
+                },
+                {
+                    id = "sgun_spawn_agg"
+                    activity_name = "ACT_DOTA_SPAWN"
+                    name = "#DOTA_Workshop_Animation_Spawn"
+                    desc = "#DOTA_Workshop_Animation_Spawn_Desc"
+                    sequence_name = "sgun_spawn_agg"
+                    default = "scripts/workshop_import_templates/default_content/gyro/sidegunner/sgun_spawn_agg.dmx"
+                    anim_length = 1
+                    suffix = "_sgun_spawn_agg"
+                    looping = "false"
+                    always_use_default_anim = true
+                    bone_weight_list = 
+                    [
+                        { bone_name = "propellor_02_JNT"	bone_weight = 1.0 }, 
+                        { bone_name = "propellor_blades_JNT"	bone_weight = 0.0 }, 
+                        { bone_name = "propellor_cap_JNT"	bone_weight = 1.0 }, 
+                        { bone_name = "root_JNT"	bone_weight = 1.0 }, 
+                    ]
+                    modifiers = 
+                    [
+                        { modifier_name = "aggressive" }, 
+                    ]
+                },
+                {
+                    id = "sgun_run_alt_agg"
+                    activity_name = "ACT_DOTA_RUN"
+                    name = "#DOTA_Workshop_Animation_Run"
+                    desc = "#DOTA_Workshop_Animation_Run_Desc"
+                    sequence_name = "sgun_run_alt_agg"
+                    default = "scripts/workshop_import_templates/default_content/gyro/sidegunner/sgun_run_alt_agg.dmx"
+                    anim_length = 1
+                    suffix = "_sgun_run_alt_agg"
+                    looping = "true"
+                    always_use_default_anim = true
+                    bone_weight_list = 
+                    [
+                        { bone_name = "propellor_02_JNT"	bone_weight = 1.0 }, 
+                        { bone_name = "propellor_blades_JNT"	bone_weight = 0.0 }, 
+                        { bone_name = "propellor_cap_JNT"	bone_weight = 1.0 }, 
+                        { bone_name = "root_JNT"	bone_weight = 1.0 }, 
+                    ]
+                    modifiers = 
+                    [
+                        { modifier_name = "aggressive" }, 
+                    ]
+                },
+                {
+                    id = "sgun_run_alt_02_agg"
+                    activity_name = "ACT_DOTA_RUN"
+                    name = "#DOTA_Workshop_Animation_Run"
+                    desc = "#DOTA_Workshop_Animation_Run_Desc"
+                    sequence_name = "sgun_run_alt_02_agg"
+                    default = "scripts/workshop_import_templates/default_content/gyro/sidegunner/sgun_run_alt_02_agg.dmx"
+                    anim_length = 1
+                    suffix = "_sgun_run_alt_02_agg"
+                    looping = "true"
+                    always_use_default_anim = true
+                    bone_weight_list = 
+                    [
+                        { bone_name = "propellor_02_JNT"	bone_weight = 1.0 }, 
+                        { bone_name = "propellor_blades_JNT"	bone_weight = 0.0 }, 
+                        { bone_name = "propellor_cap_JNT"	bone_weight = 1.0 }, 
+                        { bone_name = "root_JNT"	bone_weight = 1.0 }, 
+                    ]
+                    modifiers = 
+                    [
+                        { modifier_name = "aggressive" }, 
+                    ]
+                },
+            ]
+
+
+            hitbox_list =
+            [
+                {
+                    set_name = "default"
+                    box_name = "root_JNT"
+                    bone_name = "root_JNT"
+                    min_bounds = [ -30.321114, -36.625145, -40.344376 ]
+                    max_bounds = [ 23.223221, 36.625145, 35.706635 ]
+                },
+                {
+                    set_name = "default"
+                    box_name = "gun_01_JNT"
+                    bone_name = "gun_01_JNT"
+                    min_bounds = [ -0.5, -11.673502, -11.673499 ]
+                    max_bounds = [ 17.156324, 11.673498, 11.673501 ]
+                },
+                {
+                    set_name = "default"
+                    box_name = "gun_02_JNT"
+                    bone_name = "gun_02_JNT"
+                    min_bounds = [ -0.5, -8.487098, -8.487095 ]
+                    max_bounds = [ 15.937195, 8.487088, 8.487091 ]
+                },
+                {
+                    set_name = "default"
+                    box_name = "propellor_01_JNT"
+                    bone_name = "propellor_01_JNT"
+                    min_bounds = [ -0.5, -3.422753, -3.423877 ]
+                    max_bounds = [ 17.933941, 3.422744, 3.423032 ]
+                },
+                {
+                    set_name = "default"
+                    box_name = "propellor_02_JNT"
+                    bone_name = "propellor_02_JNT"
+                    min_bounds = [ -0.5, -11.178701, -11.180497 ]
+                    max_bounds = [ 18.62244, 11.178679, 11.177264 ]
+                },
+                {
+                    set_name = "default"
+                    box_name = "sail_01_JNT"
+                    bone_name = "sail_01_JNT"
+                    min_bounds = [ -17.880749, -7.894701, -11.168524 ]
+                    max_bounds = [ 22.183979, 7.894705, 8.089687 ]
+                },
+                {
+                    set_name = "default"
+                    box_name = "sail_02_JNT"
+                    bone_name = "sail_02_JNT"
+                    min_bounds = [ -7.828932, -2.883866, -2.688871 ]
+                    max_bounds = [ 15.358137, 2.883862, 3.410801 ]
+                },
+                {
+                    set_name = "default"
+                    box_name = "sail_bot_01_JNT"
+                    bone_name = "sail_bot_01_JNT"
+                    min_bounds = [ -3.847191, -2.714104, -2.710387 ]
+                    max_bounds = [ 22.885178, 2.714109, 12.27543 ]
+                },
+                {
+                    set_name = "default"
+                    box_name = "sail_mid_01_JNT"
+                    bone_name = "sail_mid_01_JNT"
+                    min_bounds = [ -1.523033, -2.059637, -12.966793 ]
+                    max_bounds = [ 34.668804, 2.059628, 11.036274 ]
+                },
+                {
+                    set_name = "default"
+                    box_name = "head_JNT"
+                    bone_name = "head_JNT"
+                    min_bounds = [ -0.544405, -13.448215, -14.669943 ]
+                    max_bounds = [ 30.129257, 13.729412, 15.225451 ]
+                },
+                {
+                    set_name = "select_high"
+                    box_name = "root_JNT1"
+                    bone_name = "root_JNT"
+                    min_bounds = [ -27.698318, -26.368172, -31.821003 ]
+                    max_bounds = [ 26.174414, 32.137199, 28.16711 ]
+                },
+                {
+                    set_name = "select_high"
+                    box_name = "head_JNT1"
+                    bone_name = "head_JNT"
+                    min_bounds = [ -6.775089, -13.448215, -14.669943 ]
+                    max_bounds = [ 28.222298, 13.729412, 15.225451 ]
+                },
+                {
+                    set_name = "select_low"
+                    box_name = "root_JNT2"
+                    bone_name = "root_JNT"
+                    min_bounds = [ -27.698318, -41.500462, -41.318035 ]
+                    max_bounds = [ 35.339405, 44.061371, 40.93919 ]
+                },
+            ]
+		},
+	]
+    item_defs =
+	[
+		{
+			hero_name	= "npc_dota_hero_gyrocopter"
+			loadout_slot = "ability3"
+			prefab_type = "wearable"
+			has_portrait = false
+			visuals =
+			[
+				{
+					type = "entity_model"
+					asset_expr = "npc_dota_side_gunner"
+					modifier_expr = "$(model_gyrocopter_sidegunner:vmdl_name)"
+				}
+			]
+		}
+	]
+	workshop_tags = 
+	[
+		"Wearable",
+		"Gyrocopter",
+		"ability3",
+	]
+}
