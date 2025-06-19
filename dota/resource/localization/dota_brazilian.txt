@@ -849,6 +849,7 @@
 		"DOTA_QuickBuyAlert_Enough"			"%s1Tenho ouro suficiente para completar <font color='%s2'>%s3</font>%s4"		
 		"DOTA_QuickBuyAlert_Buyback"				"%s1Preciso de %s2 de ouro para completar <font color='%s3'>%s4</font>%s5 e poder <font color='#00FF00'>recomprar</font>"		
 		"DOTA_QuickBuyAlert_Enough_Buyback"			"%s1Tenho ouro suficiente para completar <font color='%s2'>%s3</font>%s4 e <font color='#00FF00'>recomprar</font>"
+		"DOTA_Buyback_Protection"			"Proteção de recompra {s:buyback_protection_status}"
 		"DOTA_Buyback_Protection_On"			"<font color='#7FFF00'>ativada</font>"
 		"DOTA_Buyback_Protection_Off"			"<font color='#F62817'>desativada</font>"
 
@@ -3074,7 +3075,7 @@ Os Ancestrais, tanto Iluminado como Temido, traziam muitas vantagens: energia ci
 		"official_player_info_header"		"Informações do jogador"
 		"player_info_name"					"Informe o seu apelido, que deve ser reconhecível por jogadores ao redor do mundo e não incluir quaisquer nomes de equipes ou patrocinadores."
 		"player_info_country"				"Insira o seu país de residência, caso deseje."
-		"player_info_official_team"			"Caso jogue oficialmente por uma equipe de Dota, selecione-a. A sigla (tag) da mesma será prefixada no seu nome."
+		"player_info_official_team"			"Selecione a equipe profissional cadastrada da qual faz parte. A sigla (tag) dela será prefixada no seu nome."
 		"player_info_sponsor"				"Você pode inserir os nomes de patrocinadores aqui, que serão exibidos à direita do seu apelido."
 		"player_info_preview"				"O seu apelido será exibido assim:"
 		"player_info_role"					"Caso tenha um papel específico, selecione-o. \"Principal\" inclui Carregadores e Solos, sejam na trilha do meio ou em uma das trilhas laterais."
@@ -4994,7 +4995,6 @@ Os Ancestrais, tanto Iluminado como Temido, traziam muitas vantagens: energia ci
 		"DOTA_TeamLeave_Confirmation_Header"							"Sair da equipe?"
 		"DOTA_TeamLeave_Confirmation_Message"							"Deseja sair da {s:team_name}? O administrador da equipe precisará convidá-lo novamente caso deseje voltar. Como consequência desta ação (ou de qualquer alteração nos membros da equipe), a avaliação da equipe será recalculada com base nos novos membros, e a calibração será reativada."
 		"DOTA_TeamLeave_Confirmation_FailAdmin"							"O administrador de uma equipe só pode deixá-la quando for o único membro da equipe. Para desfazer uma equipe, primeiro remova todos outros membros."
-		"DOTA_TeamLeave_Confirmation_FailDisbandPro"					"Equipe profissional, não pode ser desfeita."
 		"DOTA_TeamLeave_Confirmation_Disband"							"Esta ação fará com que a equipe seja desfeita, não podendo mais ser acessada.\n\n<font color='#FF0000'>Tem certeza de que deseja desfazer a equipe?</font>"
 		"DOTA_TeamLeft_Header"											"Deixou equipe"
 		"DOTA_TeamLeft_Message"											"Você não faz mais parte da equipe."
@@ -18480,7 +18480,7 @@ Provocação especial para os Techies"
 	"DOTA_TeamConfirmKickMember"				"Expulsar {g:dota_persona:kickee_account_id} da equipe {s:team_name}?"
 	"DOTA_TeamCreateNewTeam"					"Criar nova equipe"
 	"DOTA_TeamsMyTeams"							"Minhas equipes"
-	"DOTA_OfficialTeamInfo"						"Meus dados profissionais"
+	"DOTA_OfficialTeamInfo"						"Meus dados oficiais"
 	"DOTA_TeamsManageTeams"						"Gerenciar equipes"
 	"DOTA_TeamImagesBrowse"						"Navegar"
 	"DOTA_TeamBaseLogo"							"Logo da equipe na base"
@@ -18501,7 +18501,6 @@ Provocação especial para os Techies"
 	"DOTA_TeamDisbandTeam"						"Desfazer equipe"
 	"DOTA_TeamDisbandTeamTooltip"				"A equipe só pode ser desfeita após esvaziar a escalação"
 	"DOTA_TeamInviteAPlayer"					"Digite o nome de um amigo..."
-	"DOTA_TeamProRoster"						"Equipes profissionais podem gerenciar as suas escalações em<br><br>https://www.dota2.com/majorsregistration"
 	"DOTA_TeamManagement_SelectLogo"			"Selecione um logo"
 	"DOTA_TeamTransferAdmin_Confirm_Header"							"ALTERAR ADMINISTRADOR DA EQUIPE"
 	"DOTA_TeamTransferAdmin_Confirm_Message"						"Deseja tornar {s:player_name} administrador(a) da equipe? Se continuar, você não poderá mais gerenciar esta equipe."
@@ -22698,6 +22697,7 @@ Para participar como um jogador experiente, você precisa ter jogado {d:new_play
 	"DOTA_Hotkeys_Tooltip_PurchaseQuickbuy"  "Comprar o próximo item na seção Compra Rápida se possível."
 	"DOTA_Hotkeys_Tooltip_PurchaseSticky"  "Comprar o item fixado se possível."
 	"DOTA_Hotkeys_Tooltip_GrabStashItems"  "Transferir todos os itens do seu armário para o seu herói."
+	"DOTA_Hotkeys_Tooltip_ToggleBuybackProtection"  "(Des)ativa a proteção de recompra."
 	"DOTA_Hotkeys_Tooltip_RecentEvent"  "Mover a câmera para o evento mais recente no mundo."
 	"DOTA_Hotkeys_Tooltip_InspectHeroInWorld"  "Ver a unidade de uma perspectiva mais próxima."
 	"DOTA_Hotkeys_Tooltip_ChatTeam"  "Enviar uma mensagem para todos da sua equipe."
@@ -23753,8 +23753,12 @@ Para participar como um jogador experiente, você precisa ter jogado {d:new_play
 
 	"dota_profile_oi_player_name"		"APELIDO"
 	"dota_profile_oi_player_name_sub"	"O seu apelido deve ser reconhecível por jogadores ao redor do mundo e não incluir quaisquer nomes de equipes ou patrocinadores."
+	"dota_profile_oi_player_name_sub_pro"	"Este nome não poderá ser editado durante o ano ao aceitar o contrato. Caso deseje alterá-lo, clique em \"Cancelar\" e edite-o antes de aceitar o contrato."
+	"dota_profile_oi_agreement_header"	"Contrato de Jogador Profissional"
+	"dota_profile_oi_full_name"			"NOME COMPLETO"
+	"dota_profile_oi_full_name_sub"		"O seu nome legal completo."
 	"dota_profile_oi_team"				"EQUIPE"
-	"dota_profile_oi_team_sub"			"Caso jogue oficialmente por uma equipe de Dota, selecione-a. A sigla (tag) da mesma será prefixada no seu nome. As equipes de jogadores profissionais serão associadas automaticamente."
+	"dota_profile_oi_team_sub"			"Ao selecionar uma equipe inscrita como Equipe Profissional, você poderá se inscrever como Jogador Profissional."
 	"dota_profile_oi_sponsor"			"PATROCINADOR"
 	"dota_profile_oi_sponsor_sub"		"Os nomes dos patrocinadores serão exibidos à direita do seu apelido."
 	"dota_profile_oi_country"			"PAÍS"
@@ -23765,6 +23769,13 @@ Para participar como um jogador experiente, você precisa ter jogado {d:new_play
 	"dota_profile_name_locked"			"Nome travado"
 	"dota_profile_team_locked"			"Equipe travada"
 	"dota_profile_team_locked_pro"		"Equipe associada automaticamente para jogadores profissionais"
+	"dota_profile_oi_register_title"	"Inscrição como Jogador Profissional"
+	"dota_profile_oi_register_title_details"	"A inscrição como Jogador Profissional realizada nesta janela é válida para todo o ano, incluindo para participação no International."
+	"dota_profile_oi_accept"			"Aceitar acordo e inscrever-se"
+	"dota_profile_oi_register_agreement"		"TERMOS DA TEMPORADA PROFISSIONAL DE 2025<br><br>Agradecemos por inscrever a sua equipe para participar da Temporada Profissional de 2025 (a \"Temporada\") patrocinada pela Valve Corporation (\"Valve\"). Este acordo estabelece os termos para a Temporada. Para ser considerado para participação, você concorda com estes termos.<br><br>Operadores de Eventos. Se você for selecionado para um ou mais eventos durante a Temporada, poderá ter que celebrar acordos separados com os operadores de eventos. Em particular, você deve consultar os operadores de eventos para obter o cronograma do evento, as regras, as despesas e os prêmios.<br><br>Liberação. Você garante que tem a autoridade para vincular a equipe que está registrando. Você concede à Valve o direito de distribuir, exibir e utilizar em todo o mundo durante a Temporada o nome da sua equipe, logotipo e lista de jogadores em qualquer meio e mídia relacionados à Temporada, incluindo, sem limitação, jogos de computador, vídeo, materiais promocionais e publicidade, sem qualquer compensação adicional da Valve. Após a Temporada, a Valve também pode reutilizar tais materiais que possa ter criado durante a Temporada para fins arquivísticos, de produto ou promocionais. Você concorda que qualquer áudio, vídeo ou outro dado capturado pela Valve e relacionado à sua participação na Temporada será de propriedade da Valve.<br><br>Geral. Você faz estas declarações e promessas em seu próprio nome e em nome de sua família, herdeiros, sucessores, cessionários e outras pessoas que possam reivindicar direitos através de você, para o benefício da Valve, seus sucessores e cessionários. A Valve pode alterar ou cancelar a Temporada a qualquer momento, a seu exclusivo critério. Este acordo é regido pelas leis do Estado de Washington, EUA, e você concorda com a jurisdição e local nos tribunais estaduais ou federais sentados no Condado de King, Washington, EUA em caso de qualquer disputa relacionada a este acordo. Estes termos substituem quaisquer acordos anteriores entre as partes em relação ao assunto aqui tratado."
+	"dota_profile_oi_is_pro"			"Você aceitou o Contrato de Jogador Profissional para este período."
+	"dota_profile_oi_no_team"			"Nenhuma equipe"
+
 
 	"dota_profile_oi_submit_info"		"Enviar"
 	"dota_profile_oi_cancel"			"Cancelar"
@@ -23772,6 +23783,7 @@ Para participar como um jogador experiente, você precisa ter jogado {d:new_play
 	"dota_profile_oi_submit_success"	"Sucesso!"
 	"dota_profile_oi_submit_failure"	"Erro — Tente novamente."
 	"dota_profile_oi_account_locked"	"Nome e equipe não podem ser editados no momento"
+	"dota_profile_oi_register_pro"		"Inscrever-se como Jogador Profissional"
 
 	"dota_role_core"					"Principal"
 	"dota_role_support"					"Suporte"
@@ -35527,7 +35539,7 @@ Cada região terá uma classificação em tempo real que será usada calcular o 
 		"DOTA_LearnViolator_New_Player" "Recomendado"
 
 		"DOTA_ManageProInfo_Header"	"Dados profissionais e equipes"
-		"DOTA_ManageProInfo_Button"	"Gerenciar dados profissionais e equipes"
+		"DOTA_ManageProInfo_Button"	"Gerenciar dados oficiais e equipes"
 
 		"DOTA_Announcer_Preview_Diretide2020_Killing_Spree_01" "First blood!"
 		"DOTA_Announcer_Preview_Diretide2020_Killing_Spree_02" "When beggars die, the moon doesn't care."
@@ -47220,6 +47232,7 @@ Em seções de <b>antijogo</b>, fique de olho em ações negativas em direção 
 		"dota_settings_reset_ping_wheel_title"			"Redefinir roda de sinalizações?"
 		"dota_settings_reset_ping_wheel_body"			"Esta ação redefinirá a sua roda de sinalizações para a configuração padrão. Deseja continuar?"
 
+		"dota_settings_reset_video_title"			"Redefinir configurações de vídeo?"
 		"dota_settings_abilitybar_default"		"Padrão"
 		"dota_settings_abilitybar_heroes"		"Heróis"
 		"dota_settings_abilitybar_courier"		"Entregador"
@@ -47251,8 +47264,7 @@ Em seções de <b>antijogo</b>, fique de olho em ações negativas em direção 
 		"dota_settings_mark_for_buy_title"				"Marcar para compra"
 
 		"dota_settings_language"		"Idioma"
-
-		"dota_settings_hero_specific"		"Heróis específicos"
+		
 		"dota_settings_dota_ability_use_original_cast_mode_for_stolen_spell"		"Rubick: modo de uso original para habilidades roubadas"
 		"dota_settings_dota_ability_use_original_cast_mode_for_stolen_spell_description"		"Cada habilidade roubada usará o modo de uso definido para ela, em vez do modo definido para o espaço de habilidade roubada do Rubick.<br><br>Por exemplo, se Rubick roubou a Lâmina Laguna de Lina no primeiro espaço, o modo de uso será o da Lâmina Laguna em vez do modo definido para o primeiro espaço."
 		"dota_settings_dota_ability_use_original_cast_mode_for_stolen_spell_new_setting_description"		"Configura como as habilidades roubadas por Rubick interagem com o uso rápido."
@@ -47260,6 +47272,10 @@ Em seções de <b>antijogo</b>, fique de olho em ações negativas em direção 
 		"dota_settings_per_unit_keybindings_disabled_during_custom_games" "Desativar atalhos específicos de unidades durante modos alternativos"
 		"dota_settings_per_unit_keybindings_disabled_during_custom_games_tooltip" "Ao jogar modos alternativos, todas as unidades usarão os atalhos padrão."
 		
+		"dota_settings_bind_togglebuybackprotection"	"Alternar proteção de recompra"
+
+		"dota_settings_healthbar_allies"	"Aliados"
+
 		"DOTA_DashboardGames_Title"								"Minijogos, afaste o tédio enquanto espera"
 	}
 } 

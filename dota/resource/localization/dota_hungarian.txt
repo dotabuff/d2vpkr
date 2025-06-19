@@ -849,6 +849,7 @@
 		"DOTA_QuickBuyAlert_Enough"			"%s1Elég aranyam van ehhez: <font color='%s2'>%s3</font>%s4"		
 		"DOTA_QuickBuyAlert_Buyback"				"%s1%s2 arany kell a(z) <font color='%s3'>%s4</font>%s5 tárgyhoz és a <font color='#00FF00'>visszavételhez</font>"		
 		"DOTA_QuickBuyAlert_Enough_Buyback"			"%s1Elég aranyam van a(z) <font color='%s2'>%s3</font>%s4 tárgyhoz és a <font color='#00FF00'>visszavételhez</font>"
+		"DOTA_Buyback_Protection"			"Visszavétel-védelem ({s:buyback_protection_status})"
 		"DOTA_Buyback_Protection_On"			"Be"
 		"DOTA_Buyback_Protection_Off"			"Ki"
 
@@ -3074,7 +3075,7 @@
 		"official_player_info_header"		"Hivatalos játékosinformáció"
 		"player_info_name"					"Írd be a megjelenítendő neved. Legyen felismerhető a játékosok számára világszerte, és ne tartalmazzon csapat- vagy támogató-hivatkozást."
 		"player_info_country"				"Megadhatod a lakóhelyedül szolgáló országot."
-		"player_info_official_team"			"Ha hivatalos minőségben játszol egy Dota csapatban, válaszd ki azt. E csapat jele látható lesz a neved előtt."
+		"player_info_official_team"			"Ki tudod választani, melyik hivatásosként regisztrált csapatban játszol. E csapat jele látható lesz a neved előtt."
 		"player_info_sponsor"				"Ide beírhatod szponzoraid nevét. Ezek a szponzorok megjelennek a neved mellett."
 		"player_info_preview"				"Így fog megjelenni a neved:"
 		"player_info_role"					"Ha konkrét szerepben játszol, kérjük, válaszd ki. Az Alap olyan játékosokat tartalmaz, akik közép-, oldalsó vonali vagy végjátékos szerepet töltenek be."
@@ -4997,7 +4998,6 @@
 		"DOTA_TeamLeave_Confirmation_Header"							"Elhagyod a csapatot?"
 		"DOTA_TeamLeave_Confirmation_Message"							"El szeretnéd hagyni a(z) {s:team_name} csapatot? A csapatadminnak újra meg kell majd hívnia, ha ismét csatlakozni szeretnél. E művelet eredményeképp (vagy bármilyen csapatfelállás-változáskor) a csapat JáR-ja újraszámolásra kerül az új csapatfelállás alapján, és a kalibráció újra aktiválásra kerül."
 		"DOTA_TeamLeave_Confirmation_FailAdmin"							"Egy csapat adminisztrátora csak akkor hagyhatja el azt, amikor ő a csapat egyedüli tagja. Csapat feloszlatásához először el kell távolítanod az összes többi tagot."
-		"DOTA_TeamLeave_Confirmation_FailDisbandPro"					"Egy egy hivatásos csapat, így nem lehet feloszlatni."
 		"DOTA_TeamLeave_Confirmation_Disband"							"E művelet feloszlatja a csapatot és a továbbiakban az nem lesz elérhető.\n\n<font color='#FF0000'>Biztosan fel szeretnéd oszlatni a csapatot?</font>"
 		"DOTA_TeamLeft_Header"											"Elhagytad a csapatot"
 		"DOTA_TeamLeft_Message"											"Elhagytad a csapatot."
@@ -18549,7 +18549,7 @@ Különleges Techies gúnyolódás"
 	"DOTA_TeamConfirmKickMember"				"{g:dota_persona:kickee_account_id} kirúgása innen: {s:team_name}?"
 	"DOTA_TeamCreateNewTeam"					"Új csapat"
 	"DOTA_TeamsMyTeams"							"Csapataim"
-	"DOTA_OfficialTeamInfo"						"Hivatásos infóm"
+	"DOTA_OfficialTeamInfo"						"Hivatalos adataim"
 	"DOTA_TeamsManageTeams"						"Csapatok kezelése"
 	"DOTA_TeamImagesBrowse"						"Tallózás"
 	"DOTA_TeamBaseLogo"							"Csapat bázis-logója"
@@ -18570,7 +18570,6 @@ Különleges Techies gúnyolódás"
 	"DOTA_TeamDisbandTeam"						"Csapat feloszlatása"
 	"DOTA_TeamDisbandTeamTooltip"				"A csapatfelállásnak üresnek kell lennie a csapat feloszlatásához"
 	"DOTA_TeamInviteAPlayer"					"Írd be egy barát nevét..."
-	"DOTA_TeamProRoster"						"A profi csapatok itt kezelhetik felállásaikat:<br><br>https://www.dota2.com/majorsregistration"
 	"DOTA_TeamManagement_SelectLogo"			"Válassz logót"
 	"DOTA_TeamTransferAdmin_Confirm_Header"							"CSAPATADMIN CSERÉJE"
 	"DOTA_TeamTransferAdmin_Confirm_Message"						"Szeretnéd {s:player_name} játékost kinevezni a csapat adminisztrátorává? Ha folytatod, te többé nem fogod tudni kezelni ezt a csapatot."
@@ -22948,6 +22947,7 @@ Tapasztalt játékosként a csatlakozáshoz legalább {d:new_player_req_games_pl
 	"DOTA_Hotkeys_Tooltip_PurchaseQuickbuy"  "A következő tárgy megvásárlása a Gyorsvétel panelről, ha megengedheted magadnak."
 	"DOTA_Hotkeys_Tooltip_PurchaseSticky"  "A kiemelt területen lévő tárgy megvásárlása, ha megengedheted magadnak."
 	"DOTA_Hotkeys_Tooltip_GrabStashItems"  "Összes tárgy átszállítása a talonodból a hősödnek."
+	"DOTA_Hotkeys_Tooltip_ToggleBuybackProtection"  "Visszavétel-védelem be-/kikapcsolása"
 	"DOTA_Hotkeys_Tooltip_RecentEvent"  "Kamera mozgatása a világ legaktuálisabb eseményéhez."
 	"DOTA_Hotkeys_Tooltip_InspectHeroInWorld"  "Egység közeli perspektívából való megnézése."
 	"DOTA_Hotkeys_Tooltip_ChatTeam"  "Üzenet küldése a csapatod összes tagjának."
@@ -24007,8 +24007,12 @@ Tapasztalt játékosként a csatlakozáshoz legalább {d:new_player_req_games_pl
 
 	"dota_profile_oi_player_name"		"MEGJELENÍTENDŐ NÉV"
 	"dota_profile_oi_player_name_sub"	"Legyen felismerhető a játékosok számára világszerte, és ne tartalmazzon csapat- vagy támogató-hivatkozást."
+	"dota_profile_oi_player_name_sub_pro"	"E név zárolva lesz arra az évre, amikor elfogadod a szerződést. Ha más nevet szeretnél, kattints a Mégse lehetőségre, és módosítsd azt a szerződés elfogadása előtt."
+	"dota_profile_oi_agreement_header"	"Hivatásos játékos szerződés"
+	"dota_profile_oi_full_name"			"TELJES NÉV"
+	"dota_profile_oi_full_name_sub"		"A teljes hivatalos neved."
 	"dota_profile_oi_team"				"CSAPAT"
-	"dota_profile_oi_team_sub"			"Ha hivatalos minőségben játszol egy Dota csapatban, válaszd ki azt. E csapat jele látható lesz a neved előtt. A hivatásos játékosokhoz csapatuk automatikusan hozzárendelésre kerül."
+	"dota_profile_oi_team_sub"			"Ha olyan csapatot választasz, amely hivatásos csapatként regisztrált, regisztrálni tudod majd magad hivatásos játékosként."
 	"dota_profile_oi_sponsor"			"SZPONZOR"
 	"dota_profile_oi_sponsor_sub"		"A szponzorok megjelennek a neved mellett."
 	"dota_profile_oi_country"			"ORSZÁG"
@@ -24019,6 +24023,13 @@ Tapasztalt játékosként a csatlakozáshoz legalább {d:new_player_req_games_pl
 	"dota_profile_name_locked"			"Zárolt név"
 	"dota_profile_team_locked"			"Zárolt csapat"
 	"dota_profile_team_locked_pro"		"A hivatásos játékosok automatikusan kerülnek csapatba."
+	"dota_profile_oi_register_title"	"Hivatásos játékos regisztráció"
+	"dota_profile_oi_register_title_details"	"Az e párbeszédablakon keresztüli jelentkezés hivatásos játékosként fog regisztrálni téged erre az évre, beleértve a The Internationalen való részvételedet."
+	"dota_profile_oi_accept"			"Szerződés elfogadása és regisztráció"
+	"dota_profile_oi_register_agreement"		"A 2025-ÖS HIVATÁSOS SZEZON FELTÉTELEI<br><br>Köszönjük, hogy jelentkeztél a Valve Corporation (Valve) által szponzorált 2025-ös Dota 2 Hivatásos Szezonra (a „Szezon”). Ez a szerződés fekteti le a Szezon feltételeit. A részvételhez elfogadod ezeket a feltételeket.<br><br>Eseményszervezők. Ha kiválasztanak egy vagy több eseményre a Szezon alatt, lehet, hogy külön szerződéseket kell aláírnod az eseményszervezőkkel. Különösen az eseményprogrammal, -szabályokkal, -költségekkel és -díjakkal kapcsolatban kell az eseményszervezőkhöz fordulnod.<br><br>Lemondó nyilatkozat. Feljogosítod a Valve-et megjelenésed, előadásod, neved, életrajzi adataid, nyilatkozataid és bármilyen egyéb, a Szezonnal kapcsolatos kép- és hanganyagod (összefoglalva \"Megjelenés\") a Szezon alatti, a világ egészére kiterjedő terjesztésére, bemutatására, közzétételére és egyéb felhasználására, bármilyen módon és médiában, beleértve de nem kizárólagosan számítógépes játékokban, videókban, promóciós anyagokban és reklámokban anélkül, hogy a Valve további kompenzációt nyújtana. A Szezon után a Valve újra is használhatja a Szezon alatt készített anyagokat archiválási, termék vagy promóciós célból. Elfogadod, hogy a Valve által vagy számára a Szezon alatt a részvételeddel kapcsolatban készített bármely hang, videó vagy egyéb adat a Valve tulajdona lesz.<br><br>Általános. Ezeket az állításokat és ígéreteket saját és a családod, örököseid, jogutódjaid, meghatalmazottjaid és bármely más rajtad keresztül jogot formáló személy nevében teszed a Valve és annak jogutódjai, illetve meghatalmazottjai felé. A Valve saját belátása szerint bármikor megváltoztathatja vagy törölheti a Szezont. E megállapodásra az egyesült államokbeli Washington állam törvényei az irányadók, és az e megállapodás kapcsán felmerülő bármely vita esetén elfogadod az Egyesült Államok, Washington államának King megyéjében levő és szövetségi bíróság helyét és joghatóságát. E feltételek a jelen tárgyra vonatkozóan hatályon kívül helyeznek minden korábbi megállapodást a felek között."
+	"dota_profile_oi_is_pro"			"Elfogadtad a hivatásos játékos szerződést erre az időszakra."
+	"dota_profile_oi_no_team"			"Csapat nélküli"
+
 
 	"dota_profile_oi_submit_info"		"Beküld"
 	"dota_profile_oi_cancel"			"Mégse"
@@ -24026,6 +24037,7 @@ Tapasztalt játékosként a csatlakozáshoz legalább {d:new_player_req_games_pl
 	"dota_profile_oi_submit_success"	"Siker!"
 	"dota_profile_oi_submit_failure"	"Hiba - Próbáld újra."
 	"dota_profile_oi_account_locked"	"A név és a csapat jelenleg zárolva van"
+	"dota_profile_oi_register_pro"		"Regisztráció hivatásos játékosként"
 
 	"dota_role_core"					"Alap"
 	"dota_role_support"					"Támogató"
@@ -36404,7 +36416,7 @@ Mindegyik régiónak élő ranglistája van, amely a céh rangjának kiszámít�
 		"DOTA_LearnViolator_New_Player" "Ajánlott"
 
 		"DOTA_ManageProInfo_Header"	"Profi infó és csapatok"
-		"DOTA_ManageProInfo_Button"	"Profi infó és csapatok kezelése"
+		"DOTA_ManageProInfo_Button"	"Hivatalos adatok és csapatok kezelése"
 
 		"DOTA_Announcer_Preview_Diretide2020_Killing_Spree_01" "Első vérontás!"
 		"DOTA_Announcer_Preview_Diretide2020_Killing_Spree_02" "A holdat koldusok halála nem érdekli."
@@ -48374,7 +48386,6 @@ Ha úgy érzed, nem tudtál a döntés meghozatalához szükséges szintű figye
 		"Tooltip_TeammateItems_Quickbuy"								"Gyorsvételi sorban"
 		"Tooltip_TeammateItems_MajorComponent"							"Figyelt tárgyösszetevő:"
 		"Tooltip_TeammateItems_PrimaryItem"								"Figyelt tárgy összetevője:"
-
 		"DOTA_SettingsShortcut_Options"									"{s:settings_category} beállítások kezelése"
 		"DOTA_SettingsShortcut_Hotkeys"									"{s:settings_category} gyorsbillentyűk kezelése"
 		"DOTA_SettingsShortcut_CourierCategory"							"Futár"
@@ -48572,6 +48583,9 @@ Ha úgy érzed, nem tudtál a döntés meghozatalához szükséges szintű figye
 		"dota_settings_reset_ping_wheel_title"			"Alaphelyzetbe állítod a pingkorongot?"
 		"dota_settings_reset_ping_wheel_body"			"Ez alaphelyzetbe fogja állítani a pingkorongodat. Biztos vagy benne?"
 
+		"dota_settings_reset_video_title"			"Alaphelyzetbe állítod a képbeállításokat?"
+		"dota_settings_reset_video_body"			"Ez minden képbeállítást alapértékre fog állítani. Biztos vagy benne?"
+
 		"dota_settings_abilitybar_default"		"Alapértelmezett"
 		"dota_settings_abilitybar_heroes"		"Hősök"
 		"dota_settings_abilitybar_courier"		"Futár"
@@ -48603,8 +48617,9 @@ Ha úgy érzed, nem tudtál a döntés meghozatalához szükséges szintű figye
 		"dota_settings_mark_for_buy_title"				"Vételre jelölés"
 
 		"dota_settings_language"		"Nyelv"
+		
+		"dota_settings_clear_all"		"Összes törlése"
 
-		"dota_settings_hero_specific"		"Hősspecifikus"
 		"dota_settings_dota_ability_use_original_cast_mode_for_stolen_spell"		"Rubick: az eredeti varázslási mód használata a lopott varázslatokhoz"
 		"dota_settings_dota_ability_use_original_cast_mode_for_stolen_spell_description"		"A lopott varázslatok az adott varázslathoz beállított varázslási módot fogják használni Rubick lopott varázslathelye helyett. Például, ha Rubick ellopta Lina Laguna Blade-jét az első lopott varázslathelyen, akkor e képesség varázslása a Laguna Blade varázslási módját fogja követni, nem pedig az első lopott varázslathely módját."
 		"dota_settings_dota_ability_use_original_cast_mode_for_stolen_spell_new_setting_description"		"Állítsd be a Rubick által ellopott varázslatok és a gyors-varázslás közti kölcsönhatást."
@@ -48612,6 +48627,10 @@ Ha úgy érzed, nem tudtál a döntés meghozatalához szükséges szintű figye
 		"dota_settings_per_unit_keybindings_disabled_during_custom_games" "Egységenkénti gyorsbillentyűk kikapcsolása egyedi játékokban"
 		"dota_settings_per_unit_keybindings_disabled_during_custom_games_tooltip" "Egyedi játékok játszásakor minden egység az alapértelmezett gyorsbillentyűket fogja használni."
 		
+		"dota_settings_bind_togglebuybackprotection"	"Visszavétel-védelem be/ki"
+
+		"dota_settings_healthbar_allies"	"Szövetségesek"
+
 		"DOTA_DashboardGames_Title"								"Minijátékok a sorban állás feldobására"
 	}
 } 

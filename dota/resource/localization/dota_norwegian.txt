@@ -849,6 +849,7 @@
 		"DOTA_QuickBuyAlert_Enough"			"%s1Jeg har nok gull til <font color='%s2'>%s3</font>%s4"		
 		"DOTA_QuickBuyAlert_Buyback"				"%s1Trenger %s2 gull for <font color='%s3'>%s4</font>%s5 og <font color='#00FF00'>tilbakekjøp</font>"		
 		"DOTA_QuickBuyAlert_Enough_Buyback"			"%s1Jeg har nok gull for <font color='%s2'>%s3</font>%s4 og <font color='#00FF00'>tilbakekjøp</font>"
+		"DOTA_Buyback_Protection"			"Tilbakekjøpsvern ({s:buyback_protection_status})"
 		"DOTA_Buyback_Protection_On"			"på"
 		"DOTA_Buyback_Protection_Off"			"av"
 
@@ -2106,6 +2107,7 @@
 		"DOTA_Item_Build_Neutral_Items"			"Nøytrale gjenstander tilgjengelig"
 		"DOTA_Item_Build_MainSequence"			"Anbefalt gjenstandsbygg"
 		"DOTA_Item_Build_ItemOptions"			"Kjøp neste"
+		"DOTA_Item_Build_GeneralItems"			"Vanlige gjenstander for denne helten"
 		"DOTA_Item_Build_PreferredItems"		"Foretrukne gjenstander"
 		"DOTA_Item_Build_DislikedItems"			"Mislikte gjenstander"
 		"DOTA_Item_Build_Variants"				"Generer alternativer"
@@ -2904,7 +2906,7 @@
 		"official_player_info_header"		"Offisiell informasjon om spiller"
 		"player_info_name"					"Skriv inn visningsnavnet ditt. Det bør være gjenkjennelig for spillere over hele verden, og bør ikke inkludere tilknytninger til lag eller sponsorer."
 		"player_info_country"				"Angi bostedsland"
-		"player_info_official_team"			"Hvis du spiller offisielt på et Dota-lag, velg laget. Lagets merke settes foran navnet ditt."
+		"player_info_official_team"			"Du kan velge hvilket proffregistrert lag du spiller for. Dette lagets forkortelse vises foran navnet ditt."
 		"player_info_sponsor"				"Du kan skrive inn navn på eventuelle sponsorer her. Disse sponsorene tilføyes etter navnet ditt."
 		"player_info_preview"				"Slik vises navnet ditt:"
 		"player_info_role"					"Hvis du spiller som en spesifikk rolle, velg denne. Kjerne inkluderer spillere som spiller carry, midten og bortre."
@@ -4785,7 +4787,6 @@
 		"DOTA_TeamLeave_Confirmation_Header"							"Forlat laget?"
 		"DOTA_TeamLeave_Confirmation_Message"							"Vil du forlate {s:team_name}? Lagadministratoren må invitere deg på nytt hvis du vil bli med igjen. Som resultat av denne handlingen (eller enhver endring i oppstillingen) vil lagets MMR-poeng beregnes på nytt basert på den nye oppstillingen, og kalibrering vil reaktiveres."
 		"DOTA_TeamLeave_Confirmation_FailAdmin"							"Administratoren til et lag kan kun forlate det hvis de er det eneste medlemmet i laget. For å avvikle et lag, må du først fjerne alle andre medlemmer."
-		"DOTA_TeamLeave_Confirmation_FailDisbandPro"					"Dette er et profflag, og det kan ikke avvikles."
 		"DOTA_TeamLeave_Confirmation_Disband"							"Denne handlingen avvikler laget, og det kommer ikke lenger til å være tilgjengelig.\n\n<font color='#FF0000'>Er du sikker på at du vil avvikle laget?</font>"
 		"DOTA_TeamLeft_Header"											"Forlot lag"
 		"DOTA_TeamLeft_Message"											"Du har forlatt laget."
@@ -14647,7 +14648,7 @@
 	"DOTA_TeamKickMember"						"Kast ut lagmedlem"
 	"DOTA_TeamCreateNewTeam"					"Opprett nytt lag"
 	"DOTA_TeamsMyTeams"							"Mine lag"
-	"DOTA_OfficialTeamInfo"						"Min proffinfo"
+	"DOTA_OfficialTeamInfo"						"Egen offisiell informasjon"
 	"DOTA_TeamsManageTeams"						"Behandle lag"
 	"DOTA_TeamImagesBrowse"						"Bla"
 	"DOTA_TeamBaseLogo"							"Lagets baselogo"
@@ -18628,6 +18629,7 @@ Du må ha minst {d:new_player_req_games_played} spilte kamper og en kommunikasjo
 	"DOTA_Hotkeys_Tooltip_PurchaseQuickbuy"  "Kjøp den neste gjenstanden i hurtigkjøpsfeltet hvis du har råd."
 	"DOTA_Hotkeys_Tooltip_PurchaseSticky"  "Kjøp gjenstanden i det faste feltet hvis du har råd."
 	"DOTA_Hotkeys_Tooltip_GrabStashItems"  "Overfør alle gjenstandene fra forrådet til helten."
+	"DOTA_Hotkeys_Tooltip_ToggleBuybackProtection"  "Slå på/av tilbakekjøpsvern."
 	"DOTA_Hotkeys_Tooltip_RecentEvent"  "Flytt kameraet til den seneste hendelsen i verden."
 	"DOTA_Hotkeys_Tooltip_InspectHeroInWorld"  "Se en enhet på nært hold."
 	"DOTA_Hotkeys_Tooltip_ChatTeam"  "Send en melding til alle på laget ditt."
@@ -19622,18 +19624,32 @@ Du må ha minst {d:new_player_req_games_played} spilte kamper og en kommunikasjo
 	"dota_profile_hero" "{s:hero_name}"
 
 	"dota_profile_oi_player_name"		"VISNINGSNAVN"
+	"dota_profile_oi_player_name_sub_pro"	"Dette navnet blir låst for året når du godtar avtalen. Hvis du ønsker å gjøre endringer, kan du trykke avbryt og redigere før du godtar avtalen."
+	"dota_profile_oi_agreement_header"	"Avtale for proffspillere"
+	"dota_profile_oi_full_name"			"FULLT NAVN"
+	"dota_profile_oi_full_name_sub"		"Hele det juridiske navnet ditt."
 	"dota_profile_oi_team"				"LAG"
-	"dota_profile_oi_team_sub"			"Hvis du spiller offisielt på et Dota-lag, velg laget. Lagets merke settes foran navnet ditt. Proffspillere får lagene sine tildelt automatisk."
+	"dota_profile_oi_team_sub"			"Hvis du velger et lag som er påmeldt som et profflag, kan du melde deg på som en proffspiller."
 	"dota_profile_oi_sponsor_sub"		"Sponsorer tilføyes etter navnet ditt."
 	"dota_profile_oi_country"			"LAND"
 	"dota_profile_oi_role"				"ROLLE"
 	"dota_profile_oi_role_sub"			"Hvis du spiller en spesifikk rolle, velg denne. Kjerne inkluderer spillere som spiller carry, midten og bortre."
 	"dota_profile_oi_preview"			"Slik vises navnet ditt på ledertabeller og i ligakamper:"
+	"dota_profile_oi_register_title"	"Påmelding for proffspillere"
+	"dota_profile_oi_register_title_details"	"Påmelding via dette vinduet registrerer deg som en proffspiller for dette året, også for deltakelse i The International."
+	"dota_profile_oi_accept"			"Godta avtalen og meld deg på"
+	"dota_profile_oi_register_agreement"		"VILKÅR FOR PROFFSESONGEN 2025<br><br>Takk for at du meldte deg på for å delta i proffsesongen 2025 i Dota 2 («sesongen») sponset av Valve Corporation («Valve»). Denne avtalen fremlegger vilkårene for sesongen. Du må godta disse vilkårene for å bli vurdert for deltakelse.<br><br>Begivenhetsarrangører. Hvis du velges for én eller flere begivenheter under sesongen, må du muligens inngå egne avtaler med begivenhetsarrangørene. Du må særlig forhøre deg med begivenhetsarrangører om temaer som tidsplan, regler, kostnader og premier.<br><br>Avhending. Du gir Valve rett til å distribuere, utstille og på annet vis bruke, over hele verden under sesongen, utseendet ditt, opptredenen din, navnet ditt, biografisk informasjon, utsagn og andre lydlige eller visuelle effekter produsert av deg («skikkelsen» din som helhet), på alle og enhver type media i forbindelse med sesongen, inkludert, uten begrensninger, dataspill, video, kampanjematerialer og reklame, uten videre godtgjørelse fra Valve. Etter sesongen kan Valve også bruke slike materialer om igjen for formål innen arkivering, produkt eller kampanjer. Du godtar at eventuell lyd, video eller annen data samlet av eller for Valve og som vedrører deltakelsen din i sesongen, eies av Valve.<br><br>Generelt. Disse utsagnene og løftene er på vegne av deg selv og på vegne av familien din, arvinger, etterfølgere, parter i overdragelse og eventuelle andre som kan kreve rettigheter gjennom deg, til Valves fordel og dets etterfølgere og parter i overdragelse. Valve kan endre sesongen eller avbryte sesongen når som helst på egne vilkår. Denne avtalen er underlagt lovene i staten Washington i USA, og du godtar jurisdiksjonen til statlige og føderale domstoler i King County i Washington i USA i tilfelle det oppstår tvister vedrørende denne avtalen. Disse vilkårene overstyrer eventuelle tidligere avtaler mellom partene når det gjelder innholdet i avtalen."
+	"dota_profile_oi_is_pro"			"Du har godtatt proffspilleravtalen for denne perioden."
+	"dota_profile_oi_no_team"			"Intet lag"
+
+
 	"dota_profile_oi_submit_info"		"Send"
 	"dota_profile_oi_cancel"			"Avbryt"
 	"dota_profile_oi_submit_pending"	"Sender..."
 	"dota_profile_oi_submit_success"	"Vellykket!"
 	"dota_profile_oi_submit_failure"	"Feil – Prøv igjen."
+	"dota_profile_oi_register_pro"		"Meld deg på som proffspiller"
+
 	"dota_role_core"					"Kjerne"
 	"dota_role_support"					"Støtte"
 	"dota_role_offlane"					"Offlane"
@@ -23561,7 +23577,7 @@ Du må ha minst {d:new_player_req_games_played} spilte kamper og en kommunikasjo
 	"DOTA_HeroStats_MovementSpeed_Desc"		"Hastigheten en helt kan bevege seg på kartet."
 	"DOTA_HeroStats_TurnRate_Name"			"Dreietempo"
 	"DOTA_HeroStats_TurnRate_Desc"			"Hastigheten en helt kan dreie seg."
-	"DOTA_HeroStats_SightRange_Name"		"Synsrekkevidde"
+	"DOTA_HeroStats_SightRange_Name"		"Synsvidde"
 	"DOTA_HeroStats_SightRange_Desc"		"Avstanden en helt kan se om sikten ikke blokkeres av en hindring – verdiene er vanligvis forskjellige om dagen / natten."
 
 	"DOTA_HeroStats_MaxHealth_Name"			"Maks helse"
@@ -23716,6 +23732,16 @@ Du må ha minst {d:new_player_req_games_played} spilte kamper og en kommunikasjo
 	"DOTA_GameMode_AbilityDraft_ChangeLog_Title"  "Endringslogg"
 	"DOTA_GameMode_AbilityDraft_ChangeLog_Tooltip"  "Se de siste oppdateringene til Ability Draft"
 
+	"DOTA_GameMode_AbilityDraft_ChangeLog_Latest_June_18_2025" "
+	<b><font color='#ffffff'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;18. juni 2025</font></b>
+	<br>• La til talenttre til helters verktøytips under utvelgelsen. Hold over helter for å se talenttreet til helten.
+	<br>• Fikset at nedtellingslyden ikke ble spilt av når det var like før din tur.
+	<br>• Fikset et par systemfeil relatert til at et uriktig talent av og til viste eller manglet.
+	<br>• Fikset at Shodo Sai og Kazurai Katana ikke fungerte.
+	<br>• Fikset at Witchcraft ble gitt med Exorcism.
+	<br>• Fikset at Warlord Rampage ble gitt med Shard ved en feiltagelse.
+	<br>• Fikset at nedtrekksmenyen til fasettvelgeren av og til ikke viste fasetten som ble valgt under utvelgelsen."
+	
 	"DOTA_GameMode_AbilityDraft_ChangeLog_Latest_May_22_2025" "
 	<b><font color='#ffffff'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;22. mai 2025</font></b>
 	<br>• <b>LA TIL HELTEUTVELGELSE.</b> Helter kan nå velges når som helst i løpet av utvelgelsen og kommer med den medfødte evnen.
@@ -28776,7 +28802,7 @@ Hver region har en ledertabell som brukes til å beregne gildets grad ved ukeslu
 		"DOTA_LearnViolator_New_Player" "Anbefalt"
 
 		"DOTA_ManageProInfo_Header"	"Proffinfo og -lag"
-		"DOTA_ManageProInfo_Button"	"Behandle proffinfo og -lag"
+		"DOTA_ManageProInfo_Button"	"Behandle offisiell informasjon og lag"
 
 		"DOTA_Announcer_Preview_Diretide2020_Killing_Spree_01" "Første blod!"
 		"DOTA_Announcer_Preview_Diretide2020_Killing_Spree_02" "Månen er likegyldig til rakkeres død."
@@ -40372,6 +40398,7 @@ Drap av målet i Dead Reckoning gir 2 poeng. Medvirkninger gir 1 poeng."
 		"Tooltip_TeammateItems_Quickbuy"								"I hurtigkjøp"
 		"Tooltip_TeammateItems_MajorComponent"							"Overvåket gjenstandskomponent:"
 		"Tooltip_TeammateItems_PrimaryItem"								"Komponenter for overvåket gjenstand:"
+		"Tooltip_Items_ComponentOf"										"Komponent i:"
 
 		"DOTA_SettingsShortcut_Options"									"Behandle innstillinger ({s:settings_category})"
 		"DOTA_SettingsShortcut_Hotkeys"									"Behandle hurtigtaster ({s:settings_category})"
@@ -40570,6 +40597,9 @@ Drap av målet i Dead Reckoning gir 2 poeng. Medvirkninger gir 1 poeng."
 		"dota_settings_reset_ping_wheel_title"			"Tilbakestill plinghjulet?"
 		"dota_settings_reset_ping_wheel_body"			"Denne handlingen tilbakestiller plinghjulet til standard. Er du sikker?"
 
+		"dota_settings_reset_video_title"			"Tilbakestill videoinnstillinger?"
+		"dota_settings_reset_video_body"			"Denne handlingen tilbakestiller alle videoinnstillingene til standard. Er du sikker?"
+
 		"dota_settings_abilitybar_default"		"Standard"
 		"dota_settings_abilitybar_heroes"		"Helter"
 		"dota_settings_abilitybar_courier"		"Kurer"
@@ -40601,8 +40631,9 @@ Drap av målet i Dead Reckoning gir 2 poeng. Medvirkninger gir 1 poeng."
 		"dota_settings_mark_for_buy_title"				"Marker for kjøp"
 
 		"dota_settings_language"		"Språk"
+		
+		"dota_settings_clear_all"		"Fjern alt"
 
-		"dota_settings_hero_specific"		"Heltespesifikt"
 		"dota_settings_dota_ability_use_original_cast_mode_for_stolen_spell"		"Rubick: Bruk opprinnelig bruksmodus for stjålne formler"
 		"dota_settings_dota_ability_use_original_cast_mode_for_stolen_spell_description"		"Stjålne formler benytter heller bruksmodusen som er angitt for den spesifikke formelen, enn plassen for Rubicks stjålne formler. For eksempel hvis Rubick har stjålet Linas Laguna Blade i den første plassen for stjålne formler, følger denne evnen bruksmodusen til Laguna Blade i stedet for modusen til den første plassen for stjålne formler."
 		"dota_settings_dota_ability_use_original_cast_mode_for_stolen_spell_new_setting_description"		"Konfigurer hvordan Rubicks stjålne formler samhandler med hurtigbruk."
@@ -40610,6 +40641,10 @@ Drap av målet i Dead Reckoning gir 2 poeng. Medvirkninger gir 1 poeng."
 		"dota_settings_per_unit_keybindings_disabled_during_custom_games" "Deaktiver hurtigtaster per enhet under tilpassede spill"
 		"dota_settings_per_unit_keybindings_disabled_during_custom_games_tooltip" "Mens du spiller tilpassede spill, bruker alle enheter standard hurtigtaster."
 		
+		"dota_settings_bind_togglebuybackprotection"	"Veksle tilbakekjøpsvern"
+
+		"dota_settings_healthbar_allies"	"Allierte"
+
 		"DOTA_DashboardGames_Title"								"Minispill å kose deg med i køen"
 	}
 } 

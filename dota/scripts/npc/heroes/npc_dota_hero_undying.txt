@@ -27,7 +27,6 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"13 10 7 4"
 		"AbilityDuration"				"21.0 24.0 27.0 30.0"
 
 		// Cost
@@ -63,6 +62,11 @@
 			"str_scale_up"	"2"
 			"creep_damage_multiplier"	"2.0"
 			"shard_buff_duration"		"40"
+			"AbilityCooldown"
+			{
+				"value"								"13 10 7 4"
+				"special_bonus_unique_undying_2"	"-2"
+			}
 		}
 	}
 
@@ -204,6 +208,10 @@
 				"special_bonus_unique_undying" "+20"
 				"CalculateSpellDamageTooltip"	"0"
 			}
+			"zombie_bonus_damage"
+			{
+				"special_bonus_unique_undying" "+20"
+			}
 			"zombie_health"				"2"
 
 			"bunker_units"				"1"
@@ -305,7 +313,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
@@ -402,65 +410,6 @@
 	}
 
 	//=================================================================================================================
-	// Undying: Zombie Master
-	//=================================================================================================================
-	"undying_zombie_master"
-	{
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilitySound"					"Hero_Undying.Tombstone"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-
-		"HasShardUpgrade"				"1"
-		"IsBreakable"					"1"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"150"
-		"AbilityCastPoint"				"0.0"
-
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-			"AbilityCooldown"
-			{
-				"value"					"3 2 1 0"
-			}
-			"zombie_health"
-			{
-				"value"								"2"
-				"special_bonus_unique_undying_5"	"+2"
-			}
-			"duration"
-			{
-				"value"								"6 9 12 15"
-				"special_bonus_unique_undying_3"	"+20"
-			}
-			"infinite_lifetime"
-			{
-				"value"								"0"
-			}
-			"zombies_per_hit"
-			{
-				"value"						"1"
-				"special_bonus_shard"		"+1"
-			}
-			"zombie_spawn_padding"			"36"
-			"health_threshold_pct_tooltip"	"40"
-			"zombie_damage_tooltip"
-			{
-				"value"					"34"
-				"special_bonus_unique_undying" "+20"
-				"CalculateSpellDamageTooltip"	"0"
-			}
-		}
-	}
-
-	//=================================================================================================================
 	// Undying Relentless Return
 	//=================================================================================================================
 	"undying_ceaseless_dirge"
@@ -478,130 +427,5 @@
 		{
 			"respawn_delay"				"2.0"
 		}
-	}	
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_undying"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityValues"
-		{
-			"value"
-			{
-				"value" "20"
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_undying_2"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityValues"
-		{
-			"value"
-			{
-				"value" "2"
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_undying_3"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityValues"
-		{
-			"value"
-			{
-				"value" "1"
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_undying_4"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"						"special_bonus_base"
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_undying_5"
-	{
-		// Gener
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityValues"
-		{
-			"value"
-			{
-				"value" "6"
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_undying_6"
-	{
-		// Gener
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass" "special_bonus_base"
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_undying_7"
-	{
-		// Gener
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"						"special_bonus_base"
-
-		"AbilityValues"
-		{
-			"zombie_master_flesh_golem_cooldown"	"20"
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_undying_8"
-	{
-		// Gener
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"						"special_bonus_base"
 	}
 }

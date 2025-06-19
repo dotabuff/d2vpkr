@@ -849,6 +849,7 @@
 		"DOTA_QuickBuyAlert_Enough"			"%s1Tengo suficiente oro para <font color='%s2'>%s3</font>%s4"		
 		"DOTA_QuickBuyAlert_Buyback"				"%s1Necesito %s2 de oro para <font color='%s3'>%s4</font>%s5 y <font color='#00FF00'>resucitar</font>"		
 		"DOTA_QuickBuyAlert_Enough_Buyback"			"%s1Tengo suficiente oro para <font color='%s2'>%s3</font>%s4 y <font color='#00FF00'>resucitar</font>"
+		"DOTA_Buyback_Protection"			"Protección de Resurrección ({s:buyback_protection_status})"
 		"DOTA_Buyback_Protection_On"			"Activado"
 		"DOTA_Buyback_Protection_Off"			"Desactivado"
 
@@ -3076,7 +3077,6 @@ Al extenderse su influencia cultural, entraron en conflicto entre sí. La interf
 		"official_player_info_header"		"Información de jugador oficial"
 		"player_info_name"					"Por favor, introduce tu nombre de usuario. Debe ser reconocible para cualquier jugador del mundo y no debe contener ninguna afiliación a equipos o patrocinadores."
 		"player_info_country"				"Puedes introducir el país en el que resides."
-		"player_info_official_team"			"Si juegas para un equipo profesional de Dota de forma oficial, por favor, selecciónalo. El tag de este equipo saldrá prefijado en tu nombre."
 		"player_info_sponsor"				"Puedes introducir el nombre de cualquier patrocinador aquí. Estos patrocinadores se añadirán a tu nombre."
 		"player_info_preview"				"Así se mostrará tu nombre:"
 		"player_info_role"					"Si juegas un rol específico, por favor, selecciónalo. Entre los más importantes destacan el de asesino, central y solo lateral."
@@ -5009,7 +5009,6 @@ Los jugadores que no han elegido un héroe están perdiendo 1 oro por segundo. S
 		"DOTA_TeamLeave_Confirmation_Header"							"¿Abandonar el equipo?"
 		"DOTA_TeamLeave_Confirmation_Message"							"¿Quieres abandonar {s:team_name}? El administrador del equipo tendrá que invitarte de nuevo si quieres volver a unirte. Como resultado de esta acción (o cualquier otro cambio en la alineación), se recalculará el MMR de equipo de acuerdo con la nueva alineación y se reactivará la calibración."
 		"DOTA_TeamLeave_Confirmation_FailAdmin"							"El administrador de un equipo solo puede abandonarlo cuando es el único miembro del mismo. Para disolver un equipo, primero debes eliminar a todos los demás miembros."
-		"DOTA_TeamLeave_Confirmation_FailDisbandPro"					"Este es un equipo profesional y no puede disolverse."
 		"DOTA_TeamLeave_Confirmation_Disband"							"Esta acción disolverá el equipo y ya no se podrá acceder a él.\n\n<font color='#FF0000'>¿Seguro que quieres disolver el equipo?</font>"
 		"DOTA_TeamLeft_Header"											"Has abandonado el equipo"
 		"DOTA_TeamLeft_Message"											"Has abandonado el equipo."
@@ -18743,7 +18742,6 @@ Burla especial de Techies"
 	"DOTA_TeamConfirmKickMember"				"¿Expulsar a {g:dota_persona:kickee_account_id} de {s:team_name}?"
 	"DOTA_TeamCreateNewTeam"					"Crear nuevo equipo"
 	"DOTA_TeamsMyTeams"							"Mis equipos"
-	"DOTA_OfficialTeamInfo"						"Mi info profesional"
 	"DOTA_TeamsManageTeams"						"Administrar equipos"
 	"DOTA_TeamImagesBrowse"						"Explorar"
 	"DOTA_TeamBaseLogo"							"Logo de la base del equipo"
@@ -18764,7 +18762,6 @@ Burla especial de Techies"
 	"DOTA_TeamDisbandTeam"						"Disolver equipo"
 	"DOTA_TeamDisbandTeamTooltip"				"La alineación del equipo debe estar vacía para disolver el equipo"
 	"DOTA_TeamInviteAPlayer"					"Escribe el nombre de un amigo..."
-	"DOTA_TeamProRoster"						"Los equipos profesionales pueden administrar sus alineaciones en<br><br>https://www.dota2.com/majorsregistration"
 	"DOTA_TeamManagement_SelectLogo"			"Selecciona un logo"
 	"DOTA_TeamTransferAdmin_Confirm_Header"							"CAMBIAR ADMINISTRADOR DEL EQUIPO"
 	"DOTA_TeamTransferAdmin_Confirm_Message"						"¿Deseas nombrar a {s:player_name} como administrador del equipo? Si continúas ya no podrás administrar este equipo."
@@ -23144,6 +23141,7 @@ Para unirte como jugador experimentado, debes tener al menos {d:new_player_req_g
 	"DOTA_Hotkeys_Tooltip_PurchaseQuickbuy"  "Adquirir el siguiente objeto en tu área de compra rápida si te lo puedes permitir."
 	"DOTA_Hotkeys_Tooltip_PurchaseSticky"  "Comprar el objeto en el área de objetos marcados si te alcanza."
 	"DOTA_Hotkeys_Tooltip_GrabStashItems"  "Transferir todos los objetos de la reserva a tu héroe."
+	"DOTA_Hotkeys_Tooltip_ToggleBuybackProtection"  "Activar/desactivar Protección de Resurrección."
 	"DOTA_Hotkeys_Tooltip_RecentEvent"  "Mover la cámara al evento más reciente del mapa."
 	"DOTA_Hotkeys_Tooltip_InspectHeroInWorld"  "Observar a la unidad seleccionada de cerca."
 	"DOTA_Hotkeys_Tooltip_ChatTeam"  "Enviar un mensaje a todo tu equipo."
@@ -24204,7 +24202,6 @@ Para unirte como jugador experimentado, debes tener al menos {d:new_player_req_g
 	"dota_profile_oi_player_name"		"NOMBRE A MOSTRAR"
 	"dota_profile_oi_player_name_sub"	"Reconocible para cualquier jugador del mundo y no debe contener ninguna afiliación a equipos o patrocinadores."
 	"dota_profile_oi_team"				"EQUIPO"
-	"dota_profile_oi_team_sub"			"Si juegas en un equipo profesional de Dota de forma oficial, por favor, selecciónalo. El tag del equipo saldrá prefijado en tu nombre. Los jugadores profesionales serán asignados a sus equipos automáticamente."
 	"dota_profile_oi_sponsor"			"PATROCINADOR"
 	"dota_profile_oi_sponsor_sub"		"Los patrocinadores se añadirán a tu nombre."
 	"dota_profile_oi_country"			"PAÍS"
@@ -24215,6 +24212,8 @@ Para unirte como jugador experimentado, debes tener al menos {d:new_player_req_g
 	"dota_profile_name_locked"			"Nombre bloqueado"
 	"dota_profile_team_locked"			"Equipo bloqueado"
 	"dota_profile_team_locked_pro"		"El equipo se asigna automáticamente a los jugadores profesionales"
+	"dota_profile_oi_no_team"			"Ningún equipo"
+
 
 	"dota_profile_oi_submit_info"		"Enviar"
 	"dota_profile_oi_cancel"			"Cancelar"
@@ -24222,7 +24221,6 @@ Para unirte como jugador experimentado, debes tener al menos {d:new_player_req_g
 	"dota_profile_oi_submit_success"	"¡Completado!"
 	"dota_profile_oi_submit_failure"	"Error - Por favor, inténtalo de nuevo."
 	"dota_profile_oi_account_locked"	"El nombre y el equipo están bloqueados actualmente"
-
 	"dota_role_core"					"Principal"
 	"dota_role_support"					"Apoyo"
 	"dota_role_offlane"					"Solo lateral"
@@ -36657,8 +36655,6 @@ Cada región tiene un marcador activo que se usará para calcular la clasificaci
 		"DOTA_LearnViolator_New_Player" "Recomendado"
 
 		"DOTA_ManageProInfo_Header"	"Equipos e información profesionales"
-		"DOTA_ManageProInfo_Button"	"Administrar equipos e información profesionales"
-
 		"DOTA_Announcer_Preview_Diretide2020_Killing_Spree_01" "¡Primera sangre!"
 		"DOTA_Announcer_Preview_Diretide2020_Killing_Spree_02" "Cuando los mendigos mueren, a la luna no le importa."
 		"DOTA_Announcer_Preview_Diretide2020_Killing_Spree_03" "Tú eres la oscuridad en el bosque."
@@ -48633,7 +48629,6 @@ Fase tardía - <b>30:00 o más </b>"
 		"Tooltip_TeammateItems_Quickbuy"								"En cola para compra rápida"
 		"Tooltip_TeammateItems_MajorComponent"							"Componente del objeto deseado:"
 		"Tooltip_TeammateItems_PrimaryItem"								"Componente del objeto deseado:"
-
 		"DOTA_SettingsShortcut_Options"									"Administrar opciones de {s:settings_category}"
 		"DOTA_SettingsShortcut_Hotkeys"									"Administrar teclas rápidas de {s:settings_category}"
 		"DOTA_SettingsShortcut_CourierCategory"							"Mensajero"
@@ -48831,6 +48826,9 @@ Fase tardía - <b>30:00 o más </b>"
 		"dota_settings_reset_ping_wheel_title"			"¿Restablecer rueda de indicaciones?"
 		"dota_settings_reset_ping_wheel_body"			"Esta acción restablecerá la configuración predeterminada de la rueda de indicaciones. ¿Quieres continuar?"
 
+		"dota_settings_reset_video_title"			"¿Restablecer configuraciones de video?"
+		"dota_settings_reset_video_body"			"Esta acción restablecerá los valores predeterminados de video. ¿Quieres continuar?"
+
 		"dota_settings_abilitybar_default"		"Predeterminado"
 		"dota_settings_abilitybar_heroes"		"Héroes"
 		"dota_settings_abilitybar_courier"		"Mensajero"
@@ -48862,8 +48860,7 @@ Fase tardía - <b>30:00 o más </b>"
 		"dota_settings_mark_for_buy_title"				"Marcar para comprar"
 
 		"dota_settings_language"		"Idioma"
-
-		"dota_settings_hero_specific"		"Específicos de héroe"
+		
 		"dota_settings_dota_ability_use_original_cast_mode_for_stolen_spell"		"Rubick: usar el modo de lanzamiento original para hechizos robados"
 		"dota_settings_dota_ability_use_original_cast_mode_for_stolen_spell_description"		"Los hechizos robados utilizarán el modo de lanzamiento establecido para ese hechizo en específico en vez del espacio para hechizos robados de Rubick. Por ejemplo, si Rubick robó Hoja de Laguna de Lina en el primer espacio de hechizos robados, al lanzar esta habilidad se utilizará el modo de lanzamiento de Hoja de Laguna en vez del modo de lanzamiento del primer espacio de hechizos robados."
 		"dota_settings_dota_ability_use_original_cast_mode_for_stolen_spell_new_setting_description"		"Configura cómo interactúan con el lanzamiento rápido los hechizos robados de Rubick."
@@ -48871,6 +48868,10 @@ Fase tardía - <b>30:00 o más </b>"
 		"dota_settings_per_unit_keybindings_disabled_during_custom_games" "Desactivar teclas de acceso rápido por unidad durante partidas personalizadas"
 		"dota_settings_per_unit_keybindings_disabled_during_custom_games_tooltip" "En partidas personalizadas, todas las unidades usarán las teclas de acceso rápido de manera predeterminada."
 		
+		"dota_settings_bind_togglebuybackprotection"	"Alternar Protección de Resurrección"
+
+		"dota_settings_healthbar_allies"	"Aliados"
+
 		"DOTA_DashboardGames_Title"								"Minijuegos, para que los disfrutes cuando estés en cola"
 	}
 } 
