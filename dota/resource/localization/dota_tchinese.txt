@@ -849,6 +849,7 @@
 		"DOTA_QuickBuyAlert_Enough"			"%s1我有足夠金錢買<font color='%s2'>%s3</font>%s4"		
 		"DOTA_QuickBuyAlert_Buyback"				"%s1需要 %s2 金錢才能支付<font color='%s3'>%s4</font>%s5和<font color='#00FF00'>買活</font>"		
 		"DOTA_QuickBuyAlert_Enough_Buyback"			"%s1我有足夠金錢支付<font color='%s2'>%s3</font>%s4和<font color='#00FF00'>買活</font>"
+		"DOTA_Buyback_Protection"			"買活保障（{s:buyback_protection_status}）"
 		"DOTA_Buyback_Protection_On"			"開啟"
 		"DOTA_Buyback_Protection_Off"			"關閉"
 
@@ -2238,6 +2239,7 @@
 		"DOTA_Item_Build_Neutral_Items"			"可用中立道具"
 		"DOTA_Item_Build_MainSequence"			"建議出裝指南"
 		"DOTA_Item_Build_ItemOptions"			"下一件購買"
+		"DOTA_Item_Build_GeneralItems"			"此英雄的常用道具"
 		"DOTA_Item_Build_PreferredItems"		"偏好的道具"
 		"DOTA_Item_Build_DislikedItems"			"不喜歡的道具"
 		"DOTA_Item_Build_Variants"				"產生選項"
@@ -2262,7 +2264,7 @@
 		"dota_item_build_team_items"		"團隊道具"
 		"dota_item_build_team_items_empty"	"<img src=\"file://{images}/control_icons/24px/help.svg\" scaling=\"stretch-to-fit-preserve-aspect\" /><span class=\"LearnMoreSpan\">深入了解</span>"
 		"dota_item_build_player_suggestions" "玩家建議"
-		"dota_item_build_common_starting_items"		"普通道具"
+		"dota_item_build_common_starting_items"		"常用道具"
 		"dota_item_build_common_shared_items"		"共享道具"
 		"dota_shop_context_menu_intructions"		"CTRL + 右鍵點擊道具以查看選項"
 		
@@ -3046,6 +3048,7 @@
 		"official_player_info_header"		"正式玩家資訊"
 		"player_info_name"					"請鍵入您的顯示名稱。此名稱應當為全世界玩家所能辨識，且不應包含隊伍及贊助商名稱。"
 		"player_info_country"				"您可以鍵入所在的居住地。"
+		"player_info_official_team"			"您可選擇您所效力的是哪支已登記的職業戰隊。戰隊標籤將成為您的名稱前綴。"
 		"player_info_sponsor"				"您可以在此鍵入贊助商名稱。贊助商名稱將附加在您的名稱上。"
 		"player_info_preview"				"您的名稱將以如下方式顯示："
 		"player_info_role"					"若您有擔任特定位置，請您進行選擇。核心包含主力、中單和劣單。"
@@ -4907,6 +4910,7 @@
 		"DOTA_TeamInvite_Failure_Rejection"								"{s:invitee_name} 拒絕了您的組隊邀請。"
 		"DOTA_TeamInvite_Failure_Unspecified"							"邀請玩家加入您的隊伍時發生未預期的錯誤。"
 		"DOTA_TeamInviteAccept_Failure_Header"							"加入隊伍失敗。"
+		"DOTA_TeamInviteAccept_Failure_Message"							"{s:team_name} 目前不開放，無法加入。錯誤 {d:error_num}"
 		"DOTA_TeamInviteAccept_Failure_Unspecified"						"嘗試加入隊伍時出現意外錯誤。"
 		"DOTA_TeamInviteAccept_Success_Header"							"已加入隊伍"
 		"DOTA_TeamInviteAccept_Success_Message"							"恭喜您！您已加入 {s:team_name}。您現在能在「隊伍」中檢視您的隊伍。"
@@ -4981,7 +4985,7 @@
 		"DOTA_AddSelfTeamButton"										"將自己加入名單"
 		"DOTA_LeaveTeamButton"											"離開名單"
 		"DOTA_ShowProfileButton"										"顯示個人檔案"
-		"DOTA_CreateTeamButton"											"建立新隊伍"
+		"DOTA_CreateTeamButton"											"建立新戰隊"
 		"DOTA_Team_Created"												"已建立"
 		"DOTA_Team_Created_Desc"										"您現在可以開始邀請玩家至您管理的隊伍。您可以點擊玩家名稱然後在出現的選單中選擇「邀請加入隊伍」按鈕。"
 		"DOTA_Guild_Created"											"已經建立"
@@ -18550,7 +18554,7 @@
 
 	"DOTA_Friends_WindowTitle"	"好友列表"
 	"DOTA_Friends_SearchPlaceholder"	"搜尋好友"
-	"DOTA_Teams_WindowTitle"	"隊伍"
+	"DOTA_Teams_WindowTitle"	"戰隊"
 	"DOTA_Profile_WindowTitle"	"我的個人檔案"
 	"DOTA_BattlePass_WindowTitle"	"戰鬥通行證"
 	"DOTA_Plus_Profile_WindowTitle"	"DOTA PLUS"
@@ -18599,12 +18603,13 @@
 	"DOTA_TeamKickMember"						"踢出隊伍成員"
 	"DOTA_TeamConfirmKickMember"				"將 {s:team_name} 踢出 {g:dota_persona:kickee_account_id}？"
 	"DOTA_TeamCreateNewTeam"					"建立新隊伍"
-	"DOTA_TeamsMyTeams"							"我的隊伍"
-	"DOTA_TeamsManageTeams"						"管理隊伍"
+	"DOTA_TeamsMyTeams"							"我的戰隊"
+	"DOTA_OfficialTeamInfo"						"我的官方資訊"
+	"DOTA_TeamsManageTeams"						"管理戰隊"
 	"DOTA_TeamImagesBrowse"						"瀏覽"
 	"DOTA_TeamBaseLogo"							"隊伍基地標誌"
 	"DOTA_TeamBannerLogo"						"隊伍旗幟標誌"
-	"DOTA_TeamSponsorLogo"						"隊伍贊助商標誌"
+	"DOTA_TeamSponsorLogo"						"戰隊贊助商標誌"
 	"DOTA_TeamInterfaceLogo"					"隊伍介面標誌"
 	"DOTA_TeamTeamID"							"隊伍 ID："
 	"DOTA_TeamTeamAdmin"						"隊伍管理員："
@@ -23006,6 +23011,7 @@
 	"DOTA_Hotkeys_Tooltip_PurchaseQuickbuy"  "此快捷鍵讓您能單鍵購買在快速購買區塊中呈第一順位的裝備。"
 	"DOTA_Hotkeys_Tooltip_PurchaseSticky"  "此快捷鍵是用於單鍵購買釘選在固定區塊中的物品。"
 	"DOTA_Hotkeys_Tooltip_GrabStashItems"  "將您貯藏庫內的所有物品轉移到您的英雄身上。"
+	"DOTA_Hotkeys_Tooltip_ToggleBuybackProtection"  "開啟 / 關閉買活保障。"
 	"DOTA_Hotkeys_Tooltip_RecentEvent"  "迅速將鏡頭移動到最近活動的發生位置。"
 	"DOTA_Hotkeys_Tooltip_InspectHeroInWorld"  "切換成供您詳細檢視單位的近距離視角。"
 	"DOTA_Hotkeys_Tooltip_ChatTeam"  "向全部隊友發送訊息。"
@@ -24065,7 +24071,12 @@
 
 	"dota_profile_oi_player_name"		"顯示名稱"
 	"dota_profile_oi_player_name_sub"	"此名稱應當為全世界玩家所能辨識，且不應包含隊伍及贊助商名稱。"
+	"dota_profile_oi_player_name_sub_pro"	"當您接受協議時此名稱將在該年度內鎖定。若想使用不同名稱，點擊取消並編輯名稱後再接受協議。"
+	"dota_profile_oi_agreement_header"	"職業選手協議"
+	"dota_profile_oi_full_name"			"姓名"
+	"dota_profile_oi_full_name_sub"		"您的法定英文全名。"
 	"dota_profile_oi_team"				"隊伍"
+	"dota_profile_oi_team_sub"			"如果您選擇的隊伍已經登記為職業戰隊，則您可以用職業選手身分登記。"
 	"dota_profile_oi_sponsor"			"贊助者"
 	"dota_profile_oi_sponsor_sub"		"贊助商名稱將加附在您的名稱上。"
 	"dota_profile_oi_country"			"國籍"
@@ -24076,12 +24087,22 @@
 	"dota_profile_name_locked"			"暱稱已鎖定"
 	"dota_profile_team_locked"			"隊伍已鎖定"
 	"dota_profile_team_locked_pro"		"職業選手將自動分屬到隊伍中"
+	"dota_profile_oi_register_title"	"職業選手登記"
+	"dota_profile_oi_register_title_details"	"使用此對話框將讓您在今年以職業選手的身分進行登記，這也包含國際錦標賽的參賽權。"
+	"dota_profile_oi_accept"			"接受協議並登記"
+	"dota_profile_oi_register_agreement"		"2025 職業賽季條款<br><br>>感謝您申請參與由 Valve Corporation（以下稱「Valve」）贊助的 2025 Dota 2 職業賽季（以下稱「賽季」）。此協議闡述了賽季的條款。若要符合參與資格，您必須同意這些條款。<br><br>賽事營運方。若在賽季期間被選中參與一或多個賽事，您可能需要與賽事營運方簽署個別協議。特別是有關賽事時程、規則、開支和獎品的資訊，應諮詢賽事營運方。<br><br>發佈。您在此同意賦予 Valve 權利可在賽季期間向全世界散布、展示及用其它未提及之方式使用您的外觀、表演、名稱、介紹內容、聲明及其它由您製作的音訊或視覺效果（統稱為您的「形象」），使用方式包括所有與賽季相關的媒介和媒體，包含但不限於電腦遊戲、影片、宣傳素材和廣告，且您不會為此獲得更多來自 Valve 的報酬。賽季結束後，Valve 亦可能基於永久保存、產品或宣傳目的重新使用在賽季期間製作的內容。您同意任何由 Valve 或為 Valve 錄製有關您參與賽季的音訊、影片或其它資料將由 Valve 所擁有。<br><br>一般。您代表自己、家屬、直系親屬繼承人、繼承人、受讓人和任何其他可能會透過您請求 Valve 和其繼承人與受讓人利益權利的人，做出這些陳述和承諾。Valve 可隨時變更或取消賽季，此由 Valve 全權決定。此協議受美國華盛頓州的法律所規範，在有任何有關此協議的糾紛時，您同意接受其管轄和使用美國華盛頓州金縣內的州立或聯邦法院為審判地。這些條款將取代此前存在的任何經與此事相關的各方所達成的協議。"
+	"dota_profile_oi_is_pro"			"您接受了此期間的職業選手協議。"
+	"dota_profile_oi_no_team"			"無戰隊"
+
+
 	"dota_profile_oi_submit_info"		"提交"
 	"dota_profile_oi_cancel"			"取消"
 	"dota_profile_oi_submit_pending"	"提交中…"
 	"dota_profile_oi_submit_success"	"成功！"
 	"dota_profile_oi_submit_failure"	"錯誤 - 請再試一次。"
 	"dota_profile_oi_account_locked"	"暱稱和隊籍目前已鎖定"
+	"dota_profile_oi_register_pro"		"以職業選手身分登記"
+
 	"dota_role_core"					"核心"
 	"dota_role_support"					"輔助"
 	"dota_role_offlane"					"劣勢路"
@@ -30678,6 +30699,16 @@
 	"DOTA_GameMode_AbilityDraft_ChangeLog_Title"  "變更紀錄"
 	"DOTA_GameMode_AbilityDraft_ChangeLog_Tooltip"  "檢視技能徵召模式的最新更新"
 
+	"DOTA_GameMode_AbilityDraft_ChangeLog_Latest_June_18_2025" "
+	<b><font color='#ffffff'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2025 年 6 月 18 日</font></b>
+	<br>• 在徵召期間在英雄的提示說明中新增天賦樹。懸停在英雄按鈕上以查看其天賦樹
+	<br>• 修正即將換您選擇時，倒數音效沒有播放的問題
+	<br>• 修正與天賦有時會顯示錯誤或缺失相關的幾個系統程式錯誤
+	<br>• 修正將道雙釵和葛井武士刀無法正常使用的問題
+	<br>• 修正驅使惡靈會提供巫術造詣的問題
+	<br>• 修正巨魔戰將的碎晶升級會錯誤地提供暴走的問題
+	<br>• 修正刻面挑選器下拉選單在徵召期間有時候不會顯示已選擇之刻面的問題"
+	
 	"DOTA_GameMode_AbilityDraft_ChangeLog_Latest_May_22_2025" "
 	<b><font color='#ffffff'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2025 年 5 月 22 日</font></b>
 	<br>• <b>新增英雄徵召。</b> 在徵召階段可以隨時徵召英雄，且他們會擁有先天技能
@@ -30943,6 +30974,7 @@
 	"DOTA_738c_Update"	  "遊戲環節更新 7.38c 版"
 	"DOTA_739_Update"	  "遊戲環節更新 7.39 版"
 	"DOTA_739b_Update"	  "遊戲環節更新 7.39b 版"
+	"DOTA_739c_Update"	  "遊戲環節更新 7.39c 版"
 
 	"DOTA_Settings_Tooltip_NetworkLatency" "如果您因為網路連線問題而遺失封包，將此選項設為「低」將增加延遲，但增進整體流暢度。"
 
@@ -34071,6 +34103,7 @@
 	"DOTA_Winter2024_HeroesHoard_Cell_Description"		"探索 17 款全新英雄套裝，包含全新不朽物品、全新寵物、嘲諷還有更多內容。"
 	"DOTA_Winter2024_NewForTheHolidays"					"節日新品！"
 
+	"DOTA_Winter2025_HeroesHoard_Spring2025"			"2025 春季"	
 	"DOTA_Spring2025_HeroesHoard_Description"			"以 16 套全新英雄套裝的造型邁入新一季–– 內含不朽物品、化身、嘲諷還有更多內容。"
 
 	"DOTA_TI10_Collectors_Cache_Loading"				"載入資訊中…"
@@ -35232,6 +35265,8 @@
 		"DOTA_LearnViolator_New_Player" "推薦"
 
 		"DOTA_ManageProInfo_Header"	"職業資料和戰隊"
+		"DOTA_ManageProInfo_Button"	"管理官方資料和戰隊"
+
 		"DOTA_Announcer_Preview_Diretide2020_Killing_Spree_01" "First blood!"
 		"DOTA_Announcer_Preview_Diretide2020_Killing_Spree_02" "When beggars die, the moon doesn't care."
 		"DOTA_Announcer_Preview_Diretide2020_Killing_Spree_03" "You are the darkness in the woods."
@@ -36592,6 +36627,7 @@
 		"DOTA_TeamFanContent_TeamPerksText"		"戰隊表情符號、噴漆、載入畫面和聊天輪盤臺詞都是永久的，但其它好處會在互動手冊結束時過期。俱樂部會員會每年重置。\n\n收益的 50% 歸於 {g:dota_team_name:team_id}。"
 		"DOTA_TeamFanContent_CompendiumCardPacksTitle"	"DPC 巡迴賽期間特別活動"
 		"DOTA_TeamFanContent_CompendiumCardPacksText"	"每一級支持都能收到<span class=\"Highlight\">基礎卡片包</span>和<span class=\"Highlight\">戰隊卡片包</span>。<br><br><span class=\"Highlight\">戰隊卡片包</span>最好的卡片（保證為金卡或銀卡）一定會是 <span class=\"Highlight\">{g:dota_team_name:team_id}</span> 的成員。"
+		"DOTA_TeamFanContent_CompendiumCardPacksBasicText"	"每一級支持都能收到<span class=\"Highlight\">基礎卡片包</span>。<br><br>每個卡片包保證至少有一張銀卡或金卡。"
 		"DOTA_TeamFanContent_Tier1Club"			"銅級"
 		"DOTA_TeamFanContent_Tier2Club"			"銀級"
 		"DOTA_TeamFanContent_Tier3Club"			"金級"
@@ -36616,6 +36652,7 @@
 		"DOTA_DPC_TeamSupportLevelPopupText"	"{g:dota_team_name:team_id} {s:team_tier}支持者。"
 		"DOTA_TeamFanContent_ChatWheelRewardSubtitle"	"戰隊粉絲聊天輪盤會自動啟用，且為永久性的。"
 
+		"DOTA_TeamFanContent_Sale"				"5 折"
 		"DOTA_TeamFanContent_Sale75"			"25 折"
 "DOTA_Nemestice_HowtoPlay"							"遊玩方式"
 		"DOTA_Nemestice_HowToPlay_Points_Label"				"藉由遊玩賺取戰鬥點數"
@@ -45208,6 +45245,8 @@
 		"Tooltip_TeammateItems_Quickbuy"								"在快速購買佇列中"
 		"Tooltip_TeammateItems_MajorComponent"							"追蹤道具合成組件："
 		"Tooltip_TeammateItems_PrimaryItem"								"追蹤道具的組件："
+		"Tooltip_Items_ComponentOf"										"組件："
+
 		"DOTA_SettingsShortcut_Options"									"管理{s:settings_category}選項"
 		"DOTA_SettingsShortcut_Hotkeys"									"管理{s:settings_category}快捷鍵"
 		"DOTA_SettingsShortcut_CourierCategory"							"信使"
@@ -45405,6 +45444,9 @@
 		"dota_settings_reset_ping_wheel_title"			"重設信號輪盤？"
 		"dota_settings_reset_ping_wheel_body"			"此動作會將您的信號輪盤重設為預設值。確定要這樣做嗎？"
 
+		"dota_settings_reset_video_title"			"重設視訊設定？"
+		"dota_settings_reset_video_body"			"此動作會將所有視訊設定重設為預設值。確定要這樣做嗎？"
+
 		"dota_settings_abilitybar_default"		"預設"
 		"dota_settings_abilitybar_heroes"		"英雄"
 		"dota_settings_abilitybar_courier"		"信使"
@@ -45437,6 +45479,8 @@
 
 		"dota_settings_language"		"語言"
 		
+		"dota_settings_clear_all"		"清除全部"
+
 		"dota_settings_dota_ability_use_original_cast_mode_for_stolen_spell"		"拉比克：使用原施放模式施放竊得技能"
 		"dota_settings_dota_ability_use_original_cast_mode_for_stolen_spell_description"		"竊得技能會使用為該特定技能設定的施放模式，而非拉比克竊得技能欄位的施放模式。例如拉比克在第一個竊得技能欄位竊得莉娜的神滅斬，此技能會遵從神滅斬的施放模式而非第一個竊得技能欄位的模式。"
 		"dota_settings_dota_ability_use_original_cast_mode_for_stolen_spell_new_setting_description"		"設定拉比克竊得技能與快速施放的互動方式。"
@@ -45444,6 +45488,12 @@
 		"dota_settings_per_unit_keybindings_disabled_during_custom_games" "停用在自訂遊戲中的個別單位快捷鍵"
 		"dota_settings_per_unit_keybindings_disabled_during_custom_games_tooltip" "遊玩自訂遊戲時，所有單位會使用預設快捷鍵。"
 		
+		"dota_settings_bind_togglebuybackprotection"	"開關買活保障"
+		"dota_settings_bind_togglebuybackprotection_new_title"	"開關買活保障快捷鍵"
+		"dota_settings_bind_togglebuybackprotection_description"	"設定快捷鍵以輕鬆開關買活保障。"
+
+		"dota_settings_healthbar_allies"	"隊友"
+
 		"DOTA_DashboardGames_Title"								"小遊戲，讓佇列等待的時光不再無聊"
 	}
 } 

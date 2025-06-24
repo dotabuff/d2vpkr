@@ -850,6 +850,9 @@
 		"DOTA_QuickBuyAlert_Buyback"				"%s1Mi servono %s2 monete d'oro per acquistare <font color='%s3'>%s4</font>%s5 e <font color='#00FF00'>rientrare in gioco</font>"		
 		"DOTA_QuickBuyAlert_Enough_Buyback"			"%s1Ho abbastanza oro per acquistare <font color='%s2'>%s3</font>%s4 e <font color='#00FF00'>rientrare in gioco</font>"
 		"DOTA_Buyback_Protection"			"Rientro protetto ({s:buyback_protection_status})"
+		"DOTA_Buyback_Protection_On"			"Sì"
+		"DOTA_Buyback_Protection_Off"			"No"
+
 		"DOTA_EnemyItem_Alert"			"<font color='%s1'>%s2</font> nemico %s3 ha %s4"
 
 		"DOTA_Modifier_Alert"				"Sotto l'effetto di: <font color='%s1'>%s2%s3</font>%s4"
@@ -864,7 +867,8 @@
 		"DOTA_Modifier_Alert_Ally_SB_ChargeOfDarknessTarget"	"<font color='%s4'>%s5</font> alleato %s3 Sta caricando %s3 <font color='%s6'>%s7</font>"
 		"DOTA_Modifier_Alert_Enemy_SB_ChargeOfDarknessTarget"	"<font color='%s4'>%s5</font> nemico è sotto l'effetto di: <font color='%s1'>%s2</font>"
 
-		"DOTA_Modifier_Alert_Oracle_Rune_Prediction_FirstSpawn"	"Pronosticare %s1 %s2 Le prime Rune sono quelle della <font color='#FF7800'>Generosità</font>, seguite due volte dalle Rune di <font color='#0ba0c1'>Acqua</font>."
+		"DOTA_Modifier_Alert_Oracle_Rune_Prediction"			"Previsione di Oracle: %s1 %s2 la Runa <font color='%s3'>%s4</font> è %s5. Si prevede che la Runa di <font color='%s6'>%s7</font> sarà nella zona %s8 tra %s9"
+		"DOTA_Modifier_Alert_Oracle_Rune_Prediction_FirstSpawn"	"Previsione di Oracle: %s1 %s2 Le prime Rune sono quelle della <font color='#FF7800'>Generosità</font>, seguite due volte dalle Rune di <font color='#0ba0c1'>Acqua</font>."
 		"DOTA_Modifier_Alert_Oracle_Rune_Top"					"Top"
 		"DOTA_Modifier_Alert_Oracle_Rune_Bottom"				"Bottom"
 
@@ -2229,6 +2233,8 @@
 		"DOTA_SHOP_TAG_MAGIC_DMG"				"Danno magico"
 		"DOTA_SHOP_TAG_MANA"					"Mana"
 		"DOTA_SHOP_TAG_DPS"						"Danno al secondo"
+		"DOTA_SHOP_TAG_ESCAPE"					"Fuga"
+
 		"DOTA_Shop_Stock"						"Disponibili: %s1"
 		"DOTA_Shop_Restock"						"Disponibile tra %s1"
 		"DOTA_Shop_BackpackStock"				"Arsenale: %s1"
@@ -2288,6 +2294,8 @@
 		"dota_item_build_player_suggestions" "Suggerimenti dei giocatori"
 		"dota_item_build_common_starting_items"		"Oggetti comuni"
 		"dota_item_build_common_shared_items"		"Oggetti condivisi"
+		"dota_shop_context_menu_intructions"		"CTRL + clic destro sull'oggetto per le opzioni"
+		
 		"DOTA_GOLD"				"Oro"
 		"DOTA_SHARD"				"Frammento"
 		"DOTA_XP"				"ESP"
@@ -2315,6 +2323,7 @@
 		"DOTA_InventoryOverflowMsg"				"Gli oggetti inseriti a inventario pieno torneranno nella Scorta."
 		"DOTA_InventoryStash"					"SCORTA"
 		"DOTA_InventoryQuickBuy"				"ACQUISTO RAPIDO"
+		"DOTA_Quick_Buy_Hint"					"Acquisto rapido: trascina o Maiusc+clic."
 		"DOTA_Inventory_ReliableGold"			"Oro affidabile: %s1"
 		"DOTA_Inventory_UnreliableGold"			"Oro inaffidabile: %s1"
 		"DOTA_Inventory_DeathCost"				"Costo della morte: %s1"
@@ -4926,6 +4935,7 @@
 		"DOTA_TeamInvite_Failure_Rejection"								"{s:invitee_name} ha rifiutato il tuo invito nella squadra."
 		"DOTA_TeamInvite_Failure_Unspecified"							"Si è verificato un errore inaspettato durante il tentativo d'invito del giocatore nella tua squadra."
 		"DOTA_TeamInviteAccept_Failure_Header"							"Impossibile unirsi alla squadra"
+		"DOTA_TeamInviteAccept_Failure_Message"							"{s:team_name} non è più disponibile. Non puoi unirti. Errore {d:error_num}"
 		"DOTA_TeamInviteAccept_Failure_Unspecified"						"Si è verificato un errore inaspettato durante il tentativo di unione alla squadra."
 		"DOTA_TeamInviteAccept_Success_Header"							"Unione alla squadra"
 		"DOTA_TeamInviteAccept_Success_Message"							"Congratulazioni! Ti sei unito a {s:team_name}."
@@ -16810,6 +16820,7 @@ i set più popolari dei tesori passati. Disponibile ora a soli {g:dota_item_pric
 		"DOTA_SaleEnded"	"La promozione è terminata"
 
 		"DOTA_HUD_SelectCourier"	"Seleziona un corriere ({s:select_courier_hotkey})"
+		"DOTA_HUD_CourierDeliver"	"Corriere: consegna gli oggetti ({s:courier_deliver_hotkey})<br/>Clic destro per le opzioni."
 		"DOTA_HUD_AutoCourier"		"Corriere: consegna automatica ({s:courier_autocourier_hotkey})"
 		"DOTA_HUD_AutoCourierDesc"	"Fai clic destro per altre opzioni"
 		"DOTA_HUD_CourierBurst"		"Scatto del Corriere ({s:courier_burst_hotkey})"
@@ -16978,12 +16989,15 @@ i set più popolari dei tesori passati. Disponibile ora a soli {g:dota_item_pric
 		"DOTA_Chat_Ping_Msg_Warning" "Attenzione! <img class=\"ChatWheelIcon\" src=\"file://{images}/pings/ping_danger.psd\" /> (%s1)"
 		"DOTA_Chat_Ping_Msg_Waypoint" "Sto arrivando <img class=\"ChatWheelIcon\" src=\"file://{images}/pings/ping_icon_waypoint.psd\" /> (%s1)"
 		"DOTA_Chat_Ping_Msg_Retreat" "Attenzione <img class=\"ChatWheelIcon\" src=\"file://{images}/pings/ping_icon_retreat.psd\" /> (%s1)"
+		"DOTA_Chat_Ping_Msg_Attack" "Attaccate <img class=\"ChatWheelIcon\" src=\"file://{images}/pings/ping_icon_attack.psd\" /> (%s1)"
 		"DOTA_Chat_Ping_Msg_Attack_Target" "Attaccate %s2 <img class=\"ChatWheelIcon\" src=\"file://{images}/pings/ping_icon_attack.psd\" /> (%s1)"
 		"DOTA_Chat_Ping_Msg_EnemyWard" "Il nemico ha visione <img class=\"ChatWheelIcon\" src=\"file://{images}/pings/ping_icon_enemyward.psd\" /> (%s1)"
 		"DOTA_Chat_Ping_Msg_FriendlyWard" "Abbiamo bisogno di visione <img class=\"ChatWheelIcon\" src=\"file://{images}/pings/ping_icon_friendlyward.psd\" /> (%s1)"
 		"DOTA_Chat_Ping_Msg_AttackMiniboss" "Attaccate <img class=\"ChatWheelIcon\" src=\"file://{images}/hud/reborn/ping_icon_attack.psd\" /> (%s1)"
 		"DOTA_Chat_Ping_Msg_Assist"	"Aiuto <img class=\"ChatWheelIcon\" src=\"file://{images}/pings/ping_assist.psd\" /> (%s1)"
 		"DOTA_Chat_Ping_Msg_Assist_Target"	"Aiuta %s2 <img class=\"ChatWheelIcon\" src=\"file://{images}/pings/ping_assist.psd\" /> (%s1)"
+		"DOTA_Chat_Ping_Msg_Defend"	"Difendete <img class=\"ChatWheelIcon\" src=\"file://{images}/pings/ping_defend.psd\" /> (%s1)"
+		"DOTA_Chat_Ping_Msg_Defend_Target"	"Difendete %s2 <img class=\"ChatWheelIcon\" src=\"file://{images}/pings/ping_defend.psd\" /> (%s1)"
 		"DOTA_Chat_Ping_Msg_Heart"	"<img class=\"ChatWheelIcon\" src=\"file://{images}/pings/ping_heart.psd\" /> "
 		"DOTA_Chat_Ping_Msg_Heart_Target"	"%s2 <img class=\"ChatWheelIcon\" src=\"file://{images}/pings/ping_heart.psd\" />"
 		"DOTA_Chat_Ping_Msg_Empty" "%s1"
@@ -17108,6 +17122,8 @@ i set più popolari dei tesori passati. Disponibile ora a soli {g:dota_item_pric
 		"DOTA_ChatWheelPhraseLocked_PlusSubscriptionExpired"	"Rinnova la tua iscrizione a Dota Plus per accedere."
 		"DOTA_ChatWheelPhraseLocked_GuildLevel"		"Grado {s:required_guild_tier}"
 		"DOTA_ChatWheelPhraseLocked_ItemDefLevel"		"Richiede \"{g:dota_item_name:required_itemdef}\" (livello {d:required_itemdef_level})"
+		"DOTA_ChatWheel_HideLocked"					"Nascondi la chat bloccata"
+
 		"DOTA_ChatWheelPurchase_Name"			"Chat radiale acquistata"
 		"DOTA_ChatWheelPurchase_Description"	"Messaggio chat radiale acquistato: \"{s:chat_wheel_label}\""
 
@@ -22479,6 +22495,7 @@ Per unirti come giocatore esperto, devi aver giocato ad almeno {d:new_player_req
 	"dota_settings_courierdeliver"				"Corriere: consegna gli oggetti"
 	"dota_settings_courierburst"				"Scatto del Corriere"
 	"dota_settings_couriershield"				"Scudo del Corriere"
+	"dota_settings_autocourier"					"Modalità corriere automatico"
 	"dota_settings_useactionitem"				"Oggetto ad attivazione"
 	"dota_settings_toggleautoattack"			"Attiva attacco automatico"
 	"dota_settings_filter_enemy_key"			"Solo nemici"
@@ -22680,6 +22697,7 @@ Per unirti come giocatore esperto, devi aver giocato ad almeno {d:new_player_req
 	"dota_settings_teleportrequireshalt"		"Puoi interrompere il teletrasporto solo col tasto Ferma"
 	"dota_settings_channelrequireshalt"			"Puoi interrompere le abilità solo col tasto Ferma"
 	"dota_settings_interactionrequireshalt"		"Puoi interrompere la conquista delle strutture solo col tasto Ferma"
+	"dota_settings_interactionrequireshalt_new_setting_title"		"Puoi interrompere la conquista delle strutture solo con il comando Ferma"
 	"dota_settings_showqueuedorders"			"Mostra gli ordini in coda sull'interfaccia"
 	"dota_settings_force_right_click_attack"	"Clic destro sugli alleati:"
 	"dota_settings_force_right_click_attack_0"	"Per seguirli"
@@ -22713,6 +22731,7 @@ Per unirti come giocatore esperto, devi aver giocato ad almeno {d:new_player_req
 	"dota_settings_hud_simple_shop"				"Attiva negozio semplificato"
 	"dota_settings_auto_mark_for_buy"			"Gli oggetti aggiunti all'acquisto rapido sono contrassegnati per l'acquisto"
 	"dota_settings_mark_for_buy_description"	"Gli oggetti di acquisto rapido vengono acquistati automaticamente se hai abbastanza oro."
+	"dota_settings_quickbuy_rightclick_marksforbuy"	"Cliccando con il pulsante destro sugli oggetti di acquisto rapido, questi saranno contrassegnati per l'acquisto."
 	"dota_settings_shop_mark_for_buy_secret_shop_item"	"Cliccando con il pulsante destro del mouse sugli oggetti del negozio segreto, questi saranno aggiunti all'acquisto rapido e contrassegnati per l'acquisto."
 	"dota_settings_buyback_protection_start_level"		"Risparmia oro per il rientro dopo il livello:"
 	"dota_settings_hud_contextual_tips_disable"				"Disattiva consigli in partita"
@@ -22965,11 +22984,16 @@ Per unirti come giocatore esperto, devi aver giocato ad almeno {d:new_player_req
 	
 	"dota_settings_toasts_teammates"		"Alleati"
 	"dota_settings_toasts_show_itempickups"		"L'alleato acquista o raccoglie oggetti chiave."
+	"dota_settings_toasts_show_spellsteals"		"Un alleato ruba un incantesimo."
+	"dota_settings_toasts_show_relicprogress"		"Un alleato aumenta la statistica di una Reliquia."
 	"dota_settings_toasts_show_foundneutralitems"		"Un alleato crea un oggetto neutrale."
 	"dota_settings_toasts_show_courierleftfountain"		"Il tuo corriere ha lasciato la fontana."
+	"dota_settings_toasts_show_talentchanges"	"Un alleato ottiene un talento."
+
 	"dota_settings_no_results_message_0"		"Nessun risultato."
 	"dota_settings_no_results_message_1"		"Nessun risultato!"
 	"dota_settings_no_results_message_2"		"Riprova."
+	"dota_settings_no_results_message_3"		"Cerca più a fondo."
 	"dota_settings_no_results_message_4"		"Smarrito dagli Smeevil."
 	"dota_settings_no_results_message_5"		"Rubato dai Greevil."
 	"dota_settings_no_results_message_6"		"Divorato da Tidehunter."
@@ -22978,6 +23002,7 @@ Per unirti come giocatore esperto, devi aver giocato ad almeno {d:new_player_req
 	"dota_settings_no_results_message_9"		"No, niente di tutto questo."
 	"dota_settings_no_results_message_10"		"Temo di no."
 	"dota_settings_no_results_message_11"		"Tutto tranne quello."
+	"dota_settings_no_results_message_12"		"Dalle vette più alte... niente."
 	"dota_settings_no_results_message_13"		"Forse in un altro labirinto."
 
 
@@ -23038,6 +23063,7 @@ Per unirti come giocatore esperto, devi aver giocato ad almeno {d:new_player_req
 	"DOTA_Hotkeys_Tooltip_CourierDeliver"  "Ti fai consegnare gli oggetti nella Scorta dal Corriere."
 	"DOTA_Hotkeys_Tooltip_CourierBurst"  "Attiva lo scatto del Corriere quando è disponibile."
 	"DOTA_Hotkeys_Tooltip_CourierShield"  "Attiva lo scudo del Corriere quando è disponibile."
+	"DOTA_Hotkeys_Tooltip_AutoCourier"  "Attiva il corriere automatico"
 	"DOTA_Hotkeys_Tooltip_UseActionItem"  "Usa l'oggetto ad attivazione."
 	"DOTA_Hotkeys_Tooltip_ToggleConsumableAbilities"  "Attiva o disattiva la visualizzazione delle abilità consumabili sulla barra delle abilità."
 	"DOTA_Hotkeys_Tooltip_HeroTaunt"  "Usa la provocazione del tuo Eroe. Disponibile come oggetto equipaggiabile."
@@ -23067,6 +23093,7 @@ Per unirti come giocatore esperto, devi aver giocato ad almeno {d:new_player_req
 	"DOTA_Hotkeys_Tooltip_DotaAlt"	"Imposta un tasto alternativo che svolga la stessa funzione di ALT"
 	"DOTA_Hotkeys_Tooltip_DotaAlternativeCastSwitch"	"Scegli il tasto per lanciare la versione non selezionata di un'abilità con un'opzione di uso alternativo senza doverla prima attivare (predefinito: CTRL)."
 	"DOTA_Hotkeys_Tooltip_Group"  "Seleziona un gruppo di controllo impostato in precedenza. Per definire un gruppo di controllo, seleziona le Unità desiderate e premi CTRL + una di queste scorciatoie."
+	"DOTA_Hotkeys_Tooltip_Legacy"  "Usa i tasti rapidi di Dota 1. I tasti rapidi delle abilità variano a seconda dell'Eroe. NOTA: il lancio rapido non funziona se sono abilitati i tasti rapidi originali."
 	"DOTA_Hotkeys_Tooltip_PerUnitHotkeys"  "Consente l'uso di tasti diversi per ciascuna abilità di tutte le Unità."
 	"DOTA_Hotkeys_Tooltip_Quickcast"  "Le abilità con lancio rapido si attivano appena si preme il tasto rapido nella posizione attuale del cursore del mouse.<br><br>L'attivazione delle associazioni per il lancio diretto ti permetterà di associare tasti specifici per il lancio rapido e quello automatico."
 	"DOTA_Hotkeys_Tooltip_Quickcast_Items"  "Gli oggetti con lancio rapido si attivano appena si preme il tasto rapido nella posizione attuale del cursore del mouse.<br><br>L'attivazione delle associazioni per il lancio diretto ti permetterà di associare tasti specifici per il lancio rapido."
@@ -23100,8 +23127,9 @@ Per unirti come giocatore esperto, devi aver giocato ad almeno {d:new_player_req
 	"DOTA_Settings_Tooltip_DoubleTapItem"						"Cliccare due volte sull'oggetto, o premere due volte la scorciatoia farà sì che venga usata su te stesso."
 	"DOTA_Settings_Tooltip_Smart_Doubletap"				"Se possibile, attivare un'abilità o un oggetto mentre tieni premuto il tasto ALT sarà interpretato come un doppio tocco."
 	"DOTA_Settings_Tooltip_UnifiedOrders"						"Tenendo premuto CTRL mentre invii un ordine, ogni Unità sotto il tuo controllo lo eseguirà."
+	"DOTA_Settings_Tooltip_TeleportStop"						"Muoversi o usare un'abilità non interromperà il teletrasporto in corso. Si applica alle Pergamene del Portale Cittadino, agli Stivali del Viaggiatore, ai Portali gemelli e a Passaggio demoniaco di Underlord. "
 	"DOTA_Settings_Tooltip_ChannelStop"						"Muoversi o usare un'abilità non annullerà la canalizzazione in corso. Si applica a tutte le abilità e gli oggetti con un tempo di canalizzazione, ad eccezione delle Pergamene del Portale Cittadino e degli Stivali del Viaggiatore."
-	"DOTA_Settings_Tooltip_InteractionStop"						"Muoversi o usare un'abilità non interromperà le canalizzazione che conquistano le strutture nel mondo. Si applica alle Vedette e agli Avamposti."
+	"DOTA_Settings_Tooltip_InteractionStop"						"Muoversi o usare un'abilità non interromperà le canalizzazioni che conquistano le strutture nel mondo. Si applica alle Vedette e agli Avamposti."
 	"DOTA_Settings_Tooltip_InteractionStop_NewSettingDescription"	"Decidi il comportamento del tuo Eroe quando conquisti strutture come le Vedette."
 	"DOTA_Settings_Tooltip_Force_Right_Click_Attack_0"			"Cliccando col pulsante destro su un'Unità alleata, il tuo Eroe la seguirà."
 	"DOTA_Settings_Tooltip_Force_Right_Click_Attack"			"Cliccando col pulsante destro su un'Unità alleata, il tuo Eroe proverà ad attaccarla."
@@ -29003,6 +29031,7 @@ Poiché l'influenza di Selemene era ridotta allo stremo e le deformate ombre dei
 	"DOTA_HUD_Prognosticate_Illusion"			"Illusione"
 	"DOTA_HUD_Prognosticate_Invisibility"		"Invisibilità"
 	"DOTA_HUD_Prognosticate_Regeneration"		"Rigenerazione"
+	"DOTA_HUD_Prognosticate_Shield"				"Protezione"
 	"DOTA_HUD_Prognosticate_Wisdom"				"Saggezza"
 
 	"DOTA_HUD_stat_branch_10"				"10"
@@ -30790,6 +30819,40 @@ Anche altri Eroi sono riusciti a distinguersi: Eroi specializzati nell'esercitar
 	"DOTA_GameMode_AbilityDraft_ChangeLog_Title"  "Registro delle modifiche"
 	"DOTA_GameMode_AbilityDraft_ChangeLog_Tooltip"  "Guarda gli ultimi aggiornamenti alla modalità Ability Draft"
 
+	"DOTA_GameMode_AbilityDraft_ChangeLog_Latest_June_18_2025" "
+	<b><font color='#ffffff'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;18 giugno 2025</font></b>
+	<br>• Aggiunto l'albero dei talenti alla finestra di descrizione dell'Eroe durante la fase di selezione. Passa il puntatore del mouse sul pulsante dell'Eroe per vedere l'albero dei talenti.
+	<br>• Risolto il problema per cui il suono del conto alla rovescia non veniva emesso quando stava per iniziare il turno di scelta.
+	<br>• Corretti due bug di sistema che causavano la mancanza di talenti o la visualizzazione di talenti sbagliati.
+	<br>• Risolto il problema per cui le abilità Sai Shodo e Katana Kazurai non funzionavano.
+	<br>• Risolto il problema per cui l'abilità Stregoneria veniva conferita con Esorcismo.
+	<br>• Risolto il problema per cui l'abilità Violenza (di Troll Warlord) veniva erroneamente conferita con il Frammento di Aghanim.
+	<br>• Risolto il problema per cui il menu delle faccette occasionalmente non mostrava la faccetta scelta durante la fase di selezione."
+	
+	"DOTA_GameMode_AbilityDraft_ChangeLog_Latest_May_22_2025" "
+<b><font color='#ffffff'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;22 maggio 2025</font></b>
+	<br>• <b>AGGIUNTA LA SCELTA DELL'EROE.</b> Gli Eroi possono essere scelti in ogni momento durante la fase di selezione e avranno la propria abilità innata.
+	<br>• Le faccette ora sono legate alle abilità/Eroi che scegli. Seleziona la faccetta per la tua partita durante la fase di selezione o quella strategica.
+	<br>• Tenendo premuto Ctrl+Alt, ora saranno mostrati anche quali abilità o Eroi hanno le faccette.
+	<br>• Aggiornati alcuni sistemi di backend relativi all'Ability Draft, il che ridurrà la quantità di bug corretti con un normale aggiornamento del gameplay di Dota. Sono stati corretti dei bug relativi ad abilità extra o mancanti e bug relativi ad alberi dei talenti erronei.
+	<br>• Rimossa Tossicità latente di Venomancer (non più presente nelle normali partite di Dota).
+	<br>• Il tempo di generazione di un Eroe in Ability Draft ora è identico a quello delle normali partite di Dota.
+	<br>• Rimossa Avidità del Greevil da Rabbia chimica. Avidità del Greevil viene assegnata solo quando si sceglie Alchemist.
+	<br>• Risolto il problema per cui si perdeva un'abilità nel primo slot per il resto della partita dopo aver usato Divoramento.
+	<br>• Risolto il problema per cui Divoramento conferiva permanentemente aura passiva dai creep neutrali.
+	<br>• Risolto un bug per Caduta libera di Viper che faceva sì che il modello disegnasse sotto al mondo per il resto della partita.
+	<br>• Risolto un bug per cui un Eroe non aveva abilità se il giocatore che lo controllava era disconnesso alla prima comparizione dell'Eroe.
+	<br>• Risolto il problema per cui Spirit Breaker riceveva Sacca planare dal Frammento anziché dallo Scettro.
+	<br>• Risolto il problema per cui Pangolier riceveva il miglioramento Appallottolamento (Frammento) senza aver scelto Rombo di tuono.
+	<br>• Risolto il problema per cui Kez riceveva le abilità di Sai Shodo senza averle scelte.
+	<br>• Risolto il problema per cui Proiezione di Nothl di Dazzle disabilitava tutte le abilità dopo il primo uso.
+	<br>• Risolto il problema per cui la faccetta Regno notturno di Nightstalker non conferiva un livello gratuito di Cacciatore notturno agli Eroi diversi da Nightstalker.
+	<br>• Aggiunto Fuso orario di Faceless Void alla lista. Probabilità casuale tra Fuso orario e Cronosfera.
+	<br>• Risolto il problema per cui il talento \"Estasi della battaglia applica dissipazione potente\" di Troll Warlord veniva visualizzato senza aver scelto Estasi della battaglia.
+	<br>• Le abilità scelte ora mostrano anche i miglioramenti con il Frammento/Scettro quando si preme Alt+Ctrl.
+	<br>• Premendo Alt ora sarà mostrata la descrizione dello Scettro o Frammento nella descrizione delle abilità.
+	<br>• Risolto il problema per cui la descrizione del Frammento non mostrava sempre la lista corretta delle abilità aggiuntive."
+	
 	"DOTA_GameMode_AbilityDraft_ChangeLog_Latest_May_31_2024" "
 	<b><font color='#ffffff'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;31 maggio 2024</font></b>
 	<br>• Le abilità innate o legate alle faccette che richiedono uno spazio sull'interfaccia non vengono più concesse automaticamente all'Eroe di base.
@@ -31177,7 +31240,6 @@ Anche altri Eroi sono riusciti a distinguersi: Eroi specializzati nell'esercitar
 	"DOTA_738c_Update"	  "Aggiornamento 7.38c"
 	"DOTA_739_Update"	  "Aggiornamento 7.39"
 	"DOTA_739b_Update"	  "Aggiornamento 7.39b"
-
 	"DOTA_Settings_Tooltip_NetworkLatency" "Se la tua connessione di rete è soggetta a perdite di pacchetti, scegliere l'impostazione per le reti di bassa qualità aumenterà la latenza ma migliorerà la fluidità generale."
 
 	"DOTA_Popup_RankCalibration_Congrats" "Congratulazioni!"
@@ -32332,11 +32394,13 @@ Anche altri Eroi sono riusciti a distinguersi: Eroi specializzati nell'esercitar
 	"dota_pingwheel_teehee"											"Effetto di segnalazione - Guardatemi"
 	"dota_pingwheel_poop"											"Effetto di segnalazione - Che schifo"
 
+	"dota_pingwheel_regular"										"Indica"
 	"dota_pingwheel_plus_badge"										"Medaglia di Dota Plus"
+	"dota_pingwheel_retreat"										"Cautela"
 	"dota_pingwheel_warning"										"Attenzione"
 	"dota_pingwheel_waypoint"										"Sto arrivando"
 	"dota_pingwheel_enemy_ward"										"Guardiano nemico"
-	"dota_pingwheel_friendly_ward"									"Guardiano amichevole"
+	"dota_pingwheel_friendly_ward"									"Guardiano alleato"
 	"dota_pingwheel_attack"											"Attacco"
 	"dota_pingwheel_defend"											"Difesa"
 	"dota_pingwheel_assist"											"Aiuto"
@@ -37566,6 +37630,8 @@ Se ritieni di non aver potuto dedicare l'attenzione necessaria al raggiungimento
 		"DOTA_Glossary_Map_Roshan_Desc"			"Roshan è un creep neutrale incredibilmente potente la cui tana si trova nella parte centrale del fiume. La sua forza aumenta nel corso del tempo e di solito ci vogliono diversi Eroi per riuscire a sconfiggerlo, a volte anche l'intera squadra. Quando viene sconfitto, lascerà a terra alcuni potenti oggetti consumabili. Oltre alle ricompense standard di oro ed esperienza, Roshan fa ottenere {d:DOTA_ROSHAN_GOLD_PER_PLAYER} monete d'oro ad ogni giocatore della squadra che lo ha ucciso. Alla morte, ricomparirà nella sua tana dopo un breve periodo."
 		"DOTA_Glossary_Map_Roshan_Aegis_Desc"		"Roshan lascia a terra l'Egida dell'Immortale ogni volta che muore."
 		"DOTA_Glossary_Map_Roshan_Cheese_Desc"		"Dalla seconda sconfitta in poi, Roshan lascerà cadere lo Stendardo di Roshan."
+		"DOTA_Glossary_Map_Roshan_Shards_Desc"		"Dalla terza sconfitta in poi, lascerà a terra anche del Formaggio e un Frammento del Ristoro."
+
 		"DOTA_Glossary_Map_Tormentor"				"Oppressore"
 		"DOTA_Glossary_Map_Tormentor_Desc"			"L'Oppressore è una potente struttura arcana situata vicino alla Safe Lane di Radiant e Dire. Dotata di un potente scudo e abilità in grado di respingere i danni, questa struttura è difficile da distruggere e ricompensa chi ci riesce con un Frammento di Aghanim. Quando viene ucciso, l'Oppressore rinascerà dopo 10 minuti."
 
@@ -44268,7 +44334,10 @@ Se ritieni di non aver potuto dedicare l'attenzione necessaria al raggiungimento
 		"DOTA_PlayerDraft_PreferredRole_None"		"--"
 		"DOTA_PlayerDraft_PreferredTeam_None"		"--"
 
+		"dota_pregame_shop_pregame_consumables"		"Consumabili"
 		"dota_pregame_shop_pregame_attributes"		"Attributi"
+		"dota_pregame_shop_pregame_accessories"		"Accessori"
+
 		"DOTA_patch_note_creep_general"				"Generali"
 		"DOTA_patch_note_item_general"				"Generali"
 		"DOTA_patch_note_neutral_item_general"		"Generali"
@@ -48444,6 +48513,8 @@ Se ritieni di non aver potuto dedicare l'attenzione necessaria al raggiungimento
 		"DOTA_HUD_Shop_Neutral_Tier4"									"Grado 4"
 		"DOTA_HUD_Shop_Neutral_Tier5"									"Grado 5"
 
+		"DOTA_HUD_Tooltip_HeroLevel"									"Livello {d:hero_level}"
+
 		"DOTA_CompetitiveMMRegisteredNameRequired_Title"					"Congratulazioni"
 		"DOTA_CompetitiveMMRegisteredNameRequired_Description"				"Il tuo MMR elevato ti colloca tra i primi 0,5% di tutti i giocatori di Dota classificati. Come membro di questa élite, registra il tuo nome da utilizzare nella modalità \"Scelta degli Immortali\", in modo che gli altri giocatori sappiano chi tu sia, anche se il nome del tuo profilo di Steam cambia."
 		"DOTA_CompetitiveMMRegisteredNameRequired_ConfirmNameNote"			"Vuoi registrarti utilizzando il tuo nome attuale?"
@@ -48453,16 +48524,23 @@ Se ritieni di non aver potuto dedicare l'attenzione necessaria al raggiungimento
 
 		"Tooltip_TeammateItems_Bought"									"Acquistato"
 		"Tooltip_TeammateItems_Quickbuy"								"In coda di acquisto rapido"
+		"Tooltip_TeammateItems_MajorComponent"							"Componente dell'oggetto visualizzato:"
+		"Tooltip_TeammateItems_PrimaryItem"								"Componente dell'oggetto visualizzato:"
+		"Tooltip_Items_ComponentOf"										"Componente di:"
+
 		"DOTA_SettingsShortcut_Options"									"Gestisci le opzioni {s:settings_category}"
 		"DOTA_SettingsShortcut_Hotkeys"									"Gestisci i tasti rapidi {s:settings_category}"
 		"DOTA_SettingsShortcut_CourierCategory"							"Corriere"
 		"DOTA_SettingsShortcut_ShopCategory"							"Negozio"
 
 		"dota_settings_bind_HeroSelect"                         "Seleziona Eroe"
+		"dota_settings_bind_SelectAll"                          "Seleziona tutte le Unità controllate"
 		"dota_settings_bind_HeroAttack"                         "Muovi e attacca / Attacco forzato"
 		"dota_settings_bind_HeroHold"                           "Mantieni posizione"
 		"dota_settings_bind_LearnAbilities"                     "Apprendi abilità"
 		"dota_settings_bind_LearnStats"                         "Migliora i talenti"
+		"dota_settings_bind_TalentUpgradeStatLeft"              "Migliora il talento di sinistra"
+		"dota_settings_bind_TalentUpgradeStatRight"             "Migliora il talento di destra"
 		"dota_settings_bind_TalentUpgradeAttribute"             "Migliora gli attributi"
 		"dota_settings_bind_HeroMove"                           "Muovi"
 		"dota_settings_bind_HeroMoveDirection"                  "Movimento direzionale"
@@ -48471,6 +48549,7 @@ Se ritieni di non aver potuto dedicare l'attenzione necessaria al raggiungimento
 		"dota_settings_bind_SelectAllOthers"                    "Seleziona tutte le altre Unità"
 		"dota_settings_bind_ActivateGlyph"                      "Attiva il Glifo della fortificazione"
 		"dota_settings_bind_ActivateRadar"                      "Attiva il radar"
+		"dota_settings_bind_HeroTaunt"                          "Provocazione"
 		"dota_settings_bind_ToggleAutoattack"                   "Attiva attacco automatico"
 		"dota_settings_bind_CameraGrip"                         "Aggancia la telecamera"
 		"dota_settings_bind_ScoreboardToggle"                   "Tabella dei punteggi"
@@ -48508,6 +48587,8 @@ Se ritieni di non aver potuto dedicare l'attenzione necessaria al raggiungimento
 		"dota_settings_bind_CameraRight"                        "Telecamera a destra"
 		"dota_settings_bind_CameraZoomIn"                      "Avvicina la telecamera"
 		"dota_settings_bind_CameraZoomOut"                      "Allontana la telecamera"
+		"dota_settings_bind_RecentEvent"                      "Mostra l'evento più recente"
+		"dota_settings_bind_InspectHeroInWorld"                 "Visuale d'esibizione"
 		"dota_settings_bind_CameraSavedPosition1"               "Posizione 1"
 		"dota_settings_bind_CameraSavedPosition3"               "Posizione 3"
 		"dota_settings_bind_CameraSavedPosition5"               "Posizione 5"
@@ -48533,19 +48614,72 @@ Se ritieni di non aver potuto dedicare l'attenzione necessaria al raggiungimento
 		"dota_settings_bind_ChatWheelCare"                      "Attenzione"
 		"dota_settings_bind_ChatWheelGetBack"                   "Tornate indietro"
 		"dota_settings_bind_ChatWheelNeedWards"                 "Servono Guardiani"
+		"dota_settings_bind_ChatWheelStun"                      "Stordisci"
 		"dota_settings_bind_ChatWheelHelp"                      "Aiuto"
+		"dota_settings_bind_ChatWheelGetPush"                   "Spingete"
 		"dota_settings_bind_ChatWheelGoodJob"                   "Bella giocata"
 		"dota_settings_bind_ChatWheelMissing"                   "Manca qualcuno"
 		"dota_settings_bind_ChatWheelMissingTop"                "Manca qualcuno in Top"
 		"dota_settings_bind_ChatWheelMissingMiddle"             "Manca qualcuno in Mid"
 		"dota_settings_bind_ChatWheelMissingBottom"             "Manca qualcuno in Bot"
 		
+		"dota_settings_bind_Inventory1"             "Attiva lo slot 1 dell'inventario"
+		"dota_settings_bind_Inventory2"             "Attiva lo slot 2 dell'inventario"
+		"dota_settings_bind_Inventory3"             "Attiva lo slot 3 dell'inventario"
+		"dota_settings_bind_Inventory4"             "Attiva lo slot 4 dell'inventario"
+		"dota_settings_bind_Inventory5"             "Attiva lo slot 5 dell'inventario"
+		"dota_settings_bind_Inventory6"             "Attiva lo slot 6 dell'inventario"
+		"dota_settings_bind_InventoryTP"            "Attiva la Pergamena del Portale Cittadino"
+		"dota_settings_bind_InventoryNeutral"       "Attiva oggetto neutrale"
+
+		"dota_settings_bind_Inventory1QuickCast"             "Lancio rapido: slot 1 dell'inventario"
+		"dota_settings_bind_Inventory2QuickCast"             "Lancio rapido: slot 2 dell'inventario"
+		"dota_settings_bind_Inventory3QuickCast"             "Lancio rapido: slot 3 dell'inventario"
+		"dota_settings_bind_Inventory4QuickCast"             "Lancio rapido: slot 4 dell'inventario"
+		"dota_settings_bind_Inventory5QuickCast"             "Lancio rapido: slot 5 dell'inventario"
+		"dota_settings_bind_Inventory6QuickCast"             "Lancio rapido: slot 6 dell'inventario"
+		"dota_settings_bind_InventoryTPQuickCast"            "Lancio rapido della Pergamena del Portale Cittadino"
+		"dota_settings_bind_InventoryNeutralQuickCast"       "Lancio rapido dell'oggetto neutrale"
+
+		"dota_settings_bind_AbilityPrimary1"             "Lancia l'abilità 1"
+		"dota_settings_bind_AbilityPrimary2"             "Lancia l'abilità 2"
+		"dota_settings_bind_AbilityPrimary3"             "Lancia l'abilità 3"
+		"dota_settings_bind_AbilitySecondary1"           "Lancia l'abilità 4"
+		"dota_settings_bind_AbilitySecondary2"           "Lancia l'abilità 5"
+		"dota_settings_bind_AbilityUltimate"             "Lancia la ultimate"
+
+		"dota_settings_bind_AbilityPrimary1QuickCast"    "Lancio rapido: Abilità 1"
+		"dota_settings_bind_AbilityPrimary2QuickCast"    "Lancio rapido: Abilità 2"
+		"dota_settings_bind_AbilityPrimary3QuickCast"    "Lancio rapido: Abilità 3"
+		"dota_settings_bind_AbilitySecondary1QuickCast"  "Lancio rapido: Abilità 4"
+		"dota_settings_bind_AbilitySecondary2QuickCast"  "Lancio rapido: Abilità 5"
+		"dota_settings_bind_AbilityUltimateQuickCast"    "Lancio rapido della ultimate"
+
+		"dota_settings_bind_AbilityPrimary1AutoCastAlternate"    "Lancio automatico: Abilità 1"
+		"dota_settings_bind_AbilityPrimary2AutoCastAlternate"    "Lancio automatico: Abilità 2"
+		"dota_settings_bind_AbilityPrimary3AutoCastAlternate"    "Lancio automatico: Abilità 3"
+		"dota_settings_bind_AbilitySecondary1AutoCastAlternate"  "Lancio automatico: Abilità 4"
+		"dota_settings_bind_AbilitySecondary2AutoCastAlternate"  "Lancio automatico: Abilità 5"
+		"dota_settings_bind_AbilityUltimateAutoCastAlternate"    "Lancio automatico della ultimate"
+
 		"dota_settings_bind_SpectatorCameraUp"                 "Telecamera in su"
 		"dota_settings_bind_SpectatorCameraDown"               "Telecamera in giù"
 		"dota_settings_bind_SpectatorCameraLeft"               "Telecamera a sinistra"
 		"dota_settings_bind_SpectatorCameraRight"              "Telecamera a destra"
 		"dota_settings_bind_SpectatorCameraGrip"               "Aggancia la telecamera"
+		"dota_settings_bind_SpectatorPause"                    "Metti in pausa"
+		"dota_settings_bind_SpectatorChat"                     "Chat"
+		"dota_settings_bind_SpectatorScoreboard"               "Tabella dei punteggi"
+		"dota_settings_bind_SpectatorBroadcasterMenu"          "Apri il menu da commentatore"
+		"dota_settings_bind_SpectatorStatsItem"                "Statistiche dell'oggetto"
+		"dota_settings_bind_SpectatorStatsGold"                "Grafico dell'oro"
+		"dota_settings_bind_SpectatorStatsXP"                  "Grafico dell'esperienza"
+		"dota_settings_bind_SpectatorStatsWinChance"           "Grafico delle probabilità di vittoria"
+		"dota_settings_bind_SpectatorFOWBoth"                  "Nebbia: tutti"
 		"dota_settings_bind_SpectatorFOWRadient"               "Nebbia: Radiant"
+		"dota_settings_bind_SpectatorFOWDire"                  "Nebbia: Dire"
+		"dota_settings_bind_SpectatorIncreaseReplaySpeed"      "Aumenta la velocità del replay"
+		"dota_settings_bind_SpectatorDecreaseReplaySpeed"      "Riduci la velocità del replay"
 		"dota_settings_bind_SpectatorCameraSavedPosition1"     "Posizione 1"
 		"dota_settings_bind_SpectatorCameraSavedPosition2"     "Posizione 2"
 		"dota_settings_bind_SpectatorCameraSavedPosition3"     "Posizione 3"
@@ -48556,12 +48690,56 @@ Se ritieni di non aver potuto dedicare l'attenzione necessaria al raggiungimento
 		"dota_settings_bind_SpectatorCameraSavedPosition8"     "Posizione 8"
 		"dota_settings_bind_SpectatorCameraSavedPosition9"     "Posizione 9"
 		"dota_settings_bind_SpectatorCameraSavedPosition10"    "Posizione 10"
+		"dota_settings_bind_SpectatorDropdown_Sort"            "Cambia ordine"
+		"dota_settings_bind_SpectatorDropdown_Close"           "Chiudi categoria"
+		"dota_settings_bind_SpectatorDropdown_KDA"             "Uccisioni / Morti / Aiuti"
+		"dota_settings_bind_SpectatorDropdown_Lasthits_Denies" "Colpi di grazia / Negazioni"
+		"dota_settings_bind_SpectatorDropdown_Level"           "Livello dell'Eroe"
+		"dota_settings_bind_SpectatorDropdown_HeroFacet"       "Faccetta dell'Eroe"
+		"dota_settings_bind_SpectatorDropdown_XP_Per_Min"      "ESP al minuto"
+		"dota_settings_bind_SpectatorDropdown_Gold"            "Oro attuale"
+		"dota_settings_bind_SpectatorDropdown_Networth"        "Valore netto"
+		"dota_settings_bind_SpectatorDropdown_Gold_Per_Min"    "Oro al minuto"
+		"dota_settings_bind_SpectatorDropdown_Buyback"         "Stato dei rientri"
+		"dota_settings_bind_SpectatorDropdown_Fantasy"         "Punteggi del FantaDota"
 		"dota_settings_bind_SpectatorCoach_ViewToggle"         "Mentore: prospettiva dell'allievo"
 
 		"dota_settings_bind_FilterEnemy" "Interagisci solo con le Unità nemiche"
 		"dota_settings_bind_FilterAlly" "Interagisci solo con le Unità alleate"
 		"dota_settings_bind_FilterHero" "Interagisci solo con le Unità eroiche"
 		"dota_settings_bind_FilterNonHero" "Interagisci solo con le Unità non eroiche"
+
+		"dota_settings_bind_OverlayMapToggle"			"Mostra mappa sovrapposta"
+		"dota_settings_test_mic"						"Prova microfono"
+		"dota_settings_stop_test_mic"						"Interrompi il test microfono"
+		"dota_settings_open_ping_wheel"			"+ Tieni premuto il tasto sinistro"
+		"dota_settings_do_standard_ping"			"+ clic sinistro"
+		"dota_settings_do_alternative_ping"			"+ clic destro"
+
+		"dota_settings_reset_hotkeys_title"			"Reimposta scorciatoie?"
+		"dota_settings_reset_hotkeys_body"			"Questa azione ripristinerà tutti i tuoi tasti rapidi a quelli predefiniti. Confermi?"
+
+		"dota_settings_reset_audio_title"			"Ripristinare le impostazioni audio?"
+		"dota_settings_reset_audio_body"			"Questa azione ripristinerà tutte le tue impostazioni audio a quelle predefinite. Confermi?"
+
+		"dota_settings_reset_ping_wheel_title"			"Reimpostare la ruota di segnalazione?"
+		"dota_settings_reset_ping_wheel_body"			"Questa azione ripristinerà la tua ruota di segnalazione ai valori predefiniti. Confermi?"
+
+		"dota_settings_reset_video_title"			"Ripristinare le impostazioni video?"
+		"dota_settings_reset_video_body"			"Questa azione ripristinerà tutte le tue impostazioni video a quelle predefinite. Confermi?"
+
+		"dota_settings_abilitybar_default"		"Predefinita"
+		"dota_settings_abilitybar_heroes"		"Eroi"
+		"dota_settings_abilitybar_courier"		"Corriere"
+		"dota_settings_abilitybar_neutrals"		"Neutrali"
+
+		"dota_settings_doubletap"		"Doppio tocco"
+
+		"dota_settings_keybinder_bindanyway"		"Associa comunque"
+		"dota_settings_keybinder_confirm"		"Conferma"
+
+		"dota_settings_direct_cast_bindings"		"Assoc. lancio diretto"
+		"dota_settings_direct_cast_bindings_tooltip"		"Le associazioni di lancio diretto ti permettono di associare i tasti per l'uso di un'abilità, per il suo lancio rapido o automatico."
 
 		"dota_settings_video_screen"		"Schermo"
 		"dota_settings_video_resolution"		"Risoluzione"
@@ -48573,17 +48751,28 @@ Se ritieni di non aver potuto dedicare l'attenzione necessaria al raggiungimento
 		"dota_settings_resolution_ultrawide"		"Ultrawide"
 
 		"dota_settings_attack_category"		"Attacco"
+		"dota_settings_channels"		"Canali"
+
 		"dota_settings_alt"				"Alt"
+		"dota_settings_tips"		"Suggerimenti"
+		"dota_settings_hud"		"Interfaccia"
 		"dota_settings_mark_for_buy_title"				"Contrassegna per acquistare"
 
 		"dota_settings_language"		"Lingua"
 		
+		"dota_settings_clear_all"		"Svuota tutto"
+
 		"dota_settings_dota_ability_use_original_cast_mode_for_stolen_spell"		"Rubick: usa la modalità di lancio originale per le abilità rubate"
 		"dota_settings_dota_ability_use_original_cast_mode_for_stolen_spell_description"		"Le abilità rubate useranno la modalità di lancio impostata per quella specifica abilità anziché per lo slot delle abilità rubate di Rubick. Ad esempio, se Rubick ha rubato Lama della laguna di Lina nel primo slot delle abilità rubate, usare questa abilità seguirà la modalità di lancio prevista per Lama della laguna piuttosto che la modalità del primo slot delle abilità rubate."
 		"dota_settings_dota_ability_use_original_cast_mode_for_stolen_spell_new_setting_description"		"Configura l'interazione degli incantesimi rubati da Rubick con il lancio rapido."
 
+		"dota_settings_per_unit_keybindings_disabled_during_custom_games" "Disabilita i tasti rapidi per Unità durante le partite personalizzate"
 		"dota_settings_per_unit_keybindings_disabled_during_custom_games_tooltip" "Durante le partite personalizzate, tutte le Unità useranno i tasti rapidi predefiniti."
 		
+		"dota_settings_bind_togglebuybackprotection"	"Attiva il rientro protetto"
+		"dota_settings_bind_togglebuybackprotection_new_title"	"Attiva il rientro protetto con il tasto rapido"
+		"dota_settings_bind_togglebuybackprotection_description"	"Imposta un tasto di scelta rapida per attivare facilmente il rientro protetto."
+
 		"dota_settings_healthbar_allies"	"Alleati"
 
 		"DOTA_DashboardGames_Title"								"Minigiochi per divertirti mentre sei in coda"
