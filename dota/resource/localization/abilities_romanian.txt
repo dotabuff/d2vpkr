@@ -46,7 +46,9 @@
 		"dota_ability_variable_slow_resistance"		"rezistență la încetiniri"			// $slow_resistance
 		"dota_ability_variable_aoe_bonus"			"bonus pentru zona de efect"					// $aoe_bonus
 		"dota_ability_variable_exclusive_movespeed"	"viteză de mișcare pentru încălțări"		// $exclusive_movespeed
-"dota_ability_variable_damage_int_hero"	"daune (eroi de inteligență)"
+		"dota_ability_variable_healing_amp"			"Amplificare pentru vindecare" // $healing_amp
+		"dota_ability_variable_restoration_amp"		"Refacere de viață" // $restoration_amp
+		"dota_ability_variable_damage_int_hero"	"daune (eroi de inteligență)"
 		"dota_ability_variable_damage_agi_hero"	"daune (eroi de agilitate)"
 		"dota_ability_variable_damage_str_hero"	"daune (eroi de forță)"
 		"dota_ability_variable_damage_universal_hero"	"daune (eroi universali)"
@@ -335,6 +337,14 @@
 		"npc_dota_roshan"								"Roshan"
 		"npc_dota_neutral_creep"						"Creep neutru"
 		"npc_dota_creep_neutral"						"Creep neutru"
+		"npc_dota_necronomicon_warrior"					"Demonic Warrior"
+		"npc_dota_necronomicon_warrior_1"				"Demonic Warrior"
+		"npc_dota_necronomicon_warrior_2"				"Demonic Warrior"
+		"npc_dota_necronomicon_warrior_3"				"Demonic Warrior"
+		"npc_dota_necronomicon_archer"					"Demonic Archer"
+		"npc_dota_necronomicon_archer_1"				"Demonic Archer"
+		"npc_dota_necronomicon_archer_2"				"Demonic Archer"
+		"npc_dota_necronomicon_archer_3"				"Demonic Archer"
 		"npc_dota_beastmaster_hawk"						"Hawk"
 		"npc_dota_beastmaster_hawk_1"					"Hawk"
 		"npc_dota_beastmaster_hawk_2"					"Hawk"
@@ -349,6 +359,7 @@
 		"npc_dota_miniboss"								"Oprimator"
 		"npc_dota_lotus_pool"							"Iaz cu lotuși"
 		"npc_dota_unit_twin_gate"						"Portal geamăn"
+		"npc_dota_unit_templar_gate"					"Hidden Gate"
 		"npc_dota_clinkz_skeleton_archer"				"Skeleton Archer"
 		"npc_dota_flying_courier"						"Curier Zburător"
 		"npc_dota_furion_treant"						"Treant"
@@ -381,6 +392,7 @@
 		"npc_dota_venomancer_plague_ward_2"				"Plague Ward"
 		"npc_dota_venomancer_plague_ward_3"				"Plague Ward"
 		"npc_dota_venomancer_plague_ward_4"				"Plague Ward"
+		"npc_dota_lesser_eidolon"						"Eidolon"
 		"npc_dota_eidolon"								"Eidolon"
 		"npc_dota_rattletrap_cog"						"Power Cog"
 		"npc_dota_juggernaut_healing_ward"				"Healing Ward"
@@ -596,7 +608,10 @@
 		
 		//FOUNTAIN
 		"DOTA_Tooltip_ability_fountain_glyph"											"Glyph of Fortification {s:glyph_hotkey}"
+		"DOTA_Tooltip_ability_fountain_glyph_Description"								"– Acordă invincibilitate structurilor tale și creepilor tăi din culoare.<br>– Acordă lovituri multiple turnurilor. <span class=\"Footnote\">(Turnurile din rândul 1 nu sunt incluse)</span>.<br>– Se reîmprospătează după distrugerea primului turn din rândul 1, rândul 3 și prima cazarmă de meleu."
 		"DOTA_Tooltip_ability_fountain_glyph_duration_structures"						"DURATĂ (STRUCTURI): <span class=\"GameplayValues\">7 secunde</span>"
+		"DOTA_Tooltip_ability_fountain_glyph_duration_creeps"							"DURATĂ (CREEPI): <span class=\"GameplayValues\">3 secunde</span>"
+		"DOTA_Tooltip_ability_fountain_glyph_multishot_targets"							"ȚINTE PENTRU ATACURI SUPLIMENTARE: <span class=\"GameplayValues\">5</span>"
 		"DOTA_Tooltip_glyph_cooldown"													"Repaus: %s1"
 		"DOTA_Tooltip_ability_fountain_buyback"											"Răscumpărare"
 		"DOTA_Tooltip_ability_fountain_buyback_cost"									"COST:"
@@ -606,6 +621,10 @@
 		"DOTA_Tooltip_modifier_turbo_courier_invulnerable_Description"					"Curierul n-are nicio teamă față de vrăjile vrăjmașilor."
 		"DOTA_Tooltip_modifier_turbo_courier_haste"										"Zburător fulgerător"
 		"DOTA_Tooltip_modifier_turbo_courier_haste_Description"							"Viteza de mișcare este mărită."
+
+		"DOTA_Tooltip_ability_ad_shard_grant"											"Aghanim's Shard acordă abilitatea: <font color=\"#ffffff\"><b>%s1</b></font>"
+		"DOTA_Tooltip_ability_ad_normal_grant"											"Acordă suplimentar și abilitatea: <font color=\"#ffffff\"><b>%s1</b></font>"
+		"DOTA_Tooltip_ability_ad_toggling_autocast_description"							"Accesează <span class=\"ADWhite\"><b>%s1</b></span> prin comutarea invocării automate pe <span class=\"ADWhite\"><b>%s2</b></span>."
 
 		// BUILDING
 		"DOTA_Tooltip_ability_backdoor_protection"										"Backdoor Protection"
@@ -631,8 +650,14 @@
 
 		"DOTA_Tooltip_ability_necronomicon_archer_aoe"									"Archer Aura"
 		"DOTA_Tooltip_ability_necronomicon_archer_aoe_radius"							"RAZĂ:"
+		"DOTA_Tooltip_ability__common_AbilityCastPoint"									"Durată de invocare:"
 		//ANTIMAGE
 		"DOTA_Tooltip_ability_antimage_mana_break"										"Mana Break"
+		"DOTA_Tooltip_ability_antimage_mana_break_Description"							"Arde mana unui adversar după fiecare atac și cauzează daune egale cu un procent din mana arsă."
+		"DOTA_Tooltip_ability_antimage_mana_break_Note0"								"Mana Break are o valoare de %illusion_percentage%%% când e cauzat de iluzii."
+		"DOTA_Tooltip_ability_antimage_mana_break_mana_per_hit_pct"						"%MAXIM DE MANA ARSĂ PER LOVITURĂ:"
+		"DOTA_Tooltip_ability_antimage_mana_break_percent_damage_per_burn"				"%MANA ARSĂ DREPT DAUNE:"
+
 		"DOTA_Tooltip_Facet_antimage_magebanes_mirror"											"Magebane's Mirror"
 		"DOTA_Tooltip_Facet_antimage_magebanes_mirror_Description"								"Vrăjile contracarate de Counterspell și Counterspell Ally vor arde imediat din mana inamicului un procentaj din costul de mana și vor cauza daune în funcție de costul de mana arsă."
 		"DOTA_Tooltip_Facet_antimage_mana_thirst"												"Mana Thirst"		
@@ -645,8 +670,12 @@
 		"DOTA_Tooltip_modifier_antimage_thirst_effect"									"Mana Thirst"
 		"DOTA_Tooltip_modifier_antimage_thirst_effect_Description"						"Simte un inamic cu mana redusă. Daunele de atac sunt mărite cu %dMODIFIER_PROPERTY_TOOLTIP%."
 
+		"DOTA_Tooltip_ability_antimage_persectur"											"Persecutor"
+		"DOTA_Tooltip_ability_antimage_persectur_Description"								"Atacurile încetinesc inamicii în funcție de câtă mana duc lipsă. Încetinirea minimă e la %mana_threshold%%% mana, până la un maxim de %zero_tooltip%%% mana. N-are niciun efect dacă inamicul are peste %mana_threshold%%% mana."
 		"DOTA_Tooltip_ability_antimage_persectur_move_slow_min"							"%ÎNCETINIRE MINIMĂ DE MIȘCARE:"
 		"DOTA_Tooltip_ability_antimage_persectur_move_slow_max"							"%ÎNCETINIRE MAXIMĂ DE MIȘCARE:"
+		"DOTA_Tooltip_ability_antimage_persectur_slow_duration"							"DURATĂ ÎNCETINIRE:"
+
 		"DOTA_Tooltip_modifier_antimage_persectur_slow"									"Persecutor (încetinire)"
 		"DOTA_Tooltip_modifier_antimage_persectur_slow_Description"						"Unitatea este încetinită cu %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 
@@ -658,14 +687,25 @@
 		"DOTA_Tooltip_ability_antimage_blink"											"Blink"
 		"DOTA_Tooltip_ability_antimage_blink_empowered_mana_break_debuff_duration_tooltip"	"DURATĂ EFECT NEGATIV:"
 
+		"DOTA_Tooltip_ability_antimage_counterspell_ally"								"Counterspell Ally"
 		"DOTA_Tooltip_ability_antimage_counterspell_ally_Facet_antimage_magebanes_mirror"	"Counterspell arde un procentaj din costul de mana al abilității contracarate din mana invocatorului și cauzează daune egale cu %damage_from_mana_drain_percent%%% din mana arsă, până la un maxim de %max_damage_from_mana_drain% daune per vrajă contracarată."
+		"DOTA_Tooltip_ability_antimage_counterspell_ally_Description"					"Counterspell Ally poate fi activat pentru a crea un înveliș anti-magic în jurul unui erou aliat. Acest înveliș blochează și reflectă orice vrajă țintită. Oricând o vrajă este blocată de Counterspell sau de Counterspell Ally, se va crea o iluzie a lui Anti-Mage lângă acel inamic care a invocat vraja."
+		"DOTA_Tooltip_ability_antimage_counterspell_ally_Lore"					"Singura magie pe care Anti-Mage o tolerează la limită este... prietenia."
 		"DOTA_Tooltip_ability_antimage_counterspell_ally_reflected_spell_amp"			"%AMPLIFICARE VRAJĂ REFLECTATĂ:"
 		"DOTA_Tooltip_ability_antimage_counterspell_ally_mana_drain_percent"			"%PROCENTAJ DE MANA ARSĂ:"
+		"DOTA_Tooltip_ability_antimage_counterspell"									"Counterspell"
 		"DOTA_Tooltip_ability_antimage_counterspell_Facet_antimage_magebanes_mirror"		"Counterspell arde un procentaj din costul de mana al abilității contracarate din mana invocatorului și cauzează daune egale cu %damage_from_mana_drain_percent%%% din mana arsă, până la un maxim de %max_damage_from_mana_drain% daune per vrajă contracarată."
+		"DOTA_Tooltip_ability_antimage_counterspell_Description"						"Acordă în mod pasiv rezistență la magie. Counterspell poate fi activat pentru a crea un înveliș anti-magic în jurul lui Anti-Mage care blochează și reflectă orice vrajă țintită."
+		"DOTA_Tooltip_ability_antimage_counterspell_Note0"								"Perturbarea dezactivează rezistența pasivă la magie."
 		"DOTA_Tooltip_ability_antimage_counterspell_magic_resistance"					"%REZISTENȚĂ LA MAGIE:"
 		"DOTA_Tooltip_ability_antimage_counterspell_duration"							"DURATĂ:"
+		"DOTA_Tooltip_ability_antimage_counterspell_reflected_spell_amp"				"%AMPLIFICARE VRAJĂ REFLECTATĂ:"
+		"DOTA_Tooltip_ability_antimage_counterspell_mana_drain_percent"					"%PROCENTAJ DE MANA ARSĂ:"
 		"DOTA_Tooltip_ability_antimage_mana_void"										"Mana Void"
+		"DOTA_Tooltip_ability_antimage_mana_void_Description"							"Pentru fiecare punct de mana lipsă al unității țintite, se cauzează daune unității și inamicilor din apropiere. Ținta principală primește și o mininăucire."
 		"DOTA_Tooltip_ability_antimage_mana_void_Facet_antimage_mana_thirst"			"Oferă pasiv daune de atac atunci când mana unui erou scade sub %min_bonus_pct%%%, bonusurile mărindu-se pe măsură ce mana acestuia scade și mai mult.<br><br> Dacă mana inamicilor scade sub %threshold_pct%%%, Anti-Mage primește bonusul maxim de daune, vedere și vedere veritabilă asupra eroului respectiv. Efectul este valabil pentru eroii inamici aflați pe o rază de %thirst_range% unități. Bonusurile se suprapun per erou."
+		"DOTA_Tooltip_ability_antimage_mana_void_Note0"									"Daunele sunt calculate în funcție de mana țintei principale, dar acestea sunt aplicate tuturor inamicilor din zona de efect."
+		"DOTA_Tooltip_ability_antimage_mana_void_Note1"									"Perturbarea dezactivează bonusurile pentru vedere și daunele de atac de la Mana Thirst."
 		"DOTA_Tooltip_ability_antimage_mana_void_mana_void_damage_per_mana"				"DAUNE:"
 		"DOTA_Tooltip_ability_antimage_mana_void_mana_void_ministun"					"DURATĂ NĂUCIRE:"
 		"DOTA_Tooltip_ability_antimage_mana_void_mana_void_aoe_radius"					"RAZĂ:"
@@ -674,6 +714,8 @@
 
 		//QUEEN OF PAIN
 		"DOTA_Tooltip_ability_queenofpain_shadow_strike"								"Shadow Strike"
+		"DOTA_Tooltip_ability_queenofpain_shadow_strike_Description"					"Aruncă un pumnal otrăvit care cauzează daune inițiale, iar apoi cauzează daune în timp. Unitatea are viteza de mișcare redusă timp de %duration% secunde. O instanță de daune este cauzată la fiecare %damage_interval% secunde."
+		"DOTA_Tooltip_ability_queenofpain_shadow_strike_scepter_Description"			"Face ca Shadow Strike să devină o abilitate cu o rază de %aoe_radius% de unități. Atunci când Shadow Strike se sfârșește sau se aplică din nou eroului inamic, ținta emite un Scream of Pain, lovind inamicii din apropiere."
 		"DOTA_Tooltip_ability_queenofpain_shadow_strike_Note0"							"Unitatea afectată își recapătă treptat viteza de mișcare originală în fiecare secundă de-a lungul duratei."
 		"DOTA_Tooltip_ability_queenofpain_shadow_strike_Note1"							"Unitățile afectate de Shadow Strike pot fi sacrificate de către aliați atunci când viața lor scade sub 25% din valoarea maximă."
 		"DOTA_Tooltip_ability_queenofpain_shadow_strike_movement_slow"					"%ÎNCETINIRE MIȘCARE:"
@@ -683,6 +725,7 @@
 		"DOTA_Tooltip_ability_queenofpain_blink"										"Blink"
 		"DOTA_Tooltip_ability_queenofpain_scream_of_pain"								"Scream Of Pain"
 		"DOTA_Tooltip_ability_queenofpain_scream_of_pain_Note0"							"Scream Of Pain va lovi unitățile invizibile."
+		"DOTA_Tooltip_ability_queenofpain_scream_of_pain_Note1"							"Unitățile nu se pot feri de Scream Of Pain."
 		"DOTA_Tooltip_ability_queenofpain_scream_of_pain_area_of_effect"				"RAZĂ:"
 		"DOTA_Tooltip_ability_queenofpain_scream_of_pain_damage"						"DAUNE:"
 		"DOTA_Tooltip_ability_queenofpain_sonic_wave"									"Sonic Wave"
@@ -697,34 +740,61 @@
 		"DOTA_Tooltip_modifier_queenofpain_sonic_wave_damage_Description"				"Unitatea este oprimată de Sonic Wave."
 
 		"DOTA_Tooltip_ability_queenofpain_masochist"								"Masochist"
+		"DOTA_Tooltip_ability_queenofpain_masochist_Description"					"Queen of Pain are amplificare bonus pentru vrăji, dar un procentaj din daunele de la vrăji ale acesteia sunt reflectate înapoi spre ea."
+		"DOTA_Tooltip_ability_queenofpain_masochist_spell_amplification"			"%AMPLIFICARE VRĂJI:"
+		"DOTA_Tooltip_ability_queenofpain_masochist_damage_reflected_to_self"					"%REFLECTARE DAUNE DE LA VRĂJI INVOCATE:"
+		"DOTA_Tooltip_ability_queenofpain_masochist_Description_Note0"				"Daunele cauzate iluziilor nu sunt reflectate."
+		"DOTA_Tooltip_ability_queenofpain_masochist_Description_Note1"				"Daunele sunt reflectate înainte de a se aplica reduceri ale daunelor."
+		"DOTA_Tooltip_ability_queenofpain_masochist_Description_Note2"				"Daunele reflectate nu sunt letale."
+		"DOTA_Tooltip_ability_queenofpain_masochist_Description_Note3"				"Include daunele de la vrăji cauzate de obiecte."
 		"DOTA_Tooltip_ability_queenofpain_succubus"								"Succubus"
 		"DOTA_Tooltip_ability_queenofpain_succubus_Facet_queenofpain_facet_bondage" "Furtul de viață pentru vrăji este aplicat și daunelor pure și magice reflectate."
+		"DOTA_Tooltip_ability_queenofpain_succubus_spell_lifesteal"				"%FURT DE VIAȚĂ MINIM:"
+		"DOTA_Tooltip_ability_queenofpain_succubus_spell_lifesteal_close"		"%FURT DE VIAȚĂ MAXIM:"
+		"DOTA_Tooltip_ability_queenofpain_bondage"							"Bondage"
+		"DOTA_Tooltip_ability_queenofpain_bondage_Description"				"Oricând un inamic aflat la o distanță de cel mult %radius% cauzează daune de la vrăji eroinei Queen of Pain, ea returnează %spell_reflect_pct%%% din daunele cauzate."
+
 		"DOTA_Tooltip_facet_queenofpain_facet_bondage"						"Bondage"
 		"DOTA_Tooltip_facet_queenofpain_lifesteal"							"Succubus (fațetă)"
 
 		//LINA
 		"DOTA_Tooltip_ability_lina_dragon_slave"										"Dragon Slave"
+		"DOTA_Tooltip_ability_lina_dragon_slave_Description"							"Lina concentrează suflarea unui dragon, trimițând un val de foc care pârlește toți inamicii în calea sa."
+		"DOTA_Tooltip_ability_lina_dragon_slave_Note1"									"Nu declanșează blocarea sau reflectarea vrăjilor."
 		"DOTA_Tooltip_ability_lina_dragon_slave_dragon_slave_damage"					"DAUNE:"
 
 		"DOTA_Tooltip_ability_lina_light_strike_array"									"Light Strike Array"
+		"DOTA_Tooltip_ability_lina_light_strike_array_Description"						"Invocă o coloană de flăcări care cauzează daune și năucește inamicii."
+		"DOTA_Tooltip_ability_lina_light_strike_array_Lore"								"Esența Linei îi permite să concentreze energia soarelui, cauzând aerul izbucnească în flăcări la voința ei."
+		"DOTA_Tooltip_ability_lina_light_strike_array_Note0"							"Light Strike Array va distruge copacii din zona sa de efect."
 		"DOTA_Tooltip_ability_lina_light_strike_array_light_strike_array_aoe"			"RAZĂ:"
 		"DOTA_Tooltip_ability_lina_light_strike_array_light_strike_array_stun_duration"	"DURATĂ NĂUCIRE:"
 		"DOTA_Tooltip_ability_lina_light_strike_array_light_strike_array_damage"		"DAUNE:"
 		
 		"DOTA_Tooltip_ability_lina_fiery_soul"											"Fiery Soul"
-"DOTA_Tooltip_ability_lina_fiery_soul_Note1"									"Utilizarea obiectelor nu declanșează Fiery Soul."
+"DOTA_Tooltip_ability_lina_fiery_soul_Note0"									"Durata se reîmprospătează de fiecare dată când un inamic este lovit cu o vrajă."
+		"DOTA_Tooltip_ability_lina_fiery_soul_Note1"									"Utilizarea obiectelor nu declanșează Fiery Soul."
+		"DOTA_Tooltip_ability_lina_fiery_soul_fiery_soul_attack_speed_bonus"			"BONUS VITEZĂ DE ATAC:"
 		"DOTA_Tooltip_ability_lina_fiery_soul_fiery_soul_max_stacks"					"SUPRAPUNERI MAXIME:"
 		"DOTA_Tooltip_ability_lina_fiery_soul_fiery_soul_stack_duration"				"DURATĂ:"
 		"DOTA_Tooltip_ability_lina_laguna_blade"										"Laguna Blade"
+		"DOTA_Tooltip_ability_lina_laguna_blade_Description"							"Lansează un trăsnet către o unitate inamică, cauzând daune masive."
 		"DOTA_Tooltip_ability_lina_laguna_blade_Facet_lina_supercharge"					"Laguna Blade o supraîncarcă temporar pe Lina, oferindu-i suprapuneri de Fiery Soul."
 		"DOTA_Tooltip_ability_lina_laguna_blade_shard_description"						"%barrier_pct%%% din daunele cauzate sunt convertite într-o barieră împotriva tuturor daunelor pentru Lina. Bariera durează %barrier_duration% s."
+		"DOTA_Tooltip_ability_lina_laguna_blade_Note0"									"Laguna Blade are un decalaj de %damage_delay% secunde înainte ca daunele să fie aplicate după invocarea vrăjii, permițând astfel unor abilități să evite daunele."
 		"DOTA_Tooltip_ability_lina_laguna_blade_damage"									"DAUNE:"
+		"DOTA_Tooltip_ability_lina_flame_cloak"											"Flame Cloak"
+		"DOTA_Tooltip_ability_lina_flame_cloak_Lore"									"O apărare naturală care poate ține la distanță orice, de la vreo soră nedorită, la dihanii demonice."
+		"DOTA_Tooltip_ability_lina_flame_cloak_Description"								"Acordă Linei mișcare liberă și mărește daunele de la vrăji și rezistența la vrăji ale acesteia. Acordă maximul de suprapuneri pentru Fiery Soul la activare."
 		"DOTA_Tooltip_ability_lina_flame_cloak_flame_cloak_duration"					"DURATĂ:" 
+		"DOTA_Tooltip_ability_lina_flame_cloak_spell_amp"								"%AMPLIFICARE VRĂJI:"
 		"DOTA_Tooltip_ability_lina_flame_cloak_magic_resistance"						"%REZISTENȚĂ LA MAGIE:"
 		"DOTA_Tooltip_modifier_lina_flame_cloak"										"Flame Cloak"
 		"DOTA_Tooltip_modifier_lina_flame_cloak_Description"							"Unitatea se poate mișca liber. Rezistența la magie este mărită cu %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%. Daunele vrăjilor sunt mărite cu %dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%%."
 
 
+		"DOTA_Tooltip_ability_lina_combustion"											"Combustion"
+		"DOTA_Tooltip_ability_lina_combustion_Description"								"Fiecare %damage_threshold% daune de la Lina cauzate unui erou inamic vor supraîncălzi acel erou, cauzând daune aliaților acestuia din apropiere. Efectul acesta poate fi declanșat de mai multe ori de la o singură instanță de daune. Iluziile supraîncălzite cauzează mai puține daune."
 		"DOTA_Tooltip_ability_lina_combustion_damage"									"DAUNE SUPRAÎNCĂLZIRE:"
 		"DOTA_Tooltip_ability_lina_combustion_damage_aoe"								"RAZĂ SUPRAÎNCĂLZIRE:"
 		"DOTA_Tooltip_ability_lina_combustion_damage_illusions"						"DAUNE SUPRAÎNCĂLZIRE (ILUZII):"
@@ -734,6 +804,7 @@
 
 
 		"DOTA_Tooltip_ability_lina_slow_burn"											"Slow Burn"
+		"DOTA_Tooltip_ability_lina_slow_burn_Description"								"Vrăjile Linei cauzează %total_damage_tooltip%%% daune în total. %impact_damage_pct%%% din daune sunt cauzate la impact, iar %burn_damage_pct%%% din daune sunt cauzate drept daune de ardere de-a lungul a %burn_duration%s."
 		"DOTA_Tooltip_modifier_lina_slow_burn"										"Burning"
 		"DOTA_Tooltip_modifier_lina_slow_burn_Description"							"Unitate arde și încasează daune de-a lungul timpului."
 
@@ -761,22 +832,39 @@
 
 		//MIRANA
 		"DOTA_Tooltip_ability_mirana_arrow"												"Sacred Arrow"
+		"DOTA_Tooltip_ability_mirana_arrow_Description"									"Lansează o săgeată de precizie letală pe o distanță mare, care cauzează daune și năucește prima unitate inamică lovită. Durata năucirii variază de la %arrow_min_stun% la %arrow_max_stun% secunde, cu un bonus de daune de până la %arrow_bonus_damage%, în funcție de distanța parcursă de săgeată înainte de a-și lovi ținta. Ucide instantaneu prima unitate lovită care nu este ancient."
+		"DOTA_Tooltip_ability_mirana_arrow_scepter_description"							"Face ca Sacred Arrow să cauzeze Starstorm pe inamicii din calea săgeții principale, cauzând un al doilea Starstorm care cauzează mai puține daune unității lovite de săgeată."
+		"DOTA_Tooltip_ability_mirana_arrow_scepter_radius"								"RAZĂ DE CĂUTARE:"
+		"DOTA_Tooltip_ability_mirana_arrow_scepter_starstorm_target_pct"				"%DAUNE STARSTORM PENTRU LOVITURA PRINCIPALĂ:"
+		"DOTA_Tooltip_ability_mirana_arrow_Lore"										"Energiile selenare fac ca săgețile Prințesei Lunii să fie mai letale decât majoritatea."
+		"DOTA_Tooltip_ability_mirana_arrow_Note0"										"Pentru fiecare 150 de unități traversate de săgeată, durata năucirii în urma impactului este mărită cu 0,5 secunde, iar daunele bonus sunt mărite cu 14."
+		"DOTA_Tooltip_ability_mirana_arrow_Note1"										"Sacred Arrow poate lovi unitățile invizibile."
+		"DOTA_Tooltip_ability_mirana_arrow_Note2"										"Starstruck nu se aplică la a doua instanță de Starstorm creată de Aghanim's Scepter."
+		"DOTA_Tooltip_ability_mirana_arrow_arrow_range"									"DISTANȚĂ:"
 		"DOTA_Tooltip_ability_mirana_arrow_arrow_min_stun"								"NĂUCIRE MINIMĂ:"
 		"DOTA_Tooltip_ability_mirana_arrow_arrow_max_stun"								"NĂUCIRE MAXIMĂ:"
 		"DOTA_Tooltip_ability_mirana_arrow_arrow_bonus_damage"							"BONUS MAXIM DE DAUNE:"
 		"DOTA_Tooltip_ability_mirana_invis"												"Moonlight Shadow"
+		"DOTA_Tooltip_ability_mirana_invis_Description"									"Mirana și toți eroii ei aliați devin invizibili și primesc viteză de mișcare bonus. Mirana primește un bonus pentru daunele cauzate de-a lungul duratei. Dacă un erou este dezvăluit, invizibilitatea va reveni după un decalaj de dispariție, cât timp durata abilității Moonlight Shadow nu a expirat."
+		"DOTA_Tooltip_ability_mirana_invis_Lore"										"Prin slujirea Selemenei, Miranei îi este permis să eclipseze pământul, învăluindu-și aliații într-o mantie a umbrelor."
+		"DOTA_Tooltip_ability_mirana_invis_Note0"										"Unitățile afectate nu vor ataca inamicii în mod automat."
 		"DOTA_Tooltip_ability_mirana_invis_duration"									"DURATĂ:"
 		"DOTA_Tooltip_ability_mirana_invis_bonus_movement_speed"						"%VITEZĂ DE MIȘCARE:"
 		"DOTA_Tooltip_ability_mirana_leap"												"Leap"
+		"DOTA_Tooltip_ability_mirana_leap_Description"									"Mirana sare în luptă, întărindu-se cu un răget feroce care îi oferă un bonus la viteza de atac și de mișcare. Bonusul de viteză durează %leap_bonus_duration% secunde."
 		"DOTA_Tooltip_ability_mirana_leap_Facet_mirana_leaps_and_bounds"				"La aterizare, Leap înrădăcinează țintele aflate pe o rază de %root_radius% unități timp de %root_duration% s."
 		"DOTA_Tooltip_ability_mirana_leap_leap_distance"								"DISTANȚĂ:"
 		"DOTA_Tooltip_ability_mirana_leap_leap_speedbonus_as"							"BONUS DE VITEZĂ DE ATAC:"
 		"DOTA_Tooltip_ability_mirana_starfall"											"Starstorm"
 		"DOTA_Tooltip_ability_mirana_starfall_Facet_mirana_starstruck"					"Al doilea meteor al abilității Starstorm cauzează mai multe daune și orbește ținta."
 		"DOTA_Tooltip_ability_mirana_starfall_Note0"									"Starstorm nu este blocat de Linken's Sphere."
+		"DOTA_Tooltip_ability_mirana_starfall_Note1"									"Starstorm nu poate lovi unitățile invizibile."
 		"DOTA_Tooltip_ability_mirana_starfall_starfall_radius"							"RAZĂ:"
 		"DOTA_Tooltip_ability_mirana_starfall_damage"									"DAUNE:"
 		"DOTA_Tooltip_ability_mirana_starfall_starstruck_blind_pct"						"%RATĂ RATARE (ORBIRE):"
+		"DOTA_Tooltip_ability_mirana_selemenes_faithful"									"Selemene's Faithful"
+		"DOTA_Tooltip_ability_mirana_selemenes_faithful_Description"						"Lotușii sunt cu %bonus_lotus%%% mai eficace pentru Mirana și aliații ei."
+
 		"DOTA_Tooltip_Facet_mirana_moonlight"											"Moonlight Shadow (fațetă)"
 		"DOTA_Tooltip_Facet_mirana_moonlight_Description"								"Suprema Miranei le oferă aliaților invizibilitate și viteză de mișcare."
 		"DOTA_Tooltip_Facet_mirana_sunlight"											"Solar Flare"
@@ -802,32 +890,69 @@
 		"DOTA_Tooltip_ability_mirana_solar_flare"							"Solar Flare"
 		"DOTA_Tooltip_ability_mirana_solar_flare_Description"				"Mărește treptat viteza de atac și daunele Miranei și ale tuturor eroilor aliați, atingând maximul valorilor după %max_damage_time% s. <br><br> Aliații primesc %ally_pct%%% din bonus."
 		"DOTA_Tooltip_ability_mirana_solar_flare_max_total_increase"		"MAXIM DE VITEZĂ DE ATAC/DAUNE:"
+		"DOTA_Tooltip_ability_mirana_solar_flare_duration"					"DURATĂ TOTALĂ:"
+		"DOTA_Tooltip_ability_mirana_solar_flare_ally_pct"					"%BONUS ALIAȚI:"
+			
 		"DOTA_Tooltip_modifier_mirana_solar_flare"							"Solar Flare"
 		"DOTA_Tooltip_modifier_mirana_solar_flare_Description"							"Daunele de atac sunt mărite cu %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%, viteza de atac cu %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, iar vederea pe timp de zi cu %dMODIFIER_PROPERTY_BONUS_DAY_VISION%."
 		
 		//LIFESTEALER
 		"DOTA_Tooltip_ability_life_stealer_rage"										"Rage"
+		"DOTA_Tooltip_ability_life_stealer_rage_Description"							"Dezlănțuie o mânie inimaginabilă, devenind imun la efecte negative și mărind rezistența la magie.\n\nTIPUL DESCÂNTECULUI: descântec de bază"		
+		"DOTA_Tooltip_ability_life_stealer_rage_Lore"									"Nebunia și brutalitatea lui N'aix îl transformă într-un inamic vicios și implacabil în lupte."
 		"DOTA_Tooltip_ability_life_stealer_rage_duration"								"DURATĂ:"
+		"DOTA_Tooltip_ability_life_stealer_rage_magic_resist"							"%REZISTENȚĂ LA MAGIE:"
+
 		"DOTA_Tooltip_ability_life_stealer_unfettered"								"Unfettered"
+		"DOTA_Tooltip_ability_life_stealer_unfettered_Description"					"Dezlănțuie o furie violentă, primind rezistență mărită la efecte negative și magie. Aplică un descântec de bază și poate fi invocat cât timp eroul este dezactivat.\n\nTIPUL DESCÂNTECULUI: Descântec puternic"
 		"DOTA_Tooltip_ability_life_stealer_unfettered_duration"					"DURATĂ:"
+		"DOTA_Tooltip_ability_life_stealer_unfettered_magic_resist"				"%REZISTENȚĂ LA MAGIE:"
+		"DOTA_Tooltip_ability_life_stealer_unfettered_status_resist"				"%REZISTENȚĂ LA EFECTE NEGATIVE:"		
+		
 		"DOTA_Tooltip_ability_life_stealer_feast"										"Feast"
+		"DOTA_Tooltip_ability_life_stealer_feast_Description"							"Atacurile lui Lifestealer cauzează daune și-l videcă cu un procentaj din viața maximă a țintei sale. Lifestealer poate ataca creepii aliați începând de la %creep_deny_percent% din viața lor. Lifestealer primește maxim permanent de viață atunci când ucide un creep sau un erou."
 		"DOTA_Tooltip_ability_life_stealer_feast_Facet_life_stealer_fleshfeast"		"Maximul de viață per erou ucis pentru Feast este mărit."
+		"DOTA_Tooltip_ability_life_stealer_feast_Note0"									"Funcționează pe aliați și inamici. Nu-l afectează pe Roshan."
+		"DOTA_Tooltip_ability_life_stealer_feast_Note1"									"Vindecarea este independentă de daune."
+		"DOTA_Tooltip_ability_life_stealer_feast_Note2"									"Cantitatea de viață vindecată este amplificată de amplificarea pentru furtul de viață."
+		"DOTA_Tooltip_ability_life_stealer_feast_Note3"									"Perturbarea dezactivează primirea de noi suprapuneri."
+		"DOTA_Tooltip_ability_life_stealer_feast_Note4"									"Perturbarea nu dezactivează bonusurile de la suprapunerile existente."
+		"DOTA_Tooltip_ability_life_stealer_feast_Lore"									"După ce a scăpat din celula sa din Devarque, N'aix a subzistat cu carnea și oasele a ghinioniștilor care i-au trecut prin cale." 
+		
 		"DOTA_Tooltip_ability_life_stealer_feast_hp_damage_percent"						"%DAUNE DIN MAXIMUL DE VIAȚĂ:"
+		"DOTA_Tooltip_ability_life_stealer_feast_bonus_hp_per_creep"					"VIAȚĂ MAXIMĂ PER CREEP UCIS:"
+		"DOTA_Tooltip_ability_life_stealer_feast_bonus_hp_per_hero"						"VIAȚĂ MAXIMĂ PER EROU UCIS:"
+		"DOTA_Tooltip_ability_life_stealer_feast_bonus_hp_total"						"MAXIM PERMANENT DE VIAȚĂ:"
+
+		"DOTA_Tooltip_ability_life_stealer_ghoul_frenzy"									"Ghoul Frenzy"
+		"DOTA_Tooltip_ability_life_stealer_ghoul_frenzy_Description"						"Acordă lui Lifestealer viteză de mișcare și viteză de atac în mod pasiv."
+		"DOTA_Tooltip_ability_life_stealer_ghoul_frenzy_attack_speed_bonus"				"VITEZĂ DE ATAC BONUS:"
+		"DOTA_Tooltip_ability_life_stealer_ghoul_frenzy_movement_speed_bonus"			"%VITEZĂ DE MIȘCARE BONUS:"
+		
 		"DOTA_Tooltip_ability_life_stealer_open_wounds"									"Open Wounds"
+		"DOTA_Tooltip_ability_life_stealer_open_wounds_Description"						"Lifestealer sfâșie o unitate inamică, încetinind viteza de mișcare a victimei și permițând tuturor aliaților să se vindece cu un procent din daunele cauzate acelei unități. Victima își recuperează viteza de mișcare de-a lungul duratei abilității."
 		"DOTA_Tooltip_ability_life_stealer_open_wounds_Facet_life_stealer_fleshfeast"		"Repausul abilității Open Wounds este reîmprospătat dacă o unitate moare în timp ce e afectată de Open Wounds."
+		"DOTA_Tooltip_ability_life_stealer_open_wounds_Lore"							"Rănile proaspete și mireasma sângelui atrag adesea necrofagii care vor termina ce-a fost început."
+		"DOTA_Tooltip_ability_life_stealer_open_wounds_Note0"							"Open Wounds încetinește pe parcursul a 8 etape diferite: 50% / 50% / 40% / 30% / 20% / 10% / 10% / 10%, încetinirea reducându-se cu o etapă pe secundă."
 		"DOTA_Tooltip_ability_life_stealer_open_wounds_Note1"							"Cantitatea de viață vindecată este amplificată de amplificarea pentru furtul de viață al lui Lifestealer."
 		"DOTA_Tooltip_ability_life_stealer_open_wounds_slow_tooltip"					"%ÎNCETINIRE MAXIMĂ:"
 		"DOTA_Tooltip_ability_life_stealer_open_wounds_duration"						"DURATĂ:"
 		
 		"DOTA_Tooltip_ability_life_stealer_infest"										"Infest"
+		"DOTA_Tooltip_ability_life_stealer_infest_Lore"									"Cu această infestație, N'aix consumă esența vitală a gazdei, astfel refăcându-și complet puterea sa necurată."
+		"DOTA_Tooltip_ability_life_stealer_infest_Description"							"Lifestealer infestează corpul unei unități țintă, devenind nedetectabil și vindecându-se cu o porțiune din maximul său de viață în fiecare secundă, cât timp se află înăuntru. Acesta poate exploda din corpul gazdei, cauzând daune inamicilor din apropiere. Dacă unitatea infestată este o unitate inamică sau un creep neutru, Lifestealer îi poate controla mișcarea și atacurile, iar creepul pierde o porțiune din maximul de viață de-a lungul timpului. Nu funcționează pe eroii inamici.\n\nTIPUL DESCÂNTECULUI: descântec de bază"
 		"DOTA_Tooltip_ability_life_stealer_infest_Facet_life_stealer_gorestorm"			"Consumarea unui creep cu Infest va acoperi cu sânge inamicii din apropiere, fapt ce le va cauza daune de-a lungul timpului în funcție de viața rămasă a țintei."
 		"DOTA_Tooltip_ability_life_stealer_infest_Note0"								"Lifestealer primește experiență cât timp beneficiază de Infest."
+		"DOTA_Tooltip_ability_life_stealer_infest_Note1"								"Creepii care sunt controlați de Infest vor primi bonusul pentru viteza de mișcare de la Infest."
+		"DOTA_Tooltip_ability_life_stealer_infest_Note3"								"Atunci când se infestează un erou inamic cu Aghanim's Scepter, se vor cauza daune de Gorestorm egale cu toate daunele pe care Lifestealer le-a cauzat gazdei de-a lungul duratei abilității Infest."
 		"DOTA_Tooltip_ability_life_stealer_infest_damage"								"DAUNE:"
 		"DOTA_Tooltip_ability_life_stealer_infest_self_regen"								"%REGENERARE DIN MAXIMUL DE VIAȚĂ (SINE):"
 		"DOTA_Tooltip_ability_life_stealer_infest_bonus_movement_speed"					"%VITEZĂ DE MIȘCARE:"
+		"DOTA_Tooltip_ability_life_stealer_infest_bonus_health"							"VIAȚĂ BONUS:"
 		"DOTA_Tooltip_ability_life_stealer_infest_attack_rate_enemy"					"FRECVENȚA DE ATAC:"
 		"DOTA_Tooltip_ability_life_stealer_infest_bonus_regen_pct"					"%REGENERARE BONUS:"
 		"DOTA_Tooltip_ability_life_stealer_infest_infest_duration_enemy"				"DURATĂ INAMIC:"
+		"DOTA_Tooltip_ability_life_stealer_infest_creep_max_hp_drain_pct_per_second"	"%PIERDERE PE SECUNDĂ MAXIM DE VIAȚĂ CREEP:"
 		"DOTA_Tooltip_ability_life_stealer_infest_scepter_description"					"Mărește distanța de invocare și reduce repausul la %bonus_AbilityCooldown% s. Infest poate ținti eroii inamici pentru scurt timp, atacându-i din interior în timp ce regenerarea de viață a lui Lifestealer este mărită."
 		"DOTA_Tooltip_facet_life_stealer_rage"											"Rage"
 		"DOTA_Tooltip_facet_life_stealer_rage_Description"								"Lifestealer poate invoca <b color='white'>Rage</b>, devenind imun la efecte negative și mărindu-și rezistența la magie."
@@ -877,10 +1002,19 @@
 		"DOTA_Tooltip_ability_furion_force_of_nature_treant_vision_night"				"VEDERE TREANT (NOAPTE):"
 
 
+		"DOTA_Tooltip_ability_furion_curse_of_the_forest_Description"					"Aplică un blestem tuturor eroilor inamici aflați la o distanță de cel mult %range%, dezvăluindu-i în ceață, încetinindu-i și cauzându-le daune în timp în funcție de numărul de copaci aflați pe o rază de %radius%. Fiecare Treant este considerat copac pentru această abilitate."
 		"DOTA_Tooltip_ability_furion_curse_of_the_forest_duration"						"DURATĂ:"
+		"DOTA_Tooltip_ability_furion_curse_of_the_forest_damage_per_tree"				"DAUNE PE SECUNDĂ PER COPAC:"
+		"DOTA_Tooltip_ability_furion_curse_of_the_forest_slow_per_tree"					"%ÎNCETINIRE PER COPAC:"
+		
 		"DOTA_Tooltip_ability_furion_wrath_of_nature"									"Wrath of Nature"
 		"DOTA_Tooltip_ability_furion_wrath_of_nature_scepter_description"				"Înrădăcinează toți inamicii loviți. Durata se mărește de la %scepter_min_entangle_duration% s până la %scepter_max_entangle_duration% s după atingerea numărului maxim de lovituri."
+		"DOTA_Tooltip_ability_furion_wrath_of_nature_Note0"								"Wrath of Nature nu va lovi unitățile care nu sunt vizibile."
 		"DOTA_Tooltip_ability_furion_wrath_of_nature_damage"							"DAUNE DE BAZĂ:"
+		"DOTA_Tooltip_ability_furion_wrath_of_nature_damage_percent_add"				"%DAUNE ADĂUGATE PER SALT:"
+
+		"DOTA_Tooltip_ability_furion_spirit_of_the_forest"						"Spirit of the Forest"
+		"DOTA_Tooltip_ability_furion_spirit_of_the_forest_Description"			"Nature's Prophet obține %damage_per_tree_pct%%% daune bonus pentru fiecare copac aflat la o distanță de cel mult %radius% și un multiplicator din același bonus pentru fiecare Treant aflat la o distanță de cel mult %radius_treant% față de acesta."
 		"DOTA_Tooltip_ability_furion_spirit_of_the_forest_facet_furion_ironwood_treant" "Multiplicatorul de unități Treant este mărit."
 		"DOTA_Tooltip_ability_furion_spirit_of_the_forest_multiplier"			"MULTIPLICATOR:"
 		"DOTA_Tooltip_modifier_furion_spirit_of_the_forest"						"Spirit of the Forest"
@@ -890,6 +1024,20 @@
 		"DOTA_Tooltip_Facet_furion_ironwood_treant_Description"				"Nature's Call creează doar {s:bonus_max_treants} Treant, care cauzează mai multe daune și care are mărite viața, vederea și viteza de mișcare și are abilitatea Reinforced."
 		"DOTA_Tooltip_Facet_furion_ironwood_treant_Note0"					"Unitățile care au abilitatea Reinforced cauzează daune bonus altor unități și clădiri care au aceeași abilitate și încasează mai puține daune de atac de la celelalte unități."
 		"DOTA_Tooltip_Facet_furion_soothing_saplings"						"Soothing Saplings"		
+		"DOTA_Tooltip_Facet_furion_soothing_saplings_Description"			"După ce se invocă Sprout, toți copacii pe o rază de {s:bonus_healing_radius} unități vor vindeca aliații din apropiere."		
+ 		"DOTA_Tooltip_Facet_furion_natures_profit"							"Nature's Profit"
+		"DOTA_Tooltip_Facet_furion_natures_profit_Description"				"Oricând Nature's Prophet ucide un erou inamic sau când unul moare în apropiere, un copac cu bani va apărea la locația acestuia care creează saci cu aur care pot fi colectați."
+
+
+		"DOTA_Tooltip_Ability_furion_natures_profit"							"Nature's Profit"
+		"DOTA_Tooltip_Ability_furion_natures_profit_Description"				"Oricând Nature's Prophet ucide un erou inamic sau când unul moare la o distanță de cel mult %radius% unități se va crea un copac cu bani la locația acestuia. La fiecare interval, câțiva saci cu aur vor apărea în acea zonă și care pot fi ridicați de eroii din apropiere. Cantitatea de aur este egală cu un multiplicator al nivelului eroului ucis."
+		"DOTA_Tooltip_Ability_furion_natures_profit_tick_interval"				"INTERVAL:"
+		"DOTA_Tooltip_Ability_furion_natures_profit_bags_per_tick"				"SACI CU AUR PER INTERVAL:"
+		"DOTA_Tooltip_Ability_furion_natures_profit_hero_level_gold_multiplier"	"AUR PER NIVEL DE EROI:"
+		"DOTA_Tooltip_Ability_furion_natures_profit_initial_spawn_time"			"AMÂNARE APARIȚIE COPAC:"
+
+
+
 		"DOTA_Tooltip_modifier_furion_sprout_entangle" "Wrath of Nature"
 		"DOTA_Tooltip_modifier_furion_sprout_entangle_Description"	"Unitatea este înrădăcinată."
 		"DOTA_Tooltip_modifier_furion_sprout_healing"						"Soothing Saplings"
@@ -907,11 +1055,19 @@
 					
 		//WINDRUNNER
 		"DOTA_Tooltip_ability_windrunner_focusfire"										"Focus Fire"
+		"DOTA_Tooltip_ability_windrunner_focusfire_Description" 						"Windranger concentrează puterea vântului pentru a primi %bonus_attack_speed% viteză de atac suplimentară împotriva unui singur inamic sau a unei structuri, dar daunele de atac îi sunt reduse. Daunele suplimentare de la efectele secundare ale obiectelor nu sunt reduse."
 		"DOTA_Tooltip_ability_windrunner_focusfire_Facet_windrunner_whirlwind"			"Focus Fire nu mai necesită o țintă, ci trage spre inamici aleatori aflați pe o rază egală cu raza de atac a eroinei Windranger + %bonus_range%. Trage un număr fix săgeți pe secundă și poate lovi același inamic doar la fiecare 4 atacuri. Prioritizează eroii."
+		"DOTA_Tooltip_ability_windrunner_focusfire_Note0"								"Comanda de menținere a poziției va opri atacurile de la Windranger."
+		"DOTA_Tooltip_ability_windrunner_focusfire_Note1"								"Windranger se poate mișca în timp ce atacă."
 		"DOTA_Tooltip_ability_windrunner_focusfire_bonus_attack_speed" 					"VITEZĂ DE ATAC BONUS:"
+		"DOTA_Tooltip_ability_windrunner_focusfire_attacks_per_second" 					"ATACURI PE SECUNDĂ:"
+		"DOTA_Tooltip_ability_windrunner_focusfire_bonus_range" 						"DISTANȚĂ DE ATAC BONUS:"
 		"DOTA_Tooltip_ability_windrunner_focusfire_focusfire_damage_reduction" 			"%REDUCERE DE DAUNE:"
 		"DOTA_Tooltip_ability_windrunner_focusfire_abilityduration"						"DURATĂ:"		
 		
+		"DOTA_Tooltip_ability_windrunner_focusfire_cancel"								"Focus Fire Cancel"
+		"DOTA_Tooltip_ability_windrunner_focusfire_cancel_Description" 						"Oprește invocarea de Focus Fire mai devreme."
+
 		"DOTA_Tooltip_ability_windrunner_powershot"										"Powershot"
 		"DOTA_Tooltip_ability_windrunner_powershot_Facet_windrunner_killshot"			"Eroii inamici loviți sunt executați dacă viața lor e sub un anumit prag. Pragul pentru execuție ține cont de puterea săgeții."
 		"DOTA_Tooltip_ability_windrunner_powershot_Note0"								"Powershot va distruge copacii din zona sa de efect."
@@ -3007,6 +3163,8 @@
 		"DOTA_Tooltip_ability_huskar_burning_spear_duration"							"DURATĂ:"
 
 	
+		"DOTA_Tooltip_ability_huskar_blood_magic_Description"							"Huskar nu are mana. Costurile de mana ale obiectelor sunt convertite în costuri de viață.<br/><br/>Costurile de viață ale lui Huskar sunt considerate daune magice și pot fi reduse de rezistența la magie."		
+
 		"DOTA_Tooltip_ability_huskar_berserkers_blood"									"Berserker's Blood"
 		"DOTA_Tooltip_ability_huskar_life_break"										"Life Break"
 		"DOTA_Tooltip_ability_huskar_life_break_movespeed"								"%ÎNCETINIRE MIȘCARE:"
@@ -8383,6 +8541,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_legion_commander_5"	"{s:bonus_radius} zonă de efect pentru Press The Attack"
 		"DOTA_Tooltip_ability_special_bonus_unique_legion_commander_6"	"+{s:bonus_hp_regen} regenerare de viață pentru Press The Attack"
 		"DOTA_Tooltip_ability_special_bonus_unique_legion_commander_7"	"+{s:bonus_hp_leech_percent}% furt de viață pentru Moment of Courage"
+		"DOTA_Tooltip_ability_special_bonus_unique_legion_commander_8"	"Press the Attack oferă {s:bonus_immunity_duration}s de imunitate la efecte negative"
 		"DOTA_Tooltip_ability_special_bonus_unique_legion_commander_8_Description" "De asemenea, mărește rezistența la magie cu 50%%."
 		"DOTA_Tooltip_ability_special_bonus_unique_legion_commander_9"	"-{s:bonus_AbilityCooldown} s de repaus pentru Overwhelming Odds"
 		"DOTA_Tooltip_ability_special_bonus_unique_legion_commander_pta_movespeed"		"+{s:bonus_move_speed}% viteză de mișcare pentru Press The Attack"
