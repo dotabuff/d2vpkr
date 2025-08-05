@@ -833,7 +833,8 @@
 		"DOTA_Facet_Ping"						"%s1 %s2Has the hero facet %s3%s4"
 		"DOTA_Innate_Ping"						"%s1 %s2Has the innate ability %s3"		
 		
-		"DOTA_EnemyAbility_Ping"			"Beware %s1 %s2%s3"
+		"DOTA_EnemyAbility_Ping"			"Beware %s1 %s2%s3%s4"
+		"DOTA_EnemyAbility_Ping_Cooldown"			" (Potentially on Cooldown)"
 
 		"DOTA_Item_Charge_Ward_Dispenser"		"<font color='%s1'>Observer</font> (x%s2) and <font color='%s3'>Sentry</font> (x%s4) Wards"
 		
@@ -849,7 +850,7 @@
 		"DOTA_QuickBuyAlert_Enough"			"%s1I have enough gold for <font color='%s2'>%s3</font>%s4"		
 		"DOTA_QuickBuyAlert_Buyback"				"%s1Need %s2 gold for <font color='%s3'>%s4</font>%s5 and <font color='#00FF00'>Buyback</font>"		
 		"DOTA_QuickBuyAlert_Enough_Buyback"			"%s1I have enough gold for <font color='%s2'>%s3</font>%s4 and <font color='#00FF00'>Buyback</font>"
-		"DOTA_Buyback_Protection"			"Buyback Protection ({s:buyback_protection_status})"
+		"DOTA_Buyback_Protection"			"Buyback Protection ({s:buyback_protection_status})<br>When on, only surplus gold above your buyback cost can be spent."
 		"DOTA_Buyback_Protection_On"			"On"
 		"DOTA_Buyback_Protection_Off"			"Off"
 
@@ -8774,6 +8775,7 @@ As each stone's cultural influence spread, it eventually came in conflict with t
 		"Attrib_Candyshop"							"Candyworks: %s1"
 		"Attrib_Candyshop_1"						"Diretide 2022"
 		"Attrib_Candyshop_2"						"Crownfall Caravan"
+		"Attrib_AccountBound"						"Account Bound"
 		"InternationalEvent_Station0"				"watching a game at The International"
 		"InternationalEvent_Station1"				"visiting the Secret Shop at The International"
 		"InternationalEvent_Station2"				"visiting the Workshop Station at The International"
@@ -10695,6 +10697,7 @@ As each stone's cultural influence spread, it eventually came in conflict with t
 		"Econ_Autograph_Modifier_TI2021"			"International 2021"
 		"Econ_Autograph_Modifier_TI2023"			"International 2023"
 		"Econ_Autograph_Modifier_TI2024"			"International 2024"
+		"Econ_Autograph_Modifier_TI2025"			"International 2025"
 
 
 		"Econ_HeroStatue_Hero"		"Hero: %s1"
@@ -16871,6 +16874,7 @@ Special Techies Taunt"
 		"DOTA_HealthBar_Status_Silenced" "Silenced"
 		"DOTA_HealthBar_Status_Disarmed" "Disarmed"
 		"DOTA_HealthBar_Status_Rooted"	"Rooted"
+		"DOTA_HealthBar_Status_Hypnotized"	"Hypnotized"
 		"DOTA_HealthBar_Status_Taunted"	"Taunted"
 		"DOTA_HealthBar_Status_Sleep"	"Sleep"
 		"DOTA_HealthBar_Status_Fear"	"Fear"
@@ -24434,6 +24438,7 @@ To join as an experienced player, you must have at least {d:new_player_req_games
 	"DOTA_econ_item_details_dynamic_styles_help"	"Dynamic Styles are automatically applied during gameplay."
 	"DOTA_econ_item_details_items_in_set"	"Items In Set"
 	"DOTA_econ_item_details_contained_within"	"Purchasing Options"
+	"DOTA_econ_item_details_contained_within_set"	"Part of Set"
 	"DOTA_econ_item_details_owning_bundle_item_name"	"{s:item_owning_bundle_name}"
 	"DOTA_econ_item_details_unbundle"		"Unbundle"
 	"DOTA_econ_item_details_equip"			"Equip"
@@ -31338,6 +31343,7 @@ With early pressure heroes like Zeus and Death Prophet making appearances, split
 	"DOTA_739_Update"	  "7.39 Gameplay Update"
 	"DOTA_739b_Update"	  "7.39b Gameplay Update"
 	"DOTA_739c_Update"	  "7.39c Gameplay Update"
+	"DOTA_739d_Update"	  "7.39d Gameplay Update"
 
 	"DOTA_Settings_Tooltip_NetworkLatency" "If you have a network connection with packet loss, setting this to 'LOW' will increase latency but improve overall smoothness."
 
@@ -33078,6 +33084,7 @@ With early pressure heroes like Zeus and Death Prophet making appearances, split
 
 	"DOTA_Reward_Phase_Boots_Effect_1"							"Phase Boots Effect Level 1"
 	"DOTA_Reward_Phase_Boots_Effect_2"							"Phase Boots Effect Level 2"
+	"DOTA_Reward_Lotus_Orb_Effect"								"Lotus Orb Effect"
 
 	"DOTA_TI_REWARDS_Kill_Streak_Effect_Lvl_1"				"Seasonal Kill Streak Effect Level 1"
 
@@ -34742,6 +34749,9 @@ With early pressure heroes like Zeus and Death Prophet making appearances, split
 	"DOTA_DPCTeams_SeasonPeriod_Event45_Dates"		"Oct 12, 2023 - Oct 29, 2023"
 	"DOTA_DPCTeams_SeasonPeriod_Event49_Name"		"The International 2024"
 	"DOTA_DPCTeams_SeasonPeriod_Event49_Dates"		"Sep 4, 2024 - Sep 15 2024"
+	"DOTA_DPCTeams_SeasonPeriod_Event52_Name"		"The International 2025"
+	"DOTA_DPCTeams_SeasonPeriod_Event52_Dates"		"Sep 4, 2025 - Sep 15 2025"
+
 
 
 	"DOTA_FavoriteTeamSet"							"Favorite Team Set"
@@ -43959,7 +43969,7 @@ If you don't feel that you were able to dedicate the appropriate attention level
 		"DOTA_StickerDetails_TalentBlockTitle"							"Voice line"
 		"DOTA_StickerDetails_TalentVoiceLineUngranted"					"<b>Obtain a Gold or Holo Sticker</b><br/>Obtain and place a gold or holo sticker on a Collection row or hero to unlock."
 		"DOTA_StickerDetails_TalentVoiceLineUnplaced"					"<b>Place your Gold or Holo Sticker</b><br/>Place your gold or holo sticker on a Collection row or hero to unlock."
-		"DOTA_StickerDetails_TalentVoiceLineGranted"					"<b>Unlocked!</b><br/><a href=\"event:DOTAShowSettingsPopupChatWheelPage()\">Customize chat wheel</a>"
+		"DOTA_StickerDetails_TalentVoiceLineGranted"					"<b>Unlocked!</b><br/><a href=\"event:DOTAShowSettingsRebornPopupSection('#dota_settings_communicationwheels', '#dota_settings_chatwheel1')\">Customize chat wheel</a>"
 		
 		"DOTAStoreSticker_Featured"										"FEATURED SALE"
 		"DOTAStoreSticker_DescriptionTitle"								"THE INTERNATIONAL 2022 STICKER CAPSULES"
@@ -45030,13 +45040,13 @@ If you don't feel that you were able to dedicate the appropriate attention level
 		"DOTA_FantasyCraft_Prefix_EleHero_Body"		"+{d:prefix_bonus}% when playing an Aquatic, Fiery, or Icy Hero."
 		"DOTA_FantasyCraft_Prefix_Otherworldly_Body" "+{d:prefix_bonus}% when playing an Undead, Demon, or Spirit Hero."
 		"DOTA_FantasyCraft_Prefix_Hairy_Body"		"+{d:prefix_bonus}% when playing a Bearded or Fuzzy Hero."
-		"DOTA_FantasyCraft_Prefix_RedHero_Body_MouseOver"		"+{d:prefix_bonus}% when playing a <a class=\"PrefixUnderline\" onmouseover=\"event:DOTAShowFantasy2024PlayerMiniTooltip( 1 )\" onmouseout=\"event:DOTAHideFantasy2024PlayerTooltip()\">red hero</a>."
-		"DOTA_FantasyCraft_Prefix_Sad_Body_MouseOver"			"+{d:prefix_bonus}% when playing a <a class=\"PrefixUnderline\" onmouseover=\"event:DOTAShowFantasy2024PlayerMiniTooltip( 3 )\" onmouseout=\"event:DOTAHideFantasy2024PlayerTooltip()\">blue hero</a>."
-		"DOTA_FantasyCraft_Prefix_Beastial_Body_MouseOver"	"+{d:prefix_bonus}% if playing a hero with <a class=\"PrefixUnderline\" onmouseover=\"event:DOTAShowFantasy2024PlayerMiniTooltip( 7 )\" onmouseout=\"event:DOTAHideFantasy2024PlayerTooltip()\">horns or wings</a>."
-		"DOTA_FantasyCraft_Prefix_GreenHero_Body_MouseOver"	"+{d:prefix_bonus}% when playing a <a class=\"PrefixUnderline\" onmouseover=\"event:DOTAShowFantasy2024PlayerMiniTooltip( 6 )\" onmouseout=\"event:DOTAHideFantasy2024PlayerTooltip()\">green hero</a>."
-		"DOTA_FantasyCraft_Prefix_EleHero_Body_MouseOver"		"+{d:prefix_bonus}% when playing an <a class=\"PrefixUnderline\" onmouseover=\"event:DOTAShowFantasy2024PlayerMiniTooltip( 14 )\" onmouseout=\"event:DOTAHideFantasy2024PlayerTooltip()\">Aquatic, Fiery, or Icy Hero</a>."
-		"DOTA_FantasyCraft_Prefix_Otherworldly_Body_MouseOver" "+{d:prefix_bonus}% when playing an <a class=\"PrefixUnderline\" onmouseover=\"event:DOTAShowFantasy2024PlayerMiniTooltip( 15 )\" onmouseout=\"event:DOTAHideFantasy2024PlayerTooltip()\">Undead, Demon, or Spirit Hero</a>."
-		"DOTA_FantasyCraft_Prefix_Hairy_Body_MouseOver"		"+{d:prefix_bonus}% when playing a <a class=\"PrefixUnderline\" onmouseover=\"event:DOTAShowFantasy2024PlayerMiniTooltip( 16 )\" onmouseout=\"event:DOTAHideFantasy2024PlayerTooltip()\">Bearded or Fuzzy Hero</a>."
+		"DOTA_FantasyCraft_Prefix_RedHero_Body_MouseOver"		"+{d:prefix_bonus}% when playing a <a class=\"PrefixUnderline\" onmouseover=\"event:DOTAShowFantasy2025PlayerMiniTooltip( 1 )\" onmouseout=\"event:DOTAHideFantasy2025PlayerTooltip()\">red hero</a>."
+		"DOTA_FantasyCraft_Prefix_Sad_Body_MouseOver"			"+{d:prefix_bonus}% when playing a <a class=\"PrefixUnderline\" onmouseover=\"event:DOTAShowFantasy2025PlayerMiniTooltip( 3 )\" onmouseout=\"event:DOTAHideFantasy2025PlayerTooltip()\">blue hero</a>."
+		"DOTA_FantasyCraft_Prefix_Beastial_Body_MouseOver"	"+{d:prefix_bonus}% if playing a hero with <a class=\"PrefixUnderline\" onmouseover=\"event:DOTAShowFantasy2025PlayerMiniTooltip( 7 )\" onmouseout=\"event:DOTAHideFantasy2025PlayerTooltip()\">horns or wings</a>."
+		"DOTA_FantasyCraft_Prefix_GreenHero_Body_MouseOver"	"+{d:prefix_bonus}% when playing a <a class=\"PrefixUnderline\" onmouseover=\"event:DOTAShowFantasy2025PlayerMiniTooltip( 6 )\" onmouseout=\"event:DOTAHideFantasy2025PlayerTooltip()\">green hero</a>."
+		"DOTA_FantasyCraft_Prefix_EleHero_Body_MouseOver"		"+{d:prefix_bonus}% when playing an <a class=\"PrefixUnderline\" onmouseover=\"event:DOTAShowFantasy2025PlayerMiniTooltip( 14 )\" onmouseout=\"event:DOTAHideFantasy2025PlayerTooltip()\">Aquatic, Fiery, or Icy Hero</a>."
+		"DOTA_FantasyCraft_Prefix_Otherworldly_Body_MouseOver" "+{d:prefix_bonus}% when playing an <a class=\"PrefixUnderline\" onmouseover=\"event:DOTAShowFantasy2025PlayerMiniTooltip( 15 )\" onmouseout=\"event:DOTAHideFantasy2025PlayerTooltip()\">Undead, Demon, or Spirit Hero</a>."
+		"DOTA_FantasyCraft_Prefix_Hairy_Body_MouseOver"		"+{d:prefix_bonus}% when playing a <a class=\"PrefixUnderline\" onmouseover=\"event:DOTAShowFantasy2025PlayerMiniTooltip( 16 )\" onmouseout=\"event:DOTAHideFantasy2025PlayerTooltip()\">Bearded or Fuzzy Hero</a>."
 		"DOTA_FantasyCraft_Suffix_Tormented_Body"	"+{d:suffix_bonus}% if any player dies to a Tormentor."
 		"DOTA_FantasyCraft_Suffix_MostDeaths_Body"	"+{d:suffix_bonus}% if the player has the most deaths in the game."
 		"DOTA_FantasyCraft_Suffix_NoKills_Body"		"+{d:suffix_bonus}% if the player ends the game with no kills."
@@ -46612,6 +46622,7 @@ If you don't feel that you were able to dedicate the appropriate attention level
 		
 		"DOTA_Crownfall_VisualNovel_ClickToContinue"		"Click to Continue"
 		"DOTA_Crownfall_VisualNovel_ViewComicPages"			"View Comic Pages"
+
 		
 		"DOTA_Crownfall_Fishing_Title"						"Gone Fishin'"
 		"DOTA_Crownfall_Fishing_OasisTitle"					"Oasis Fishing"
@@ -47658,6 +47669,7 @@ If you don't feel that you were able to dedicate the appropriate attention level
 		"DOTA_TalentContent_RejectReason_PhotoBadAlpha"					"Background on your photo is not completely transparent and cannot be shipped"
 		"DOTA_TalentContent_RejectReason_PhotoBadCrop"					"Your photo should be a cropped headshot. See guidelines at https://www.dota2.com/portraitguidelines"
 		"DOTA_TalentContent_RejectReason_PhotoBadQuality"				"Your photo does not adhere to the quality guidelines, which are available at https://www.dota2.com/portraitguidelines"
+		"DOTA_TalentContent_RejectReason_PhotoExtraElements"			"Your photo contains extra elements that have been edited in"
 		"DOTA_TalentContent_RejectReason_AutoBadAlpha"					"Your autograph background is not completely transparent and cannot be shipped"
 		"DOTA_TalentContent_RejectReason_AutoBadQuality"					"Your autograph does not adhere to the quality guidelines, which are available at https://www.dota2.com/autographguidelines"
 		"DOTA_TalentContent_RejectReason_VoiceNotTalent"					"The voice used for Voiceline {d:voiceline_number} is not in your own voice"
@@ -47672,6 +47684,9 @@ If you don't feel that you were able to dedicate the appropriate attention level
 		"DOTA_TalentContent_RejectReason_VoiceBadFormat"					"Voiceline {d:voiceline_number} is not a proper WAV file that can be played"
 		"DOTA_TalentContent_RejectReason_VoiceDistortion"				"Voiceline {d:voiceline_number} contains artifacts such as pops or distortion"
 		"DOTA_TalentContent_RejectReason_VoiceQuality"					"The audio quality for Voiceline {d:voiceline_number} is too low quality"
+		"DOTA_TalentContent_RejectReason_VoiceQuiet"					"Voiceline {d:voiceline_number} is too quiet"
+		"DOTA_TalentContent_RejectReason_VoiceLength"					"Voiceline {d:voiceline_number} is too long"
+		"DOTA_TalentContent_RejectReason_VoiceAbrasive"					"Voiceline {d:voiceline_number} is too abrasive or obnoxious"
 		"DOTA_TalentContent_Approval_Photo"								"Your photo has been approved"
 		"DOTA_TalentContent_Approval_Auto"								"Your autograph has been approved"
 		"DOTA_TalentContent_Approval_Voice"								"Voiceline {d:voiceline_number} has been approved"
@@ -48652,6 +48667,29 @@ If you don't feel that you were able to dedicate the appropriate attention level
 		"DOTA_PatchNotes_ReworkedFacet"									"Reworked"
 		"DOTA_Shop_CraftingStatus"										"Crafting Status"
 
+		"DOTA_Reward_Line_Year_2025"									"2025"
+		"DOTA_Reward_Line_Fall_2025_Title"								"QUARTERO'S<br>CURIOS"
+		"DOTA_Reward_Line_Fall_2025_Description"						"Play Dota to unlock seasonal rewards"
+		"DOTA_Reward_Tooltip_Requires_Plus"								"This reward is available but requires Dota Plus to claim. Click to subscribe now!"
+
+		"DOTA_Reward_Line_Fall_2025_HeroSetReward"						"Quartero's Antique"
+		"DOTA_Reward_Line_Fall_2025_HeroSetRewardDescription"			"Receive one of over 100 previously released hero sets, with a small chance of getting an Immortal or Arcana."
+		"DOTA_Reward_Line_Fall_2025_HeroSetRewardFlavor"				"\"I remember who this item set originally belonged to. Tragic. Well, brutal anyway. I'd rather not say more in case the I-T-E-M S-E-T hears me.\""
+
+		"DOTA_Seasonal_Quartero"										"Quartero"
+		"DOTA_Seasonal_Fall_2025_Title"									"Quartero's Curios"
+		"DOTA_Seasonal_Fall_2025_Subtitle"								"Fall Rewards"
+		"DOTA_Seasonal_Fall_2025_Intro"									"\"Greetings, heroes! I am Quartero the Unburdened! Pay no attention to my untrustworthy face! Focus instead on the words coming from my untrustworthy mouth.<br><br>What if I told you I was prepared to lavish you with priceless treasures... for free?<br><br>What's the catch? The catch... is that there is no catch! So one catch total.\""
+		"DOTA_Seasonal_Fall_2025_Description"							"Play Dota and unlock hero cosmetics for free!"
+		"DOTA_Seasonal_Fall_2025_Ends_On"								"Available Until:"
+		"DOTA_Seasonal_VisualNovel_ClickToContinue"						"Click to Continue"
+
+
+		
+		"DOTA_Seasonal_Fall_2025_WD_Bundle"								"Papa Wanga"
+		"DOTA_Seasonal_Fall_2025_LC_Bundle"								"Drakon's Deed"
+		"DOTA_Seasonal_Fall_2025_LC_Bundle2"							"Drakon's Ire"
+		"DOTA_Seasonal_Fall_2025_VS_Bundle"								"Maledictions of Morrigan"
 
 		"DOTA_HUD_Shop_Neutral_Tier1"									"Tier 1"
 		"DOTA_HUD_Shop_Neutral_Tier2"									"Tier 2"
@@ -48906,6 +48944,7 @@ If you don't feel that you were able to dedicate the appropriate attention level
 
 		"dota_settings_language"		"Language"
 		
+
 		"dota_settings_clear_all"		"Clear All"
 
 		"dota_settings_dota_ability_use_original_cast_mode_for_stolen_spell"		"Rubick: Use Original Cast Mode for Stolen Spells"
@@ -48922,5 +48961,39 @@ If you don't feel that you were able to dedicate the appropriate attention level
 		"dota_settings_healthbar_allies"	"Allies"
 
 		"DOTA_DashboardGames_Title"								"Mini-games, for your queuing pleasure"
+
+		"DOTA_EventClaimReward_Tooltip_ClaimableAtText"			"CLAIMABLE AT LEVEL {d:reward_level}"
+		"DOTA_EventClaimReward_Tooltip_ClaimableText"			"CLICK TO CLAIM!"
+		"DOTA_EventClaimReward_Tooltip_AlreadyClaimedText"			"ALREADY CLAIMED"
+		"DOTA_EventClaimReward_Tooltip_ReplayableText"			"CLICK TO REPLAY DIALOG"
+
+		"DOTA_Fall2025_EventLevel_Tooltip_Title"				"Curio Level"
+		"DOTA_Fall2025_EventLevel_Tooltip_Status_Level"			"Level <b>{d:event_level}</b>"
+		"DOTA_Fall2025_EventLevel_Tooltip_Status"				"{d:level_progress} / {d:points_per_level} XP"
+		"DOTA_Fall2025_EventLevel_Tooltip_Body"					"Play games to earn levels and unlock new Curios from Quartero.<br><br>Wins = {d:win_xp} XP. Losses = {d:lose_xp} XP.<br><i>Turbo</i>: Wins = {d:win_turbo_xp} XP. Losses = {d:lose_turbo_xp} XP."
+		"DOTA_Fall2025_EventLevel_Tooltip_PreviousMatchInfo"	"({d:points_gained} XP from your previous match.)"
+		"DOTA_Fall2025_FirstReward_Tooltip"			"Your first Curio is available!<br>Click to claim your complimentary item."
+		"DOTA_Fall2025_SeasonalParticlesTitle"		"Event Effects"
+		"DOTA_Fall2025_RandomHeroSets"				"Antiques"
+		"DOTA_Fall2025_Tier1"						"Tier 1"
+		"DOTA_Fall2025_Tier2"						"Tier 2"
+		"DOTA_UI_EventProgress_CurrentLabelText"	"{d:level_progress} XP"
+		"DOTA_UI_EventProgress_NextLabelText"		"/ {d:points_per_level}"
+
+		"DOTA_EventEffect_Fountain"					"Fountain Rejuvination FX"
+		"DOTA_EventEffect_Teleport"					"Town Portal Scroll FX"
+		"DOTA_EventEffect_BlinkDagger"				"Blink Dagger FX"
+		"DOTA_EventEffect_LevelUp"					"Level Up FX"
+		"DOTA_EventEffect_Bottle"					"Bottle FX"
+		"DOTA_EventEffect_Euls"						"Eul's Scepter FX"
+		"DOTA_EventEffect_Aghanim"					"Aghanim's Scepter FX"
+		"DOTA_EventEffect_ForceStaff"				"Force Staff FX"
+		"DOTA_EventEffect_Mekansm"					"Mekansm FX"
+		"DOTA_EventEffect_Mjollnir"					"Mjollnir FX"
+		"DOTA_EventEffect_Phase_Boots"				"Phase Boots FX"
+		"DOTA_EventEffect_Radiance"					"Radiance FX"
+		"DOTA_EventEffect_Dagon"					"Dagon FX"
+		"DOTA_EventEffect_Shivas"					"Shivas Guard FX"
+		"DOTA_EventEffect_LotusOrb"					"Lotus Orb FX"
 	}
 } 
