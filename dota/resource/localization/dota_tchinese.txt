@@ -833,6 +833,8 @@
 		"DOTA_Facet_Ping"						"%s1 %s2具有英雄刻面%s3%s4"
 		"DOTA_Innate_Ping"						"%s1 %s2具有先天技能%s3"		
 		
+		"DOTA_EnemyAbility_Ping_Cooldown"			" （可能正在冷卻）"
+
 		"DOTA_Item_Charge_Ward_Dispenser"		"<font color='%s1'>偵查守衛</font> (x%s2) 和<font color='%s3'>崗哨守衛</font> (x%s4)"
 		
 		"DOTA_Item_Black_King_Bar_Duration"			"%s1 ( 時效為 %s2 秒 )"
@@ -847,6 +849,7 @@
 		"DOTA_QuickBuyAlert_Enough"			"%s1我有足夠金錢買<font color='%s2'>%s3</font>%s4"		
 		"DOTA_QuickBuyAlert_Buyback"				"%s1需要 %s2 金錢才能支付<font color='%s3'>%s4</font>%s5和<font color='#00FF00'>買活</font>"		
 		"DOTA_QuickBuyAlert_Enough_Buyback"			"%s1我有足夠金錢支付<font color='%s2'>%s3</font>%s4和<font color='#00FF00'>買活</font>"
+		"DOTA_Buyback_Protection"			"買活保障（{s:buyback_protection_status}）<br>開啟時只能使用扣除買活費用後所剩盈餘。"
 		"DOTA_Buyback_Protection_On"			"開啟"
 		"DOTA_Buyback_Protection_Off"			"關閉"
 
@@ -24650,7 +24653,6 @@
 	"DOTA_Credits_Flockheart"			"火鴒鳥鸞心"
 	"DOTA_Credits_Princess_Shen"		"仙兒再起"
 	"DOTA_Credits_Queen_Imperia"		"依裴利亞女王"
-
 	"DOTA_Trading_UI_Body_Outgoing" "正在等待 {s:player_name} 回覆您的要求..."
 
 	"DOTA_GiftWrap_Item"	"正在將 {g:dota_item_name:gift_item_def} 包成禮物。"
@@ -41382,6 +41384,8 @@
 		"DOTA_StickerDetails_TalentBlockTitle"							"語音臺詞"
 		"DOTA_StickerDetails_TalentVoiceLineUngranted"					"<b>取得黃金或彩光貼紙</b><br/>取得黃金或彩光貼紙並將其貼到收藏列或英雄頁面上以解鎖。"
 		"DOTA_StickerDetails_TalentVoiceLineUnplaced"					"<b>貼上黃金或彩光貼紙</b><br/>在收藏列或英雄頁面上貼上黃金或彩光貼紙以解鎖。"
+		"DOTA_StickerDetails_TalentVoiceLineGranted"					"<b>已解鎖！</b><br/><a href=\"event:DOTAShowSettingsRebornPopupSection('#dota_settings_communicationwheels', '#dota_settings_chatwheel1')\">自訂聊天輪盤</a>"
+		
 		"DOTAStoreSticker_Featured"										"精選特賣"
 		"DOTAStoreSticker_DescriptionTitle"								"2022 年國際錦標賽貼紙轉蛋"
 		"DOTAStoreSticker_DescriptionBody"								"收集在國際錦標賽中最愛的 Dota 職業選手和戰隊的貼紙。50% 的轉蛋收益將直接歸於參與的選手、戰隊和幕前人員。"
@@ -45013,6 +45017,9 @@
 		"DOTA_TalentContent_RejectReason_VoiceBadFormat"					"語音臺詞 {d:voiceline_number} 並非可播放的正確 WAV 檔案"
 		"DOTA_TalentContent_RejectReason_VoiceDistortion"				"語音臺詞 {d:voiceline_number} 包含破音或失真等音訊瑕疵"
 		"DOTA_TalentContent_RejectReason_VoiceQuality"					"語音臺詞 {d:voiceline_number} 的音訊品質過低"
+		"DOTA_TalentContent_RejectReason_VoiceQuiet"					"語音臺詞 {d:voiceline_number} 聲量過小"
+		"DOTA_TalentContent_RejectReason_VoiceLength"					"語音臺詞 {d:voiceline_number} 過長"
+		"DOTA_TalentContent_RejectReason_VoiceAbrasive"					"語音臺詞 {d:voiceline_number} 過於粗暴或令人討厭"
 		"DOTA_TalentContent_Approval_Photo"								"您的照片已通過審核"
 		"DOTA_TalentContent_Approval_Auto"								"您的簽名已通過審核"
 		"DOTA_TalentContent_Approval_Voice"								"語音臺詞 {d:voiceline_number} 已通過審核"
@@ -45994,6 +46001,27 @@
 		"DOTA_PatchNotes_ReworkedFacet"									"重製"
 		"DOTA_Shop_CraftingStatus"										"合成狀態"
 
+		"DOTA_Reward_Line_Year_2025"									"2025"
+		"DOTA_Reward_Line_Fall_2025_Title"								"四郎的<br>奇貨鋪"
+		"DOTA_Reward_Line_Fall_2025_Description"						"遊玩 Dota 以解鎖季節獎勵"
+		"DOTA_Reward_Tooltip_Requires_Plus"								"此獎勵需要 Dota Plus 才能領取。立即點擊此處訂購 ！"
+
+		"DOTA_Reward_Line_Fall_2025_HeroSetReward"						"四郎的古董"
+		"DOTA_Reward_Line_Fall_2025_HeroSetRewardDescription"			"獲取過去推出超過 100 款英雄套裝的其中之一，還能以較小的機率獲得不朽或奧祕物品。"
+		"DOTA_Reward_Line_Fall_2025_HeroSetRewardFlavor"				"「我記得這套裝原本的主人。真是悲慘。嗯，太殘酷了。我還是不多講了，被這套裝聽到就不好了。」"
+
+		"DOTA_Seasonal_Quartero"										"四郎"
+		"DOTA_Seasonal_Fall_2025_Title"									"四郎的奇貨鋪"
+		"DOTA_Seasonal_Fall_2025_Subtitle"								"秋季獎勵"
+		"DOTA_Seasonal_Fall_2025_Intro"									"「各位英雄好！我是灑脫的四郎！別在意我不可信的外貌！我不值得信任的嘴所說的話才是重點。<br><br>如果我告訴您，我準備慷慨地給你無價寶……全部免費呢？<br><br>有什麼圈套？圈套就是……這並沒有圈套！總共就只有這一個圈套。」"
+		"DOTA_Seasonal_Fall_2025_Description"							"遊玩 Dota 並免費解鎖英雄飾品！"
+		"DOTA_Seasonal_Fall_2025_Ends_On"								"結束日期："
+		"DOTA_Seasonal_VisualNovel_ClickToContinue"						"點擊以繼續"
+		"DOTA_Seasonal_Fall_2025_WD_Bundle"								"巫術先知"
+		"DOTA_Seasonal_Fall_2025_LC_Bundle"								"龍之契約"
+		"DOTA_Seasonal_Fall_2025_LC_Bundle2"							"龍之慍火"
+		"DOTA_Seasonal_Fall_2025_VS_Bundle"								"黑鴉詛咒"
+
 		"DOTA_HUD_Shop_Neutral_Tier1"									"1 階"
 		"DOTA_HUD_Shop_Neutral_Tier2"									"2 階"
 		"DOTA_HUD_Shop_Neutral_Tier3"									"3 階"
@@ -46265,7 +46293,21 @@
 
 		"DOTA_DashboardGames_Title"								"小遊戲，讓佇列等待的時光不再無聊"
 
+		"DOTA_EventClaimReward_Tooltip_ClaimableAtText"			"可於等級 {d:reward_level} 時領取"
+		"DOTA_EventClaimReward_Tooltip_ClaimableText"			"點擊領取！"
+		"DOTA_EventClaimReward_Tooltip_AlreadyClaimedText"			"已領取"
+		"DOTA_EventClaimReward_Tooltip_ReplayableText"			"點擊以重播對話"
+
+		"DOTA_Fall2025_EventLevel_Tooltip_Title"				"奇貨鋪等級"
+		"DOTA_Fall2025_EventLevel_Tooltip_Status_Level"			"等級 <b>{d:event_level}</b>"
 		"DOTA_Fall2025_EventLevel_Tooltip_Status"				"{d:level_progress} / {d:points_per_level} XP"
+		"DOTA_Fall2025_EventLevel_Tooltip_Body"					"遊玩比賽以賺取等級，解鎖來自四郎的新奇貨。<br><br>獲勝 = {d:win_xp} 經驗。落敗 = {d:lose_xp} 經驗。<br><b>加速模式</b>：獲勝 = {d:win_turbo_xp} 經驗。落敗 = {d:lose_turbo_xp} 經驗。"
+		"DOTA_Fall2025_EventLevel_Tooltip_PreviousMatchInfo"	"（上一場比賽獲得 {d:points_gained} 經驗。）"
+		"DOTA_Fall2025_FirstReward_Tooltip"			"您的第一件奇貨已可領取！<br>點擊以領取免費物品。"
+		"DOTA_Fall2025_SeasonalParticlesTitle"		"活動效果"
+		"DOTA_Fall2025_RandomHeroSets"				"古董"
+		"DOTA_Fall2025_Tier1"						"1 階"
+		"DOTA_Fall2025_Tier2"						"2 階"
 		"DOTA_UI_EventProgress_CurrentLabelText"	"{d:level_progress} 經驗"
 		"DOTA_UI_EventProgress_NextLabelText"		"/ {d:points_per_level}"
 
@@ -46281,6 +46323,7 @@
 		"DOTA_EventEffect_Mjollnir"					"雷神之錘特效"
 		"DOTA_EventEffect_Phase_Boots"				"相位靴特效"
 		"DOTA_EventEffect_Radiance"					"輝耀特效"
+		"DOTA_EventEffect_Dagon"					"達貢權杖特效"
 		"DOTA_EventEffect_Shivas"					"希瓦的守護特效"
 		"DOTA_EventEffect_LotusOrb"					"紅蓮法球特效"
 	}
