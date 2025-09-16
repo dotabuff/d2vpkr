@@ -2169,7 +2169,9 @@
 		"DOTA_SHOP_FILTER_BY"					"FILTRUJ WG:"
 		"DOTA_SHOP_ITEMS"						"PRZEDMIOTY"
 		"DOTA_SHOP_CLOSE"						"X ZAMKNIJ"
+		"DOTA_SHOP_DETAILS_PURCHASE"			"Kup przedmiot"
 		"DOTA_SHOP_DETAILS_COMPLETE"			"UKOŃCZONO"
+		"DOTA_SHOP_QUICK_BUY"					"SZYBKI ZAKUP:"
 		"DOTA_SHOP_STASH"						"PRZEDMIOTY W SCHOWKU:"
 		
 		"DOTA_Shop_Search_Results_Title"		"WYNIKI WYSZUKIWANIA"
@@ -2319,6 +2321,8 @@
 		"DOTA_InventoryOverflow"				"Przepełnienie"
 		"DOTA_InventoryOverflowMsg"				"Przedmioty, które nie mieszczą się w ekwipunku, wrócą do schowka."
 		"DOTA_InventoryStash"					"SCHOWEK"
+		"DOTA_InventoryQuickBuy"				"SZYBKI ZAKUP"
+		"DOTA_Quick_Buy_Hint"					"Przeciągnij przedmioty lub kliknij z Shiftem, by dodać do szybkiego zakupu."
 		"DOTA_Inventory_ReliableGold"			"Pewne złoto: %s1"
 		"DOTA_Inventory_UnreliableGold"			"Niepewne złoto: %s1"
 		"DOTA_Inventory_DeathCost"				"Koszt śmierci: %s1"
@@ -2346,7 +2350,9 @@
 		"DOTA_InventoryMenu_MarkForSell_Tooltip"	    "Przedmiot zostanie natychmiastowo sprzedany, gdy to możliwe (gdy jest się żywym, w bazie, w ukrytym sklepie lub dostarczy się go kurierem)."
 
 		"DOTA_Inventory_KDA"					"Z / Ś / A"     // kills / deaths / assists
-"Inventory_Default_Courier"				"Domyślny kurier"
+		"DOTA_Inventory_LHD"					"OT / D"        // last hits / denies
+		
+		"Inventory_Default_Courier"				"Domyślny kurier"
 		"DOTA_Inventory_Courier_Purchaser"		"Należy do: %s1"		
 		"DOTA_Inventory_Courier_Delivery"		"Dostarcz przedmioty"		
 
@@ -5421,6 +5427,8 @@
 		"dota_hud_error_cant_lockcombine_neutral_items"	"Nie można zablokować łączenia neutralnych przedmiotów"
 		"dota_hud_error_cant_share_ward"				"Nie można dzielić się wardami z tą jednostką"
 		"dota_hud_error_cant_share_tango"				"Nie można dzielić się Tango z tą jednostką"
+		"dota_hud_error_target_already_playing_rock_paper_scissors"	"Cel już gra w kamień, papier, nożyce"
+		"dota_hud_error_self_already_playing_rock_paper_scissors"	"Grasz już w kamień, papier, nożyce"
 		"dota_hud_error_midas_ghost"					"Podróżnicy z Nothl nie mogą przechodzić transmutacji"
 		"dota_hud_error_no_hats_to_steal"				"Brak czapki do ukradnięcia"
 		"dota_hud_error_no_hats_to_gift"				"Brak czapki do podarowania"
@@ -5518,6 +5526,8 @@
 		"DOTA_SUBSHOP_SIDE_PAGE_2"			"Strona 2"
 
 		"DOTA_SHOP_REQUIREMENTS"			"WYMAGANE PRZEDMIOTY"
+		"DOTA_SHOP_SETQUICKBUY"				"Ustaw szybki zakup"
+
 		"DOTA_Shop_Recipe"					"Schemat"
 
 		"DOTA_Shop_Search_Field_Default"	"Znajdź przedmioty"
@@ -5672,6 +5682,7 @@
 		"DOTA_Broadcaster_SelectImage"			 "Wybierz obrazek"
 		"DOTA_Broadcaster_TextHere"				 "<wpisz tekst tutaj>"
 		"DOTA_Broadcaster_TextHereOptional"		 "<wpisz tekst tutaj (lub zostaw puste)>"
+		"DOTA_Broadcaster_TextHereShort"         "<text>"
 		"DOTA_Broadcaster_ImagePicker_Title"	 "WYBIERZ OBRAZEK"
 		"DOTA_Broadcaster_ImagePicker_Heroes"	 "BOHATEROWIE"
 		"DOTA_Broadcaster_ImagePicker_Generic"	 "OGÓLNE"
@@ -7655,6 +7666,7 @@
 		"LoadoutSlot_Taunt_Invoker_Kid"						"Drwina (dziecko)"
 		"LoadoutSlot_Voice_Invoker_Kid"						"Głos (dzieciak)"
 		"LoadoutSlot_Back_Invoker_Kid"						"Plecy (dziecko)"
+		"LoadoutSlot_Persona_Summon_1"						"Przyzwana jednostka (persona)"
 		"LoadoutSlot_Clinkz_Army"							"Burning Army"
 		"LoadoutSlot_Tiny_Body_0"							"Malutki"
 		"LoadoutSlot_Tiny_Body_1"							"Mały"
@@ -9460,7 +9472,6 @@
 		"DOTA_HoF_Sweden"					"Szwecja"
 		"DOTA_HoF_Europe"					"Europa"
 		"DOTA_HoF_EasternEurope"			"Europa Wschodnia"
-
 		"DOTA_HoF_ArtStyle"					"Iwan Antonow"
 		"DOTA_HoF_Puppey"					"Klemens Iwanow"
 		"DOTA_HoF_XBOCT"					"Ołeksandr Daszkewycz"
@@ -9536,7 +9547,7 @@
 		"DOTA_HoF_Nisha"				"Michał Jankowski"
 		"DOTA_HoF_Boxi"					"Samuel Svahn"
 		"DOTA_HoF_Insania"				"Aydin Sarkohi"
-
+		
 		"DOTA_ARDM_Loading"					"Wczytywanie bohaterów"
 		"DOTA_ARDM_Loading_Text"			"Proszę czekać, pobieranie danych bohaterów ARDM..."
 
@@ -11956,7 +11967,12 @@
 		"DOTA_PlayersLookingForCoach_StartCoaching"		"Rozpocznij trenowanie"
 		"DOTA_PlayersLookingForCoach_Uncalibrated"		"Nie skalibrowano"
 		"DOTA_PlayersLookingForCoach_Dashboard"			"Panel główny"
-"ItemPurgatory_Finalize_Succeeded"					"Finalizacja zakończona powodzeniem."
+"Econ_Purgatory_ReturnItem" "환불"
+		"Econ_Purgatory_FinalizePurchaseDlg_Title"	"구매확정"
+		"Econ_Purgatory_ReturnDlg_Title"	"환불"
+		"Econ_Purgatory_ReturnDlg_Msg"	"해당 아이템의 청약철회 하시겠습니까?"
+		"Econ_Purgatory_ReturnDlg_ConfirmButton"	"청약철회"
+		"ItemPurgatory_Finalize_Succeeded"					"Finalizacja zakończona powodzeniem."
 		"ItemPurgatory_Finalize_Failed_Incomplete"			"Finalizacja częściowo zakończona sukcesem. Przynajmniej jeden produkt nie został sfinalizowany."
 		"ItemPurgatory_Finalize_Failed_ItemsNotInPurgatory"	"Finalizacja częściowo zakończona sukcesem. Przynajmniej jeden przedmiot nie znajdował się w skrzyni. Prawdopodobnie został on automatycznie przeniesiony do zbrojowni."
 		"ItemPurgatory_Finalize_Failed_CouldNotFindItems"	"Nie udało się znaleźć przynajmniej jednego przedmiotu."
@@ -11969,6 +11985,9 @@
 		"ItemPurgatory_Refund_Failed_TryLater"				"Zwrot nie powiódł się. Spróbuj ponownie później."
 
 		"ItemPurgatory_UnknownError"		"Nieznany błąd."
+
+		"ItemPurgatory_AskRemoveItemFromPurgatory_Title"	"아이템을 완료하시겠습니까?"
+		"ItemPurgatory_AskRemoveItemFromPurgatory_Body"		"이 아이템을 완료하셔서 메이비 박스에서 제거하시겠습니까?"
 
 		// Crafting Tooltips
 		"DOTA_CraftingTooltip_Title_Rarity"		"Dowolny %s1 przedmiot"
@@ -12796,6 +12815,7 @@ Specjalna drwina Techiesów"
  		"DOTA_TrophyCategory_International2018"	"The International 2018"
  		"DOTA_TrophyCategory_Nemestice2021"		"Nemestycjum 2021"
  		"DOTA_TrophyCategory_AghsLab2021"		"Labirynt Aghanima 2021"
+ 		"DOTA_TrophyCategory_BattlePass2022"	"Przepustka Bitewna 2022"
  		"DOTA_TrophyCategory_International2023"	"The International 2023"
  		"DOTA_TrophyCategory_Crownfall"			"Utracona Korona"
  		"DOTA_TrophyCategory_International2024"	"The International 2024"
@@ -13055,6 +13075,7 @@ Specjalna drwina Techiesów"
 		"DOTA_TrophyDesc_Crownfall_Master"				"Zdobyte za ukończenie wszystkich 4 aktów Utraconej Korony."
 
 		"DOTA_TrophyName_MVPTrophy"						"Trofeum MVP"
+		"DOTA_TrophyDesc_MVPTrophy"						"Upamiętnia, ile razy otrzymałeś tytuł MVP meczu."
 		"DOTA_TrophyUnits_MVP:p"						"%s1 nagroda MVP#|#%s1 nagrody MVP#|#%s1 nagród MVP#|#%s1 nagrody MVP"
 
 		"DOTA_TrophyName_TI6SeasonalMMR_Solo"			"Najwyższa ranga solo sezonu The International 2016"
@@ -14058,6 +14079,8 @@ Specjalna drwina Techiesów"
 		"DOTA_CNYBeastName12"			"Wilbur"
 		"DOTA_CNYBeastName13"			"Bruni"
 		"DOTA_CNYBeastName14"			"Kitty"
+		"DOTA_CNYBeastName15"			"Mildred"
+		"DOTA_CNYBeastName16"			"Poindexter"
 		"DOTA_CNYBeastName17"			"Dorothy"
 		"DOTA_CNYBeastName18"			"Edna"
 		"DOTA_CNYBeastName19"			"Gladys"
@@ -14070,6 +14093,7 @@ Specjalna drwina Techiesów"
 		"DOTA_CNYBeastName26"			"Parthena"
 		"DOTA_CNYBeastName27"			"Harrison"
 		"DOTA_CNYBeastName28"			"Indiana"
+		"DOTA_CNYBeastName29"			"Zachariah"
 		"DOTA_CNYBeastName30"			"Josiah"
 		"DOTA_CNYBeastName31"			"Eldon"
 		"DOTA_CNYBeastName32"			"Jedediah"
@@ -14090,6 +14114,8 @@ Specjalna drwina Techiesów"
 		"DOTA_CNYBeastName47"			"Maverick"
 		"DOTA_CNYBeastName48"			"Oink"
 		"DOTA_CNYBeastName49"			"Ophelia"
+		"DOTA_CNYBeastName50"			"Patches"
+		"DOTA_CNYBeastName51"			"Primrose"
 		"DOTA_CNYBeastName52"			"Victoria"
 		"DOTA_CNYBeastName53"			"Winston"
 		"DOTA_CNYBeastName54"			"Theo"
@@ -14282,6 +14308,11 @@ Specjalna drwina Techiesów"
 		"SocialFeed_PlusActivated" "Gracz [name:%s1]%s2[/name] właśnie dołączył do Dota Plus!"
 		"SocialFeed_PlusHeroLevelTierEvent" "Gracz [name:%s1]%s2[/name] zdobył stopień %s3 dla bohatera %s4!"
 
+		"SocialFeed2_MatchEvent_Rampage" "Gracz {g:dota_persona:account_id} wpadł w SZAŁ podczas meczu jako <a class=\"FeedHeroName\" href=\"event:DOTAGoToHeroPage({d:hero_id})\">{g:dota_hero_name:hero_id}</a>!"
+		"SocialFeed2_MatchEvent_MostKills" "Gracz {g:dota_persona:account_id} zabił najwięcej wrogich bohaterów w meczu jako <a class=\"FeedHeroName\" href=\"event:DOTAGoToHeroPage({d:hero_id})\">{g:dota_hero_name:hero_id}</a>."
+		"SocialFeed2_MatchEvent_MostTowerKills" "Gracz {g:dota_persona:account_id} zniszczył najwięcej wież w meczu jako <a class=\"FeedHeroName\" href=\"event:DOTAGoToHeroPage({d:hero_id})\">{g:dota_hero_name:hero_id}</a>."
+		"SocialFeed2_MatchEvent_MostGPM" "Gracz {g:dota_persona:account_id} miał najwięcej złota na minutę w meczu jako <a class=\"FeedHeroName\" href=\"event:DOTAGoToHeroPage({d:hero_id})\">{g:dota_hero_name:hero_id}</a>."
+		"SocialFeed2_MatchEvent_MatchMVP" "Gracz {g:dota_persona:account_id} został okrzyknięty MVP meczu jako <a class=\"FeedHeroName\" href=\"event:DOTAGoToHeroPage({d:hero_id})\">{g:dota_hero_name:hero_id}</a>."
 		"SocialFeed2_MatchEvent_Button" "Wyświetl szczegóły meczu"
 
 		"SocialFeed2_EconomyEvent_UnwrapGift" "Gracz {g:dota_persona:receiver_account_id} odpakował prezent „{g:dota_item_name:item_def}” od gracza {g:dota_persona:sender_account_id}."
@@ -14299,6 +14330,9 @@ Specjalna drwina Techiesów"
 		"SocialFeed2_RankTierEvent_Support" "Gracz {g:dota_persona:account_id} zdobył: {s:rank_tier_name}{s:rank_pips_name} w roli wsparcia!"
 
 		"SocialFeed2_PlusActivated" "Gracz {g:dota_persona:account_id} właśnie dołączył do Dota Plus!"
+		"SocialFeed2_PlusHeroLevelTierEvent" "Gracz {g:dota_persona:account_id} zdobył stopień {s:tier_name} dla bohatera <a class=\"FeedHeroName\" href=\"event:DOTAGoToHeroPage({d:hero_id})\">{g:dota_hero_name:hero_id}</a>!"
+
+
 		"TI5_CompendiumGameEnd_Winner_Header"		"WYZWANIA KOMPENDIUM"
 		"TI5_CompendiumGameEnd_Loser_Header"		"WYZWANIE KOMPENDIUM NIEUDANE"
 		"TI5_Quest_Completed"				"WYZWANIE UKOŃCZONE:"
@@ -14917,6 +14951,9 @@ Specjalna drwina Techiesów"
 		"DOTA_ChallengeDesc_AbyssalUnderlord_DarkRift_MultiHeroTeleports"	"Teleportuj się razem z <font color='#ffffff'>dwoma lub więcej</font> sojuszniczymi bohaterami z pomocą <font color='#ffffff'>Dark Rift</font> <font color='#ffffff'>%s1</font> razy."
 		"DOTA_ChallengeDesc_AbyssalUnderlord_DarkRiftSaveHeroes"			"Uratuj <font color='#ffffff'>%s1</font> sojuszniczych bohaterów przed otrzymaniem śmiertelnych obrażeń, używając <font color='#ffffff'>Dark Rift</font>."
 		"DOTA_ChallengeDesc_AbyssalUnderlord_PitOfMaliceRootsSingleCast"	"Ukorzeń wrogiego bohatera <font color='#ffffff'>%s1</font> razy za pomocą pojedynczego użycia <font color='#ffffff'>Pit of Malice</font>."
+		"DOTA_ChallengeDesc_AbyssalUnderlordAtrophyAuraDamageCount"			"Zgromadź <font color='#ffffff'>%s1</font> pkt. premii do obrażeń od <font color='#ffffff'>Atrophy Aura</font>."
+		"DOTA_ChallengeDesc_AbyssalUnderlord_FirestormDamage"				"Zadaj <font color='#ffffff'>%s1</font> pkt. obrażeń wrogim bohaterom za pomocą <font color='#ffffff'>Firestorm</font>."
+
 		"DOTA_ChallengeDesc_Clockwerk_CreepKillsWithFlare"				"Zabij <font color='#ffffff'>%s1</font> stwory(-ów) za pomocą <font color='#ffffff'>Rocket Flare</font>."
 		"DOTA_ChallengeDesc_Clockwerk_Hook_Battery_Assault_Combo"		"Ogłusz wrogiego bohatera za pomocą <font color='#ffffff'>Hookshot</font>, a następnie zadaj mu obrażenia za pomocą <font color='#ffffff'>Battery Assault</font> <font color='#ffffff'>%s1</font> razy."
 		"DOTA_ChallengeDesc_AlliedGoldAsHero"							"Zdobądź <font color='#ffffff'>%s1</font> szt. złota dla swoich sojuszników."
@@ -15744,6 +15781,7 @@ Specjalna drwina Techiesów"
 		"Disassemble_Punchcard_Prompt_Title"		"Przetwórz na postęp dodatkowego skarbu"
 
 		"Recycle_Treasure_TI11_Context"			"Przetwórz na postęp dodatkowego skarbu"
+		"Recycle_Treasure_TI11_Prompt"			"Czy na pewno chcesz zniszczyć ten przedmiot i przetworzyć go na postęp dodatkowego skarbu i worków z cukierkami?"
 		"Recycle_Treasure_TI11_Prompt_Title"	"Przetwórz na postęp dodatkowego skarbu"
 
 		"Recycle_Fall_2016_Context"				"Przetwórz - 500 punktów sezonowych"
@@ -16787,6 +16825,8 @@ Specjalna drwina Techiesów"
 		"DOTA_ChatWheelPhraseLocked_PlusSubscriptionExpired"	"Odnów swoją subskrypcję Dota Plus, by odzyskać dostęp."
 		"DOTA_ChatWheelPhraseLocked_GuildLevel"		"{s:required_guild_tier} stopień"
 		"DOTA_ChatWheelPhraseLocked_ItemDefLevel"		"Wymaga: {g:dota_item_name:required_itemdef} poziomu {d:required_itemdef_level}"
+		"DOTA_ChatWheel_HideLocked"					"Ukryj zablokowane"
+
 		"DOTA_ChatWheelPurchase_Name"			"Zakupiono koło czatu"
 		"DOTA_ChatWheelPurchase_Description"	"Zakupiono wiadomość koła czatu „{s:chat_wheel_label}”"
 
@@ -17381,6 +17421,8 @@ Specjalna drwina Techiesów"
 		"DOTA_ChallengeDesc_Mirana_PhysicalDamageLeap"					"Zadaj wrogim bohaterom <font color='#ffffff'>%s1</font> pkt. obrażeń fizycznych pod wpływem efektu <font color='#ffffff'>Leap</font>."
 		"DOTA_ChallengeStatus_Mirana_PhysicalDamageLeap"				"%s2Muszę zadać wrogim bohaterom jeszcze %s1 pkt. obrażeń pod wpływem efektu Leap!"
 		"DOTA_ChallengeDesc_Mirana_AllDamageLeap"						"Zadaj <font color='#ffffff'>%s1</font> pkt. obrażeń wrogim bohaterom, będąc pod wpływem umiejętności <font color='#ffffff'>Leap</font>."
+		"DOTA_ChallengeStatus_Mirana_AllDamageLeap"						"%s2Muszę zadać wrogim bohaterom jeszcze %s1 pkt. obrażeń pod wpływem efektu Leap!"
+
 		"DOTA_ChallengeDesc_Sven_StormBoltDoubleStun"					"Ogłusz dwóch lub więcej wrogich bohaterów jednocześnie za pomocą <font color='#ffffff'>Storm Hammer</font> <font color='#ffffff'>%s1</font> razy."
 		"DOTA_ChallengeStatusText_Sven_StormBoltDoubleStun"				"%s2Muszę ogłuszyć dwóch lub więcej bohaterów jednocześnie za pomocą Storm Hammer jeszcze %s1 raz(y)!"
 		"DOTA_ChallengeDesc_Sven_WarcryPreventPhysicalDamage"			"Zapobiegnij otrzymaniu <font color='#ffffff'>%s1</font> pkt. obrażeń fizycznych przez siebie oraz sojuszniczych bohaterów za pomocą <font color='#ffffff'>Warcry</font>."
@@ -17857,6 +17899,7 @@ Specjalna drwina Techiesów"
 
 		"DOTA_ChallengeDesc_Meepo_EarthbindDuration"			"Ukorzeń wrogich bohaterów na łączny czas <font color='#ffffff'>%s1</font> za pomocą <font color='#ffffff'>Earthbind</font>."
 
+		"DOTA_ChallengeDesc_ChaosKnight_StunsAboveThreeSeconds"	"Ogłusz wrogiego bohatera na przynajmniej 3 sekundy za pomocą <font color='#ffffff'>Chaos Bolt</font> <font color='#ffffff'>%s1</font> razy."
 		"DOTA_ChallengeDesc_ChaosKnight_RealityRiftKills"		"Zabij <font color='#ffffff'>%s1</font> wrogich bohaterów będących pod wpływem efektu <font color='#ffffff'>Reality Rift</font>."
 
 		"DOTA_ChallengeDesc_Disruptor_GlimpseKill"				"Zabij lub asystuj w zabójstwie <font color='#ffffff'>%s1</font> wrogich bohaterów po ich przeniesieniu za pomocą <font color='#ffffff'>Glimpse</font>."
@@ -18000,6 +18043,7 @@ Specjalna drwina Techiesów"
 		"DOTA_ChallengeDesc_OutworldDevourer_AstralDamage"  		 "Zadaj <font color='#ffffff'>%s1</font> pkt. obrażeń wrogim bohaterom za pomocą <font color='#ffffff'>Astral Imprisonment</font>."
 		"DOTA_ChallengeDesc_ObsidianDestroyer_DamageDuringEquilibrium"   "Zadaj <font color='#ffffff'>%s1</font> pkt. obrażeń wrogim bohaterom, gdy umiejętność <font color='#ffffff'>Equilibrium</font> jest aktywna."
 		"DOTA_ChallengeDesc_ObsidianDestroyer_KillsDuringEquilibrium"   "Zabij lub asystuj w zabójstwie <font color='#ffffff'>%s1</font> wrogich bohaterów, gdy umiejętność <font color='#ffffff'>Equilibrium</font> jest aktywna."
+		"DOTA_ChallengeDesc_Zeus_Arc_Lightning_Damage"   "Zadaj <font color='#ffffff'>%s1</font> pkt. obrażeń wrogim bohaterom za pomocą <font color='#ffffff'>Arc Lightning</font>."
 		"DOTA_ChallengeDesc_Zeus_Arc_Lightning_Triple_Hits"   "Traf przynajmniej 3 wrogich bohaterów jednocześnie za pomocą <font color='#ffffff'>Arc Lightning</font> łącznie <font color='#ffffff'>%s1</font> razy."
 		"DOTA_ChallengeDesc_Zuus_ChannelsCancelled"   "Przerwij inkantację czarów <font color='#ffffff'>%s1</font> razy za pomocą <font color='#ffffff'>Lightning Bolt</font>."
 		"DOTA_ChallengeDesc_Tinker_Scepter_Laser_Damage"   "Zadaj <font color='#ffffff'>%s1</font> pkt. obrażeń wrogim bohaterom umiejętnością <font color='#ffffff'>Laser</font> ulepszoną przez przedmiot <font color='#ffffff'>Aghanim's Scepter</font>."
@@ -18026,6 +18070,11 @@ Specjalna drwina Techiesów"
 		"DOTA_ChallengeDesc_Phoenix_Stun_With_Supernova"   "Ogłusz łącznie <font color='#ffffff'>%s1</font> wrogich bohaterów za pomocą <font color='#ffffff'>Supernova</font>."
 		"DOTA_ChallengeDesc_Razor_Damage_On_Static_Linked"   "Zadaj <font color='#ffffff'>%s1</font> pkt. obrażeń wrogim bohaterom, którym wyssano obrażenia za pomocą <font color='#ffffff'>Static Link</font>."
 		"DOTA_ChallengeDesc_Razor_DamageWithUnstableCurrent"   "Zadaj <font color='#ffffff'>%s1</font> pkt. obrażeń wrogim bohaterom za pomocą <font color='#ffffff'>Unstable Current</font>."
+		"DOTA_ChallengeDesc_ShadowDemon_KillsUnderDisseminate"   "Zabij lub asystuj w zabójstwie <font color='#ffffff'>%s1</font> wrogich bohaterów, którzy są pod wpływem umiejętności <font color='#ffffff'>Disseminate</font>."
+
+
+
+
 		"DOTA_PostGame_DamageDetails"			"Obrażenia"
 		"DOTA_PostGame_BuffDetails"				"Efekty"
 		"DOTA_PostGame_Breakdowns"				"Analizy"
@@ -18083,6 +18132,7 @@ Specjalna drwina Techiesów"
 	"DOTA_Join"		"Dołącz"
 	"DOTA_Leave"	"Wyjdź"
 	"DOTA_New"      "Nowość"
+	"DOTA_New_Arrival"      "Nowość"
 	"DOTA_Ok"		"OK"
 	"DOTA_Sale"     "Wyprzedaż"
 	"DOTA_SaleCaps"     "WYPRZEDAŻ"
@@ -18106,6 +18156,7 @@ Specjalna drwina Techiesów"
 	"DOTA_Search"			"Szukaj"
 	"DOTA_Start"			"Start"
 	"DOTA_PleaseWait"		"Proszę czekać..."
+	"DOTA_Previous"			"Poprzednie"
 	"DOTA_PreviousShort"	"Poprz."
 	"DOTA_Next"				"Dalej"
 	"DOTA_Skip"				"Pomiń"
@@ -18134,6 +18185,10 @@ Specjalna drwina Techiesów"
 	"DOTA_Facets"			"Aspekty"
 	"dota_unkown"			"Nieznany"
 	"DOTA_HowItWorks"		"Jak to działa"
+	"DOTA_ClaimRewards"		"Odbierz nagrody"
+	"DOTA_ViewEvent"		"Zobacz wydarzenie"
+	"DOTA_BuyNow"			"Kup teraz"
+
 	"DOTA_SortBy"						"Sortuj wg"
 	"DOTA_SortOption_Relevance"			"Najtrafniejsze"
 	"DOTA_SortOption_Newest"			"Najnowsze"
@@ -19331,6 +19386,8 @@ Specjalna drwina Techiesów"
 	"DOTA_GameMode_24"		"Mutacja"
 
 	"DOTA_GameMode_19_Generic"	"Wydarzenie specjalne"
+	"DOTA_Featured_Gamemode_Generic"		"W centrum uwagi"
+
 	// Messages related to purchase
 	"DOTA_ImmediatePurchase_SendFailed"	"Nie udało się wysłać zlecenia kupna. Serwery Dota mogą być offline. Spróbuj zakupić ponownie później."
 	"DOTA_ImmediatePurchase_Timeout"	"Przekroczono czas oczekiwania na odpowiedź na zlecenie kupna. Spróbuj ponownie późnej."
@@ -20419,6 +20476,7 @@ Specjalna drwina Techiesów"
 	"DOTA_Custom_Game_Sort_Top_Rated"		"Najwyżej ocenione (zawsze)"
 	"DOTA_Custom_Game_Sort_Date"			"Data publikacji"
 	
+	"DOTA_Custom_Game_Overview_Sort_Lobbies"				"Otwarte poczekalnie"
 	"DOTA_Custom_Game_Overview_Sort_CurrentPlayerCount"	"Aktywni gracze"
 
 	"Video_Support_Coming_Soon"				"Wsparcie wideo już wkrótce"
@@ -21360,6 +21418,7 @@ Specjalna drwina Techiesów"
 	"DOTA_BattlePassLog_CorrectPrediction_Ingame"	"Poprawne typowanie podczas meczu"
 	"DOTA_BattlePassLog_SupporterWin"				"Zwycięstwo drużyny klubu kibica"
 	"DOTA_BattlePassLog_WeekendTourneyPayout"		"Zwycięstwo w Pucharze Bitewnym"
+	"DOTA_BattlePassLog_FantasyReward"				"Nagroda ligi marzeń"
 	"DOTA_BattlePassLog_FantasyChallengeWinnings"	"Nagrody Drużyny Marzeń: najlepszy {i:percentile} percentyl"
 	"DOTA_BattlePassLog_BracketPrediction:p{correct_answers}"	"Typowanie drabinki – {i:correct_answers} poprawna odpowiedź#|#Typowanie drabinki – {i:correct_answers} poprawne odpowiedzi#|#Typowanie drabinki – {i:correct_answers} poprawnych odpowiedzi#|#Typowanie drabinki – {i:correct_answers} poprawnych odpowiedzi"
 	"DOTA_BattlePassLog_DailyQuestCompleted"		"Wykonano codzienną misję"
@@ -21495,6 +21554,7 @@ Specjalna drwina Techiesów"
 	"DOTA_WatchDPCFantasyTabName_PlayerCards"		"Karty graczy"
 	"DOTA_WatchDPCFantasyTabName_RegionLabel"		"Region:"
 
+	"DOTA_DPCFanContent_SupportClubsTitle"			"Kluby kibica"
 	"DOTA_DPCFanContent_SupportClubs"				"Kibicuj swoim ulubionym drużynom"
 	"DOTA_DPCFanContent_SupportClubsDesc"			"Na stałe otrzymaj emotikony, spraye, kwestie koła czatu i ekrany ładowania od twoich ulubionych drużyn."
 	"DOTA_DPCFanContent_FeaturedTeamDesc"			"Wybierz odznakę drużynową do umieszczenia w swoim wyposażeniu."
@@ -21667,6 +21727,7 @@ Specjalna drwina Techiesów"
 	"DOTAWatchDownloads_Size"						"{i:disk_space} MB"
 	"DOTAWatchDownloads_Teams"						"{s:team_1} kontra {s:team_2}"
 	"DOTAWatchDownloads_TeamsSeries"				"{s:team_1} kontra {s:team_2} - Gra {i:game_number} z {i:game_count}"
+	"DOTAWatchDownloads_DeleteSize"					"{i:size} MB"
 	"DOTAWatchDownloads_Delete"						"Usunąć?"
 	"DOTAWatchDownloads_Search"						"Szukaj turniejów..."
 	"DOTAWatchDownloads_NoMatchDetails"				"Brak szczegółów meczu"
@@ -21908,6 +21969,7 @@ Specjalna drwina Techiesów"
 
     "dota_play_ranked_classic_desc"             "W tym klasycznym trybie wyszukiwania gier twojej drużynie nie będą przypisywane role."
 	
+	"dota_play_featured_title"					"Weekendowa atrakcja"
 	"dota_play_game_mode"						"Tryb gry"
 	"dota_play_featured_desc"					"Zagraj w ten tryb, aby uzyskać dodatkowe odłamki."
 	"dota_play_featured_ends"					"Kończy się za {s:ends_in_time}"
@@ -22282,6 +22344,7 @@ Specjalna drwina Techiesów"
 	"dota_settings_interactionrequireshalt"		"Przechwytywanie konstrukcji wymaga przytrzymania/anulowania w celu zatrzymania działania"
 	"dota_settings_interactionrequireshalt_new_setting_title"		"Przechwytywanie konstrukcji wymaga przytrzymania/anulowania w celu zatrzymania działania"
 	"dota_settings_showqueuedorders"			"Pokaż zakolejkowane rozkazy na interfejsie"
+	"dota_settings_force_right_click_attack"	"PPM na sojusznikach:"
 	"dota_settings_force_right_click_attack_0"	"By podążać"
 	"dota_settings_force_right_click_attack_1"	"By zaatakować"
 	"dota_settings_force_right_click_attack_2"	"By dobić"
@@ -22381,6 +22444,7 @@ Specjalna drwina Techiesów"
 	"dota_settings_customresolution"			"Ustawienia zaawansowane"
 	"dota_settings_resolution"					"Rozdzielczość"
 	"dota_settings_rendering"					"Renderowanie"
+	"dota_settings_aspectratio"					"Proporcje ekranu:"
 	"dota_settings_aspectratio43"				"4:3"
 	"dota_settings_aspectratio169"				"16:9"
 	"dota_settings_aspectratio1610"				"16:10"
@@ -22551,6 +22615,8 @@ Specjalna drwina Techiesów"
 	"dota_settings_fsr"							"FidelityFX Super Resolution"
 	"dota_settings_fsr_tooltip"					"Wysokiej jakości upscaling, kiedy jakość wyświetlanego obrazu wynosi mniej niż 100%.\nWymaga API renderowania Direct3D 11 lub Vulkan i włączonego antyaliasingu."
 	"dota_settings_low_latency"					"Tryb niskiego opóźnienia NVIDIA Reflex"
+	"dota_settings_low_latency_tooltip_off"		"Tryb niskiego opóźnienia jest wyłączony."
+	"dota_settings_low_latency_tooltip_on"		"Tryb niskiego opóźnienia jest teraz włączony i optymalizuje opóźnienie systemu."
 	"dota_settings_low_latency_amd"				"AMD Anti-Lag 2.0"
 	"dota_settings_show_ability_videos"			"Wyświetlaj filmiki z umiejętnościami w objaśnieniach"
 	
@@ -22896,6 +22962,8 @@ Specjalna drwina Techiesów"
 	"DOTA_EconItemSet_TestItem"		 "Wypróbuj przedmiot"
 	"DOTA_EconItemSet_Tooltip_IsBundle" "To pakiet zawierający inne przedmioty"
 	"DOTA_EconItemSet_Tooltip_IsTreasure" "To jest skarb"
+	"DOTA_EconItemSet_Tooltip_RequiresKey" "Ten skarb wymaga klucza do otwarcia"
+	"DOTA_EconItemSet_Tooltip_IsKey" "To klucz do otwierania skarbów"
 	"DOTA_EconItemSet_Tooltip_MultipleStyles" "Posiada wiele stylów."
 	"DOTA_EconItemSet_Tooltip_AutoStyle" "Aktywny styl określony przez rozgrywkę"
 	"DOTA_EconItemSet_Tooltip_MultipleTeams" "Ma różne style dla Mrocznych i Świetlistych"
@@ -23810,6 +23878,7 @@ Specjalna drwina Techiesów"
 	"DOTA_tooltip_econ_item_modifier_map_override" "Wymuszenie mapy"
 	"DOTA_tooltip_econ_item_modifier_facet"	"Style aspektów"
 	"DOTA_tooltip_econ_item_modifier_mvp_map_override"	"Tło MVP"
+	"DOTA_tooltip_econ_item_static_attribute_has_arcana_augment"	"Wzmocnienia arkanów"
 
 	"DOTA_tooltip_econ_item_tournament_drop"	"Przedmiot turniejowy"
 	"DOTA_tooltip_econ_item_leaguename"	"{s:league_name}"
@@ -25492,6 +25561,7 @@ Specjalna drwina Techiesów"
 	"DOTA_PlayerCard_Claim_Team_Packs"					"Odbierz pakiety klubu kibica"
 
 	"DOTA_PlayerCard_No_Packs_Owned"	 			"Brak posiadanych pakietów"
+	"DOTA_PlayerCard_BuyPacks"	 					"Kup pakiety"
 	"DOTA_PlayerCard_Team_Header_Count:p{team_pack_count}"	"Masz <span class=\"TeamPurchaseHeaderCountHighlight\">{i:team_pack_count}</span> nieotwarty pakiet drużynowy#|#Masz <span class=\"TeamPurchaseHeaderCountHighlight\">{i:team_pack_count}</span> nieotwarte pakiety drużynowe#|#Masz <span class=\"TeamPurchaseHeaderCountHighlight\">{i:team_pack_count}</span> nieotwartych pakietów drużynowych#|#Masz <span class=\"TeamPurchaseHeaderCountHighlight\">{i:team_pack_count}</span> nieotwartego pakietu drużynowego"
 
 	"DOTA_PlayerCard_Team_Header"		 			"Wybierz drużynę, aby otworzyć posiadane pakiety albo zakupić dodatkowe pakiety"
@@ -30929,6 +30999,7 @@ With early pressure heroes like Zeus and Death Prophet making appearances, split
 	"DOTA_PlusPostGame_CavernCrawlProgress"	"Postęp wędrówki grotołaza"
 	"DOTA_PlusPostGame_RoleCallProgress"	"Powołanie do roli"
 	"DOTA_PlusPostGame_MaxLevelHeroChallenge"	"Arcymistrzowskie wyzwanie bohatera"
+	"DOTA_PlusPostGame_FeaturedGameMode"	"Weekendowa atrakcja"
 	"DOTA_PlusPostGame_Frostivus2023Progress"	"Postęp wydarzenia Mroźnego Festiwalu"
 	"DOTA_PostGame_WraithKingArcanaProgress"	"Postęp arkanów Upiornego Króla"
 	"DOTA_HeroBadgeProgressTurboLimitedGains"	"W meczach Turbo można zdobyć maks. 1 gwiazdkę."
@@ -31947,8 +32018,7 @@ With early pressure heroes like Zeus and Death Prophet making appearances, split
 	//	Queen of Pain set "Deadly Whisper"
 	"DOTA_Style_QoP_Deadly_Whisper_Style0"		"Domyślny"
 	"DOTA_Style_QoP_Deadly_Whisper_Style1"		"Alternatywny"
-
-	// PUDGE PERSONA
+// PUDGE PERSONA
 
 	"Debut_Pudge_Persona_Level"									"Nagroda Przepustki Bitewnej poziomu 255"
 	"Debut_Pudge_Persona_Subtitle"								"Nowa persona dla Pudge'a"
@@ -32822,6 +32892,25 @@ With early pressure heroes like Zeus and Death Prophet making appearances, split
 
 	"DOTACavernCrawl_Title_TI2022"									"Wędrówka grotołaza"
 	"DOTACavernCrawl_Title_Short_TI2022"							"Wędrówka"
+	"DOTACavernCrawl_LegendSmallTreasure_Desc_TI2022"				"Odkryj 250 Punktów Bitewnych i 125 odłamków Dota Plus."
+ 	"DOTACavernCrawl_LegendLargeTreasure_Desc_TI2022"				"Odkryj 2000 Punktów Bitewnych i 1000 odłamków Dota Plus."
+	"DOTACavernCrawl_RewardName_SmallTreasure_TI2022"				"250 Punktów Bitewnych i 125 odłamków Dota Plus"
+	"DOTACavernCrawl_RewardName_LargeTreasure_TI2022"				"2000 Punktów Bitewnych i 1000 odłamków Dota Plus"
+	"DOTACavernCrawl_RewardName_SmallTreasure_TI2022_Part1"			"250 Punktów Bitewnych +"
+	"DOTACavernCrawl_RewardName_SmallTreasure_TI2022_Part2"			"125 odłamków Dota Plus"
+	"DOTACavernCrawl_RewardName_LargeTreasure_TI2022_Part1"			"2000 Punktów Bitewnych +"
+	"DOTACavernCrawl_RewardName_LargeTreasure_TI2022_Part2"			"1000 odłamków Dota Plus"
+  	"DOTACavernCrawl_LegendSmallTreasure_Desc_2_TI2022"				"Odkryj 125 Punktów Bitewnych i 75 odłamków Dota Plus."
+ 	"DOTACavernCrawl_LegendLargeTreasure_Desc_2_TI2022"				"Odkryj 1000 Punktów Bitewnych i 500 odłamków Dota Plus."
+	"DOTACavernCrawl_RewardName_SmallTreasure_2_TI2022"				"125 Punktów Bitewnych i 75 odłamków Dota Plus"
+	"DOTACavernCrawl_RewardName_LargeTreasure_2_TI2022"				"1000 Punktów Bitewnych i 500 odłamków Dota Plus"
+	"DOTACavernCrawl_RewardName_SmallTreasure_2_TI2022_Part1"		"125 Punktów Bitewnych +"
+	"DOTACavernCrawl_RewardName_SmallTreasure_2_TI2022_Part2"		"75 odłamków Dota Plus"
+	"DOTACavernCrawl_RewardName_LargeTreasure_2_TI2022_Part1"		"1000 Punktów Bitewnych +"
+	"DOTACavernCrawl_RewardName_LargeTreasure_2_TI2022_Part2"		"500 odłamków Dota Plus"
+	"DOTACavernCrawl_RewardName_CarryStyleUnlock_TI2022"			"Fragment odblokowania stylu: Wyspa Smoków"
+	"DOTACavernCrawl_RewardName_CarryStyleUnlock_2_TI2022"			"Fragment odblokowania stylu II: Wyspa Smoków"
+	"DOTACavernCrawl_RewardName_CarryFinalTreasure_TI2022"			"Wyspa Smoków"
 	// Weekly Quests
 	"DOTA_WeeklyQuest" 											"Cotygodniowa misja"
 	"DOTA_WeeklyQuests" 										"Cotygodniowe misje"
@@ -32832,16 +32921,24 @@ With early pressure heroes like Zeus and Death Prophet making appearances, split
 	"DOTA_WeeklyQuests_HalfCredit_Tooltip" 						"Ta misja może zostać ukończona w grach Turbo za połowę postępu misji."
 	"DOTA_WeeklyQuests_Credit_Tooltip"							"{s:quest_tip1}{s:quest_tip2}"
 	"DOTA_WeeklyRewards"										"Cotygodniowe nagrody"
+	"DOTA_WeeklyQuest_CurrentWeek_Progress"						"Postęp tygodnia {d:active_week}: "
+	"DOTA_WeeklyQuest_CurrentWeek_Value"						"<span class='ClientValue'>{d:num_stars_earned}</span> / <span class='GoalValue'>{d:num_stars_total}</span>"
 	"DOTA_WeeklyQuests_RewardAvailable"							"Dostępne nagrody!"
 
 	"DOTA_WeeklyQuests_ActivateWeekInformation" "Postęp misji będzie liczony tylko dla tygodnia, który jest obecnie aktywny. Możesz aktywować poprzednie tygodnie, aby ukończyć wcześniejsze misje."
 	"DOTA_WeeklyQuests_CurrentWeek" 		"Cotygodniowe misje – tydzień {d:active_week}"
 
+	"DOTA_Stars_Claim_Name"					"Odebrane gwiazdki cotygodniowych misji"
+	"DOTA_WeeklyStarCountLabel"				"Gwiazdki za ten tydzień: {d:current_star_count}/{d:max_star_count}"
+	"DOTA_MarkVisibleSeasonActiveLabel"		"Aktywuj tydzień {d:week_number}"
 	"DOTA_SeasonActiveTooltip"				"To jest obecnie aktywny tydzień, na poczet którego zapisywane będą postępy."
+	"DOTA_WeeklyQuestUnlockMessage"			"Misje tygodnia {d:week_number} odblokują się za {s:time_until_week_unlock}."
 	"DOTA_WeeklyStarRewardPipLabel"			"{d:point_reward}"
 
 	"DOTA_WeeklyQuest_Progress_Label"		"Postęp tygodnia {d:week_number}:"
 	"DOTA_WeeklyQuest_Progress"				"Ukończono {d:quests_completed}/{d:quests_count}"
+	"DOTA_WeeklyQuest_PointsAvailable"		"{d:points_available} dostępne"
+
 	"DOTA_WeeklyQuest_Week1_Name"			"1"
 	"DOTA_WeeklyQuest_Week2_Name"			"2"
 	"DOTA_WeeklyQuest_Week3_Name"			"3"
@@ -32920,7 +33017,39 @@ With early pressure heroes like Zeus and Death Prophet making appearances, split
 	"DOTA_Spring2021_Quest_Wins_Name_Week7"							"Wehikuł słodkich snów"
 	"DOTA_Spring2021_Quest_Wins_Name_Week8"							"Robię, co chcę"
 	"DOTA_Spring2021_Quest_Wins_Description"						"Wygraj mecz {s:current_tier_score} razy."
-"DOTA_WeeklyQuest_Hero_Relic_Milestones_Description"			"Zwiększ poziom relikwii bohatera {s:current_tier_score} razy."
+
+	// Weekly Quest Names
+
+	"DOTA_WeeklyQuest_ARDM_AD_Wins_Name"							"Nie taki jak inne tryby"
+	"DOTA_WeeklyQuest_ARDM_AD_Wins_Description"						"Wygraj mecz {s:current_tier_score} razy w trybie Ability Draft lub All Random Death Match."
+
+	"DOTA_WeeklyQuest_Guild_Wins_Name"								"Na jednego z ekipą"
+	"DOTA_WeeklyQuest_Complete_Guild_Contracts_Name"				"Zobowiązania umowne"
+	"DOTA_WeeklyQuest_Complete_Guild_Contracts_Description"			"Wykonaj kontrakt dla gildii {s:current_tier_score} razy."
+
+	"DOTA_WeeklyQuest_Kills_Name"									"Agresywne zachowanie"
+	"DOTA_WeeklyQuest_Kills_Description"							"Zabij {s:current_tier_score} wrogich bohaterów."
+
+	"DOTA_WeeklyQuest_Hero_Relic_Milestones_Description"			"Zwiększ poziom relikwii bohatera {s:current_tier_score} razy."
+
+	"DOTA_WeeklyQuest_Kill_Roshan_Name"								"Wtargnięcie do domu"
+	"DOTA_WeeklyQuest_Kill_Roshan_Description"						"Zabij Roshana {s:current_tier_score} razy."
+
+	"DOTA_WeeklyQuest_Destroy_Wards_Name"							"Nigdy się nie naoczą"
+	"DOTA_WeeklyQuest_Wins_In_Full_Party_Name"						"W kupie siła"
+	"DOTA_WeeklyQuest_Wins_In_Full_Party_Description"				"Wygraj mecz w 5-osobowym zespole {s:current_tier_score} razy."
+
+	"DOTA_WeeklyQuest_Wins_As_Support_Hero_Name"					"Rzeczywiście się przyłóż"
+	"DOTA_WeeklyQuest_Wins_As_Support_Hero_Description"				"Wygraj mecz rankingowy {s:current_tier_score} razy w roli wsparcia."
+
+	"DOTA_WeeklyQuest_1_Star_Hero_Challenges_Name"					"Dajcie mu gwiazdkę na piersi"
+	"DOTA_WeeklyQuest_3_Star_Hero_Challenges_Name"					"Taka tam misja poboczna"
+	"DOTA_WeeklyQuest_Denies_Name"									"Podobno one tego nie lubią"
+	"DOTA_WeeklyQuest_Denies_Description"							"Dobij stwora {s:current_tier_score} razy."
+
+	"DOTA_WeeklyQuest_Stack_Camps_Name"								"Zostaw za sobą ślady"
+	"DOTA_WeeklyQuest_Trivia_Points_Name"							"Prawdziwe MMR"
+	"DOTA_WeeklyQuest_Trivia_Points_Description"					"Zdobądź {s:current_tier_score} pkt. w quizie podczas kolejki."
 
 	"DOTA_WeeklyQuest_Win_And_Kills_Description"					"Zabij {s:current_tier_score} wrogich bohaterów w wygranych grach."
 
@@ -32942,6 +33071,19 @@ With early pressure heroes like Zeus and Death Prophet making appearances, split
 
 	"DOTA_WeeklyQuest_Win_And_Kill_Ancient_Creeps_Name"				"Dla ciebie tylko najlepsze"
 	"DOTA_WeeklyQuest_Win_And_Kill_Ancient_Creeps_Description"		"Zabij {s:current_tier_score} starożytnych stworów w wygranych grach."
+
+	"DOTA_WeeklyQuest_Win_As_Strength_Hero_Name"					"Klikaj mocniej"
+	"DOTA_WeeklyQuest_Win_As_Strength_Hero_Description"				"Wygraj grę {s:current_tier_score} razy jako bohater, którego głównym atrybutem jest Siła."
+
+	"DOTA_WeeklyQuest_Win_As_Agility_Hero_Name"						"Klikaj szybciej"
+	"DOTA_WeeklyQuest_Win_As_Agility_Hero_Description"				"Wygraj grę {s:current_tier_score} razy jako bohater, którego głównym atrybutem jest Zręczność."
+
+	"DOTA_WeeklyQuest_Win_As_Intelligence_Hero_Name"				"Klikaj mądrzej"
+	"DOTA_WeeklyQuest_Win_As_Intelligence_Hero_Description"			"Wygraj grę {s:current_tier_score} razy jako bohater, którego głównym atrybutem jest Inteligencja."
+
+	"DOTA_WeeklyQuest_Kills_After_Blink_Description"				"Zabij {s:current_tier_score} bohaterów po użyciu Blink Dagger."
+
+	"DOTA_WeeklyQuest_Reveal_Invisible_Description"					"Ujawnij niewidzianych bohaterów {s:current_tier_score} razy."
 
 	"DOTA_WeeklyQuest_Win_And_High_Fives_Completed_Description"		"Przybij piątkę innemu graczowi {s:current_tier_score} razy w zwycięskich grach."
 		
@@ -33552,6 +33694,8 @@ With early pressure heroes like Zeus and Death Prophet making appearances, split
 	"DOTA_DPC_Division_GameNumberTime"										"Gra nr {d:game_number} – {s:game_time}"
 	"DOTA_DPC_Live_GameNotStreamed"											"Transmisja niedostępna"
 
+	"DOTA_DPCFrontPage_ComingUp"											"Wkrótce"
+
 	"DOTA_DPCSchedule_MatchStatus_Complete"									"Zakończony"
 	"DOTA_DPCSchedule_MatchStatus_Past"										"Zakończony"
 	"DOTA_DPCSchedule_MatchStatus_Winner"									"Zwycięzca"
@@ -33661,17 +33805,23 @@ With early pressure heroes like Zeus and Death Prophet making appearances, split
 	"DOTA_DPCTeams_RegistrationPeriod7"				"Zimowa tura"
 
 	"DOTA_DPCTeams_SeasonPeriod_Event34_Name"		"Zimowa tura"
+	"DOTA_DPCTeams_SeasonPeriod_Event34_Dates"		"30 listopada 2021 – 21 lutego 2022"
 	"DOTA_DPCTeams_SeasonPeriod_Event35_Name"		"Wiosenna tura"
+	"DOTA_DPCTeams_SeasonPeriod_Event35_Dates"		"14 marca – 24 kwietnia 2022 roku"
 	"DOTA_DPCTeams_SeasonPeriod_Event37_Name"		"Letnia tura"
+	"DOTA_DPCTeams_SeasonPeriod_Event37_Dates"		"6 czerwca – 14 sierpnia 2022 roku"
 	"DOTA_DPCTeams_SeasonPeriod_Event38_Name"		"The International 2022"
 	"DOTA_DPCTeams_SeasonPeriod_Event38_Dates"		"8 – 30 października 2022"
 
 	"DOTA_DPCTeams_RegistrationPeriod8"				"Zimowa tura"
+	"DOTA_DPCTeams_RegistrationPeriodDates8"		"9 stycznia 2023 – 5 marca 2023"
 	"DOTA_DPCTeams_RegistrationPeriodSeason8"		"Sezon 2023"
 	"DOTA_DPCTeams_SeasonPeriod_Event41_Name"		"Zimowa tura"
+	"DOTA_DPCTeams_SeasonPeriod_Event41_Dates"		"9 stycznia 2023 – 5 marca 2023"
 	"DOTA_DPCTeams_SeasonPeriod_Event42_Name"		"Wiosenna tura"
 	"DOTA_DPCTeams_SeasonPeriod_event42_Dates"		"12 marca – 7 maja 2023"
 	"DOTA_DPCTeams_SeasonPeriod_Event43_Name"		"Letnia tura"
+	"DOTA_DPCTeams_SeasonPeriod_Event43_Dates"		"15 maja – 9 lipca 2023"
 	"DOTA_DPCTeams_SeasonPeriod_Event45_Name"		"The International 2023"
 	"DOTA_DPCTeams_SeasonPeriod_Event45_Dates"		"12 – 29 października 2023"
 	"DOTA_DPCTeams_SeasonPeriod_Event49_Name"		"The International 2024"
@@ -33937,6 +34087,9 @@ With early pressure heroes like Zeus and Death Prophet making appearances, split
 	"DOTA_Collectors_Cache_Treasure_Title"				"Skrytka Kolekcjonera Utraconej Korony 2024"
 	"DOTA_Collectors_Cache_2024_Crownfall_Discounts_Message"		"<b>Zniżki i zestawy</b> dostępne w sklepie Utraconej Korony."
 
+	"DOTA_CosmicTreasure2025Cell_Title"					"Kosmiczne Bogactwa Bohaterów"
+	"DOTA_CosmicTreasure2025Cell_Description"			"Odkryj 17 nowych zestawów bohaterów, w tym wiekopomne przedmioty, zestawy person i nie tylko."
+	
 	"DOTA_Winter2024_HeroesHoard_Title"					"Bogactwa Bohaterów (zima 2024)"
 	"DOTA_Winter2024_HeroesHoard_TitleShort"			"Bogactwa Bohaterów"
 	"DOTA_Winter2024_HeroesHoard_Cell_Description"		"Odkryj 17 nowych zestawów bohaterów, w tym nowe wiekopomne przedmioty, nowego zwierzaka, drwiny i nie tylko."
@@ -34199,6 +34352,9 @@ With early pressure heroes like Zeus and Death Prophet making appearances, split
 	"DOTA_Plus_Summer2025_Update_Title"						"Aktualizacja sezonu letniego 2025"
 	"DOTA_Plus_Summer2025_Update_Desc"						"Do Dota Plus dodano nowy sezon misji."
 
+	"DOTA_Plus_Fall2025_Update_Title"						"Aktualizacja sezonu jesiennego 2025"
+	"DOTA_Plus_Fall2025_Update_Desc"						"Do Dota Plus dodano nowy sezon misji."
+
 	"DOTA_Plus_Autumn_Assitant_Title"						"Nowe funkcje asystenta"
 	"DOTA_Plus_Autumn_Assitant_Desc"						"Subskrybenci Dota Plus mogą teraz używać między innymi funkcjonalności unikania graczy, narzędzia sugerowania przyjaciół i wrogów i sugestii rozmieszczania wardów."
 
@@ -34457,6 +34613,7 @@ With early pressure heroes like Zeus and Death Prophet making appearances, split
 	"DOTA_Guild_Result_Already_Assigned"				"Inny gracz już zażądał tego kontraktu."
 	"DOTA_Guild_Result_InvalidContractSlot"				"Nieprawidłowe pole kontraktu."
 	"DOTA_Guild_Result_ContractSlotLocked"				"Twoja gildia nie odblokowała jeszcze możliwości używania tego pola kontraktu."
+	"DOTA_Guild_Result_ContractSlotLockedDotaPlus"      "Musisz mieć Dota Plus, aby odblokować pole kontraktu."
 	"DOTA_Guild_Result_ContractSlotCooldown"			"Czas odnowienia tego pola kontraktu jeszcze nie minął."
 	"DOTA_Guild_Result_LeaveLastAdmin"					"Musisz przekazać rolę lidera gildii innemu graczowi przed opuszczeniem jej."
 	"DOTA_Guild_Result_RequiresInvite"					"Nie możesz dołączyć do tej gildii bez zaproszenia od członka."
@@ -34543,6 +34700,7 @@ With early pressure heroes like Zeus and Death Prophet making appearances, split
 
 	"DOTA_GuildContracts_MyActiveContracts"				"Moje aktywne kontrakty"
 	"DOTA_GuildContracts_ContractBoard"					"Tablica kontraktów"
+	"DOTA_GuildContracts_ContractSlotActive"			"Miejsce {d:slot_index}"
 	"DOTA_GuildContracts_ContractSlotHeader"			"Pole {d:contract_slot_id}"
 	"DOTA_GuildContracts_GuildPoints"					"PG"
 	"DOTA_GuildContracts_BattlePoints"					"PB"
@@ -34857,9 +35015,66 @@ Każdy region posiada ranking aktualizowany na żywo, który będzie wykorzystyw
 	"dota_chatwheel_header_fall2021_event_game_reward"				"Labirynt Aghanima – Skarbiec Kontinuum"
 	"dota_chatwheel_header_fall2021_event_game_reward_desc"			"Nagrody przyznane za przetrwanie Skarbca Kontinuum. Te kwestie czatu wygasną wraz z zakończeniem Przepustki Bitewnej."
 
+	"dota_chatwheel_header_fall2021_legacy_aghanim"					"Labirynt Aghanima – klasyczne kwestie"
+	"dota_chatwheel_header_fall2021_sprays"							"Labirynt Aghanima – spraye"
+	"dota_chatwheel_header_fall2021_sprays_desc"					"Te spraye wygasną wraz z zakończeniem Przepustki Bitewnej."
+
+	"dota_chatwheel_header_international2022_caster_en"			"Przepustka Bitewna 2022 – koło czatu komentatorów (język angielski)"
+	"dota_chatwheel_header_international2022_caster_en_desc"	"Zawartość dostępna wyłącznie dla posiadaczy Przepustki Bitewnej 2022."
+
+	"dota_chatwheel_header_international2022_caster_cn"			"Przepustka Bitewna 2022 – koło czatu komentatorów (język chiński)"
+	"dota_chatwheel_header_international2022_caster_cn_desc"	"Zawartość dostępna wyłącznie dla posiadaczy Przepustki Bitewnej 2022."
+
+	"dota_chatwheel_header_international2022_caster_ru"			"Przepustka Bitewna 2022 – koło czatu komentatorów (język rosyjski)"
+	"dota_chatwheel_header_international2022_caster_ru_desc"	"Zawartość dostępna wyłącznie dla posiadaczy Przepustki Bitewnej 2022."
+
+	"dota_chatwheel_header_international2022_caster_sp"			"Przepustka Bitewna 2022 – koło czatu komentatorów (język hiszpański)"
+	"dota_chatwheel_header_international2022_caster_sp_desc"	"Zawartość dostępna wyłącznie dla posiadaczy Przepustki Bitewnej 2022."
+
 	"dota_chatwheel_header_international2022_truesight"			"Przepustka Bitewna 2022 – koło czatu True Sight"
 	"dota_chatwheel_header_international2022_truesight_desc"	"Zawartość dostępna wyłącznie dla posiadaczy Przepustki Bitewnej 2022."
 
+
+	"DOTA_Fall2021_Achievement_EventGameWinAsc0_Name"				"Spójrz na siebie!"
+	"DOTA_Fall2021_Achievement_EventGameWinAsc0_Description"		"Przetrwaj Skarbiec Kontinuum w Labiryncie Aghanima na poziomie ucznia."
+	"DOTA_Fall2021_Achievement_EventGameWinAsc1_Name"				"Jestem prawie pod wrażeniem!"
+	"DOTA_Fall2021_Achievement_EventGameWinAsc1_Description"		"Przetrwaj Skarbiec Kontinuum w Labiryncie Aghanima na poziomie maga."
+	"DOTA_Fall2021_Achievement_EventGameWinAsc2_Name"				"Pozostał ostatni sprawdzian!"
+	"DOTA_Fall2021_Achievement_EventGameWinAsc2_Description"		"Przetrwaj Skarbiec Kontinuum w Labiryncie Aghanima na poziomie czarownika."
+	"DOTA_Fall2021_Achievement_EventGameWinAsc3_Name"				"Aghanim Dumny"
+	"DOTA_Fall2021_Achievement_EventGameWinAsc4_Description"		"Przetrwaj Skarbiec Kontinuum w Labiryncie Aghanima na poziomie najwyższego maga."
+
+	"dota_chatwheel_message_fall2021eventgame_reward1"				"Podobają mi się twoje ruchy i styl!"
+	"dota_chatwheel_label_fall2021eventgame_reward2"				"A to dopiero ostre chili!"
+	"dota_chatwheel_message_fall2021eventgame_reward2"				"Och, ale ostre chili tam serwujesz!"
+	"dota_chatwheel_label_fall2021eventgame_reward3"				"Wycofać się, wycofać się!"
+	"dota_chatwheel_message_fall2021eventgame_reward3"				"Lepiej się wycofaj, wycofaj się!"
+	"dota_chatwheel_label_fall2021eventgame_reward4"				"Zaskakująco dobre!"
+	"dota_chatwheel_message_fall2021eventgame_reward4"				"Dobre, dobre! Zaskakująco dobre!"
+	"dota_chatwheel_label_fall2021eventgame_reward5"				"Nie! No cóż."
+	"dota_chatwheel_message_fall2021eventgame_reward5"				"Nieeeeee! No cóż."
+
+	"dota_chatwheel_label_fall2021eventgame_team_reward1"			"Witaj, przyjacielu!"
+	"dota_chatwheel_message_fall2021eventgame_team_reward1"			"Przyjacielu! Witaj, przyjacielu!"
+	"dota_chatwheel_label_fall2021eventgame_team_reward2"			"Pompa!"
+	"dota_chatwheel_message_fall2021eventgame_team_reward2"			"Och, ale mam pompę!"
+	"dota_chatwheel_label_fall2021eventgame_team_reward3"			"Ups!"
+	"dota_chatwheel_message_fall2021eventgame_team_reward3"			"Ups!"
+	"dota_chatwheel_label_fall2021eventgame_team_reward4"			"Istne bestialstwo!"
+	"dota_chatwheel_message_fall2021eventgame_team_reward4"			"Istne bestialstwo!"
+	"dota_chatwheel_label_fall2021eventgame_team_reward5"			"A to miło!"
+	"dota_chatwheel_message_fall2021eventgame_team_reward5"			"Ooooch, jak miło!"
+
+	"dota_chatwheel_label_international2022_reward1"				"Kud-ku-dak"
+	"dota_chatwheel_message_international2022_reward1"				"Kud-ku-dak, ko, ko, ko, ko"
+	"dota_chatwheel_label_international2022_reward2"				"Słoń"
+	"dota_chatwheel_message_international2022_reward2"				"Słoń"
+	"dota_chatwheel_label_international2022_reward3"				"Klakson"
+	"dota_chatwheel_message_international2022_reward3"				"Klakson"
+	"dota_chatwheel_label_international2022_reward4"				"Wypad"
+	"dota_chatwheel_message_international2022_reward4"				"Wypad"
+	"dota_chatwheel_label_international2022_reward5"				"Tik-tak"
+	"dota_chatwheel_message_international2022_reward5"				"Tik-tak, tik-tak, tik-tak"
 
 	"DOTA_TI10_EventGame_CannotAffordBlessing_Error"				"Za mało tajemnych fragmentów"
 	"DOTA_TI10_EventGame_CannotAffordBlessing_Body"					"Masz za mało tajemnych fragmentów, by kupić to błogosławieństwo."
@@ -35051,11 +35266,18 @@ Każdy region posiada ranking aktualizowany na żywo, który będzie wykorzystyw
 	"DOTA_TI10_EventGame_PlayMenu_SelectDifficuly"						"Wybierz poziom trudności"
 	"DOTA_TI10_EventGame_PlayMenu_BlessingsTree"					"Zobacz drzewko błogosławieństw"
 
-    "DOTA_FALL2021_EventGame_PlayMenu_BlessingsTreeView"					"Zobacz drzewko błogosławieństw"
+    "DOTA_FALL2021_EventGame_ShardsEarned"                          "+{d:earned_arcane_fragments}"
+    "DOTA_FALL2021_EventGame_WeeklyQuestStars"                      "+{d:earned_weekly_quest_stars}"
+    "DOTA_FALL2021_EventGame_BattlePointsEarned"                    "+{d:earned_battle_points}"
+
+	"DOTA_FALL2021_EventGame_PlayMenu_BlessingsTreeView"					"Zobacz drzewko błogosławieństw"
 	"DOTA_FALL2021_EventGame_PlayMenu_BlessingsTreePurchase"				"Odblokuj błogosławieństwa"
 	"DOTA_FALL2021_EventGame_PlayMenu_BlessingsTreeFragments"				" Dostępne"
 
-    "DOTA_FALL2021_EventGame_EncounterDuration"						"Czas trwania: {s:duration_text}"	
+    "DOTA_FALL2021_EventGame_ViewBattlePass"						"Zobacz Przepustkę"	
+	"DOTA_FALL2021_EventGame_ViewWeeklyQuests"						"Zobacz stronę cotygodniowych misji"	
+	"DOTA_FALL2021_EventGame_EncounterAndEventDuration"		        "Czas trwania: {s:duration_text}\nWydarzenie: {s:event_text}"	
+	"DOTA_FALL2021_EventGame_EncounterDuration"						"Czas trwania: {s:duration_text}"	
 
 	"DOTA_FALL2021_EventGame_ACT0"	                                "Skarbiec Kontinuum"
 	"DOTA_FALL2021_EventGame_ACT1"									"Akt I"
@@ -35063,8 +35285,12 @@ Każdy region posiada ranking aktualizowany na żywo, który będzie wykorzystyw
 	"DOTA_FALL2021_EventGame_ACT3"									"Akt III"
 	"DOTA_FALL2021_EventGameDepth_Intro"							"{s:act}"
 	"DOTA_FALL2021_EventGameDepth_Boss"								"{s:act} – boss"
+	"DOTA_FALL2021_EventGameDepth_Victory"							"{s:act} – zwycięstwo"
 	"DOTA_FALL2021_EventGame_REWARD_TYPE_TREASURE"                  "Skarb"
-    "DOTA_SeasonalItemReceived_ArcaneFragmentsDescription:p{GrantPoints}"	"{d:GrantPoints} tajemny fragment#|#{d:GrantPoints} tajemne fragmenty#|#{d:GrantPoints} tajemnych fragmentów#|#{d:GrantPoints} tajemnych fragmentów"
+    "DOTA_FALL2021_EventGame_REWARD_TYPE_EXTRA_LIVES"               "Dodatkowe życia"
+
+	"DOTA_SeasonalItemReceived_ArcaneFragmentsTitle"				"Tajemne fragmenty"
+	"DOTA_SeasonalItemReceived_ArcaneFragmentsDescription:p{GrantPoints}"	"{d:GrantPoints} tajemny fragment#|#{d:GrantPoints} tajemne fragmenty#|#{d:GrantPoints} tajemnych fragmentów#|#{d:GrantPoints} tajemnych fragmentów"
 
 	"aghanim_game_info_header_how_to_play"								"Jak grać"
 	"aghanim_game_info_brief_description"								"Przemierz losowo generowane lochy i pokonaj potwory Aghanima. Odkryj odłamki berła, by wzmocnić swoje umiejętności i zbierz tajemne fragmenty, których można użyć do zakupu trwałych ulepszeń. Tabela wyników pokazuje historię wszystkich zebranych przez ciebie odłamków berła w tej grze."
@@ -35307,6 +35533,7 @@ Każdy region posiada ranking aktualizowany na żywo, który będzie wykorzystyw
 		"DOTA_PlusSeason_SeasonSpring2022_TreasureDescription"	"Dostępne wyłącznie do końca sezonu wiosennego 2022 w dniu 8 czerwca 2022."
 
 		"DOTA_PlusSeason_SeasonSummer2022_Quests"				"Misje lata 2022"
+		"DOTA_PlusSeason_SeasonSummer2022_Subtitle"				"Sezon letni 2022 zakończy się 1 września 2022."
 		"DOTA_PlusSeason_SeasonSummer2022_TreasureDescription"	"Dostępne wyłącznie do końca sezonu letniego 2022 w dniu 1 września 2022."
 
 		"DOTA_PlusSeason_SeasonFall2022_Name"					"Jesień 2022"
@@ -35364,6 +35591,10 @@ Każdy region posiada ranking aktualizowany na żywo, który będzie wykorzystyw
 		"DOTA_PlusSeason_SeasonSummer2025_Quests"				"Misje lata 2025"
 		"DOTA_PlusSeason_SeasonSummer2025_Subtitle"				"Sezon letni 2025 zakończy się 9 września 2025."
 		"DOTA_PlusSeason_SeasonSummer2025_TreasureDescription"	"Dostępne wyłącznie do końca sezonu letniego 2025 w dniu 9 września 2025."
+
+		"DOTA_PlusSeason_SeasonFall2025_Name"					"Jesień 2025"
+		"DOTA_PlusSeason_SeasonFall2025_Quests"					"Misje jesieni 2025"
+		"DOTA_PlusSeason_SeasonFall2025_Subtitle"				"Sezon jesienny 2025 zakończy się 2 grudnia 2025."
 
 		"DOTA_MatchRewards"							"Nagrody meczu"
 		"DOTA_MatchRewards_YourShards"				"Twoje odłamki"
@@ -35461,6 +35692,7 @@ Każdy region posiada ranking aktualizowany na żywo, który będzie wykorzystyw
 		"DOTA_Frontpage_NPX_NewSet" 	"Nowe podejście<br />do pomagania nowym graczom"
 		"DOTA_Frontpage_NPX_Description" "Dodaliśmy szereg nowych funkcji do naszego wprowadzenia dla nowych graczy. Więcej informacji na blogu."
 
+		"DOTA_Ability_Movie_Label"     "Niestandardowy efekt umiejętności"
 		"DOTA_Immortal_Movie_Label"     "Wiekopomny efekt umiejętności"
 		"DOTA_Emblem_Movie_Label"     "Efekt emblematu"
 
@@ -36419,6 +36651,7 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 
 		"DOTA_Glossary_Map_Structures_Outposts"		"Posterunki"
 
+		"DOTA_Glossary_Map_Structures_Outposts_Desc1"	"Świetliści i Mroczni kontrolują po jednym specjalnym budynku zwanym posterunkiem, który znajduje się po ich stronie mapy."
 		"DOTA_Glossary_Map_Structures_Outposts_Desc2"	"Do posterunków można się teleportować i zapewniają również widoczność oraz efekt True Sight w promieniu {d:DOTA_OUTPOST_VISION_RADIUS} jednostek."
 		"DOTA_Glossary_Map_Structures_Outposts_Desc3"	"Gdy drużyna utraci wieżę 2. rzędu, to jej posterunek będzie można przejąć – wroga drużyna musi wykonać inkantację na budynku."
 		"DOTA_Glossary_Map_Structures_Outposts_Desc4"	"Wielu graczy może dokonać inkantacji posterunku w celu skrócenia czasu, jaki jest wymagany do przejęcia go."
@@ -36713,6 +36946,7 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		"DOTA_CoachingError_eAlreadyInSession" "Już w sesji."
 		"DOTA_CoachingError_eAlreadyLeft" "Już opuszczono."
 		"DOTA_CoachingError_eAlreadySubmitted" "Już przesłano."
+		"DOTA_CoachingError_eBehaviorScoreTooLow" "Oceny zachowania/komunikacji są zbyt niskie."
 		"DOTA_CoachingError_eCoachInALobby" "Trener jest w poczekalni."
 		"DOTA_CoachingError_eCoachInThisLobby" "Trener jest w tej poczekalni."
 		"DOTA_CoachingError_eCoachNotSubscriber" "Trener nie jest subskrybentem."
@@ -36749,6 +36983,7 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		"DOTA_CoachingError_eTooBusy" "Zbyt zajęty."
 		"DOTA_CoachingError_eTooManyCoaches" "Zbyt wielu trenerów."
 		"DOTA_CoachingError_eUnknownSession" "Nieznana sesja."
+		"DOTA_CoachingError_eCoachBehaviorScoreTooLow" "Oceny zachowania/komunikacji trenera są zbyt niskie."
 		"DOTA_CoachingError_eCoachRankNotCalibrated" "Trener nie jest skalibrowany do trybu rankingowego."
 		"DOTA_CoachingError_eCoachRankNotEligible" "Ranga trenera jest zbyt niska."
 		"DOTA_CoachingError_eCoachRankTooLow" "Ranga trenera jest zbyt niska, by mógł trenować tego gracza."
@@ -36800,6 +37035,8 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		"DOTA_TeamFanContent_TeamChatWheel"		"Treści drużyny {g:dota_team_name:team_id} dla fanów"
 		"DOTA_DPCFanContent_FeaturedTeam"		"Wyróżniona drużyna"
 		"DOTA_DPC_TeamSupportLevelPopupText"	"{g:dota_team_name:team_id} – {s:team_tier} kibic."
+		"DOTA_TeamFanContent_ChatWheelRewardSubtitle"	"Koła czatu kibica drużyny aktywują się automatycznie i nie wygasają."
+
 		"DOTA_TeamFanContent_Sale"				"50% taniej"
 		"DOTA_TeamFanContent_Sale75"			"75% zniżki"
 		
@@ -36869,10 +37106,14 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		"DOTA_Spring2021_SeasonalSpray"						"Sezonowy spray"
 		"DOTA_GrantIfNotOwned"								"Otrzymasz ten przedmiot, tylko jeśli nie posiadasz go jeszcze w swojej zbrojowni."
 
+		"DOTA_Armory_Category_Fall2021"						"Labirynt Aghanima 2021"
+		"DOTA_Fall2021_SeasonalSpray"						"Sezonowy spray"
+
 		"DOTA_BattlePass_GiftRewardInfo"					"Podaruj Przepustki Bitewne, by odblokować nagrody"
 
 		"DOTA_BattlePass_RandomReward"						"Losowa nagroda"
 		"DOTA_BattlePass_RandomReward_Info"					"Otrzymasz losowo jedną z nagród. Nie otrzymasz duplikatów."
+		"DOTA_Fall2021UpcomingRewards_PersonaInfo"	"Mirana z Lasu Srebrzystej Nocy"
 		"DOTA_Fall2021UpcomingRewards_PersonaInfo2"	"Persona dla Mirany"
 		"DOTA_Fall2021UpcomingRewards_ArcanaInfo"				"Przerażająca zemsta"
 		"DOTA_Fall2021UpcomingRewards_ArcanaInfo2"				"Pakiet arkanów dla Drow Ranger"
@@ -36884,8 +37125,13 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		"Fall2021_EndingReminder_Rewards"					"Możesz zdobyć nagrody takie jak arkana dla Drow Ranger, personę dla Mirany i prestiżowy zestaw dla Hoodwink poprzez zwiększenie poziomu twojej Przepustki Bitewnej."
 
 		"DOTA_Labyrinth_BP_Earned"							"Zdobyte Punkty Bitewne"
+		"DOTA_Labyrinth_BP_EarnedValue"						"{d:battle_point_bonus_earned} / {d:battle_point_bonus_cap}"
 		"DOTA_Labyrinth_BP_InfoTooltip:p{battle_point_bonus_cap}"	"Zdobądź maks. {d:battle_point_bonus_cap} Punkt Bitewny co tydzień, grając w Labirynt Aghanima. Punkty Bitewne są upuszczane jako łupy w labiryncie.#|#Zdobądź maks. {d:battle_point_bonus_cap} Punkty Bitewne co tydzień, grając w Labirynt Aghanima. Punkty Bitewne są upuszczane jako łupy w labiryncie.#|#Zdobądź maks. {d:battle_point_bonus_cap} Punktów Bitewnych co tydzień, grając w Labirynt Aghanima. Punkty Bitewne są upuszczane jako łupy w labiryncie.#|#Zdobądź maks. {d:battle_point_bonus_cap} Punktów Bitewnych co tydzień, grając w Labirynt Aghanima. Punkty Bitewne są upuszczane jako łupy w labiryncie."
+		"DOTA_Labyrinth_AF_Used"							"Dodatkowe fragmenty"
+		"DOTA_Labyrinth_AF_UsedValue"						"{d:fragment_bonus_earned} / {d:fragment_bonus_cap}"
 		"DOTA_Labyrinth_AF_InfoTooltip:p{fragment_bonus_cap}"	"Pierwszy zdobyty przez ciebie {d:fragment_bonus_cap} tajemny fragment co tydzień daje ci {s:fragment_bonus_mult}-krotnie więcej fragmentów#|#Pierwsze zdobyte przez ciebie {d:fragment_bonus_cap} tajemne fragmenty co tydzień dają ci {s:fragment_bonus_mult}-krotnie więcej fragmentów#|#Pierwsze zdobyte przez ciebie {d:fragment_bonus_cap} tajemnych fragmentów co tydzień daje ci {s:fragment_bonus_mult}-krotnie więcej fragmentów#|#Pierwsze zdobyte przez ciebie {d:fragment_bonus_cap} tajemnego fragmentu co tydzień daje ci {s:fragment_bonus_mult}-krotnie więcej fragmentów"
+
+		"DOTA_Labyrinth_BestProgress"						"Najlepsze podejście: {s:curr_ascension_best}"
 
 		"DOTA_LabyrinthBlessingPurchaseError_Unknown"				"Błąd wewnętrzny (kod {d:error_code})."
 		"DOTA_LabyrinthBlessing_Tutorial1_Title"			"Zdobądź swoje pierwsze błogosławieństwo"
@@ -37139,9 +37385,29 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		// already have a good name or was unused from last year
 		"DOTA_Fall2021_Quest_Win_And_Hero_Damage_Name"				"Dolej oliwy do ognia"
 		"DOTA_Fall2021_Quest_Win_And_Hero_Damage_Description"		"Zadaj {s:current_tier_score} pkt. obrażeń bohaterom w wygranych grach."
+
+		// AGHANIM'S LAB CONTINUUM QUESTS
+		"DOTA_Fall2021_Quest_Plays_Name_Week1"		"Zagraj rundkę, a się przekonasz"
+		"DOTA_Fall2021_Quest_Plays_Name_Week2"		"Każdy jest zwycięzcą"
+		"DOTA_Fall2021_Quest_Plays_Name_Week3"		"Pozwól sobie na dobrą zabawę"
+		"DOTA_Fall2021_Quest_Plays_Name_Week4"		"Graj ile dusza zapragnie"
+		"DOTA_Fall2021_Quest_Plays_Name_Week5"		"Co za zagranie"
+		"DOTA_Fall2021_Quest_Plays_Name_Week6"		"Tak jak ci się podoba"
+		"DOTA_Fall2021_Quest_Plays_Name_Week7"		"Z miłości do gry"
+		"DOTA_Fall2021_Quest_Plays_Name_Week8"		"Zarobek tak czy siak"
+		"DOTA_Fall2021_Quest_Plays_Description"		"Rozegraj mecz {s:current_tier_score} razy."
+	
+		"DOTA_Fall2021_Quest_Wins_Name"							"Zdarza się"
+		"DOTA_Fall2021_Quest_Wins_Name_Week3"					"Nie ma drugiego takiego"
+		"DOTA_Fall2021_Quest_Wins_Name_Week5"					"Póki jesteśmy razem"
+		"DOTA_Fall2021_Quest_Wins_Name_Week6"					"Pozwól, że ci z tym pomogę"
+		"DOTA_Fall2021_Quest_Wins_Name_Week7"					"Wehikuł słodkich snów"
+		"DOTA_Fall2021_Quest_Wins_Name_Week8"					"Robię, co chcę"
+		"DOTA_Fall2021_Quest_Wins_Description"					"Wygraj mecz {s:current_tier_score} razy."
 "DOTA_Style_hand_courier_1"										"Mańkut – odblokowanie stylu „Gem of True Sight”"
 		"DOTA_Style_hand_courier_5"										"Mańkut – odblokowanie stylu „Octarine Core”"
-"DOTA_Tooltip_ability_aghsfort_undying_decay_decay_damage"				"OBRAŻENIA:"
+"DOTA_Tooltip_ability_aghsfort_undying_decay_Note0"						"Działa na niewidzialne jednostki."
+		"DOTA_Tooltip_ability_aghsfort_undying_decay_decay_damage"				"OBRAŻENIA:"
 		"DOTA_Tooltip_ability_aghsfort_undying_decay_str_steal"					"PRZYROST SIŁY:"
 		"DOTA_Tooltip_ability_aghsfort_undying_decay_str_steal_captain_mult"	"MNOŻNIK PRZYROSTU SIŁY OD KAPITANA:"
 		"DOTA_Tooltip_ability_aghsfort_undying_decay_decay_duration"			"CZAS TRWANIA PREMII:"
@@ -37322,11 +37588,18 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 
 		"DOTA_CandyShop_HelpText"						"Wymień cukierki na przedmioty."
 		"DOTA_CandyShop_Purchase"						"Wymień"
+		"DOTA_CandyShop_AvailableRolls"					"Dostępne losowania:"
+		"DOTA_CandyShop_EmptyInventory"					"Cukierkowy ekwipunek jest pusty."
 		"DOTA_CandyShop_AtMaxRerolls"					"Pula przelosowań pełna. Nie będziesz mógł zyskać dodatkowych przelosowań do czasu, aż wykorzystasz obecne."
+		"DOTA_CandyShop_WeeklyRerolls"					"{d:rerolls_earned}/{d:rerolls_max} tygodniowo"
 		"DOTA_CandyShop_EarnedAll"						"Zdobądź więcej za <span class=\"ResetTime\">{t:d:t:T:countdown_time}</span>."
 		"DOTA_CandyShop_OutOfRolls"						"Wygrywaj mecze, by zdobyć więcej przelosowań."
+		"DOTA_CandyShop_RerollItems"					"Przelosuj przedmioty"
 		"DOTA_CandyShop_AdditionalRerolls"				"+{d:additional_reroll_charges}"
 		"DOTA_CandyShop_RerollCountAvailable"			"Dostępne"
+		"DOTA_CandyShop_Error_Unknown"					"Nieznany błąd"
+		"DOTA_CandyShop_Error_InternalError"			"Błąd wewnętrzny"
+		"DOTA_CandyShop_Error_Success"					"Sukces"
 		"DOTA_CandyShop_Error_TooBusy"					"Zbyt dużo żądań. Spróbuj ponownie później."
 		"DOTA_CandyShop_Error_Disabled"					"Tymczasowo wyłączone. Spróbuj ponownie później."
 		"DOTA_CandyShop_Error_Timeout"					"Nie można połączyć się z koordynatorem gry. Spróbuj ponownie później."
@@ -37411,6 +37684,7 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		"DOTA_International2022_TrueSightDay4Header"					"TI 2019"
 		"DOTA_International2022_TrueSightDay5Header"					"TI 10"
 		"DOTA_International2022_TrueSightWeekAvailableNow"				"Już dostępny"
+		"DOTA_International2022_TrueSightWeekComing"					"Wkrótce"
 		"DOTA_International2022_TrueSightExtraInfo"						"Miłego seansu wraz ze zremasterowanymi filmami True Sight z czterech lat przed ich premierą na The International 10."
 		"DOTA_International2022_TrueSightExtraInfoText"					"Więcej informacji"
 
@@ -37420,7 +37694,10 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 
 		"DOTA_WeeklyQuest_Regen_Health_Description"						"Zregeneruj {s:current_tier_score} pkt. zdrowia."
 		
+		"DOTA_International2022_Quest_Plays_Name_Week3"					"Zagraj rundkę, a się przekonasz"
 		"DOTA_International2022_Quest_Plays_Name_Week6"					"Zawsze grasz w to, co należy"
+		"DOTA_International2022_Quest_Plays_Name_Week8"					"Graj ile dusza zapragnie"
+		"DOTA_International2022_Quest_Plays_Name_Week9"					"Tak jak ci się podoba"
 		"DOTA_International2022_Quest_Plays_Name_Week10"				"Z miłości do gry"
 		"DOTA_International2022_Quest_Diretide_Stars_Name_Week10"		"Gwiazdy Mrocznego Czasu"
 		"DOTA_International2022_Quest_Diretide_Stars_Name_Week11"		"Gwiazdy Mrocznego Czasu"
@@ -37433,7 +37710,8 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		"DOTA_International2022_Quest_Diretide_Stars_Name_Week18"		"Gwiazdy Mrocznego Czasu"
 		"DOTA_International2022_Quest_Diretide_Stars_Name_Week19"		"Gwiazdy Mrocznego Czasu"
 		"DOTA_International2022_Quest_Diretide_Stars_Description"		"Zdobądź nawet <span class=\"ScoreTier1\">5</span> gwiazd z cotygodniowych misji w meczu podczas wydarzenia Mrocznego Czasu."
-"DOTA_International2022_Quest_Diretide_InterruptCandyChannel_Name"			"Składowanie zabronione"
+"DOTA_International2022_Quest_Diretide_HitEnemiesWithMount_Name"			"Wyruszamy dziś"
+		"DOTA_International2022_Quest_Diretide_InterruptCandyChannel_Name"			"Składowanie zabronione"
 		"DOTA_International2022_Quest_Diretide_InterruptCandyChannel_Description"	"Przeszkodź {s:current_tier_score} wrogom przy wrzucaniu cukierka do studni."
 
 		"DOTA_International2022_Quest_Diretide_KillBucketSoldier_Name"				"Kto strzeże strażników?"
@@ -37462,12 +37740,21 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		"DOTA_Tooltip_Ability_aghsfort_special_juggernaut_omni_slash_ignite"				"Rozgrzana do białości katana"
 		"aghsfort_juggernaut_blade_fury_mana_cost_cooldown"		"{s:value1}% redukcji czasu oczekiwania / kosztu many {s:ability_name}"
 		"aghsfort_juggernaut_healing_ward_heal_amount"			"{s:ability_name}: +{s:value}% maks. zdrowia na puls"
-"DOTA_Tooltip_ability_aghsfort2_drow_ranger_frost_arrows_damage"						"PREMIA DO OBRAŻEŃ:"
+"DOTA_Tooltip_ability_aghsfort2_drow_ranger_frost_arrows_frost_arrows_movement_speed"	"%SPOWOLNIENIE RUCHU:"
+		"DOTA_Tooltip_ability_aghsfort2_drow_ranger_frost_arrows_damage"						"PREMIA DO OBRAŻEŃ:"
 		"DOTA_Tooltip_ability_aghsfort2_drow_ranger_frost_arrows_slow_duration"					"CZAS TRWANIA SPOWOLNIENIA:"
+		"DOTA_Tooltip_ability_aghsfort2_drow_ranger_wave_of_silence_Lore"						"Traxex preferuje spokój fizycznej walki, korzysta więc ze swego dziedzictwa, by uciąć inkantacje wrogich magów."
 		"DOTA_Tooltip_ability_aghsfort2_drow_ranger_wave_of_silence_abilitycastrange"			"ZASIĘG RZUTU:"
+		"DOTA_Tooltip_ability_aghsfort2_drow_ranger_wave_of_silence_wave_width"					"SZEROKOŚĆ:"
+		"DOTA_Tooltip_ability_aghsfort2_drow_ranger_wave_of_silence_blind_percent"				"%OŚLEPIENIE:"
 		"DOTA_Tooltip_ability_aghsfort2_drow_ranger_wave_of_silence_silence_duration"			"CZAS TRWANIA:"
+		"DOTA_Tooltip_ability_aghsfort2_drow_ranger_wave_of_silence_knockback_duration"			"CZAS TRWANIA ODRZUCENIA:"
+		"DOTA_Tooltip_ability_aghsfort2_drow_ranger_wave_of_silence_knockback_distance_max"		"MAKS. ODRZUCENIE:"
 		"DOTA_Tooltip_ability_aghsfort2_drow_ranger_multishot_arrow_damage_pct"					"%PREMIA DO BAZOWYCH OBRAŻEŃ STRZAŁ:"
+		"DOTA_Tooltip_ability_aghsfort2_drow_ranger_marksmanship_charges"						"LICZBA ATAKÓW:"
+		"DOTA_Tooltip_ability_aghsfort2_drow_ranger_marksmanship_bonus_range"					"PREMIA DO ZASIĘGU:"
 		"DOTA_Tooltip_ability_aghsfort2_drow_ranger_marksmanship_bonus_damage"					"PREMIA DO OBRAŻEŃ:"
+		"DOTA_Tooltip_ability_aghsfort2_drow_ranger_marksmanship_attack_speed_reduction"		"REDUKCJA SZYBKOŚCI ATAKU:"
 "DOTA_Tooltip_modifier_aghsfort2_drow_ranger_frost_arrows_slow_Description"			"Spowolnienie ruchu o %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 		"DOTA_Tooltip_modifier_aghsfort2_drow_ranger_wave_of_silence_movement"				"Szybkonoga"
 		"DOTA_Tooltip_modifier_aghsfort2_drow_ranger_marksmanship_waveofsilence_primed"		"Znaczne instynkty"
@@ -37486,24 +37773,53 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 "DOTA_Tooltip_ability_aghsfort_special_luna_lucent_beam_bloodmoon_spell_lifesteal"			"%KRADZIEŻ ZDROWIA Z CZARÓW:"
 
 		"DOTA_Tooltip_ability_aghsfort_special_luna_lucent_beam_diffusion_radius"					"PROMIEŃ:"
+		"DOTA_Tooltip_ability_aghsfort_special_luna_lucent_beam_diffusion_damage_pct"				"%OBRAŻENIA:"
+
 		"DOTA_Tooltip_ability_aghsfort_special_luna_lucent_beam_moonglow"							"Gorączka obłąkanej"
 		"DOTA_Tooltip_ability_aghsfort_special_luna_lucent_beam_moonglow_duration"					"CZAS TRWANIA:"
 		"DOTA_Tooltip_modifier_aghsfort_luna_lucent_beam_moonglow"									"Gorączka obłąkanej"
-"DOTA_Tooltip_ability_aghsfort_special_luna_lunar_blessing_lunar_remnant_duration"			"CZAS TRWANIA:"
+"DOTA_Tooltip_ability_aghsfort_special_luna_lunar_blessing_moonfright_fear_duration"		"CZAS TRWANIA PRZERAŻENIA:"
 
+		"DOTA_Tooltip_ability_aghsfort_special_luna_lunar_blessing_lunar_remnant_duration"			"CZAS TRWANIA:"
+
+		"DOTA_Tooltip_modifier_aghsfort_luna_lunar_remnant_description"								"Otrzymywanie %dMODIFIER_PROPERTY_TOOLTIP% pkt. obrażeń na sekundę."
+		
 		"DOTA_Tooltip_ability_aghsfort_special_luna_eclipse_lunar_focus_radius"						"PROMIEŃ:"
 		"DOTA_Tooltip_ability_aghsfort_special_luna_lunar_blessing_leap"							"W siódmym niebie"
 		"DOTA_Tooltip_ability_aghsfort_special_luna_lunar_blessing_moon_mark_duration"					"CZAS TRWANIA:"
+		"DOTA_Tooltip_ability_aghsfort_special_luna_lunar_blessing_moon_mark_spell_resist_pct"			"%ZWIĘKSZENIE OBRAŻEŃ OD MAGII:"
+
 		"aghsfort_luna_moon_glaive_percent_mana_cost"					"{s:ability_name}: -{s:value}% kosztu many"
-"DOTA_Tooltip_ability_aghsfort_lich_frost_nova_target_damage"							"OBRAŻENIA ZAD. CELOWI:"
+"DOTA_Tooltip_ability_aghsfort_lich_frost_nova_Description"								"Zsyła na wskazaną wrogą jednostkę raniący mroźny podmuch, który zadaje obrażenia obszarowe, spowalniając jednocześnie ruch i atak na %abilityduration% s. Główny cel otrzymuje obrażenia bazowe oraz obszarowe."
+		"DOTA_Tooltip_ability_aghsfort_lich_frost_nova_Lore"										"Mag mrozu Ethreain nie zapomniał nawet tych najprostszych tajników kontroli nad lodem."
+		"DOTA_Tooltip_ability_aghsfort_lich_frost_nova_aoe_damage"								"OBRAŻENIA OBSZAROWE:"
+		"DOTA_Tooltip_ability_aghsfort_lich_frost_nova_target_damage"							"OBRAŻENIA ZAD. CELOWI:"
 		"DOTA_Tooltip_ability_aghsfort_lich_frost_nova_radius"									"PROMIEŃ:"
+		"DOTA_Tooltip_ability_aghsfort_lich_frost_nova_slow_movement_speed"						"%SPOWOLNIENIE RUCHU:"
 		"DOTA_Tooltip_ability_aghsfort_lich_frost_nova_slow_attack_speed"						"SPOWOLNIENIE ATAKU:"
 
+		"DOTA_Tooltip_ability_aghsfort_lich_sinister_gaze_Lore"						"Uwaga na mróz..."
 		"DOTA_Tooltip_ability_aghsfort_lich_sinister_gaze_duration"						"CZAS TRWANIA:"
+		"DOTA_Tooltip_ability_aghsfort_lich_sinister_gaze_destination"					"%DYSTANS PRZEMIESZCZENIA:"
 		"DOTA_Tooltip_ability_aghsfort_lich_sinister_gaze_abilitycastrange"					"ZASIĘG RZUTU:"
+		"DOTA_Tooltip_ability_aghsfort_lich_sinister_gaze_aoe"					"PROMIEŃ:"
+
+		"DOTA_Tooltip_ability_aghsfort_lich_frost_shield_Lore"									"Magia mrozu otaczająca Ethreaina, która niegdyś chroniła go za śmiertelnego życia, wraz z czasem stała się jeszcze bardziej chłodna."
+		"DOTA_Tooltip_ability_aghsfort_lich_frost_shield_attack_count"							"LICZBA ATAKÓW:"
+		"DOTA_Tooltip_ability_aghsfort_lich_frost_shield_damage_reduction"						"%REDUKCJA OBRAŻEŃ:"
 		"DOTA_Tooltip_ability_aghsfort_lich_frost_shield_damage"									"OBRAŻENIA:"
+		"DOTA_Tooltip_ability_aghsfort_lich_frost_shield_movement_slow"							"%SPOWOLNIENIE:"
 		"DOTA_Tooltip_ability_aghsfort_lich_frost_shield_range"									"ZASIĘG:"
+		"DOTA_Tooltip_ability_aghsfort_lich_frost_shield_slow_duration"							"CZAS TRWANIA SPOWOLNIENIA:"
+		"DOTA_Tooltip_ability_aghsfort_lich_frost_shield_duration"								"CZAS TRWANIA PREMII:"
+		"DOTA_Tooltip_ability_aghsfort_lich_frost_shield_Note0"									"Wrogowie niewrażliwi na czary nie otrzymują obrażeń ani nie zostają spowolnieni."
+		"DOTA_Tooltip_ability_aghsfort_lich_chain_frost_Description"								"Wyzwala kulę mrozu, która odbija się od pobliskich wrogich jednostek maksymalnie %jumps% razy, spowalniając je i zadając im obrażenia za każdym razem, gdy trafia. Wraz z każdym odbiciem zadawane obrażenia są zwiększane."
+		"DOTA_Tooltip_ability_aghsfort_lich_chain_frost_Lore"									"Niemal powszechnie uznawana za szczytowe osiągnięcie magii mrozu, kula mroźnej śmierci Ethreaina napełnia strachem serca tych, którzy ośmielają się stanąć na jego drodze."
 		"DOTA_Tooltip_ability_aghsfort_lich_chain_frost_Note0"									"Chain Frost nie może zostać rozłączone."
+		"DOTA_Tooltip_ability_aghsfort_lich_chain_frost_damage"									"OBRAŻENIA NA ODBICIE:"
+		"DOTA_Tooltip_ability_aghsfort_lich_chain_frost_jumps"									"ODBICIA:"
+		"DOTA_Tooltip_ability_aghsfort_lich_chain_frost_jump_range"								"ZASIĘG ODBICIA:"
+		"DOTA_Tooltip_ability_aghsfort_lich_chain_frost_slow_movement_speed"						"%SPOWOLNIENIE RUCHU:"
 		"DOTA_Tooltip_ability_aghsfort_lich_chain_frost_slow_attack_speed"						"SPOWOLNIENIE ATAKU:"
 		"DOTA_Tooltip_ability_aghsfort_lich_chain_frost_slow_duration"							"CZAS TRWANIA SPOWOLNIENIA:"		
 		"DOTA_Tooltip_ability_aghsfort_lich_chain_frost_bonus_jump_damage"						"WZROST OBRAŻEŃ:"
@@ -37512,7 +37828,9 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		"DOTA_Tooltip_ability_aghsfort_special_lich_sinister_gaze_spawns_ice_spire"				"Złowieszcza iglica"
 		"DOTA_Tooltip_ability_aghsfort_special_lich_sinister_gaze_drains_life"				"Wysysanie życia"
 		"DOTA_Tooltip_ability_aghsfort_special_lich_sinister_gaze_raises_skeletons"				"Szkieletowe przywołanie"
+		"DOTA_Tooltip_modifier_aghsfort_lich_frost_shield_magic_resist_debuff_Description"	"Odporność na magię zmniejszona o %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%."
 		"DOTA_Tooltip_modifier_aghsfort_lich_frost_shield_slow_Description"			"Spowolnienie ruchu o %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
+		"DOTA_Tooltip_modifier_aghsfort_lich_sinister_gaze_Description"				"Złowrogi wzrok Licha czyni cię bezbronnym!"
 		"DOTA_Tooltip_modifier_aghsfort_lich_ice_spire_debuff_Description"			"Spowolnienie ruchu o %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 
 		"aghsfort_lich_chain_frost_jumps_upgrade"								"+{s:value} do liczby skoków z {s:ability_name}"
@@ -37521,15 +37839,24 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 
 		"DOTA_Tooltip_ability_aghsfort_void_spirit_dissimilate_damage"				"OBRAŻENIA:"
 
+		"DOTA_Tooltip_modifier_aghsfort_void_spirit_dissimilate_invis_Description"	"Niewidzialny."
+
 		"DOTA_Tooltip_ability_aghsfort_void_spirit_astral_step_bonus_damage"			"PREMIA DO OBRAŻEŃ OD ATAKU:"
+		"DOTA_Tooltip_ability_aghsfort_void_spirit_astral_step_max_charges"			"MAKS. ŁADUNKÓW:"
 		"DOTA_Tooltip_ability_aghsfort_void_spirit_astral_step_max_travel_distance"	"ZASIĘG:"
 		"DOTA_Tooltip_ability_aghsfort_void_spirit_resonant_pulse_damage"				"OBRAŻENIA:"
 		"DOTA_Tooltip_ability_aghsfort_special_void_spirit_aether_remnant_phantom_attack"				"Cienisty atak"
 		"DOTA_Tooltip_ability_aghsfort_special_void_spirit_aether_remnant_bowling"				"Odwrócona siła"
 		"DOTA_Tooltip_modifier_aghsfort_special_void_spirit_aether_remnant_bowling_impact_slow"				"Odwrócona siła"
+		"DOTA_Tooltip_modifier_aghsfort_special_void_spirit_aether_remnant_bowling_impact_slow_Description"	"Ta jednostka ma spowolnioną szybkość ruchu."
+
 		"DOTA_Tooltip_ability_aghsfort_special_void_spirit_dissimilate_translocate"				"Translokacja"
 		"DOTA_Tooltip_ability_aghsfort_special_void_spirit_dissimilate_expanse"				"Rozległość"
 		"DOTA_Tooltip_ability_aghsfort_special_void_spirit_dissimilate_remnants"				"Trójecho"
+		"DOTA_Tooltip_modifier_aghsfort_special_void_spirit_resonant_pulse_spell_amped_Description"	"Ta jednostka ma obniżoną odporność na magię."
+
+		"DOTA_Tooltip_modifier_aghsfort_void_spirit_resonant_pulse_spell_cadence_Description"	"Ta jednostka ma dodatkowe wzmocnienie czarów."
+
 		"aghsfort_void_spirit_aether_remnant_mana_cost_cooldown"	"{s:value1}% redukcji czasu oczekiwania / kosztu many {s:ability_name}"
 		"aghsfort_void_spirit_dissimilate_mana_cost_cooldown"	"{s:value1}% redukcji czasu oczekiwania / kosztu many {s:ability_name}"
 		"aghsfort_void_spirit_resonant_pulse_mana_cost_cooldown"	"{s:value1}% redukcji czasu oczekiwania / kosztu many {s:ability_name}"
@@ -37543,8 +37870,13 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 
 
 
+		"DOTA_Tooltip_ability_aghsfort_lina_light_strike_array_Description"						"Przyzywa kolumnę płomieni, która zadaje obrażenia i ogłusza wrogów."
+		"DOTA_Tooltip_ability_aghsfort_lina_light_strike_array_Lore"								"Natura Liny pozwala jej skupiać energię słońca i sprawiać, by samo powietrze stanęło w płomieniach."
+		"DOTA_Tooltip_ability_aghsfort_lina_light_strike_array_light_strike_array_aoe"			"PROMIEŃ:"
 		"DOTA_Tooltip_ability_aghsfort_lina_light_strike_array_light_strike_array_stun_duration"	"CZAS TRWANIA OGŁUSZENIA:"
+		"DOTA_Tooltip_ability_aghsfort_lina_light_strike_array_light_strike_array_delay_time"	"OPÓŹNIENIE RZUCANIA CZARU:"
 		"DOTA_Tooltip_ability_aghsfort_lina_light_strike_array_light_strike_array_damage"		"OBRAŻENIA:"
+		"DOTA_Tooltip_ability_aghsfort_lina_fiery_soul_fiery_soul_max_stacks"					"MAKS. INSTANCJI:"
 		"DOTA_Tooltip_ability_aghsfort_lina_fiery_soul_fiery_soul_stack_duration"				"CZAS TRWANIA INSTANCJI:"
 		"DOTA_Tooltip_ability_aghsfort_lina_fiery_soul_active_duration"							"CZAS TRWANIA PO AKTYWACJI:"
 		"DOTA_Tooltip_ability_aghsfort_lina_laguna_blade_damage"								"OBRAŻENIA:"
@@ -37559,7 +37891,11 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		"DOTA_Tooltip_ability_aghsfort_gyrocopter_homing_missile_damage"					"OBRAŻENIA:"
 		"DOTA_Tooltip_ability_aghsfort_gyrocopter_homing_missile_stun_duration"				"CZAS TRWANIA OGŁUSZENIA:"
 "DOTA_Tooltip_ability_aghsfort_gyrocopter_flak_cannon_radius"						"PROMIEŃ:"
-"DOTA_Tooltip_ability_aghsfort_gyrocopter_call_down_radius"							"PROMIEŃ:"
+"DOTA_Tooltip_ability_aghsfort_gyrocopter_call_down_damage_first"					"OBRAŻENIA OD 1. RAKIETY:"
+		"DOTA_Tooltip_ability_aghsfort_gyrocopter_call_down_damage_second"					"OBRAŻENIA OD 2. RAKIETY:"
+		"DOTA_Tooltip_ability_aghsfort_gyrocopter_call_down_slow_first"						"%SPOWOLNIENIE OD 1. RAKIETY:"
+		"DOTA_Tooltip_ability_aghsfort_gyrocopter_call_down_slow_second"						"%SPOWOLNIENIE OD 2. RAKIETY:"
+		"DOTA_Tooltip_ability_aghsfort_gyrocopter_call_down_radius"							"PROMIEŃ:"
 		
 		
 		"DOTA_Tooltip_ability_aghsfort_special_gyrocopter_homing_missile_ride"					"Przejażdżka rakietą"
@@ -37570,11 +37906,17 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		"DOTA_Tooltip_ability_aghsfort_dawnbreaker_fire_wreath_smash_damage"							"DODATKOWE OBRAŻENIA OD UDERZENIA:"
 		"DOTA_Tooltip_ability_aghsfort_dawnbreaker_celestial_hammer_range"							"ZASIĘG RZUTU:"
 		
+		"DOTA_Tooltip_Ability_aghsfort_dawnbreaker_luminosity_bonus_damage"				"%OBRAŻENIA OD TRAFIEŃ KRYTYCZNYCH:"
 		"DOTA_Tooltip_Ability_aghsfort_dawnbreaker_luminosity_heal_radius"				"PROMIEŃ LECZENIA:"
 
 
+		"DOTA_Tooltip_modifier_aghsfort_dawnbreaker_converge_Description"								"Spowolniono, otrzymywanie obrażeń."
+
+		"DOTA_Tooltip_modifier_aghsfort_dawnbreaker_celestial_fire_debuff_Description"					"Spowolniono, otrzymywanie obrażeń."
+
 		"DOTA_Tooltip_ability_aghsfort_special_dawnbreaker_celestial_hammer_hammer_time"					"Czas młota"
 		"DOTA_Tooltip_ability_aghsfort_special_dawnbreaker_celestial_hammer_sunforge"						"Słoneczna kuźnia"
+		"DOTA_Tooltip_modifier_aghsfort_dawnbreaker_bright_foundry_debuff_Description"					"Spowolniono, otrzymywanie obrażeń."
 		"DOTA_Tooltip_ability_aghsfort_special_dawnbreaker_luminosity_light_bringer"					"Dzierżąca światło"
 		"DOTA_Tooltip_ability_aghsfort_special_dawnbreaker_solar_guardian_sun_sentinel"					"Słoneczna strażniczka"
 		"DOTA_Tooltip_modifier_aghsfort_dawnbreaker_sun_sentinel_luminosity_attack_buff"						"Słoneczna strażniczka"
@@ -37582,13 +37924,19 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		"DOTA_Tooltip_ability_aghsfort_special_dawnbreaker_solar_guardian_solar_flare"					"Rozbłysk słoneczny"
 		"aghsfort_dawnbreaker_celestial_hammer_hammer_damage"							"+{s:value1}/{s:value2} obrażeń od młota/podpalenia od {s:ability_name}"
 
+		"DOTA_Tooltip_ability_aghsfort_bane_enfeeble_damage_reduction"							"%REDUKCJA OBRAŻEŃ:"
+		"DOTA_Tooltip_ability_aghsfort_bane_enfeeble_heal_reduction"								"%REDUKCJA LECZENIA/REGENERACJI:"
 		"DOTA_Tooltip_ability_aghsfort_bane_enfeeble_duration"									"CZAS TRWANIA:"
 		"DOTA_Tooltip_ability_aghsfort_bane_brain_sap_brain_sap_damage"							"OBRAŻENIA:"
 		"DOTA_Tooltip_ability_aghsfort_bane_brain_sap_cast_range"								"ZASIĘG RZUTU:"
 		"DOTA_Tooltip_ability_aghsfort_bane_nightmare_abilitycastrange"							"ZASIĘG RZUTU:"
 		"DOTA_Tooltip_ability_aghsfort_bane_nightmare_nightmare_tick_damage"						"OBRAŻENIA NA SEKUNDĘ:"
 		"DOTA_Tooltip_ability_aghsfort_bane_nightmare_duration"									"CZAS TRWANIA:"				
+		"DOTA_Tooltip_ability_aghsfort_bane_fiends_grip_Lore"									"Ofiary Atroposa są często rozrywane przez żywe projekcje swoich własnych koszmarów."
 		"DOTA_Tooltip_ability_aghsfort_bane_fiends_grip_fiend_grip_damage"						"OBRAŻENIA:"
+		"DOTA_Tooltip_ability_aghsfort_bane_fiends_grip_channel_time"							"CZAS TRWANIA INKANTACJI:"
+		"DOTA_Tooltip_ability_aghsfort_bane_fiends_grip_fiend_grip_mana_drain"					"%WYSYSANA MANA:"
+		
 		"DOTA_Tooltip_ability_aghsfort_special_bane_enfeeble_spill"							"Wspólne męki"
 		"DOTA_Tooltip_ability_aghsfort_special_bane_enfeeble_end_fiends_grip"				"Mroczne wici"
 		"DOTA_Tooltip_ability_aghsfort_special_bane_fiends_grip_spread"						"Czarny ichor"
@@ -37598,7 +37946,8 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		"DOTA_Tooltip_ability_aghsfort_special_bane_enfeeble_damage_steal"					"Prawdziwa groza"
 		"DOTA_Tooltip_modifier_aghsfort_bane_enfeeble_damage_steal_buff"					"Prawdziwa groza"
 		"DOTA_Tooltip_modifier_aghsfort_bane_brain_sap_nightmare_mirror"					"Chmura kruchości"
-"DOTA_Tooltip_ability_aghsfort_phoenix_icarus_dive_damage_per_second"		"OBRAŻENIA NA SEKUNDĘ:"
+"DOTA_Tooltip_ability_aghsfort_phoenix_icarus_dive_hp_cost_perc"			"%KOSZT ZDROWIA:"
+		"DOTA_Tooltip_ability_aghsfort_phoenix_icarus_dive_damage_per_second"		"OBRAŻENIA NA SEKUNDĘ:"
 		"DOTA_Tooltip_ability_aghsfort_phoenix_icarus_dive_slow_movement_speed_pct"	"%SPOWOLNIENIE RUCHU:"
 		"DOTA_Tooltip_ability_aghsfort_phoenix_fire_spirits_radius"					"PROMIEŃ:"
 		"DOTA_Tooltip_ability_aghsfort_phoenix_fire_spirits_damage_per_second"		"OBRAŻENIA NA SEKUNDĘ:"
@@ -37629,6 +37978,8 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 
 		// CLINKZ HERO START
 		"DOTA_Tooltip_ability_aghsfort_clinkz_burning_barrage"						"Burning Barrage"
+		"DOTA_Tooltip_ability_aghsfort_clinkz_burning_barrage_abilitychanneltime"	"CZAS TRWANIA INKANTACJI:"
+		"DOTA_Tooltip_ability_aghsfort_clinkz_burning_barrage_wave_count"			"WYSTRZELONE STRZAŁY:"
 		"DOTA_Tooltip_ability_aghsfort_clinkz_burning_barrage_range"				"ZASIĘG:"
 		"DOTA_Tooltip_ability_aghsfort_clinkz_searing_arrows_damage_bonus"		"PREMIA DO OBRAŻEŃ:"
 		"DOTA_Tooltip_ability_aghsfort_clinkz_skeleton_walk_duration"				"CZAS TRWANIA:"
@@ -37638,6 +37989,9 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		"DOTA_Tooltip_ability_aghsfort_special_clinkz_burning_barrage_tri_split"				"Ogień rozdzielany"
 		"DOTA_Tooltip_ability_aghsfort_special_clinkz_burning_barrage_singe"				"Nadpalenie"
 		"DOTA_Tooltip_ability_aghsfort_special_clinkz_searing_arrows_ignite"				"Podpalenie"
+		"DOTA_Tooltip_modifier_aghsfort_clinkz_searing_arrows_melter_Description"	"Posiada zredukowany pancerz."
+
+		"DOTA_Tooltip_modifier_aghsfort_clinkz_burning_army_stunning_skeletons_debuff_Description"	"Ogłuszono."
 "DOTA_Tooltip_ability_aghsfort_sand_king_burrowstrike_burrow_duration"					"CZAS TRWANIA OGŁUSZENIA:"
 		"DOTA_Tooltip_ability_aghsfort_sand_king_burrowstrike_burrowstrike_cast_range"						"ZASIĘG RZUTU:"
 		"DOTA_Tooltip_ability_aghsfort_sand_king_burrowstrike_damage"					"OBRAŻENIA:"
@@ -37650,6 +38004,7 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		"DOTA_Tooltip_ability_aghsfort_special_sand_king_sandstorm_independant"					"Samoistna burza"
 	   "DOTA_Tooltip_ability_aghsfort_special_sand_king_epicenter_allies"						"Pancentrum"
 "DOTA_Tooltip_ability_aghsfort_kunkka_torrent_Description"								"Przyzywa wznoszący się strumień, który po krótkim czasie wyrzuca wrogie jednostki w powietrze, ogłuszając, zadając obrażenia i spowalniając ich ruchy."
+		"DOTA_Tooltip_ability_aghsfort_kunkka_torrent_delay"									"OPÓŹNIENIE:"
 		"DOTA_Tooltip_ability_aghsfort_kunkka_torrent_slow_duration"							"CZAS TRWANIA SPOWOLNIENIA:"
 		"DOTA_Tooltip_ability_aghsfort_kunkka_torrent_stun_duration"							"CZAS TRWANIA OGŁUSZENIA:"
 		"DOTA_Tooltip_ability_aghsfort_kunkka_torrent_movespeed_bonus"							"%SPOWOLNIENIE RUCHU:"
@@ -38222,6 +38577,8 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 	//"DOTA_Tooltip_ability_aghsfort_snapfire_lil_shredder_buff_duration_tooltip"	"BUFF DURATION:"
 	"DOTA_Tooltip_ability_aghsfort_snapfire_lil_shredder_attack_range_bonus"	"PREMIA DO ZASIĘGU:"
 	"DOTA_Tooltip_ability_aghsfort_snapfire_lil_shredder_damage"		"STAŁE OBRAŻENIA NA STRZAŁ:"
+	"DOTA_Tooltip_ability_aghsfort_snapfire_lil_shredder_armor_reduction_per_attack"	"UTRATA PANCERZA NA INSTANCJĘ:"
+	"DOTA_Tooltip_ability_aghsfort_snapfire_lil_shredder_armor_duration"	"CZAS TRWANIA UTRATY PANCERZA:"
 	"DOTA_Tooltip_ability_aghsfort_snapfire_lil_shredder_buffed_attacks"	"LICZBA ATAKÓW:"
 
 	"DOTA_Tooltip_modifier_aghsfort_snapfire_lil_shredder_buff"				"Lil' Shredder"
@@ -38692,6 +39049,7 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 	"DOTA_Tooltip_ability_aghsfort_sniper_concussive_grenade_base_damage"			"BAZOWE OBRAŻENIA:"
 	"DOTA_Tooltip_ability_aghsfort_sniper_concussive_grenade_radius"				"PROMIEŃ:"
 	"DOTA_Tooltip_ability_aghsfort_sniper_concussive_grenade_knockback_distance"	"DYSTANS ODRZUCENIA:"
+	"DOTA_Tooltip_ability_aghsfort_sniper_concussive_grenade_slow"					"%SPOWOLNIENIE:"
 	"DOTA_Tooltip_ability_aghsfort_sniper_concussive_grenade_debuff_duration"		"CZAS TRWANIA SPOWOLNIENIA:"
 	"DOTA_Tooltip_modifier_aghsfort_sniper_shrapnel_charge_counter"				"Shrapnel – ładunki"
 	"DOTA_Tooltip_modifier_aghsfort_sniper_shrapnel_charge_counter_Description"	"Możesz użyć Shrapnel, gdy są dostępne ładunki."
@@ -39472,6 +39830,7 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		"DOTA_Tooltip_ability_aghsfort_templar_assassin_psi_blades_Note1"						"Dodatkowe efekty przy ataku takie jak stłuczenie zadziałają tylko na główny cel."
 		"DOTA_Tooltip_ability_aghsfort_templar_assassin_psi_blades_attack_spill_range"			"MNOŻNIK ZASIĘGU PO ROZDZIELENIU:"
 		"DOTA_Tooltip_ability_aghsfort_templar_assassin_psi_blades_attack_spill_pct"				"%ILOŚĆ ROZDZIELENIA:"
+		"DOTA_Tooltip_ability_aghsfort_templar_assassin_psi_blades_attack_spill_penalty"			"%REDUKCJA NA CEL:"
 		"DOTA_Tooltip_ability_aghsfort_templar_assassin_psionic_trap"							"Psionic Trap"
 		"DOTA_Tooltip_ability_aghsfort_templar_assassin_psionic_trap_Lore"						"Dzięki zasięgowi Ukrytej Świątyni nikt nie umknie czujnemu oku Templar Assassin."
 		"DOTA_Tooltip_ability_aghsfort_templar_assassin_psionic_trap_Description"				"Templar Assassin rozkłada mistyczne pułapki, które z ukrycia śledzą ruchy wrogich jednostek. Gdy zostają uruchomione automatycznie po %trap_delay_time% s, spowalniają wrogów na obszarze o %movement_speed_min%%%. Pułapki zadają obrażenia podczas czasu trwania spowolnienia."
@@ -39777,9 +40136,31 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 "DOTA_LabyrinthBlessing_elite_upgrade_Name:p{instance_value}"	"+{d:instance_value} ulepszenie odłamku#|#+{d:instance_value} ulepszenia odłamku#|#+{d:instance_value} ulepszeń odłamku#|#+{d:instance_value} ulepszeń odłamku"
 		"DOTA_LabyrinthBlessing_starting_gold_Name:p{instance_value}"	"+{d:instance_value} szt. złota#|#+{d:instance_value} szt. złota#|#+{d:instance_value} szt. złota#|#+{d:instance_value} szt. złota"
 		"DOTA_LabyrinthBlessing_upgrade_reroll_Name:p{instance_value}"	"+{d:instance_value} przelosowanie pomniejszego odłamku#|#+{d:instance_value} przelosowania pomniejszego odłamku#|#+{d:instance_value} przelosowań pomniejszego odłamku#|#+{d:instance_value} przelosowań pomniejszego odłamku"
+		"DOTA_LabyrinthBlessing_stat_agi_Name"							"+{d:instance_value} pkt. Zręczności"
+		"DOTA_LabyrinthBlessing_stat_int_Name"							"+{d:instance_value} pkt. Inteligencji"
+		"DOTA_LabyrinthBlessing_stat_str_Name"							"+{d:instance_value} pkt. Siły"
+		"DOTA_LabyrinthBlessing_stat_magic_resist_Name"					"+{d:instance_value}% odporności na magię"
 		"DOTA_LabyrinthBlessing_extra_life_Name:p{instance_value}"		"+{d:instance_value} maks. życie#|#+{d:instance_value} maks. życia#|#+{d:instance_value} maks. żyć#|#+{d:instance_value} maks. życia"
 		"DOTA_LabyrinthBlessing_legacy_hero_unlock_Desc:g"				"#|f|#{g:dota_hero_name:instance_hero} powróciła, by pomóc w eksploracji Skarbca Kontinuum.#|n|#{g:dota_hero_name:instance_hero} powróciło, by pomóc w eksploracji Skarbca Kontinuum.#|mp|#{g:dota_hero_name:instance_hero} powrócił, by pomóc w eksploracji Skarbca Kontinuum.#|ma|#{g:dota_hero_name:instance_hero} powrócił, by pomóc w eksploracji Skarbca Kontinuum.#|mi|#{g:dota_hero_name:instance_hero} powrócił, by pomóc w eksploracji Skarbca Kontinuum."
-"DOTA_Tooltip_ability_item_oblivions_locket_bonus_all_stats"		"+$all"
+"DOTA_AghsLab_AscensionModifier_1"		"Zacznij od 1 życia mniej.<br>Przeciwnicy są silniejsi."
+		"DOTA_AghsLab_Depth1"					"1 – 1"
+		"DOTA_AghsLab_Depth2"					"1 – 2"
+		"DOTA_AghsLab_Depth3"					"1 – 3"
+		"DOTA_AghsLab_Depth4"					"1 – 4"
+		"DOTA_AghsLab_Depth5"					"1 – 5"
+		"DOTA_AghsLab_Depth6"					"1 – 6"
+		"DOTA_AghsLab_Depth7"					"2 – 1"
+		"DOTA_AghsLab_Depth8"					"2 – 2"
+		"DOTA_AghsLab_Depth9"					"2 – 3"
+		"DOTA_AghsLab_Depth10"					"2 – 4"
+		"DOTA_AghsLab_Depth11"					"2 – 5"
+		"DOTA_AghsLab_Depth12"					"2 – 6"
+		"DOTA_AghsLab_Depth13"					"3 – 1"
+		"DOTA_AghsLab_Depth14"					"3 – 2"
+		"DOTA_AghsLab_Depth15"					"3 – 3"
+		"DOTA_AghsLab_Depth16"					"3 – 4"
+		"DOTA_AghsLab_Depth17"					"3 – 5"
+		"DOTA_Tooltip_ability_item_oblivions_locket_bonus_all_stats"		"+$all"
 		"DOTA_Tooltip_ability_item_pelt_of_the_old_wolf_bonus_armor"		"+$armor"
 		"DOTA_Tooltip_ability_item_pelt_of_the_old_wolf_bonus_move_speed"	"+$move_speed"
 		"DOTA_Tooltip_ability_item_pelt_of_the_old_wolf_bonus_evasion"		"%+$evasion"
@@ -39787,6 +40168,7 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		"DOTA_Tooltip_ability_item_paw_of_lucius_bonus_strength"			"+$str"
 		"DOTA_Tooltip_ability_item_paw_of_lucius_bonus_attack_speed"		"+$attack"
 
+		"DOTA_Tooltip_ability_item_longclaws_amulet_spell_lifesteal_pct"	"%+kradzieży zdrowia z czarów"
 		"DOTA_Tooltip_ability_item_longclaws_amulet_cooldown_reduction_pct" "%+$cooldown_reduction"
 		"DOTA_Tooltip_ability_item_longclaws_amulet_mana_cost_reduction_pct" "%+$manacost_reduction"
 
@@ -39801,6 +40183,7 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		"DOTA_Tooltip_ability_item_bogduggs_baldric_bonus_armor"			"+$armor"
 
 		"DOTA_Tooltip_ability_item_bogduggs_lucky_femur"						"Kość szczęścia Bogdugga"
+		"DOTA_Tooltip_ability_item_bogduggs_lucky_femur_Lore"					"I kolejny!"
 		"DOTA_Tooltip_ability_item_bogduggs_lucky_femur_mana_regen_sec"			"+$mana_regen"
 
 		"DOTA_Tooltip_ability_item_sign_of_the_arachnid_bonus_agility"			"+$agi"
@@ -39884,6 +40267,10 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		"DOTA_Tooltip_ability_item_aghsfort_bloodstone_bonus_mana"			"+$mana"
 		"DOTA_Tooltip_ability_item_aghsfort_bloodstone_bonus_intellect"		"+$int"
 "DOTA_Tooltip_ability_item_aghsfort_bloodstone_bonus_health_regen"		"+$hp_regen"
+		"DOTA_Tooltip_ability_item_aghsfort_bloodstone_spell_amp"				"%+wzmocnienia czarów"
+		"DOTA_Tooltip_ability_item_aghsfort_bloodstone_mana_regen_multiplier"	"%+wzmocnienia regeneracji many"
+		"DOTA_Tooltip_ability_item_aghsfort_bloodstone_spell_lifesteal_amp"		"%+wzmocnienia kradzieży zdrowia z czarów"
+
 		// AGHANIM'S LABYRINTH - END
 
 		// Fall2021 Collector's Cache
@@ -39892,16 +40279,26 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		"DOTA_FrontPage_Fall2021_CollectorsCache_Voting_Header"	"Głosowanie na Skrytkę Kolekcjonera"
 		"DOTA_FrontPage_Fall2021_CollectorsCache_Voting_Title"	"Głosowanie już trwa!"
 		"DOTA_FrontPage_Fall2021_CollectorsCache_Voting_Desc"	"Głosujcie na swoje ulubione zestawy do nadchodzącej Skrytki Kolekcjonera."
-"DOTA_TeamMute_Title"		"Wyciszenie drużyny"
+		// Fall2021 Collector's Cache End
+
+		"DOTA_Featured_Gamemode_Reward"			"Nagroda weekendowej atrakcji"
+
+		"DOTA_TeamMute_Title"		"Wyciszenie drużyny"
 		"DOTA_TeamMute_Text"		"Kliknij, aby wyciszyć wszystkich członków tej drużyny do końca meczu poza tymi w twoim zespole, gildii lub liście znajomych."
 
 		"DOTA_Matchmaking_LongWait_Title" "Wykryto długi czas oczekiwania na grę"
 		"DOTA_Matchmaking_LongWait_Text" "System wyszukiwania gier znalazł niewielu kompatybilnych graczy dla twojego zespołu. Wybranie większej liczby regionów lub trybów gry może pomóc w szybszym znalezieniu meczu."
 
 		"DOTA_Stickers_ComingSoonSectionTitle"					"Naklejki"
+		"DOTA_Stickers_ComingSoonLaunchDate"					"Premiera wkrótce"
+		"DOTA_ComingSoon_SectionTitle"							"Już wkrótce!"
+		"DOTA_Talent_ComingSoonLaunchDate"						"Premiera wkrótce"
+
 		"DOTA_International2022_CustomGameUpcomingDescription"	"Przewidywanie zachcianek i kaprysów Roshana bywa zyskowne, co wzbudza zainteresowanie u każdego, od okrutnych intrygantów przez potężnych bohaterów, a na wysoce urodzonych władcach kończąc. Ale tym razem nawet Roshan nie jest gotowy na reperkusje swojej półcyklicznej gorączki słodkości – która pędzi, by pojawić się w nowej, mroźnej odsłonie. Przygotuj więc swoje wiadra na cukierki i weź ze sobą dodatkową parę rękawiczek i twoje ulubione kosy. Po ukoronowaniu mistrzów The International w Singapurze rozpocznie się nowy, destrukcyjny sezon Mrocznego Czasu."
 // Hero loadout
 		"DOTA_FacelessVoidArcana_Label"									"Postęp arkanów"
+		"DOTA_FacelessVoidArcana_Score"									"{s:current_score}/{d:unlock_value}"
+		
 		//FACELESS VOID ARCANA DEBUT
 		"Debut_Arcana_FacelessVoid_Intro" 								"Nowy pakiet arkanów dla Faceless Voida" 
 		"Debut_Arcana_FacelessVoid_Lore"									"Ten niegdyś oddany akolita Clasza okazał się złamać przysięgę, zdradzając swą wiarę i kradnąc skrawek potęgi z niezbadanej przestrzeni swojego boga. Ale to połączenie z Claszem spowodowało otwarcie okropnej bramy, przez co bezlicy uzurpator musi teraz znajdować ofiary, by sprostać niekończącym się żądaniom swego byłego pana i samemu nie zostać pochłoniętym przez moc, która zdolna jest rozedrzeć ten świat."
@@ -39928,11 +40325,22 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		"Debut_Arcana_FacelessVoid_Feature_6_Desc" 						"Poprowadź Faceless Voida podczas jego misji zdobycia 250 punktów, by odblokować alternatywny styl „Claszurska Supremacja”. Za wroga zabitego w chronosferze otrzymasz 1 punkt (maksymalnie 6 punktów w 1 wygranej grze). Liczą się zarówno wasze zabójstwa, jak i asysty, więc nie bój się pozwolić swoim pełnolicym znajomym dołączyć do akcji."		
 		
 		"DOTA_Style_FacelessVoid_Arcana_Style1"				"Claszurska Supremacja"
-"DOTA_RazorArcana_Label"						"Postęp arkanów"
-"DOTA_BattlePass2022_Part1_Label"								"Część I: The International"
+"DOTA_RazorArcana_Score"						"{s:current_score}/{d:unlock_value}"
+		"DOTA_RazorArcana_Label"						"Postęp arkanów"
+		// END Razor Arcana
+
+		"DOTA_Profile_Tooltip_LifetimeGames"							"Rozegranych gier: {d:lifetime_games}"
+
+		"DOTA_BattlePass2022_Part1_Label"								"Część I: The International"
+		"DOTA_BattlePass2022_Part1_DateRange"							"1 września – 2 listopada"
+		"DOTA_BattlePass2022_Part2_DateRange"							"3 listopada – 12 stycznia"
+
 		"DOTA_International2022_Level1000Replica"						"Replika Egidy Czempionów w skali 1:5"
 "DOTA_BattlePass2022_Schedule_Part1Highlights_Action"					"Pokaż nagrody"
 
+		"DOTA_BattlePass2022_Schedule_QualifierPredictions_Action"				"Typuj"
+
+		"DOTA_BattlePass2022_Schedule_RegionalQualifiers_Heading"				"Kwalifikacje regionalne"
 		"DOTA_BattlePass2022_Schedule_RegionalQualifiers_Description"			"Drużyny z sześciu regionów walczą o zdobycie miejsca na The International."
 		"DOTA_BattlePass2022_Schedule_RegionalQualifiers_Action"				"Obejrzyj teraz"
 
@@ -39943,6 +40351,11 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		"DOTA_BattlePass2022_ShortFilmContestVoting_Remaining"					"na oddanie głosów"
 		"DOTA_BattlePass2022_ShortFilmContestVoting_Finished"					"Głosowanie zakończyło się"
 
+		"DOTA_BattlePass2022_Schedule_Stickers_Heading"							"Naklejki są już dostępne!"
+		"DOTA_BattlePass2022_Schedule_Stickers_Description"						"Zbieraj naklejki, by wspierać twoich ulubionych graczy, drużyny i komentatorów."
+		"DOTA_BattlePass2022_Schedule_Stickers_Action"							"Rozpocznij"
+
+		"DOTA_BattlePass2022_Schedule_PAPersona_Heading"						"Persona dla Phantom Assassin"
 		"DOTA_BattlePass2022_Schedule_TrueSight_Heading"						"Tydzień True Sight"
 		"DOTA_BattlePass2022_Schedule_TrueSight_Action"							"Obejrzyj teraz"
 
@@ -39950,7 +40363,10 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		"DOTA_BattlePass2022_Schedule_TheInternationalPred_Description"			"Typuj bohaterów, drużyny i graczy na The International."
 		"DOTA_BattlePass2022_Schedule_TheInternationalPred_DescriptionPlayoffs"			"Typuj play-offy The International 2022."
 
+		"DOTA_BattlePass2022_Schedule_LastChangeQual_Heading"					"Kwalifikacje ostatniej szansy"
 		"DOTA_BattlePass2022_Schedule_SwagBag_Heading"							"Pakiet upominkowy The International"
+		"DOTA_BattlePass2022_Schedule_SwagBag_Description"						"Uczcij pełen radości sezon Dota, odbierając darmowe arkana, Przepustkę Bitewną oraz dostęp do Dota Plus."
+
 		"DOTA_BattlePass2022_Schedule_TIPointsSale_Heading"						"Wyprzedaż pakietu!"
 		"DOTA_BattlePass2022_Schedule_TIPointsSale_SubTitle"					"The International 2022"
 		"DOTA_BattlePass2022_Schedule_TIPointsSale_ActionLabel"					"Kup {s:item_price}"
@@ -39961,17 +40377,28 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 
 		"DOTA_BattlePass2022_Schedule_GroupStage_Heading"						"Faza grupowa The International"
 		"DOTA_BattlePass2022_Schedule_PlayOffs_Heading"							"Faza play-off The International"
+		"DOTA_BattlePass2022_Schedule_PlayOffs_UpperDivision"					"Górna dywizja"
+		"DOTA_BattlePass2022_Schedule_PlayOffs_LowerDivision"					"Dolna dywizja"
+
 		"DOTA_BattlePass2022_Schedule_Finals_Heading"							"Finał The International"
+"DOTA_BattlePass2022_Schedule_Diretide_Heading"							"Sezonowy tryb gry"
+		"DOTA_BattlePass2022_Schedule_CandyShop_Heading"						"Cukierkownia"
+		"DOTA_BattlePass2022_CandyPoints_PlusOne"								"+1"
 "DOTA_International2022_Achievement_Make_A_Gift_Name"							"Prawdziwy duch Dota"
 		"DOTA_International2022_Achievement_Make_A_Gift_Description"					"Podaruj znajomemu Przepustkę Bitewną"
+		"DOTA_International2022_Achievement_Make_A_Gift2_Name"							"Starożytna mistyczna trójca"
 		"DOTA_International2022_Achievement_Make_A_Gift2_Description"					"Podaruj Przepustkę Bitewną 3 znajomym"
+		"DOTA_International2022_Achievement_Make_A_Gift3_Name"							"Oto moja ekipa"
 		"DOTA_International2022_Achievement_Make_A_Gift3_Description"					"Podaruj Przepustkę Bitewną 5 znajomym"
 
 		"DOTA_EconItemSet_Tooltip_Immortals_TI11_Limited_Tradeability"		"Zbywalne po The International 2023"
 		"DOTA_EconItemSet_Tooltip_Emblem_TI11_Expiration"					"Traci ważność przed Przepustką Bitewną The International 2023"
 		"DOTA_EconItemSet_Tooltip_Immortals_TI12_Limited_Tradeability"		"Zbywalne po The International 2024"
 		"DOTA_EconItemSet_Tooltip_Immortals_TI13_Limited_Tradeability"		"Zbywalne po The International 2025"
-"DOTA_Treasure_StickerPackDesc"									"Każdy pojemnik zawiera 1 naklejkę."
+
+		"DOTA_Duel_Toast_RejectDuel"				"Odrzuć"
+"DOTA_Tooltip_ability_seasonal_ti11_conga_line"				"Conga"
+		"DOTA_Treasure_StickerPackDesc"									"Każdy pojemnik zawiera 1 naklejkę."
 		"DOTA_Treasure_StickerPackDescSpecific"							"Każdy pojemnik zawiera 1 z następujących naklejek."
 		"DOTA_Treasure_StickerPack_CurrentlyPeeking"					"Obecnie dostępne:"
 		"DOTA_OwnedItemDetails_QualityCount"							"4 jakości"
@@ -40065,21 +40492,38 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		"DOTA_StickerCollections_Reset"							"Resetuj"
 		"DOTA_StickerCollections_Tutorial1"						"Na początek potrzebujesz kilku naklejek. Sprawdź <a href=\"event:DOTAShowBPInternational2022StickerStorePage()\"><b>sklep z naklejkami</b></a> lub odbierz pojemniki z naklejką z <a href=\"event:DOTAShowBPInternational2022HomePage()\"><b>Przepustki Bitewnej</b></a>."
 		"DOTA_StickerCollections_Tutorial_Next"					"Dalej"
+		"DOTA_StickerCollections_Empty_NoRow"					"Dodaj rząd, aby zacząć"
+
+		"DOTA_StickerCollections_Welcome1"						"• Witaj w •"
+		"DOTA_Sticker_BuyOnMarket_Short"						"Rynek"
 		"DOTA_Armory_Category_Stickers"							"Naklejki"
 		"DOTA_HeroGrid_Stickers"								"Naklejki"
 		"DOTA_Sticker_TeamStickersOwned" 						"Posiadane naklejki drużyn"
 		"DOTA_stickers_voice_lines_season_6_zh"					"Kwestie dialogowe ekspertów w języku chińskim – TI 2022"
 		"DOTA_stickers_voice_lines_season_6_en"					"Kwestie dialogowe ekspertów w języku angielskim – TI 2022"
 		"DOTA_stickers_voice_lines_season_6_ru"					"Kwestie dialogowe ekspertów w języku rosyjskim – TI 2022"
+		"DOTA_stickers_voice_lines_season_6_pt"					"Kwestie dialogowe ekspertów w języku portugalskim – TI 2022"
 		"DOTA_stickers_voice_lines_season_6_es"					"Kwestie dialogowe ekspertów w języku hiszpańskim – TI 2022"
 "DOTA_Stickers_Store_ChampionsDescription"						"Zbieraj naklejki z mistrzowskiej edycji tegorocznych zwycięzców, by uczcić kolejny rok The International."
 		"DOTA_Champions2022_WatchReplayButtonLabel"						"Zobacz powtórkę"
+		"DOTA_Champions2022_BuyStickerButtonLabel"						"Kup naklejkę mistrza"
+
 		"DOTA_BattlePass2022_Schedule_CollectorsCacheVoting_Heading" "Głosowanie na Skrytkę Kolekcjonera"
+		"DOTA_International2022_CollectorsCacheVoting" "Głosuj"
+
+		"DOTA_BattlePass2022_Schedule_CollectorsCache2Available_Heading" "Skrytka Kolekcjonera 2 jest już dostępna"
+		"DOTA_CollectorsCacheAvailable_Title"							"Skrytka Kolekcjonera 2022"
+		"DOTA_CollectorsCacheAvailable_Description"						"Wyniki głosowania już dostępne! Wyłoniono <span class='DescriptionEmphasis'>18 zwycięzców</span>, którzy będą reprezentować tegoroczną <span class='DescriptionEmphasis'>Skrytkę Kolekcjonera!</span>"
 		"DOTA_CollectorsCacheAvailable_GoToTreasure"					"Zobacz skarb"
+		"DOTA_CollectorsCacheAvailable_Loading"							"Wczytywanie bohaterów"
+		"DOTA_CollectorsCacheAvailable_FailedToLoad"					"W tej chwili nie można wczytać bohaterów."
+
 		"DOTA_2022Diretide_CollectorsCache_Treasure_1"		"1 skarb"
 		"DOTA_2022Diretide_CollectorsCache_Treasure_2"		"7 skarbów"
 		"DOTA_2022Diretide_CollectorsCache_Treasure_3"		"14 skarbów"
-		"DOTA_BattlePassEndingTitle"				"Koniec za"
+		"DOTA_2022Diretide_CollectorsCache_Disclaimer"		"Przedmioty ze skrytki są dostępne tylko do 12 stycznia."
+
+        "DOTA_BattlePassEndingTitle"				"Koniec za"
 		"DOTA_BattlePassEndingCountdown"			"0 <b>dni</b> 0 <b>godzin</b> 0 <b>minut</b> 0 <b>sekund</b>"
 		//OFRENDA MINIGAME STUFF
 		"DOTA_Ofrenda_Available"			"W powietrzu unosi się migotliwa, eteryczna mgła. Głos ducha mówi coś szeptem, ale nie potrafisz go zrozumieć..."
@@ -40284,7 +40728,10 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		"DOTA_NeutralItemPicker_Reroll"		"Przelosowanie"
 		"DOTA_Miniboss_Scepter"				"%s1 otrzymuje efekt Aghanim's Scepter"
 		"DOTA_Miniboss_Shard"				"%s1 otrzymuje Aghanim's Shard"
-"DOTA_PlayerDraft_LocalPlayerBadge_Label"	"Ty"
+"DOTA_PlayerDraft_Intro_Captain_Title"		"Przygotuj się na zebranie swojej drużyny nieśmiertelnych"
+		"DOTA_PlayerDraft_Intro_Player_Title"		"Kapitanowie drużyn"
+		"DOTA_PlayerDraft_Intro_Versus"				"KONTRA"
+		"DOTA_PlayerDraft_LocalPlayerBadge_Label"	"Ty"
 		"DOTA_PlayerDraft_YourPick"					"{s:local_player_name}, teraz twoja kolej"
 		"DOTA_PlayerDraft_RadiantPick"				"{s:radiant_captain_name} wybiera..."
 		"DOTA_PlayerDraft_DirePick"					"{s:dire_captain_name} wybiera..."
@@ -40295,7 +40742,14 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		"DOTA_PlayerDraft_RadiantTurn"				"{s:radiant_team_name}"
 		"DOTA_PlayerDraft_DireTurn"					"{s:dire_team_name}"
 
+		"DOTA_PlayerDraft_PreferredRole"			"Preferowane role"
 		"DOTA_PlayerDraft_PreferredTeam"			"Preferowana drużyna"
+		"DOTA_PlayerDraft_PickPlayer"				"Wybierz"
+		"DOTA_PlayerDraft_SuggestPlayer"			"Poleć"
+
+		"DOTA_PlayerDraft_PreferredRole_None"		"--"
+		"DOTA_PlayerDraft_PreferredTeam_None"		"--"
+
 		"dota_pregame_shop_pregame_consumables"		"Zużywalne"
 		"dota_pregame_shop_pregame_attributes"		"Atrybuty"
 		"dota_pregame_shop_pregame_accessories"		"Akcesoria"
@@ -40304,12 +40758,20 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		"DOTA_patch_note_item_general"				"Zmiany ogólne"
 		"DOTA_patch_note_neutral_item_general"		"Zmiany ogólne"
 		
+		"DOTA_Armory_RepackageFailure_Tradeable"	"Ten przedmiot jest niewymienialny."
 		"DOTA_Armory_RepackageFailure_Equipped"		"Ten przedmiot jest w wyposażeniu."
-"DOTA_HeroLoadout_TabTitle_ProgressionTabContents"		"Postęp"
+		"DOTA_Armory_RepackageFailure_InternalError"	"Błąd wewnętrzny"
+		"DOTA_Armory_RepackageFailure_ItemIsNotABundle"	"Sugerowany zestaw nie jest zestawem?"
+		"DOTA_Armory_RepackageFailure_UnableToDeleteItem" "Nie można usunąć przedmiotu."
+		"DOTA_Armory_RepackageFailure_ItemUntradeable" "Przedmiot jest niewymienialny."
+		// Loadout
+		"DOTA_HeroLoadout_TabTitle_LoadoutContents"		"Wyposażenie"
+		"DOTA_HeroLoadout_TabTitle_ProgressionTabContents"		"Postęp"
 		"DOTA_HeroLoadout_TabTitle_StatsTabContents"		"Statystyki"
 		"DOTA_HeroLoadout_TabTitle_GuidesTabContents"		"Poradniki"
 		"DOTA_HeroLoadout_TabTitle_GlobalStatsContents"		"Trendy"
 		"DOTA_HeroLoadout_TabTitle_AboutTabContents"		"Informacje"
+		"DOTA_HeroLoadout_TabTitle_ChangesTabContents"		"Zmiany"
 		"DOTA_HeroLoadout_CustomizeFullSetTitle"		"– Pełne zestawy"
 		"DOTA_HeroLoadout_CustomizeFullSetTitleNoDash"	"Pełne zestawy"
 		"DOTA_HeroLoadout_CustomizeAbilityEffects"	"Efekty umiejętności"
@@ -40325,13 +40787,19 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		"DOTA_Collection_Filter_Owned"				"Posiadane ({d:count})"
 		"DOTA_Collection_Filter_Available"			"Do nabycia ({d:count})"
 		"DOTA_Collection_Filter_Unavailable"		"Niedostępne ({d:count})"
+		"DOTA_Collection_Filter_Custom"				"Zapisane zestawy ({d:count})"
+		"DOTA_Collection_Filter_Browse_Tradeable"	"Wymienialne"
+		"DOTA_Collection_Filter_Browse_Marketable"	"Zbywalne"
 		"DOTA_Collection_Filter_Browse_Bundles"		"Pakiety"
+		"DOTA_Collection_Filter_Browse_Giftable"	"Podarunkowe"
+		"DOTA_Collection_SearchHeroListLabel"		"Filtruj listę bohaterów"
 		"DOTA_Collection_SearchAllItemsListLabel"	"Filtruj wg słowa kluczowego"
 		"DOTA_Collection_SortByLabel"				"Sortuj wg:"
 		"DOTA_Collection_TypeFilterLabel"			"Rodzaj:"
 		"DOTA_Collection_QualityFilterLabel"		"Jakość:"
 		"DOTA_Collection_EventFilterLabel"			"Wydarzenie:"
 		"DOTA_Collection_BundleCountLabel"			"{d:bundle_count}"
+		"DOTA_Collection_Featured_FeaturedSets_Title"			"Nowości"
 		"DOTA_Collection_Featured_FeaturedSets_Subtitle"		"Zestawy ze Skrytki Kolekcjonera 2023"
 		"DOTA_Collection_Featured_PremiumShardsSets_Title"		"Zestawy premium"
 		"DOTA_Collection_Featured_PremiumShardsSets_Subtitle"	"Wybrane zestawy, które można kupić za odłamki."
@@ -40348,6 +40816,8 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		"DOTA_Collection_ViewBundleDetails_TooltipLabel"	"Wyświetl szczegóły posiadanego zestawu"
 		"DOTA_Collection_ShowAllOwnedItems_TooltipLabel"	"Pokaż wszystkie posiadane przedmioty tego typu"
 		"DOTA_Collection_OwnedCount_TooltipLabel"			"{d:owned_count}"
+		"DOTA_Collection_ToggleShuffle_TooltipLabel"		"Przełącz przetasowane"
+
 		"DOTA_SetBundle_Tooltip_IsHighValueItem"			"Szacunkowa wartość rynkowa: <b>$0.00</b>"
 		"DOTA_SetBundle_Tooltip_MarketableToolip"			"Przedmiot jest zbywalny"
 		"DOTA_SetBundle_Tooltip_MarketPriceToolip"			"Przedmiot jest zbywalny"
@@ -40363,7 +40833,19 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		"DOTA_Collection_Global_Creeps_Radiant"				"Stwory Świetlistych"
 		"DOTA_Collection_Global_Creeps_Dire"				"Stwory Mrocznych"
 		"DOTA_Collection_Global_SiegeCreeps_Radiant"		"Stwory oblężnicze Świetlistych"
+		"DOTA_Collection_Global_SiegeCreeps_Dire"			"Stwory oblężnicze Mrocznych"
+		"DOTA_Collection_Global_Towers"						"Wieże"
+		"DOTA_Collection_Global_Towers_Radiant"				"Wieże Świetlistych"
+		"DOTA_Collection_Global_Towers_Dire"				"Wieże Mrocznych"
 		"DOTA_Collection_Global_Tormentor"					"Dręczyciel"
+
+		"DOTA_Collection_Browse_SortOption_MarketPrice"		"Cena rynkowa"
+		"DOTA_Collection_Browse_SortOption_Rarity"			"Rzadkość"
+		"DOTA_Collection_Browse_SortOption_Recent"			"Ostatnie"
+		"DOTA_Collection_Browse_GroupOption_Type"			"Rodzaj"
+		
+		"DOTA_Collection_Bundles_RarityHeader"			"Rzadkość"
+		"DOTA_Collection_Bundles_DateHeader"			"Data wydania"
 
 		"DOTA_Collection_TabName_Heroes"				"Bohaterowie"
 		"DOTA_Collection_TabName_Global_WorldItems"		"Świat"
@@ -40371,8 +40853,13 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		"DOTA_Collection_TabName_ShardShop"				"Sklep"
 		"DOTA_Collection_TabName_All"					"Wszystkie przedmioty"
 
+		"DOTA_Collection_ShuffleAll"					"Wszystko"
+
 		"DOTA_Collection_Global_Tab_Bundles"			"Pakiety"
+		"DOTA_Collection_Global_Tab_Gems"				"Klejnoty"
 		"DOTA_Collection_Global_Tab_Event"				"Wydarzenie"
+		"DOTA_Collection_Global_Tab_Other"				"Inne"
+		"DOTA_Collection_Global_TabGroup_Stickers"		"Naklejki"
 		"DOTA_Collection_Global_TabGroup_Misc"			"Różne"
 		
 		"DOTA_Loadout_Equipped"								"W wyposażeniu"
@@ -40380,8 +40867,12 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		"DOTA_Loadout_Previewing"							"Podgląd"
 		"DOTA_Loadout_PreviewItems"						"Podgląd przedmiotów:"
 		"DOTA_Loadout_RevertPreview"						"Przywróć"
+		"DOTA_Loadout_EquipAll"								"Umieść wszystkie w wyposażeniu"
+		"DOTA_Loadout_StyleLocked"							"Styl zablokowany"
 		"DOTA_Loadout_Unavailable"							"Niedostępne"
 		"DOTA_Loadout_CustomSet"							"Niestandardowy zestaw"
+		"DOTA_Loadout_SetCounter"							"Zestaw {d:current_hero_set_index} / {d:total_hero_set_count}"
+		"DOTA_Loadout_NotInPublic"							"Niewidoczne publicznie (tylko Valve)"
 		"DOTA_Loadout_Owned"								"Posiadane"
 		"DOTA_Loadout_Count"								"({d:count})"
 		"DOTA_Loadout_SlotItemCount"						"({d:slot_item_count})"
@@ -40413,6 +40904,7 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		
 		"DOTA_Rebundle_ErrorHeading"								"Błąd"
 		"DOTA_Rebundle_SuccessHeading"								"Sukces"
+		"DOTA_Rebundle_CouldNotFindBundle"							"Nie można znaleźć zestawu dla tego przedmiotu."
 		// End Loadout
 		
 		// 10-Year Anniversary
@@ -40525,7 +41017,8 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		"DOTA_SummerUpdate2023_Armory"		"Całkowicie nowa zbrojownia"
 		"DOTA_SummerUpdate2023_Behavior"	"Przerobiony system ocen zachowania graczy"
 		"DOTA_SummerUpdate2023_Rendering"	"Zaktualizowane renderowanie mapy"
-"DOTA_PurchaseButton_Available_InTreasure" "Dostępne w skarbie"
+"DOTA_PurchaseButton_Available_InBundle" "Dostępne w pakiecie"
+		"DOTA_PurchaseButton_Available_InTreasure" "Dostępne w skarbie"
 
 		"DOTA_Showcase_Report_Title"		"Zgłoś gablotę"
 		"DOTA_Showcase_Report_Desc"			"Czy na pewno chcesz zgłosić tę gablotę za nieodpowiednie treści?"
@@ -41164,7 +41657,12 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		"DOTA_FantasyBingo_GroupStageRollsAndTokens"				"+{d:rolls} przelosowania dla tworzenia ligi marzeń<br/>+{d:tokens} żetony do bingo"
 		"DOTA_FantasyBingo_PlayoffRollsAndTokens"					"+{d:rolls} przelosowania dla tworzenia ligi marzeń<br/>+{d:tokens} żetony do bingo<br/>(odblokowują się na play-offy)"
 		"DOTA_FantasyBingo_MainEventRollsAndTokens"					"+{d:rolls} przelosowania dla tworzenia ligi marzeń<br/>+{d:tokens} żetony do bingo<br/>(odblokowują się na The International)"
-// Begin Bingo
+"DOTA_International2025_EventFinished_Dashboard_Description"	"Po roku zaciętych meczów w Dota 2 na całym świecie zwycięzcy The International 2025 sięgnęli po Egidę w Hamburgu."
+		"DOTA_International2025_Champion_Sticker_Header"            	"Naklejki mistrzów"
+		"DOTA_International2025_Champion_Sticker_Description"			"Upamiętnia zwycięstwo Team Awesome na The International 2025."
+
+		
+		// Begin Bingo
 		
 		"DOTA_Bingo_GroupStageTokens"					"+{d:tokens} żetony do bingo"
 		"DOTA_Bingo_PlayoffsTokens"						"+{d:tokens} żetony do bingo (odblokowują się na play-offy)"
@@ -41444,6 +41942,7 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		"DOTA_OraclesChallenge_ResultsTBD"				"Do ustalenia"
 		"DOTA_OraclesChallenge_SelectTeam"				"Wybierz drużynę"
 		"DOTA_OraclesChallenge_SelectWinner"			"Przewidź zwycięzcę"
+		"DOTA_OraclesChallenge_NoTeam"					"Nie wybrano"
 		"DOTA_OraclesChallenge_InitialTeam_Series0"					"A – 1."
 		"DOTA_OraclesChallenge_InitialTeam_Series1"					"A – 2."
 		"DOTA_OraclesChallenge_InitialTeam_Series2"					"B – 1."
@@ -41783,6 +42282,7 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 		"DOTA_talent_voice_season_10_es"		"Kwestie dialogowe ekspertów w języku hiszpańskim – TI 2023"
 		"DOTA_talent_voice_season_10_es_desc"	"Dostępne po zakupie pakietów naklejek eksperta."
 
+		"DOTA_International2023_InGamePredictionsNotification"	"Problemy techniczne uniemożliwiły większości graczy typowanie wyników w grze na początku fazy grupowej. Rozwiązaliśmy te problemy i przyznaliśmy ci maksymalną liczbę punktów, którą mogłeś zdobyć dzięki udanym typowaniom. Dodatkowo podwajamy wszystkie punkty za typowanie do końca pozostałej części wydarzenia."
 		"DOTA_International2023_GroupStagePredictionNotification"	"Twój wynik Wyzwania Wyroczni podczas fazy grupowej został błędnie obliczony. Poprawiliśmy błąd i przyznaliśmy ci punkty, które były ci należne."
 		"DOTA_International2023_TheInternationalPredictionNotification"	"Twój wynik Wyzwania Wyroczni podczas The International został błędnie obliczony. Poprawiliśmy błąd i przyznaliśmy ci punkty, które były ci należne."
 
@@ -44658,11 +45158,11 @@ Jeżeli twoim zdaniem nie udało ci się poświęcić dostatecznie wiele uwagi, 
 
 		"DOTA_Compendium2025_ParticipationSummary"				"Weź udział w lidze marzeń i typowaniach, by odblokować darmowe nagrody."
 		"DOTA_Compendium2025_SupportSummary"					"Kup pakiety, by wesprzeć swoje ulubione drużyny i ekspertów."
+		"DOTA_Compendium2025_SupportSummaryContinued"			"Kontynuuj zakup pakietów, by wesprzeć swoje ulubione drużyny i ekspertów."
 		"DOTA_Compendium2025_RevenueDistributionSummary"		"50% kwoty z każdego zakupu trafia bezpośrednio do ekspertów, a 30% trafia do puli nagród The International."
 
 		"DOTA_Compendium2025_Talent_Title"						"Pakiety ekspertów"
 		"DOTA_Compendium2025_Talent_Desc"						"Wspieraj swoich ulubionych ekspertów, kupując pakiety zawierające naklejki, kwestie głosowe i autografy. 50% wpływów z całej sprzedaży trafi bezpośrednio do ekspertów, a 30% trafi do puli nagród The International."
-
 		"DOTA_Fantasy25_PeriodName0"							"Droga do The International"
 		"DOTA_Fantasy25_PeriodName1"							"The International"
 
