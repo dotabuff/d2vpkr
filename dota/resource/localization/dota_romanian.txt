@@ -1770,6 +1770,7 @@ Anticii, deopotrivă Radiant și Dire, au oferit multe beneficii: energie cineti
 		"DOTA_Item_Build_Sequence2"				"Lista de obiecte sugerate #3"
 		"DOTA_Item_Build_SequenceSelected"		"Lista de obiecte selectată"
 		"DOTA_Item_Build_Options_Items"			"Obiecte populare"
+		"DOTA_Item_Build_GeneralItems"			"Obiecte obișnuite pentru acest erou"
 		"DOTA_Item_Build_Variants"				"Generează opțiuni"
 		"DOTA_Item_Build_Variant0"				"Opțiunea 1"
 		"DOTA_Item_Build_Variant1"				"Opțiunea 2"
@@ -2518,6 +2519,7 @@ Anticii, deopotrivă Radiant și Dire, au oferit multe beneficii: energie cineti
 		"official_player_info_header"		"Informații ale jucătorilor oficiali"
 		"player_info_name"					"Te rugăm să introduci numele tău care va fi afișat. Ar trebui să fie ușor de recunoscut de către toți jucătorii din lume și nu ar trebui să includă afilieri cu echipe sau sponsori."
 		"player_info_country"				"Poți introduce țara de reședință."
+		"player_info_official_team"			"Poți selecta echipa profesionistă înregistrată pentru care joci. Eticheta acestei echipe va fi prefixată numelui tău."
 		"player_info_sponsor"				"Poți introduce orice nume de sponsor aici. Acești sponsori vor fi anexați numelui tău."
 		"player_info_preview"				"Numele tău va fi afișat astfel:"
 		"player_info_role"					"Dacă joci un rol anume, te rugăm să îl alegi. \"Core\" include jucători care joacă carry, mid și off-lane."
@@ -4160,6 +4162,7 @@ directorul dota/cfg/layouts pentru a apărea în lista de import."
 		"DOTA_TeamInvite_Failure_Rejection"								"{s:invitee_name} a refuzat invitația ta în echipă."
 		"DOTA_TeamInvite_Failure_Unspecified"							"A apărut o eroare neașteptată în încercarea de a-l invita pe jucător în echipa ta."
 		"DOTA_TeamInviteAccept_Failure_Header"							"Alăturarea la echipă a eșuat"
+		"DOTA_TeamInviteAccept_Failure_Message"							"{s:team_name} a devenit indisponibilă. Nu te-ai putut alătura. Eroare: {d:error_num}."
 		"DOTA_TeamInviteAccept_Failure_Unspecified"						"A apărut o eroare neașteptată în încercarea de alăturare la echipă."
 		"DOTA_TeamInviteAccept_Success_Header"							"Te-ai alăturat echipei"
 		"DOTA_TeamInviteAccept_Success_Message"							"Felicitări! Te-ai alăturat la {s:team_name}."
@@ -14902,14 +14905,15 @@ Batjocură specială pentru Techies"
 
 
 	"DOTA_TeamManagement_FullName"				"Numele complet al echipei"
-	"DOTA_TeamManagement_TeamTag"				"Tag echipă"
-	"DOTA_TeamManagement_Country"				"Țară"
-	"DOTA_TeamManagement_URL"					"URL echipă"
+	"DOTA_TeamManagement_TeamTag"				"Eticheta echipei"
+	"DOTA_TeamManagement_Country"				"Țara"
+	"DOTA_TeamManagement_URL"					"URL-ul echipei"
 	"DOTA_TeamKickLabel"						"Dă afară"
 	"DOTA_TeamKickMember"						"Exclude un membru al echipei"
 	"DOTA_TeamConfirmKickMember"				"Dă afară pe {g:dota_persona:kickee_account_id} din {s:team_name}?"
 	"DOTA_TeamCreateNewTeam"					"Creează echipă nouă"
 	"DOTA_TeamsMyTeams"							"Echipele mele"
+	"DOTA_OfficialTeamInfo"						"Informațiile mele oficiale"
 	"DOTA_TeamsManageTeams"						"Gestionează echipe"
 	"DOTA_TeamImagesBrowse"						"Răsfoiește"
 	"DOTA_TeamBaseLogo"							"Logo bază echipă"
@@ -17880,6 +17884,7 @@ Da, îmi place!"
 	"DOTA_Hotkeys_Tooltip_PurchaseQuickbuy"  "Cumpără următorul obiect din lista ta de Cumpărare Rapidă dacă ți-l permiți."
 	"DOTA_Hotkeys_Tooltip_PurchaseSticky"  "Cumpără obiectul din zona de Alipiri dacă ți-l permiți."
 	"DOTA_Hotkeys_Tooltip_GrabStashItems"  "Transferă toate obiectele din Arsenal către Eroul tău."
+	"DOTA_Hotkeys_Tooltip_ToggleBuybackProtection"  "Activează/dezactivează protecția pentru răscumpărare."
 	"DOTA_Hotkeys_Tooltip_RecentEvent"  "Mută camera către cel mai recent eveniment din lume."
 	"DOTA_Hotkeys_Tooltip_InspectHeroInWorld"  "Vezi o unitate dintr-o perspectivă apropiată."
 	"DOTA_Hotkeys_Tooltip_ChatTeam"  "Trimite un mesaj tuturor celor din echipa ta."
@@ -18738,24 +18743,40 @@ Da, îmi place!"
 	"dota_profile_hero_with_index" "{d:hero_index} {s:hero_name}"
 	"dota_profile_hero" "{s:hero_name}"
 
-	"dota_profile_oi_player_name"		"AFIȘEAZĂ NUME"
-	"dota_profile_oi_player_name_sub"	"Trebuie să fie recunoscut de jucătorii din toată lumea și să nu conțină vreo afiliere la o echipă sau sponsori."
+	"dota_profile_oi_player_name"		"NUMELE AFIȘAT"
+	"dota_profile_oi_player_name_sub"	"Trebuie să fie recunoscut de jucătorii din toată lumea și să nu conțină nicio afiliere cu vreo echipă sau vreun sponsor."
+	"dota_profile_oi_player_name_sub_pro"	"Acest nume va fi utilizat pe toată perioada anului pentru care accepți acordul. Dacă dorești să folosești un nume diferit, apasă butonul „Anulează” și modifică-ți numele înainte de a accepta acordul."
+	"dota_profile_oi_agreement_header"	"Acordul pentru jucătorii profesioniști"
+	"dota_profile_oi_full_name"			"NUMELE COMPLET"
+	"dota_profile_oi_full_name_sub"		"Numele tău legal complet."
 	"dota_profile_oi_team"				"ECHIPA"
+	"dota_profile_oi_team_sub"			"Dacă selectezi o echipă care a fost înregistrată ca o echipă profesionistă, te vei putea înregistra ca jucător profesionist."
 	"dota_profile_oi_sponsor"			"SPONSOR"
 	"dota_profile_oi_sponsor_sub"		"Sponsorii vor fi anexați numelui tău."
 	"dota_profile_oi_country"			"ȚARA"
 	"dota_profile_oi_role"				"ROL"
-	"dota_profile_oi_role_sub"			"Dacă joci un rol anume, te rugăm să îl alegi. \"Core\" include jucători care joacă carry, mid și off-lane."
-	"dota_profile_oi_preview"			"Așa va fi numele tău afișat în clasamente și în meciurile de ligă:"
-	"dota_profile_oi_preview_warning"   "Informațiile acestea pot fi modificate doar o dată la două săptămâni, așa că te rugăm să te asiguri de acuratețea informațiilor înainte de a le actualiza!"
+	"dota_profile_oi_role_sub"			"Dacă joci un rol anume, te rugăm să îl alegi. Rolul „Core” include jucătorii de carry, culoarul din mijloc sau culoarul dificil."
+	"dota_profile_oi_preview"			"Acesta este numele tău care va fi afișat în clasamente și în meciurile de ligă:"
+	"dota_profile_oi_preview_warning"   "Informațiile acestea pot fi modificate doar o dată la două săptămâni, așa că te rugăm să te asiguri că sunt corecte înainte de a le actualiza!"
 	"dota_profile_name_locked"			"Numele este blocat"
 	"dota_profile_team_locked"			"Echipa este blocată"
 	"dota_profile_team_locked_pro"		"Echipa este desemnată automat pentru jucătorii profesioniști"
+	"dota_profile_oi_register_title"	"Înregistrare ca jucător profesionist"
+	"dota_profile_oi_register_title_details"	"Înregistrarea prin intermediul acestei ferestre de dialog te va înscrie ca jucător profesionist pentru acest an, inclusiv pentru participarea la campionatul The International."
+	"dota_profile_oi_accept"			"Acceptă acordul și înregistrează-te"
+	"dota_profile_oi_register_agreement"		"TERMENII SEZONULUI PROFESIONIST 2025<br><br>Îți mulțumim pentru interesul de a participa în Sezonul profesionist de Dota 2 din 2025 („Sezon”), sponsorizat de Valve Corporation („Valve”). Acest acord stabilește termenii acestui Sezon pe care trebuie să îi accepți înainte de a putea participa.<br><br>Operatorii de evenimente. Dacă ești selectat pentru unul sau mai multe evenimente în timpul Sezonului, trebuie să închei acorduri separate cu operatorii evenimentelor. Mai exact, va trebui să contactezi operatorii evenimentului pentru detalii despre programul evenimentului, regulament, cheltuieli și premii.<br><br>Permisiunea de utilizare a imaginii tale. Îi acorzi companiei Valve dreptul de a-ți distribui, expune și utiliza în orice mod și oriunde în lume, pe durata Sezonului, înfățișarea, performanța, numele, informațiile biografice, declarațiile și orice alt efect auditiv și vizual produs de tine (denumit colectiv, „Imaginea” ta) în orice mod și asociere cu Sezonul, incluzând, dar fără a se limita la, jocuri de calculator, videoclipuri, materiale promoționale și publicitare, fără alte compensații de la Valve. După încheierea Sezonului, Valve poate refolosi materialele create în timpul Sezonului în scopuri de arhivare, producție sau promoționale. Ești de acord ca Valve să dețină dreptul de proprietate asupra tuturor înregistrărilor audio, video și datelor obținute de sau pentru Valve aferente participării tale în acest Sezon.<br><br>Termeni generali. Faci aceste declarații și promisiuni în numele tău și al familiei tale, al moștenitorilor, succesorilor și cesionarilor și al tuturor persoanelor care poate revendica drepturi în numele tău, în beneficiul companiei Valve, al succesorilor și cesionarilor acesteia. Valve își rezervă dreptul de a modifica sau anula Sezonul în orice moment. Prezentul acord este reglementat de legile statului Washington din S.U.A. și îți exprimi acordul cu privire la jurisdicția și instanțele federale și statale situate în King County, Washington, S.U.A., în cazul oricărui litigiu cu privire la prezentul acord. Acești termeni anulează orice acord încheiat anterior între părți cu privire la obiectul prezentului acord."
+	"dota_profile_oi_is_pro"			"Ai acceptat acordul pentru jucătorii profesioniști pentru această perioadă."
+	"dota_profile_oi_no_team"			"Nicio echipă"
+
+
 	"dota_profile_oi_submit_info"		"Trimite"
 	"dota_profile_oi_cancel"			"Anulează"
 	"dota_profile_oi_submit_pending"	"Se trimite..."
 	"dota_profile_oi_submit_success"	"Succes!"
 	"dota_profile_oi_submit_failure"	"Eroare - Te rugăm să încerci din nou."
+	"dota_profile_oi_account_locked"	"Numele și echipa sunt blocate în prezent"
+	"dota_profile_oi_register_pro"		"Înregistrează-te ca jucător profesionist"
+
 	"dota_role_core"					"Core"
 	"dota_role_support"					"Suport"
 	"dota_role_offlane"					"Offlane"
@@ -23834,6 +23855,16 @@ Apăsă ESC pentru a ieși din ecranul complet"
 	"DOTA_Play_AbilityDraft_Title"	"Construiește eroul suprem"
 	"DOTA_Play_AbilityDraft_Text"	"A fost revizuit ecranul de recrutare și au fost adăugați 15 eroi."
 	
+	"DOTA_GameMode_AbilityDraft_ChangeLog_Latest_June_18_2025" "
+	<b><font color='#ffffff'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;18 iunie 2025</font></b>
+	<br>• A fost adăugat arborele de talente în chenarul cu informații al eroilor din timpul fazei de selecție. Treci cu mouse-ul peste butonul eroului pentru a-i vedea arborele de talente.
+	<br>• A fost remediată problema în care sunetul pentru numărătoarea inversă nu era redat atunci când era rândul tău să alegi.
+	<br>• Au fost remediate câteva erori de sistem din cauza cărora talentele lipseau sau erau afișate unele greșite.
+	<br>• A fost remediată problema în care abilitățile Shodo Sai și Kazurai Katana nu funcționau.
+	<br>• A fost remediată problema în care abilitatea Witchcraft era acordată cu Exorcism.
+	<br>• A fost remediată problema în care abilitatea Warlord Rampage era acordată în mod greșit cu Aghanim's Shard.
+	<br>• A fost remediată problema în care meniul vertical pentru selectarea fațetelor nu afișa uneori fațeta selectată în timpul selecției."
+	
 	"DOTA_GameMode_AbilityDraft_ChangeLog_Latest_Feb_08_2024" "
 	<b><font color='#ffffff'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8 februarie 2024</font></b>
 	<br>• Mai multe abilități care nu erau anterior oferite de Aghanim's Sceptre/Shard sunt oferite acum, câteva dintre acestea fiind accesibile prin comutarea invocării automate a vrăjii de bază:
@@ -24610,6 +24641,9 @@ Apăsă ESC pentru a ieși din ecranul complet"
 
 		"DOTA_MatchRewards_GuildMembersInParty:p"	"{d:party_member_count} membru al clanului în grup#|#{d:party_member_count} membri ai clanului în grup#|#{d:party_member_count} de membri ai clanului în grup"
 		"DOTA_MMR_Recalibration_Title" 			"Recalibrare MMR"
+		"DOTA_ManageProInfo_Header"	"Informațiile oficiale și echipele"
+		"DOTA_ManageProInfo_Button"	"Gestionează informațiile oficiale și echipele"
+
 		"DOTA_DDB_Watch" "Vizionează"
 
 		"DOTA_Frontpage_NPX_NewFeatures" "Ghidul pentru jucătorii noi"
@@ -28911,17 +28945,37 @@ Apăsă ESC pentru a ieși din ecranul complet"
 		"DOTA_CompetitiveMMRegisteredNameRequired_AlternativeDscription"	"Sau editează-ți profilul Steam pentru a alege un nume diferit."
 		"DOTA_RegisterNameButton"											"Înregistrează-ți acum numele"
 
+		"Tooltip_Items_ComponentOf"										"Componentă din:"
+
 		"dota_settings_bind_NeutralItemSelect1"					"Selectează opțiunea 1 de obiect neutru"
 		"dota_settings_bind_NeutralItemSelect2"					"Selectează opțiunea 2 de obiect neutru"
 		"dota_settings_bind_NeutralItemSelect3"					"Selectează opțiunea 3 de obiect neutru"
 		"dota_settings_bind_NeutralItemSelect4"					"Selectează opțiunea 4 de obiect neutru"
 		
+		"dota_settings_bind_SpectatorFOWBoth"                  "Ceața războiului (ambele echipe)"
+		"dota_settings_bind_SpectatorFOWRadient"               "Ceața războiului (Radiant)"
+		"dota_settings_bind_SpectatorFOWDire"                  "Ceața războiului (Dire)"
 		"dota_settings_do_standard_ping"			"+ Clic stânga"
 		"dota_settings_do_alternative_ping"			"+ Clic dreapta"
 
 		"dota_settings_reset_hotkeys_title"			"Resetezi tastele rapide?"
 		"dota_settings_reset_audio_title"			"Resetezi setările audio?"
+		"dota_settings_reset_video_title"			"Resetezi configurările video?"
+		"dota_settings_reset_video_body"			"Acțiunea aceasta va reseta toate setările tale video la configurările lor implicite. Ești sigur?"
+
+		"dota_settings_clear_all"		"Șterge-le pe toate"
+
 		"dota_settings_hero_specific"		"Specific eroilor"
+		"dota_settings_dota_ability_use_original_cast_mode_for_stolen_spell"		"Rubick: folosește modul de invocare original pentru vrăjile furate"
+		"dota_settings_dota_ability_use_original_cast_mode_for_stolen_spell_description"		"Vrăjile furate vor folosi modul de invocare setat pentru acea vrajă specifică în loc de modul slotului lui Rubick pentru vraja furată. De exemplu, dacă Rubick a furat abilitatea Laguna Blade a eroinei Lina în primul slot de vrajă furată, invocarea acestei abilități va utiliza modul de invocare al abilității Laguna Blade în loc de modul aferent primului slot de vrajă furată."
+		"dota_settings_dota_ability_use_original_cast_mode_for_stolen_spell_new_setting_description"		"Configurează modul în care vrăjile furate de Rubick interacționează cu invocarea rapidă."
+
+		"dota_settings_bind_togglebuybackprotection"	"Comută protecția de răscumpărare"
+		"dota_settings_bind_togglebuybackprotection_new_title"	"Tastă rapidă pentru comutarea protecției de răscumpărare"
+		"dota_settings_bind_togglebuybackprotection_description"	"Setează o tastă rapidă pentru a comuta cu ușurință protecția de răscumpărare."
+
+		"dota_settings_healthbar_allies"	"Aliați"
+
 		"dota_settings_neutral_item_selection_new_settings_title"				"Taste rapide pentru crearea obiectelor neutre"
 		"dota_settings_neutral_item_selection_new_settings_description"					"Selectează cu ajutorul tastelor rapide artefactul și farmecul pentru crearea obiectului neutru."
 
@@ -29159,7 +29213,6 @@ Apăsă ESC pentru a ieși din ecranul complet"
 		"DOTA_Compendium2025_ItemChoice_SubTitle"				"Niciun obiect nu poate fi oferit la schimb, listat pe piață sau dăruit"
 		"DOTA_Compendium2025_ItemChoice_AlreadyOwned"			"Deținut"
 		"DOTA_Compendium2025_ItemChoice_ButtonLabel"			"Alege"
-
 		"DOTA_Compendium25_Claim_Confirm"						"Alegi acest obiect?"
 		"DOTA_Compendium25_Claim_Confirm_Body"					"Revendici {s:item_name} drept recompensa ta?"
 
@@ -29331,5 +29384,6 @@ Apăsă ESC pentru a ieși din ecranul complet"
 		"Notification_International25_Fantasy_Stun_Fix"	"Formația ta Fantasy a fost afectată de o eroare din cauza căreia năucirile aveau o pondere mai mare decât trebuia. Această eroare a fost remediată și ți-au fost acordate 3 jetoane modificatoare pentru fiecare emblemă afectată."
 
 		"DOTA_International2025_AegisHover"				"Achiziționează prin CMD Collectibles"
-	}
+
+		}
 } 
