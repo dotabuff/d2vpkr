@@ -1018,6 +1018,7 @@
 		"DOTA_Chat_TowerDenied"			"%s1 eväsi tornin!"
 		"DOTA_Chat_FirstBlood"			"%s1 %s2 sai verikasteen tappamalla pelaajan %s3"
 		"DOTA_Chat_BountyClaimed"		"<img class=\"BountyIcon\" src=\"file://{images}/compendium/international2020/icon_bounty_crosshair_shadow.png\" />%s1 lunasti palkkion tappamalla %s2 %s3"
+		"DOTA_Chat_Poogie_Flee"			"Pelaajan %s1 Poogie karkasi!"
 		"DOTA_Chat_DoubleKill"			"%s1 %s2 teki tuplatapon!"
 		"DOTA_Chat_TripleKill"			"%s1 %s2 teki TRIPLATAPON!"
 		"DOTA_Chat_QuadKill"			"%s1 %s2 teki ULTRATAPON!"
@@ -5383,6 +5384,7 @@ Kummankin kiven kulttuuri ja vaikutusvalta kasvoi, kunnes niiden hallitsemat yht
 		"dota_hud_error_cannot_blur_near_enemies"		"Bluria ei voi aktivoida vihollisten lähellä"
 		"dota_hud_error_cannot_transmute"				"Et voi muuntaa tätä hahmoa kullaksi"
 		"dota_hud_error_no_wards_here"					"Virheellinen sijainti wardille"
+		"dota_hud_error_ward_recently_placed"			"Liian lähellä äskettäin sijoitettua wardia"
 		"dota_hud_error_no_minefield_here"					"Virheellinen sijainti Minefield Signille"
 		"dota_hud_error_no_trees_here"					"Virheellinen sijainti puulle"
 		"dota_hud_error_no_corpses"						"Ei ruumiita lähettyvillä"
@@ -23080,6 +23082,14 @@ Kokeneet pelaajat, joilla on vähintään {d:new_player_req_behavior_score} vies
 	"dota_settings_enable_invoker_individual_hotkeys"	"Invokerin loitsujen perinteiset näppäimet"
 	"dota_settings_pingwheel_defaults"				"Palauta oletusasetukset"
 
+	"dota_settings_selection_groups"							"Älykkäät valintaryhmät"
+	"dota_settings_selection_groups_new_setting_title"			"Älykkäät valintaryhmät"
+	"dota_settings_selection_groups_new_setting_description"	"Aseta sankareiden (esim. Hämiäiset, Eidolonit, Treantit) kutsumat yksiköt valintaa varten ryhmiksi."
+
+	"dota_settings_smart_multiunit_cast"							"Älykäs kohdistus useisiin yksiköihin"
+	"dota_settings_smart_multiunit_cast_new_setting_title"			"Älykäs kohdistus useisiin yksiköihin"
+	"dota_settings_smart_multiunit_cast_new_setting_description"	"Ota käyttöön yksinkertaistettu kohdistustila aktivoidaksesi saman kyvyn useilla samanlaisilla valituilla yksiköillä (esim. Meepon kloonit)."
+
 	"DOTA_Hotkeys_Tooltip_Invoker"						"Tämä valinta antaa jokaiselle Invokerin loitsulle oman perinteisen näppäimen tyypillisten 4. ja 5. kyvyn pikanäppäimen sijaan."
 
 	"DOTA_LegacyKeysRemove_Title"				"Korvaa hahmojen pikanäppäimet perinteisillä näppäimillä"
@@ -23152,6 +23162,8 @@ Kokeneet pelaajat, joilla on vähintään {d:new_player_req_behavior_score} vies
 	"DOTA_Hotkeys_Tooltip_QuickcastToggle_OnKeyDown" 	 "Kykyä käytetään painettaessa."
 	"DOTA_Hotkeys_Tooltip_QuickcastToggle_OnKeyUp" 	 	 "Kykyä käytetään vapautettaessa."
 	"DOTA_Hotkeys_Tooltip_QuickcastToggle_Normal" 	 	 "Pikakäyttö poissa päältä."
+
+	"DOTA_Settings_ChannelCancel_AnyAction"						"Mikä tahansa toiminto keskeyttää tämän kyvyn kanavoimisen."
 
 	"DOTA_Settings_Tooltip_Autoattack"							"Liikkuu automaattisesti kohti lähellä olevia vihollisia ja hyökkää niihin."
 
@@ -45890,6 +45902,18 @@ uudet esinekuvakkeet."
 		"dota_settings_alt_unit_movetodirection"				"Suunnattu liike, kun Alt-näppäintä pidetään pohjassa"
 		"dota_settings_alt_unit_movetodirection_tooltip"		"Alt + hiiren oikea näppäin antaa suunnatun liikekomennon, joka ohjaa sankaria kohdesuuntaan esteistä välittämättä."
 
+		"DOTA_Hotkeys_Tooltip_ChannelCancel_Default" 		 "Oletusasetus"
+		"DOTA_Hotkeys_Tooltip_ChannelCancel_AnyAction" 	 	 "Mikä tahansa toiminto"
+		"DOTA_Hotkeys_Tooltip_ChannelCancel_HoldCancel" 	 "Pysäytä tai peru"
+
+		"dota_settings_healthbar_visualization_new_settings_title"				"Visualisoi parannus ja vahinko sankareiden terveyspalkeissa"
+		"dota_settings_healthbar_visualization_new_settings_description"		"Näytä terveyspalkeissa visuaalinen tehoste, kun sankari ottaa vahinkoa tai saa parannusta."
+
+		"dota_settings_visualize_damage"				"Visualisoi vahinko"
+		"dota_settings_visualize_damage_tooltip"		"Sankarin terveyspalkki näyttää animaation, kun sankari ottaa vahinkoa."
+		"dota_settings_visualize_healing"				"Visualisoi parannus"
+		"dota_settings_visualize_healing_tooltip"		"Sankarin terveyspalkki näyttää animaation, kun sankari saa parannuksen."
+
 		"DOTA_DashboardGames_Title"								"Minipelejä uutta peliä odotellessa"
 
 		"DOTA_EventClaimReward_Tooltip_ClaimableAtText"			"LUNASTETTAVISSA TASOLLA {d:reward_level}"
@@ -46584,7 +46608,7 @@ uudet esinekuvakkeet."
 		"DOTA_MonsterHunter_DestroyAncient"					"Voita peli"
 		"DOTA_MonsterHunter_KillHero"						"Tapa {s:hero_name} ennen kuin hän tappaa sinut"
 		"DOTA_MonsterHunter_HuntingYouHero"					"{s:hero_name}"
-		"DOTA_MonsterHunter_HuntingYouDenySuccess"			"{s:hero_name}: retki pilattu!"
+		"DOTA_MonsterHunter_HuntingYouDenySuccess"			"{s:hero_name}: jahti pilattu!"
 
 		"DOTA_MonsterHunter_MainObjective"					"Metsästyskohde"
 		"DOTA_MonsterHunter_HuntingYou"						"Vaanija"
@@ -46787,5 +46811,6 @@ uudet esinekuvakkeet."
 		"DOTA_Style_Zinogre_Helm_Windranger"	"Windranger"
 		"DOTA_Style_Zinogre_Helm_White"			"Zinogren valkoinen"
 
+		"dota_settings_per_ability_channel_cancel_new_settings_title"			"Kykykohtainen kanavoinnin keskeytys"
 		}
 } 
