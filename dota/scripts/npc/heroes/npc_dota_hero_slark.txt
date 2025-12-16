@@ -83,7 +83,7 @@
 		{
 				"duration"		
 				{
-					"value"		"3"
+					"value"		"2"
 				}
 				"radius"		
 				{
@@ -137,7 +137,7 @@
 				"AbilityCooldown"
 				{
 					"value"							"9.0 8.0 7.0 6.0"
-					"special_bonus_unique_slark_6"	"-0.5"
+					"special_bonus_unique_slark_6"	"-0.75"
 				}
 		}
 	}
@@ -162,7 +162,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"75 75 75 75"
+		"AbilityManaCost"				"75"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -206,7 +206,7 @@
 			}
 			"essence_stacks"
 			{
-				"special_bonus_facet_slark_leeching_leash"	"1 2 3 4"				
+				"value"						"1 2 3 4"
 			}
 			"AbilityCooldown"
 			{
@@ -223,11 +223,12 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"MaxLevel"						"4"
+		"MaxLevel"						"1"
 		"IsBreakable"					"1"
+		"Innate"						"1"
 		
 
 		// Special
@@ -242,8 +243,9 @@
 			"stat_loss"					"1"
 			"duration"
 			{
-				"value"					"15 35 55 75"
-				"special_bonus_unique_slark_4" "+35"
+				"value"					"15"
+				"hero_levelup"			"+2.5"
+				"special_bonus_unique_slark_4"	"+35"
 			}
 			"steal_radius"			
 			{
@@ -258,52 +260,7 @@
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
 
-	//=================================================================================================================
-	// Slark: Barracuda
-	//=================================================================================================================
-	"slark_barracuda"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"MaxLevel"						"4"
-		"Innate"						"1"
-		"DependentOnAbility"			"slark_shadow_dance"
-		"IsBreakable"					"1"
 
-		"AbilityValues"
-		{
-			"bonus_movement_speed"		"6 24 36 48"
-			"bonus_regen"			
-			{
-				"value"				"5 70 100 130"
-				"special_bonus_unique_slark_8"	"+50"
-			}
-			
-			"linger_search_radius"
-			{
-				"special_bonus_facet_slark_dark_reef_renegade" "900"
-			}
-
-			"linger_duration"
-			{
-				"special_bonus_facet_slark_dark_reef_renegade" "2"
-			}
-
-			"corruption_armor"
-			{
-				"special_bonus_facet_slark_dark_reef_renegade"	"-1 -2 -3 -4"
-			}
-			"corruption_duration"
-			{
-				"special_bonus_facet_slark_dark_reef_renegade"	"2.0"
-			}
-
-			"activation_delay"			"0.5"
-			"neutral_disable"			"2.0"
-		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
-	}
 	//=================================================================================================================
 	// Slark Shadow Dance
 	//=================================================================================================================
@@ -333,17 +290,62 @@
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
-		{			
+		{		
+			"bonus_movement_speed"		"24 36 48"
+			"bonus_regen"			
+			{
+				"value"					"60 90 120"
+				"special_bonus_unique_slark_8"	"+30"
+			}
+			"activation_delay"			"0.5"
+			"neutral_disable"			"2.0"	
 			"duration"					
 			{	
 				"value"			"4 4.25 4.5"
-				"special_bonus_unique_slark_3" "+1.25"
+				"special_bonus_unique_slark_3" "+1.5"
 			}
-			"fade_time"					"0"
+			"fade_time"						"0"
 			"attack_speed"
 			{
 				"special_bonus_unique_slark_7"	"100"
 			}
+
+
+		}
+	}
+
+	//=================================================================================================================
+	// Slark: Saltwater Shiv
+	//=================================================================================================================
+	"slark_saltwater_shiv"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Hero_DoomBringer.InfernalBlade.Target"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"10 8 6 4"
+		"AbilityManaCost"				"20"
+		"AbilityCastRange"				"150"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		
+		"AbilityValues"
+		{
+			"duration"						"6 8 10 12"
+			"agi_bonus_damage_factor"		"0"
+			"base_health_rest_steal"		"0"
+			"health_rest_steal"				"3 4 5 6"
+			"regen_steal"					"3"
+			"ms_steal"						"3"
+			"melee_range_buffer"			"0"
 		}
 	}
 }

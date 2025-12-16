@@ -1,0 +1,48 @@
+"largo_multi_hero_frogstomp"
+{
+	"desc"				"#DOTA_ChallengeDesc_Largo_MultiHeroFrogstomp"
+	"status_text"		"#DOTA_ChallengeStatus_Largo_MultiHeroFrogstomp"
+	"requiredhero"		"largo"
+	"image"				"images/spellicons/largo_frogstomp.png"
+	"events"
+	{
+		"matching_type"		"linear_series"
+		"query"
+		{
+			"frogstomp_killeater"
+			{
+				"event"						"kill_eater"
+				"caster"					"!hero"
+				"kill_eater_event"			"870"
+			}
+		}
+		"postmatch_increments"
+		{
+			"storage"
+			{
+				"1"
+				{
+					"aggregator"		"increment"
+				}
+			}
+		}
+		"progress_stored_in"		"1"
+		"post_tests"
+		{
+			"test_frogstomp_killeater"
+			{
+				"storage"		"1"
+				"compare"		">="
+				"amount"		"<multi_hero_frogstomp>"
+			}
+		}
+	}
+	"variables"
+	{
+		"<multi_hero_frogstomp>"
+		{
+			"format"		"int"
+			"index"		"0"
+		}
+	}
+}

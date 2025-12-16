@@ -1,0 +1,525 @@
+"DOTAAbilities"
+{
+    "Version"       "1"
+	
+	//=================================================================================================================
+	// Largo: Amphibian Rhapsody
+	//=================================================================================================================
+	"largo_amphibian_rhapsody"
+	{
+		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_INVISIBLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"MaxLevel"						"3"
+		"HasScepterUpgrade"				"1"
+		"SubAbilityNames"				"largo_song_fight_song;largo_song_double_time;largo_song_good_vibrations"
+
+		"AbilityDraftExtraAbilities"
+		{
+			"largo_song_fight_song"	"hidden"
+			"largo_song_double_time"	"hidden"
+			"largo_song_good_vibrations"	"hidden"
+		}
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		//"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCastPoint"				"0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"2"
+		//"AbilityChargeRestoreTime"		"4 3.5 3"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		//"AbilityManaCost"				"8 12 16"
+		"AbilityManaCost"				"0"
+ 	
+		"AbilityValues"
+		{	
+			"duration"				{
+				"value"				"0"
+			}
+			"radius"
+			{
+				"value"						"750"
+				"affected_by_aoe_increase"	"1"
+			}
+			"attack_speed_bonus"
+			{
+				"value"			"0"
+				"special_bonus_unique_largo_7" "+35%"
+			}
+			"magic_damage_bonus"
+			{
+				"value"			"20 25 30"
+				"special_bonus_unique_largo_7" "+35%"
+			}
+			"spell_amp_bonus"
+			{
+				"value"			"8 12 16"
+				"special_bonus_unique_largo_7" "+35%"
+			}
+			"movespeed_bonus_burst"
+			{
+				"value"			"16 22 28"
+				"special_bonus_unique_largo_7" "+35%"
+			}
+			"slow_resistance"
+			{
+				"value"			"70 80 90"
+			}
+			"heal_burst"
+			{
+				"value"			"34 56 78"
+				"special_bonus_unique_largo_7" "+35%"
+			}
+			"rhythm_interval"	"1"
+			"rhythm_grace_period"	"0.4"
+			"battle_burst_duration"
+			{
+				"value"		"1"
+				//"special_bonus_shard"	"+0.5"
+			}
+			"movement_burst_duration"
+			{
+				"value"		"1"
+				//"special_bonus_shard"	"+0.5"
+			}
+			"slow_resistance_burst_duration"
+			{
+				"value"		"0.3"
+			}
+			"max_stacks"
+			{
+				"value"		"5"
+			}
+			"armor_per_stack"				"2 3 4"
+			"song_cost_reduction_per_stack_tooltip"	"1 1.5 2"
+			"stack_duration"
+			{
+				"value"		"5"
+			}
+			"double_song"
+			{
+				"value"		"0"
+				"special_bonus_scepter"		"=1"
+			}
+			"armor_ally_pct"
+			{
+				"value"		"0"
+				"special_bonus_unique_largo_6" "=50"
+			}
+			"damage_per_stack"
+			{	
+				"value"		"0"
+				"special_bonus_scepter"		"+10 +15 +20"
+				"special_bonus_unique_largo_7" "+7" // because +% doesn't work here, precalculate it
+			}
+			"burst_damage"
+			{
+				"value"		"0"
+				"special_bonus_scepter"		"+50"
+				"special_bonus_unique_largo_7" "+17.5" // because +% doesn't work here, precalculate it
+			}
+			"stack_decrement_on_exit" "0"
+		}
+	}
+
+	"largo_song_fight_song"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+		//"HasShardUpgrade"				"1"
+		"ShowCooldownInTooltips"		"0"
+		"AbilitySound"					"Hero_Largo.AmphibianRhapsody.Song0"
+
+		"MaxLevel"						"3"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0.2"
+		"AbilitySharedCooldown"			"largo_songs"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		//"AbilityManaCost"				"0"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"double_song"
+			{
+				"value"		"0"
+				"special_bonus_scepter"		"=1"
+			}
+			"song_cost_reduction_per_stack"	"1 1.5 2"
+			"attack_speed_bonus_tooltip"
+			{
+				"value"			"0"
+				"special_bonus_unique_largo_7" "+35%"
+			}
+			"magic_damage_bonus_tooltip"
+			{
+				"value"			"20 25 30"
+				"special_bonus_unique_largo_7" "+35%"
+			}
+			"spell_amp_bonus_tooltip"
+			{
+				"value"			"8 12 16"
+				"special_bonus_unique_largo_7" "+35%"
+			}
+			"battle_burst_duration_tooltip"
+			{
+				"value"		"1"
+				//"special_bonus_shard"	"+0.5"
+			}
+			"AbilityManaCost"
+			{	
+				"value"			"20 32 44"
+			}
+		}
+	}
+
+	"largo_song_double_time"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+		//"HasShardUpgrade"				"1"
+		"ShowCooldownInTooltips"		"0"
+		"MaxLevel"						"3"
+		"AbilitySound"					"Hero_Largo.AmphibianRhapsody.Song3"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0.2"
+		"AbilitySharedCooldown"			"largo_songs"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		//"AbilityManaCost"				"0"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"double_song"
+			{
+				"value"		"0"
+				"special_bonus_scepter"		"=1"
+			}
+			"song_cost_reduction_per_stack"	"1 1.5 2"
+			"movespeed_bonus_burst_tooltip"
+			{
+				"value"			"16 22 28"
+				"special_bonus_unique_largo_7" "+35%"
+			}
+			"slow_resistance_tooltip"
+			{
+				"value"			"70 80 90"
+			}
+			"movement_burst_duration_tooltip"
+			{
+				"value"		"1"
+				//"special_bonus_shard"	"+0.5"
+			}
+			"slow_resistance_burst_duration_tooltip"
+			{
+				"value"		"0.3"
+			}
+			"AbilityManaCost"
+			{	
+				"value"			"20 32 44"
+			}
+		}
+	}
+
+	"largo_song_good_vibrations"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+		//"HasShardUpgrade"				"1"
+		"ShowCooldownInTooltips"		"0"
+		"MaxLevel"						"3"
+		"AbilitySound"					"Hero_Largo.AmphibianRhapsody.Song1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0.2"
+		"AbilitySharedCooldown"			"largo_songs"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		//"AbilityManaCost"				"0"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"double_song"
+			{
+				"value"		"0"
+				"special_bonus_scepter"		"=1"
+			}
+			"song_cost_reduction_per_stack"	"1 1.5 2"
+			"heal_burst_tooltip"
+			{
+				"value"			"34 56 78"
+				"special_bonus_unique_largo_7" "+35%"
+			}
+			"AbilityManaCost"
+			{	
+				"value"			"20 32 44"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Largo: Frogstomp
+	//=================================================================================================================
+	"largo_frogstomp"
+	{
+		"AbilityType"					"ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCastPoint"				"0.2"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"85 95 105 115"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"AbilityCooldown"
+			{
+				"value"					"20 18 16 14"
+			}
+			"damage_per_stomp"
+			{
+				"value"					"35 45 55 65"
+				"special_bonus_unique_largo_1"	"+15"
+			}
+			"total_ticks"
+			{
+				"value"					"4 5 6 7"
+			}
+			"slow"
+			{
+				"value"					"12 18 24 30"
+			}
+			"radius"	
+			{
+				"value"					"350"
+				"affected_by_aoe_increase"	"1"
+			}
+			"AbilityCastRange"
+			{
+				"value"					"800"
+			}
+			"stun_duration"
+			{
+				"value"			"0.1"
+			}
+			"stomp_interval"			"1"
+			"delay"						"0.5"
+		}
+	}
+
+	//=================================================================================================================
+	// Largo: Croak of Genius
+	//=================================================================================================================
+	"largo_croak_of_genius"
+	{
+		"AbilityType"					"ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		"AbilitySound"					"Hero_Largo.CroakOfGenius.Cast"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"800"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastPoint"				"0.2"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"25 35 45 55"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"damage_per_second"
+			{
+				"value"					"0"
+				//"value"					"8 12 16 20"
+			}
+			"damage_portion_pct"
+			{
+				"value"					"30 35 40 45"
+				//"value"					"0"
+			}
+			"damage_duration"
+			{
+				"value"					"5"
+			}
+			"damage_hp_pct"
+			{
+				"value"					"0"
+				"special_bonus_unique_largo_3"	"=1.5"
+			}
+			"mana_cost_reduction"
+			{
+				"value"					"15"
+			}
+			"slow"
+			{
+				"value"					"0"
+			}
+			"damage_threshold"			"0"
+			"duration"					"12 18 24 30"
+			"duration_reduction"		"0.5"
+			"AbilityCooldown"
+			{
+				"value"					"25"
+			}
+			"AbilityCharges"
+			{
+				"value"						"0"
+				//"special_bonus_unique_largo_3"	"=2"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Largo: Catchy Lick
+	//=================================================================================================================
+	"largo_catchy_lick"
+	{
+		"AbilityType"					"ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY | DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilitySound"					"Hero_Largo.CatchyLick.Target.Layer1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastPoint"				"0.2"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"			"13 11 9 7"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"80 85 90 95"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"AbilityCastRange"				
+			{
+				"value"		"700"
+				"special_bonus_unique_largo_4"	"+100"
+			}
+			"damage"
+			{
+				"value"		"85 170 255 340"
+				"special_bonus_unique_largo_5"	"+140"
+			}
+			"pull_distance"		
+			{
+				"value"			"210 240 270 300"
+				"special_bonus_unique_largo_4"	"+50"
+			}
+			"pull_distance_ally"		
+			{
+				"value"			"375"
+				"special_bonus_unique_largo_4"	"+50"
+			}
+			"pull_duration"		"0.3"
+			"strong_dispel"		{
+				"value"				"0"
+			}
+			"dispel_hp_regen"
+			{
+				"value"			"4 6 8 10"
+				"special_bonus_unique_largo_2"	"x2.5"
+			}
+			"buff_duration"		"10"
+			"AbilityCharges"
+			{
+				"value"						"0"
+				"special_bonus_unique_largo_8"	"=2"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Largo: Encore
+	//=================================================================================================================	
+	"largo_encore"
+	{	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"IsBreakable"					"1"
+		"HasShardUpgrade"				"1"
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"buff_amplification"
+			{
+				"value"									"10"
+				"hero_levelup"							"+1"
+			}
+			"repeat_buff"
+			{
+				"value"		"0"
+				"special_bonus_shard"	"=1"
+			}
+		}
+	}
+}

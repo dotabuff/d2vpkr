@@ -18,16 +18,15 @@
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
 		"AbilityCastGestureSlot"		"ATTACK"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"8.0"
  	
  		// Note:  these values must also be updated in the respective passive abilities
 		"AbilityValues"
 		{			
 			"katana_attack_range"								"225"
-			"katana_base_attack_time"							"2.0"
+			"katana_base_attack_time"							"1.8"
 			"katana_agility_bonus_base_damage"					
 			{
-				"value" 											"20"
+				"value" 											"12"
 				"DamageTypeTooltip"										"DAMAGE_TYPE_PHYSICAL"
 				"CalculateSpellDamageTooltip"							"0"
 			}
@@ -35,7 +34,6 @@
 			{
 				"special_bonus_facet_kez_flutter"				"12"
 			}
-
 			"sai_attack_range"									"150"
 			"sai_base_attack_time"								"1.5"
 			"sai_swap_bonus_movement_speed"		
@@ -46,7 +44,12 @@
 			{
 				"special_bonus_facet_kez_flutter"				"2"
 			}
-			"cooldown_reduction_per_level"						"0.2"
+			
+			"AbilityCooldown"
+			{
+				"value"											"7.75"
+				"hero_levelup"									"-0.25"
+			}
 			"scepter_cooldown_timer"							"3"
 		}
 	}
@@ -198,7 +201,7 @@
 			"katana_bleed_duration"							"7" 
 			"katana_bleed_attack_damage_pct"						
 			{
-				"value" 														"5 7 9 11"   
+				"value" 														"3 6 9 12"   
 				"DamageTypeTooltip"												"DAMAGE_TYPE_PHYSICAL"	
 				"special_bonus_unique_kez_kazura_katana_bleed_damage"			"+4.0"
 			}	
@@ -207,6 +210,7 @@
 			"bleed_as_rupture_pct"			
 			{
 				"value"		"50"
+				"special_bonus_shard"		"+50"
 				"DamageTypeTooltip"			"DAMAGE_TYPE_PHYSICAL"
 			}
 			"lifesteal_pct"					
@@ -218,6 +222,11 @@
 			{
 				"value" 	"0"
 				"special_bonus_shard" "+40"
+			}
+			"max_stacks"				
+			{
+				"value"				  	"500"
+				"special_bonus_shard"	"+500"
 			}
 			"backstab_angle"			
 			{
@@ -332,10 +341,10 @@
 		"AbilityValues"
 		{
 			"rush_range"					"525"			
-			"rush_speed"					"1000"
-			"echo_damage"				
+			"rush_speed"					"850"
+			"base_echo_damage"				
 			{
-				"value"						"45 55 65 75"
+				"value"						"35 40 45 50"
 				"DamageTypeTooltip"			"DAMAGE_TYPE_PHYSICAL"
 			}
 			"slow_resist"					"15 30 45 60"
@@ -344,17 +353,13 @@
 				"value" 												"3.75 4.5 5.25 6.0"
 				"special_bonus_unique_kez_falcon_rush_duration"			"+2"
 			}	
-			"base_attack_rate"				"1.3 1.2 1.1 1.0"		// if changing this, change base_attack_rate_katana_tooltip
-			"katana_attack_rate_penalty"	"0.2"					// if changing this, change base_attack_rate_katana_tooltip
-			"base_attack_rate_katana_tooltip"	"1.5 1.4 1.3 1.2"
-				
-			"attack_speed_factor"				"9"
-			"current_attack_rate_tooltip"
-			{
-				"dynamic_value"			"true"
-			}
+		
 			"break_range"			"825"
-			
+			"bonus_attack_speed"
+			{
+				"special_bonus_unique_kez_falcon_rush_attack_speed"			"=60"
+			}
+			"echo_proc_chance_reduction"			"50"
 		}
 	}
 
@@ -413,7 +418,6 @@
 			"attack_factor"				
 			{
 				"value"									"0"
-				"special_bonus_unique_kez_talon_toss_attack_factor"		"+50"
 			}
 		}
 	}
@@ -463,7 +467,7 @@
 				"value"												"125 150 175 200"
 				"special_bonus_unique_kez_mark_damage"				"+100"
 			}
-			"stun_duration"										"0.5"
+			"stun_duration"										"0.4"
 
 
 			// Parry below here                   
@@ -475,7 +479,13 @@
 				"value"												"4"
 				"special_bonus_unique_kez_mark_damage"				"+0"
 			}
-			"parry_stun_duration"									"0.5"
+			"parry_stun_duration"									"0.4"
+
+			"sai_swap_bonus_movement_speed"						
+			{
+				"value"				"12"
+			}
+
 		}	
 	}
 

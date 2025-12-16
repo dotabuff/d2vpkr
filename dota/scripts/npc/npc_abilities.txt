@@ -181,7 +181,7 @@
 			// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"200"
-		"AbilityChannelTime"			"1.5"
+		"AbilityChannelTime"			"1.0"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -190,7 +190,6 @@
 			"active_duration"		"420"
 			"inactive_duration"		"120"
 			"duration"				"420"
-			"active_radius"			"800"
 		}
 	}
 
@@ -266,7 +265,7 @@
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 		"AbilityCastAnimation"			"ACT_DOTA_GENERIC_CHANNEL_1"
 		"AbilityChannelTime"			"4.0"
-		"AbilityManaCost"				"75"
+		"AbilityManaCost"				"30"
 		
 		"MaxLevel"						"1"
 		// Casting
@@ -535,7 +534,6 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 				
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -954,13 +952,9 @@
 			{
 				"value" "350"
 			}
-			"slow_duration_hero"
+			"slow_duration"
 			{
 				"value" "4"
-			}
-			"slow_duration_unit"
-			{
-				"value" "8"
 			}
 			"slow_amount"
 			{
@@ -973,6 +967,10 @@
 			"damage_growth"
 			{
 				"value" "10"
+			}
+			"damage_bonus_creeps"
+			{
+				"value"	"100"
 			}
 		}
 	}
@@ -1822,7 +1820,7 @@
 	}
 
 	//=================================================================================================================
-	// Tornado: Tempest
+	// Neutral Upgrade
 	//=================================================================================================================
 	"neutral_upgrade"
 	{
@@ -1879,10 +1877,10 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"damage_absorb"		"2000"
-				"absorb_bonus_per_interval"	"20"
-				"regen_per_second"	"40"
-				"regen_bonus_per_interval"	"3.5"
+			"damage_absorb"		"2000"
+			"absorb_bonus_per_interval"	"20"
+			"regen_per_second"	"40"
+			"regen_bonus_per_interval"	"3.5"
 		}
 	}
 
@@ -1918,6 +1916,7 @@
 				"aura_radius"			"1000"
 				"aura_damage"			"60"
 				"aura_interval"			"0.2"
+				"attack_timer_duration"		"10"
 		}
 	}
 	"miniboss_alleviation"
@@ -2206,9 +2205,15 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_health_regen"		"3"
-				"radius"			"700"
-				"bonus_gold"			"10"
+				"bonus_health_regen"					"3"
+				"radius"								"700"
+				"bonus_gold"							"10"
+				"bonus_magic_resistance_per_interval"	"4"
+				"maximum_intervals"						"15"
+				"total_magic_resistance"
+				{
+					"dynamic_value"			"true"
+				}
 
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -2281,7 +2286,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 
 		// Stats
@@ -2337,7 +2341,7 @@
 		"AbilityValues"
 		{
 			"burn_amount"			"20 25 30 35"
-			"int_multiplier"		"2 2.5 3 4"
+			"int_multiplier"		"1 1.5 2 2.5"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -8060,7 +8064,23 @@
 			}
 		}
 	}
-
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_mana_reduction_10"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityValues"
+		{
+			"value"
+			{
+				"value" "10"
+			}
+		}
+	}
 	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================
@@ -11375,6 +11395,24 @@
 			"value"
 			{
 				"value" "65"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_attack_damage_66"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityValues"
+		{
+			"value"
+			{
+				"value" "66"
 			}
 		}
 	}

@@ -1,0 +1,47 @@
+"largo_croak_of_genius_damage"
+{
+	"desc"				"#DOTA_ChallengeDesc_Largo_CroakOfGeniusDamage"
+	"image"				"images/spellicons/largo_croak_of_genius.png"
+	"requiredhero"		"largo"
+	"events"
+	{
+		"matching_type"		"linear_series"
+		"query"
+		{
+			"accumulate_event"
+			{
+				"event"					"damage"
+				"attack"				"largo_croak_of_genius"
+				"attacker_team"			"!team"
+				"target_team"			"!enemyteam"
+				"target_must_be_hero"	"1"
+				"storage"
+				{
+					"1"
+					{
+						"key"			"value"
+						"aggregator"	"sum"
+					}
+				}
+			}
+		}
+		"progress_stored_in"	"1"
+		"post_tests"
+		{
+			"test_croak_of_genius_damage"
+			{
+				"storage"		"1"
+				"compare"		">="
+				"amount"		"<croak_of_genius_damage>"
+			}
+		}
+	}
+	"variables"
+	{
+		"<croak_of_genius_damage>"
+		{
+			"format"	"int"
+			"index"		"0"
+		}
+	}
+}

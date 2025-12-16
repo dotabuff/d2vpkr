@@ -1,0 +1,48 @@
+"largo_kills_during_amphibian_rhapsody"
+{
+	"desc"				"#DOTA_ChallengeDesc_Largo_KillsDuringAmphibianRhapsody"
+	"status_text"		"#DOTA_ChallengeStatus_Largo_KillsDuringAmphibianRhapsody"
+	"requiredhero"		"largo"
+	"image"				"images/spellicons/largo_amphibian_rhapsody.png"
+	"events"
+	{
+		"matching_type"		"linear_series"
+		"query"
+		{
+			"amphibian_rhapsody_kill"
+			{
+				"event"						"kill_eater"
+				"caster"					"!hero"
+				"kill_eater_event"			"871"
+			}
+		}
+		"postmatch_increments"
+		{
+			"storage"
+			{
+				"1"
+				{
+					"aggregator"		"increment"
+				}
+			}
+		}
+		"progress_stored_in"		"1"
+		"post_tests"
+		{
+			"test_amphibian_rhapsody_kill"
+			{
+				"storage"		"1"
+				"compare"		">="
+				"amount"		"<amphibian_rhapsody_kills>"
+			}
+		}
+	}
+	"variables"
+	{
+		"<amphibian_rhapsody_kills>"
+		{
+			"format"		"int"
+			"index"		"0"
+		}
+	}
+}

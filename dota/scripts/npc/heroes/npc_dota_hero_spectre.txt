@@ -24,7 +24,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"110 120 130 140"
+		"AbilityManaCost"				"100 110 120 130"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -37,16 +37,16 @@
 				"damage"				
 				{
 					"value"			"70 120 170 220"
-				"special_bonus_unique_spectre_6" "+80"
+					"special_bonus_unique_spectre_6" "+80"
 				}
 				"bonus_movespeed"		
 				{
 					"value"			"10 14 18 22"
-				"special_bonus_unique_spectre_3" "+12"
+					"special_bonus_unique_spectre_3"  	"+15"
 				}
-				"dagger_path_duration"	"12.0 12.0 12.0 12.0"
-				"hero_path_duration"	"7.0 7.0 7.0 7.0"
-				"buff_persistence"		"4.0 4.0 4.0 4.0"
+				"dagger_path_duration"	"12.0"
+				"hero_path_duration"	"7.0"
+				"buff_persistence"		"4.0"
 				"dagger_radius"			
 				{
 					"value"			"125"
@@ -84,44 +84,29 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilitySound"					"Hero_Spectre.Desolate"
 		"IsBreakable"					"1"
+		"Innate"						"1"
+		"MaxLevel"						"1"
+	
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+
 			"bonus_damage"
 			{
-				"value"									"25 40 55 70"
-				"special_bonus_unique_spectre_2"		"+15"
-				"special_bonus_facet_spectre_forsaken"	"x2"			// if changing this, change bonus_damage_multiplier_tooltip
+				"value"									"25"
+				"hero_levelup"							"+2"
+				"special_bonus_unique_spectre_2"		"+10"
 			}
-			"bonus_damage_multiplier_tooltip"
-			{
-				"value"									"0"
-				"special_bonus_facet_spectre_forsaken"	"+2"
-			}
-			"radius"
-			{
-				"value"				"350"
-			}
-			"only_creep_allies_damage_pct"
-			{
-				"value"						"0"
-			}
-			"illusions_can_apply"
-			{
-				"value"									"1"
-				"special_bonus_facet_spectre_forsaken"	"=0"
-			}
-			"illusion_damage_outgoing"
-			{
-				"special_bonus_unique_spectre_4"	"+25"
-			}
+			"radius"						"350"
+
+			
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -135,7 +120,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-        "HasShardUpgrade"               "1"
+        "HasShardUpgrade"				"1"
 		"IsBreakable"					"1"
 
 
@@ -150,7 +135,7 @@
 			}
 			"min_radius"			
 			{
-				"value"		"300"
+				"value"		"350"
 				"affected_by_aoe_increase"	"1"
 			}
 			"max_radius"			
@@ -158,7 +143,7 @@
 				"value"		"800"
 				"affected_by_aoe_increase"	"1"
 			}
-			"activation_cooldown"
+				"activation_cooldown"
 			{
 				"value"				"0"
 				"special_bonus_shard"				"+25"
@@ -190,112 +175,147 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Spectre.Haunt"
-		"IsGrantedByScepter"			"1"
-		"MaxLevel"						"1"
+		"HasScepterUpgrade"				"1"
+
+		"AbilityDraftExtraAbilities"
+		{
+			"spectre_reality"	""
+		}
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"125 150 175"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"AbilityCooldown"				
+			{
+				"value"											"180 160 140"
+				"special_bonus_scepter"							"-20"
+			}
+			"scepter_cooldown_reduction_tooltip"				"20"
+			"duration"					"6.0"
+			"illusion_damage_outgoing"
+			{
+				"value"					"-70 -45 -20"
+				"special_bonus_unique_spectre_4"	"+20"
+			}
+			"tooltip_outgoing"			
+			{
+				"value"				"30 55 80"
+				"special_bonus_unique_spectre_4"	"+20"
+			}
+			"illusion_damage_incoming"	"100 100 100"
+			"tooltip_illusion_total_damage_incoming"
+			{
+				"value"					"200 200 200"
+
+				// "damage" in attribute name but it's a percentage-based effect
+				"CalculateSpellDamageTooltip"	"0"
+				"DamageTypeTooltip"	"DAMAGE_TYPE_NONE"
+			}
+			"attack_delay"				"0"
+			"destroy_if_target_is_dead"
+			{
+				"value"										"1"
+				"special_bonus_facet_spectre_twist_the_knife"	"=0"
+			}
+
+			"fear_duration"		
+			{
+				"value"			"0"
+				"special_bonus_scepter"		"=1.5"
+			}
+			"fear_aoe"
+			{
+				"value"			"0"
+				"special_bonus_scepter"		"=400"
+			}
+			"fear_movespeed_slow"
+			{
+				"value"			"0"
+				"special_bonus_scepter"		"50"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Spectre: Shadow Step
+	//=================================================================================================================
+	"spectre_shadow_step"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"				"2"
+		"LinkedAbility"					"spectre_reality"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
-		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"160"
+		
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"32 28 24 20"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"150"
+		"AbilityManaCost"				"60 65 70 75"
+
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"duration"					"6.0"
-				"illusion_damage_outgoing"	"-20"
-				"tooltip_outgoing"	"80"
-				"illusion_damage_incoming"	"100"
-				"tooltip_illusion_total_damage_incoming"
-				{
-					"value"					"200"
+			"AbilityCastRange"				
+			{
+				"value"					"700 850 1000 1150"
+			}
+			"duration"					
+			{
+				"value"							"3.5 4.0 4.5 5.0"
+				"special_bonus_unique_spectre_shadow_step_duration"	"+1.0"
+			}	
+			"illusion_damage_incoming"	"100"
+			"tooltip_illusion_total_damage_incoming"
+			{
+				"value"					"200"
 
-					// "damage" in attribute name but it's a percentage-based effect
-					"CalculateSpellDamageTooltip"	"0"
-					"DamageTypeTooltip"	"DAMAGE_TYPE_NONE"
-				}
-				"attack_delay"				"0"
-				"destroy_if_target_is_dead"
-				{
-					"value"										"1"
-					"special_bonus_facet_spectre_twist_the_knife"	"=0"
-				}
-		}
-	}
-
-	//=================================================================================================================
-	// Spectre: Haunt Single
-	//=================================================================================================================
-	"spectre_haunt_single"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"FightRecapLevel"				"2"
-		"MaxLevel"						"3"
-		"AbilitySound"					"Hero_Spectre.Haunt"
-
-		"AbilityDraftExtraAbilities"
-		{
-			"spectre_reality" ""
-			"spectre_haunt" "scepter"
-		}
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3 0.3 0.3"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60 55 50"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"150"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-				"duration"					"6.0"
-				"illusion_damage_outgoing"
-				{
-					"value"					"-60 -40 -20"
-					"special_bonus_unique_spectre_4"	"+25"
-				}
-				"tooltip_outgoing"	"40 60 80"
-				"illusion_damage_incoming"	"100 100 100"
-				"tooltip_illusion_total_damage_incoming"
-				{
-					"value"					"200 200 200"
-
-					// "damage" in attribute name but it's a percentage-based effect
-					"CalculateSpellDamageTooltip"	"0"
-					"DamageTypeTooltip"	"DAMAGE_TYPE_NONE"
-				}
-				"attack_delay"				"0"
-				"destroy_if_target_is_dead"
-				{
-					"value"										"1"
-					"special_bonus_facet_spectre_twist_the_knife"	"=0"
-				}
+				// "damage" in attribute name but it's a percentage-based effect
+				"CalculateSpellDamageTooltip"	"0"
+				"DamageTypeTooltip"	"DAMAGE_TYPE_NONE"
+			}
+			"illusion_outgoing_damage"	
+			{
+				"value" 							"20 30 40 50"
+				"CalculateSpellDamageTooltip"		"0"
+				"DamageTypeTooltip"					"DAMAGE_TYPE_PHYSICAL"
+				"special_bonus_unique_spectre_4"	"+20"
+			}
+			
+			"move_speed"						"900"
+			"bonus_move_speed_illusion_pct"		"35"
 		}
 	}
 
@@ -306,7 +326,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
 		"AbilityType"					"ABILITY_TYPE_BASIC"
 		"MaxLevel"						"1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
@@ -317,7 +337,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"40"
+		"AbilityManaCost"				"25"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -327,12 +347,18 @@
 			"cast_dagger_on_target"
 			{
 				"value"						"0"
-				"special_bonus_facet_spectre_twist_the_knife"	"+1"
+				"special_bonus_shard"		"0"
+			}
+			"may_target_shadow_step"
+			{
+				"value"						"1"
 			}
 			"AbilityCooldown"
 			{
 				"value"										"1.5"
 			}
+			"travel_time"					"0.2"
+			"min_speed"						"1500"
 		}
 	}
 
@@ -345,5 +371,16 @@
 
 		"MaxLevel"						"1"
 		"Innate"						"1"
+
+		"AbilityValues"
+		{	
+			"radius"					"40"
+			"linger_time"				"0.3"
+			"speed_bonus"	
+			{
+				"value"		"50"
+				"hero_levelup"	"10"
+			}
+		}
 	}
 }

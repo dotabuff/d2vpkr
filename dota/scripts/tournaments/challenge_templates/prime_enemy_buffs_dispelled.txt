@@ -1,0 +1,55 @@
+"prime_enemy_buffs_dispelled"
+{
+	"challengetype"		"1012"
+	"image"				"images/items/nullifier.png"
+	"desc"				"#DOTA_ChallengeDesc_DispelEnemyBuffs"
+	"status_text"		"#DOTA_ChallengeStatusText_DispelEnemyBuffs"
+	"requiredhero"		"<hero_id>"
+	"events"
+	{
+		"matching_type"		"linear_series"
+		"query"
+		{
+			"enemy_buff_dispelled"
+			{
+				"event"						"modifier_remove"
+				"is_debuff"					"0"
+				"purged"					"1"
+				"purge_npc"					"!hero"
+				"target_team"				"!enemyteam"
+				"target_must_be_hero"		"1"
+				"storage"
+				{
+					"1"
+					{
+						"aggregator"		"increment"
+					}
+				}
+			}
+		}
+		"progress_stored_in"		"1"
+		"clear_storage_per_query"	"0"
+		"post_tests"
+		{
+			"test_purges"
+			{
+				"storage"		"1"
+				"compare"		">="
+				"amount"		"<buffs_purged>"
+			}
+		}
+	}
+	"variables"
+	{
+		"<buffs_purged>"
+		{
+			"format"	"int"
+			"index"		"0"
+		}
+		"<hero_id>"
+		{
+			"format"	"heroid"
+			"index"		"1"
+		}
+	}
+}

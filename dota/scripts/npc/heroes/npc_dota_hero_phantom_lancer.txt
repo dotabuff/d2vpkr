@@ -39,6 +39,7 @@
 			"lance_damage"
 			{
 				"value"				"70 140 210 280"
+				"special_bonus_unique_phantom_lancer_lance_damage"			"+100"
 				
 			}
 			"lance_speed"				"1000 1000 1000 1000"
@@ -56,12 +57,10 @@
 			"illusion_damage_out_pct"	
 			{
 				"value"						"-85"
-				"special_bonus_unique_phantom_lancer_lance_illusion_damage" "+15"
 			}
 			"tooltip_illusion_damage"	
 			{
 				"value"					"15"
-				"special_bonus_unique_phantom_lancer_lance_illusion_damage" "+15"
 
 				// "damage" in attribute name but it's a percentage-based effect
 				"CalculateSpellDamageTooltip"	"0"
@@ -85,7 +84,7 @@
 			}
 			"illusion_lance_damage_pct"
 			{
-				"special_bonus_facet_phantom_lancer_lancelot"	"+25"
+				"special_bonus_unique_phantom_lancer_illusion_lances"	"+50"
 			}
 			"AbilityCooldown"
 			{
@@ -109,7 +108,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"575"
+		
 		"AbilityCastPoint"				"0.1"
 			
 		// Cost
@@ -152,6 +151,12 @@
 				"value"										"22 18 14 10"
 				"special_bonus_unique_phantom_lancer_4"		"-4"
 			}
+
+			"AbilityCastRange"
+			{
+				"value"										"575"
+				"special_bonus_unique_phantom_lancer_doppelwalk_cast_range"	"+125"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -186,37 +191,56 @@
 			{
 				"value"						"6 8 10"
 			}
+
 			"proc_chance_pct"		"40 45 50"
-			"illusion_proc_chance_pct"		"9"		
-			"illusion_duration"			"8"
+
+			"illusion_proc_chance_pct"
+			{
+				"value"				"9"
+				"special_bonus_unique_phantom_lancer_juxtapose_illusio_proc_chance" "+3"
+			}
+			
+			"illusion_duration"
+			{
+				"value"							"8"				
+			}
+
+			"illusion_from_illusion_duration"
+			{
+				"value"							"4"				
+			}
+
 			"illusion_damage_out_pct"
 			{
-				"value"							"-85 -83 -81"
+				"value"							"-85"
 				"CalculateSpellDamageTooltip"	"0"
-				"special_bonus_facet_phantom_lancer_divergence"		"+2"
-				"special_bonus_unique_phantom_lancer_6" "+6"
+				"special_bonus_facet_phantom_lancer_divergence"		"+2"				
 			}
+
 			"tooltip_illusion_damage"
 			{
-				"value"							"15 17 19"
-				"special_bonus_facet_phantom_lancer_divergence"		"+2"
-				"special_bonus_unique_phantom_lancer_6" "+6"
+				"value"							"15"
+				"special_bonus_facet_phantom_lancer_divergence"		"+2"				
 
 				// "damage" in attribute name but it's a percentage-based effect
 				"CalculateSpellDamageTooltip"	"0"
 				"DamageTypeTooltip"	"DAMAGE_TYPE_NONE"
 			}
+
 			"illusion_damage_in_pct"
 			{
 				"value"							"500"
 				"CalculateSpellDamageTooltip"	"0"
+				"special_bonus_unique_phantom_lancer_juxtapose_damage_in"	"-70"
 			}
+
 			"tooltip_total_illusion_damage_in_pct"
 			{
 				"value"							"600"
 				"CalculateSpellDamageTooltip"	"0"
+				"special_bonus_unique_phantom_lancer_juxtapose_damage_in"	"-70"
 			}
-			"illusion_from_illusion_duration"	"4"
+			
 			"shard_bonus_illusions"	
 			{
 				"special_bonus_shard"			"0"
@@ -248,20 +272,25 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
-		"AbilitySound"			"Hero_PhantomLancer.PhantomEdge"
+		"AbilitySound"					"Hero_PhantomLancer.PhantomEdge"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"HasScepterUpgrade"				"1"		
 		"MaxLevel"						"4"
 		"IsBreakable"					"1"
 
 		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"13 10 7 4"
+		//-------------------------------------------------------------------------------------------------------------		
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+			"AbilityCooldown"
+			{
+				"value"				"15 11 7 3"				
+			}
+
 			"min_distance"		"275"
 			"max_distance"				
 			{
@@ -269,17 +298,9 @@
 				"special_bonus_scepter"			"+625"
 			}
 			"bonus_speed"		"800"
-			"bonus_agility"		
-			{
-				"value"				"10 20 30 40"
-				"special_bonus_unique_phantom_lancer_phantom_rush_agility"			"10"
+			"bonus_agility"		"0"
+			"agility_duration"	"0"
 
-			}
-			"agility_duration"		
-			{
-				"value"			"2"
-				"special_bonus_unique_phantom_lancer_2"		"+2.5"
-			}
 			"illusion_spawn_radius"
 			{
 				"special_bonus_scepter"			"125"				
@@ -288,12 +309,13 @@
 			{
 				"special_bonus_scepter"			"600"				
 			}
+			"evasion"							"20 30 40 50"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
 
 	//=================================================================================================================
-	// Ability: Inner Strength
+	// Ability: Illusory Armaments
 	//=================================================================================================================
 	"phantom_lancer_illusory_armaments"
 	{
@@ -305,16 +327,17 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_to_base"
-			{				
-				"value"			"100"
-				"special_bonus_unique_phantom_lancer_illusory_armaments_dmg" "+20"
+			"outgoing_floor"
+			{
+				"value"			"18"
+				"hero_levelup"	"2"	
+				"levelup_interval" "3"
 			}
 
-			"bonus_to_base_illusions"
+			"duration"
 			{
-				"value"			"70"
-				"special_bonus_unique_phantom_lancer_illusory_armaments_dmg" "+20"
+				"value"			"3"
+				"special_bonus_unique_phantom_lancer_illusory_armaments_duration" "+2"
 			}
 		}
 	}

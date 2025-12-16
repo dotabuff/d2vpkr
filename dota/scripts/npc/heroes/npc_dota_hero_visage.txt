@@ -47,7 +47,7 @@
 				"value"					"5"
 				"special_bonus_unique_visage_grave_chill_duration"			"+2"
 			}
-			"movespeed_bonus"				"12 16 20 24"
+			"movespeed_bonus"				"12 18 24 30"
 			"attackspeed_bonus"				"25 40 55 70"
 			"radius"
 			{
@@ -177,6 +177,7 @@
 			"recovery_time"
 			{
 				"value" "7 6 5 4"
+				"special_bonus_unique_visage_cloak_recovery_time"		"-2"
 			}
 			"minimum_damage"
 			{
@@ -484,5 +485,36 @@
 			"cooldown_speed_per_stack"	"2.0"
 			"linger_duration"			"2"
 		}
+	}
+
+	//=================================================================================================================
+	// Visage: Familiar Recall
+	//=================================================================================================================
+	"visage_summon_familiars_recall"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.0"
+		"MaxLevel"						"1"
+		"AbilitySound"					"Visage_Familiar.StoneForm.Cast"
+		"DependentOnAbility"			"visage_summon_familiars"
+		"AbilityTextureName"			"visage_summon_familiars"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"10.0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"recall_duration"				"4"
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_5"
 	}
 }

@@ -121,19 +121,13 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilitySound"					"Hero_Riki.Blink_Strike"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600 700 800 900"
 		"AbilityCastPoint"				"0.3"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"0.1"
-		"AbilityCharges"				"2"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -141,17 +135,22 @@
 		
 		// Special
 		"AbilityValues"
-		{
-			
+		{			
+			"AbilityCastRange"
+			{
+				"value"					"600 700 800 900"
+				"special_bonus_unique_riki_9" 	"+500"
+			}
+
 			"bonus_damage"
 			{
-				"value"					"40 55 70 85"
-				"CalculateSpellDamageTooltip"	"1"
+				"value"					"15 30 45 60"				
 			}
-			"AbilityChargeRestoreTime"
+
+			"AbilityCooldown"
 			{
-				"value"							"25 21 17 13"
-				"special_bonus_unique_riki_9" "-4"				
+				"value"							"13 10 7 4"
+				"special_bonus_unique_riki_5"	"-1"
 			}
 			"slow"						"0.5"
 		}
@@ -172,6 +171,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"MaxLevel"						"3"
 		"IsBreakable"					"1"
+		"AbilityTextureName"			"riki_permanent_invisibility"
 
 
 		// Special
@@ -181,12 +181,14 @@
 			"fade_delay"					
 			{
 				"value"										"4 3 2"
-				"special_bonus_unique_riki_6"				"-1.25"
 			}
 			"invis_movespeed_bonus_percent"
 			{
 				"special_bonus_unique_riki_8"				"10"
 			}
+
+			"bonus_xp_kill"									"130 260 390"
+			"bonus_xp_assist"								"100"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -198,23 +200,25 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
-		"MaxLevel"			"4"
-		"Innate"			"1"
-		"DependentOnAbility"	"riki_backstab"
+		"MaxLevel"			"1"
+		"Innate"			"1"		
 
 		"AbilityValues"
 		{
 			"damage_multiplier"				
 			{
-				"value"		"0.55 0.9 1.25 1.6"
+				"value"		"0.6"
+				"hero_levelup" "+0.05"
 				"special_bonus_unique_riki_1"		"+0.3"
 				"CalculateSpellDamageTooltip"	"0"
 				"DamageTypeTooltip"			"DAMAGE_TYPE_NONE"
 			}
+
+			"ally_multiplier"				"25"
 		
-			"backstab_angle"				"105 105 105 105"
+			"backstab_angle"				"105"
 
 			"bonus_xp_kill"
 			{
@@ -267,15 +271,14 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"		
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"HasScepterUpgrade"				"1"
 		"AbilitySound"					"Hero_Riki.TricksOfTheTrade.Cast"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"400"
 		"AbilityCastPoint"				"0.3"
 		"AbilityChannelTime"			"2.0"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
@@ -283,46 +286,77 @@
 
 		// Ability Data
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"45 55 65 75"
+		"AbilityManaCost"				"65"
 
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"AbilityCooldown"				
+			"AbilityCooldown"
 			{
-				"value"		"18 16 14 12"
-
+				"value"					"21 18 15 12"
+				"special_bonus_unique_riki_6" "-4"
 			}
+
+			"AbilityCastRange"
+			{
+				"value"					"400"
+				"special_bonus_scepter"	"+300"
+			}
+
 			"radius"
 			{
-				"value"		"450"
+				"value"		"425"
 				"affected_by_aoe_increase"	"1"
 			}
-			"attack_count"	"4"
-			"damage_pct"	"40"
-			"agility_pct"
+
+			"attack_count"
 			{
-				"value" 				"55 70 85 100"
-				"special_bonus_unique_riki_2" "+50"
+				"value"		"4"
 			}
-			"scepter_duration"				
+
+			"speed_per_attack"			"180"
+
+			"interval_targets"			"2"
+
+			"attack_damage"
 			{
-				"special_bonus_scepter"			"2"
+				"value"					"30 50 70 90"
 			}
-			"scepter_attacks"
+			"base_attack_damage_pct"
 			{
-				"special_bonus_scepter"		"5"
+				"special_bonus_unique_riki_tricks_dmg" "+15"
 			}
-			"scepter_cast_range"
-			{
-				"special_bonus_scepter"		"700"
-			}
+
+			"agility_pct"	"0"
 			"dispel"
 			{
-				"special_bonus_unique_riki_5"	"+1"
+				"value"		"0"
 			}
+
+			"pocket_riki_enabled"
+			{
+				"special_bonus_scepter"		"=1"
+			}
+
+			"scepter_movespeed"
+			{
+				"special_bonus_scepter"		"15"
+			}
+
+			"scepter_bonus_duration"
+			{
+				"special_bonus_scepter"		"1"
+			}
+
+			"scepter_bonus_attacks"
+			{
+				"special_bonus_scepter"		"2"
+			}
+
+			"cd_per_kill"					"0"
+
 			"creep_agility_multiplier"
 			{
 				"value"			"1"
