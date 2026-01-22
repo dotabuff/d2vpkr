@@ -30744,6 +30744,7 @@ Idet tidligt angribende helte såsom Zeus og Death Prophet dukkede op, split-pus
 	"DOTA_739e_Update"	  "Spilopdatering 7.39e"
 	"DOTA_740_Update"	  "Spilopdatering 7.40"
 	"DOTA_740b_Update"	  "Spilopdatering 7.40b"
+	"DOTA_740c_Update"	  "Spilopdatering 7.40c"
 
 	"DOTA_Settings_Tooltip_NetworkLatency" "Hvis du har en netværksforbindelse med pakketab, kan denne indstilles til \"Jeg har et svagt netværk\" for at øge forsinkelsen, men forbedre den samlede glathed af spillet."
 
@@ -32369,8 +32370,9 @@ Idet tidligt angribende helte såsom Zeus og Death Prophet dukkede op, split-pus
     "DOTA_Play_RR_HighDemand"               "Alle efterspurgte roller er valgt. Vælg alle roller for at optjene flere rollekøspil."
 
 	"DOTA_Play_RR_SoloSpendingQP"			"Du bruger et rollekøspil."
-	"DOTA_Play_RR_SoloMissingQP"			"Du skal som minimum vælge begge supportroller."
-	"DOTA_Play_RR_PartyMissingQP"			"Din gruppe skal stille sig i kø til begge Support-roller."
+	"DOTA_Play_RR_SoloMissingQP"			"Du skal som minimum vælge begge efterspurgte roller."
+	"DOTA_Play_RR_SoloMissingQP_Tooltip"	"Ved at vælge begge efterspurgte roller kan du spille rangerede roller i denne kamp. Ved at vælge alle roller kan du optjene ekstra rollekøspil til senere brug som en hvilken som helst rolle."
+	"DOTA_Play_RR_PartyMissingQP"			"Din gruppe skal stille sig i kø til begge efterspurgte roller."
 	"DOTA_RR_NonEligibleWarningTitle"      "Du har ingen rollekøspil tilbage"
     "DOTA_RR_NonEligibleWarning"           "Vil du i kø til alle roller?<br>Matchmaking tildeler dig en rolle til denne kamp, og du optjener {d:earn_amount} spil til rollekøen, som du kan bruge senere (halvt så mange fra tabte kampe)."
     "DOTA_RR_QueueAllRoles"                "Stil dig i kø til alle roller"
@@ -46826,6 +46828,7 @@ Hvis du føler, du ikke kan tildele tid nok til sagen til at nå frem til en afg
 		"DOTA_MonsterHunter_MaterialTrader_MaterialsReceivedDescription_HolidayMaterials"				"God fornøjelse med gaven og god jagt!"
 		"DOTA_MonsterHunter_MaterialsReceivedTitle_EarlyPremiumPassMaterials"						"GOD JUL, JÆGER"
 		"DOTA_MonsterHunter_MaterialsReceivedDescription_EarlyPremiumPassMaterials"				"Dit dræberinstinkt satte dig på sporet foran flokken! God fornøjelse med disse sjældne bonussmedematerialer og kuponer for at have købt ekspeditionspakken tidligt."
+		
 
 		"DOTA_MonsterHunter_MaterialTrader_Reset"				"Nulstil"
 		"DOTA_MonsterHunter_MaterialTrader_TradeButton"			"Byt"
@@ -46883,6 +46886,11 @@ Hvis du føler, du ikke kan tildele tid nok til sagen til at nå frem til en afg
 		"DOTA_MonsterHunter_Material_poogie_voucher"		"Poogie Voucher"
 		"DOTA_MonsterHunter_Material_golden_egg"		"Golden Egg"
 		"DOTA_MonsterHunter_Material_rainbow_pigment"		"Prismatic Pigment"
+
+		"DOTA_MonsterHunter_Material_universal_common"		"Almindelige universelle materialer"
+		"DOTA_MonsterHunter_Material_universal_uncommon"	"Ualmindelige universelle materialer"
+		"DOTA_MonsterHunter_Material_universal_rare"		"Sjældne universelle materialer"
+		"DOTA_MonsterHunter_Material_universal_superrare"		"Supersjældne universelle materialer"
 
 		"DOTA_MonsterHunter_Material_Rarity_Common"		"Almindeligt"
 		"DOTA_MonsterHunter_Material_Rarity_Uncommon"	"Ualmindeligt"
@@ -47261,6 +47269,59 @@ Hvis du føler, du ikke kan tildele tid nok til sagen til at nå frem til en afg
 		"DOTA_MonsterHunter_Dashboard_Crafted"			"Smedet {d:amount_crafted}/{d:total_amount}"
 
 		"DOTA_MonsterHunter_Investigation_HuntHero"			"JAGT {s:hero_name}"
+		
+
+		"DOTA_MonsterHunter_FrontPageCell_LastChance_Tooltip"		"Du vil ikke længere kunne optjene materialer, smede genstande eller få fremskridt i dit helteatlas efter <b>{t:l:t:m:event_end_date}</b>. <br><br>De materialer, du har tilbage, bruges automatisk til at smede ikke-indløste genstande."
+
+		"DOTA_MonsterHunter_UniversalMaterials_EndingSoon"			"Begivenheden slutter snart!"
+		"DOTA_MonsterHunter_UniversalMaterials_PurchaseDescription"	"Pakker med universelle materialer kan nu købes for at supplere smedning"
+		"DOTA_MonsterHunter_UniversalMaterials_PurchaseButton"		"Fra {g:dota_item_price:common_pack_item_def}"
+		"DOTA_MonsterHunter_UniversalMaterials_NewCraftingOptions"	"Pakker med universelle materialer"
+		
+		"DOTA_MonsterHunter_UniversalMaterials_PurchaseSummary_Button"		"Køb {s:total_price}"
+		
+		"DOTA_MonsterHunter_UniversalMaterials_CraftToolip_Craft"		"Opbruger følgende ekstramateriale:"
+		
+		// This is a little dumb, but...
+		"DOTA_MonsterHunter_UniversalMaterials_RewardDetails_Needed_All"					"Du skal bruge <b>{d:common_count} almindelige</b>, <b>{d:uncommon_count} ualmindelige</b>, <b>{d:rare_count} sjældne</b> og <b>{d:super_rare_count} supersjældne</b> materialer for at smede de sidste genstande."
+		"DOTA_MonsterHunter_UniversalMaterials_RewardDetails_Needed_Common_Uncommon_SuperRare"		"Du skal bruge <b>{d:common_count} almindelige</b>, <b>{d:uncommon_count} ualmindelige</b> og <b>{d:super_rare_count} supersjældne</b> materialer for at smede de sidste genstande."
+		"DOTA_MonsterHunter_UniversalMaterials_RewardDetails_Needed_Common_Rare_SuperRare"			"Du skal bruge <b>{d:common_count} almindelige</b>, <b>{d:rare_count} sjældne</b> og <b>{d:super_rare_count} supersjældne</b> materialer for at smede de sidste genstande."
+		"DOTA_MonsterHunter_UniversalMaterials_RewardDetails_Needed_Uncommon_Rare_SuperRare"			"Du skal bruge <b>{d:uncommon_count} ualmindelige</b>, <b>{d:rare_count} sjældne</b> og <b>{d:super_rare_count} supersjældne</b> materialer for at smede de sidste genstande."
+		"DOTA_MonsterHunter_UniversalMaterials_RewardDetails_Needed_Common_SuperRare"					"Du skal bruge <b>{d:common_count} almindelige</b> og <b>{d:super_rare_count} supersjældne</b> materialer for at smede de sidste genstande."
+		"DOTA_MonsterHunter_UniversalMaterials_RewardDetails_Needed_Uncommon_SuperRare"				"Du skal bruge <b>{d:uncommon_count} ualmindelige</b> og <b>{d:super_rare_count} supersjældne</b> materialer for at smede de sidste genstande."
+		"DOTA_MonsterHunter_UniversalMaterials_RewardDetails_Needed_Rare_SuperRare"					"Du skal bruge <b>{d:rare_count} sjældne</b> og <b>{d:super_rare_count} supersjældne</b> materialer for at smede de sidste genstande."
+
+		"DOTA_MonsterHunter_UniversalMaterials_RewardDetails_Needed_Common_Uncommon_Rare"					"Du skal bruge <b>{d:common_count} almindelige</b>, <b>{d:uncommon_count} ualmindelige</b> og <b>{d:rare_count} sjældne</b> materialer for at smede de sidste genstande."
+		"DOTA_MonsterHunter_UniversalMaterials_RewardDetails_Needed_Common_Uncommon"		"Du skal bruge <b>{d:common_count} almindelige</b> og <b>{d:uncommon_count} ualmindelige</b> materialer for at smede de sidste genstande."
+		"DOTA_MonsterHunter_UniversalMaterials_RewardDetails_Needed_Common_Rare"			"Du skal bruge <b>{d:common_count} almindelige</b> og <b>{d:rare_count} sjældne</b> materialer for at smede de sidste genstande."
+		"DOTA_MonsterHunter_UniversalMaterials_RewardDetails_Needed_Uncommon_Rare"			"Du skal bruge <b>{d:uncommon_count} ualmindelige</b> og <b>{d:rare_count} sjældne</b> materialer for at smede de sidste genstande."
+		"DOTA_MonsterHunter_UniversalMaterials_RewardDetails_Needed_Rare"					"Du skal bruge <b>{d:rare_count} sjældne</b> materialer for at smede de sidste genstande."
+		"DOTA_MonsterHunter_UniversalMaterials_RewardDetails_Needed_SuperRare"					"Du skal bruge <b>{d:super_rare_count} supersjældne</b> materialer for at smede de sidste genstande."
+
+		"DOTA_MonsterHunter_UniversalMaterials_PurchaseCommons"	"Pakke med {d:pack_count} <b>almindelige universelle materialer</b>"
+		"DOTA_MonsterHunter_UniversalMaterials_PurchaseUncommons"	"Pakke med {d:pack_count} <b>ualmindelige universelle materialer</b>"
+		"DOTA_MonsterHunter_UniversalMaterials_PurchaseRares"	"Pakke med {d:pack_count} <b>sjældne universelle materialer</b>"
+		"DOTA_MonsterHunter_UniversalMaterials_PurchaseSuperRares"	"Pakke med {d:pack_count} <b>supersjældne universelle materialer</b>"
+
+		"DOTA_MonsterHunter_UniversalMaterials_PurchasePriceEach"	"<b>{g:dota_item_price:option_item_def}</b> hver"
+
+		"DOTA_MonsterHunter_UniversalMaterials_PurchaseQuantityAbbrev"	"Antal"
+
+		"DOTA_MonsterHunter_MaterialsReceivedTitle_UniversalMaterialsPurchased"					"Monster Hunter – materialer"
+		"DOTA_MonsterHunter_MaterialsReceivedDescription_UniversalMaterialsPurchased"			"Du har modtaget følgende universelle materialer!"
+
+		"DOTA_MonsterHunter_UniversalMaterials_Title"			"Universelle materialer"
+		"DOTA_MonsterHunter_UniversalMaterials_Description"		"Universelle materialer kan erstatte alle andre materialer af samme sjældenhedsgrad."
+		"DOTA_MonsterHunter_UniversalMaterials_PurchaseSummary"	"Købshistorik"
+		"DOTA_MonsterHunter_UniversalMaterials_PurchaseSummary_Common"	"<b>{d:common_count}</b> almindelige universelle materialer"
+		"DOTA_MonsterHunter_UniversalMaterials_PurchaseSummary_Uncommon"	"<b>{d:uncommon_count}</b> ualmindelige universelle materialer"
+		"DOTA_MonsterHunter_UniversalMaterials_PurchaseSummary_Rare"	"<b>{d:rare_count}</b> sjældne universelle materialer"
+		"DOTA_MonsterHunter_UniversalMaterials_PurchaseSummary_SuperRare"	"<b>{d:super_rare_count}</b> supersjældne universelle materialer"
+		"DOTA_MonsterHunter_UniversalMaterials_PurchaseSummaryNothingSelected"	"Vælg antal ovenfor"
+		"DOTA_MonsterHunter_UniversalMaterials_CommonMaterialTooltip"			"Erstatter ethvert <b>almindeligt</b> materiale"
+		"DOTA_MonsterHunter_UniversalMaterials_UncommonMaterialTooltip"			"Erstatter ethvert <b>ualmindeligt</b> materiale"
+		"DOTA_MonsterHunter_UniversalMaterials_RareMaterialTooltip"				"Erstatter ethvert <b>sjældent</b> materiale"
+		"DOTA_MonsterHunter_UniversalMaterials_SuperrareMaterialTooltip"		"Erstatter ethvert <b>supersjældent</b> materiale"
 
 		"DOTA_Style_Kirin_Bolts_Offhand_Weapon_0"	"Kirin blå"
 		"DOTA_Style_Kirin_Bolts_Offhand_Weapon_1"	"Kirin rød"
