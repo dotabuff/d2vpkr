@@ -4712,6 +4712,7 @@ rikoschetter</b> och <b>framkallar gengångare</b> för att överväldiga sina m
 		"DOTA_Settings_reset_hotkeys"									"Återställ snabbtangenter ..."
 		"keybind_template_ARROW"										"Normal"
 		"keybind_template_WASD"											"WASD"
+		"keybind_template_LEGACY"										"Klassisk"
 		"keybind_template_MMO"											"MMO"
 		"keybind_template_LOL"											"League of Legends"
 		"keybind_template_HON"											"Heroes of Newerth"
@@ -4721,6 +4722,7 @@ rikoschetter</b> och <b>framkallar gengångare</b> för att överväldiga sina m
 
 		"UI_U"																			"U"
 
+		"DOTA_Settings_Shop_Hotkeys"									"Butiken använder alltid snabbtangenter"
 		"DOTA_Settings_Controls"										"SNABBTANGENTER"
 		"DOTA_Game_Settings"											"SPELINSTÄLLNINGAR"
 		"DOTA_Settings_System"										"BILD / LJUD"
@@ -22395,6 +22397,8 @@ spindelväv#|#<span class='highlight'>{d:detailvalue}</span> kills i spindelväv
 	"dota_settings_video"						"Grafik"
 	"dota_settings_resetkeys"					"Återställ snabbtangenter ..."
 	"dota_settings_advancedkeys"				"Till avancerade snabbtangenter"
+	"dota_settings_basickeys"					"Till grundläggande snabbtangenter"
+	"dota_settings_returntohotkeys"				"Återgå till snabbtangenterna"
 	"dota_settings_legacykeys"					"Använd klassiska tangenter"
 	"dota_settings_per_unit_hotkeys"			"Specifik snabbknapp för enhet"
 	"dota_settings_enable_quickcast"			"Aktivera snabbanvändning"
@@ -22434,6 +22438,7 @@ spindelväv#|#<span class='highlight'>{d:detailvalue}</span> kills i spindelväv
 	"dota_settings_unitactions"					"Enheter"
 	"dota_settings_shopactions"					"Butik"
 	"dota_settings_courieractions"				"Kurir"
+	"dota_settings_hotkeysoptions"				"Alternativ för snabbtangenter"
 	"dota_settings_talentoptions"				"Uppgradera talangalternativ"
 	"dota_settings_account_phone"				"Telefonkoppling för rankad matchning"
 	"dota_settings_pingwheel"					"Pinghjul"
@@ -22688,6 +22693,7 @@ spindelväv#|#<span class='highlight'>{d:detailvalue}</span> kills i spindelväv
 	"dota_settings_alwaysshownames"				"Spelarnamn"
 	"dota_settings_dontshownames"				"Inget"
 	"dota_settings_showhitpoints"				"Visa HP ovanför spelares hälsomätare"
+	"dota_settings_forceshophotkeys"			"Butiken använder alltid snabbtangenter"
 	"dota_settings_shop_search_autofocus"	"Butikssökning tar fokus vid öppnande"
 	"dota_settings_usebroadcastermenu"			"Använd kommentatorns statistik"
 	"dota_settings_spectator_enable_edgepan_temporary_free_cam" "Åsidosätt åskådarkamera vid kantpanorering"
@@ -22986,6 +22992,9 @@ spindelväv#|#<span class='highlight'>{d:detailvalue}</span> kills i spindelväv
 	"dota_settings_accept_match_details"			"Visa matchutvärdering"
 	"dota_tooltip_settings_accept_match_details"	"Den här funktionen visar information från matchningen när du accepterar en match och låter dig tacka nej till matcher utan påföljder. Det gäller alla matcher med matchning, förutom Immortal Draft. Den här funktionen kräver Dota Plus."
 
+	"dota_settings_target_filter_is_toggle"			"Växla filtersnabbtangenter"
+	"dota_tooltip_settings_target_filter_is_toggle_details"	"När det här alternativet är aktiverat fortsätter filtren att användas tills du trycker på Växla filtersnabbtangenter igen. Annars används filtren endast när du håller ner filtersnabbtangenten."
+
 	"dota_settings_labs_minimap_section"			    "Minikarta"
 	"dota_settings_alt_minimap_move"					"Förflyttning på minikartan med högerklick kräver att Alt trycks ner"
 	"dota_settings_alt_minimap_move_hint"				"När det är aktiverat måste Alt tryckas ner för förflyttning med högerklick på minikartan."
@@ -22994,6 +23003,7 @@ spindelväv#|#<span class='highlight'>{d:detailvalue}</span> kills i spindelväv
 	"dota_settings_alt_right_range_hint"			"Ihållande räckviddsindikationer"
 	"dota_tooltip_settings_alt_right_range_hint"	"Om du håller in Alt och högerklickar på HUD-element som visar en radie runt din hjälte när du håller över hen (t.ex. förmågor, föremål, erfarenhet, attackräckvidd), skapas en bestående synlig ring som spårar den aktuella radien för effekten. Radien uppdateras automatiskt för att återspegla buffar eller föremål på din hjälte."
 
+	"dota_settings_labs_hotkeys_section"			"Snabbtangenter"
 	"dota_set_hotkeys_to_legacy_keys"				"Ställ in enhetens snabbtangenter till klassiska tangenter"
 	"dota_tooltip_settings_goodbye_legacy_keys"	"Klick på den här knappen gör att alla hjältespecifika snabbtangenter ersätts med klassiska tangenter, men du kan fortfarande anpassa dem individuellt."
 	"dota_settings_enable_invoker_individual_hotkeys"	"Besvärjelser från Invoke använder klassiska snabbtangenter"
@@ -23063,12 +23073,14 @@ spindelväv#|#<span class='highlight'>{d:detailvalue}</span> kills i spindelväv
 	"DOTA_Hotkeys_Tooltip_DeathSummary"  "Visa dödssummeringen"
 	"DOTA_Hotkeys_Tooltip_DotaAlt"	"Bind om Alt-modifieraren"
 	"DOTA_Hotkeys_Tooltip_DotaAlternativeCastSwitch"	"Bind knappen för att använda den icke-valda versionen av en förmåga som har alternativ användning, utan att behöva växla till den (CTRL som standard)"
+	"DOTA_Hotkeys_Tooltip_Group"  "Välj en förinställd kontrollgrupp av enheter. Definiera en kontrollgrupp genom att välja de önskade enheterna och hålla inne CTRL + en av snabbtangenterna."
 	"DOTA_Hotkeys_Tooltip_Legacy"  "Använd snabbtangenter från Dota 1. Snabbtangenter för förmågor varierar efter hjälte. Obs! Snabbanvändning fungerar inte med klassiska tangenter aktiverade."
 	"DOTA_Hotkeys_Tooltip_PerUnitHotkeys"  "Aktivera olika snabbtangenter för förmågor per enhet."
 	"DOTA_Hotkeys_Tooltip_Quickcast"  "Förmågor med snabbanvänd aktiveras så snart snabbknappen trycks ner vid muspekarens aktuella plats.<br><br>Genom att aktivera direkta bindningar kan du binda specifika tangenter för snabbanvändning och autoanvändning."
 	"DOTA_Hotkeys_Tooltip_Quickcast_Items"  "Föremål med snabbanvänd aktiveras så snart snabbknappen trycks ner vid muspekarens aktuella plats.<br><br>Genom att aktivera direkta bindningar kan du binda specifika tangenter för snabbanvändning."
 	"DOTA_Hotkeys_Tooltip_Cast"  "Snabbtangenter för att använda en hjälteförmåga."
 	"DOTA_Hotkeys_Tooltip_AbilityCast"  "Snabbtangenter för att använda en hjälteförmåga."
+	"DOTA_Hotkeys_Tooltip_ItemCast"  "Snabbtangenter för att använda ett föremål från förrådet."
 	"DOTA_Hotkeys_Tooltip_ChatVoiceTeam"  "Använd din mikrofon för att kommunicera med alla lagkamrater."
 	"DOTA_Hotkeys_Tooltip_CameraSavedPosition" "Flytta kameran snabbt till en sparad position. Håll in CTRL och den tilldelade knappen för att spara positionen."
 	"DOTA_Hotkeys_Tooltip_SelectAlly" "Väljer en allierad baserat på ordningen de visas i det övre fältet."
@@ -36128,6 +36140,7 @@ Med hjältar som sätter press tidigt som Zeus och Death Prophet, split-pushare 
 	"encounter_bonus_gallery"											"Kaoskarneval"
 	"encounter_event_bristleback_fragment_shop"							"Bristles småsaker"
 	"encounter_event_warlock_library"									"Magiska arkiven"
+	"encounter_event_brewmaster_bar"									"Pandapuben"
 	"encounter_event_life_shop"											"Underhollow"
 	"encounter_event_naga_bottle_rune"									"Sirenström"
 	"encounter_event_zeus"												"Helgedom"
@@ -36206,6 +36219,7 @@ Med hjältar som sätter press tidigt som Zeus och Death Prophet, split-pushare 
 
 
 	"DOTA_Tooltip_modifier_aghsfort_primal_beast_boss_inhibition_debuff"					"Inhibition"
+	"DOTA_Tooltip_modifier_aghsfort_primal_beast_boss_inhibition_debuff_Description"					"Helande reducerat"
 	"DOTA_Tooltip_modifier_aghsfort_primal_beast_boss_pummel"								"Pummel"
 	"DOTA_Tooltip_modifier_aghsfort_primal_beast_boss_pummel_Description"								"Mörbultad av Primal Beast"
 	"DOTA_Tooltip_modifier_aghsfort_primal_beast_boss_primal_roar_stun"						"Bedövad"
@@ -42642,9 +42656,15 @@ Om det känns som att du inte kunde lägga tillräckligt mycket uppmärksamhet p
 		"DOTA_StickerCollections_AddRow"						"Lägg till en rad"
 		"DOTA_StickerCollections_Place"							"Fäst"
 		"DOTA_StickerCollections_Reset"							"Nollställ"
+		"DOTA_StickerCollections_Tutorial0"						"Här kan du hålla reda på samlade klistermärken och tjäna stridspasspoäng genom att fylla raderna."
 		"DOTA_StickerCollections_Tutorial0a"					"Klicka på stjärnan i det övre vänstra hörnet på varje rad för att välja raden som ska visas på din profil."
 		
 		"DOTA_StickerCollections_Tutorial1"						"Du behöver några klistermärken för komma i gång. Kolla in <a href=\"event:DOTAShowBPInternational2022StickerStorePage()\"><b>klistermärkesbutiken</b></a> eller hämta klistermärkeskapslar från <a href=\"event:DOTAShowBPInternational2022HomePage()\"><b>stridspasset</b></a>."
+		"DOTA_StickerCollections_Tutorial2"						"Du har oöppnade klistermärkeskapslar!<br><br>Öppna kapslarna för att få klistermärken och fäst dem på raderna i samlingen."
+		"DOTA_StickerCollections_Tutorial3"						"Du har några klistermärken! För att hjälpa dig att komma igång har vi lagt till två rader där du kan fästa klistermärkena. <br><br>Dra klistermärken från det här området till samlingsraderna för att fästa ett klistermärke. <br><br>När allt är som du vill ha det, klicka på knappen <b>FÄST</b> för att göra det permanent!"
+
+		"DOTA_StickerCollections_Tutorial10"					"Du kan markera en rad som favorit genom att klicka på stjärnan i det övre vänstra hörnet av raden. Om du markerar en rad som favorit visas den på din profil. Om du inte längre vill att raden ska vara en favorit kan du antingen välja en annan rad att favoritmarkera eller klicka på stjärnan igen för att ta bort favoritmarkeringen."
+
 		"DOTA_StickerCollections_Tutorial_Next"					"Nästa"
 		"DOTA_StickerCollections_Welcome1"						"• Välkommen till •"
 		"DOTA_Sticker_BuyOnMarket_Short"						"Marknad"
@@ -42751,6 +42771,8 @@ Om det känns som att du inte kunde lägga tillräckligt mycket uppmärksamhet p
 		"DOTA_Armory_RepackageFailure_UnableToDeleteItem" "Kunde inte ta bort föremålet."
 		"DOTA_Armory_RepackageFailure_ItemUntradeable" "Föremålet kan inte bytas."
 		"DOTA_Armory_RepackageFailure_ItemMixedQuality" "Föremålen har blandad kvalitet."
+		"DOTA_Armory_RepackageFailure_ItemWrongQuality"	"Föremålet är av en kvalitet som gör att det inte kan paketeras om."
+
 		// Loadout
 		"DOTA_HeroLoadout_TabTitle_LoadoutContents"		"Utrustning"
 		"DOTA_HeroLoadout_TabTitle_ProgressionTabContents"		"Framsteg"
@@ -43629,6 +43651,7 @@ Om det känns som att du inte kunde lägga tillräckligt mycket uppmärksamhet p
 		"DOTA_ActivateCompendium"	"Aktivera kompendium"
 		"DOTA_ActivateCompendium_NotActivated"	"Inte aktiverat"
 		"DOTA_ActivateCompendium_NotActivated_Message"	"Detta kompendium finns nu förvarat i vapenförrådet."
+		"DOTA_ActivateCompendium_Failed"	"Kompendiet kunde inte aktiveras. Det beror troligen på att spelet har tappat anslutningen till spelkoordinatorn. Kompendiet förvaras nu i ditt vapenförråd."
 		"DOTA_Showcase_ModerationFailed"	"Det gick inte att slutföra åtgärden."
 
 
@@ -43698,6 +43721,7 @@ Om det känns som att du inte kunde lägga tillräckligt mycket uppmärksamhet p
 		"DOTA_Showcase_ItemType_Tower"				"Torn"
 		"DOTA_Showcase_ItemType_Creep"				"Creep"
 		"DOTA_Showcase_ItemType_HeroIcon"			"Hjälteikon"
+		"DOTA_Showcase_ItemType_ArmoryItem"			"Vapenförrådsföremål"
 		"DOTA_Showcase_ItemType_Widget"				"Widget"
 		"DOTA_Showcase_ItemType_ChatWheel"			"Chatthjul"
 		"DOTA_Showcase_ItemType_Background"			"Bakgrund"
@@ -46219,6 +46243,7 @@ Om det känns som att du inte kunde lägga tillräckligt mycket uppmärksamhet p
 		"DOTA_Chat_MonsterHunter_HuntAlert_HuntedByAll_03"		"Se vad som händer när du gör ett försök %s2 <font color='%s4'>%s3</font>!"
 		"DOTA_Chat_MonsterHunter_HuntAlert_HuntedByAll_04"		"Fel val %s2 <font color='%s4'>%s3</font>!"
 		"DOTA_Chat_MonsterHunter_HuntAlert_HuntedByAll_05"		"Jag gillar ditt självförtroende %s2 <font color='%s4'>%s3</font>!"
+		"DOTA_Chat_MonsterHunter_HuntAlert_HuntedByAll_06"		"Okej %s2 <font color='%s4'>%s3</font>! Försök hänga med."
 		"DOTA_Chat_MonsterHunter_HuntAlert_HuntedByAll_07"		"Inte idag %s2 <font color='%s4'>%s3</font>!"
 
 		"DOTA_Chat_MonsterHunter_HuntAlert_HunterDuel"		"<font color='#ffdda9e2'>Monster Hunter</font> %s1 %s2 <font color='%s4'>%s3</font> och jag jagar varandra."
@@ -46226,6 +46251,7 @@ Om det känns som att du inte kunde lägga tillräckligt mycket uppmärksamhet p
 		"DOTA_Chat_MonsterHunter_HuntAlert_HunterDuelAll_02"		"Nu kör vi %s2 <font color='%s4'>%s3</font>!"
 		"DOTA_Chat_MonsterHunter_HuntAlert_HunterDuelAll_03"		"Låt oss sluta låtsas %s2 <font color='%s4'>%s3</font>. Var ska vi träffas?"
 		"DOTA_Chat_MonsterHunter_HuntAlert_HunterDuelAll_04"		"Här kommer höjdpunkten %s2 <font color='%s4'>%s3</font>!"
+		"DOTA_Chat_MonsterHunter_HuntAlert_HunterDuelAll_05"		"Okej %s2 <font color='%s4'>%s3</font>. Låt oss tala klarspråk."
 		"DOTA_Chat_MonsterHunter_HuntAlert_HunterDuelAll_06"		"Låt den bästa jägaren vinna %s2 <font color='%s4'>%s3</font>!"
 		"DOTA_Chat_MonsterHunter_HuntAlert_HunterDuelAll_07"		"Jag gillar hur du tänker %s2 <font color='%s4'>%s3</font>. Kom igen då!"
 
@@ -46542,7 +46568,11 @@ Om det känns som att du inte kunde lägga tillräckligt mycket uppmärksamhet p
 		"dota_settings_dota_ability_amphibian_rhapsody_hear_click_track"		"Largo: aktivera metronomspår när Amphibian Rhapsody spelas"
 		"dota_settings_dota_ability_amphibian_rhapsody_hear_click_track_description"		"När du spelar Amphibian Rhapsody hörs en metronom som håller takten."
 		"dota_settings_dota_ability_amphibian_rhapsody_hear_click_track_songcard"		"Slå på metronom"
-"dota_settings_bind_togglebuybackprotection"	"Slå på/av återköpsskydd"
+
+		//-----
+
+		"dota_settings_per_unit_keybindings_disabled_during_custom_games" "Inaktivera snabbtangenter per enhet i anpassade spel"
+		"dota_settings_bind_togglebuybackprotection"	"Slå på/av återköpsskydd"
 		"dota_settings_bind_togglebuybackprotection_new_title"	"Snabbtangent för återköpsskydd"
 		"dota_settings_bind_togglebuybackprotection_description"	"Ställ in en snabbtangent för att enkelt slå på/av återköpsskydd."
 
@@ -46562,6 +46592,8 @@ Om det känns som att du inte kunde lägga tillräckligt mycket uppmärksamhet p
 		"DOTA_Hotkeys_Tooltip_ChannelCancel_HoldCancel" 	 "Håll/avbryt"
 
 		"dota_settings_healthbar_visualization_new_settings_title"				"Visualisera skada och helning på hjältars hälsomätare."
+		"dota_settings_healthbar_visualization_new_settings_description"		"Hälsomätare visar en visuell effekt när en hjälte har mottagit skada eller helande."
+
 		"dota_settings_visualize_damage"				"Visualisera skada"
 		"dota_settings_visualize_damage_tooltip"		"Hjältars hälsomätare visar en visuell effekt när de har skadats."
 		"dota_settings_visualize_healing"				"Visualisera helning"
@@ -47136,6 +47168,7 @@ Om det känns som att du inte kunde lägga tillräckligt mycket uppmärksamhet p
 		"DOTA_MonsterHunter_Premium_ExpeditionPackOwned"		"Expeditionspaket ägs"
 		"DOTA_MonsterHunter_HeroAtlasHeroGridFilterTooltip"		"Visa framsteg i Hjälteatlas"
 		
+		"DOTA_MonsterHunter_PostGame_WinMatch"				"<b>Vinn</b> match"
 		"DOTA_MonsterHunter_PostGame_HuntStatus"			"Döda {s:hunt_target} först"
 		"DOTA_MonsterHunter_PostGame_MaterialsEarned"			"Intjänade material"
 		"DOTA_MonsterHunter_PostGame_HeroAtlasProgress"			"Framsteg i Hjälteatlas"
@@ -47169,6 +47202,7 @@ Om det känns som att du inte kunde lägga tillräckligt mycket uppmärksamhet p
 		
 		"DOTA_MonsterHunter_Reward_TrackMaterials"	"Spåra material"
 		"DOTA_MonsterHunter_State_Loading_Materials"	"Hämtar material till Meowster!"
+		"DOTA_MonsterHunter_State_Loading_Page"			"Mjau ... förbereder sidan ..."
 		"DOTA_MonsterHunter_State_Loading"		"Läser in ..."
 		"DOTA_MonsterHunter_State_Error"		"Ett kommunikationsfel har uppstått."
 		
@@ -47188,6 +47222,7 @@ Om det känns som att du inte kunde lägga tillräckligt mycket uppmärksamhet p
 		"DOTA_ActivateMonsterHunterPremium_Question"				"Vill du aktivera detta expeditionspaket på ditt konto nu?"
 		"DOTA_ActivateMonsterHunterPremium_NotActivated"			"Inte aktiverat"
 		"DOTA_ActivateMonsterHunterPremium_NotActivated_Message"	"Detta Monster Hunter-expeditionspaket finns nu i vapenförrådet"
+		"DOTA_ActivateMonsterHunterPremium_Failed"					"Monster Hunter-expeditionspaketet kunde inte aktiveras. Det beror troligen på att spelet har tappat anslutningen till spelkoordinatorn. Expeditionspaketet förvaras nu i ditt vapenförråd."
 		"DOTA_PurchaseMonsterHunterPremium_Price"			"Köp {g:dota_item_price:monster_hunter_premium_item_def}"
 		"DOTA_PurchaseMonsterHunterPremiumAsGift_Price"		"Köp som gåva: {g:dota_item_price:monster_hunter_gift_item_def}"
 		"DOTA_PurchaseMonsterHunterPremium_Purchase"		"Köp"
@@ -47265,6 +47300,8 @@ Om det känns som att du inte kunde lägga tillräckligt mycket uppmärksamhet p
 		"DOTA_MonsterHunter_Welcome_MoreInfo"				"Mer information"
 
 		"DOTA_MonsterHunter_EventDetails_Quest"				"Välj byte"
+		"DOTA_MonsterHunter_EventDetails_Quest1"				"I början av varje Dota-match kan du välja en fiendehjälte som <b>jaktbyte</b>."
+		"DOTA_MonsterHunter_EventDetails_Quest2"				"Olika hjältar ger olika <b>tillverkningsmaterial</b>. Varje potentiellt mål listar materialen och de set som kan tillverkas med materialen. Välj det mål som ger dig materialen till det set du vill tillverka härnäst."
 		"DOTA_MonsterHunter_EventDetails_Quest3"				"Om du vinner matchen får du allt material som listas. Om du förlorar får du bara en del av dem."
 
 		"DOTA_MonsterHunter_EventDetails_Hunt"				"Förfölj ditt byte"
@@ -47279,6 +47316,7 @@ Om det känns som att du inte kunde lägga tillräckligt mycket uppmärksamhet p
 		"DOTA_MonsterHunter_EventDetails_GearCrafting_Info"			"För dem som vill ha mer innehåller <b>expeditionspaketet</b> lite mer av allt: användbara Monster Hunter-monster (Rathalos till Dragon Knight och Bullfango till Beastmaster), ett Monster Hunter-musikpaket och en samling säsongsgraffiti, samt ett paket med tillverkningsmaterial för att komma igång<br><br>Med expeditionspaketet kan du dessutom tillverka exklusiva varianter av Poogie, Palico och hjälteset med anpassade omgivande och odödliga effekter."
 		"DOTA_MonsterHunter_EventDetails_Dragons"				"Här finns monster"
 		"DOTA_MonsterHunter_MaterialDetails_HeroDrops"			"Släpps av följande hjältar:"
+		"DOTA_MonsterHunter_MaterialDetails_MatchDrops"			"Släpps som matchbelöning av alla hjältar."
 		"DOTA_MonsterHunter_MaterialDetails_UsedToCraft"		"Används för att tillverka följande:"
 		"DOTA_MonsterHunter_MaterialDetails_NoMoreNeeded"		"Alla föremål som kräver detta material har tillverkats."
 
@@ -47336,6 +47374,7 @@ Om det känns som att du inte kunde lägga tillräckligt mycket uppmärksamhet p
 		"DOTA_MonsterHunter_Codex_SwapBase"					"Grundstil"
 		"DOTA_MonsterHunter_Codex_SwapPersona"				"Persona"
 		"DOTA_MonsterHunter_Codex_Reward_Materials"			"Material"
+		"DOTA_MonsterHunter_Codex_Reward_Materials_Info"	"Material som släppts under jakt:"
 		"DOTA_MonsterHunter_Codex_Reward_Materials_Claim_Info"	"Hämta dessa material när du låser upp den här sidan i atlasen."
 		"DOTA_MonsterHunter_Codex_Reward_Materials_Claim"	"Hämta material"
 
@@ -47372,6 +47411,7 @@ Om det känns som att du inte kunde lägga tillräckligt mycket uppmärksamhet p
 		"DOTA_MonsterHunter_Codex_Entry_Unseen"				"Hjälte är osedd."
 		"DOTA_MonsterHunter_Codex_Entry_Seen"				"Låses upp från förluster mot eller med denna hjälte."
 		"DOTA_MonsterHunter_Codex_Entry_Partial"			"Spela matcher med hjälten på ett av lagen för att låsa upp framsteg."
+		"DOTA_MonsterHunter_Codex_Entry_Partial_Tip"		"<b>Spela Dota, tjäna framsteg</b><br>Vinst: 34 %<br>Förlust: 11 %<br><i>Hjälten som du spelar får en tredubbel bonus.</i><br><i>Turbomacther ger 60 % framsteg</i>"
 		"DOTA_MonsterHunter_Codex_Entry_Complete"			"Lås omedelbart upp en sida genom att vinna som hjälten."
 		"DOTA_MonsterHunter_Codex_ViewComic"				"Visa serien"
 		"DOTA_MonsterHunter_Codex_Entry_Unknown"			"???"
