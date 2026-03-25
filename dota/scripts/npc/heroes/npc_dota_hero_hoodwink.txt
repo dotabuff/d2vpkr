@@ -125,7 +125,7 @@
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"16 14 12 10"
-		"AbilityCastRange"				"575"
+		"AbilityCastRange"				"675 700 725 750"
 		"AbilityCastPoint"				"0.2"
 		"AbilityManaCost"				"70 80 90 100"
 
@@ -147,7 +147,7 @@
 				"bounce_count"			
 				{
 					"value"			"2 3 4 5"
-					"special_bonus_unique_hoodwink_acorn_shot_bounces" "+1"
+					"special_bonus_unique_hoodwink_acorn_shot_bounces" "+2"
 				}
 				"bounce_range"			
 				{
@@ -190,7 +190,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1000"
+		"AbilityCastRange"				"1100"
 		"AbilityCastPoint"				"0.2"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 
@@ -254,7 +254,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"movement_speed_pct"			"20 25 30 35"
+			"redirect_chance"			"0"
+			"movement_speed_pct"		"20 25 30 35"
 			"duration"
 			{
 				"value"						"3.5 4.0 4.5 5.0"
@@ -265,38 +266,13 @@
 				"value"											"2"
 				"special_bonus_unique_hoodwink_scurry_charges"	"+1"		// NOTE: If changing this, change the charges added in OnAbilityUpgrade
 			}
-			"decoy_duration"					"6.0"
-			"decoy_detonate_radius"				
+			"radius"						
 			{
-				"value"		"250"
+				"value"		"275"
 				"affected_by_aoe_increase"	"1"	
 			}
+			"evasion_multiplier"		"2"
 			
-			"decoy_stun_duration"				"1.6"
-			"images_do_damage_percent"			"0"
-			"images_take_damage_percent"		"100"
-			"projectile_speed"					"1200"
-			"movement_speed"					"15"
-			"cast_range"						
-			{
-				"value"							"0"
-				"special_bonus_facet_hoodwink_hunter"	"50 100 150 200"
-			}
-
-			"attack_range"
-			{
-				"value"							"0"
-				"special_bonus_facet_hoodwink_hunter"	"50 100 150 200"
-			}
-
-			"radius_increase"
-			{
-				"value"							"0"
-			}
-
-			"heal_amount"						"0"
-			"heal_movement"						"0"
-			"evasion_multiplier"	"2.0"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -460,10 +436,9 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
-		"DependentOnAbility"			"hoodwink_sharpshooter"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_INNATE_UI"		
 		"Innate"						"1"
- 		"MaxLevel"						"4"
+ 		"MaxLevel"						"1"
 		"IsBreakable"					"1"
 
  		"AbilityValues"
@@ -474,7 +449,77 @@
 				"affected_by_aoe_increase"	"1"	
 			}
 
-			"redirect_chance"	"14 21 28 35"
+			"redirect_chance"
+			{
+				"value"					"14"
+				"hero_levelup"			"1"
+			}
  		}
+	}
+
+	//=================================================================================================================
+	// Hoodwink: Tomo'kan Tracker
+	//=================================================================================================================
+	"hoodwink_tomokan_tracker"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"Innate"						"1"
+ 		"MaxLevel"						"1"
+		"IsBreakable"					"1"
+
+ 		"AbilityValues"
+ 		{
+ 			"search_radius"				"1200"
+ 			"trail_history_duration"	
+ 			{
+ 				"value"					"15"
+ 				"hero_levelup"			"+0.5"
+ 			}		
+ 			"trail_duration"			"0.5"
+ 			"trail_interval"			"0.2"
+ 		}
+	}
+
+	//=================================================================================================================
+	// Hoodwink: Forager
+	//=================================================================================================================
+	"hoodwink_forager"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"Innate"						"1"
+ 		"MaxLevel"						"1"
+		"IsBreakable"					"1"
+		
+		
+		"AbilityChannelTime"			"1"
+		"HasSubAbility"					"1"
+		"SubAbilityNames"				"item_hoodwink_health_acorn;item_hoodwink_agility_acorn;item_hoodwink_mana_acorn"
+					
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"AbilityCooldown"				
+			{	
+				"value" 			"88"
+				"hero_levelup"		"-1"
+			}
+			"gold_amount"				
+			{				
+				"hero_levelup"			"+5"
+			}
+			"radius"					"1200"
+			"tree_radius"				"250"
+			"tree_creation_interval"	"5.0"
+			"max_trees"					"3"
+			"old_destroy_radius"		"2500"
+		}
 	}
 }

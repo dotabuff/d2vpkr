@@ -31,7 +31,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"115 120 125 130"		
+		"AbilityManaCost"				"115 120 125 130"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -44,7 +44,7 @@
 			}
 			"fissure_duration"			"6.5 7 7.5 8.0"
 			"fissure_radius"				"225"
-			"stun_duration"				"0.8 1.0 1.2 1.4"
+			"stun_duration"				"1.0 1.2 1.4 1.6"
 			"fissure_damage"
 			{
 				"value"				"100 160 220 280"
@@ -195,26 +195,14 @@
 		{
 				"aftershock_range"			
 				{
-					"value"		"300"						// if changing this, update aftershock_range_tooltip
+					"value"		"350"
 					"affected_by_aoe_increase"	"1"
 				}
 				"aftershock_damage"			
 				{
 					"value"		"65 90 115 140"
 					"special_bonus_unique_earthshaker_6"		"+50"
-				}
-				"aftershock_range_increase_per_level_interval"
-				{
-					"value"													"0"
-					"special_bonus_facet_earthshaker_tectonic_buildup"		"+30"
-				}
-				"aftershock_range_tooltip"
-				{
-					"value"													"300"	// if changing this, update aftershock_range
-					"affected_by_aoe_increase"								"1"
-					"dynamic_value"											"true"
-					"special_bonus_facet_earthshaker_tectonic_buildup"		"+0"
-				}
+				}				
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -312,8 +300,7 @@
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"MaxLevel"						"4"
-		"DependentOnAbility"			"earthshaker_echo_slam"
+		"MaxLevel"						"1"
 		"IsBreakable"					"1"
 		"Innate"						"1"
 
@@ -352,11 +339,13 @@
 			}
 			"projectile_body_damage_creep"
 			{
-				"value"		"30 45 60 75"
+				"value"			"27"
+				"hero_levelup"	"3"
 			}
 			"projectile_body_damage_hero"
 			{
-				"value"		"150 250 350 450"
+				"value"			"135"
+				"hero_levelup"	"15"
 			}
 			"projectile_body_damage_additional_percent_health"
 			{

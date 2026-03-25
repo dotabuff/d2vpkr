@@ -67,7 +67,9 @@
 					"value" "450"
 					"special_bonus_facet_snapfire_full_bore"	"=650"
 				}
-				"point_blank_dmg_bonus_pct"				"50"
+				"point_blank_dmg_bonus_pct"				"30"
+				"point_blank_debuff_duration_pct"				"50"
+
 				"bonus_applies_at_long_range"
 				{
 					"value"			"0"
@@ -403,18 +405,10 @@
 			
 		"AbilityValues"
 		{
-			"miss_chance" "25" 
-			"damage_amp"	"30"
-			"split_shot"
-			{
-				"value"	"0"
-				"special_bonus_facet_snapfire_ricochet_ii"		"+2"
-			}
-			"split_shot_damage_pct"
-			{
-				"value"		"0"
-				"special_bonus_facet_snapfire_ricochet_ii"		"=75"
-			}
+			"miss_chance" 				"25" 
+			"damage_amp"				"30"
+			"split_shot"				"0"
+			"split_shot_damage_pct"		"0"
 			"glancing_shot_damage_pct"	"60"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -455,7 +449,7 @@
 				"buffed_attacks"			
 				{
 					"value"		"5"
-					"special_bonus_unique_snapfire_2"	"+1"
+					"special_bonus_unique_snapfire_2"	"+2"
 				}
 				"damage_pct"
 				{
@@ -474,4 +468,41 @@
 				}
 		}
 	}
+
+
+
+	//=================================================================================================================
+	// Ability: Snapfire: Boomstick
+	//=================================================================================================================
+	"snapfire_boomstick"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+			
+		"AbilityValues"
+		{
+			"damage_amp_min"
+			{
+				"value"								"0"
+				"dynamic_value"						"true"	// just so we can force show a zero value
+			}
+			"damage_amp_max"						"35"
+			"distance_threshold_max"				
+			{
+				"value"									"495"
+				"hero_levelup"							"5"
+			}
+			"distance_threshold_min"						
+			{
+				"value"									"50"
+				"hero_levelup"							"5"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+
+
 }

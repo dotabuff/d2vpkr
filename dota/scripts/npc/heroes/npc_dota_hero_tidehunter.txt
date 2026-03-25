@@ -116,6 +116,13 @@
 			"active_pct_effectiveness"						"200.0"		// "double" is in the loc file. if changing this amount, update the ability description
 			"active_move_speed_penalty_pct"					"40"
 			"active_duration"								"4.0"
+
+			"damage_cleanse" "600 550 500 450"
+			"damage_reset_interval"	"7.0"
+			"smash_on_purge"
+			{
+				"special_bonus_unique_tidehunter_smash_on_blubber"		"50"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -164,20 +171,22 @@
 				"CalculateSpellDamageTooltip"				"0"
 				"DamageTypeTooltip"							"DAMAGE_TYPE_NONE"
 			}
+
 			"reduction_duration"							"6.0 6.0 6.0 6.0"
-			"radius"										
-			{
-				"value" "375"
-				"affected_by_aoe_increase"	"1"
-			}
+
 			"targets_buildings"
 			{
 				"value"										"0"
-				"special_bonus_unique_tidehunter_10"			"+1"
+				"special_bonus_unique_tidehunter_10"		"+1"
 			}
 			"smash_on_attack"
 			{
 				"special_bonus_unique_tidehunter_8"			"1"
+			}
+			"additional_range"
+			{
+				"value"				"225"
+				"affected_by_aoe_increase"	"1"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -343,32 +352,50 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"MaxLevel"						"1"
+		"Innate"						"1"
+
 		"AbilityValues"
 		{
-			"model_scale_base"				"-25"
-			"model_scale_per_level"			"3"
+			"model_scale"
+			{
+				"value"						"0"
+			}
 			
-			"attack_range_base"				"-60"
-			"attack_range_per_level"		"5"
+			"attack_range"
+			{
+				"value"						"0"
+			}
 
-			"anchor_smash_radius_base"		"-60"
-			"anchor_smash_radius_per_level"	"5"
+			"anchor_smash_radius"
+			{
+				"value"						"0"
+			}
+
+			"fish_duration"					"30"
+			"fish_strength_gain"			"0"
+			"fish_attack_range"				"2"
+			"fish_damage_block"				"1"
+			"fish_health_bonus"				"3"
+			"fish_model_scale"				"1.1"
+			"max_fish_spawn_distance"		"400"
 
 			"health_bar_offset_base"		"160"
 			"health_bar_offset_per_level"	"5"
 
-			"strength_gain_tooltip"			"3.9"
-
-			"attack_range_tooltip"
+			"permanent_health_gain"
 			{
-				"dynamic_value"				"true"
+				"dynamic_value"			"true"
 			}
-			"anchor_smash_range_tooltip"
+			"permanent_attack_range_gain"
 			{
-				"dynamic_value"				"true"
+				"dynamic_value"			"true"
+			}
+			"permanent_damage_block_gain"
+			{
+				"dynamic_value"			"true"
 			}
 		}
 	}

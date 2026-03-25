@@ -74,8 +74,6 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"   
 		"AbilitySound"					"Hero_Huskar.Inner_Vitality"
 
-		"HasShardUpgrade"			"1"
-
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"500"
@@ -96,7 +94,7 @@
 			"health_cost"				"75 100 125 150"
 			"damage"				
 			{
-				"value"			"105 170 235 300"
+				"value"			"110 180 250 320"
 				"CalculateSpellDamageTooltip" "1"
 			}
 			"radius"				
@@ -110,26 +108,27 @@
 				"special_bonus_unique_huskar_3"			"+0.75"
 
 			}
-			"knockback_distance"	"400"
-			"knockback_duration"	"1"
+			"knockback_distance"	 "400"
+			"min_knockback_distance" "25"
+			"knockback_duration"	 "1"
+			"min_knockback_duration" "0.4"
 			"AbilityCooldown"
 			{ 
 				"value"					"17 15 13 11"
-				"special_bonus_shard"	"-3"
 			}
 			"movement_slow_pct"
 			{
-				"special_bonus_shard"	"+50"
+				"value"					"0"
 			}
 			"hero_damage_heal_pct"
 			{
-				"special_bonus_shard"		"+50"
-				"DamageTypeTooltip"			"DAMAGE_TYPE_NONE"
+				"value"					"0"
+				"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
 			}
 			"creep_damage_heal_pct"
 			{
-				"special_bonus_shard"			"+10"
-				"DamageTypeTooltip"			"DAMAGE_TYPE_NONE"
+				"value"					"0"
+				"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -167,27 +166,20 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"health_cost"	// current HP, not max
-				{
-					"value"												"4"
-					"DamageTypeTooltip"									"DAMAGE_TYPE_MAGICAL"
-					"special_bonus_facet_huskar_nothl_conflagration"	"=0"
-				}
 				"max_health_cost"
 				{
-					"value"												"0"
+					"value"												"2.0"
 					"DamageTypeTooltip"									"DAMAGE_TYPE_MAGICAL"
-					"special_bonus_facet_huskar_nothl_conflagration"	"=4"
 				}
 				"burn_damage"					
 				{
-					"value"							"5 10 15 20"
-					"special_bonus_unique_huskar_2" "+5"
+					"value"												"5 10 15 20"
+					"special_bonus_unique_huskar_2"						"+5"
 				}
 				"burn_damage_max_pct"					
 				{
-					"value"												"0"
-					"special_bonus_facet_huskar_nothl_conflagration"	"+.75"
+					"value"												"0.5"
+					"DamageTypeTooltip"									"DAMAGE_TYPE_MAGICAL"
 				}
 				"duration"						
 				{
@@ -212,6 +204,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilityCastPoint"				"0.0"
 		"IsBreakable"					"1"
+		"HasShardUpgrade"				"1"
 				
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -236,28 +229,28 @@
 			
 			"activatable"
 			{
-				"value"									"0"
-				"special_bonus_facet_huskar_cauterize"	"+1"
+				"value"						"0"
+				"special_bonus_shard"		"+1"
 			}
 			"activation_healthcost_pct"
 			{
-				"value"									"0"
-				"special_bonus_facet_huskar_cauterize"	"+30.0"
+				"value"						"0"
+				"special_bonus_shard"		"+30.0"
 			}
 			"activation_cooldown"
 			{
-				"value"									"0 0 0 0"
-				"special_bonus_facet_huskar_cauterize"	"+60.0 +50.0 +40.0 +30.0"
+				"value"						"0"
+				"special_bonus_shard"		"+20.0"
 			}
 			"activation_delay"
 			{
-				"value"									"0"
-				"special_bonus_facet_huskar_cauterize"	"+3.0"
+				"value"						"0"
+				"special_bonus_shard"		"+3.0"
 			}
 			"activation_heal_pct_per_debuff"
 			{
-				"value"									"0"
-				"special_bonus_facet_huskar_cauterize"	"+4.0"
+				"value"						"0"
+				"special_bonus_shard"		"+3.0"
 			}
 		}
 	}
@@ -348,12 +341,12 @@
 			}
 			"splash_radius"
 			{
-				"special_bonus_facet_huskar_bloodbath"	"=500"
+				"value"						"0"
 				"affected_by_aoe_increase"	"1"
 			}
 			"life_break_heal_radius"
 			{
-				"special_bonus_facet_huskar_nothl_transfusion"		"=550"
+				"value"						"0"
 				"affected_by_aoe_increase"	"1"
 			}
 			"life_break_heal_pct"
@@ -365,6 +358,8 @@
 				"value"							"16 14 12"
 				"special_bonus_unique_huskar_7"	"-5"
 			}
+
+			"immunity_resist"				"60"
 		}
 	}
 }

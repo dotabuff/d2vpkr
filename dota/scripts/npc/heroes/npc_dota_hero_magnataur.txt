@@ -67,8 +67,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
-
-        "HasShardUpgrade"             "0"
+        "HasShardUpgrade"				"0"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -100,7 +99,7 @@
 			}
 			"shock_damage"				
 			{
-				"value"			"75 150 225 300 300"				
+				"value"			"75 150 225 300"				
 				"special_bonus_unique_magnus"	"+125"
 			}
 			"movement_slow"				"75"
@@ -110,26 +109,16 @@
 			"max_level"
 			{
 				"value"												"4"
-				"special_bonus_facet_magnataur_diminishing_return" "+1"
-			}
-			"max_level_tooltip"
-			{
-				"special_bonus_facet_magnataur_diminishing_return" "=5"
 			}
 			"basic_slow_duration"		
 			{
-				"value"					"0.4 0.6 0.8 1.0 1.0"
+				"value"					"0.4 0.6 0.8 1.0"
 
 			}
-			"return_damage_pct"			
+			"return_damage_pct"
 			{
-				"value"			"0"
-				"special_bonus_facet_magnataur_diminishing_return"		"=0 =0 =0 =0 =50"
-			}
-			"return_damage_pct_tooltip"
-			{
-				"value"			"0"
-				"special_bonus_facet_magnataur_diminishing_return"		"=50"
+				"value"								"0"
+				"special_bonus_unique_magnus_2"		"+100"
 			}
 			"AbilityCastRange"
 			{
@@ -137,7 +126,8 @@
 			}
 			"return_shockwave_bonus_distance"
 			{
-				"special_bonus_facet_magnataur_diminishing_return"		"+200"
+				"value"								"0"
+				"special_bonus_unique_magnus_2"		"+200"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -236,12 +226,10 @@
 			"bonus_damage_pct"
 			{
 				"value"							"16 24 32 40"
-				"special_bonus_unique_magnus_2"	"+10"
 			}
 			"cleave_damage_pct"
 			{
-				"value"						"16 24 32 40"
-				"special_bonus_unique_magnus_2"	"+10"
+				"value"							"16 24 32 40"
 			}			
 			"cleave_starting_width"
 			{
@@ -266,26 +254,10 @@
 			}
 			"self_multiplier"		"30"
 			
-			"always_on"			
-			{
-				"value"															"0"
-				"special_bonus_facet_magnataur_eternal_empowerment"				"=1"
-			}
-			"self_multiplier_bonus_stack_duration"
-			{
-				"value"															"0"
-				"special_bonus_facet_magnataur_eternal_empowerment"				"10"
-			}
-			"self_multiplier_bonus_max_stacks"		
-			{
-				"value"															"0"
-				"special_bonus_facet_magnataur_eternal_empowerment"				"8 12 16 20"
-			}
-			"self_multiplier_bonus_per_stack"		
-			{
-				"value"															"0"
-				"special_bonus_facet_magnataur_eternal_empowerment"				"2 3 4 5"
-			}
+			"always_on"			"1"
+			"self_multiplier_bonus_stack_duration"								"0"
+			"self_multiplier_bonus_max_stacks"									"25 30 35 40"
+			"self_multiplier_bonus_per_stack"									"5 6 7 8"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -330,7 +302,7 @@
 				"range"					
 				{
 					"value"			"800 900 1000 1100"
-					"special_bonus_shard" 			"+275"
+					"special_bonus_shard" 			"+300"
 				}
 				"slow_pct"				
 				{
@@ -493,17 +465,20 @@
 	//=================================================================================================================
 	"magnataur_solid_core"
 	{
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_NONE"	
 		"Innate"						"1"
-		"MaxLevel"						"4"
-		"DependentOnAbility"			"magnataur_reverse_polarity"		
+		"MaxLevel"						"1"	
 		"IsBreakable"					"1"
 
 		"AbilityValues"
 		{
-			"knockback_reduction"		"50"
-			"slow_resistance"			"20 30 40 50"
+			"knockback_reduction"			"50"
+			"slow_resistance"
+			{
+				"value"						"24"
+				"hero_levelup"				"1"
+			}
 		}		
 	}
 	//=================================================================================================================

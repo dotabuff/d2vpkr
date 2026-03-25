@@ -9,10 +9,8 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"HasShardUpgrade"				"1"
@@ -45,13 +43,10 @@
 				{
 					"value"		"60 90 120 150"
 					"special_bonus_unique_bloodseeker_5"	"+30"
-
 				}
 				"spell_amp"				
 				{
 					"value"		"15 20 25 30"
-					"special_bonus_facet_bloodseeker_old_blood"			"=0"
-
 				}
 				"damage_pct"				
 				{
@@ -59,15 +54,10 @@
 					"special_bonus_unique_bloodseeker"		"-0.7"
 					"DamageTypeTooltip"			"DAMAGE_TYPE_PURE"
 				}
-				"damage_pct_enemies"	// NOTE: Separate value here so that the talent doesn't buff it for enemies
-				{
-					"value"		"1.2"
-					"DamageTypeTooltip"			"DAMAGE_TYPE_PURE"
-				}
 				"max_health_dmg_pct"	
 				{
-					"value"			"0"
-					"special_bonus_shard"				"+2"
+					"value"						"0"
+					"special_bonus_shard"		"+2"
 				}
 				"thirst_threshold_bonus"
 				{
@@ -79,23 +69,15 @@
 				}
 				"base_damage_amp"
 				{
-					"special_bonus_facet_bloodseeker_old_blood"			"=15 =20 =25 =30"
-
+					"value"				"0"
+					"CalculateSpellDamageTooltip"	"0"
+					"DamageTypeTooltip"				"DAMAGE_TYPE_PHYSICAL"
 				}
 				"AbilityManaCost"
 				{
 					"value"   "0"
 					"special_bonus_facet_bloodseeker_old_blood"			"=60"
 				}
-				"AbilityCastRange"				
-				{
-					"value"   "800"
-					"special_bonus_facet_bloodseeker_old_blood"			"=400"
-				}
-
-				"enemy_castpoint"					"0.3"
-
-
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityCastGestureSlot"		"DEFAULT"
@@ -143,11 +125,11 @@
 				"silence_duration"			
 				{
 					"value"												"3 4 5 6"
-					"special_bonus_unique_bloodseeker_7"				"+2.5"
+					"special_bonus_unique_bloodseeker_7"				"+3.0"
 				}
 				"damage"					
 				{
-					"value"			"100 155 210 265"
+					"value"			"105 175 245 315"
 					"special_bonus_unique_bloodseeker_2"	"+100"
 				}
 				"heal"
@@ -178,7 +160,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"15.0"
+		// "AbilityCooldown"				"15.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -280,9 +262,9 @@
 			}
 			"hp_pct"
 			{
-				"value"	"10"
+				"value"							"10"
 				"CalculateSpellDamageTooltip"	"0"
-				"special_bonus_scepter"				"+3"		
+				"special_bonus_scepter"			"+3"		
 				"DamageTypeTooltip"				"DAMAGE_TYPE_PURE"		
 			}
 			"damage_cap_amount"			
@@ -374,7 +356,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityCastPoint"				"0.3"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"MaxLevel"						"1"
@@ -388,7 +370,6 @@
 			"base_heal"							"30"
 			"heal_hp_pct"				
 			{
-				"value"			"1.5"
 				"hero_levelup"	"1.5"
 			}
 			

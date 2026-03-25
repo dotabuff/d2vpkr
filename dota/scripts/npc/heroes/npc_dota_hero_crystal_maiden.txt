@@ -63,7 +63,6 @@
 			"radius"
 			{
 				"value"											"425"
-				"special_bonus_facet_crystal_maiden_glacial_guard"	"+100"
 				"affected_by_aoe_increase"	"1"
 			}
 			"movespeed_slow"				"-20 -30 -40 -50"
@@ -79,17 +78,14 @@
 			"physical_barrier_amount"
 			{
 				"value"											"0"
-				"special_bonus_facet_crystal_maiden_glacial_guard"	"40 70 100 130"
 			}
 			"physical_barrier_self_amount"
 			{
 				"value"											"0"
-				"special_bonus_facet_crystal_maiden_glacial_guard"	"80 140 200 260"
 			}
 			"physical_barrier_duration"
 			{
 				"value"											"0"
-				"special_bonus_facet_crystal_maiden_glacial_guard"	"+4.0"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -166,54 +162,22 @@
 		{
 			"base_mana_regen"					
 			{
-				"value"										"0.4 0.6 0.8 1.0"
+				"value"										"0.4 0.6 0.8 1"
+				
 			}
 			"proximity_mana_regen_tooltip"					
 			{
 				"value"										"1.2 1.8 2.4 3.0"
+			}
+			"mana_regen_amp"					
+			{
+				"value"				"20 40 60 80"
 			}
 			"proximity_bonus_factor"		"3"
 			"proximity_bonus_radius"		
 			{
 				"value"		"1200"
 				"affected_by_aoe_increase"	"1"
-			}
-
-			"activatable"
-			{
-				"value"													"0"
-				"special_bonus_facet_crystal_maiden_arcane_overflow"	"+1"
-			}
-			"activation_spell_amp_pct"
-			{
-				"value"													"0"
-				"special_bonus_facet_crystal_maiden_arcane_overflow"	"+35.0"
-			}
-			"activation_mana_cost_increase_pct"
-			{
-				"value"													"0"
-				"special_bonus_facet_crystal_maiden_arcane_overflow"	"+50.0"
-			}
-			"mana_battery_radius"
-			{
-				"value"													"0"
-				"special_bonus_facet_crystal_maiden_arcane_overflow"	"=1200"
-				"affected_by_aoe_increase"								"1"
-			}
-			"mana_battery_mana_pct"
-			{
-				"value"													"0"
-				"special_bonus_facet_crystal_maiden_arcane_overflow"	"20"
-			}
-			"activation_duration"
-			{
-				"value"													"0"
-				"special_bonus_facet_crystal_maiden_arcane_overflow"	"+10.0"
-			}
-			"activation_cooldown"
-			{
-				"value"													"0"
-				"special_bonus_facet_crystal_maiden_arcane_overflow"	"+30.0"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -296,12 +260,12 @@
 
 			"self_cast_range_bonus"
 			{
-				"special_bonus_facet_crystal_maiden_frozen_expanse"		"75 100 125"
+				"value"						"0"
 			}
 
 			"aoe_bonus"
 			{
-				"special_bonus_facet_crystal_maiden_frozen_expanse"		"6 8 10"
+				"value"						"0"
 			}
 		}
 	}
@@ -372,25 +336,31 @@
 	}
 
 	//=================================================================================================================
-	// Crystal Maiden: Innate mana regen multiplier
+	// Crystal Maiden: Glacial Guard
 	//=================================================================================================================
-	"crystal_maiden_blueheart_floe"
+	"crystal_maiden_glacial_guard"
 	{
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
-		"AbilityTextureName"			"crystal_maiden_let_it_go"
-
-		"MaxLevel"						"4"
-		"Innate"						"1"
-		"DependentOnAbility"			"crystal_maiden_freezing_field"
+		"AbilityType"					"ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
 		"IsBreakable"					"1"
+		"MaxLevel"						"1"
+		"Innate"						"1"
 
+		//-------------------------------------------------------------------------------------------------------------
 
 		"AbilityValues"
-		{
-			"mana_regen_multiplier"
+		{	
+			"mana_multiplier"					
 			{
-				"value"													"25 50 75 100"
+				"value"				"30"
+				"hero_levelup"		"+2"
+				"special_bonus_unique_crystal_maiden_glacial_guard_mana_multiplier"			"+20"
 			}
+
+			"barrier_duration"					"8"
 		}
 	}
 }

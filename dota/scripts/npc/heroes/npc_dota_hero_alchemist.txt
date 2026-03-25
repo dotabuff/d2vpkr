@@ -46,7 +46,6 @@
 			"chemical_rage_cooldown_reduction_pct"
 			{
 				"value"					"0"
-				"special_bonus_facet_alchemist_mixologist"				"=50"
 			}
 
 		}
@@ -151,14 +150,17 @@
 			"radius"
 			{
 				"value"					"250"
-				"special_bonus_unique_alchemist"	"+125"
+				"special_bonus_unique_alchemist"	"+150"
 				"affected_by_aoe_increase"	"1"
 			}
-			"move_speed"				"4 8 12 16"
+			"move_speed"
+			{
+				"value"					"4 8 12 16"
+				"display_type"			"kBuffPercentage"
+			}
 			"chemical_rage_cooldown_reduction_pct"
 			{
 				"value"					"0"
-				"special_bonus_facet_alchemist_mixologist"				"=35"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -218,7 +220,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
 
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_SELF"
@@ -241,30 +243,44 @@
 			"duration"				"40"
 			"bonus_gold"			"2"
 			"bonus_bonus_gold"		"2"
+			"bonus_gold_per_scepter"		"6"
 			"bounty_multiplier"		"2"
 			"damage"
 			{
-				"special_bonus_unique_alchemist_7"	"+2.5"
+				"special_bonus_unique_alchemist_7"	"+3"
 			}
 
 			"bonus_gold_cap"
 			{
 				"value"				"18"	
 			}
-			"starting_gold_bonus"
+
+			"scepter_bonus_damage"
 			{
-				"special_bonus_facet_alchemist_seed_money"	"=250"
+				"value"						"25"
 			}
 
-			"scepter_bonus_damage"	"25"
+			//tooltip doesn't always update properly when you give it away because of how special_bonus_scepter works; just keep a different tooltip value for this
+			"scepter_bonus_damage_tooltip"
+			{
+				"special_bonus_scepter"		"+25"
+			}
+
 			"scepter_spell_amp"
 			{
 				"special_bonus_scepter"		"0"
 			}
-			"gpm_increase_per_stack"
-			{
-				"special_bonus_facet_alchemist_dividends"	"+70"
-			}
+		//	"gpm_increase_per_stack"
+		//	{
+	//			"value"						"70"
+	//		}
+
+			//tooltip doesn't always update properly when you give it away because of how special_bonus_scepter works; just keep a different tooltip value for this
+			//"gpm_increase_per_stack_tooltip"
+			//{
+			//		"special_bonus_scepter"		"+70"
+			//}
+
 		}
 	}
 
@@ -344,8 +360,18 @@
 		{		
 				"max_stacks"				"7 10 13 16"
 				"debuff_duration"			"4.0"
-				"slow_per_stack"			"2 2.5 3 3.5"
-				"attack_dmg_per_stack"		"2 2.5 3 3.5"
+				"slow_per_stack"			
+				{
+					"value"					"2.5 3 3.5 4"
+					"display_type"			"kDebuffPercentage"
+					"special_bonus_unique_alchemist_weaponry_power"	"+1"
+				}
+				"attack_dmg_per_stack"
+				{
+					"value"					"2.5 3 3.5 4"
+					"display_type"			"kDebuffPercentage"
+					"special_bonus_unique_alchemist_weaponry_power"	"+1"
+				}
 				"stacks_per_attack"			"2"
 				"one_tooltip"				"1"
 

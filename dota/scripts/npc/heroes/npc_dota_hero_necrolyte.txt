@@ -18,6 +18,7 @@
 		"MaxLevel"						"1"
 		"FightRecapLevel"				"1"
 		"IsGrantedByShard"              "1"
+		"SubAbilityNames"				"necrolyte_death_pulse"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -62,6 +63,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Necrolyte.DeathPulse"
+		"TooltipSummaryProperties"		"AbilityDamage;heal;area_of_effect"
 
 		"AbilityDraftExtraAbilities"
 		{
@@ -117,6 +119,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"TooltipSummaryProperties"		"#DOTA_Tooltip_ability_necrolyte_heartstopper_aura___damage"
 
 		"HasScepterUpgrade"			"1"	
 		"IsBreakable"					"1"
@@ -135,6 +138,7 @@
 				"special_bonus_unique_necrophos_2"		"+0.5"
 				"DamageTypeTooltip"	"DAMAGE_TYPE_NONE"
 				"CalculateSpellDamageTooltip"	"0"
+				"display_type"	"kMagicalDamagePercentage"
 			} 	
 			"heal_reduction_pct"
 			{
@@ -160,21 +164,18 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"MaxLevel"						"4"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
 		"Innate"						"1"
-		"DependentOnAbility"			"necrolyte_reapers_scythe"
 		"IsBreakable"					"1"
 
 		"AbilityValues"
 		{
-			"health_regen"	"3.5 5.0 6.5 8.0"
-			"mana_regen"	"3.5 5 6.5 8"
-			"bonus_aoe"
+			"regen"
 			{
-				"value"			"0"
-				"special_bonus_facet_necrolyte_profane_potency"	"+35"
+				"value"			"3.7"
+				"hero_levelup"	"0.3"
 			}
+			"bonus_aoe"					"0"
 			"bonus_spell_amp"
 			{
 				"value"		"0"
@@ -201,6 +202,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilitySound"					"Hero_Necrolyte.SpiritForm.Cast"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"TooltipSummaryProperties"		"duration;movement_speed;#DOTA_Tooltip_ability_necrolyte_ghost_shroud___restoration"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -219,30 +221,34 @@
 			"duration"		"3 3.5 4 4.5"
 			"heal_bonus"
 			{	
-				"value"			"55 60 65 70"
-				"special_bonus_unique_necrophos_sadist_heal_bonus"		"+15"
+				"value"			"55 65 75 85"
+				"display_type"	"kBuffPercentage"
 			}
 			"enemies_negative_heal_bonus_as_pct_of_self"
 			{
 				"value"										"0"
-				"special_bonus_facet_necrolyte_rapid_decay"	"100.0"
 			}
 			"movement_speed"
 			{
 				"value"			"16 19 22 25"
 				"special_bonus_unique_necrophos_3"		"+15"
+				"display_type"	"kBuffPercentage"
 			}
 			"movement_transfer"
 			{
 				"value"			"0"
-				"special_bonus_facet_necrolyte_rapid_decay"	"50"				
 			}
 			"slow_aoe"		
 			{
 				"value"		"700"
 				"affected_by_aoe_increase"	"1"
 			}
-			"bonus_damage" "-20"
+			"bonus_damage"
+			{
+				"value"		"-20"
+				"DamageTypeTooltip"	"DAMAGE_TYPE_NONE"
+				"display_type"	"kDebuffPercentage"
+			}
 			"AbilityCooldown"
 			{
 				"value"						"28 24 20 16"
@@ -282,6 +288,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Necrolyte.ReapersScythe.Target"
+		"TooltipSummaryProperties"		"stun_duration;damage_per_health;#DOTA_Tooltip_ability_necrolyte_reapers_scythe___kill_bonus"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -304,7 +311,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"damage_per_health"			"0.7 0.8 0.9"
+			"damage_per_health"			
+			{
+				"value" "0.7 0.8 0.9"
+				"special_bonus_unique_necrophos_reaper_scythe_damage_per_health" "+0.3"
+			}
+
 			"stun_duration"				"1.5 1.5 1.5"
 			"hp_per_kill"				"1 2 3"
 			"mana_per_kill"				"1 2 3"

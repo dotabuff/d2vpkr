@@ -21,6 +21,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		// "RestrictValuesToMaxLevel"		"1"
+		"HasShardUpgrade"				"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -43,13 +44,13 @@
 			}
 			"damage"			
 			{
-				"value"		"80 160 240 320 400"
+				"value"		"80 160 240 320"
 				"special_bonus_facet_night_stalker_voidbringer"	"+0"
 			}
 			"duration_day"			"1.25"
 			"duration_night"
 			{
-				"value"											"1.6 2.2 2.8 3.4 4.0"
+				"value"											"1.6 2.2 2.8 3.4"
 				"special_bonus_facet_night_stalker_voidbringer"	"+0"
 			}
 			"movespeed_slow"		
@@ -83,7 +84,7 @@
 			"cast_radius"
 			{
 				"value"					"0"
-				"special_bonus_facet_night_stalker_voidbringer" "=0 =0 =0 =0 =350"
+				"special_bonus_shard"	"400"
 				"affected_by_aoe_increase"			"1"
 			}
 			"cast_radius_tooltip"
@@ -105,8 +106,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"FightRecapLevel"				"1"
-		"AbilitySound"					"Hero_Nightstalker.Trickling_Fear"
-		"HasScepterUpgrade"				"1"
+		"AbilitySound"					"Hero_Nightstalker.Trickling_Fear"		
 
 		// Unit Targeting
 		//-------------------------------------------------------------------------------------------------------------
@@ -128,7 +128,6 @@
 			"AbilityCooldown"
 			{
 				"value"				"30 25 20 15"
-				"special_bonus_scepter"	"-5"
 			}
 
 			"duration_day"
@@ -146,7 +145,7 @@
 			"mana_pct_cost"
 			{
 				"value"			"0"
-				"special_bonus_scepter" "6"
+				//"special_bonus_scepter" "6"
 			}
 
 			"mana_interval"		"1"
@@ -154,19 +153,20 @@
 			"toggled"
 			{
 				"value"			"0"
-				"special_bonus_scepter"	"1"
+				//"special_bonus_scepter"	"1"
 			}
 
 			"radius"	
 			{
 				"value"		"375"
+				"special_bonus_unique_night_stalker_crippling_fear_radius"	"+75"
 				"affected_by_aoe_increase"	"1"
 			}
 
 			"dps"			
 			{
 				"value"			"25 30 35 40"
-				"special_bonus_unique_night_stalker_crippling_fear_damage" 	"+40"
+				"special_bonus_unique_night_stalker_crippling_fear_damage" 	"+10"
 			}
 			"tick_rate"	"0.1"
 
@@ -185,61 +185,39 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "HasShardUpgrade"               "1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"        
 		"IsBreakable"					"1"
-        //"RestrictValuesToMaxLevel"		"1"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"HasScepterUpgrade"				"1"  
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
 			"bonus_movement_speed_pct_night"	
 			{
-				"value"			"22 28 34 40 40"
-				"special_bonus_facet_night_stalker_dayswap"				"=10 =22 =28 =34 =40"
+				"value"			"24"
+				"hero_levelup"	"2"
+				"levelup_interval" "3"
+				"special_bonus_scepter"	"+15"
 			}
+
 			"bonus_attack_speed_night"			
 			{
-				"value"			"20 40 60 80 80"
-				"special_bonus_facet_night_stalker_dayswap"				"=15 =35 =55 =75 =95"
-				"special_bonus_unique_night_stalker_2"	"+100"
+				"value"			"38"
+				"hero_levelup"	"2"
+				"special_bonus_scepter" "+50"	
 			}
-			"bonus_status_resist_night"			
+
+			"reset_cooldowns"
+			{
+				"special_bonus_scepter"	"1"
+			}
+
+			"bonus_status_resist_night"
 			{
 				"special_bonus_unique_night_stalker_hunter_status_resist"	"+20"
-			}
-			"shard_hp_restore_pct"
-			{
-				"special_bonus_shard"		"25"
-			}
-			"shard_mana_restore_pct"
-			{
-				"special_bonus_shard"		"25"
-			}
-			"AbilityManaCost"	
-			{
-				"special_bonus_shard"		"+50"
-			}
-			"shard_cooldown"
-			{ 
-				"special_bonus_shard"		"35"
-			}
-			"shard_cast_range"
-			{
-				"special_bonus_shard"		"125"
-			}
-			"max_level"
-			{
-				"value"				"4"
-				"special_bonus_facet_night_stalker_dayswap"				"+1"
-			}
-			"max_level_tooltip"
-			{
-				"special_bonus_facet_night_stalker_dayswap"				"=5"
-			}
-			"gives_free_level"
-			{
-				"special_bonus_facet_night_stalker_dayswap"				"+1"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_5"
@@ -256,7 +234,7 @@
 		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"AbilitySound"					"Hero_Nightstalker.Darkness"
+		"AbilitySound"					"Hero_Nightstalker.Darkness"		
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -271,9 +249,9 @@
 		{
 			"duration"				
 			{
-				"value"			"30.0"
-				"special_bonus_unique_night_stalker_7"	"+5"
+				"value"			"30.0"				
 			}
+
 			"bonus_damage"			
 			{
 				"value"			"50 100 150"
@@ -297,14 +275,28 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
 		"Innate"						"1"
-		"MaxLevel"						"1"
+		"MaxLevel"						"1"		
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"hp_regen_during_night_pct"				"20"
+			"hp_regen_during_night_pct"
+			{
+				"value"								"20"
+			}
+
 			"hp_regen_during_day_pct"				"0"
+
+			"affects_mana_regen"
+			{
+				"special_bonus_shard"				"1"
+			}
+
+			"nighttime_increase"
+			{
+				"special_bonus_shard"				"45"
+			}
 		}
 	}
 
@@ -317,6 +309,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"MaxLevel"						"1"
+		"Innate"						"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -326,6 +319,48 @@
 			"daytime_change"	"-15"
 			"roshan_initial_move_timer_override"	"1199" // Have Roshan start moving at 20 minutes instead of at 15.
 			"tooltip_nighttime_change"	"15" // Should match daytime_change, just so we can have different tooltips
+		}
+	}
+
+
+	//=================================================================================================================
+	// Ability: Midnight Feast
+	//=================================================================================================================
+	"night_stalker_midnight_feast"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Nightstalker.Trickling_Fear"	
+		"IsBreakable"					"1"
+
+		// Unit Targeting
+		//-------------------------------------------------------------------------------------------------------------
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"			
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0"		
+		"AbilityManaCost"				"0"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityCooldown"				"39 36 33 30"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastRange"				"125"
+			
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"attack_heal"
+			{
+				"value"				"12 16 20 24"
+				"special_bonus_unique_night_stalker_2"	"+100"
+			}
+
+			"hp_restore"			"10 15 20 25"
+			"mp_restore"			"10 12 14 16"
 		}
 	}
 }

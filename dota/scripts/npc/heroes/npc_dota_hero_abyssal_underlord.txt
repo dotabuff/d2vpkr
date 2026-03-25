@@ -14,11 +14,10 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 
-        "HasShardUpgrade"               "1"
-
 		"AbilityCastRange"				"675"
 		"AbilityCastPoint"				"0.5"
 		"FightRecapLevel"				"1"
+		"HasShardUpgrade"				"1"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -31,7 +30,7 @@
 				"AbilityCooldown"
 				{
 					"value"	"16 15 14 13"
-					"special_bonus_unique_underlord_5"	"-4"
+					"special_bonus_unique_underlord_5"	"-5"
 				}
 				"radius"					
 				{
@@ -45,7 +44,7 @@
 				"wave_count"					"6"
 				"wave_damage"								
 				{
-					"value"					"30 50 70 90"
+					"value"					"30 55 80 105"
 					"CalculateSpellDamageTooltip"	"1"
 				}
 				"wave_interval"					"1.0"
@@ -139,7 +138,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"IsBreakable"					"1"
+		"IsBreakable"					"1"		
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -153,7 +152,7 @@
 
 			"damage_reduction_pct"
 			{
-				"value"		"6 14 22 30"
+				"value"		"8 16 24 32"
 				"special_bonus_unique_underlord_3"	"+10"
 				"CalculateSpellDamageTooltip"		"0"
 				"DamageTypeTooltip"					"DAMAGE_TYPE_NONE"
@@ -184,29 +183,24 @@
 			"cleave_damage_pct"
 			{
 				"value"				"0"
-				"special_bonus_facet_abyssal_underlord_demons_reach"	"+35"				
 			}
 			"cleave_starting_width"
 			{
 				"value"					"0"
-				"special_bonus_facet_abyssal_underlord_demons_reach"	"+150"				
-					"affected_by_aoe_increase"	"1"
+				"affected_by_aoe_increase"	"1"
 			}
 			"cleave_angle"
 			{
 				"value"					"0"
-				"special_bonus_facet_abyssal_underlord_demons_reach"	"+75"				
 			}
 			"cleave_distance_base"
 			{
 				"value"					"0"
-				"special_bonus_facet_abyssal_underlord_demons_reach"	"+100"				
-					"affected_by_aoe_increase"	"1"
+				"affected_by_aoe_increase"	"1"
 			}
 			"cleave_distance_per_stack"
 			{
 				"value"					"0"
-				"special_bonus_facet_abyssal_underlord_demons_reach"	"+5"				
 			}
 
 
@@ -309,39 +303,40 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"AbilityCooldown"				
-				{
-					"value"			"110 105 100"
-					"special_bonus_scepter"	"-10"
-				}
-				"duration"				"20.0"
-				"minimum_distance"		"1500"
-				"spawn_pit_on_cast"
-				{
-					"special_bonus_scepter"	"+1"
-				}
-				"warp_channel_duration"			"3.5"
-				"distance_from_fountain"		"1425"
-				"dps"							
-				{
-					"special_bonus_unique_underlord_9"	"+125"					
-				}
-				"radius"
-				{
-					"special_bonus_unique_underlord_9"	"+700"					
-					"affected_by_aoe_increase"	"1"
-				}
-				"firestorm_radius"
-				{
-					"value"		"0"
-				}
-				"underling_building_damage_reduction_tooltip"		
-				{
-					"value"			"50"
-					"special_bonus_facet_abyssal_underlord_demons_reach"	"=50"				
-				}
-
+			"AbilityCooldown"				
+			{
+				"value"			"110 105 100"
+				"special_bonus_scepter"	"-10"
+			}
+			"duration"				"20.0"
+			"minimum_distance"		"1500"
+			"spawn_pit_on_cast"
+			{
+				"special_bonus_scepter"	"+1"
+			}
+			"warp_channel_duration"			"3.5"
+			"distance_from_fountain"		"1425"
+			"dps"							
+			{
+				"value"								"0"
+				"special_bonus_unique_underlord_9"	"+160"
+			}	
+			"radius"
+			{
+				"value"								"0"
+				"special_bonus_unique_underlord_9"	"+700"					
+				"affected_by_aoe_increase"	"1"
+			}
+		
+			"cast_firestorm"
+			{
+				"special_bonus_unique_underlord_9"	"0"	
+			}
 			
+
+			"hull_radius"				"8"
+			"gold_bounty"				"20 30 40"
+			"xp_bounty"					"20 30 40"
 		}
 	}
 
@@ -382,25 +377,26 @@
 		//-------------------------------------------------------------------------------------------------------------
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
-		"MaxLevel"						"4"
+		"MaxLevel"						"1"
 		"Innate"						"1"
-		"DependentOnAbility"			"abyssal_underlord_dark_portal"
 		"IsBreakable"					"1"
 
 		"AbilityValues"
 		{
 			"damage_reduction"		
 			{
-				"value"		"4 6 8 10"
+				"value"								"3.7"
+				"hero_levelup"						"+0.3"
 				"special_bonus_unique_underlord_7"	"+5"
 			}
 			"bonus_ms"				
 			{
-				"value"			"11 14 17 20"
+				"value"								"9.5"
+				"hero_levelup"						"+0.5"
 				"special_bonus_unique_underlord_7"	"+5"
 			}
-			"dark_portal_multiplier"			"2"
-			"buff_duration"			"5.0"
+			"dark_portal_multiplier"				"2"
+			"buff_duration"							"5.0"
 		}
 	}
 
@@ -425,7 +421,7 @@
 			"warrior_mana_feedback"	"10 20 30"
 			"warrior_mana_break_tooltip"	"10 20 30"
 			
-			"explosion"				"300 400 500"
+			"explosion"				"200 300 400"
 
 			"archer_health"			"400 600 800"
 			"archer_damage"			"25 40 55"

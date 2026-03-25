@@ -133,22 +133,17 @@
 			}	
 
 			"split_radius"			
-			{
-				"value"				"0"
-				"special_bonus_facet_dazzle_poison_bloom"			"=450"				
+			{				
+				"value"							"0"
+				"affected_by_aoe_increase"		"1"
 			}
 			"split_damage"				
 			{
-				"special_bonus_facet_dazzle_poison_bloom"
-				{
-					"value"								"=30 =60 =90 =120"
-					"special_bonus_unique_dazzle_3"		"+60"
-				}
+				"value"							"0"
 			}
 			"attacks_to_split"	
 			{
-				"value"				"0"
-				"special_bonus_facet_dazzle_poison_bloom"			"=4"				
+				"value"							"0"
 			}			
 
 		}
@@ -406,8 +401,6 @@
 		"AbilityCastPoint"				"0.2"
 		"AbilityCastGestureSlot"		"DEFAULT"
 
-		"HasShardUpgrade"               "1"
-
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------	
 		"AbilityCooldown"				"70 60 50"
@@ -433,16 +426,6 @@
 			"poison_touch_hex"			"1.4 1.6 1.8"
 			"shallow_grave_heal"		"225 300 375"
 			"shadow_wave_cdr"			"30 40 50"
-
-			"castable_while_disabled"
-			{
-				"special_bonus_shard"	"1"
-			}
-
-			"healing_amp"
-			{
-				"special_bonus_shard"	"15"
-			}
 		}
 	}
 
@@ -460,10 +443,10 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"MaxLevel"						"4"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"MaxLevel"						"1"
 		"Innate"						"1"
-		"DependentOnAbility"			"dazzle_nothl_projection"
+		"HasShardUpgrade"				"1"
 
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -471,10 +454,14 @@
 		{
 			"armor_change"			
 			{
-				"value"									"0.5 0.75 1.0 1.25"
+				"value"									"1"
 				"special_bonus_unique_dazzle_4"			"+1"
 			}
-			"duration"					"8"
+			"duration"
+			{
+				"value"						"6.9"
+				"hero_levelup"				"+0.1"
+			}
 			"affects_allies"			"1"
 			"affects_enemies"			"1"
 			"heal_amplification_pct"
@@ -493,6 +480,11 @@
 			{
 				"value"										"0"
 				"special_bonus_facet_dazzle_poison_bloom"	"=2"
+			}
+
+			"ally_heal"
+			{
+				"special_bonus_shard"						"60"
 			}
 		}
 	}

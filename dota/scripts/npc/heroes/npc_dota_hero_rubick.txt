@@ -9,7 +9,7 @@
 	{
 	// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -54,12 +54,12 @@
 				"max_land_distance"			
 				{
 					"value"			"375 375 375 375"
-					"special_bonus_unique_rubick"		"+400"
+					"special_bonus_shard"		"+225"
 				}
 				"fall_duration"				"0.3 0.3 0.3 0.3"  // the portion of the lift that is falling
 				"shard_max_land_distance_bonus_pct"			
 				{
-					"special_bonus_shard"		"35"
+					"special_bonus_shard"		"50"
 				}			
 				"shard_cooldown_reduction_pct"			
 				{
@@ -72,12 +72,13 @@
 				"AbilityCooldown"				
 				{
 					"value"		"22 19 16 13"
-					"special_bonus_unique_rubick_4"			"-5"
+					"special_bonus_unique_rubick_4"			"-2"
 				}
 				"landing_damage"
 				{
-					"special_bonus_unique_rubick_8"		"165"
+					"special_bonus_unique_rubick_8"		"325"
 				}
+				
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}	
@@ -172,14 +173,16 @@
 					"CalculateSpellDamageTooltip"	"0"
 					"DamageTypeTooltip"			"DAMAGE_TYPE_NONE"
 				}
-				"attack_damage_reduction"	
+				"damage_reduction"	
 				{
-					"value"			"5 15 25 35"
-					"special_bonus_unique_rubick_7" "+20"
+					"value"			"6 12 18 24"
+					"special_bonus_unique_rubick_fade_bolt_spell_reduction" "+12"
 
 					"CalculateSpellDamageTooltip"	"0"
 					"DamageTypeTooltip"			"DAMAGE_TYPE_NONE"
 				}
+				
+				
 				"duration"					"10.0 10.0 10.0 10.0"
 				"radius"					
 				{
@@ -190,8 +193,9 @@
 				"AbilityCooldown"
 				{
 					"value"								"16 14 12 10"
-					"special_bonus_unique_rubick_3"		"-5"
+					"special_bonus_unique_rubick_3"		"-3"
 				}
+				"steals_damage"						"0"
 		}
 	}	
 
@@ -240,19 +244,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"cast_range"				"60 120 180 240"
-			"spell_amp"					"11 16 21 26"
-
-			"aoe_bonus"
+			"cast_range"					"60 120 180 240"
+			"spell_amp"						
 			{
-				"value"					"0"
-				"special_bonus_facet_rubick_arcane_accumulation"	"+25"				
-			}
-
-			"aoe_bonus_duration"
-			{
-				"value"					"0"
-				"special_bonus_facet_rubick_arcane_accumulation"	"+20"				
+				"value"												"11 16 21 26"
+				"special_bonus_unique_rubick_arcane_supremacy"		"+7"
 			}
 		}
 	}
@@ -274,28 +270,65 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"one_tooltip"					"1"
-			"bonus_damage_pct"				
-			{
-				"value"									"75"	
-				"special_bonus_unique_rubick_2" 		"+25"
-			}
-			"bonus_damage_pct_tooltip"		
-			{
-				"value"									"0.75"
-				"special_bonus_unique_rubick_2" 		"+0.25"
-			}
-			"magic_resist_pct"				
-			{
-				"value"									"75"	
-				"special_bonus_unique_rubick_2" 		"+25"
-			}			
-			"magic_resist_pct_tooltip"		
-			{
-				"value"									"0.75"
-				"special_bonus_unique_rubick_2" 		"+0.25"
-			}			
+			"aoe_bonus"					"15"
+			"magic_resist_bonus"		"0"	
+			"aoe_bonus_duration"		"20"
 		}
+	}
+
+	//=================================================================================================================
+	// Ability: Curiosity
+	//=================================================================================================================
+	"rubick_curiosity"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"IsBreakable"					"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"curiosity_per_spell_cast"				"2"
+			"curiosity_duration"					"20"
+			"curiosity_per_level"					"1"
+			
+
+			"curiosity_attack_damage"				"1"
+			"curiosity_modifier_amp"					"0.3"
+			"curiosity_aoe_bonus"					"2"
+
+			"curiosity_per_kill"					"1"
+			"grace_period"							"3"
+			"curiosity_factor"				
+			{
+				"value"															"0"
+				"special_bonus_unique_rubick_curiosity_factor"			"+2"
+			}
+
+			"charge_radius"			
+			{
+				"value"		"1200"
+				"affected_by_aoe_increase"	"1"
+			}
+
+			"curiosity_permanent_gain"
+			{
+				"dynamic_value"			"true"
+			}
+			"current_debuff_amp"
+			{
+				"dynamic_value"			"true"
+			}
+			"current_aoe_bonus"
+			{
+				"dynamic_value"			"true"
+			}
+		}
+
 	}
 
 	//=================================================================================================================
@@ -339,29 +372,35 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"projectile_speed"				"1500"
-			"stolen_debuff_amp"				"10 20 30"
 			"cast_range_scepter"			
 			{
-				"special_bonus_scepter"						"1400"
+				"special_bonus_scepter"					"1400"
 			}
-
-			"duration"
+			"projectile_speed"				"1500"
+			"stolen_debuff_amp"				"0"
+			"stolen_mana_reduction"			
 			{
-				"value"						"180 240 300"
+				"value"									"0"
+				"special_bonus_unique_rubick_6"			"+50"	
 			}
-
-			"stolen_mana_reduction"
-			{
-				"special_bonus_facet_rubick_frugal_filch"	"50 65 80"				
-			}
+	
 			"stolen_spell_cooldown_percent"
 			{
-				"special_bonus_unique_rubick_6"			"25"
+				"value"									"10 20 30"
+				
 			}
 			"spell_amp_percent"
 			{
 				"special_bonus_unique_rubick_5"			"40"
+			}
+			"duration"
+			{
+				"value"									"180 240 300"
+			}
+
+			"curiosity_steal_factor"			
+			{
+				"value"						"1"
 			}
 		}
 	}	

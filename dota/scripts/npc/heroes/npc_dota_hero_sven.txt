@@ -27,7 +27,6 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"21 18 15 12"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
@@ -35,7 +34,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"110 115 120 125"
+
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -46,7 +45,16 @@
 					"value"					"600"
 					"special_bonus_scepter" "+25%"
 				}
-								
+				"AbilityCooldown"		
+				{
+					"value"						"21 18 15 12"
+					"special_bonus_unique_sven_stormhammer_cooldown"		"-25%"
+				}
+				"AbilityManaCost"				
+				{
+					"value"						"110 115 120 125"
+					"special_bonus_unique_sven_stormhammer_cooldown"		"-25%"
+				}
 
 				"bolt_speed"			
 				{
@@ -70,6 +78,12 @@
 					"affected_by_aoe_increase"	"1"
 				}
 				"scepter_bonus_damage"			"180"
+				"bonus_damage_pct"
+				{
+					"value"						"0"
+					"special_bonus_unique_sven"	"+20"
+				}
+
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -164,6 +178,7 @@
 				"radius"		
 				{
 					"value"			"700"
+					"special_bonus_shard"			"200"
 					"affected_by_aoe_increase"	"1"
 				}
 				"duration"		
@@ -173,24 +188,30 @@
 				}
 				"shard_passive_armor"	
 				{
-					"special_bonus_shard"		"6"
+					"special_bonus_shard"		"0"
 				}
 				"shard_passive_movespeed"	
 				{
 					"special_bonus_shard"		"0"
 				}
+				"undispellable"
+				{
+					"value"			"0"
+					"special_bonus_shard"		"1"
+				}
 				"shard_radius"			
 				{
-					"special_bonus_shard"		"1200"
+					"special_bonus_shard"		"0"
 					"affected_by_aoe_increase"	"1"
 				}
 				"base_barrier_amount"
 				{
-					"special_bonus_facet_sven_heavy_plate"		"=70 =140 =210 =280"
+					"special_bonus_shard"		"300"
+					"RequiresShard"				"1"
 				}
 				"barrier_per_strength"
 				{
-					"special_bonus_facet_sven_heavy_plate"		"=0"
+					"special_bonus_shard"		"=0"
 				}
 		}
 	}
@@ -266,7 +287,6 @@
 			"bonus_damage_pct"
 			{
 				"value"						"20"
-				"special_bonus_unique_sven"	"+10"
 			}
 		}
 	}
@@ -278,16 +298,24 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		"MaxLevel"						"4"
-		"DependentOnAbility"			"sven_gods_strength"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"IsBreakable"					"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_damage_per_str"				"0.0 0.2 0.3 0.4"
-			"base_damage_reduction"				"0"
+			"bonus_damage_per_str"
+			{
+				"value"				"0.08"
+				"hero_levelup"		"0.02"
+			}
+			"current_bonus_damage_tooltip"
+			{
+				"dynamic_value"				"true"
+			}
 		}
 	}
 }

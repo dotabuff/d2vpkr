@@ -147,11 +147,7 @@
 				"value"											"24 21 18 15"
 				"special_bonus_unique_drow_ranger_6"			"-6"
 			}
-			"multishot_movespeed"						
-			{
-				"value"										"0"
-				"special_bonus_facet_drow_ranger_sidestep"			"35"
-			}
+			"multishot_movespeed"							"35"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CHANNEL_ABILITY_3"
 	}
@@ -230,6 +226,7 @@
 				"silence_duration"	"3 4 5 6"
 				"knockback_distance_max"	"450"
 				"knockback_duration"		"0.6 0.7 0.8 0.9"
+				"knockback_duration_min"	"0.4"
 				"knockback_height"		"0"
 				"wave_length"		"900"
 				"bonus_movespeed"		
@@ -265,10 +262,9 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS "
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
 		"Innate"						"1"
-		"MaxLevel"						"4"
-		"DependentOnAbility"			"drow_ranger_marksmanship"
+		"MaxLevel"						"1"
 		"IsBreakable"					"1"
 
 		// Special
@@ -280,14 +276,12 @@
 					"value"			"1200"
 					"affected_by_aoe_increase"	"1"
 				}
-				"trueshot_agi_bonus_base"			"4 8 12 16"
-				"trueshot_agi_bonus_per_level"		"1"
-				"trueshot_agi_bonus_allies_pct"		"50"
-				"agi_bonus_pct_tooltip"
+				"trueshot_agi_bonus"
 				{
-					"dynamic_value"						"true"
+					"value"				"10"
+					"hero_levelup"		"+1"
 				}
-
+				"trueshot_agi_bonus_allies_pct"		"50"
 		}
 	}
 
@@ -310,8 +304,6 @@
 			"drow_ranger_glacier" "shard"
 		}
 		"IsBreakable"					"1"
-
-		//"HasScepterUpgrade"			"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -340,7 +332,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
-		"IsGrantedByShard"              "1"
+		"IsGrantedByShard"				"1"
 		"MaxLevel"						"1"
 		"AbilitySound"					"Hero_Tusk.IceShards"
 
@@ -367,17 +359,18 @@
 				"shard_speed"				"1200.0"
 				"shard_duration"			"8"
 				"shard_angle_step"			"40.0"
-				"shard_distance"			"125"
+				"shard_distance"			"155"
 				"turn_rate_slow"			"0"
 				"end_height"				"128"
-				"hilltop_offset"			"150"
+				"hilltop_offset"			"200"
 				"ramp_radius"				"150"
 				"attack_range_bonus"		"200"
-				"multishot_arrow_bonus"		"1"
+				"multishot_arrow_bonus"		"0"
 				"knockback_duration"		"0.1"
 				"knockback_distance"		"225"
 				"knockback_height"			"50"
 				"z_speed_override"			"800"
+				"damage_bonus"				"25"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -394,25 +387,6 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"MaxLevel"						"1"
 	}
-
-	//=================================================================================================================
-	// Drow Ranger: Drow Ranger: High Ground
-	//=================================================================================================================
-	"drow_ranger_vantage_point"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"MaxLevel"						"1"
-		"IsBreakable"					"1"
-		"AbilityValues"
-		{
-			"damage_bonus"		"30"
-			"bonus_miss_chance"		"0"
-		}
-	}
-
 
 	//=================================================================================================================
 	// Ability: Special Bonus

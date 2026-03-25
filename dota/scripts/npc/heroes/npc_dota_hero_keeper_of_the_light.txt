@@ -157,7 +157,11 @@
 		{
 				"duration"					"6"
 				"slow"						"10"
-				"magic_resistance"			"20 30 40"
+				"magic_resistance"			
+				{
+					"value"				"20 30 40"
+					"special_bonus_unique_keeper_of_the_light_3"			"+10"
+				}
 				"stun_duration"			
 				{
 					"value"			"0"
@@ -274,16 +278,15 @@
 		{
 			"mana_restore"
 			{
-				"value"			"90 160 230 300"
-				"special_bonus_unique_keeper_of_the_light_2"	"+200"
+				"value"			"105 170 235 300"
 			}						
 			"cooldown_reduction"	"3 4 5 6"
 			"mana_leak_pct"	"4.5 5 5.5 6.0"
 			"duration"	"5"
 			"AbilityCooldown"
 			{
-				"value"			"18 16 14 12"
-				"special_bonus_unique_keeper_of_the_light_7"	"-2"
+				"value"			"19 16 13 10"
+				//"special_bonus_unique_keeper_of_the_light_7"	"-2"
 			}	
 			"self_bonus"				"30"
 			"strong_dispel"
@@ -356,11 +359,12 @@
 			"duration"
 			{
 				"value"				"40.0 45.0 50.0"
+				"special_bonus_unique_keeper_of_the_light_2"	"+15"
 			}
 			"movement_speed"
 			{
-				"value"				"10 15 20"
-				"special_bonus_unique_keeper_of_the_light_11"	"+10"
+				"value"				"50"
+				"special_bonus_unique_keeper_of_the_light_11"	"+30"
 			}
 			"cast_range"			"100 200 300" 
 			"illuminate_heal"			
@@ -386,7 +390,6 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"MaxLevel"						"3"
 		"AbilitySound"					"Hero_KeeperOfTheLight.Recall.Cast"
-		"HasShardUpgrade"				"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -415,18 +418,15 @@
 			}
 			"AbilityCooldown"			
 			{
-				"value"							"21 18 15"
-				"special_bonus_shard"			"=0"
+				"value"							"30"
 			}
 			"AbilityChargeRestoreTime"			
 			{
 				"value"							"0 0 0"
-				"special_bonus_shard"			"21 18 15"
 			}
 			"AbilityCharges"
 			{
 				"value"							"0"
-				"special_bonus_shard"			"=2"
 			}
 		}
 	}
@@ -448,7 +448,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"400 500 600 700"
+		"AbilityCastRange"				"500 575 650 725"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
  		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
 
@@ -481,7 +481,7 @@
 				"knockback_duration"	"0.6"
 				"knockback_distance"	
 				{
-					"value"		"400"
+					"value"		"175"
 					"affected_by_aoe_increase"	"1"
 				}
 				"damage"				
@@ -550,6 +550,29 @@
 		"AbilityValues"
 		{
 			"minimum_mana"				"75"
+		}
+	}
+
+	//=================================================================================================================
+	// Keeper of the Light: Bright Speed
+	//=================================================================================================================
+	"keeper_of_the_light_bright_speed"
+	{
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+
+		"AbilityValues"
+		{
+			"intelligence_per_speed"				"2.5"
+			"movement_per_vision"					"300"
+			"vision_radius"							"400"
+			"vision_duration"						"3.0"
+			"current_speed"
+			{
+				"dynamic_value"		"true"
+			}
 		}
 	}
 }

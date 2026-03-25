@@ -217,6 +217,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_ShadowShaman.SerpentWard"
+		"HasShardUpgrade"				"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -250,13 +251,6 @@
 			"hits_to_destroy_tooltip"
 			{
 				"value"														"2"
-				"special_bonus_facet_shadow_shaman_massive_serpent_ward"	"=0"
-				"special_bonus_unique_shadow_shaman_1"						"50%"
-			}
-			"hits_to_destroy_mega_ward_tooltip"
-			{
-				"value"														"0"
-				"special_bonus_facet_shadow_shaman_massive_serpent_ward"	"=18"
 				"special_bonus_unique_shadow_shaman_1"						"50%"
 			}
 			"ward_health"
@@ -268,27 +262,37 @@
 			{
 				"special_bonus_unique_shadow_shaman_4" "+1"
 			}
-			"is_mega_ward"
-			{
-				"value"						"0"
-				"special_bonus_facet_shadow_shaman_massive_serpent_ward"	"+1"
-			}
-			"mega_ward_multiplier_damage"
-			{
-				"value"						"0"
-				"special_bonus_facet_shadow_shaman_massive_serpent_ward"	"=12"	// if changing this, update ward_damage_tooltip
-			}
-			"mega_ward_multiplier_health"
-			{
-				"value"						"0"
-				"special_bonus_facet_shadow_shaman_massive_serpent_ward"	"=9"	// check ward_health and hits_to_destroy_tooltip as well
-			}
-			"mega_ward_model_scale_multiplier"			"2.3 3.0 3.5"
 			"ward_damage_tooltip"
 			{
 				"value"														"50 85 120"
-				"special_bonus_facet_shadow_shaman_massive_serpent_ward"	"x12"
 			}
+			"mega_ward_multiplier_damage" 		
+			{
+				"value"				"0"
+				"special_bonus_shard"		"4"
+
+			}
+			"mega_ward_multiplier_health"	
+			{
+				"value"				"0"
+				"special_bonus_shard"		"4"
+
+			}
+			"mega_ward_health_tooltip"
+			{	
+				"value"					"0"
+				"special_bonus_shard"			"=8"
+				"special_bonus_unique_shadow_shaman_1"						"50%"
+				//"dynamic_value"						"true"
+			}
+			"mega_ward_damage_tooltip"
+			{		
+				"value"							"0 0 0"
+				"special_bonus_shard"			"200 340 480"
+			}
+
+			"mega_ward_model_scale_multiplier"			"2.0"
+
 		}
 	}
 	//=================================================================================================================
@@ -347,49 +351,34 @@
 		"Innate"						"1"
 		"AbilityCooldown"				"120"
 		"IsBreakable"					"1"
-		"HasShardUpgrade"				"1"
 
 		"AbilityValues"
 		{
 			"hex_duration"				"3.0"
-			"movespeed_bonus_pct"		"0"	// if changing this, change ally_chicken_movement_speed_bonus_pct
-
+			"movespeed_bonus_pct"	
+			{
+				"value"							"5"	// if changing this, change ally_chicken_movement_speed_bonus_pct
+				"hero_levelup"					"+5"
+				"levelup_interval"			"5"
+			}
+			"total_chickens"
+			{
+				"value"				"1"
+				"hero_levelup"				"+1"
+				"levelup_interval"			"5"
+			}
 			"damage_reduction_duration"	
 			{
 				"value"					"1"
-				"special_bonus_shard"	"+.5"
 			}
+
 			"damage_reduction_pct"		"100"
 
-			"allow_items"
-			{
-				"special_bonus_shard"	"1"
-			}
 
-			"invuln_duration"
-			{
-				"special_bonus_shard"	".1"
-			}
+			"levels_per_chicken"		"6"
+			"invuln_duration"			"0.1"
 
-			"invuln_vision_radius"
-			{
-				"special_bonus_shard"	"1000"
-			}
-
-			"ally_chicken_images_take_damage_percent"
-			{
-				"special_bonus_shard"	"200"
-			}
-
-			"ally_chicken_images_count"
-			{
-				"special_bonus_shard"	"3"
-			}
-
-			"ally_voodoo_duration"
-			{
-				"special_bonus_shard"	"3"
-			}
+			"ally_chicken_images_take_damage_percent"	"200"
 		}
 	}
 
@@ -419,24 +408,45 @@
 	}
 
 	//=================================================================================================================
-	// Shadow Shaman: Innate Snake Jar
+	// Shadow Shaman: Urnaconda
 	//=================================================================================================================
-	"shadow_shaman_innate_snake_jar"
+	"shadow_shaman_urnaconda"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"				"2"
 		"MaxLevel"						"1"
+		"IsGrantedByShard"				"1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+
+
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"650"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"115"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			// purely for tooltips on variant selection, actual KV's are on the item
-			"tooltip_cast_range"				"400"
-			"tooltip_damage"					"50"
-			"tooltip_attack_range"				"650"
-			"duration"							"10"
-			"cooldown"							"40"
-			"tooltip_hits_to_destroy"			"2"
-			"tooltip_hits_to_destroy_creeps"	"4"
+				"AbilityCooldown"				"50"
+				"ward_duration"					"15"
+				"speed"							"1000"
+				"impact_radius"					"225"
+				"impact_damage"					"275"
+				"megaward_multiplier_tooltip"			"4" //TOOLTIP ONLY. CHANGE IN MASS SERPENT WARDS IF VALUES CHANGE
 		}
 	}
 

@@ -9,7 +9,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -37,14 +37,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"AbilityCooldown"				
-			{
-				"value"									"17 15 13 11"
-
-			}	
+			"AbilityCooldown"				"17 15 13 11"
+			
 			"chill_duration"
 			{
-				"value"					"5"
+				"value"														"5"
 				"special_bonus_unique_visage_grave_chill_duration"			"+2"
 			}
 			"movespeed_bonus"				"12 18 24 30"
@@ -54,14 +51,17 @@
 				"value"			"900"
 				"affected_by_aoe_increase"	"1"
 			}
+
 			"target_radius"
 			{
-				"affected_by_aoe_increase"	"1"
-				"special_bonus_facet_visage_sepulchre"		"300"
+				"value"												"0"
+				//"special_bonus_unique_visage_grave_chill_aoe"		"+300"
+				"affected_by_aoe_increase"	"1"				
 			}
 			"penalty"
 			{
-				"special_bonus_facet_visage_sepulchre"		"70"
+				"value"												"0"		
+				//"special_bonus_unique_visage_grave_chill_aoe"		"+70"		
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -84,11 +84,11 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+		"AbilityCastPoint"				"0.2"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"4"
+		
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -102,32 +102,33 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+				"AbilityCooldown"				
+				{
+					"value"					"4"
+					"special_bonus_unique_visage_soul_assumption_cooldown" "-1"
+				}
 				"bolt_speed"				"1000"
 				"soul_base_damage"			"20"
 				"soul_charge_damage"		
 				{
-					"value"			"70"
-				"special_bonus_unique_visage_4" "+25"
+					"value"							"70"
+					"special_bonus_unique_visage_4" "+30"
 				}
 				"soul_charge_gold"
 				{
-					"value"												"0"
-					"special_bonus_facet_visage_gold_assumption"		"30"	// if changing this, change gold_max_tooltip
+					"value"												"0"		// if changing this, change gold_max_tooltip
 				}
 				"gold_creep_pct"
 				{
 					"value"												"0"
-					"special_bonus_facet_visage_gold_assumption"		"15"
 				}
 				"gold_grace_period_hero"
 				{
 					"value"												"0"
-					"special_bonus_facet_visage_gold_assumption"		"3.0"
 				}
 				"gold_max_tooltip"
 				{
-					"value"												"0"
-					"special_bonus_facet_visage_gold_assumption"		"90 120 150 180"		// TOOLTIP ONLY, if changing this, change soul_charge_gold
+					"value"												"0"	// TOOLTIP ONLY, if changing this, change soul_charge_gold	
 				}
 				"stack_limit"				"3 4 5 6"
 				"stack_duration"			"6.0"
@@ -160,38 +161,40 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"HasShardUpgrade"             "1"
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+		
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 		"IsBreakable"					"1"
+		"MaxLevel"						"4"
+		"HasShardUpgrade"             "1"
 
 		"AbilityValues"
 		{
-			"max_layers"
+			"max_layers"				 
 			{
-				"value" "4"
+				"value"					"4"
 			}
-			"damage_reduction"
+			"damage_reduction"			 
 			{
-				"value" "8 12 16 20"
+				"value"					"8 12 16 20"
 			}
 			"recovery_time"
 			{
-				"value" "7 6 5 4"
+				"value" 				 "7 6 5 4"
 				"special_bonus_unique_visage_cloak_recovery_time"		"-2"
 			}
-			"minimum_damage"
-			{
-				"value" "40"
-			}
+			"minimum_damage"			 "40"
 			"radius"
 			{
 				"affected_by_aoe_increase"	"1"
 				"value" "900"
 			}
-			"max_damage_reduction"
+			"max_damage_reduction"		
 			{
-				"value" "80"
+				"value"				"32 48 64 80"
 			}
+
+
+
 			"shard_hp_restoration_pct"
 			{
 				"special_bonus_shard" "25"
@@ -203,10 +206,6 @@
 			"shard_manacost"
 			{
 				"special_bonus_shard" "125"
-			}
-			"armor"				
-			{
-				"special_bonus_unique_visage_5"		"15"
 			}
 		}
 	}
@@ -237,7 +236,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"130 120 110"
+		"AbilityCooldown"				"120 110 100"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -247,8 +246,16 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"familiar_hp"				"500 600 700"
-			"familiar_armor"			"2 3 4"
+			"familiar_hp"				
+			{
+				"value"													"450 600 750"
+				"special_bonus_unique_visage_familiar_armor_hp"			"+25%"
+			}
+			"familiar_armor"			
+			{
+				"value"													"2 3 4"
+				"special_bonus_unique_visage_familiar_armor_hp"			"+25%"
+			}
 			"familiar_attack_range"		
 			{
 				"value"					"180"
@@ -271,12 +278,18 @@
 			"familiar_attack_damage"		
 			{
 				"value"								"25 50 75"
+				"special_bonus_unique_visage_7"		"+6"
 				"CalculateSpellDamageTooltip"		"0"
 			}	
-			"bonus_damage"
+			"visage_base_damage"
 			{
 				"value"								"0"
 				"special_bonus_unique_visage_7"		"+6"
+			}
+			"bonus_damage"
+			{
+				"value"								"0"
+				"special_bonus_unique_visage_7"		"0"
 				"CalculateSpellDamageTooltip"		"0"
 			}
 			"familiar_count"
@@ -329,14 +342,15 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		
 
+		"Innate"						"1"
 		"MaxLevel"						"1"
 
-		"IsGrantedByScepter"			"1"
+		"HasScepterUpgrade"				"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -344,31 +358,52 @@
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
 		"AbilityCastGestureSlot"		"DEFAULT"
 		
-		
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"45.0"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"115"
+		"AbilityManaCost"				"50"
+		
+		
+
+
 		"AbilityValues"
 		{
-			"bonus_duration"
+			"AbilityCooldown"				
 			{
-				"value" "4"
+				"value"						"45.75"
+				"hero_levelup"				"-0.75"
 			}
-			"bonus_damage"
+			"flight_duration"			
 			{
-				"value" "20"
-			}
-			"invis_duration"
-			{
-				"value" "30"
+				"value"						"20"
+				"special_bonus_scepter"		"+10"
 			}
 			"movespeed_bonus"
 			{
-				"value" "20"
+				"value" 					"12"
+				"special_bonus_scepter"		"+12"
+			}
+
+			"bonus_duration"
+			{
+				"value" 					"2"
+				"special_bonus_scepter"		"+2"
+			}
+			"bonus_damage"
+			{
+				"value"						"10"
+				"special_bonus_scepter" 	"+10"
+			}
+			
+			"invis"
+			{
+				"value" 					"0"
+				"special_bonus_scepter"		"=1"
+			}
+			"fly_timer"
+			{
+				"value"						"0"
+				"special_bonus_scepter"		"0"
 			}
 		}
 	}

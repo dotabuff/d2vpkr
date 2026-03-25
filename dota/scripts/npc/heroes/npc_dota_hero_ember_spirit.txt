@@ -15,6 +15,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_EmberSpirit.SearingChains.Target"
+		
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -27,7 +28,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"95 105 115 125"
+		"AbilityManaCost"				"80 90 100 110"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -54,13 +55,12 @@
 				"unit_count"					
 				{
 					"value"												"2"
-					"special_bonus_facet_ember_spirit_chain_gang"		"+2"
+		
 				}	
 				"remnant_chains"					
 				{
 				
 					"value"						"0"
-					"special_bonus_facet_ember_spirit_chain_gang"						"=1"
 				}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -99,7 +99,7 @@
 				}
 				"bonus_hero_damage"			
 				{
-					"value"		"25 70 115 160"
+					"value"		"50 90 130 170"
 					"special_bonus_unique_ember_spirit_6"			"+50"
 					"CalculateSpellDamageTooltip"	"0"
 				}
@@ -127,12 +127,10 @@
 				"min_enemies_for_double_sleight"
 				{
 					"value"										"0"
-					"special_bonus_facet_ember_spirit_double_impact"			"=2"
 				}
 				"second_attack_damage_penalty"
 				{
 					"value"					"0"
-					"special_bonus_facet_ember_spirit_double_impact"			"=50"
 				}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -209,12 +207,11 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_EmberSpirit.FlameGuard.Cast"
-		"DependentOnAbility"			"ember_spirit_fire_remnant"
 
-		"MaxLevel"						"4"
+		"MaxLevel"						"1"
 		"Innate"						"1"
-		"HasShardUpgrade"				"1"
 		"IsBreakable"					"1"
+		"HasShardUpgrade"				"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -222,14 +219,15 @@
 		{
 				"radius"						
 				{
-					"value"		"175"
-					"special_bonus_shard"			"+175"
+					"value"		"200"
 					"affected_by_aoe_increase"	"1"
+					"special_bonus_shard"		"+150"
 				}
 				"tick_interval"					"0.2"
 				"damage"				
 				{
-					"value"			"10 18 26 34"	
+					"value"						"10"
+					"hero_levelup"				"1"
 					"special_bonus_shard"			"+10"
 				}
 		}
@@ -249,9 +247,8 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilitySound"					"Hero_EmberSpirit.FireRemnant.Cast"
-		"HasShardUpgrade"			"1"
 		"HasScepterUpgrade"			"1"
-
+		"HasShardUpgrade"				"1"
 		"AbilityDraftExtraAbilities"
 		{
 			"ember_spirit_activate_fire_remnant" ""
@@ -311,8 +308,14 @@
 				}
                 "shard_charge_radius"				
 				{
+					"value"						"0"				
 					"special_bonus_shard"		"400"
 					"affected_by_aoe_increase"	"1"
+				}
+				"apply_immolation_to_remnant"		
+				{
+					"value" 				"0"
+					"special_bonus_shard"	"+1"
 				}
 		}
 	}
@@ -364,7 +367,6 @@
 				{
 					"special_bonus_scepter"		"75"
 				}
-                "shard_remnant_speed_pct"	"300"
 		}
 	}
 

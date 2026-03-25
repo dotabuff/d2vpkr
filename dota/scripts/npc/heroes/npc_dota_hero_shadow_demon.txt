@@ -125,15 +125,18 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		"MaxLevel"						"5"
-		"DependentOnAbility"			"shadow_demon_disruption"		
+		"MaxLevel"						"1"
+		"Innate"						"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"illusion_outgoing_damage"	"-80 -75 -70 -65 -60"
-				"illusion_outgoing_damage_tooltip"	"20 25 30 35 40"
+				"health_lost"			"1"
+				"health_regain_pct"		"50"
+				"debuff_duration"		"10"
+				"illusion_outgoing_damage"	"-60"
+				"illusion_outgoing_damage_tooltip"	"40"
 				"radius"							
 				{
 					"value"		"1500"
@@ -287,12 +290,12 @@
 			"AbilityCooldown"
 			{
 				"value"									"70 65 60"
-				"special_bonus_unique_shadow_demon_9"	"-30"
+				"special_bonus_unique_shadow_demon_9"	"-20"
 			}
 			"charge_restore_time"
 			{
 				"special_bonus_scepter"					"70 65 60"
-				"special_bonus_unique_shadow_demon_9"	"-30"
+				"special_bonus_unique_shadow_demon_9"	"-20"
 			}
 			"max_slow"
 			{
@@ -301,6 +304,11 @@
 			"min_slow"
 			{
 				"value" "20"
+			}
+			"apply_poison_stacks"
+			{
+				"value"			"0"
+				"special_bonus_unique_shadow_demon_purge_poison"	"=1"
 			}
 		}
 	}
@@ -385,13 +393,11 @@
 			"health_lost"		
 			{
 				"value"							"0 0 0 0"
-				"special_bonus_facet_shadow_demon_promulgate"			"=9 =10 =11 =12"				
 			}
-			
 			
 			"damage_reflection_pct"	
 			{
-				"value"						"20 25 30 35"
+				"value"						"16 24 32 40"
 				"special_bonus_unique_shadow_demon_disseminate_damage"		"+15"
 			}
 			"radius"					
@@ -411,15 +417,18 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"MaxLevel"						"1"
-		"Innate"						"1"
 		"IsBreakable"					"1"
-
+		"Innate"						"1"
 		"AbilityValues"
 		{
-			"stack"			"2.5"
+			"stack"			
+			{
+				"value"			"1.9"
+				"hero_levelup"	"+0.1"
+			}
 			"duration"		"8"
 		}
 	}

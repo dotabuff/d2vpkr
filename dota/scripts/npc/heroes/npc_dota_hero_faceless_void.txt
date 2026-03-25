@@ -12,7 +12,6 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
 		"AbilitySound"					"Hero_FacelessVoid.TimeWalk"
 		"HasScepterUpgrade"			"1"
-		"HasShardUpgrade"			"1"
 
 
 		// Casting
@@ -40,7 +39,7 @@
 			"range"					
 			{
 				"value"				"650 700 750 800"
-				"special_bonus_shard"		"+150"
+				"special_bonus_unique_faceless_void_8"		"+125"
 			}
 			"AbilityCooldown"
 			{
@@ -76,19 +75,19 @@
 		//-------------------------------------------------------------------------------------------------------------
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"MaxLevel"						"4"
+		"MaxLevel"						"1"
 		"Innate"						"1"
-		"DependentOnAbility"			"faceless_void_chronosphere"
 		"IsBreakable"					"1"
 
 		"AbilityValues"
 		{
-			"attack_projectile_slow"		"35 40 45 50"
+			"attack_projectile_slow"		"40"
 			"slow_distance_max"				
 			{
-				"value"			"600"
+				"value"			"500"
 				"affected_by_aoe_increase"	"1"
 			}
+			"friendly_hero_distance"			"1200"
 		}
 	}
 
@@ -120,7 +119,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
 		"AbilitySound"					"Hero_FacelessVoid.TimeWalk"
 		"MaxLevel"						"1"
-		"IsGrantedByShard"				"1"
+		"IsGrantedByScepter"				"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -201,6 +200,7 @@
 		"AbilityCastPoint"				"0.1"
 		"AbilityCooldown"				"28 24 20 16"
 		"AbilityManaCost"				"90"
+		"HasShardUpgrade"				"1"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -214,15 +214,34 @@
 			"duration"				"7 8 9 10"
 			"slow"						
 			{	
-				"value"					"4 5 6 7"
-				"special_bonus_unique_faceless_void_8"					"+8"
-			}			
+				"value"								"4 5 6 7"	// if changing this, also updated attack_slow_tooltip_only
+				"special_bonus_shard"					"+5"
+			}
+			"attack_slow_tooltip_only"
+			{
+				"value"								"4 5 6 7"
+				"special_bonus_shard"					"+5"
+			}
 			"cooldown_percentage"	"30 40 50 60"
 			"base_damage"			"0"
 			"damage_per_stack"		
 			{
 				"value"				"4 6 8 10"
 				"special_bonus_unique_faceless_void_6" "+6"
+			}
+			"self_movespeed_tooltip"						//tooltip only. actual value is in "slow"
+			{	
+				"value"								"0"
+				"special_bonus_shard"					"=9 =10 =11 =12"
+			}	
+			"self_attackspeed_tooltip"						//tooltip only. actual value is in "slow"
+			{	
+				"value"								"0"
+				"special_bonus_shard"					"=9 =10 =11 =12"
+			}	
+			"self_buff"
+			{
+				"special_bonus_shard"				"+1"
 			}
 
 		}
@@ -269,7 +288,7 @@
 				{
 					"value"		"500"
 					"affected_by_aoe_increase"	"1"
-				"special_bonus_unique_faceless_void_2" "+140"
+					"special_bonus_unique_faceless_void_2" "+140"
 				}
 				"duration"				
 				{
@@ -296,26 +315,26 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_FacelessVoid.Chronosphere"
-		
+		"MaxLevel" 						"1"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"500"
+		"AbilityCastRange"				"0"
 		"AbilityCastPoint"				"0.35 0.35 0.35"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"125 120 115"
+		"AbilityCooldown"				"0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"125 200 275"
+		"AbilityManaCost"				"0"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -327,17 +346,16 @@
 		{
 			"radius"				
 			{
-				"value"		"700"
+				"value"		"350"
 				"affected_by_aoe_increase"	"1"
-				"special_bonus_unique_faceless_void_2" "+200"
 			}
 			"duration"				
 			{
-				"value"			"3.75 4.25 4.75"
+				"value"			"3.5"
 			}
 			"vision_radius"			
 			{
-				"value"	"675"				
+				"value"	"350"				
 				"affected_by_aoe_increase"	"1"
 			}
 			"bonus_attack_speed"
@@ -364,7 +382,7 @@
 			"yaw"				"45"
 			"cooldown_acceleration"						// base is 100% = 1x = normal cooldown progression. 400 = 4x = +300% cooldown acceleration
 			{
-				"value"				"400"				// values <= 100 will do nothing currently and progress cooldowns normally
+				"value"				"200"				// values <= 100 will do nothing currently and progress cooldowns normally
 			}
 		}
 	}

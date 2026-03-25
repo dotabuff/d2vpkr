@@ -22,7 +22,6 @@
 		"AbilityCastAnimation"			"ACT_DOTA_MK_STRIKE"
 		"AbilityCastGestureSlot"		"DEFAULT"
 		"AbilityCastPoint"				"0.4"
-		"AbilityCastRange"				"1100"
 		"HasShardUpgrade"				"1"
 
 		// Time		
@@ -59,7 +58,14 @@
 				"value"	"150"
 				"affected_by_aoe_increase"	"1"		
 			}
-			"strike_cast_range"			"1100"
+			"AbilityCastRange"
+			{
+				"value"									"1100"
+			}
+			"strike_cast_range"
+			{
+				"value"									"1100"
+			}
 			"soldier_spawn_duration"		"0"
 			"acceleration_z"					"5000"
 			"min_height_above_lowest"			"100"
@@ -80,9 +86,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"FightRecapLevel"				"2"
-		"MaxLevel"						"4"
+		"MaxLevel"						"1"
 		"Innate"						"1"
-		"DependentOnAbility"			"monkey_king_wukongs_command"
 		"AbilitySound"					"Hero_MonkeyKing.Transform.On"
 
 		// Casting
@@ -92,7 +97,6 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"24 20 16 12"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -104,6 +108,12 @@
 		{
 			"movespeed"					"8"
 			"reveal_radius"				"200"
+
+			"AbilityCooldown"
+			{
+				"value"					"24.5"
+				"hero_levelup"			"-0.5"
+			}
 			
 			"invul_duration"			
 			{
@@ -157,12 +167,12 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.1"
+		"AbilityCastRange"				"900"
+		"AbilityCastPoint"				"0.2"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"1.40 1.2 1.0 0.8 0"
+		"AbilityCooldown"				"0.9 0.6 0.3 0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -172,7 +182,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"leap_speed"				"700"
+			"leap_speed"				"600"
 
 			// this should belong to Spring ability but for how it gets called it's simpler to have Tree Jump own it
 			"spring_leap_speed"			"1300"
@@ -180,13 +190,13 @@
 			"give_up_distance"				"1850"
 			"ground_jump_distance"
 			{
-				"value"									"800"
-				"special_bonus_unique_monkey_king_7"	"+450"
+				"value"									"900"
+				"special_bonus_unique_monkey_king_7"	"+350"
 			}
 			"perched_jump_distance"
 			{
-				"value"						"800"
-				"special_bonus_unique_monkey_king_7"	"+450"
+				"value"						"900"
+				"special_bonus_unique_monkey_king_7"	"+350"
 			}
 			"jump_damage_cooldown"
 			{
@@ -206,7 +216,7 @@
 				"value"						"140 210 280 350"
 			}
 			"impact_movement_slow_tooltip"	"20 40 60 80"
-			"range"				"800"
+			"range"				"900"
 			"max_level"
 			{
 				"value"				"4"
@@ -262,7 +272,6 @@
 			"impact_damage"			
 			{
 				"value"		"110 200 290 380"
-				"special_bonus_unique_monkey_king_3"		"+90"
 			}
 			"impact_movement_slow"	"35 50 65 80"
 			"impact_slow_duration"	"4.0"
@@ -352,6 +361,8 @@
 					"value"			"15 20 25"
 				}
 				"attack_speed"						"1.1"
+				"attack_speed_pct"					"0"
+				"damage_pct"						"0"
 				"duration"							
 				{
 					"value"								"14"
@@ -427,6 +438,11 @@
 				}
 				"lifesteal"					"20 40 60 80"
 				"max_duration"				"35"
+				"buff_is_undispellable"
+				{
+					"value"									"0"
+					"special_bonus_unique_monkey_king_3"	"+1"
+				}
 		}
 	}
 
@@ -439,7 +455,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES "
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES "
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -447,6 +463,7 @@
 		"AbilityCastGestureSlot"		"DEFAULT"
 		"AbilityCastPoint"				"0.3"
 		"MaxLevel"						"1"
+		"DependentOnAbility"			"monkey_king_wukongs_command"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -454,7 +471,7 @@
 		"AbilityCooldown"				"3"
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"25"		
+		"AbilityManaCost"				"0"		
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------

@@ -54,7 +54,6 @@
 			"damage"
 			{
 				"value"								"55 70 85 100"
-				"special_bonus_unique_enigma_5"		"+60"
 			}
 			"stun_instances"
 			{
@@ -137,6 +136,12 @@
 			"eidolon_gold_bounty_min"			"17"
 			"eidolon_gold_bounty_max"			"20"
 			"non_splitting_bounty_reduction"		"50"		// if changing this, change non_splitting_bounty_reduction_tooltip
+			
+			"damage_threshold"				"375"
+			"damage_reset_interval"			"7"
+			"eidolon_spawns"				"0"
+				
+
 
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -254,7 +259,7 @@
 			"scepter_radius"	
 			{
 				"special_bonus_scepter"			"1000"
-				"affected_by_aoe_increase"	"1"
+				"affected_by_aoe_increase"		"1"
 			}
 			"scepter_drag_speed"			
 			{
@@ -406,21 +411,26 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_INNATE_UI | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"MaxLevel"						"4"
-		"DependentOnAbility"			"enigma_black_hole"
+		"MaxLevel"						"1"
+		"Innate"						"1"
 		"IsBreakable"					"1"
 
 		"AbilityValues"
 		{
 			"radius"			
 			{
-				"value"		"600"
-				"affected_by_aoe_increase"	"1"
+				"value"							"600"
+				"affected_by_aoe_increase"		"1"
+				"special_bonus_unique_enigma_5"	"+100"
 			}
-			"speed_bonus"		"8 12 16 20"
-			"vision_cone"		"0.08715"
+			"speed_bonus"
+			{
+				"value"							"4"
+				"hero_levelup"					"+1"
+			}
+			"vision_cone"						"0.08715"
 		}
 	}	
 

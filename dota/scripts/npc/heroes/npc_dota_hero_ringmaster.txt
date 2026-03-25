@@ -197,17 +197,24 @@
 			{
 				"value"			"600"
 			}
+			"leash_radius"				
+			{
+				"value" 				"500"
+				"affected_by_aoe_increase"	"1"
+			}
 			"invis_duration"			"2.0 2.4 2.8 3.2"
 			"move_speed"				"0 8 16 24"
 			"magic_resist"				"50 60 70 80"
 			"slow_resist"				"100"
 			"transform_time"			"0.5"
 			"model_scale_time"			"0.2"
-			"leash_radius"				"500"
+			
 			"heal_ally"					"0"
 			"leap_distance"			"250"
 			"leap_speed"			"1300.0"
 			"leap_acceleration"		"20000.0"
+			"unicycle_duration"						"0"
+
 			"grant_debuff_immunity"
 			{
 				"value"	"0"
@@ -241,10 +248,12 @@
 			"launch_daggers_range"
 			{
 				"special_bonus_scepter"				"=1200"
+				"affected_by_aoe_increase"			"1"
 			}
 			"explosion_radius"
 			{
 				"special_bonus_scepter"				"=225"
+				"affected_by_aoe_increase"			"1"
 			}
 			"explosion_damage"
 			{
@@ -339,13 +348,13 @@
  		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
 		"AbilityCastPoint"				"0.3"
 		"AbilityCastRange"				"2400"
-		"AbilityCharges"			"1 2 3 4"
+		
 		"AbilityChargeRestoreTime"		"17"
 				
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"1"
-		"AbilityManaCost"				"80"
+		"AbilityManaCost"				"50"
 
 		// Values
 		//-------------------------------------------------------------------------------------------------------------
@@ -353,11 +362,11 @@
 		{
 			"damage_impact"
 			{
-				"value"													"50"
-				"special_bonus_unique_ringmaster_dagger_impact_damage"	"+85"
+				"value"													"20 35 50 65"
+				"special_bonus_unique_ringmaster_dagger_impact_damage"	"+100"
 			}
-			"bleed_health_pct"			"3.5 4 4.5 5.0"
-			"bleed_creep_dps"			"100"
+			"bleed_health_pct"			"3 4 5 6"
+			"bleed_creep_dps"			"85 90 95 100"
 			"bleed_duration"
 			{
 				"value"		"4"
@@ -366,7 +375,7 @@
 			"slow_percent"				"100"
 			"slow_duration"
 			{
-				"value"		"0.8"
+				"value"		"0.5 0.6 0.7 0.8"
 				"special_bonus_unique_ringmaster_dagger_bleed_and_slow_duration"	"+1"
 			}
 			"dagger_speed"				"1350"
@@ -377,6 +386,11 @@
 			{
 				"value"		"0"
 				"special_bonus_unique_ringmaster_dagger_penetrates"	"+1"
+			}
+			"AbilityCharges"			
+			{
+				"value"													"3"
+				"special_bonus_unique_ringmaster_dagger_charge"		    "+1"
 			}
 		}
 	}
@@ -399,7 +413,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"MaxLevel"						"1"
 		"Innate"						"1"
 
@@ -408,14 +422,12 @@
 			"souvenir_collection_range"	"925"
 			"use_souvenir_set_1"
 			{
-				"value"	"0"
-				"special_bonus_facet_ringmaster_carny_classics" "=1"
+				"value"	"1"
 
 			}
 			"use_souvenir_set_2"
 			{
 				"value"	"0"
-				"special_bonus_facet_ringmaster_sideshow_secrets" "=1"
 			}
 		}
 	}

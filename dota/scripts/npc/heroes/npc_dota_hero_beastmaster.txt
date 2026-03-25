@@ -58,7 +58,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Beastmaster.Wild_Axes"
-
+		"HasShardUpgrade"				"1"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1500"
@@ -88,7 +88,7 @@
 			"range"						"1500"
 			"axe_damage"
 			{
-				"value"					"30 65 100 135"
+				"value"					"40 80 120 160"
 				"CalculateSpellDamageTooltip"	"1"
 			}
 			"duration"					
@@ -98,7 +98,7 @@
 
 			"damage_amp"
 			{
-				"value"				"7 9 11 13"
+				"value"				"5 6 7 8"
 				"special_bonus_unique_beastmaster_9"		"+2"
 			}
 			"AbilityCooldown"				
@@ -108,6 +108,10 @@
 			}			
 			"min_throw_duration"						"0.4"
 			"max_throw_duration"						"1.0"
+			"apply_debuff_on_attack"
+			{
+				"special_bonus_shard"					"=1"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -125,16 +129,15 @@
 	}
 
 	//=================================================================================================================
-	// Beastmaster: Call of the Wild Boar
+	// Beastmaster: Summon Razorback
 	//=================================================================================================================
-	"beastmaster_call_of_the_wild_boar"
+	"beastmaster_summon_razorback"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"AbilitySound"					"Hero_Beastmaster.Call.Boar"
-		"LinkedAbility"					"beastmaster_call_of_the_wild_hawk"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -154,10 +157,10 @@
 			
 			"duration"							"60"
 			"boar_base_max_health"				"300 450 600 750"
-			"boar_base_damage"					"25 40 55 70"
+			"boar_base_damage"					"30 45 60 75"
 			"boar_total_damage_tooltip"
 			{
-				"value"										"25 40 55 70"
+				"value"										"30 45 60 75"
 				"special_bonus_unique_beastmaster_2"		"+30"
 				"CalculateSpellDamageTooltip"				"0"
 			}
@@ -258,9 +261,9 @@
 	}
 
 	//=================================================================================================================
-	// Beastmaster: Call of the Wild Hawk
+	// Beastmaster: Summon Raptor
 	//=================================================================================================================
-	"beastmaster_call_of_the_wild_hawk"
+	"beastmaster_summon_raptor"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -269,14 +272,11 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilitySound"					"Hero_Beastmaster.Call.Hawk"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"						// Dive
-		"LinkedAbility"					"beastmaster_call_of_the_wild_boar"
 
 		"AbilityDraftExtraAbilities"
 		{
-			"beastmaster_call_of_the_wild_boar" ""
+			"beastmaster_summon_razorback" ""
 		}
-
-        "HasShardUpgrade"               "1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -294,8 +294,8 @@
 			"duration"
 			{
 				"value"						"25"
-				"special_bonus_shard"		"+5"
 			}
+			"hawk_spawn_interval"			"0.75"
 			"hawk_base_max_health"			"200 325 450 625"
 			"hawk_base_gold_bounty"			"30 40 50 60"
 			"hawk_base_vision_range"		"600 650 700 750"
@@ -303,7 +303,7 @@
 			"hawk_base_magic_resist"		"30 40 50 60"
 			"AbilityCooldown"
 			{
-				"value"									"45 40 35 30"
+				"value"									"30"
 				"special_bonus_unique_beastmaster_3"	"-5"
 			}
 			"attack_radius"			
@@ -313,15 +313,14 @@
 			}
 			"hawk_count"					
 			{
-				"value"					"1"
-				"special_bonus_shard"	"+1"
+				"value"					"2"
 			}
 			"dive_damage"				
 			{
-				"value"		"50 80 110 140"
+				"value"		"60 95 130 165"
 				"special_bonus_unique_beastmaster_2" "+30"
 			}
-			"dive_root_duration"		"0.25 0.5 0.75 1.0"
+			"dive_root_duration"		"0.4 0.6 0.8 1.0"
 			"roaming_radius"					"280"
 			"roaming_seconds_per_rotation"			"4"
 			"hawk_base_attack_interval"						"4"
@@ -331,10 +330,85 @@
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
+
+
+	//=================================================================================================================
+	// Hawk Attack
+	//=================================================================================================================
+	"beastmaster_summon_raptor_attack"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"MaxLevel"						"1"
+		"FightRecapLevel"				"1"
+		"IsGrantedByScepter"			"1"
+		"HasScepterUpgrade"				"1"
+		"AbilitySound"					"Hero_Snapfire.MortimerBlob.Launch"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"3000"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"projectile_speed"		"1400"
+			"projectile_width"		
+			{
+				"value"	"130"
+				"affected_by_aoe_increase"	"1"	
+			}
+			"impact_radius"			
+			{
+				"value"	"400"
+				"affected_by_aoe_increase"	"1"	
+			}
+			"projectile_vision"
+			{
+				"value" "500"
+				"affected_by_aoe_increase"	"1"	
+			}
+			"burn_interval"			"0.5"
+			"burn_damage"			"100"
+			"move_slow_pct"
+			{
+				"value"			"25"
+			}
+			"burn_ground_duration"	"3.0"
+			"min_lob_travel_time"	"0.1"
+			"max_lob_travel_time"	"2.0"
+			"burn_linger_duration"	"1.0"
+			"stun_duration"			"1.2"
+			"min_height_above_lowest"	"150.0"
+			"min_height_above_highest"	"100.0"
+			"min_acceleration"		"1000.0"
+			"max_acceleration"		"2000.0"
+		}
+	}
+
+
+
+
 	//=================================================================================================================
 	// Hawk: Attack
 	//=================================================================================================================
-	"beastmaster_call_of_the_wild_hawk_attack"
+	"beastmaster_summon_raptor_attack"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -435,10 +509,12 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
 		"IsBreakable"					"1"
+		"Innate"						"1"
+		"MaxLevel"						"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -457,33 +533,12 @@
 			}
 			"bonus_attack_speed"
 			{
-				"value"									"10 30 50 70"
-				"special_bonus_unique_beastmaster_4"	"+15"
+				"value"									"7"
+				"hero_levelup"							"+3"
 			}
 			"attack_speed_per_unit"		
 			{
 				"value"									"0"
-				"special_bonus_facet_beastmaster_wild_hunt"		"3 4 5 6" 				
-			}
-			"berserk_duration"						
-			{
-				"value"									"0"
-				"special_bonus_facet_beastmaster_beast_mode"		"+6"				
-			}
-			"berserk_bonus_attack_speed"
-			{
-				"value"								"0"
-				"special_bonus_facet_beastmaster_beast_mode"			"20 30 40 50"				
-			}
-			"AbilityCooldown"
-			{
-				"value"				"0"
-				"special_bonus_facet_beastmaster_beast_mode"		"=20"				
-			}
-			"AbilityManaCost"
-			{
-				"value"				"0"
-				"special_bonus_facet_beastmaster_beast_mode"		"=35"				
 			}
 			"bonus_damage"
 			{
@@ -529,7 +584,6 @@
 		
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -569,6 +623,12 @@
 			"slow_duration"				"3 3.5 4"
 			"movement_speed"			"40"
 			"movement_speed_duration"			"2"
+			"AbilityCastRange"	
+			{
+				"value"				"600"
+				"special_bonus_unique_beastmaster_4"	"+200"
+
+			}
 			"AbilityCooldown"
 			{ 
 				"value"				"90 75 60"
@@ -627,6 +687,7 @@
 				"value"			"1200"
 				"affected_by_aoe_increase"	"1"
 			}
+			"primal_roar_stacks"			"10"
 		}
 	}
 

@@ -55,21 +55,10 @@
 			"burrow_anim_time"	"0.52"
 			"AbilityCastRange"
 			{
-				"value"								"525 600 675 750"
+				"value"								"550 625 700 775"
 				"special_bonus_unique_sand_king_8"	"+200"
 			}
-			"mound_duration"				
-			{
-				"special_bonus_facet_sand_king_deeper_underground"			"=0"
-			}
-			"is_vector_target"			
-			{
-				"special_bonus_facet_sand_king_deeper_underground"			"1"
-			}
-			"underground_distance_pct"	
-			{
-				"special_bonus_facet_sand_king_deeper_underground"			"60"
-			}
+
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -127,15 +116,14 @@
 			}
 			"blind_pct"
 			{
-				"special_bonus_facet_sand_king_obscurity"			"20 30 40 50"
+				"special_bonus_unique_sand_king_4"	"35"
 			}
 			"blind_debuff_duration"
 			{
-				"special_bonus_facet_sand_king_obscurity"			"5"
 			}
 			"sand_storm_slow"
 			{
-				"special_bonus_unique_sand_king_4"	"50"
+				"special_bonus_unique_sand_king_4"	"35"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -148,14 +136,13 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Ability.SandKing_CausticFinale"
-		"DependentOnAbility"			"sandking_epicenter"
 		"Innate"						"1"
-		"MaxLevel"						"4"
+		"MaxLevel"						"1"
 		"IsBreakable"					"1"
 
 		// Special
@@ -168,9 +155,17 @@
 					"special_bonus_unique_sand_king_caustic_finale_radius"				"+100"
 					"affected_by_aoe_increase"	"1"
 				}
-				"caustic_finale_damage_base"		"20 40 60 80"
-				"caustic_finale_damage_pct"		"3 7 11 15"
-				"caustic_finale_duration"		"4.5 5 5.5 6"
+				"caustic_finale_damage_flat"
+				{
+					"value"								"17"
+					"hero_levelup"						"+3"
+				}
+				"caustic_finale_damage_pct"
+				{
+					"value"								"2.5"
+					"hero_levelup"						"+0.5"
+				}
+				"caustic_finale_duration"			"4.5"
 
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -190,8 +185,9 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Ability.SandKing_Epicenter"
-        "HasShardUpgrade"               "1"
 		"HasScepterUpgrade"				"1"
+				       "HasShardUpgrade"               "1"
+
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
@@ -221,24 +217,21 @@
 			"epicenter_pulses"	
 			{
 				"value"		"12 16 20"
-				"special_bonus_unique_sand_king"	"+8"
+				"special_bonus_unique_sand_king"	"+6"
 			}
 			"epicenter_damage"	
 			{
 				"value"					"60 70 80"
-				"special_bonus_shard"	"+5"
 				"CalculateSpellDamageTooltip"	"1"
 			}
 			"epicenter_radius_base"
 			{
 				"value"		"500"
-				"special_bonus_unique_sand_king_5"	"+75"
 				"affected_by_aoe_increase"	"1"
 			}
 			"epicenter_radius_increment"
 			{
 				"value"		"13"
-				"special_bonus_unique_sand_king_5"	"+7"
 			}
 			"epicenter_slow"	
 			{
@@ -248,16 +241,19 @@
 			{
 				"value"			"-50 -55 -60"
 			}
+
+			"proc_passively"
+			{
+				"value"					"0"
+				"special_bonus_shard"		"+1"
+			}
 			"shard_radius"	
 			{
-				"special_bonus_shard"		"425"
-				"special_bonus_unique_sand_king_5"	"+100"
+				"value"														"0"
+				"special_bonus_shard"		"+425"
 				"affected_by_aoe_increase"	"1"
 			}
-			"shard_interval"
-			{
-				"special_bonus_shard"		"3"
-			}
+			"shard_interval"				"3.0"
 			"linger_duration"		"3.0"
 
 			"scepter_explosion_radius_pct"
@@ -309,6 +305,7 @@
 		"AbilityCastPoint"				"0.4"
 		"AbilityManaCost"				"35 40 45 50"
 
+
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"15.0 12.0 9.0 6.0"
@@ -334,12 +331,12 @@
 			}
 			"inner_radius_procs_caustic"
 			{
-				"special_bonus_facet_sand_king_pinpoint"				"=1"
+				"value"				"0"	
 			}
 			"attack_damage"				
 			{
 				"value"															"50 75 100 125"
-				"special_bonus_unique_sand_king_scorpion_strike_damage"			"+40"
+				"special_bonus_unique_sand_king_scorpion_strike_damage"			"+125"
 			}
 			"debuff_duration"				"4 5 6 7"
 			"strike_slow"				
@@ -349,7 +346,7 @@
 			}
 			"caustic_damage_pct"
 			{
-				"special_bonus_facet_sand_king_pinpoint"			"50"
+				"value"				"0"
 			}
 		}
 	}

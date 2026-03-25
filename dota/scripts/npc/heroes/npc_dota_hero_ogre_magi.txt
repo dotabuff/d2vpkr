@@ -7,7 +7,7 @@
 	//=================================================================================================================
 	"ogre_magi_dumb_luck"
 	{
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_NONE"	
 
 		"MaxLevel"						"1"
@@ -61,7 +61,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
 		"FightRecapLevel"				"1"
-		"HasScepterUpgrade"				"0"
+		"HasScepterUpgrade"				"1"
 		"AbilitySound"					"Hero_OgreMagi.Fireblast.Cast"
 		
 		"AbilityDraftExtraAbilities"
@@ -89,7 +89,7 @@
 			"AbilityCooldown"
 			{
 				"value"										"11 10 9 8"
-				"special_bonus_unique_ogre_magi_5"			"-1"
+				"special_bonus_scepter"							"-1"
 			}			
 			"stun_duration"		"1.2"
 			"multicast_delay"	"0.6"
@@ -97,16 +97,22 @@
 			"fireblast_damage"
 			{
 				"value"		"70 130 190 250"
-				"special_bonus_unique_ogre_magi_2"	"+220"
+				"special_bonus_unique_ogre_magi_2"	"+175"
 			}
 
 			"fireblast_proc"
 			{
 				"special_bonus_unique_ogre_magi_3"			"17"
 			}
+
+			"bonus_cast_speed"
+			{
+				"value"						"0"
+				"special_bonus_scepter"		"+25"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
-	}
+}
 
 	
 	//=================================================================================================================
@@ -199,8 +205,8 @@
 		{
 			"AbilityCooldown"
 			{
-				"value"										"6"
-				"special_bonus_unique_ogre_magi_5"			"-1"
+				"value"										"7"
+				//"special_bonus_unique_ogre_magi_5"			"-1"
 			}
 
 			"stun_duration"		"1.2"
@@ -248,7 +254,7 @@
 			"burn_damage"		
 			{
 				"value"				"20 30 40 50"
-				"special_bonus_unique_ogre_magi_4" "+12"
+				"special_bonus_unique_ogre_magi_4" "+10"
 			}		
 			"slow_movement_speed_pct"		"-25"
 			"projectile_speed"		"1000"
@@ -299,7 +305,7 @@
 			"bonus_attack_speed"
 			{
 				"value"					"35 50 65 80"
-				"special_bonus_unique_ogre_magi" "+35"
+				"special_bonus_unique_ogre_magi" "+20"
 			}
 			"self_bonus"
 			{
@@ -334,33 +340,31 @@
 		{
 			"multicast_2_times"
 			{
-				"value"		"75"
-				// Have the bonus listed here so the value shows as modified, actual modification is done by strenght_mult
-				"special_bonus_facet_ogre_magi_fat_chance" "+0"
+				"value"				"75"
+				"special_bonus_unique_ogre_magi_multicast_chance"		"+10"
 				"dynamic_value"		"true"
 			}
 
 			"multicast_3_times"
 			{
-				"value"		"0 30 30"
-				// Have the bonus listed here so the value shows as modified, actual modification is done by strenght_mult
-				"special_bonus_facet_ogre_magi_fat_chance" "+0"
+				"value"				"0 30 30"
+				"special_bonus_unique_ogre_magi_multicast_chance"		"+10"
 				"dynamic_value"		"true"
 			}
 
 			"multicast_4_times"
 			{
-				"value"		"0 0 15"
-				// Have the bonus listed here so the value shows as modified, actual modification is done by strenght_mult
-				"special_bonus_facet_ogre_magi_fat_chance" "+0"
+				"value"				"0 0 15"
+				"special_bonus_unique_ogre_magi_multicast_chance"		"+10"
 				"dynamic_value"		"true"
 			}
 
-			"strength_mult"
+			"strength_for_one_pct"
 			{
-				"value"						"0"
-				"special_bonus_facet_ogre_magi_fat_chance"	"=0.06"
+				"value"				"16"
 			}
+			
+			"one_tooltip"			"1"
 		}
 	}
 
@@ -410,5 +414,14 @@
 				"value" "5"
 			}
 		}
+	}
+
+	"ogre_magi_school"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityType"					"ABILITY_TYPE_BASIC"
+		"MaxLevel"						"2"
 	}
 }

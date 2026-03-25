@@ -27,6 +27,8 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"80"
+
+		"AbilityCastRange"				"600"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -39,19 +41,13 @@
 			}
 			"damage"			
 			{
-				"value"			"75"
+				"value"			"85"
 				"CalculateSpellDamageTooltip" "1"
 			}
-			"duration"			"8.0"
+			"duration"			"6.0"
 			"burn_interval"			"0.5"
 			"linger_duration"			"2"
-			"dragon_form_cast_range"	"1400"
-			"melee_cast_range"			"600"
-			"physical_damage_type"
-			{
-				"value"			"0"
-				"special_bonus_facet_dragon_knight_corrosive_dragon"		"+1"
-			}	
+
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_5"
 	}	
@@ -100,11 +96,7 @@
 				"affected_by_aoe_increase"	"1"
 			}
 			"range"					"750"
-			"AbilityCastRange"		
-			{
-				"value"						"600"	
-				"special_bonus_unique_dragon_knight_9"				"+60%"
-			}
+			"AbilityCastRange"		"1000"
 
 			"AbilityCooldown"
 			{
@@ -115,12 +107,12 @@
 			"damage"			
 			{
 				"value"			"80 160 240 320"
-				"special_bonus_unique_dragon_knight_9"				"+60%"
+				"special_bonus_unique_dragon_knight_9"				"+200"
 				"CalculateSpellDamageTooltip" "1"
 			}
 			"reduction"
 			{
-				"value"				"-30"
+				"value"				"20 24 28 32"
 
 			}
 			"dragon_form_bonus_pct"
@@ -129,11 +121,7 @@
 
 			}
 			"duration"				"11"
-			"physical_damage_type"
-			{
-				"value"			"0"
-				"special_bonus_facet_dragon_knight_corrosive_dragon"		"+1"
-			}			
+		
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -180,21 +168,19 @@
 			}
 			"damage"					"60 90 120 150"
 			"damage_pct"				"0"
-			"dragon_cast_range"			"450"
+			"dragon_cast_range"			"150"
 			"projectile_speed"			"1600"
-			"dragon_aoe"
+			"aoe"						
 			{
-				"special_bonus_facet_dragon_knight_fire_dragon"		"100"
-				"affected_by_aoe_increase"	"1"
+				"value"							"25"
+				"affected_by_aoe_increase"		"1"
 			}
-			"physical_damage_type"
-			{
-				"value"			"0"
-				"special_bonus_facet_dragon_knight_corrosive_dragon"		"+1"
-			}
+
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
+
+
 
 	//=================================================================================================================
 	// Dragon Knight: Dragon Blood
@@ -203,85 +189,47 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE  |  DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"IsBreakable"					"1"
+		"Innate"						"1"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			// GREEN DRAGON
-			"is_green_dragon"
+			"health_regen"
 			{
-				"special_bonus_facet_dragon_knight_corrosive_dragon"		"1"
+				"value"							"2"
+				"hero_levelup"					"+0.5"
+				"special_bonus_unique_dragon_knight" "+12"
 			}
-			"corrosive_breath_damage"
+			"armor"
 			{
-				"special_bonus_facet_dragon_knight_corrosive_dragon"		"5 10 15 20"
+				"value"							"2"
+				"hero_levelup"					"+0.5"
+				"special_bonus_unique_dragon_knight" "+12"
 			}
-			"corrosive_breath_duration"
+			"regen_and_armor_multiplier_during_dragon_form"
 			{
-				"special_bonus_facet_dragon_knight_corrosive_dragon"		"3"
-				
-			}
-			"corrosive_breath_armor_reduction"
-			{
-				"special_bonus_facet_dragon_knight_corrosive_dragon"		"0 1 2 3"
-			}
-
-			// RED DRAGON
-			"is_red_dragon"
-			{
-				"special_bonus_facet_dragon_knight_fire_dragon"		"1"
-			}
-			"magic_damage"
-			{
-				"special_bonus_facet_dragon_knight_fire_dragon"		"6 12 18 24"
-			}
-			"bonus_aoe"
-			{
-				"special_bonus_facet_dragon_knight_fire_dragon"		"25 50 75 100"
-			}
-
-
-			// BLUE DRAGON
-			"is_blue_dragon"
-			{
-				"special_bonus_facet_dragon_knight_frost_dragon"		"1"
-			}
-			"frost_bonus_movement_speed"	
-			{
-				"special_bonus_facet_dragon_knight_frost_dragon"		"-14 -21 -28 -35"
-			}
-			"frost_bonus_attack_speed"		
-			{
-				"special_bonus_facet_dragon_knight_frost_dragon"		"-14 -21 -28 -35"
-			}
-			"frost_duration"
-			{
-				"special_bonus_facet_dragon_knight_frost_dragon"		"3.0"
-			}
-			"frost_healing_reduction"		
-			{
-				"special_bonus_facet_dragon_knight_frost_dragon"		"14 21 28 35"
+				"value"							"50"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
 	
 
-
 	
 	//=================================================================================================================
-	// Dragon Knight: Innate Vigor
+	// Dragon Knight: Wyrm's Wrath
 	//=================================================================================================================
-	"dragon_knight_inherited_vigor"
+	"dragon_knight_wyrms_wrath"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE |  DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"MaxLevel"						"1"
-		"Innate"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"MaxLevel"						"4"
+		
 		"IsBreakable"					"1"
 
 		
@@ -289,22 +237,15 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"base_health_regen"
+			"magic_damage"			
 			{
-				"value"							"2"
-				"special_bonus_unique_dragon_knight" "+12"
-				"dynamic_value"					"true"
+				"value"				"10 20 30 40"
+				"special_bonus_unique_dragon_knight_wyrms_wrath_damage"		"+50%"
 			}
-			"base_armor"
+			"bonus_aoe"				
 			{
-				"value"							"2"
-				"special_bonus_unique_dragon_knight" "+12"
-				"dynamic_value"					"true"
-			}
-			"level_mult"					"0.5"
-			"regen_and_armor_multiplier_during_dragon_form"
-			{
-				"value"							"1.5"
+				"value"				"25 50 75 100"
+				"special_bonus_unique_dragon_knight_wyrms_wrath_damage"		"+50%"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -319,11 +260,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_DragonKnight.ElderDragonForm"
         "HasScepterUpgrade"             "1"
+        "RestrictValuesToMaxLevel"		"1"
+        "MaxLevel"						"3"
 		"AbilityDraftExtraAbilities"
 		{
 			"dragon_knight_fireball" "shard"
@@ -339,7 +282,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"50 50 50"		
+		"AbilityManaCost"				"50"		
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -349,83 +292,37 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"duration"
-				{
-					"value"						"60"
-				}
-				"bonus_movement_speed"		"20"
-				"bonus_attack_range"		
-				{
-					"value"			"350 350 350 350"
-					"special_bonus_unique_dragon_knight_7"		"+150"
-				}
-				"bonus_attack_damage"		"20 50 80 110"
-				"magic_resistance"		
-				{
-					"value"					"0"
-				}
-				"model_scale"			
-				{
-					"value"					"10 15 20"
-					"special_bonus_scepter"		"+10"
-				}	
-				"is_green_dragon"
-				{
-					"value"							"0"
-					"special_bonus_facet_dragon_knight_corrosive_dragon"		"+1"
-				}
-				"is_red_dragon"
-				{
-					"value"							"0"
-					"special_bonus_facet_dragon_knight_fire_dragon"		"+1"
-				}
-				"is_blue_dragon"
-				{
-					"value"							"0"
-					"special_bonus_facet_dragon_knight_frost_dragon"		"+1"
-				}
-				"ranged_splash_radius"				
-				{
-					"value"							"275"
-					"affected_by_aoe_increase"		"1"
-				}
-				"ranged_splash_damage_pct"
-				{
-					"value"			"30 40 50 60"
-				}
-				"frost_breath_effect_bonus"
-				{
-					"special_bonus_facet_dragon_knight_frost_dragon"
-					{
-						"value"											"=20 =30 =40 =50"
-						"special_bonus_unique_dragon_knight_8"			"+50"
-					}
-				}
-				"corrosive_breath_effect_bonus"
-				{
-					"special_bonus_facet_dragon_knight_corrosive_dragon"
-					{
-						"value"											"=20 =30 =40 =50"
-						"special_bonus_unique_dragon_knight_8"			"+50"
-					}
-				}
-				"fire_breath_effect_bonus"
-				{
-					"special_bonus_facet_dragon_knight_fire_dragon"
-					{
-						"value"											"=20 =30 =40 =50"
-						"special_bonus_unique_dragon_knight_8"			"+50"
-					}
-				}
-				"wyrms_wrath_bonus_tooltip"
-				{
-					"value"													"20 30 40 50"
-					"special_bonus_unique_dragon_knight_8"					"+50"
-				}
-				"health_bar_offset"
-				{
-					"value"													"300"
-				}
+			"duration"					"60"
+			"bonus_movement_speed"		"25 30 35 40"
+			"bonus_attack_range"		
+			{
+				"value"							"350"
+				"special_bonus_unique_dragon_knight_7"		"+150"
+			}
+			"bonus_ability_cast_range"			"350"
+			"bonus_attack_damage"		"0"
+			"model_scale"				"10 15 20 30"
+			
+			"corrosive_duration"				"3 3 3 3"
+			"corrosive_damage_per_second"		"25 25 25 35"
+
+			"ranged_splash_damage_pct"			"0 75 75 100"
+			"ranged_splash_radius"				
+			{
+				"value"							"0 275 275 350"
+				"affected_by_aoe_increase"		"1"
+			}
+			"health_bar_offset"					"300"
+			"magic_resistance"					"0 0 0 20"
+			
+			"frost_duration"					"0 0 3 3"
+			"frost_bonus_movement_speed"		"0 0 30 45"	
+			"frost_bonus_attack_speed"			"0 0 50 65"	
+			"frost_healing_reduction"			"0"
+
+			"scepter_bonus_levels"				"1"
 		}
 	}
+
+
 }

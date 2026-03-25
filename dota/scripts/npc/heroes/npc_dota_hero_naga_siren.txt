@@ -38,12 +38,12 @@
 				"incoming_damage"			
 				{
 					"value"				"250"
-					"special_bonus_unique_naga_siren_3"	"-50"
+					"special_bonus_unique_naga_siren_3"	"-75"
 				}
 				"tooltip_incoming_damage_total_pct"			
 				{
 					"value"					"350"
-					"special_bonus_unique_naga_siren_3"	"-50"
+					"special_bonus_unique_naga_siren_3"	"-75"
 				}
 				"images_count"				
 				{
@@ -255,7 +255,11 @@
 
 		"AbilityValues"
 		{
-			"evasion_per_naga"	"8"
+			"evasion_per_naga"			
+			{
+				"value"					"4.9"
+				"hero_levelup"			"0.1"
+			}
 			"radius"		
 			{
 				"value"			"900"
@@ -350,7 +354,7 @@
 			"AbilityCooldown"
 			{
 				"value"									"160 130 100"
-				"special_bonus_unique_naga_siren_5" 	"-20"
+				"special_bonus_unique_naga_siren_5" 	"-25"
 			}
 		}
 	}
@@ -418,7 +422,7 @@
 			"pull_strength"			
 			{
 				"value"												"200"
-				"special_bonus_unique_naga_siren_reel_in_speed"		"+100"
+				"special_bonus_unique_naga_siren_reel_in_speed"		"+125"
 			}
 			"min_pull_distance"			"100"
 			"can_target_magic_immune"
@@ -435,4 +439,37 @@
 		"BaseClass"						"naga_siren_reel_in"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
 	}
+
+	//=================================================================================================================
+	// Naga Siren: Slithereen Cutlass
+	//=================================================================================================================
+	"naga_siren_slithereen_cutlass"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_NagaSiren.Riptide.Cast"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0 0 0 0"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityValues"
+		{
+			"debuff_duration"							"6"
+			"max_stacks"								"10"
+			"miss_chance_per_stack"
+			{				
+				"hero_levelup"								"1"
+				"levelup_interval"							"6"
+			}
+		}
+	}	
 }

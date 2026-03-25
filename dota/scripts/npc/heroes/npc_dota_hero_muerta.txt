@@ -71,12 +71,10 @@
 			"gunslinger_buffed_chance_duration"
 			{
 				"value"									"0"
-				"special_bonus_facet_muerta_slingshot"	"5.0"
 			}
 			"gunslinger_buffed_chance_multiplier"
 			{
 				"value"									"0"
-				"special_bonus_facet_muerta_slingshot"	"1.5"
 			}
 			"AbilityCharges"
 			{
@@ -145,18 +143,15 @@
 			{
 				"affected_by_aoe_increase"	"1"
 				"value"						"0"
-				"special_bonus_facet_muerta_dance_of_the_dead"	"+200"
 			}
 			"kill_radius_expansion"
 			{
 				"affected_by_aoe_increase"	"1"
 				"value"						"0"
-				"special_bonus_facet_muerta_dance_of_the_dead"	"+100"
 			}
 			"kill_radius_expansion_speed"
 			{
 				"value"						"0"
-				"special_bonus_facet_muerta_dance_of_the_dead"	"+0.25"
 			}
 			"hp_regen_pct"
 			{
@@ -197,7 +192,6 @@
 			"dead_shot_cooldown_reduction_on_proc"
 			{
 				"value"									"0"
-				"special_bonus_facet_muerta_slingshot"	"1.0"
 			}
 		}
 	}
@@ -217,7 +211,6 @@
 		"AbilitySound"					"Hero_Muerta.PierceTheVeil.Cast"
 		"AbilityCastPoint"				"0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
-		"HasShardUpgrade"				"1"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -237,33 +230,8 @@
 				"special_bonus_unique_muerta_pierce_the_veil_duration"	"+2"
 			}
 			"transform_duration"		"0.35"
-			"base_damage_pct"			"100"
+			"base_damage_percent"		"75"
 			"modelscale"				"30"
-			"bonus_damage"				"70 100 130"
-			"spell_lifesteal"
-			{
-				"special_bonus_shard"	"30"
-			}
-			"spell_amp_steal"
-			{
-				"value"				"2"
-				"RequiresShard"		"1"
-			}
-			"spell_amp_steal_range"
-			{
-				"value"				"925"
-				"RequiresShard"		"1"
-				"affected_by_aoe_increase"	"1"
-			}
-			//"time_extension_on_kill"
-			//{
-			//	"value"						"1 1.5 2"
-			//}
-			//"time_extension_kill_range"
-			//{
-			//	"value"						"0"
-			//	"special_bonus_facet_2"	"+925"
-			//}
 		}
 	}
 
@@ -311,11 +279,70 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"MaxLevel"						"1"
 		"Innate"						"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"stack_collection_range"	"925"
+			"spell_amp_per_stack"		"1.0"
+			"max_stacks_tooltip"
+			{
+				"hero_levelup"			"+1"
+			}
+		}
 	}
 
+	//=================================================================================================================
+	// Ability: Spectral Slug
+	//=================================================================================================================
+	"muerta_spectral_slug"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"MaxLevel"						"1"
+		"IsGrantedByShard"				"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"12"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"projectile_speed"			"2500"
+			"damage"					"225"
+			"knockback_distance"		"250"
+			"knockback_duration"		"0.2"
+			"duration"					"3.0"
+			"slow_pct"					"-30"
+			"bonus_spell_damage_pct"	
+			{
+				"value"		"-20"
+				"DamageTypeTooltip"			"DAMAGE_TYPE_MAGICAL"
+			}
+		}
+	}
 
 	//=================================================================================================================
 	// Muerta: Ofrenda Destroy

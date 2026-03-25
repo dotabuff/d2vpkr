@@ -144,7 +144,6 @@
 			"bonus_health"	
 			{
 				"value"										"0"
-				"special_bonus_unique_dark_seer_6"						"+250"
 			}
 			
 		}
@@ -173,7 +172,6 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"24 19 14 9"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -187,13 +185,16 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+			"AbilityCooldown"
+			{
+				"value"								"24 19 14 9"
+				"special_bonus_unique_dark_seer_6"	"-1.5"
+			}
+
 			"duration"				
 			{
 				"value" 	"3 4 5 6"
-				"special_bonus_shard"		"+0"
-
 			}
-			
 				
 			"speed_boost"				"550"
 			"trail_radius"				
@@ -302,22 +303,25 @@
 				}
 		}
 	}
-
 	//=================================================================================================================
-	// Dark Seer Innate Mastermind 
+	// Dark Seer Innate Quick Wit
 	//=================================================================================================================
 	"dark_seer_quick_wit"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
 		"MaxLevel"						"1"
+		"Innate"						"1"
 
 		"AbilityValues"
 		{
 			"int_to_atkspd"				"1.0"
+			"attack_speed_tooltip"
+			{
+				"dynamic_value"						"true"
+			}
 		}
 	}
 	//=================================================================================================================
@@ -329,9 +333,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"MaxLevel"						"1"
-		"IsBreakable"					"1"
 
 		"AbilityValues"
 		{
@@ -381,11 +383,16 @@
 		"IsBreakable"					"1"
 		"AbilityValues"
 		{
-			"heal_pct_base"					"10.0"
-			"heal_pct_per_level"			"1.5"
-			"heal_pct_tooltip"
+			"int_to_atkspd"							"1.0"
+			"attack_speed_tooltip"
 			{
 				"dynamic_value"						"true"
+			}
+
+			"heal_pct"					
+			{
+				"value"								"8.5"
+				"hero_levelup"						"+1.5"
 			}
 		}
 	}

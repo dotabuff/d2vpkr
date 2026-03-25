@@ -14,6 +14,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Axe.Berserkers_Call"
+		"TooltipSummaryProperties"		"duration;bonus_armor"
 
 		"HasShardUpgrade"               "1"
 
@@ -48,11 +49,12 @@
 			"bonus_armor"	
 			{
 				"value"							"12 13 14 15"
-				"special_bonus_facet_axe_call_out"			"+6"
 				"special_bonus_unique_axe_7"	"+10"
 			}
-			"bonus_armor_pct"		"0"
-			"duration"				"2.1 2.4 2.7 3.0"
+			"duration"
+			{
+				"value"							"2.1 2.4 2.7 3.0"
+			}
 			"applies_battle_hunger"
 			{
 				"special_bonus_shard" "+1"
@@ -60,8 +62,6 @@
 			"bonus_attack_speed"
 			{
 				"value"					"0"
-				"special_bonus_facet_axe_call_out"				"45"
-
 			}
 		}
 	}
@@ -81,6 +81,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Axe.Battle_Hunger"
+		"TooltipSummaryProperties"		"#DOTA_Tooltip_AttributeSummary__DPS_Pure;slow"
 		"HasShardUpgrade"               "1"
 		
 		// Casting
@@ -109,10 +110,14 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"duration"					"12.0"
+				"duration"
+				{
+					"value"							"12.0"
+				}
 				"slow"
 				{
 					"value"			"18 22 26 30"
+					"display_type"	"kDebuffPercentage"
 				}
 				"damage_per_second"	
 				{
@@ -144,6 +149,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilitySound"					"Hero_Axe.CounterHelix"
         "HasScepterUpgrade"               "1"
+		"TooltipSummaryProperties"		"damage;trigger_attacks"
 		"IsBreakable"					"1"
 			
 		// Special
@@ -160,7 +166,10 @@
 				"value"						"275"
 				"affected_by_aoe_increase"	"1"
 			}
-			"trigger_attacks"			"7 6 5 4"
+			"trigger_attacks"
+			{
+				"value"							"7 6 5 4"
+			}
 
 			"AbilityCooldown"
 			{
@@ -175,6 +184,7 @@
 			"damage_reduction"
 			{
 				"special_bonus_scepter"		"+12"
+				"display_type"	"kDebuffPercentage"
 			}
 			"max_stacks"
 			{
@@ -184,7 +194,7 @@
 			{
 				"special_bonus_scepter"		"1"
 			}
-						"helix_lifesteal"
+			"helix_lifesteal"
 			{
 				"value"									"0"
 				"special_bonus_unique_axe_helix_lifesteal"	"+30"
@@ -208,6 +218,8 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"TooltipSummaryProperties"		"damage;armor_per_stack;#DOTA_Tooltip_ability_axe_culling_blade___buff"
+
 		"FightRecapLevel"				"2"
 
 
@@ -239,7 +251,11 @@
 				"value"			"275 375 475"
 				"special_bonus_unique_axe_5"	"+150"
 			}
-			"speed_bonus"				"20 25 30"
+			"speed_bonus"
+			{
+				"value"			"20 25 30"
+				"display_type"	"kBuffPercentage"
+			}
 			"armor_bonus"				"10 15 20"
 			"speed_duration"			
 			{
@@ -255,7 +271,7 @@
 			"charge_speed"				"1200"
 			"armor_per_stack"			
 			{
-				"value"					"0"
+				"value"					"1 1.5 2"
 			}
 		}
 	}
@@ -272,30 +288,18 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"MaxLevel"						"1"
 		"IsBreakable"					"1"
+		"Innate"						"1"
 
 		"AbilityValues"
 		{
-			"armor_pct_as_strength"			"40"
+			"armor_pct_as_strength"			"50"
+			"current_max_str_bonus"
+			{	
+				"dynamic_value"			"true"
+			}
 			"radius"					"700"
 			"bonus_linger_duration"		"3"
 		}
 
-	}
-
-	"axe_coat_of_blood"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
-		"MaxLevel"						"4"
-		"Innate"						"1"
-		"DependentOnAbility"			"axe_culling_blade"
-
-		"AbilityValues"
-		{
-			"armor_per_kill"						"0.2 0.3 0.4 .5"
-			"culling_blade_multiplier"				"3"		// only supports int values currently
-		}
-	
 	}
 }

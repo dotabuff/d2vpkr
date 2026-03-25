@@ -14,6 +14,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilitySound"					"Hero_Antimage.ManaBreak"
 		"IsBreakable"					"1"
+		"HasScepterUpgrade"				"1"
 
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -22,6 +23,7 @@
 			"percent_damage_per_burn"		
 			{
 				"value"						"50"
+				"display_type"				"kDebuffPercentage"
 			}
 			"mana_per_hit"					
 			{
@@ -29,10 +31,11 @@
 			}
 			"mana_per_hit_pct"		
 			{
-				"value"								"1.6 2.4 3.2 4"
-				"special_bonus_unique_antimage_7"	"+1"
+				"value"								"1.6 2.4 3.2 4.0"
+				"special_bonus_scepter"				"+1.5"
+				"display_type"						"kManaPercentage"
 			}
-			"illusion_percentage"		"50"
+			"illusion_percentage"		"25"
 			"empowered_max_burn_pct"
 			{
 				"value"								"0.0"
@@ -56,21 +59,22 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"MaxLevel"						"4"
+		"MaxLevel"						"1"
 		"Innate"						"1"
-		"DependentOnAbility"			"antimage_mana_void"
 		"IsBreakable"					"1"
 
 		"AbilityValues"
 		{
 			"move_slow_min"
 			{
-				"value"								"12.5 15.0 17.5 20"
+				"value"								"12"
+				"hero_levelup"						"+0.5"
 				"special_bonus_unique_antimage_5"	"+9"
 			}
 			"move_slow_max"
 			{
-				"value"								"25 30 35 40"
+				"value"								"24"
+				"hero_levelup"						"+1"
 				"special_bonus_unique_antimage_5"	"+18"
 			}
 			"mana_threshold"						"50"
@@ -99,7 +103,7 @@
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"50"
+		"AbilityManaCost"				"65 60 55 50"
 		
 		"AbilitySound"					"Hero_Antimage.Blink_out"
 
@@ -110,13 +114,13 @@
 		{
 				"AbilityCooldown"				
 				{
-					"value"			"12 10 8 6"
-					"special_bonus_scepter"	"-1"
+					"value"								"10.5 9 7.5 6"
+					"special_bonus_unique_antimage"		"-1"
 				}
 				"AbilityCastRange"			
 				{
-					"value"					"750 900 1050 1200"
-					"special_bonus_unique_antimage_3"	"+200"
+					"value"					"875 950 1025 1100"
+					"special_bonus_unique_antimage_3"	"+150"
 				}
 				"min_blink_range"		"200"
 				"empowered_mana_break_duration"
@@ -192,11 +196,11 @@
 		{
 			"magic_resistance"			
 			{
-				"value"								"16 24 32 40"
-				"special_bonus_unique_antimage_4"	"+10"
+				"value"								"14 21 28 35"
+				"display_type"						"kBuffPercentage"
 			}
-			"duration"					"1.2"
-			"duration_illusion"				"4"
+			"duration"					"1.3"
+			"duration_illusion"			"4"
 			"outgoing_damage"			"0"
 			"incoming_damage"			"100"
 			"does_reflect"
@@ -206,18 +210,7 @@
 			"reflected_spell_amp"
 			{
 				"value"											"0"
-			}
-			"mana_drain_percent"
-			{
-				"special_bonus_facet_antimage_magebanes_mirror"	"=150 =200 =250 =300"
-			}
-			"damage_from_mana_drain_percent"
-			{
-				"special_bonus_facet_antimage_magebanes_mirror" "100"
-			}
-			"max_damage_from_mana_drain"
-			{
-				"special_bonus_facet_antimage_magebanes_mirror" "400"
+				"display_type"						"kBuffPercentage"
 			}
 			"AbilityCooldown"
 			{
@@ -281,18 +274,6 @@
 			{
 				"value"											"0"
 			}
-			"mana_drain_percent"
-			{
-				"special_bonus_facet_antimage_magebanes_mirror"	"=300"
-			}
-			"damage_from_mana_drain_percent"
-			{
-				"special_bonus_facet_antimage_magebanes_mirror" "100"
-			}
-			"max_damage_from_mana_drain"
-			{
-				"special_bonus_facet_antimage_magebanes_mirror" "400"
-			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 		"AbilityCastGestureSlot"		"DEFAULT"
@@ -343,12 +324,12 @@
 		{
 			"AbilityCooldown"				
 			{
-				"value"			"70"
+				"value"								"100 85 70"
 				"special_bonus_unique_antimage_2"	"-50"
 			}
 			"mana_void_damage_per_mana"		
 			{
-				"value"				"0.8 0.95 1.1"
+				"value"								"1.0"
 				"special_bonus_unique_antimage_6"	"+0.2"
 			}			
 			"mana_void_ministun"			
@@ -358,45 +339,40 @@
 			}			
 			"mana_void_aoe_radius"			
 			{
-				"value"					"500"
+				"value"					"400 450 500"
 				"special_bonus_unique_antimage_manavoid_aoe"			"+200"
 				"affected_by_aoe_increase"	"1"
 			}
 			"thirst_enabled"
 			{
 				"value"						"0"
-				"special_bonus_facet_antimage_mana_thirst"	"+1"
 			}
 			"thirst_range"
 			{
 				"value"						"0"
-				"special_bonus_facet_antimage_mana_thirst"	"+2500"
 				"affected_by_aoe_increase"	"1"				
 			}
 			"threshold_pct"
 			{
 				"value"						"0"
-				"special_bonus_facet_antimage_mana_thirst"	"+15"
 			}
 			"min_bonus_pct"
 			{
 				"value"						"0"
-				"special_bonus_facet_antimage_mana_thirst"	"+60"
 			}
 			"max_bonus_pct"
 			{
 				"value"						"0"
-				"special_bonus_facet_antimage_mana_thirst"	"+15"
 			}
 			"bonus_attack_damage"
 			{
-				"special_bonus_facet_antimage_mana_thirst"	"20 45 70"
+				"value"										"0"
 				"CalculateSpellDamageTooltip"		"0"
 				"DamageTypeTooltip"					"DAMAGE_TYPE_PHYSICAL"
 			}
 			"linger_duration"
 			{
-				"special_bonus_facet_antimage_mana_thirst"	"4.0"
+				"value"										"0"
 			}
 		}
 	}
@@ -440,6 +416,52 @@
 			"duration"				"7"
 			"outgoing_damage"			"-25"
 			"incoming_damage"			"100"
+		}
+	}
+
+	//=================================================================================================================
+	// Innate Ability: Mana Thirst
+	//=================================================================================================================
+	"antimage_mana_thirst"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"IsBreakable"					"1"
+
+		"AbilityValues"
+		{
+			"thirst_range"
+			{
+				"value"						"2000"
+				"affected_by_aoe_increase"	"1"				
+			}
+			"threshold_pct"
+			{
+				"value"						"15"
+			}
+			"min_bonus_pct"
+			{
+				"value"						"60"
+			}
+			"max_bonus_pct"
+			{
+				"value"						"15"
+			}
+			"bonus_attack_damage"
+			{				
+				"hero_levelup"						"+3"
+				"CalculateSpellDamageTooltip"		"0"
+				"DamageTypeTooltip"					"DAMAGE_TYPE_PHYSICAL"
+			}
+			"linger_duration"
+			{
+				"value"						"4.0"
+			}
+
 		}
 	}
 }

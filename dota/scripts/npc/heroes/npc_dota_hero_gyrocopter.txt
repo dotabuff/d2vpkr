@@ -41,19 +41,7 @@
 				{
 					"value"				"8 14 20 26"
 					"special_bonus_unique_gyrocopter_3"		"+14"
-				}
-				"bonus_movespeed_duration"
-				{
-					"value"		"0"
-					"special_bonus_facet_gyrocopter_afterburner"			"=4.0"					
-				}
-
-				"bonus_movement_speed_per_hit"
-				{
-					"value"			"0 0 0 0"
-					"special_bonus_facet_gyrocopter_afterburner"			"=1 =2 =3 =4"					
-				}
-
+				}				
 
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -137,9 +125,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Gyrocopter.FlackCannon"
-		"HasScepterUpgrade"				"1"
 		"AbilityCastPoint"				"0 0 0 0"
-		"IsBreakable"					"1"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -174,19 +160,6 @@
 				"special_bonus_unique_gyrocopter_flak_cannon_bonus_damage"			"+25"
 			}
 			"bonus_night_vision"		"200"
-
-			"sidegunner_fire_rate"
-			{
-				"special_bonus_scepter"		"1.3"
-			}
-			"sidegunner_radius"
-			{
-				"special_bonus_scepter"		"700"
-			}
-			"double_target"
-			{
-				"special_bonus_scepter"		"+1"
-			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}	
@@ -242,32 +215,55 @@
 					"value"			"400"
 					"affected_by_aoe_increase"	"1"
 				}
+				"tracking_strike_radius"				
+				{
+					"value"						"0"
+					"affected_by_aoe_increase"	"1"
+				}
 				"missile_delay_tooltip"		"2"
 				"strike_delay"				
 				{
 					"value"						"1.0"
-					"special_bonus_facet_gyrocopter_secondary_strikes"		"-0.2"
 				}
 				"total_strikes"							"3"		
 				"strike_separation"			"500"
-				"tracking_strike_radius"				
-				{
-					"value"							"0"
-					"special_bonus_facet_gyrocopter_secondary_strikes"			"+200"
-					"affected_by_aoe_increase"	"1"
-				}
 				"tracking_strike_delay"	
 				{
 					"value"				"0"
-					"special_bonus_facet_gyrocopter_secondary_strikes"			"+0.0"
 				}
 				"tracking_missile_damage"	
 				{
-					"value"				"0"
-					"special_bonus_facet_gyrocopter_secondary_strikes"			"=50"
+					"value"				"50"
 				}
 		}
 	}
+
+	//=================================================================================================================
+	// Gyrocopter: Side Gunner
+	//=================================================================================================================
+	"gyrocopter_side_gunner_spawn_ability"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilitySound"					"Hero_Gyrocopter.FlackCannon"
+		"IsBreakable"					"1"
+		"IsGrantedByScepter"			"1"
+		"MaxLevel"						"1"
+
+		"AbilityCastRange"				"700"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"double_target"			"1"
+			"sidegunner_fire_rate"		"1.3"
+		}
+	}	
 
 	//=================================================================================================================
 	// Gyrocopter Lock On
@@ -302,4 +298,30 @@
 		"MaxLevel"						"1"
 		"Innate"						"1"
 	}
+
+	//=================================================================================================================
+	// Gyrocopter: Innate Afterburner
+	//=================================================================================================================
+	"gyrocopter_afterburner"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"AbilityValues"
+		{
+			"bonus_movespeed_duration"
+			{
+				"value"		"3.9"
+				"hero_levelup"	"0.1"
+			}
+		
+			"bonus_movement_speed_per_hit"			"1"	
+			"bonus_movement_speed_per_hit_creep"	"0.5"
+		}
+	}
+
+		
 }
+
+

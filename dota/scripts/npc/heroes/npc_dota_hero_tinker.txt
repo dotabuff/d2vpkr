@@ -14,12 +14,12 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		
+		"MaxLevel"						"1"
 		"FightRecapLevel"				"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"700"
+		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0.2"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		
@@ -29,7 +29,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"90 105 120 135"
+		"AbilityManaCost"				"120"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -37,18 +37,15 @@
 		{
 			"damage_absorb"
 			{
-				"value"							"80 160 240 320"
-				"special_bonus_unique_tinker_7"	"+60"
+				"value"							"240"
 			}
 			"status_resistance"
 			{
-				"value"															"15 20 25 30"
-				"special_bonus_unique_tinker_defense_matrix_status_resistance"	"+10"
+				"value"															"30"
 			}
 			"barrier_duration"
 			{
 				"value"							"15"
-				"special_bonus_unique_tinker_3"	"+10"
 			}
 			"cooldown_reduction"
 			{
@@ -57,8 +54,7 @@
 
 			"flicker_range"
 			{
-				"value"											"0"
-				"special_bonus_facet_tinker_translocator"	"+350"
+				"value"								"0"
 			}
 			"flicker_angle"							"90"
 		}
@@ -203,7 +199,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
-		"HasScepterUpgrade"			"1"
+		"HasScepterUpgrade"				"1"
 		"AbilitySound"					"Hero_Tinker.Laser"
 
 		// Casting
@@ -235,13 +231,13 @@
 				}
 				"laser_damage"			
 				{
-					"value" "75 150 225 300"
-					"special_bonus_unique_tinker" "+50"
+					"value"							"75 150 225 300"
+					"special_bonus_unique_tinker"	"+50"
 				}	
 				"radius_explosion"
 				{
 					"value"			"0"
-					"special_bonus_unique_tinker_4"	"+200"
+					"special_bonus_unique_tinker_4"	"+250"
 					"affected_by_aoe_increase"	"1"
 				}
 				"splash_pct"		"100"
@@ -253,10 +249,11 @@
 				{
 					"special_bonus_scepter"		"13"
 				}						
+				"scepter_reduction_pierces_debuff_immunity"		"0"
 				"scepter_bounce_radius"		
 				{
-					"special_bonus_scepter"		"700"
-					"affected_by_aoe_increase"	"1"
+					//"special_bonus_scepter"		"700"
+					//"affected_by_aoe_increase"	"1"
 				}			
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -390,6 +387,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilitySound"					"Hero_Tinker.March_of_the_Machines"
+		"HasScepterUpgrade"				"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -431,14 +429,12 @@
 			
 			"heal_per_second"
 			{
-				"value"									"0"
-				"special_bonus_facet_tinker_repair_bots"	"+14 +21 +28 +35"
+				"special_bonus_scepter"			"35"
 			}
 
 			"heal_duration"
 			{
-				"value"									"0"
-				"special_bonus_facet_tinker_repair_bots"	"+4"
+				"special_bonus_scepter"			"4"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -457,17 +453,17 @@
 		"AbilityDraftExtraAbilities"
 		{
 			"tinker_warp_grenade" "shard"
+			"tinker_keen_teleport" ""
 		}
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0"		
-		"AbilityChannelTime"				"2.75 2.0 1.25"		
 		"AbilityCastAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"7 6 5"
+		"AbilityCooldown"				"5.5 5 4.5"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -477,6 +473,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+			"AbilityChannelTime"
+			{ 
+				"value"							"2.75 2.0 1.25"
+				"special_bonus_unique_tinker_rearm_channel_time" "-0.25"
+			}
 			"magic_resistance"
 			{
 				"value"													"0"
@@ -529,10 +530,181 @@
 		"AbilityValues"
 		{
 				"damage"					"150"
-				"bonus_distance"			"100"
 				"max_distance"				"2000"
+				
+				// Warp amount is scaled by proportion of cast range
+				"warp_distance_factor"		"0.6"
+				"warp_distance_pct_tooltip"	"60"
+
 				"range_reduction"		"40"
 				"debuff_duration"		"2"
+		}
+	}
+	
+	//=================================================================================================================
+	// Tinker: Deploy Turrets
+	//=================================================================================================================
+	"tinker_deploy_turrets"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		// "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_VECTOR_TARGETING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilitySound"					"Hero_Tinker.Turret"
+		"HasScepterUpgrade"				"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 120 140 160"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"drop_aoe_radius"
+			{
+				// "value"		"0"
+				"value"		"250"
+				"affected_by_aoe_increase"	"1"
+			}
+			
+			"turret_placement_radius"
+			{
+				// How far from the center of the drop impact to place turrets.
+				"value"		"70"	
+			}
+
+			"drop_delay"
+			{
+				"value"		"0.5"
+			}
+			"drop_knockback_duration"
+			{
+				"value"		"0.1"
+			}
+			"drop_knockback_duration_tinker"
+			{
+				"value"		"0.3"
+			}
+			"drop_knockback_distance"
+			{
+				"value"		"100"
+			}
+			"drop_knockback_distance_tinker"
+			{
+				"value"		"350"
+				"special_bonus_unique_tinker_deploy_turrets_knockback"	"+100"
+			}
+			// Distinct from turrets_per_drop
+			"drop_count"
+			{
+				"value"		"1"
+			}
+			"drop_interval"
+			{
+				"value"		"0.22"
+			}
+			"drop_spread_pct"
+			{
+				"value"		"100"
+			}
+			"turrets_per_drop"
+			{
+				"value"		"3"
+			}
+
+			"extra_turrets_per_drop"
+			{
+				"value"		"0"
+			}
+
+			"AbilityCooldown"
+			{
+				"value"			"24 22 20 18"
+			}
+			
+			// TODO: Combine this with missile damage
+			"drop_damage"
+			{
+				"value"			"40 80 120 160"
+			}
+			"missile_damage"
+			{
+				"value"			"20 40 60 80"
+				"special_bonus_unique_tinker_deploy_turrets_missile_damage"	"+60"
+			}
+			"missile_speed"
+			{
+				"value"		"1200"
+			}
+			
+			"turret_hp"
+			{
+				"value"			"40 80 120 160"
+			}
+
+			"missile_target_range"
+			{
+				"value"		"650 700 750 800"
+			}
+			"missile_range"
+			{
+				"value"		"750 800 850 900"
+			}
+			
+			"missile_width"
+			{
+				"value"			"70"
+			}
+			
+
+			"turret_duration"
+			{
+				"value"			"4.5"
+				"special_bonus_unique_tinker_deploy_turrets_turret_duration"	"+1.5"
+			}
+			"missile_spawn_interval"
+			{
+				"value"		"1.5"
+				"special_bonus_scepter"			"-0.3"
+			}
+
+			"missile_attack_rate_tooltip"
+			{
+				"value"			"20"
+			}
+			
+			// Missile explosion splash
+			"radius_explosion"
+			{
+				"value"			"200"
+				"affected_by_aoe_increase"	"1"
+				//"special_bonus_unique_tinker_deploy_turrets_splash_radius"	"+250"
+			}
+			"splash_pct"
+			{
+				"value"		"50"
+				//"special_bonus_unique_tinker_deploy_turrets_splash_radius"	"+50"
+			}
+
+			"activation_time"
+			{
+				"value"			"0.3"
+				"special_bonus_scepter"			"-0.3"
+			}
 		}
 	}
 }

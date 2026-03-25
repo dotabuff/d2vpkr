@@ -14,7 +14,6 @@
 		"MaxLevel"						"1"
 		"FightRecapLevel"				"1"
 		"IsGrantedByShard"  			"1"
-		"HasShardUpgrade"     			"1"
 		"AbilitySound"					"Hero_Rattletrap.Battery_Assault_Impact"
 
 		// Casting
@@ -71,6 +70,27 @@
 	}
 
 	//=================================================================================================================
+	// Rattletrap: Jetpack Toggle
+	//=================================================================================================================
+	"rattletrap_jetpack_toggle"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"MaxLevel"						"1"
+		//"IsGrantedByShard"				"1"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0 0 0"
+ 		"AbilityCastAnimation"			"ACT_INVALID"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"1.0 1.0 1.0"
+	}
+
+	//=================================================================================================================
 	// Rattletrap: Overclocking (scepter ability)
 	//=================================================================================================================
 	"rattletrap_overclocking"
@@ -103,19 +123,29 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"buff_duration"					"13"
+			"buff_duration"					"18"
 			"bonus_movement_speed"			"0"
-			"bonus_attack_speed"			"250"
+			"bonus_attack_speed"			"0"
 			"debuff_duration"				"3"
+			"bonus_armor_pct"				"25"
+			"battery_assault_radius"		"330"			//note - currently implemented as tooltip only, change in actual ability
+			"cogs_radius"					"330"			//note - currently implemented as tooltip only, change in actual ability
+
 			"hookshot_damage_bonus_pct"		"0"
 			"hookshot_radius_bonus_pct"		"50"
 			"hookshot_duration_bonus_pct"	"50"
 			"rocket_flare_interval"				"0.15"
 			"rocket_flare_offset_pct"		"125"
 			"rocket_flare_rockets"				"2"
-			"rocket_flare_cooldown"				"3.5"
+			//"rocket_flare_cooldown"				"4.0"
+			"rocket_flare_duration_pct"			"35"
+			"rocket_flare_damage_pct"			"35"
+			
 			"jetpack_bonus_speed"			"40"
 			"jetpack_turn_rate"				"75"
+
+
+
 		}
 	}
 
@@ -139,7 +169,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"90"
+		"AbilityManaCost"				"75 80 85 90"
 		
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
@@ -156,6 +186,11 @@
 			"radius"			
 			{
 				"value"		"275 275 275 275"
+				"affected_by_aoe_increase"	"1"
+			}
+			"overclocking_radius"
+			{
+				"value"		"330 330 330 330"
 				"affected_by_aoe_increase"	"1"
 			}
 			"duration"					"10.5 10.5 10.5 10.5"
@@ -185,7 +220,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilitySound"					"Hero_Rattletrap.Power_Cogs"
-
+		//"HasShardUpgrade"     			"1"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.2"
@@ -196,7 +231,7 @@
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"70"
+		"AbilityManaCost"				"60 65 70 75"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -210,7 +245,7 @@
 			}
 			"mana_burn"		
 			{
-				"value"								"35 70 105 140"
+				"value"								"35 75 115 155"
 				"special_bonus_unique_clockwerk_2"	"+70"
 			}
 			"mana_burn_as_damage_pct"				"50"
@@ -221,41 +256,16 @@
 			"attacks_to_destroy"	
 			{
 				"value"					"2"
-				"special_bonus_unique_clockwerk_5"		"+2"
+				//"special_bonus_shard"		"+2"
 			}
-			"push_length"		
-			{
-				"value"			"300"
-			}
-			"push_duration"		
-			{
-				"value"						"0.8"
-				"special_bonus_facet_rattletrap_expanded_armature"	"=0.6"
-			}
-			
+			"push_length"					"300"
+			"push_duration"					"0.8"
+			"cogs_radius"					"215"
+			"trigger_distance"				"185"
+			"inside_cogs_distance_reduction"		"50"
 
-			"cogs_radius"
-			{
-				"value"						"215"
-				"special_bonus_facet_rattletrap_expanded_armature"	"+115"
-			}
-			"cogs_pullin"
-			{
-				"value"			"0"
-				"special_bonus_facet_rattletrap_expanded_armature"	"+1"
-			}
-			"trigger_distance"			
-			{
-				"value"		"185"
-				"special_bonus_facet_rattletrap_expanded_armature"	"-70"
-				
-			}
 			"extra_pull_buffer"			"-10"
 			"bonus_armor"		"0"
-			"leash"			
-			{
-				"value"			"0"	// NOTE: deprecated, uncomment in .cpp if updating this
-			}
 			"AbilityCooldown"				
 			{
 				"value"			"21 19 17 15"
@@ -269,6 +279,11 @@
 			{
 				"special_bonus_unique_clockwerk_6"		"1"
 			}
+
+			"push_duration_overclock"		"0.6"	
+			"cogs_radius_overclock"			"330"
+			"trigger_distance_overclock"			"115"
+
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -321,10 +336,7 @@
 				"value"			"80 120 160 200"
 				"CalculateSpellDamageTooltip" "1"
 			}
-			"AbilityCooldown"				
-			{
-				"value"				"20.0 18.0 16.0 14.0"
-			}
+
 			"slow_pct"		"100"
 			"slow_duration"	
 			{
@@ -339,6 +351,25 @@
 			{
 				"special_bonus_unique_clockwerk_4"		"1"
 			}
+			"AbilityCooldown"				
+			{
+				"value"		"20.0 18.0 16.0 14.0"
+			}
+
+			"AbilityCharges"		
+			{
+				"value"	"0"
+				"special_bonus_unique_clockwerk_rocket_flare_charges"	"+3"
+			}
+
+			"AbilityChargeRestoreTime"		
+			{
+				"value"		"20.0 18.0 16.0 14.0"
+			}
+
+
+
+
 		}	
 	}
 	
@@ -371,7 +402,7 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60.0 45.0 30.0"
+
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -391,20 +422,18 @@
 				{
 					"value"	"175"
 					"affected_by_aoe_increase"	"1"
-					"special_bonus_facet_rattletrap_hookup"	"=350"
 				}
 				"cooldown_refund_ally"
 				{
 					"value"		"0"
-					"special_bonus_facet_rattletrap_hookup"	"75"
 				}
 				"ally_shield_duration"
 				{
-					"special_bonus_facet_rattletrap_hookup"	"4"
+					"value"		"0"
 				}
 				"allied_armor_bonus"
 				{
-					"special_bonus_facet_rattletrap_hookup"	"15 20 25"
+					"value"		"0"
 				}
 
 				"duration"			"1.2 1.4 1.6"
@@ -415,6 +444,12 @@
 					"special_bonus_unique_clockwerk_hookshot_damage"		"+75"
 					"CalculateSpellDamageTooltip" "1"
 				}
+				"AbilityCooldown"		
+				{	
+					"value"											"60.0 45.0 30.0"
+					"special_bonus_unique_clockwerk_5"				"-10"
+				}
+
 		}
 	}
 
@@ -441,27 +476,27 @@
 			
 			"can_consume_chainmail"
 			{
-				"special_bonus_facet_rattletrap_junk_mail"	"=1"
+				"value"								"1"
 			}
 
 			"armor_per_chainmail"
 			{
-				"special_bonus_facet_rattletrap_junk_mail"	"=4"
+				"value"								"4"
 			}
 
 			"model_scale_per_chainmail"
 			{
-				"special_bonus_facet_rattletrap_junk_mail"	"=3"
+				"value"								"5"
 			}
 
 			"model_scale_maximum"
 			{
-				"special_bonus_facet_rattletrap_junk_mail"	"=150"
+				"value"								"125"
 			}
 
 			"health_bar_offset_per_stack"
 			{
-				"special_bonus_facet_rattletrap_junk_mail"	"=3.5"
+				"value"								"6"
 			}
 		}
 	}

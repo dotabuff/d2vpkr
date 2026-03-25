@@ -31,51 +31,46 @@
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
-		{			
-				"damage"				"40 70 100 130"
-				"damage_per_unit"		"14 16 18 20"
-				"damage_per_hero"		
-				{
-					"value"				"40 70 100 130"
-					"special_bonus_unique_legion_commander_4"	"+35"
-				}
-				"bonus_attack_speed_creeps"		"0"
-				"bonus_attack_speed"		"50 75 100 125"
-				"duration"				"6.0"
-				"radius"				
-				{
-					"value"		"600"
-					"affected_by_aoe_increase"	"1"
-				}
-				"armor_per_creep"	
-				{
-					"special_bonus_shard"	"1"
-				}
-				"armor_per_hero"	
-				{
-					"special_bonus_shard"	"5"
-				}
-				"shard_duration"	
-				{	
-					"special_bonus_shard"	"8"
-				}
-				"AbilityCooldown"
-				{
-					"value"						"18"
-					"special_bonus_unique_legion_commander_9"		"-2"
-				}
-				"duel_radius_bonus"
-				{
-					"special_bonus_shard"	"+100"
-				}
-				"shield_per_damage_pct"
-				{
-					"special_bonus_facet_legion_commander_stonehall_plate"	"+40"					
-				}
-				"shield_duration"
-				{
-					"special_bonus_facet_legion_commander_stonehall_plate"	"+6"					
-				}
+		{		
+			"radius"				
+			{
+				"value"		"600"
+				"special_bonus_shard"		"+100"
+				"affected_by_aoe_increase"	"1"
+			}	
+			"damage"				"40 70 100 130"
+			"damage_per_hero"		
+			{
+				"value"				"40 70 100 130"
+				"special_bonus_unique_legion_commander_4"	"+35"
+			}
+			"damage_per_unit"		"14 16 18 20"
+			
+			"bonus_armor_heroes"		"0"
+			"bonus_armor_creeps"		"0"
+			"bonus_attack_speed_creeps"		"0"
+			"bonus_attack_speed"		"50 75 100 125"
+			"duration"					"6.0"
+
+			"slow_duration"				"0.3"
+			"movement_slow"				"100"
+
+			
+			"AbilityCooldown"
+			{
+				"value"						"18"
+				"special_bonus_unique_legion_commander_9"		"-2"
+			}
+			"shield_per_damage_pct"
+			{
+				"special_bonus_shard"	"+50"			
+				"RequiresShard"		"1"		
+			}
+			"shield_duration"
+			{
+				"special_bonus_shard"	"+6"					
+				"RequiresShard"		"1"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -94,6 +89,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_LegionCommander.PressTheAttack"
+		"HasScepterUpgrade"				"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -125,7 +121,7 @@
 			"move_speed"
 			{
 				"value"			"13 16 19 22"
-				"special_bonus_unique_legion_commander_pta_movespeed"	"+12"
+				"special_bonus_scepter"	"+12"
 			}
 			"hp_regen"
 			{
@@ -134,13 +130,17 @@
 			}
 			"radius"
 			{
-				"value"						"0"
-				"special_bonus_unique_legion_commander_5"			"+300"
+				"value"												"0"
+				"special_bonus_scepter"								"+500"
 				"affected_by_aoe_increase"							"1"
 			}
 			"immunity_duration"
 			{
 				"special_bonus_unique_legion_commander_8"			"1.5"
+			}
+			"immunity_resist"
+			{
+				"special_bonus_unique_legion_commander_8"			"40"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -159,18 +159,19 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"1.7 1.4 1.1 0.8"
+		"AbilityCooldown"				"0.3"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"trigger_chance"			
+			"trigger_attacks"			
 			{
-				"value"				"25"
-				"special_bonus_unique_legion_commander_3" "+8"
+				"value"					"7 6 5 4"	
+				"special_bonus_unique_legion_commander_3" "-1"
 			}
 			"buff_duration"				"1.0"
+			"secondary_attack_damage"	"100"
 			"hp_leech_percent"			
 			{
 				"value"		"55 65 75 85"
@@ -197,9 +198,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_LegionCommander.Duel"
-		"HasShardUpgrade"			"1"
-		"HasScepterUpgrade"			"1"
-
+		"HasScepterUpgrade"				"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -222,45 +221,44 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"duration"				
+			"duration"					
 			{
-				"value"				"4.0 4.5 5.0"		
-				"special_bonus_scepter"		"+1.0"
+				"value"					"4.0 4.5 5.0"
+				"special_bonus_unique_legion_commander_duel_duration"	"+1"
 			}
-			"AbilityCastRange"		
+			"AbilityCastRange"			"200"
+			"reward_damage"				"10 20 30"	
+			"trigger_pta_on_victory"
 			{
-				"value"			"200"
-			}		
-			"reward_damage"			
-			{
-				"value"			"10 20 30"
-				"special_bonus_shard"	"+5"
+				"value"					"0"
+				"special_bonus_scepter"	"+1"
 			}
-			"assist_reward_damage"
+			"duel_refresh_on_victory"	
 			{
-				"special_bonus_facet_legion_commander_spoils_of_war"	"5 10 15"				
-			}
-			"assist_pta_duration_pct"
-			{
-				"special_bonus_facet_legion_commander_spoils_of_war"	"25"
-			}
-			"debuff_immunity"
-			{
-				"special_bonus_scepter"		"+1"
+				"value"					"0"
+				"special_bonus_unique_legion_commander_duel_refresh_on_victory"		"+1"
 			}
 			"damage_reduction_pct"			
 			{
-				"value"				"0"
+				"value"					"0"
 			}
-			"AbilityCooldown"	
-			{
-				"value"				"60 55 50"
-			}
-			"shard_duel_damage_bonus"
-			{
-				"special_bonus_shard"	"5"
-			}
+			"AbilityCooldown"			"60 55 50"
 
+			"team_duel"
+			{
+				"value"		"0"
+				"special_bonus_scepter"		"0"
+			}
+			"team_duel_damage_pct"
+			{
+				"value"		"0"
+				"special_bonus_scepter"		"0"
+			}
+			"team_duel_radius"
+			{
+				"value"		"0"
+				"special_bonus_scepter"		"0"
+			}
 		}
 	}
 
@@ -271,19 +269,89 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"MaxLevel"						"4"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"MaxLevel"						"1"
 		"Innate"						"1"
-		"DependentOnAbility"			"legion_commander_duel"
 		"IsBreakable"					"1"
 
 		"AbilityValues"
 		{
-			"heal_bonus_pct"	
+			"radius"					"1200"	
+			"duration"					"6.0"
+			"armor"		
 			{
-				"value"						"30 40 50 60"
+				"value"					"1"
+				"hero_levelup"			"+0.1"
+				"special_bonus_unique_legion_commander_outfight_them_armor"		"+1"	
 			}
-			"duration"				"4.0"
+			"ally_factor"				"50"
+		}
+	}
+
+	//=================================================================================================================
+	// Legion Commander: Intimidate
+	//=================================================================================================================
+	"legion_commander_intimidate"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Mars.Shield.Cast"
+		"Innate"						"1"
+		"HasScepterUpgrade"				"0"
+		"MaxLevel"						"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCastPoint"				"0.2"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		"AbilityCooldown"				"15"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"hp_cost_perc"				"0"
+			"angle"						"120"
+			"radius"					
+			{
+				"value"							"600"
+				"affected_by_aoe_increase"		"1"		
+
+			}
+			"slow_duration"				"1.0"
+			"damage"					"0"
+			"movement_slow"				"100"		
+			"debuff_duration"			
+			{
+				"value"					"4"
+				"hero_levelup"			"+0.1"
+			}
+			"reduction"					
+			{
+				"value"					"20"
+				"hero_levelup"			"+1"
+			}
+
+			"stuns"		
+			{
+				"value"						"0"
+				"special_bonus_scepter"		"0"
+			}
+
+			"grants_restore_amp"		
+			{
+				"value"						"0"
+				"special_bonus_scepter"		"0"
+			}
 		}
 	}
 }

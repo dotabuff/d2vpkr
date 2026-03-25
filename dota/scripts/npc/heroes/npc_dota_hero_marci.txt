@@ -116,7 +116,7 @@
 				"bonus_movespeed"		
 				{
 					"value"		"15"
-					"special_bonus_unique_marci_unleash_speed"	"+10"
+					"special_bonus_unique_marci_unleash_speed"	"+15"
 				}
 				"recovery_fixed_attack_rate"	"2.0"
 				"shard_push_length"		
@@ -245,28 +245,28 @@
 				}
 				"ally_arc_offset"
 				{
-					"special_bonus_facet_marci_pickmeup"	"=150"
+					"value"					"150"
 				}
 				"ally_impact_damage_pct"
 				{
-					"special_bonus_facet_marci_pickmeup"	"=35"
+					"value"				"0"
 				}				
 				"max_level"
 				{
 					"value"				"4"
-					//"special_bonus_facet_marci_pickmeup"				"+1"
-				}
-				"max_level_tooltip"
-				{
-					"special_bonus_facet_marci_pickmeup" "=5"
 				}
 				"postjump_unleash_duration"
 				{
-					"special_bonus_facet_marci_fleeting_fury"		"=3"
+					"value"				"0"
 				}
 				"postjump_flurry_charges"
 				{
-					"special_bonus_facet_marci_fleeting_fury"		"=3"
+					"value"				"0"
+				}
+				"can_jump_off_allies"
+				{
+					"value"					"0"
+					"special_bonus_shard"	"1"
 				}
 		}
 		
@@ -340,14 +340,14 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Marci.Guardian.Applied"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1000"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.2"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 		"AbilityCastGestureSlot"		"DEFAULT"
 
@@ -357,7 +357,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"50"
+		"AbilityManaCost"				"60 65 70 75"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -365,7 +365,7 @@
 		{
 			"bodyguard_duration"
 			{
-				"value"											"6.0"
+				"value"											"7.0"
 				"special_bonus_facet_marci_buddy_system"		"+1.0"
 			}
 			"lifesteal_pct"
@@ -376,7 +376,7 @@
 			"bonus_damage"		
 			{
 				"value"											"12 18 24 30"
-				"special_bonus_unique_marci_guardian_damage"	"+20"
+				"special_bonus_unique_marci_guardian_damage"	"+12"
 			}
 			"creep_lifesteal_reduction_pct"						"40"
 			"bodyguard_attack_range_buffer"
@@ -388,8 +388,21 @@
 			"counter_cooldown"									"0.45"
 			"shared_healing_percent"
 			{
-				"special_bonus_facet_marci_buddy_system"	"=100"
+				"value"											"0"
 			}
+
+			"shared_barrier"
+			{
+				"value"											"90 160 230 300"
+			}
+
+			"strong_dispel"
+			{
+				"value"												"0"
+				"special_bonus_unique_marci_guardian_strong_dispel"	"=1"
+			}
+
+			"shared_barrier_replenish_amount"					"30"
 		}
 	}
 
@@ -407,12 +420,17 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"240.0"
 		"AbilityCastPoint"				"1.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
 
 		"AbilityValues"
 		{
+			"AbilityCooldown"
+			{
+				"value"					"245.0"
+				"hero_levelup"			"-5"
+			}
+
 			"bonus_levels"				"3"
 			"courier_max_level"			"30"
 			"bonus_hp"					"3"

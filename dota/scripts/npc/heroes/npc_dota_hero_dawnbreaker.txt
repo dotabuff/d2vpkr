@@ -60,7 +60,11 @@
 			}
 			"movement_speed"				"215"
 			"total_attacks"				"3"
-			"smash_stun_duration"			"0.6 0.8 1.0 1.2"
+			"smash_stun_duration"			
+			{
+				"value" "0.6 0.8 1.0 1.2"
+				"special_bonus_unique_dawnbreaker_fire_wreath_stun_duration" "+0.5"
+			}
 			"sweep_stun_duration"			"0.12"
 			"self_stun_duration"			"0.2"
 			"swipe_slow"			"-100"
@@ -97,6 +101,10 @@
 				"value"					"0"
 				"special_bonus_facet_dawnbreaker_blaze"		"+4"
 			}
+			"immunity_resist"
+			{
+				"special_bonus_shard"						"50"
+			}
 		}	
 	}
 
@@ -129,7 +137,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"hammer_damage"			"50 80 110 140"
+			"hammer_damage"			
+			{
+				"value"				"50 80 110 140"
+				"special_bonus_unique_dawnbreaker_celestial_hammer_damage"		"+40%"
+			}
 			"projectile_radius"			
 			{
 				"value"	"200"
@@ -152,9 +164,18 @@
 			"move_slow"
 			{
 				"value"							"24 28 32 36"
-				"special_bonus_unique_dawnbreaker_celestial_hammer_slow"		"+15"
+//				"special_bonus_unique_dawnbreaker_celestial_hammer_slow"		"+15"
 			}	
-			"burn_damage"						"20 30 40 50"
+			"targets_allies"
+			{
+				"value"			"0"
+				"special_bonus_unique_dawnbreaker_celestial_hammer_targets_allies"		"+1"
+			}
+			"burn_damage"						
+			{
+				"value"		"20 30 40 50"
+				"special_bonus_unique_dawnbreaker_celestial_hammer_damage"		"+40%"
+			}
 			"burn_interval"						"0.5"
 			"pause_duration"						
 			{
@@ -181,11 +202,7 @@
 				"value"											"0"
 				"special_bonus_unique_dawnbreaker_gleaming_hammer"			"=40"
 			}
-			"fire_trail_health_regen"
-			{
-				"value"			"0"
-				"special_bonus_facet_dawnbreaker_hearthfire" "=10 =15 =20 =25"			
-			}
+
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -253,7 +270,7 @@
 				"bonus_damage"				
 				{
 					"value"		"125 150 175 200"
-					"special_bonus_unique_dawnbreaker_luminosity_crit"		"+40"
+					"special_bonus_unique_dawnbreaker_luminosity_crit"		"+25"
 
 					// "damage" in attribute name but it's a percentage-based effect
 					"CalculateSpellDamageTooltip"	"0"
@@ -313,8 +330,8 @@
 		{
 			"AbilityCooldown"				
 			{
-				"value"				"120 105 90"
-				"special_bonus_unique_dawnbreaker_solar_guardian_cooldown"			"-15"
+				"value"				"110 100 90"
+				"special_bonus_unique_dawnbreaker_solar_guardian_cooldown"			"-20"
 			}
 
 			"scepter_aura_duration"
@@ -328,7 +345,6 @@
 			"base_heal"				
 			{
 				"value"				"45 70 95"
-				"special_bonus_scepter"	"+15 20 25"
 			}
 			"radius"				
 			{
@@ -362,6 +378,7 @@
 			{
 				"value"						"0.8"
 			}
+			"daytime_duration"				"6"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 		//"AbilityChannelAnimation"	"ACT_DOTA_CAST_ABILITY_4"
@@ -394,14 +411,15 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"MaxLevel"						"1"
 		"Innate"						"1"
+		"HasScepterUpgrade"				"1"
 
 		"AbilityValues"
 		{
 			"day_threshold"				"0.006"
 			"max_dmg_pct"				
 			{
-				"value"						"25"
-				"special_bonus_unique_dawnbreaker_break_of_dawn_damage"			"+15"
+				"value"						"10"
+				"hero_levelup"				"+1"
 			}
 			"max_vision_pct"			"20"
 
@@ -412,6 +430,12 @@
 			"current_vision_tooltip"
 			{
 				"dynamic_value"					"true"
+			}
+			
+			"heal_amp"
+			{
+				"value"					"0"
+				"special_bonus_scepter"	"1"
 			}
 		}
 	}

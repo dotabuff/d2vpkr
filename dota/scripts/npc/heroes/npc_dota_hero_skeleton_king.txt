@@ -53,11 +53,7 @@
 			"blast_dot_duration"
 			{
 				"value"					"2.0"
-				"special_bonus_facet_skeleton_king_facet_bone_guard"
-				{
-					"value"				"+0"
-					"special_bonus_unique_wraith_king_facet_1" "+2"
-				}
+				"special_bonus_unique_wraith_king_facet_1" "+2"
 			}
 
 			"blast_slow"				"-20"
@@ -136,9 +132,7 @@
 			"skeleton_building_damage_reduction"		"35"	
 			"skeleton_bonus_hero_damage"				"25"
 			
-			"skeleton_charges_per_hero_multiplier"					"4"
-			
-
+			"skeleton_charges_per_hero_multiplier"					"4"			
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -209,6 +203,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilitySound"					"Hero_SkeletonKing.CriticalStrike"
 		"HasShardUpgrade"				"1"
 		"IsBreakable"					"1"
@@ -222,15 +217,25 @@
 			{
 				"value"					"1"
 			}
-			"wraith_crit_bonus"
-			{
-				"value"					"0"
-				"special_bonus_shard"	"+50"
-			}
 			"AbilityCooldown"
 			{
 				"value"									"6.0 5.5 5 4.5"
 				"special_bonus_unique_wraith_king_10"	"-2"
+			}
+
+			"curse_damage_pct"
+			{
+				"special_bonus_shard"					"75"				
+			}
+
+			"curse_delay"
+			{
+				"special_bonus_shard"					"3"
+			}
+
+			"curse_cooldown"
+			{
+				"special_bonus_shard"					"0"
 			}
 		}
 
@@ -251,8 +256,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"2"
-
-		"HasShardUpgrade"				"1"
+		
 		"HasScepterUpgrade"				"1"
 		"AbilitySound"					"Hero_SkeletonKing.Reincarnate"
 		
@@ -281,8 +285,7 @@
 			"slow_duration"			"4.0"
 			"AbilityManaCost"
 			{
-				"value"					"225"
-				"special_bonus_shard"	"=0"
+				"value"					"220 110 0"
 			}
 
 			"clear_curse"
@@ -293,8 +296,7 @@
 
 			"shard_skeleton_count"		
 			{
-				"value"						"0"
-				"special_bonus_facet_skeleton_king_facet_bone_guard" "2 3 4"				
+				"value"						"2 3 4"			
 			}
 
 			"AbilityCooldown"
@@ -318,31 +320,32 @@
 		//-------------------------------------------------------------------------------------------------------------
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"MaxLevel"						"4"
+		"MaxLevel"						"1"
 		"Innate"						"1"
 		"HasScepterUpgrade"				"1"
-		"DependentOnAbility"			"skeleton_king_reincarnation"
 		"IsBreakable"					"1"
 		"AbilityValues"
 		{
 			"vampiric_aura"
 			{
-				"value"									"10 20 30 40"
+				"value"									"14"
+				"hero_levelup"							"+1"
 				"special_bonus_unique_wraith_king_2"	"+10"
 			}
-
 			"duration"
 			{
-				"value"							"3.5 4 4.5 5"
+				"value"							"4.25"
+				"hero_levelup"					"+0.25"
+				"levelup_interval"				"6"
 				"special_bonus_scepter"			"+1"
 			}
 			"scepter_attack_speed"
 			{
-				"value"							"30 45 60 75"
+				"value"							"55"
 			}
 			"scepter_move_speed_pct"
 			{
-				"value"							"10 15 20 25"
+				"value"							"20"
 			}
 			"scepter_aura_radius"
 			{

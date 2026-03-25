@@ -295,7 +295,7 @@
 
 			"tooltip_manahealthboost"
 			{
-				"special_bonus_facet_warlock_golem"			"+90"
+				"value"						"0"
 			}
 
 			"golem_on_death"
@@ -364,8 +364,7 @@
 			"tick_interval"				"0.5"
 			"manahealthboost"
 			{
-				"value"					"0"
-				"special_bonus_facet_warlock_golem" "+90"				
+				"value"					"0"			
 			}
 			
 			"manaboost_scale_mult"		".25"
@@ -384,7 +383,8 @@
 		"AbilityType"					"ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"MaxLevel"						"4"
+		"MaxLevel"						"1"
+		"Innate"						"1"
 
 		"AbilityValues"
 		{
@@ -394,12 +394,8 @@
 				"value"		"400"
 				"affected_by_aoe_increase"	"1"
 			}
-			"explosion_dmg"				"20 65 110 155 200"
+			
 			"explosion_nonhero_reduce" 	"50"
-
-			"bonus_hp"					"0 80 160 240 320"
-			"bonus_dmg"					"0 4 8 12 16"
-			"bonus_movespeed"			"0 15 30 45 60"
 		}
 	}
 
@@ -414,7 +410,8 @@
 		"AbilityType"					"ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"MaxLevel"						"4"
+		"MaxLevel"						"1"
+		"Innate"						"1"
 		"AbilityTextureName"			"warlock_imp_explode"
 
 		"AbilityValues"
@@ -443,23 +440,37 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"MaxLevel"						"4"		
+		"MaxLevel"						"1"		
 		"HasShardUpgrade"				"1"
 		"Innate"						"1"
-		"DependentOnAbility"			"warlock_rain_of_chaos"
+		"AbilityTextureName"			"warlock_imp_explode"
 
 		"AbilityValues"
 		{
 			"minor_imp_duration"			"15"
-			"imp_level"
+
+			"imp_health"
 			{
-				"value"						"1 2 3 4"
-				"special_bonus_shard"		"+1"
+				"value"						"5"
+				"hero_levelup"				"+15"
+				"special_bonus_shard"		"+80"
 			}
 
-			"golem_can_summon"				"0"
-			"tooltip_imp_health"			"50 130 210 290 370"
-			"tooltip_imp_explode"			"20 65 110 155 200"
+			"imp_explode"
+			{
+				"value"						"20"
+				"hero_levelup"				"+20"
+				"levelup_interval"			"3"
+				"special_bonus_shard"		"+45"
+			}
+
+			"imp_speed"
+			{
+				"value"						"297"
+				"hero_levelup"				"+3"
+			}
+
+			"golem_can_summon"				"0"			
 			"tooltip_imp_explode_radius"	
 			{
 				"value"		"400"

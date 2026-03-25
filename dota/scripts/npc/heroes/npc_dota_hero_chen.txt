@@ -138,10 +138,7 @@
 			}
 			"AbilityCastRange"				"1200"
 			"duration"				"6"
-			"teleport_delay"		
-			{
-				"value"				"6"
-			}
+			
 			"bonus_armor"			"5 10 15 20"
 			"heal_amp"
 			{
@@ -197,6 +194,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilitySound"					"Hero_Chen.HolyPersuasionCast"
 		"HasShardUpgrade"				"1"		
@@ -209,6 +207,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600"
 		"AbilityCooldown"				"15"
+			
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -218,20 +217,24 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"max_units"				"1 2 3 4"
+			
+			"max_units"				
+			{		
+				"value"				"1 2 3 4"
+			}
 			"level_req"				"3 4 5 6"
 			"health_min"			
 			{
 				"value"						"400"
+				"hero_levelup"				"+50"
 				"special_bonus_unique_chen_4"	"+1300"
 			}
-			"bonus_health_per_level" "50"
 			"gold_pct"			"25 50 75 100"
 			"movement_speed_bonus"	"5 10 20 30"
 			"damage_bonus"	
 			{
-				"value"					"4 8 12 16"
-				"special_bonus_unique_chen_5"		"+14"
+				"value"					"0 6 12 18"
+				"special_bonus_unique_chen_5"		"+12"
 			}
 			"is_martyr"
 			{
@@ -247,6 +250,10 @@
 				"special_bonus_shard"			"=2"
 			}
 
+			
+
+			"unsummon_time"				"3.0"
+
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -260,20 +267,20 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Chen.HandOfGodHealHero"
 		"MaxLevel"						"1"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"4"
-		"AbilityCastRange"				"1200"
+		"AbilityCooldown"				"0"
+		"AbilityCastRange"				"500"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -283,7 +290,10 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"current_hp_pct"			"30.0"	// If changing this, also update current_hp_pct_tooltip in chen_holy_persuasion
+			"speed"						"1000"
+			"current_hp_pct"			"20.0"
+			"base_value"				"25"
+			"heal_factor"				"50"
 		}
 	}
 
@@ -372,69 +382,53 @@
 	}
 
 	//=================================================================================================================
-	// Chen Innate
+	// Chen: Zealot
 	//=================================================================================================================
-	"chen_summon_convert"
+	"chen_zealot"
 	{
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"AbilityTextureName"			"chen_test_of_faith_teleport"
-		"AbilityCooldown"				"30"
-		"MaxLevel"						"5"
-		"AbilitySound"					"Hero_Chen.HolyPersuasionCast"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"0"
+		"AbilityCooldown"				"10"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"50"
+		"MaxLevel"						"1"
 		"Innate"						"1"
-		"DependentOnAbility"				"chen_holy_persuasion"
 
 		"AbilityValues"
 		{
-			"health_min"	"220"
-			"bonus_health_per_level"			"80"
-
-			"summon_centaurs"
+			"zealots"					"1"
+			"zealot_respawn_time"		"60"
+			
+			"damage"
+			{				
+				"hero_levelup"		"2"
+				"special_bonus_unique_chen_zealot"		"+25%"
+			}
+			"bonus_hp"
 			{
-				"special_bonus_facet_chen_centaur_convert" "1"
+				"value"				"0"
+				"special_bonus_unique_chen_zealot"		"+25"
 			}
 
-			"summon_wolves"
-			{
-				"special_bonus_facet_chen_wolf_convert" "1"
-			}
-
-			"summon_hellbears"
-			{
-				"special_bonus_facet_chen_hellbear_convert" "1"
-			}
-
-			"summon_trolls"
-			{
-				"special_bonus_facet_chen_troll_convert" "1"
-			}
-
-			"summon_satyrs"
-			{
-				"special_bonus_facet_chen_satyr_convert" "1"
-			}
-
-			"summon_frogs"
-			{
-				"special_bonus_facet_chen_frog_convert" "1"
-			}
-
-
-			"convert_hp_tooltip"
-			{
-				"dynamic_value"	"true"
-			}
-
-			"attack_speed"
-			{
-				"value"							"0"
-				"special_bonus_unique_chen_3"	"+150"
-			}
+			"teleport_delay"		"6"
 		}
-
 	}
 
 	"chen_innate_check_for_team_change"

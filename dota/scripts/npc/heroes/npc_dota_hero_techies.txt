@@ -15,11 +15,6 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 
-		"AbilityDraftExtraAbilities"
-		{
-			"techies_minefield_sign" ""
-		}
-
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"450"
@@ -71,6 +66,60 @@
 				"burn_duration"				"5"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+
+	//=================================================================================================================
+	// Techies: Snare Trap
+	//=================================================================================================================
+	"techies_snare_trap"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN  | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"IsGrantedByShard"				"0"
+		"MaxLevel"						"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"150"
+		"AbilityCastPoint"				"0.6"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"16"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"			"140"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+
+		"AbilityValues"
+		{
+			"activation_radius"
+			{
+				"value"						"250"
+				"affected_by_aoe_increase" 	"1"
+			}
+
+			"effect_radius"
+			{
+				"value"						"400"
+				"affected_by_aoe_increase"	"1"
+			}
+			
+			"activation_time"				"2"
+			"fade_time"						"2"
+			"duration"						"300"
+
+			"damage"						"75"
+			"damage_interval"				"0.25"
+			"effect_duration"				"4"
+			"move_slow_pct"					"0"
+			"cast_slow_pct"					"100"
+		}
 	}
 
 	//=================================================================================================================
@@ -136,7 +185,7 @@
 	}
 
 	//=================================================================================================================
-	// Techies: Suicide Squad, Attack!
+	// Techies: Blast Off!
 	//=================================================================================================================
 	"techies_suicide"
 	{
@@ -147,7 +196,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"FightRecapLevel"				"1"
+		"FightRecapLevel"				"1"		
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -175,25 +224,25 @@
 				"value"		"400"
 				"affected_by_aoe_increase"	"1"	
 			}
-			"damage"
+			"damage"						
 			{
-				"value"			"200 300 400 500"
-				"special_bonus_unique_techies" "+200"
+				"value"							"200 300 400 500"
+				"special_bonus_unique_techies"	"+200"
 			}
 			"stun_duration"				"0.8 1 1.2 1.4"
 			"hp_cost"			
 			{
-				"value" 			"20"
+				"value" 												"20"
 				"DamageTypeTooltip"									"DAMAGE_TYPE_PURE"
 				"CalculateSpellDamageTooltip"						 "0"
 			}
 			
 			"hp_dmg"
 			{
-				"value"												"0"
-				"special_bonus_facet_techies_spleens_secret_sauce" "=15"
+				"value"												"0"				
 				"DamageTypeTooltip"									"DAMAGE_TYPE_PURE"
 				"CalculateSpellDamageTooltip"						 "0"
+				//"special_bonus_unique_techies"						"+15"
 			}
 			"duration"				"0.75"
 		}
@@ -269,19 +318,19 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
-		"HasShardUpgrade"				"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------		
 		"AbilityCastPoint"				"0.1"
-		"AbilityCastRange"				"500"
+		"AbilityCastRange"				"600"
 		
 
 		// Time		
@@ -300,19 +349,28 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"duration"				"6"
-			"disarm_duration"		"2.4 2.7 3 3.3"
+			"duration"				
+			{
+				"value"				"6"
+				"special_bonus_unique_techies_tazer_duration"		"+25%"
+			}
+			"disarm_duration"		
+			{
+				"value"				"2.4 2.7 3 3.3"
+				"special_bonus_unique_techies_tazer_duration"		"+25%"
+			}
 			"bonus_ms"				"18 22 26 30"
-			"stun_radius"			
+			"explosion_radius"			
 			{
 				"value"		"450"
 				"affected_by_aoe_increase"	"1"	
 			}
-			"shard_damage"	
+
+			"damage"	
 			{
-				"special_bonus_shard"	"300"
+				"value"			"60 110 160 210"
 				"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
-			}	
+			}
 		}
 	}
 	//=================================================================================================================
@@ -419,13 +477,13 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		
 		"AbilityCastRange"				"0"
 		"AbilityCastAnimation"			"ACT_INVALID"
 
-		"MaxLevel"				"1"
+		"MaxLevel"						"1"
 		"AbilityCooldown"				"1.0 1.0 1.0"
 		"AbilityValues"
 		{
@@ -445,6 +503,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		
+				
 		"AbilityCastRange"				"0"
 		"MaxLevel"						"1"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -464,11 +523,10 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_NONE"
-		"Innate"						"1"
 		"MaxLevel"						"1"
-		"HasScepterUpgrade"				"1"
+		"IsGrantedByScepter"				"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -479,44 +537,27 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
+		"AbilityCooldown"		"60.0"
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"aura_radius"
+			"aura_radius"			
 			{
-				"value"					"500"
-				"special_bonus_scepter"	"+500"
+				"value"				"1000"	
 				"affected_by_aoe_increase"	"1"	
 			}
 
-			"AbilityCooldown"
-			{
-				"value"					"60.0"
-			}
-
-			"lifetime"
-			{
-				"value"					"60"
-				"special_bonus_scepter" "+180"
-			}
+			"lifetime"					"240"
 			"minefield_duration"		"10"
 			"trigger_radius"
 			{
 				"value"	"200"
 				"affected_by_aoe_increase"	"1"
 			}
-			"scepter_move_damage"
-			{
-				"special_bonus_scepter"					"300"
-			}
-
-
-			"scepter_move_amt"
-			{
-				"special_bonus_scepter"					"200"
-			}
+			"scepter_move_damage"		"300"
+			"scepter_move_amt"			"200"
 			"bonus_mine_damage_pct"		"15"
 		}
 	}
@@ -531,7 +572,9 @@
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"IsBreakable"					"1"
+		"MaxLevel"						"1"
+		"IsGrantedByShard"				"1"
+		"AbilityTextureName"			"techies_stasis_trap"
 
 		"AbilityValues"
 		{
@@ -549,5 +592,67 @@
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"Innate"						"1"
+		"MaxLevel"						"1"
+	}
+
+	//=================================================================================================================
+	// Techies Mutually Assured Destruction
+	//=================================================================================================================
+	"techies_mutually_assured_destruction"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityCastAnimation"		"ACT_DOTA_GENERIC_CHANNEL_1"
+		"Innate"						"1"
+		"MaxLevel"						"1"
+		"HasShardUpgrade"				"1"
+		"AbilityCastPoint"				"1.0"
+
+		"AbilityValues"
+		{
+
+			"bonus_mana_as_mana_regen"		
+			{
+				"value"				"0.08"
+				"hero_levelup"		"+0.02"
+			}
+			"radius"						
+			{
+				"value"						"400"
+				"affected_by_aoe_increase"	"1"
+			}
+			"base_damage"					"50"
+			"max_mana_pct_as_damage"		
+			{
+				"value"						"30"
+				"special_bonus_shard"		"+10"
+			}	
+			"current_mana_regen"	
+			{
+				"dynamic_value"				"true"
+			}
+			"current_damage"
+			{
+				"dynamic_value"				"true"
+			}	
+			"explosion_delay"				"1.5"
+
+
+			"AbilityCooldown"
+			{
+				"value"						"0"
+				"special_bonus_shard"		"+30"
+			}
+			"AbilityCastRange"
+			{
+				"value"						"0"
+				"special_bonus_shard"		"450"
+			}
+		}
 	}
 }

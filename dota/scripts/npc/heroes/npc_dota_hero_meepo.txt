@@ -2,43 +2,10 @@
 {
     "Version"       "1"
 	
-	//=================================================================================================================
-	// Meepo: Petrify (scepter ability)
-	//=================================================================================================================
-	"meepo_petrify"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"		
-		"MaxLevel"						"1"
-		"FightRecapLevel"				"1"
-		"IsGrantedByShard"				"1"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_4"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"40"
 	
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"125"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-			"duration"				"3"
-			"hp_restore"				"25"
-		}
-		
-	}
 
 	//=================================================================================================================
 	// Meepo: Earthbind
@@ -154,36 +121,6 @@
 	}
 
 	//=================================================================================================================
-	// Meepo: Geostrike
-	//=================================================================================================================
-	"meepo_geostrike"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"AbilitySound"					"Hero_Meepo.Geostrike"
-		"IsBreakable"					"1"
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityModifierSupportBonus"	"5"
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
-		"AbilityValues"
-		{
-			"gold_steal"
-			{
-				"value" "1 3 5 7"
-			}
-			"hp_steal"
-			{
-				"value" "6 12 18 24"
-			}
-		}
-	}
-
-	//=================================================================================================================
 	// Meepo: Ransack
 	//=================================================================================================================
 	"meepo_ransack"
@@ -192,26 +129,22 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilitySound"					"Hero_Meepo.Geostrike"
 		"IsBreakable"					"1"
+		"MaxLevel"						"4"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
+			"AbilityValues"
 		{		
-				"health_steal_heroes"	
-				{
-					"value"			"9 12 15 18"
-					"DamageTypeTooltip"			"DAMAGE_TYPE_PURE"
+			"health_steal_heroes"	
+			{
+				"value"			"9 12 15 18"
+				"DamageTypeTooltip"			"DAMAGE_TYPE_PURE"
 				"special_bonus_unique_meepo_6" "+7"
-				}
-				"health_steal_creeps"	
-				{
-					"value"				"3 5 7 9"
-					"DamageTypeTooltip"			"DAMAGE_TYPE_PURE"
-					"special_bonus_unique_meepo_6" "+7"
-				}			
+			}
+						
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -246,69 +179,23 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"tooltip_clones"	
-			{
-				"value"				"1 2 3"
-				"special_bonus_facet_meepo_more_meepo" "=0"
-			}
-			"tooltip_clones_multiplicity"
-			{
-				"special_bonus_facet_meepo_more_meepo"	"1 2 3 4"
-			}
-			"tooltip_share_percentage"		"20"
-			"tooltip_share_percentage_scepter"		"100"
-			"respawn"		"0.0"
-			"tooltip_respawn"		"20"
-			"magic_resist"	
-			{
-				"value"				"10 15 20"				
-			}
-
-			// Flipping which facet is affect these for tooltips so they don't show as modified by facet
-			"tooltip_magic_resist"
-			{
-				"value"				"10 15 20"
-				"special_bonus_facet_meepo_more_meepo" "=0"
-			}
-			"tooltip_magic_resist_multiplicity"
-			{
-				"value"				"10 15 20 20"
-				"special_bonus_facet_meepo_pack_rat" "=0"
-			}
+			"tooltip_clones"			"1 2 3 4"
 
 			"required_level"
 			{
-				"value"				"4"
-				"special_bonus_facet_meepo_more_meepo"		"=3"
+				"value"				"3"
 			}
 			"levels_between_upgrades"
 			{
 				"value"				"7"
-				"special_bonus_facet_meepo_more_meepo"		"=7"
-
 			}
 			"max_level"
 			{
-				"value"					"3"
-				"special_bonus_facet_meepo_more_meepo"		"=4"
+				"value"				"4"
 			}
-			"main_meepo_stats_pct"
-			{
-				"value"				"100"
-				"special_bonus_facet_meepo_more_meepo"		"=90"
-			}
-			"support_radius"
-			{
-				"special_bonus_facet_meepo_codependent"		"600"
-			}
-			"support_group_attack_speed_pct"
-			{
-				"special_bonus_facet_meepo_codependent"		"5"
-			}
-			"support_group_armor"
-			{
-				"special_bonus_facet_meepo_codependent"		"1"
-			}
+			
+			"dps_penalty_pct"		"50 66 75 80"
+		
 		}
 	}
 			
@@ -350,6 +237,8 @@
 			"end_knockback_distance"		"400"
 			"end_knockback_height"			"0"		
 			"stats_pct"						"40"
+
+			"poof_damage_factor"			"50"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 		"AbilityCastGestureSlot"		"DEFAULT"
@@ -406,6 +295,45 @@
 	}
 
 	//=================================================================================================================
+	// Meepo: Petrify (scepter ability)
+	//=================================================================================================================
+	"meepo_petrify"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"		
+		"MaxLevel"						"1"
+		"FightRecapLevel"				"1"
+		"IsGrantedByShard"				"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"		"ACT_DOTA_OVERRIDE_ABILITY_4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"40"
+
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"125"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"duration"				"3"
+			"hp_restore"				"25"
+		}
+		
+	}
+
+
+	//=================================================================================================================
 	// Pack Rat
 	//=================================================================================================================
 	"meepo_pack_rat"
@@ -437,6 +365,124 @@
 		"AbilityValues"
 		{
 			"bonus_choice"			"1"
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Meepo Fling
+	//=================================================================================================================
+	"meepo_fling"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Sven.StormBoltImpact"
+		"LinkedAbility"					"meepo_fling_release"
+		"AbilityTextureName"			"meepo_megameepo_fling"
+
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"250"
+		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30 25 20 15"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"40"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"fling_damage"					"50 100 150 200"
+			"fling_radius" 					
+			{
+				"value"				"300"
+				"affected_by_aoe_increase"	"1"
+			}
+			"fling_movespeed"				"900"
+			"fling_slow_duration"			"1.5 2.0 2.5 3"
+			"movement_slow"					"-30 -40 -50 -60"
+			"range"						"400 500 600 700"
+			"hold_duration"					"5"
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_6"
+		"AbilityCastGestureSlot"		"DEFAULT"
+	}
+
+	//=================================================================================================================
+	// Ability: Meepo Fling Release
+	//=================================================================================================================
+	"meepo_fling_release"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"MaxLevel"						"1"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Sven.StormBoltImpact"
+		"LinkedAbility"					"meepo_fling"
+
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"400 500 600 700"
+		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_6"
+		"AbilityCastGestureSlot"		"DEFAULT"
+	}
+
+
+
+	//=================================================================================================================
+	// Geomancy
+	//=================================================================================================================
+	"meepo_geomancy"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"IsBreakable"					"1"
+		"AbilityValues"
+		{
+			"tree_radius"				"250"
+			"tree_regen"				"1"
+			"dirt_move_speed"			"2"
+			"water_move_slow"			"2"
+			"water_slow_duration"		"2"		
 		}
 	}
 }

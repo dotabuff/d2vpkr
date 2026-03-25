@@ -16,13 +16,14 @@
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Ability.Avalanche"
 
+
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"95 110 125 140"
+		"AbilityManaCost"				"105 120 135 150"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -31,7 +32,7 @@
 				"AbilityCastRange"				
 				{
 					"value"		"600"
-					"special_bonus_unique_tiny_4" "+200"
+					"special_bonus_unique_tiny_4" "+150"
 				}
 				"radius"
 				{
@@ -45,13 +46,10 @@
 				"projectile_speed"		"1200"
 				"avalanche_damage"			
 				{
-					"value"				"100 190 280 370"
-					"special_bonus_unique_tiny"			"+100"
+					"value"				"90 180 270 360"
+					"special_bonus_unique_tiny"			"+90"
 				}
-				"toss_damage_bonus_pct"		
-				{
-					"value"				"0"
-				}
+				
 				"AbilityCooldown"
 				{
 					"value"							"23 20 17 14"
@@ -73,6 +71,8 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"FightRecapLevel"				"1"
+		//"HasShardUpgrade"				"1"
+		
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -85,7 +85,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"110 125 140 155"
+		"AbilityManaCost"				"125"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -103,14 +103,20 @@
 				"radius"				
 				{
 					"value"		"275"
-					"special_bonus_facet_tiny_crash_landing"				"=400"
+					"special_bonus_shard"				"=400"
 					"affected_by_aoe_increase"	"1"
 				}
-				"bonus_damage_pct"		"0"
 				"toss_damage"	
 				{
 					"value"				"90 180 270 360"
 					"CalculateSpellDamageTooltip"	"1"
+				}
+				"toss_land_damage_pct"
+				{	
+					"value"							"0"
+					"RequiresShard"						"1"
+					"DamageTypeTooltip"				"DAMAGE_TYPE_MAGICAL"
+					"special_bonus_shard"				"20"
 				}
 				"AbilityCharges"		
 				{
@@ -118,26 +124,7 @@
 					"special_bonus_unique_tiny_2" "+2"
 				}
 
-				"land_movement_slow"
-				{
-					"value"						"0"
-					"special_bonus_facet_tiny_crash_landing"				"20 25 30 35"
-				}
-				"land_attack_slow"
-				{
-					"value"						"0"
-					"special_bonus_facet_tiny_crash_landing"				"15 25 35 45"
-				}
-				"bonus_land_damage_pct"
-				{
-					"value"						"0"
-					"special_bonus_facet_tiny_crash_landing"				"20"
-				}
-				"land_debuff_duration"
-				{
-					"value"						"0"
-					"special_bonus_facet_tiny_crash_landing"				"=2.5"
-				}
+				
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -188,8 +175,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilitySound"					"Hero_Tiny.CraggyExterior.Stun"
-		"LinkedAbility"					"tiny_toss_tree"
-        "HasShardUpgrade"               "1"
+		"LinkedAbility"					"tiny_toss_tree"        
 		"MaxLevel"						"4"
 
 		"AbilityDraftExtraAbilities"
@@ -200,16 +186,16 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"165"
+		"AbilityCastRange"				"200"
 		"AbilityCastPoint"				"0.2"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"16 15 14 13"
+		"AbilityCooldown"				"15 12 9 6"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"40"
+		"AbilityManaCost"				"40 35 30 25"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -219,11 +205,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"attack_count"
-			{
-				"value"					"5"
-				"special_bonus_shard"	"=0"
-			}
+			"attack_count"				"4 5 6 7"
 			"bonus_damage"
 			{
 				"value"							"10 20 30 40"				
@@ -264,8 +246,8 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"LinkedAbility"					"tiny_tree_grab"
-		"HasShardUpgrade"               "1"
 		"MaxLevel"						"4"
+		//"HasShardUpgrade"				"1"
 
 
 		// Casting
@@ -282,17 +264,19 @@
 			"range"		"1200"
 			"bonus_damage"				
 			{
-				"value"				"10 20 30 40"
-				"special_bonus_shard"		"+100"
+				"value"							"10 20 30 40"				
+				"special_bonus_unique_tiny_7"		"+60"
+				"special_bonus_shard"			"+50"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"splash_radius"				
 			{
-				"value"			"275"
+				"value"					"275"
+				"special_bonus_shard"	"=400"
 				"affected_by_aoe_increase"	"1"
 			}
-			"movement_slow"				"25"
-			"slow_duration"				"2.5"
+			"movement_slow"				"0"
+			"slow_duration"				"0"
 		}
 	}
 
@@ -331,19 +315,19 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"speed"		"1000.0"
-				"range"		"1200"
-				"splash_radius"				
-				{
-					"value"		"400"
-					"affected_by_aoe_increase"	"1"
-				}
-				"tree_grab_radius"		
-				{
-					"value"		"700"
-					"affected_by_aoe_increase"	"1"
-				}
-				"interval"		"0.5"
+			"speed"		"1000.0"
+			"range"		"1200"
+			"splash_radius"				
+			{
+				"value"		"400"
+				"affected_by_aoe_increase"	"1"
+			}
+			"tree_grab_radius"		
+			{
+				"value"		"700"
+				"affected_by_aoe_increase"	"1"
+			}
+			"interval"		"0.5"
 		}
 	}
 	
@@ -360,27 +344,65 @@
 		"AbilitySound"					"Tiny.Grow"
 		"AbilityCastAnimation"		"ACT_INVALID"
 
+		"HasShardUpgrade"               "1"
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_armor"				"5 10 15"
-				"bonus_damage"			
-				{
-					"value"					"55 110 165"
-					"CalculateSpellDamageTooltip"	"0"
-				}
-				"attack_speed_reduction"	
-				{
-					"value"		"-35"
-					"special_bonus_unique_tiny_6" "+8"
-				}
-				"toss_bonus_damage"
-				{
-					"value"					"50 175 300"
-					"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
-				}
-				"move_speed"		"10 15 20"
+			"bonus_armor"				"5 10 15"
+			"bonus_damage"			
+			{
+				"value"					"55 110 165"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"attack_speed_reduction"	
+			{
+				"value"		"-35"
+				"special_bonus_unique_tiny_6" "+8"
+			}
+			"toss_bonus_damage"
+			{
+				"value"					"50 175 300"
+				"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
+			}
+			"move_speed"		"10 15 20"
+
+			"land_movement_slow"
+			{
+				"RequiresShard"						"1"
+				"special_bonus_shard"				"25"
+			}
+			"land_attack_slow"
+			{
+				"RequiresShard"						"1"
+				"special_bonus_shard"				"45"
+			}
+			
+			
+			"land_debuff_duration"
+			{
+				"RequiresShard"						"1"
+				"special_bonus_shard"				"=2.5"
+			}
+
+			"land_radius_tooltip"	
+			{
+				"RequiresShard"						"1"
+				"special_bonus_shard"				"125"
+			}
+			"land_toss_damage_tooltip"	
+			{
+				"RequiresShard"						"1"
+				"special_bonus_shard"				"20"
+				"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
+			}
+			"land_tree_damage_tooltip"	
+			{
+				"RequiresShard"						"1"
+				"special_bonus_shard"				"50"
+				"DamageTypeTooltip"		"DAMAGE_TYPE_PHYSICAL"
+			}
 		}
 	}
 
@@ -410,11 +432,12 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"Innate"						"1"
 		"MaxLevel"						"1"
 		"IsBreakable"					"1"
+		"AbilityTextureName"			"tiny_craggy_exterior"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------

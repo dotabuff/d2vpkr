@@ -51,7 +51,7 @@
 			"enfeeble_tick_damage"
 			{
 				"value"			"12 18 24 30"
-				"special_bonus_unique_bane_10"				"+13"
+				"special_bonus_unique_bane_10"		"+13"
 				"CalculateSpellDamageTooltip" "1"
 			}
 			"enfeeble_heal_pct"
@@ -190,7 +190,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_ALT_CASTABLE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
@@ -230,19 +230,11 @@
 			"bonus_attack_speed"
 			{
 				"value"						"0"
-				"special_bonus_facet_bane_dream_stalker"	"40 60 80 100"
 			}
-			"is_vector_targeted"
-			{
-				"value"						"0"
-				"special_bonus_facet_bane_sleepwalk"	"+1"
-			}
-			"vector_render_distance"		"600"
 			"vector_render_radius"			"120"
 			"walk_speed"
 			{
-				"value"						"0"
-				"special_bonus_facet_bane_sleepwalk"	"+110"
+				"value"						"110"
 			}
 			"turn_rate"						"200"
 		}
@@ -267,8 +259,17 @@
 	"bane_ichor_of_nyctasha"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
-
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"		
 		"MaxLevel"						"1"
 		"Innate"						"1"
+
+		"AbilityValues"
+		{
+
+			"damage_tick_rate"		"1"
+			"damage_per_terror"		"0"
+			"max_terrors"			"5"
+			"status_resistance"		"5"
+		}
 	}
 }

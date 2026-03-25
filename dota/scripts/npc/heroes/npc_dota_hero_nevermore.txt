@@ -38,8 +38,8 @@
 		{
 				"shadowraze_damage"	
 				{
-					"value"				"90 160 230 300"	
-				"special_bonus_unique_nevermore_2" "+120"
+					"value"				"85 150 215 280"	
+				//"special_bonus_unique_nevermore_2" "+120"
 				}
 				"shadowraze_radius"	
 				{
@@ -66,7 +66,7 @@
 				"movement_speed_debuff"
 				{
 					"value"											"0 0 0 0"
-					"special_bonus_facet_nevermore_shadowmire"		"=6 =8 =10 =12"
+					"special_bonus_shard"							"=12"
 				}
 				"turn_rate_pct"								"0"
 				"AbilityCooldown"				
@@ -78,6 +78,7 @@
 					"value"					"0"
 					"special_bonus_shard"	"+2.0"
 				}
+				"damage_per_soul"					"3"
 		}
 	}
 
@@ -113,8 +114,8 @@
 		{
 				"shadowraze_damage"	
 				{
-					"value"				"90 160 230 300"	
-				"special_bonus_unique_nevermore_2" "+120"
+					"value"				"85 150 215 280"					
+					//"special_bonus_unique_nevermore_2" "+120"
 				}
 				"shadowraze_radius"	
 				{
@@ -141,7 +142,7 @@
 				"movement_speed_debuff"
 				{
 					"value"											"0 0 0 0"
-					"special_bonus_facet_nevermore_shadowmire"		"=6 =8 =10 =12"
+					"special_bonus_shard"							"=12"
 				}
 				"turn_rate_pct"								"0"
 				"AbilityCooldown"				
@@ -153,6 +154,7 @@
 					"value"					"0"
 					"special_bonus_shard"	"+2.0"
 				}
+				"damage_per_soul"					"3"
 		}
 	}
 
@@ -189,8 +191,8 @@
 		{
 			"shadowraze_damage"	
 			{
-				"value"				"90 160 230 300"	
-				"special_bonus_unique_nevermore_2" "+120"
+				"value"				"85 150 215 280"	
+				//"special_bonus_unique_nevermore_2" "+120"
 			}
 			"shadowraze_radius"	
 			{
@@ -217,7 +219,7 @@
 			"movement_speed_debuff"
 			{
 				"value"											"0 0 0 0"
-				"special_bonus_facet_nevermore_shadowmire"		"=6 =8 =10 =12"
+				"special_bonus_shard"							"=12"
 			}
 			"turn_rate_pct"								"0"
 			"AbilityCooldown"				
@@ -229,6 +231,7 @@
 				"value"					"0"
 				"special_bonus_shard"	"+2.0"
 			}
+			"damage_per_soul"					"3"
 		}
 	}
 	
@@ -239,9 +242,8 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"        
-		"MaxLevel"						"4"
-		"DependentOnAbility"			"nevermore_requiem"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"      
+		"MaxLevel"						"1"
 		"Innate"						"1"
 		"IsBreakable"					"1"
 
@@ -251,13 +253,16 @@
 		{
 				"necromastery_damage_per_soul"	
 				{
-					"value"					"1 2 3 4"
+					"value"					"1.35"
+					"hero_levelup"			"+0.15"
+
 					"CalculateSpellDamageTooltip"	"0"
-					"special_bonus_unique_nevermore_1"			"+2"
+					//"special_bonus_unique_nevermore_1"			"+2"
 				}
 				"necromastery_max_souls"		
 				{
-					"value"						"20 22 24 26"					
+					"value"						"20"
+					"special_bonus_unique_nevermore_1"		"+5"
 				}
 				"souls_per_kill"					"1"
 				"souls_per_hero_kill"				"4"
@@ -278,7 +283,7 @@
 				"soul_release_tooltip"			"30.0"
 				"max_soul_increase_on_hero_kill"
 				{
-					"special_bonus_facet_nevermore_lasting_presence"	"1"
+					"value"						"0"
 				}
 
 				"current_max_souls_tooltip"
@@ -324,12 +329,12 @@
 			"bonus_armor_per_stack"
 			{
 				"value"						"0"
-				"special_bonus_facet_nevermore_lasting_presence"	"+2"
+				//"special_bonus_facet_nevermore_lasting_presence"	"+2"
 			}
 			"kill_buff_duration"
 			{
 				"value"						"0"
-				"special_bonus_facet_nevermore_lasting_presence"	"+60"
+				//"special_bonus_facet_nevermore_lasting_presence"	"+60"
 			}
 		}
 	}
@@ -355,12 +360,12 @@
 		{
 			"bonus_attack_speed"	
 			{
-				"value"			"40 55 70 85"
+				"value"			"35 50 65 80"
 				"special_bonus_unique_nevermore_4"	"+30"
 			}
 			"bonus_move_speed"	
 			{
-				"value"			"5 7 9 11"
+				"value"			"4 6 8 10"
 			}
 			"cast_speed_pct"		
 			{
@@ -373,8 +378,22 @@
 				"special_bonus_unique_nevermore_frenzy_castspeed"		"=140"
 			}
 			"duration"				"8"
-			"soul_cost"				"5"
-			"max_soul_increase"		"5"
+
+			"max_collection_count"				
+			{
+				"value"					"4 6 8 10"
+			}	
+			"soul_collection_per_interval"		"2"
+			"soul_collection_radius"			"600"
+			"soul_collection_interval"			"0.5"
+			"soul_collection_per_hero"			
+			{
+				"value"						"3"
+				"special_bonus_unique_nevermore_frenzy_max_collection_count"				"+2"
+
+			}
+			"soul_collection_per_creep"			"1"
+			"linger_duration"					"8"
 		}
 	}
 
@@ -391,7 +410,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"2"
-		"HasScepterUpgrade"			"1"
+		"HasScepterUpgrade"				"1"
 		"AbilitySound"					"Hero_Nevermore.RequiemOfSouls"
 
 		// Casting
@@ -418,51 +437,58 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"AbilityCooldown"				
-				{
-					"value"		"120 110 100"
-					"special_bonus_scepter"	"-30"
-				}
+			"AbilityCooldown"				
+			{
+				"value"		"120 110 100"
+				"special_bonus_scepter"	"-30"
+			}
 
-				"requiem_radius"	
-				{
-					"value"		"1000"		
-					"affected_by_aoe_increase"	"1"
-				}
-				"requiem_reduction_ms"	"-20 -25 -30"
-				"requiem_reduction_mres"	"-10"
-				"requiem_slow_duration"	
-				{
-					"value"		"0.6"
-					"special_bonus_unique_nevermore_6" "+0.2"
-				}
-				"requiem_slow_duration_max"	
-				{
-					"value"					"2.15"
-				"special_bonus_unique_nevermore_6" "+0.45"
-				}				
-				"requiem_soul_conversion"	"1"
-				"requiem_line_width_start"	
-				{
-					"value"		"125"
-					"affected_by_aoe_increase"	"1"
-				}
-				"requiem_line_width_end"	
-				{
-					"value"			"300"
-					"affected_by_aoe_increase"	"1"
-				}
-				"requiem_line_speed"	"700 700 700"
-				"soul_death_release"	"0.5"
-				"requiem_heal_pct_scepter"	
-				{
-					"special_bonus_scepter"			"100"
-				}	
-				"requiem_damage_pct_scepter"	
-				{
-					"special_bonus_scepter"			"60"
-					"CalculateSpellDamageTooltip"	"0"
-				}
+			"requiem_radius"	
+			{
+				"value"		"1000"		
+				"affected_by_aoe_increase"	"1"
+			}
+			"requiem_reduction_ms"	"-20 -25 -30"
+			"requiem_reduction_mres"	"-5 -10 -15"
+			"requiem_slow_duration"	
+			{
+				"value"		"0.6"
+				"special_bonus_unique_nevermore_6" "+0.2"
+			}
+			"requiem_slow_duration_max"	
+			{
+				"value"					"2.15"
+			"special_bonus_unique_nevermore_6" "+0.45"
+			}				
+			"requiem_soul_conversion"	"1"
+			"requiem_line_width_start"	
+			{
+				"value"		"125"
+				"affected_by_aoe_increase"	"1"
+			}
+			"requiem_line_width_end"	
+			{
+				"value"			"300"
+				"affected_by_aoe_increase"	"1"
+			}
+			"requiem_line_speed"	"700 700 700"
+			"soul_death_release"	"0.5"
+			"requiem_heal_pct_scepter"	
+			{
+				"special_bonus_scepter"			"100"
+			}	
+			"requiem_damage_pct_scepter"	
+			{
+				"special_bonus_scepter"			"100"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"max_soul_release"					
+			{
+				"value"							"20"
+				//"special_bonus_scepter"			"+5"
+			}
+
 		}
 	}
+
 }
