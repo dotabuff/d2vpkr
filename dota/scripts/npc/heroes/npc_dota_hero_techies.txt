@@ -14,6 +14,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+		"TooltipSummaryProperties"		"damage;activation_delay;#DOTA_Tooltip_ability_techies_land_mines___aoe_debuff"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -44,11 +45,16 @@
 				{
 					"value"			"400 550 700"
 				}
-				"building_damage_pct"		"30"
+				"building_damage_pct"
+				{
+					"value"			"30"
+					"display_type"			"kMagicalDamagePercentage"
+				}
 				"activation_delay"			
 				{
 					"value"		"1"
 					"special_bonus_unique_techies_4"	"-0.8"
+					"display_type"			"kDuration"
 				}
 				"cast_range_scepter_bonus"		
 				{
@@ -62,7 +68,11 @@
 				"outer_damage"				"50"
 				"min_distance"				"150"
 				"placement_radius"			"350"
-				"mres_reduction"			"15 20 25"
+				"mres_reduction"
+				{
+					"value"					"15 20 25"
+					"display_type"			"kDebuffPercentage"
+				}
 				"burn_duration"				"4"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -197,6 +207,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"		
+		"TooltipSummaryProperties"		"#DOTA_Tooltip_ability_techies_suicide___explosion;stun_duration;hp_cost"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -235,6 +246,7 @@
 				"value" 												"20"
 				"DamageTypeTooltip"									"DAMAGE_TYPE_PURE"
 				"CalculateSpellDamageTooltip"						 "0"
+				"display_type"										"kHealthPercentageAsPureDamage"
 			}
 			
 			"hp_dmg"
@@ -244,7 +256,6 @@
 				"CalculateSpellDamageTooltip"						 "0"
 				//"special_bonus_unique_techies"						"+15"
 			}
-			"duration"				"0.75"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -262,6 +273,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+		"TooltipSummaryProperties"		"slow;#DOTA_Tooltip_ability_techies_sticky_bomb___explosion;#DOTA_Tooltip_ability_techies_sticky_bomb___explosion_slow"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -285,7 +297,11 @@
 		"AbilityValues"
 		{
 				"duration"				"1.2"
-				"countdown"				"2"
+				"countdown"
+				{
+					"value"				"2"
+					"display_type"		"kDuration"
+				}
 				"radius"				
 				{
 					"value"			"300"					
@@ -297,8 +313,16 @@
 					"special_bonus_unique_techies_2" "+160"
 
 				}
-				"slow"					"25 35 45 55"
-				"secondary_slow"		"15 25 35 45"
+				"slow"
+				{
+					"value"				"25 35 45 55"
+					"display_type"		"kDebuffPercentage"
+				}
+				"secondary_slow"
+				{
+					"value"				"15 25 35 45"
+					"display_type"		"kDebuffPercentage"
+				}
 				"secondary_slow_duration"		"3"
 				"explosion_radius"		
 				{
@@ -326,6 +350,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"TooltipSummaryProperties"		"#DOTA_Tooltip_ability_techies_reactive_tazer___allies;#DOTA_Tooltip_ability_techies_reactive_tazer___explosion;disarm_duration"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------		
@@ -359,7 +384,11 @@
 				"value"				"2.25 2.5 2.75 3.0"
 				"special_bonus_unique_techies_tazer_duration"		"+25%"
 			}
-			"bonus_ms"				"18 22 26 30"
+			"bonus_ms"
+			{
+				"value"				"18 22 26 30"
+				"display_type"		"kBuffPercentage"
+			}
 			"explosion_radius"			
 			{
 				"value"		"400"
@@ -527,6 +556,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_NONE"
 		"MaxLevel"						"1"
 		"IsGrantedByScepter"				"1"
+		"TooltipSummaryProperties"		"bonus_mine_damage_pct;#DOTA_Tooltip_ability_techies_minefield_sign___minefield;#DOTA_Tooltip_ability_techies_minefield_sign___minefield_damage"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -549,16 +579,28 @@
 				"affected_by_aoe_increase"	"1"	
 			}
 
-			"lifetime"					"240"
+			"lifetime"
+			{
+				"value"				"240"
+				"display_type"		"kDuration"
+			}
 			"minefield_duration"		"10"
 			"trigger_radius"
 			{
 				"value"	"200"
 				"affected_by_aoe_increase"	"1"
 			}
-			"scepter_move_damage"		"300"
+			"scepter_move_damage"
+			{
+				"value"					"300"
+				"display_type"			"kMagicalDamage"
+			}
 			"scepter_move_amt"			"200"
-			"bonus_mine_damage_pct"		"15"
+			"bonus_mine_damage_pct"
+			{
+				"value"					"15"
+				"display_type"			"kMagicalDamagePercentage"
+			}
 		}
 	}
 
@@ -612,7 +654,8 @@
 		"MaxLevel"						"1"
 		"HasShardUpgrade"				"1"
 		"AbilityCastPoint"				"1.0"
-
+		"TooltipSummaryProperties"		"bonus_mana_as_mana_regen;#DOTA_Tooltip_ability_techies_mutually_assured_destruction___damage"
+		
 		"AbilityValues"
 		{
 
@@ -620,6 +663,7 @@
 			{
 				"value"				"0.1"
 				"hero_levelup"		"+0.01"
+				"display_type"		"kBuffPercentage"
 			}
 			"radius"						
 			{
@@ -631,6 +675,7 @@
 			{
 				"value"						"30"
 				"special_bonus_shard"		"+10"
+				"display_type"				"kMagicalDamagePercentage"
 			}	
 			"current_mana_regen"	
 			{
@@ -640,7 +685,11 @@
 			{
 				"dynamic_value"				"true"
 			}	
-			"explosion_delay"				"1.5"
+			"explosion_delay"
+			{
+				"value"						"1.5"
+				"display_type"				"kDuration"
+			}
 
 
 			"AbilityCooldown"
