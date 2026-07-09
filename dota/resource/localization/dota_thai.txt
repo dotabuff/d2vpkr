@@ -24531,6 +24531,9 @@
 	"DOTA_Hud_StunBar" "{s:state}"
 	"DOTA_Hud_SpecItemHeroName"	"{g:dota_hero_name:hero_id} เลเวล <font color='#FFFFFF'>{d:player_level}</font>"
 
+	// The local client has paused spectating playback, and can resume when they choose
+	"DOTA_Hud_Paused_Spectating_Local"			"การเล่นหยุดชั่วคราว"
+	// Someone other than our local client has paused the game
 	"DOTA_Hud_Paused_Spectating"				"ผู้เล่นได้หยุดเกมชั่วคราว"
 	"DOTA_Hud_Paused"							"เกมถูกหยุดชั่วคราว"
 	"DOTA_Hud_Unpausing"						"เกมกำลังจะดำเนินต่อ"
@@ -32985,6 +32988,8 @@ With early pressure heroes like Zeus and Death Prophet making appearances, split
 
     "DOTA_Play_RR_FiveStack"                "ปาร์ตี้ครบ 5 คนจะมีสิทธิ์เข้าคิวจัดอันดับตามตำแหน่งเสมอ"
     "DOTA_Play_RR_HighDemand"               "ตำแหน่งเป็นที่ต้องการสูงทั้งหมดได้ถูกเลือก เลือกตำแหน่งทั้งหมดเพื่อรับคิวค้นหาแมตช์ตามตำแหน่งเพิ่มเติม"
+	"DOTA_Play_RR_HighDemandAtLeastOne"		"ตำแหน่งเป็นที่ต้องการสูงได้ถูกเลือกอย่างน้อยหนึ่งตำแหน่ง เลือกตำแหน่งทั้งหมดเพื่อรับคิวค้นหาแมตช์ตามตำแหน่งเพิ่มเติม"
+
 	"DOTA_Play_RR_SoloSpendingQP"			"คุณจะใช้คิวค้นหาแมตช์ตามตำแหน่ง 1 แมตช์"
 	"DOTA_Play_RR_PartySpendingQP"			"สมาชิกปาร์ตี้แต่ละคนจะใช้คิวค้นหาแมตช์ตามตำแหน่ง 1 แมตช์"
 
@@ -33007,9 +33012,12 @@ With early pressure heroes like Zeus and Death Prophet making appearances, split
 
     "DOTA_RR_SoloEarningQP"			        "การเลือกทุกตำแหน่งจะทำให้คุณได้รับคิวค้นหาแมตช์ตามตำแหน่ง {d:earn_amount} แมตช์ (ครึ่งเดียวหากแพ้) สำหรับการใช้งานในอนาคต"
     "DOTA_RR_FiveStack"				        "ปาร์ตี้ครบ 5 คนจะมีสิทธิ์เข้าคิวค้นหาแมตช์ตามตำแหน่งเสมอ แต่จะไม่ได้รับคิวค้นหาแมตช์ตามตำแหน่งเพิ่มเติมสำหรับการใช้งานในอนาคต"
+    "DOTA_RR_SoloHighDemand"                "คุณได้เลือกตำแหน่งเป็นที่ต้องการสูง เลือกตำแหน่งทั้งหมดที่เหลือหากคุณต้องการรับคิวค้นหาแมตช์ตามตำแหน่งเพิ่มเติมสำหรับการใช้งานในอนาคต"
     "DOTA_RR_PartyHighDemand"               "ปาร์ตี้ของคุณได้เลือกตำแหน่งเป็นที่ต้องการสูงทั้งหมด เลือกตำแหน่งทั้งหมดที่เหลือหากคุณต้องการรับคิวค้นหาแมตช์ตามตำแหน่งเพิ่มเติมสำหรับการใช้งานในอนาคต"
 
 	"DOTA_RR_HighDemandRole_Title"		    "ตำแหน่งเป็นที่ต้องการสูง"
+	"DOTA_RR_HighDemandRole_Description"	"ตำแหน่งนี้เป็นที่ต้องการสูง หากคุณเข้าคิวตำแหน่งเป็นที่ต้องการสูง (หรือหากปาร์ตี้ของคุณเข้าคิวตำแหน่งเป็นที่ต้องการสูงทั้งหมด) คุณจะไม่ต้องใช้คิวค้นหาแมตช์ตามตำแหน่งในการเล่นแมตช์จัดอันดับตามตำแหน่ง"
+
 	"DOTA_RR_SoloSpendingQP"			    "คุณจะใช้คิวค้นหาแมตช์ตามตำแหน่ง 1 แมตช์และได้เล่นตำแหน่งที่เลือกไว้"
 	"DOTA_RR_PartySpendingQP"			    "สมาชิกปาร์ตี้แต่ละคนจะใช้คิวค้นหาแมตช์ตามตำแหน่ง 1 แมตช์และได้เล่นตำแหน่งที่เลือกไว้"
 	
@@ -46326,6 +46334,8 @@ With early pressure heroes like Zeus and Death Prophet making appearances, split
 		"DOTA_Overworld_Inventory_HeroTrayPremium"		"ตั๋ว<b>ห้องลับ</b>เป็นส่วนหนึ่งของ<b>{s:expansion_pack_name}</b> ซึ่งสั่งซื้อได้จากร้านค้ามหรสพทมิฬ ตั๋วเหล่านี้ใช้สำหรับปลดล็อก​ห้องพิเศษ​ซึ่งประกอบด้วยรางวัลพิเศษเฉพาะ"
 		"DOTA_Overworld_Inventory_HeroTrayHidden"		"ตั๋วพิเศษนี้ได้รับจากเหตุการณ์ในแผนที่"
 		"DOTA_Overworld_Inventory_PathUnlocker"			"สามารถใช้ตั๋ว​<b>ปลดล็อกเส้นทาง</b>​ปลดล็อก​โหนดได้​โดยไม่ต้อง​ใช้ตั๋ว​ตามที่กำหนดไว้​ปกติ เปิดใช้งาน​โดยคลิกปุ่ม <b>ปลดล็อกตอนนี้</b> ด้านล่างราคาของโหนด"
+		"DOTA_Overworld_Inventory_ScrapToken"			"รับตั๋ว<b>{s:scrap_token_name}</b>ในทุกเกมที่คุณเล่น ไม่ว่าจะชนะหรือแพ้<br>สามารถนำไปแลกเปลี่ยนที่<b>ซุ้มแลกตั๋ว</b>เพื่อรับตั๋วที่คุณต้องการ"
+		
 		"DOTA_Crownfall_Encounter_UnableToClaimReward"	"ไม่สามารถรับรางวัลได้"
 		"DOTA_Crownfall_Encounter_TokenExchangeFailed"	"การแลกเปลี่ยนตั๋วล้มเหลว"
 		
@@ -46742,6 +46752,8 @@ With early pressure heroes like Zeus and Death Prophet making appearances, split
 		"DOTA_HUD_Pregame_TurboTokenRewardsTooltip"		"เกม Turbo มอบ 2 โทเคนเมื่อชนะ เลือกโทเคนที่คุณต้องการ"
 
 		"DOTA_HeroGrid_Overworld"						"มหรสพทมิฬ"
+		"DOTA_HeroGrid_Overworld_Description"			"ไฮไลต์ฮีโร่​ที่จะปลดล็อก​เส้นทางบนแผนที่​มหรสพทมิฬ​ของคุณ"
+		
 		"DOTA_CrownfallLeaderboard_Act1_Title"			"ความคืบหน้าบทที่ I"
 		"DOTA_CrownfallLeaderboard_Act2_Title"			"ความคืบหน้าบทที่ II"
 		"DOTA_CrownfallLeaderboard_Act3_Title"			"ความคืบหน้าบทที่ III"
@@ -46815,7 +46827,7 @@ With early pressure heroes like Zeus and Death Prophet making appearances, split
 		"DOTA_Crownfall_OverworldMap_Act2_SecretAdmirerSign"	"คุณได้รับจดหมาย!"
 		
 		
-		"DOTA_Crownfall_PostGame_ScrapEarned"			"เศษเหล็กที่ได้รับ:"	
+		"DOTA_Crownfall_PostGame_ScrapEarned"			"เศษอะไหล่ที่ได้รับ:"	
 
 		"DOTA_Overworld_Inventory_HeroTrayScrap"	"รับโทเคน<b>{s:scrap_token_name}</b>ในทุกเกมที่คุณเล่น ไม่ว่าจะชนะหรือแพ้<br>สามารถนำไปแลกเปลี่ยนที่<b>สถานที่พิเศษ</b>เพื่อรับโทเคนฮีโร่ที่คุณต้องการ"
 		
@@ -47408,8 +47420,10 @@ With early pressure heroes like Zeus and Death Prophet making appearances, split
 		"DOTA_TalentContent_RejectReason_PhotoBadCrop"					"ภาพถ่ายของคุณควรเป็นภาพแบบครอบตัดส่วนศีรษะ ดูแนวทางปฏิบัติได้ที่ https://www.dota2.com/portraitguidelines"
 		"DOTA_TalentContent_RejectReason_PhotoBadQuality"				"ภาพถ่ายของคุณไม่เป็นไปตามแนวทางปฏิบัติด้านคุณภาพ ซึ่งสามารถอ่านได้ที่ https://www.dota2.com/portraitguidelines"
 		"DOTA_TalentContent_RejectReason_PhotoExtraElements"			"รูปภาพของคุณมีองค์ประกอบส่วนเกินที่ถูกตัดต่อเข้ามา"
+		"DOTA_TalentContent_RejectReason_PhotoAI"						"ภาพถ่ายของคุณได้รับการสร้างขึ้นหรือแก้ไขโดยใช้ปัญญาประดิษฐ์รังสรรค์ (Generative AI)"
 		"DOTA_TalentContent_RejectReason_AutoBadAlpha"					"พื้นหลังลายเซ็นของคุณไม่โปร่งใสอย่างสมบูรณ์และไม่สามารถจัดส่งได้"
 		"DOTA_TalentContent_RejectReason_AutoBadQuality"				"ลายเซ็นของคุณไม่เป็นไปตามแนวทางปฏิบัติด้านคุณภาพ ซึ่งสามารถอ่านได้ที่ https://www.dota2.com/autographguidelines"
+		"DOTA_TalentContent_RejectReason_AutoAI"						"ลายเซ็นของคุณได้รับการสร้างขึ้นโดยใช้ปัญญาประดิษฐ์รังสรรค์ (Generative AI)"
 		"DOTA_TalentContent_RejectReason_VoiceNotTalent"				"เสียงที่ใช้สำหรับประโยคเสียง {d:voiceline_number} ไม่ได้เป็นเสียงของคุณเอง"
 		"DOTA_TalentContent_RejectReason_VoiceLanguage"					"ประโยคเสียง {d:voiceline_number} ต้องเป็นภาษาแม่ของคุณ ภาษาในการพากย์ของคุณ หรือเป็นภาษาอังกฤษ"
 		"DOTA_TalentContent_RejectReason_VoiceAdvertisement"			"ประโยคเสียง {d:voiceline_number} มีโฆษณาหรือการสนับสนุนที่มีข้อจำกัดทางกฎหมายในการใช้งาน"
@@ -47425,6 +47439,7 @@ With early pressure heroes like Zeus and Death Prophet making appearances, split
 		"DOTA_TalentContent_RejectReason_VoiceQuiet"					"ประโยคเสียง {d:voiceline_number} เบาเกินไป"
 		"DOTA_TalentContent_RejectReason_VoiceLength"					"ประโยคเสียง {d:voiceline_number} ยาวเกินไป"
 		"DOTA_TalentContent_RejectReason_VoiceAbrasive"					"ประโยคเสียง {d:voiceline_number} หยาบคายหรือน่ารำคาญเกินไป"
+		"DOTA_TalentContent_RejectReason_VoiceAI"						"ประโยคเสียง {d:voiceline_number} ได้รับการสร้างขึ้นโดยใช้ปัญญาประดิษฐ์รังสรรค์ (Generative AI)"
 		"DOTA_TalentContent_Approval_Photo"								"ภาพถ่ายของคุณได้รับการอนุมัติแล้ว"
 		"DOTA_TalentContent_Approval_Auto"								"ลายเซ็นของคุณได้รับการอนุมัติแล้ว"
 		"DOTA_TalentContent_Approval_Voice"								"ประโยคเสียง {d:voiceline_number} ได้รับการอนุมัติแล้ว"
@@ -50590,18 +50605,19 @@ With early pressure heroes like Zeus and Death Prophet making appearances, split
 		"DOTA_DarkCarnival_Encounter_PickLock_Description"	"ช่วยสลาร์กแหกห้องขังของเขา!"
 		"DOTA_DarkCarnival_Encounter_SlarkJailbreak"				"รองเท้าระทม"
 		"DOTA_DarkCarnival_Encounter_SlarkJailbreak_Description"	"เก็บของมีค่า! ทำลายรองเท้า!"
-		"DOTA_DarkCarnival_Encounter_FriendGifting"					"ส่งของขวัญให้เพื่อน"
+		"DOTA_DarkCarnival_Encounter_FriendGifting"					"ศูนย์แลกเปลี่ยนวัตถุดิบเหลือใช้"
 		"DOTA_DarkCarnival_Encounter_FriendGifting_Description"		"ส่งตั๋วที่คุณไม่ต้องการเป็นของขวัญให้เพื่อนของคุณ!"
+		"DOTA_DarkCarnival_Encounter_FriendGifting_NoNeed"			"เพื่อนของคุณไม่ต้องการตั๋วใด ๆ เลยในขณะนี้"
+		"DOTA_DarkCarnival_Encounter_FriendGifting_NoFriendSelected"	"เลือกเพื่อนเพื่อดูตั๋วที่พวกเขาต้องการ"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter"					"เครื่องหลอมตั๋ว"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_Description"		"หลอมสิ่งที่คุณอาจจะไม่ควรหลอม!"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_SmeltButton"		"หลอม"
-		"DOTA_DarkCarnival_Encounter_TicketSmelter_Bristleback_Note"	"ไปไล่จับตัวตลกแป๊บ เดี๋ยวกลับมาในอีกห้านาที หากเจ้ามาที่นี่เพื่อถูกหลอม โปรดหลอมตัวเองซะ ห้ามหลอมสิ่งอื่นใดเด็ดขาด การหลอมโดยไม่ได้รับอนุญาต ถือเป็นความผิดมีโทษต้องโดนหลอม"
+		"DOTA_DarkCarnival_Encounter_TicketSmelter_Bristleback_Note"	"ไปไล่จับตัวตลกแป๊บ เดี๋ยวกลับมาในอีกห้านาที หากเจ้ามาที่นี่เพื่อถูกหลอม โปรดหลอมตัวเองซะ ห้ามหลอมสิ่งอื่นใดเด็ดขาด การหลอมโดยไม่ได้รับอนุญาต ถือเป็นความผิด​มีโทษต้องโดนหลอม"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_Bristleback_Name"	"-อ.บซ.บ." // Automaton Bristle Back
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_Tooltip"			"หลอมตั๋วส่วนเกินเป็นรางวัลโบนัส!"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_NothingLeft"		"คุณได้หลอมทุกอย่างที่เครื่องหลอมตั๋วสามารถสร้างได้ในขณะนี้หมดแล้ว"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_SeeingStone:f"					"{d:num_seeing_stones} ศิลานิมิต"
 
-		
 		"DOTA_CandyShopName_Dark_Carnival"		"คาร์นิวัลขนมหวาน"
 		"DOTA_DarkCarnival_View_Candyworks"		"ดูคาร์นิวัลขนมหวาน"
 		"DOTA_DarkCarnivalStore_View"			"ดู<b>ร้านค้ามหรสพทมิฬ</b>"
@@ -50654,6 +50670,7 @@ With early pressure heroes like Zeus and Death Prophet making appearances, split
 		"DOTA_DarkCarnival_SecretAdmirer_Gift_Tooltip"	"คุณสามารถส่งตั๋วเป็นของขวัญให้เพื่อนได้สูงสุด 5 ใบต่อวัน"
 		"DOTA_DarkCarnival_SecretAdmirer_GiftNoneNeeded"		"เพื่อนของคุณไม่ต้องการตั๋วใด ๆ เลย!"
 		"DOTA_DarkCarnival_SecretAdmirer_NoMoreAvailable"	"คุณไม่เหลือสิทธิ์ส่งของขวัญในวันนี้อีกแล้ว"
+		"DOTA_DarkCarnival_SecretAdmirer_CannotSendAnymore"	"คุณไม่สามารถส่งของขวัญเพิ่มได้อีกในวันนี้"
 		"DOTA_DarkCarnival_SecretAdmirer_GiftAvailableTooltip"	"เพื่อนของคุณได้ส่งของขวัญให้คุณ!"
 
 		"DOTA_DarkCarnival_SecretRoomsPack_RequiredForRewardsClaims"		"ต้องมีแพ็กห้องลับ<br>คลิกเพื่อซื้อ"
@@ -50684,6 +50701,7 @@ With early pressure heroes like Zeus and Death Prophet making appearances, split
 		"DOTA_DarkCarnival_Token_Oracle"		"ญาณทิพย์"
 		"DOTA_DarkCarnival_Token_NodeUnlock"	"ปลดล็อกเส้นทาง"
 		"DOTA_DarkCarnival_Token_MinigameUnlock"	"ปลดล็อกเกมคาร์นิวัล"
+		"DOTA_DarkCarnival_Token_CarnivalScrap"		"เศษอะไหล่"
 		"DOTA_Overworld_Token_Random"			"ตั๋วแบบสุ่ม"
 
 		"DOTA_DarkCarnival_InventoryPicker_Title"	"เลือกตั๋วจากช่องเก็บของของคุณ"
@@ -50834,7 +50852,7 @@ With early pressure heroes like Zeus and Death Prophet making appearances, split
 		"DOTA_CandyShop_Dark_Carnival_Visit_Upgrade_3"		"+1 ตัวเลือกสำหรับแลกลูกกวาดเพิ่มเติม"
 		"DOTA_CandyShop_Dark_Carnival_Visit_Upgrade_4"		"+10 ช่องเก็บของเพิ่มเติม"
 		"DOTA_CandyShop_Dark_Carnival_Entry"				"เร่เข้ามา"
-		"DOTA_CandyShop_Dark_Carnival_Reroll_Tooltip"		"การสุ่มโรงงานขนมหวานใหม่ช่วยให้คุณสามารถได้รับรางวัลชุดใหม่จากการสุ่มที่แตกต่างไปจากเดิม เล่น Dota เพื่อรับสิทธิ์สุ่มใหม่เพิ่มเติม"
+		"DOTA_CandyShop_Dark_Carnival_Reroll_Tooltip"		"การสุ่มโรงงานขนมหวานใหม่​ช่วยให้คุณสามารถ​ได้รับรางวัลชุดใหม่​จากการสุ่มที่แตกต่างไปจากเดิม​ เล่น Dota เพื่อรับสิทธิ์สุ่มใหม่เพิ่มเติม"
 		"DOTA_DarkCarnival_Reward_CandyShopShelfUpgrade"	"ชั้นวางรางวัลคาร์นิวัลขนมหวานเพิ่มเติม"
 		"DOTA_DarkCarnival_Reward_CandyShopRecipeUpgrade"	"สูตรคาร์นิวัลขนมหวานเพิ่มเติม"
 		"DOTA_DarkCarnival_Reward_CandyShopInventoryUpgrade"	"ช่องเก็บลูกกวาดคาร์นิวัลขนมหวานเพิ่มเติม"
@@ -50969,17 +50987,114 @@ With early pressure heroes like Zeus and Death Prophet making appearances, split
 
 		"DOTA_DarkCarnival_ChatWheelMessage"							"ข้อความวงล้อสนทนา"
 
-		"dota_chatwheel_translation_darkcarnival_money_and_bones"		"เงินและกระดูก! เงินและกระดูก!"
-		"dota_chatwheel_translation_darkcarnival_are_we_the_idiots"		"พวกเราเป็นไอ้งั่งเหรอ?"
-		"dota_chatwheel_translation_darkcarnival_wow"					"ว้าว!"
+		"dota_chatwheel_translation_darkcarnival_money_and_bones"				"เงินและกระดูก! เงินและกระดูก!"
+		"dota_chatwheel_translation_darkcarnival_are_we_the_idiots"				"พวกเราเป็นไอ้งั่งเหรอ?"
+		"dota_chatwheel_translation_darkcarnival_wow"							"ว้าว!"
+		"dota_chatwheel_translation_darkcarnival_its_not_that_funny"			"ไม่เห็นตลกเลย"
+		"dota_chatwheel_translation_darkcarnival_im_sorry_who_are_you_again"	"ขอโทษที... เจ้าคือใครนะ?"
+
 		"dota_chatwheel_source_fishwitch"								"กรินเดิลพลิต"
 		"dota_chatwheel_source_hoodwink"								"ฮูดวิงก์"
 		"dota_chatwheel_source_clown"									"คลาเรนซ์"
+		"dota_chatwheel_source_cogliacci"								"โคกลิอัชชี"
+		"dota_chatwheel_source_lorenzo"									"โลเรนโซ"
 
 		"DOTA_DarkCarnival_HeroHighlightTooltip_TicketsNeeded"			"ตั๋วที่ต้องการ"
+		"DOTA_DarkCarnival_HeroHighlightTooltip_NoTicketsNeeded"		"ไม่มีตั๋วที่ต้องใช้"
+
 		"DOTA_Axe_Missing"			"Axe หายตัวไปและไม่สามารถเข้าร่วมได้"
 
 		"DOTA_DarkCarnival_Overworld_Unlock"						"ปลดล็อก"
 
+		// Dark Carnival Chapter 2
+		
+		"DOTA_DarkCarnival_Encounter_CrateDrop"	"ประกอบร่างออโตมาตอน"
+		"DOTA_DarkCarnival_Encounter_CrateDrop_Description"	"รับกล่องให้ทัน!"
+		
+		"DOTA_DarkCarnival_Encounter_BlimpJump"	"กระโดดสู่เรือเหาะ"
+		"DOTA_DarkCarnival_Encounter_BlimpJump_Description"	"ไปให้ถึงเรือเหาะ!"
+		
+		"DOTA_Overworld_EncounterShortcut_blimp_jump"		"กระโดดสู่เรือเหาะ"
+		"DOTA_Overworld_EncounterShortcut_crate_drop"		"ประกอบร่างออโตมาตอน"
+		
+		// Dark Carnival: Crate Drop
+		"DOTA_DarkCarnival_CrateDrop_Title"							"ประกอบร่างออโตมาตอน"
+		"DOTA_DarkCarnival_CrateDrop_GameDesc"						"ช่วยทิงเกอร์รับกล่องชิ้นส่วนสำหรับประกอบร่างออโตมาตอน"
+		"DOTA_DarkCarnival_CrateDrop_Play"							"เล่น"
+		"DOTA_DarkCarnival_CrateDrop_HowToPlay"						"วิธีเล่น"
+		"DOTA_DarkCarnival_CrateDrop_HowToPlayInstructions"			"ใช้รถเข็นรับกล่องชิ้นส่วนออโตมาตอน พร้อมทั้งหลบระเบิด หากทำกล่องร่วงลงพื้นมากเกินไปจะทำให้แพ้!<br><br> ใช้ปุ่มลูกศรเพื่อเคลื่อนที่ และปุ่ม Space Bar เพื่อจัดเก็บกล่องที่รับได้แล้ว"
+		"DOTA_DarkCarnival_CrateDrop_CratesRemaining"				"คงเหลือ"
+		"DOTA_DarkCarnival_CrateDrop_Score"							"คะแนน : {d:current_score}"
+		"DOTA_DarkCarnival_CrateDrop_Level"							"เลเวล"
+		"DOTA_DarkCarnival_CrateDrop_LevelComplete"					"เลเวลเสร็จสมบูรณ์!"
+		"DOTA_DarkCarnival_CrateDrop_StartingLevel"					"เลเวล {u:level}"
+		"DOTA_DarkCarnival_CrateDrop_LostCrates"					"สูญเสีย"
+		"DOTA_DarkCarnival_CrateDrop_Score_Label"					"คะแนน"
+		"DOTA_DarkCarnival_CrateDrop_CurrentMultiplier"				"ตัวคูณ : {f:current_multiplier}x"
+		"DOTA_DarkCarnival_CrateDrop_GameOver"						"จบเกม"
+		"DOTA_DarkCarnival_CrateDrop_GameWon"						"คุณชนะ!"
+		"DOTA_DarkCarnival_CrateDrop_GameLost"						"คุณทำชิ้นส่วนสูญหายมากเกินไป!"
+		"DOTA_DarkCarnival_CrateDrop_PotentialScoreLabel"			"แต้ม"
+		
+
+		"DOTA_DarkCarnival_CrateDrop_TotalCratesCaught"				"จำนวนกล่องที่รับได้ทั้งหมด"
+		"DOTA_DarkCarnival_CrateDrop_TotalCratesLost"				"จำนวนกล่องที่สูญหายทั้งหมด"
+		"DOTA_DarkCarnival_CrateDrop_MaxHeight"						"ความสูงของกองกล่องซ้อนกันที่สูงที่สุด"
+		"DOTA_DarkCarnival_CrateDrop_HighScores"					"คะแนนสูงสุด"
+		"DOTA_DarkCarnival_CrateDrop_PlayAgain"						"เล่นอีกครั้ง"
+		"DOTA_DarkCarnival_CrateDrop_HeightBonus"					"โบนัสความสูง"
+		"DOTA_DarkCarnival_CrateDrop_CratesRequired"				"จำนวนที่ต้องการสำหรับเลเวลถัดไป:\n {d:crates_required}"
+		"DOTA_DarkCarnival_CrateDrop_Failed"						"ล้มเหลว"
+		"DOTA_DarkCarnival_CrateDrop_TryAgainButton"				"ลองอีกครั้ง"
+		"DOTA_DarkCarnival_CrateDrop_Help_Move"						"เคลื่อนที่"
+		"DOTA_DarkCarnival_CrateDrop_Help_Move_Details"				"เคลื่อนรถเข็นด้วยปุ่มลูกศรซ้ายและขวา และเปลี่ยนรางด้วยปุ่มลูกศรขึ้นและลง" 
+		"DOTA_DarkCarnival_CrateDrop_Help_Ability"					"ส่งชิ้นส่วน"
+		"DOTA_DarkCarnival_CrateDrop_Help_Ability_Description"		"ใช้ปุ่ม Space Bar เพื่อส่งกล่องที่รับได้ไปยังเครื่องประกอบร่างในทันที และรับแต้มจากแต่ละชิ้นส่วน" 
+		"DOTA_DarkCarnival_CrateDrop_Scoring"						"การให้คะแนน" 
+		"DOTA_DarkCarnival_CrateDrop_Scoring_Desc"					"กล่องทุกใบที่รับได้และได้รับการจัดเก็บด้วยสกิลประกอบร่างจะมอบแต้ม 100, 150 หรือ 200 แต้ม โดยขึ้นอยู่กับขนาดและรูปร่างกล่อง\n\nเพิ่มตัวคูณแต้มด้วยการซ้อนกล่องให้สูงที่สุด!" 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_1"					"เคลื่อนรถเข็นของทิงเกอร์ไปทางซ้ายและขวาเพื่อรับกล่องที่เต็มไปด้วยชิ้นส่วนออโตมาตอน!" 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_2"					"ใช้ปุ่มขึ้นและลงเพื่อวาร์ปไปรับกล่องในรางฝั่งตรงข้าม" 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_3"					"ใช้ปุ่ม Space Bar เพื่อจัดเก็บกล่องที่รับได้และทำแต้ม!" 
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText1"				"กดปุ่ม Space Bar เมื่อกล่องวางซ้อนทับกันสูงเพื่อรับตัวคูณมากขึ้น!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText2"				"ระวังวัตถุอันตรายซึ่งอาจระเบิดได้หากสัมผัส!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText3"				"รับวัตถุเสริมพลัง Defense Matrix เพื่อป้องกันระเบิด!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText4"				"ระวังระเบิดที่จะทำลายกล่องทั้งหมด!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText5"				"กู้คืนชีวิตที่สูญเสียไปด้วยวัตถุเสริมพลัง Repair!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText6"				"ถังที่เต็มไปด้วยเมือกจะทำให้คุณเคลื่อนที่ช้าลง!"
+		
+
+		
+		"DOTA_DarkCarnival_BlimpJump_Title"						"กระโดดสู่เรือเหาะ"
+		"DOTA_DarkCarnival_BlimpJump_Subtitle"					"ไปให้ถึงเรือเหาะ!"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Title_Won"		"คุณชนะ!"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Title_Lost"		"จบเกม"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_Won"		"คุณไปถึงเรือเหาะแล้ว"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_Lost"	"คุณแพ้แล้ว"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_LostStoryMode"	"คุณไปไม่ถึงเรือเหาะ"
+		"DOTA_DarkCarnival_EncounterStatus_BlimpJump"				"มหรสพทมิฬ: กระโดดสู่เรือเหาะ"
+		
+		"DOTA_DarkCarnival_BlimpJump_Scoring"				"เฉพาะในโหมดไม่สิ้นสุดเท่านั้น<br>รับแต้มโดยการกระโดดขึ้นไปให้สูงขึ้นเรื่อย ๆ"
+		"DOTA_DarkCarnival_BlimpJump_PlayAgain"				"ลองอีกครั้ง [Space]"
+
+		"DOTA_DarkCarnival_Encounter_BlimpJump_ReachTheBlimpRewardTitle" "ไปให้ถึงเรือเหาะ"
+
+		"DOTA_DarkCarnival_BlimpJump_InfiniteModeLocked"					"ปลดล็อกโดยทำโหมดเนื้อเรื่องให้เสร็จสมบูรณ์"
+
+		"DOTA_DarkCarnival_BlimpJump_GoInfinite"						"ไปสู่โหมดไม่สิ้นสุด"
+		"DOTA_DarkCarnival_BlimpJump_LeaveEncounter"					"ออกจากเหตุการณ์"
+		
+		"DOTA_DarkCarnival_BlimpJump_Controls_Move"					"เคลื่อนที่"
+		"DOTA_DarkCarnival_BlimpJump_Controls_Move_Details"			"เคลื่อนสลาร์กไปทางซ้ายและขวา"
+		"DOTA_DarkCarnival_BlimpJump_Controls_ThrowShiv"			"ปามีด"
+		"DOTA_DarkCarnival_BlimpJump_Controls_ThrowShiv_Details"	"ปามีดของสลาร์ก"
+
+		"DOTA_DarkCarnival_BlimpJump_Modes_StoryMode"			"เล่นโหมดเนื้อเรื่อง"
+		"DOTA_DarkCarnival_BlimpJump_Modes_StoryMode_Details"	"ไปให้ถึงเรือเหาะที่อยู่ด้านบนสุด"
+
+		"DOTA_DarkCarnival_BlimpJump_Modes_InfiniteMode"			"เล่นโหมดไม่สิ้นสุด"
+		"DOTA_DarkCarnival_BlimpJump_Modes_InfiniteMode_Details"	"ไปให้สูงที่สุดเท่าที่คุณจะทำได้ มุ่งมั่นไปให้ถึงดวงดาวเลย!"
+
+		"DOTA_DarkCarnival_BlimpJump_Resume"						"เริ่มต่อ [ESC]"
+						
 	}
 } 

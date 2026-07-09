@@ -24550,6 +24550,9 @@ To join as an experienced player, you must have at least {d:new_player_req_games
 	"DOTA_Hud_StunBar" "{s:state}"
 	"DOTA_Hud_SpecItemHeroName"	"Lvl <font color='#FFFFFF'>{d:player_level}</font> {g:dota_hero_name:hero_id}"
 
+	// The local client has paused spectating playback, and can resume when they choose
+	"DOTA_Hud_Paused_Spectating_Local"			"Playback Paused"
+	// Someone other than our local client has paused the game
 	"DOTA_Hud_Paused_Spectating"				"A player has paused the game"
 	"DOTA_Hud_Paused"							"Game is paused"
 	"DOTA_Hud_Unpausing"						"Game is unpausing"
@@ -50669,8 +50672,10 @@ If you don't feel that you were able to dedicate the appropriate attention level
 		"DOTA_DarkCarnival_Encounter_PickLock_Description"	"Help Slark break out of his cell!"
 		"DOTA_DarkCarnival_Encounter_SlarkJailbreak"				"Boot Breaker"
 		"DOTA_DarkCarnival_Encounter_SlarkJailbreak_Description"	"Collect loot! Destroy boots!"
-		"DOTA_DarkCarnival_Encounter_FriendGifting"					"Friend Gifting"
+		"DOTA_DarkCarnival_Encounter_FriendGifting"					"Inconvenient Materials Exchange"
 		"DOTA_DarkCarnival_Encounter_FriendGifting_Description"		"Gift tickets you don't need with your friends!"
+		"DOTA_DarkCarnival_Encounter_FriendGifting_NoNeed"			"Your friend doesn't need any tickets right now"
+		"DOTA_DarkCarnival_Encounter_FriendGifting_NoFriendSelected"	"Select a friend to see the tickets they need"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter"					"Ticket Smelter"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_Description"		"Smelt things you probably shouldn't smelt!"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_SmeltButton"		"Smelt"
@@ -50680,7 +50685,6 @@ If you don't feel that you were able to dedicate the appropriate attention level
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_NothingLeft"		"You've smelted everything the ticket smelter can currently create."
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_SeeingStone:f"					"{num_seeing_stones, plural, one{{d:num_seeing_stones} Seeing Stone} other{{d:num_seeing_stones} Seeing Stones}}"
 
-		
 		"DOTA_CandyShopName_Dark_Carnival"		"Carnival Candyworks"
 		"DOTA_DarkCarnival_View_Candyworks"		"View Carnival Candyworks"
 		"DOTA_DarkCarnivalStore_View"			"View the <b>Dark Carnival Store</b>"
@@ -50733,6 +50737,7 @@ If you don't feel that you were able to dedicate the appropriate attention level
 		"DOTA_DarkCarnival_SecretAdmirer_Gift_Tooltip"	"You may gift up to 5 tickets a day to your friends."
 		"DOTA_DarkCarnival_SecretAdmirer_GiftNoneNeeded"		"Your friend doesn't need any Tickets!"
 		"DOTA_DarkCarnival_SecretAdmirer_NoMoreAvailable"	"You have no more gifts available today"
+		"DOTA_DarkCarnival_SecretAdmirer_CannotSendAnymore"	"You cannot send any more gifts today"
 		"DOTA_DarkCarnival_SecretAdmirer_GiftAvailableTooltip"	"A friend of yours has sent you a gift!"
 
 		"DOTA_DarkCarnival_SecretRoomsPack_RequiredForRewardsClaims"		"Requires secret room pack.<br>Click to purchase"
@@ -51052,12 +51057,17 @@ If you don't feel that you were able to dedicate the appropriate attention level
 
 		"DOTA_DarkCarnival_ChatWheelMessage"							"Chat Wheel Message"
 
-		"dota_chatwheel_translation_darkcarnival_money_and_bones"		"MONEY AND BONES! MONEY AND BONES!"
-		"dota_chatwheel_translation_darkcarnival_are_we_the_idiots"		"Are we the idiots?"
-		"dota_chatwheel_translation_darkcarnival_wow"					"Wow!"
+		"dota_chatwheel_translation_darkcarnival_money_and_bones"				"MONEY AND BONES! MONEY AND BONES!"
+		"dota_chatwheel_translation_darkcarnival_are_we_the_idiots"				"Are we the idiots?"
+		"dota_chatwheel_translation_darkcarnival_wow"							"Wow!"
+		"dota_chatwheel_translation_darkcarnival_its_not_that_funny"			"It's not that funny."
+		"dota_chatwheel_translation_darkcarnival_im_sorry_who_are_you_again"	"I'm... sorry, who are you again?"
+
 		"dota_chatwheel_source_fishwitch"								"Grindlplit"
 		"dota_chatwheel_source_hoodwink"								"Hoodwink"
 		"dota_chatwheel_source_clown"									"Clarence"
+		"dota_chatwheel_source_cogliacci"								"Cogliacci"
+		"dota_chatwheel_source_lorenzo"									"Lorenzo"
 
 		"DOTA_DarkCarnival_HeroHighlightTooltip_TicketsNeeded"			"Tickets Needed"
 		"DOTA_DarkCarnival_HeroHighlightTooltip_NoTicketsNeeded"		"No Tickets Needed"
@@ -51066,5 +51076,96 @@ If you don't feel that you were able to dedicate the appropriate attention level
 
 		"DOTA_DarkCarnival_Overworld_Unlock"						"Unlock"
 
+		// Dark Carnival Chapter 2
+		
+		"DOTA_DarkCarnival_Encounter_CrateDrop"	"Automaton Assembly"
+		"DOTA_DarkCarnival_Encounter_CrateDrop_Description"	"Catch the crates!"
+		
+		"DOTA_DarkCarnival_Encounter_BlimpJump"	"Blimp Jump"
+		"DOTA_DarkCarnival_Encounter_BlimpJump_Description"	"Get to the Blimp!"
+		
+		"DOTA_Overworld_EncounterShortcut_blimp_jump"		"Blimp Jump"
+		"DOTA_Overworld_EncounterShortcut_crate_drop"		"Automaton Assembly"
+		
+		// Dark Carnival: Crate Drop
+		"DOTA_DarkCarnival_CrateDrop_Title"							"Automaton Assembly"
+		"DOTA_DarkCarnival_CrateDrop_GameDesc"						"Help Tinker catch the crates of automaton parts for assembly"
+		"DOTA_DarkCarnival_CrateDrop_Play"							"Play"
+		"DOTA_DarkCarnival_CrateDrop_HowToPlay"						"How To Play"
+		"DOTA_DarkCarnival_CrateDrop_HowToPlayInstructions"			"Catch the crates of automaton parts onto the platform, while avoiding the bombs. Drop too many crates and lose!<br><br> Use Arrow Keys to move and Space to store the crates already caught."
+		"DOTA_DarkCarnival_CrateDrop_CratesRemaining"				"Remaining"
+		"DOTA_DarkCarnival_CrateDrop_Score"							"Score : {d:current_score}"
+		"DOTA_DarkCarnival_CrateDrop_Level"							"Level"
+		"DOTA_DarkCarnival_CrateDrop_LevelComplete"					"Level Complete!"
+		"DOTA_DarkCarnival_CrateDrop_StartingLevel"					"Level {u:level}"
+		"DOTA_DarkCarnival_CrateDrop_LostCrates"					"Lost"
+		"DOTA_DarkCarnival_CrateDrop_Score_Label"					"Score"
+		"DOTA_DarkCarnival_CrateDrop_CurrentMultiplier"				"Multiplier : {f:current_multiplier}x"
+		"DOTA_DarkCarnival_CrateDrop_GameOver"						"Game Over"
+		"DOTA_DarkCarnival_CrateDrop_GameWon"						"You Won!"
+		"DOTA_DarkCarnival_CrateDrop_GameLost"						"You lost too many parts!"
+		"DOTA_DarkCarnival_CrateDrop_PotentialScoreLabel"			"Points"
+		
+
+		"DOTA_DarkCarnival_CrateDrop_TotalCratesCaught"				"Total Crates Caught"
+		"DOTA_DarkCarnival_CrateDrop_TotalCratesLost"				"Total Crates Lost"
+		"DOTA_DarkCarnival_CrateDrop_MaxHeight"						"Tallest stack of crates height"
+		"DOTA_DarkCarnival_CrateDrop_HighScores"					"High Scores"
+		"DOTA_DarkCarnival_CrateDrop_PlayAgain"						"Play Again"
+		"DOTA_DarkCarnival_CrateDrop_HeightBonus"					"Height Bonus"
+		"DOTA_DarkCarnival_CrateDrop_CratesRequired"				"Required For Next Level:\n {d:crates_required}"
+		"DOTA_DarkCarnival_CrateDrop_Failed"						"Failed"
+		"DOTA_DarkCarnival_CrateDrop_TryAgainButton"				"Try Again"
+		"DOTA_DarkCarnival_CrateDrop_Help_Move"						"Move"
+		"DOTA_DarkCarnival_CrateDrop_Help_Move_Details"				"Move the platform with the left and right arrow keys, and switch tracks with up and down arrow keys." 
+		"DOTA_DarkCarnival_CrateDrop_Help_Ability"					"Assemble"
+		"DOTA_DarkCarnival_CrateDrop_Help_Ability_Description"		"Use Space to instantly transport caught crates to the assemblers, scoring points for each part." 
+		"DOTA_DarkCarnival_CrateDrop_Scoring"						"Scoring" 
+		"DOTA_DarkCarnival_CrateDrop_Scoring_Desc"					"Every crate that was caught and collected with the Assemble ability grants 100,150 or 200 points, based on it's size and shape.\n\nIncrease the score multiplier by stacking crates as high as you can!" 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_1"					"Move Tinker's Platform left and right to catch crates full of Automaton Parts!" 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_2"					"Use Up and Down to warp and catch the crates on the opposite track." 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_3"					"Use Space Bar to collect the caught crates and score points!" 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_4"					" " 
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText1"				"Use the Space Bar when the crates are stacked high to get a greater multiplier!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText2"				"Beware of hazards that can explode if touched!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText3"				"Catch the Defense Matrix powerup to deflect bombs!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText4"				"Beware of bombs that disintigrate all crates!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText5"				"Restore lost lives with the Repair powerup!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText6"				"Barrels full of goop will slow you down!"
+		
+
+		
+		"DOTA_DarkCarnival_BlimpJump_Title"						"Blimp Jump"
+		"DOTA_DarkCarnival_BlimpJump_Subtitle"					"Get to the Blimp!"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Title_Won"		"You win!"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Title_Lost"		"Game Over"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_Won"		"You reached the Blimp."
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_Lost"	"You lost."
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_LostStoryMode"	"You did not reach the blimp."
+		"DOTA_DarkCarnival_EncounterStatus_BlimpJump"				"Dark Carnival: Blimp Jump"
+		
+		"DOTA_DarkCarnival_BlimpJump_Scoring"				"Only in Infinite mode.<br>Earn points by going higher and higher."
+		"DOTA_DarkCarnival_BlimpJump_PlayAgain"				"Try Again [Space]"
+
+		"DOTA_DarkCarnival_Encounter_BlimpJump_ReachTheBlimpRewardTitle" "Reach the Blimp"
+
+		"DOTA_DarkCarnival_BlimpJump_InfiniteModeLocked"					"Unlock by completing Story Mode."
+
+		"DOTA_DarkCarnival_BlimpJump_GoInfinite"						"Go Infinite"
+		"DOTA_DarkCarnival_BlimpJump_LeaveEncounter"					"Leave Encounter"
+		
+		"DOTA_DarkCarnival_BlimpJump_Controls_Move"					"Move"
+		"DOTA_DarkCarnival_BlimpJump_Controls_Move_Details"			"Move Slark Left and Right"
+		"DOTA_DarkCarnival_BlimpJump_Controls_ThrowShiv"			"Throw Shiv"
+		"DOTA_DarkCarnival_BlimpJump_Controls_ThrowShiv_Details"	"Throw Slark's Shiv"
+
+		"DOTA_DarkCarnival_BlimpJump_Modes_StoryMode"			"Play Story"
+		"DOTA_DarkCarnival_BlimpJump_Modes_StoryMode_Details"	"Reach the Blimp at the top."
+
+		"DOTA_DarkCarnival_BlimpJump_Modes_InfiniteMode"			"Play Infinite"
+		"DOTA_DarkCarnival_BlimpJump_Modes_InfiniteMode_Details"	"Go as high as you can, shoot for the stars!"
+
+		"DOTA_DarkCarnival_BlimpJump_Resume"						"Resume [ESC]"
+						
 	}
 } 

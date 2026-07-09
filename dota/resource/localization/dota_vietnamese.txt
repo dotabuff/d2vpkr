@@ -24550,6 +24550,9 @@ Khiêu khích đặc biệt cho Techies"
 	"DOTA_Hud_StunBar" "{s:state}"
 	"DOTA_Hud_SpecItemHeroName"	"{g:dota_hero_name:hero_id} cấp <font color='#FFFFFF'>{d:player_level}</font>"
 
+	// The local client has paused spectating playback, and can resume when they choose
+	"DOTA_Hud_Paused_Spectating_Local"			"Tạm dừng phát lại"
+	// Someone other than our local client has paused the game
 	"DOTA_Hud_Paused_Spectating"				"Một người chơi đã tạm dừng trận đấu"
 	"DOTA_Hud_Paused"							"Trận đấu hiện tạm dừng"
 	"DOTA_Hud_Unpausing"						"Trận đấu tiếp tục"
@@ -46382,6 +46385,8 @@ Nếu bạn không cảm thấy đủ tập trung chú ý để có thể đưa 
 		"DOTA_Overworld_Inventory_HeroTrayPremium"		"Vé <b>Phòng Bí Mật</b> nằm trong <b>{s:expansion_pack_name}</b>, có bán tại cửa hàng Dark Carnival. Các vé này được dùng để mở khóa phòng đặc biệt với phần thưởng độc đáo."
 		"DOTA_Overworld_Inventory_HeroTrayHidden"		"Vé đặc biệt này được nhận từ một lần gặp gỡ."
 		"DOTA_Overworld_Inventory_PathUnlocker"			"Vé <b>mở khóa đường</b> có thể mở một nút mà không tốn các loại vé yêu cầu. Dùng chúng bằng cách nhấp vào nút <b>DÙNG MỞ KHÓA</b> bên dưới chi phí cho mỗi nút."
+		"DOTA_Overworld_Inventory_ScrapToken"			"Nhận vé <b>{s:scrap_token_name}</b> với mỗi trận đấu bạn chơi, dù thắng hay thua.<br>Chúng có thể được trao đổi tại <b>Máy đổi vé</b> để lấy một vé tùy chọn."
+		
 		"DOTA_Crownfall_Encounter_UnableToClaimReward"	"Không thể nhận thưởng"
 		"DOTA_Crownfall_Encounter_TokenExchangeFailed"	"Trao đổi vé thất bại"
 		
@@ -47487,6 +47492,7 @@ Nếu bạn không cảm thấy đủ tập trung chú ý để có thể đưa 
 		"DOTA_TalentContent_RejectReason_VoiceQuiet"					"Lời thoại {d:voiceline_number} có âm lượng quá nhỏ"
 		"DOTA_TalentContent_RejectReason_VoiceLength"					"Lời thoại {d:voiceline_number} quá dài"
 		"DOTA_TalentContent_RejectReason_VoiceAbrasive"					"Lời thoại {d:voiceline_number} quá cộc cằn hoặc thô thiển"
+		"DOTA_TalentContent_RejectReason_VoiceAI"						"Lời thoại {d:voiceline_number} được tạo bằng Trí tuệ nhân tạo tạo sinh"
 		"DOTA_TalentContent_Approval_Photo"								"Ảnh của bạn đã được duyệt"
 		"DOTA_TalentContent_Approval_Auto"								"Chữ ký của bạn đã được duyệt"
 		"DOTA_TalentContent_Approval_Voice"								"Lời thoại {d:voiceline_number} đã được duyệt"
@@ -50654,7 +50660,7 @@ Nếu bạn không cảm thấy đủ tập trung chú ý để có thể đưa 
 		"DOTA_DarkCarnival_Encounter_PickLock_Description"	"Giúp Slark thoát khỏi xà lim!"
 		"DOTA_DarkCarnival_Encounter_SlarkJailbreak"				"Phá giày"
 		"DOTA_DarkCarnival_Encounter_SlarkJailbreak_Description"	"Thu đồ! Phá giày!"
-		"DOTA_DarkCarnival_Encounter_FriendGifting"					"Tặng quà bạn bè"
+		"DOTA_DarkCarnival_Encounter_FriendGifting"					"Trao đổi vật tư bất tiện"
 		"DOTA_DarkCarnival_Encounter_FriendGifting_Description"		"Tặng vé bạn không cần cho bạn bè!"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter"					"Lò nung vé"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_Description"		"Luyện lửa nung chảy hết những thứ bạn không nên nung chảy!"
@@ -50665,7 +50671,6 @@ Nếu bạn không cảm thấy đủ tập trung chú ý để có thể đưa 
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_NothingLeft"		"Bạn đã nung đúc tất cả mọi thứ mà lò nung vé hiện có thể tạo ra."
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_SeeingStone:f"					"{num_seeing_stones} đá tiên tri"
 
-		
 		"DOTA_CandyShopName_Dark_Carnival"		"Kẹo phẩm Carnival"
 		"DOTA_DarkCarnival_View_Candyworks"		"Xem Kẹo Phẩm Carnival"
 		"DOTA_DarkCarnivalStore_View"			"Xem <b>Cửa hàng Dark Carnival</b>"
@@ -50718,6 +50723,7 @@ Nếu bạn không cảm thấy đủ tập trung chú ý để có thể đưa 
 		"DOTA_DarkCarnival_SecretAdmirer_Gift_Tooltip"	"Bạn có thể tặng tối đa 5 vé mỗi ngày cho bạn bè của mình."
 		"DOTA_DarkCarnival_SecretAdmirer_GiftNoneNeeded"		"Bạn của bạn không cần vé nào!"
 		"DOTA_DarkCarnival_SecretAdmirer_NoMoreAvailable"	"Bạn hết lượt tặng quà cho hôm nay"
+		"DOTA_DarkCarnival_SecretAdmirer_CannotSendAnymore"	"Bạn không thể gửi thêm quà tặng hôm nay"
 		"DOTA_DarkCarnival_SecretAdmirer_GiftAvailableTooltip"	"Một người bạn đã tặng quà cho bạn!"
 
 		"DOTA_DarkCarnival_SecretRoomsPack_RequiredForRewardsClaims"		"Cần có gói phòng bí mật.<br>Nhấp để mua"
@@ -51034,12 +51040,17 @@ Nếu bạn không cảm thấy đủ tập trung chú ý để có thể đưa 
 
 		"DOTA_DarkCarnival_ChatWheelMessage"							"Thông điệp vòng tán gẫu"
 
-		"dota_chatwheel_translation_darkcarnival_money_and_bones"		"TIỀN VÀ XƯƠNG! TIỀN VÀ XƯƠNG!"
-		"dota_chatwheel_translation_darkcarnival_are_we_the_idiots"		"Tụi này là lũ ngốc hở?"
-		"dota_chatwheel_translation_darkcarnival_wow"					"Wow!"
+		"dota_chatwheel_translation_darkcarnival_money_and_bones"				"TIỀN VÀ XƯƠNG! TIỀN VÀ XƯƠNG!"
+		"dota_chatwheel_translation_darkcarnival_are_we_the_idiots"				"Tụi này là lũ ngốc hở?"
+		"dota_chatwheel_translation_darkcarnival_wow"							"Wow!"
+		"dota_chatwheel_translation_darkcarnival_its_not_that_funny"			"Có vui gì đâu."
+		"dota_chatwheel_translation_darkcarnival_im_sorry_who_are_you_again"	"Tôi... xin thứ lỗi, cậu là ai vậy?"
+
 		"dota_chatwheel_source_fishwitch"								"Grindlplit"
 		"dota_chatwheel_source_hoodwink"								"Hoodwink"
 		"dota_chatwheel_source_clown"									"Clarence"
+		"dota_chatwheel_source_cogliacci"								"Cogliacci"
+		"dota_chatwheel_source_lorenzo"									"Lorenzo"
 
 		"DOTA_DarkCarnival_HeroHighlightTooltip_TicketsNeeded"			"Vé cần có"
 		"DOTA_DarkCarnival_HeroHighlightTooltip_NoTicketsNeeded"		"Không cần vé"
@@ -51047,6 +51058,85 @@ Nếu bạn không cảm thấy đủ tập trung chú ý để có thể đưa 
 		"DOTA_Axe_Missing"			"Axe vắng mặt và không thể tham gia"
 
 		"DOTA_DarkCarnival_Overworld_Unlock"						"Mở khóa"
+"DOTA_DarkCarnival_Encounter_CrateDrop_Description"	"Bắt hòm!"
+		
+		"DOTA_DarkCarnival_Encounter_BlimpJump"	"Nhảy khí cầu"
+		"DOTA_DarkCarnival_Encounter_BlimpJump_Description"	"Đến khinh khí cầu!"
+		
+		"DOTA_Overworld_EncounterShortcut_blimp_jump"		"Nhảy khí cầu"
+		"DOTA_Overworld_EncounterShortcut_crate_drop"		"Lắp ráp người máy"
+		
+		// Dark Carnival: Crate Drop
+		"DOTA_DarkCarnival_CrateDrop_Title"							"Lắp ráp người máy"
+		"DOTA_DarkCarnival_CrateDrop_GameDesc"						"Giúp Tinker bắt các hòm chứa linh kiện người máy để lắp ráp"
+		"DOTA_DarkCarnival_CrateDrop_Play"							"Chơi"
+		"DOTA_DarkCarnival_CrateDrop_HowToPlay"						"Hướng dẫn chơi"
+		"DOTA_DarkCarnival_CrateDrop_HowToPlayInstructions"			"Bắt các hòm chứa linh kiện người máy trên bệ, đồng thời tránh bom. Rớt quá nhiều hòm là thua!<br><br> Dùng phím mũi tên để di chuyển và Space để cất các hòm đã bắt được."
+		"DOTA_DarkCarnival_CrateDrop_CratesRemaining"				"Còn lại"
+		"DOTA_DarkCarnival_CrateDrop_Score"							"Điểm: {d:current_score}"
+		"DOTA_DarkCarnival_CrateDrop_Level"							"Cấp độ"
+		"DOTA_DarkCarnival_CrateDrop_LevelComplete"					"Hoàn thành màn!"
+		"DOTA_DarkCarnival_CrateDrop_StartingLevel"					"Cấp {u:level}"
+		"DOTA_DarkCarnival_CrateDrop_LostCrates"					"Thua"
+		"DOTA_DarkCarnival_CrateDrop_Score_Label"					"Điểm số"
+		"DOTA_DarkCarnival_CrateDrop_CurrentMultiplier"				"Hệ số : {f:current_multiplier}x"
+		"DOTA_DarkCarnival_CrateDrop_GameOver"						"Trò chơi kết thúc"
+		"DOTA_DarkCarnival_CrateDrop_GameWon"						"Bạn đã thắng!"
+		"DOTA_DarkCarnival_CrateDrop_GameLost"						"Bạn đã mất quá nhiều linh kiện!"
+		"DOTA_DarkCarnival_CrateDrop_PotentialScoreLabel"			"Điểm"
+		
 
+		"DOTA_DarkCarnival_CrateDrop_TotalCratesCaught"				"Tổng số hòm bắt"
+		"DOTA_DarkCarnival_CrateDrop_TotalCratesLost"				"Tổng số hòm mất"
+		"DOTA_DarkCarnival_CrateDrop_MaxHeight"						"Hòm xếp chồng cao nhất"
+		"DOTA_DarkCarnival_CrateDrop_HighScores"					"Điểm cao"
+		"DOTA_DarkCarnival_CrateDrop_PlayAgain"						"Chơi lại"
+		"DOTA_DarkCarnival_CrateDrop_HeightBonus"					"Thưởng chiều cao"
+		"DOTA_DarkCarnival_CrateDrop_CratesRequired"				"Cần cho cấp tiếp theo:\n {d:crates_required}"
+		"DOTA_DarkCarnival_CrateDrop_Failed"						"Thất bại"
+		"DOTA_DarkCarnival_CrateDrop_TryAgainButton"				"Thử lại"
+		"DOTA_DarkCarnival_CrateDrop_Help_Move"						"Di chuyển"
+		"DOTA_DarkCarnival_CrateDrop_Help_Move_Details"				"Di chuyển bệ với mũi tên trái phải, và chuyển đường ray với mũi tên lên xuống." 
+		"DOTA_DarkCarnival_CrateDrop_Help_Ability"					"Lắp ráp"
+		"DOTA_DarkCarnival_CrateDrop_Help_Ability_Description"		"Dùng Space để lập tức chuyển số hòm đã bắt được đến dây chuyền, ghi điểm cho mỗi linh kiện." 
+		"DOTA_DarkCarnival_CrateDrop_Scoring"						"Ghi điểm" 
+		"DOTA_DarkCarnival_CrateDrop_Scoring_Desc"					"Mỗi hòm bắt và thu thập được với kỹ năng Lắp ráp cho 100, 150 hay 200 điểm, dựa trên kích thước và hình dáng của nó.\n\nTăng hệ số điểm bằng cách chồng hòm thật cao!" 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_1"					"Di chuyển bệ của Tinker qua trái phải để bắt các hòm chứa linh kiện người máy!" 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_2"					"Dùng phím lên xuống để dịch chuyển và bắt các hòm ở đường ray đối diện." 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_3"					"Dùng Space Bar để thu thập các hòm đã bắt và ghi điểm!" 
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText2"				"Cẩn thận chướng ngại vật phát nổ nếu chạm phải!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText3"				"Bắt tăng lực Defense Matrix để đỡ bom!"
+		"DOTA_DarkCarnival_BlimpJump_Title"						"Nhảy khí cầu"
+		"DOTA_DarkCarnival_BlimpJump_Subtitle"					"Đến khinh khí cầu!"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Title_Won"		"Bạn đã thắng!"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Title_Lost"		"Trò chơi kết thúc"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_Won"		"Bạn đã đến khinh khí cầu."
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_Lost"	"Bạn đã thua."
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_LostStoryMode"	"Bạn không đến được khinh khí cầu."
+		"DOTA_DarkCarnival_EncounterStatus_BlimpJump"				"Dark Carnival: Nhảy khinh khí cầu"
+		
+		"DOTA_DarkCarnival_BlimpJump_Scoring"				"Chỉ có trong chế độ vô tận.<br>Kiếm điểm bằng cách leo cao hơn và cao hơn."
+		"DOTA_DarkCarnival_BlimpJump_PlayAgain"				"Thử lại [Space]"
+
+		"DOTA_DarkCarnival_Encounter_BlimpJump_ReachTheBlimpRewardTitle" "Tới khinh khí cầu"
+
+		"DOTA_DarkCarnival_BlimpJump_InfiniteModeLocked"					"Mở khóa bằng hoàn thành chế độ cốt truyện."
+
+		"DOTA_DarkCarnival_BlimpJump_GoInfinite"						"Đến vô tận"
+		"DOTA_DarkCarnival_BlimpJump_LeaveEncounter"					"Rời gặp mặt"
+		
+		"DOTA_DarkCarnival_BlimpJump_Controls_Move"					"Di chuyển"
+		"DOTA_DarkCarnival_BlimpJump_Controls_Move_Details"			"Di chuyển Slark qua trái và phải"
+		"DOTA_DarkCarnival_BlimpJump_Controls_ThrowShiv"			"Ném shiv"
+		"DOTA_DarkCarnival_BlimpJump_Controls_ThrowShiv_Details"	"Ném shiv của Slark"
+
+		"DOTA_DarkCarnival_BlimpJump_Modes_StoryMode"			"Chơi cốt truyện"
+		"DOTA_DarkCarnival_BlimpJump_Modes_StoryMode_Details"	"Nhảy đến khinh khí cầu trên đỉnh."
+
+		"DOTA_DarkCarnival_BlimpJump_Modes_InfiniteMode"			"Chơi vô tận"
+		"DOTA_DarkCarnival_BlimpJump_Modes_InfiniteMode_Details"	"Leo càng cao càng tốt, nhắm tới các vì sao luôn!"
+
+		"DOTA_DarkCarnival_BlimpJump_Resume"						"Tiếp tục [ESC]"
+						
 	}
 } 

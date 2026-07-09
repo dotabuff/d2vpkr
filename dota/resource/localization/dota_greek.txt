@@ -24527,7 +24527,10 @@
 	"DOTA_Hud_StunBar" "{s:state}"
 	"DOTA_Hud_SpecItemHeroName"	"Επίπεδο <font color='#FFFFFF'>{d:player_level}</font> {g:dota_hero_name:hero_id}"
 
-	"DOTA_Hud_Paused_Spectating"				"ΕΝΑΣ ΠΑΙΚΤΗΣ ΕΧΕΙ ΠΑΥΣΕΙ ΤΟ ΠΑΙΧΝΙΔΙ"
+	// The local client has paused spectating playback, and can resume when they choose
+	"DOTA_Hud_Paused_Spectating_Local"			"Έγινε παύση της επανάληψης"
+	// Someone other than our local client has paused the game
+	"DOTA_Hud_Paused_Spectating"				"ΕΓΙΝΕ ΠΑΥΣΗ ΤΟΥ ΠΑΙΧΝΙΔΙΟΥ ΑΠΟ ΠΑΙΚΤΗ"
 	"DOTA_Hud_Paused"							"ΠΑΙΧΝΙΔΙ ΣΕ ΠΑΥΣΗ"
 	"DOTA_Hud_Unpausing"						"ΕΠΑΝΑΦΟΡΑ"
 
@@ -46319,7 +46322,7 @@
 		"DOTA_Overworld_Inventory_HeroTrayPremium"		"Τα εισιτήρια <b>Μυστικού Δωματίου</b> είναι από το «<b>{s:expansion_pack_name}</b>» και είναι διαθέσιμα στο Κατάστημα Σκοτεινού Τσίρκου. Αυτά τα εισιτήρια μπορούν να ξεκλειδώσουν ειδικά δωμάτια με μοναδικές ανταμοιβές."
 		"DOTA_Overworld_Inventory_HeroTrayHidden"		"Κερδίσατε αυτό το ειδικό κουπόνι σε μια συνάντηση."
 		"DOTA_Overworld_Inventory_PathUnlocker"			"Τα κουπόνια <b>Ξεκλείδωμα Διαδρομής</b> μπορούν να ξεκλειδώσουν έναν κόμβο χωρίς να γίνει χρήση των κουπονιών που απαιτούνται κανονικά. Χρησιμοποιήστε τα κάνοντας κλικ στο κουμπί <b>ΧΡΗΣΗ ΞΕΚΛΕΙΔΩΜΑΤΟΣ</b> κάτω από την τιμή του κόμβου."
-		"DOTA_Overworld_Inventory_ScrapToken"			"Κερδίστε <b>{s:scrap_token_name}</b> μάρκες για κάθε παιχνίδι που παίζετε, είτε νικήσετε είτε χάσετε.<br>Μπορείτε να τις ανταλλάξετε στον <b>Έμπορο Μαρκών</b> για να λάβετε μια μάρκα ήρωα της επιλογής σας."
+		"DOTA_Overworld_Inventory_ScrapToken"			"Κερδίστε <b>{s:scrap_token_name}</b> κουπόνια για κάθε παιχνίδι που παίζετε, είτε νικήσετε είτε χάσετε.<br>Μπορείτε να τα ανταλλάξετε στον <b>Έμπορο Κουπονιών</b> για να λάβετε ένα κουπόνι της επιλογής σας."
 		
 		"DOTA_Crownfall_Encounter_UnableToClaimReward"	"Αδυναμία απόκτησης ανταμοιβής"
 		"DOTA_Crownfall_Encounter_TokenExchangeFailed"	"Αποτυχία ανταλλαγής κουπονιών"
@@ -50590,8 +50593,10 @@
 		"DOTA_DarkCarnival_Encounter_PickLock_Description"	"Βοηθήστε τον Slark να αποδράσει από το κελί του!"
 		"DOTA_DarkCarnival_Encounter_SlarkJailbreak"				"Μποτοθραύστης"
 		"DOTA_DarkCarnival_Encounter_SlarkJailbreak_Description"	"Συλλέξτε λάφυρα! Καταστρέψτε μπότες!"
-		"DOTA_DarkCarnival_Encounter_FriendGifting"					"ΔΩΡΑ ΣΕ ΦΙΛΟΥΣ"
+		"DOTA_DarkCarnival_Encounter_FriendGifting"					"Ανταλλακτήριο Ανεπιθύμητων Υλικών"
 		"DOTA_DarkCarnival_Encounter_FriendGifting_Description"		"Χαρίστε κουπόνια που δεν χρειάζεστε στους φίλους σας!"
+		"DOTA_DarkCarnival_Encounter_FriendGifting_NoNeed"			"Ο φίλος σας δεν χρειάζεται κανένα κουπόνι αυτήν τη στιγμή"
+		"DOTA_DarkCarnival_Encounter_FriendGifting_NoFriendSelected"	"Επιλέξτε έναν φίλο για να δείτε τα κουπόνια που χρειάζεται"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter"					"Κλίβανος κουπονιών"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_Description"		"Λιώστε πράγματα που πιθανότατα δεν θα έπρεπε να λιώσετε!"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_SmeltButton"		"ΤΗΞΗ"
@@ -50601,7 +50606,6 @@
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_NothingLeft"		"Έχετε λιώσει όλα όσα μπορεί να δημιουργήσει αυτήν τη στιγμή ο κλίβανος κουπονιών."
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_SeeingStone:f"					"{num_seeing_stones, plural, one{{d:num_seeing_stones} κρυστάλλινη σφαίρα} other{{d:num_seeing_stones} κρυστάλλινες σφαίρες}}"
 
-		
 		"DOTA_CandyShopName_Dark_Carnival"		"ΕΡΓΑΣΤΗΡΙ ΓΛΥΚΩΝ ΤΣΙΡΚΟΥ"
 		"DOTA_DarkCarnival_View_Candyworks"		"Προβολή Εργαστηρίου Γλυκών Τσίρκου"
 		"DOTA_DarkCarnivalStore_View"			"ΠΡΟΒΟΛΗ ΤΟΥ <b>ΚΑΤΑΣΤΗΜΑΤΟΣ ΣΚΟΤΕΙΝΟΥ ΤΡΕΝΟΥ</b>"
@@ -50629,7 +50633,7 @@
 		"DOTA_DarkCarnivalRewardType_Oracle"				"ΚΡΥΣΤΑΛΛΙΝΕΣ ΣΦΑΙΡΕΣ"
 		"DOTA_DarkCarnivalRewardType_CompletionSet"			"ΣΕΤ ΟΛΟΚΛΗΡΩΣΗΣ ΧΑΡΤΗ"
 
-		"DOTA_DarkCarnivalReward_Act1_Title"				"Ανταμοιβές Ταχείας Μεσονυκτίου"
+		"DOTA_DarkCarnivalReward_Act1_Title"				"ΑΝΤΑΜΟΙΒΕΣ ΤΑΧΕΙΑΣ ΜΕΣΟΝΥΚΤΙΟΥ"
 		"DOTA_DarkCarnivalReward_View_Treasure"				"Προβολή θησαυρού"
 
 		"DOTA_DarkCarnivalRewardType_Candy_Description"				"Το Εργαστήρι Γλυκών επέστρεψε μετά από λαϊκή απαίτηση για να σας βοηθήσει να μεταμορφώσετε τα παραπανίσια γλυκά που προκαλούν τερηδόνα σε έναν σωρό από νέα σετ ηρώων, ματάκια, μεταφορείς και άλλα."
@@ -50641,7 +50645,7 @@
 		"DOTA_DarkCarnivalReward_ShowcaseDecorations"		"Διακοσμήσεις παρουσίασης"
 		"DOTA_DarkCarnivalReward_ShowcaseDecoration_Locked"		"Ξεκλειδώστε αυτές τις διακοσμήσεις παρουσίασης εξερευνώντας τον χάρτη."
 
-		"DOTA_DarkCarnival_SeeTheOracle"							"Επισκεφτείτε τον Μάντη"
+		"DOTA_DarkCarnival_SeeTheOracle"							"ΕΠΙΣΚΕΦΤΕΙΤΕ ΤΟΝ ΜΑΝΤΗ"
 		"DOTA_DarkCarnival_FreeTrackLabel"							"Κύρια Ιστορία"
 		"DOTA_DarkCarnival_SecretRoomLabel"							"Μυστικά Δωμάτια"
 
@@ -50654,6 +50658,7 @@
 		"DOTA_DarkCarnival_SecretAdmirer_Gift_Tooltip"	"Μπορείτε να χαρίσετε έως και 5 κουπόνια την ημέρα στους φίλους σας."
 		"DOTA_DarkCarnival_SecretAdmirer_GiftNoneNeeded"		"Ο φίλος σας δεν χρειάζεται κανένα κουπόνι!"
 		"DOTA_DarkCarnival_SecretAdmirer_NoMoreAvailable"	"Δεν έχετε άλλα διαθέσιμα δώρα σήμερα"
+		"DOTA_DarkCarnival_SecretAdmirer_CannotSendAnymore"	"Δεν μπορείτε να στείλετε περισσότερα δώρα σήμερα"
 		"DOTA_DarkCarnival_SecretAdmirer_GiftAvailableTooltip"	"Ένας φίλος σας σάς έστειλε ένα δώρο!"
 
 		"DOTA_DarkCarnival_SecretRoomsPack_RequiredForRewardsClaims"		"Απαιτείται το πακέτο Μυστικών Δωματίων.<br>Κάντε κλικ για αγορά"
@@ -50970,12 +50975,17 @@
 
 		"DOTA_DarkCarnival_ChatWheelMessage"							"Μήνυμα ροδέλας συνομιλίας"
 
-		"dota_chatwheel_translation_darkcarnival_money_and_bones"		"ΛΕΦΤΑ ΚΑΙ ΟΣΤΑ! ΛΕΦΤΑ ΚΑΙ ΟΣΤΑ!"
-		"dota_chatwheel_translation_darkcarnival_are_we_the_idiots"		"Οι βλαμμένοι είμαστε εμείς;"
-		"dota_chatwheel_translation_darkcarnival_wow"					"Πω πω!"
+		"dota_chatwheel_translation_darkcarnival_money_and_bones"				"ΛΕΦΤΑ ΚΑΙ ΟΣΤΑ! ΛΕΦΤΑ ΚΑΙ ΟΣΤΑ!"
+		"dota_chatwheel_translation_darkcarnival_are_we_the_idiots"				"Οι βλαμμένοι είμαστε εμείς;"
+		"dota_chatwheel_translation_darkcarnival_wow"							"Πω πω!"
+		"dota_chatwheel_translation_darkcarnival_its_not_that_funny"			"Δεν είναι και τόσο αστείο."
+		"dota_chatwheel_translation_darkcarnival_im_sorry_who_are_you_again"	"Συγγνώμη... ποιος είπαμε ότι είσαι;"
+
 		"dota_chatwheel_source_fishwitch"								"Γκρίντλπλιτ"
 		"dota_chatwheel_source_hoodwink"								"Χούντγουινκ"
 		"dota_chatwheel_source_clown"									"Κλάρενς"
+		"dota_chatwheel_source_cogliacci"								"ΚΟΛΙΑΤΣΙ"
+		"dota_chatwheel_source_lorenzo"									"ΛΟΡΕΝΤΖΟ"
 
 		"DOTA_DarkCarnival_HeroHighlightTooltip_TicketsNeeded"			"Απαιτούμενα κουπόνια"
 		"DOTA_DarkCarnival_HeroHighlightTooltip_NoTicketsNeeded"		"Δεν απαιτούνται κουπόνια"
@@ -50984,5 +50994,95 @@
 
 		"DOTA_DarkCarnival_Overworld_Unlock"						"ΞΕΚΛΕΙΔΩΜΑ"
 
+		// Dark Carnival Chapter 2
+		
+		"DOTA_DarkCarnival_Encounter_CrateDrop"	"ΣΥΝΑΡΜΟΛΟΓΗΣΗ ΡΟΜΠΟΤ"
+		"DOTA_DarkCarnival_Encounter_CrateDrop_Description"	"Πιάστε τα κιβώτια!"
+		
+		"DOTA_DarkCarnival_Encounter_BlimpJump"	"ΣΑΛΤΟ ΓΙΑ ΤΟ ΑΕΡΟΠΛΟΙΟ"
+		"DOTA_DarkCarnival_Encounter_BlimpJump_Description"	"Φτάστε στο αερόπλοιο!"
+		
+		"DOTA_Overworld_EncounterShortcut_blimp_jump"		"ΣΑΛΤΟ ΓΙΑ ΤΟ ΑΕΡΟΠΛΟΙΟ"
+		"DOTA_Overworld_EncounterShortcut_crate_drop"		"ΣΥΝΑΡΜΟΛΟΓΗΣΗ ΡΟΜΠΟΤ"
+		
+		// Dark Carnival: Crate Drop
+		"DOTA_DarkCarnival_CrateDrop_Title"							"ΣΥΝΑΡΜΟΛΟΓΗΣΗ ΡΟΜΠΟΤ"
+		"DOTA_DarkCarnival_CrateDrop_GameDesc"						"Βοηθήστε τον Τίνκερ να πιάσει τα κιβώτια με τα εξαρτήματα για τη συναρμολόγηση των ρομπότ"
+		"DOTA_DarkCarnival_CrateDrop_Play"							"ΠΑΙΞΤΕ"
+		"DOTA_DarkCarnival_CrateDrop_HowToPlay"						"ΠΩΣ ΝΑ ΠΑΙΞΕΤΕ"
+		"DOTA_DarkCarnival_CrateDrop_HowToPlayInstructions"			"Πιάστε τα κιβώτια με τα εξαρτήματα ρομπότ που πέφτουν στην πλατφόρμα, αποφεύγοντας παράλληλα τις βόμβες. Αν αφήσετε να πέσουν κάτω πάρα πολλά κιβώτια, χάνετε!<br><br> Χρησιμοποιήστε τα βελάκια για να μετακινηθείτε και το πλήκτρο διαστήματος για να αποθηκεύσετε τα κιβώτια που έχετε πιάσει ήδη."
+		"DOTA_DarkCarnival_CrateDrop_CratesRemaining"				"ΑΠΟΜΕΝΟΥΝ"
+		"DOTA_DarkCarnival_CrateDrop_Score"							"Σκορ: {d:current_score}"
+		"DOTA_DarkCarnival_CrateDrop_Level"							"ΕΠΙΠΕΔΟ"
+		"DOTA_DarkCarnival_CrateDrop_LevelComplete"					"Ολοκλήρωση επιπέδου!"
+		"DOTA_DarkCarnival_CrateDrop_StartingLevel"					"Επίπεδο {u:level}"
+		"DOTA_DarkCarnival_CrateDrop_LostCrates"					"ΧΑΘΗΚΑΝ"
+		"DOTA_DarkCarnival_CrateDrop_Score_Label"					"ΣΚΟΡ"
+		"DOTA_DarkCarnival_CrateDrop_CurrentMultiplier"				"Πολλαπλασιαστής: x{f:current_multiplier}"
+		"DOTA_DarkCarnival_CrateDrop_GameOver"						"ΤΕΛΟΣ"
+		"DOTA_DarkCarnival_CrateDrop_GameWon"						"Κερδίσατε!"
+		"DOTA_DarkCarnival_CrateDrop_GameLost"						"Χάσατε πάρα πολλά εξαρτήματα!"
+		"DOTA_DarkCarnival_CrateDrop_PotentialScoreLabel"			"ΠΟΝΤΟΙ"
+		
+
+		"DOTA_DarkCarnival_CrateDrop_TotalCratesCaught"				"Σύνολο κιβωτίων που πιάσατε"
+		"DOTA_DarkCarnival_CrateDrop_TotalCratesLost"				"Σύνολο κιβωτίων που χάσατε"
+		"DOTA_DarkCarnival_CrateDrop_MaxHeight"						"Ύψος μεγαλύτερης στοίβας κιβωτίων"
+		"DOTA_DarkCarnival_CrateDrop_HighScores"					"ΥΨΗΛΟΤΕΡΕΣ ΕΠΙΔΟΣΕΙΣ"
+		"DOTA_DarkCarnival_CrateDrop_PlayAgain"						"ΠΑΙΞΤΕ ΞΑΝΑ"
+		"DOTA_DarkCarnival_CrateDrop_HeightBonus"					"Μπόνους ύψους"
+		"DOTA_DarkCarnival_CrateDrop_CratesRequired"				"Απαιτούνται για το επόμενο επίπεδο:\n {d:crates_required}"
+		"DOTA_DarkCarnival_CrateDrop_Failed"						"Αποτυχία"
+		"DOTA_DarkCarnival_CrateDrop_TryAgainButton"				"ΠΡΟΣΠΑΘΗΣΤΕ ΞΑΝΑ"
+		"DOTA_DarkCarnival_CrateDrop_Help_Move"						"ΚΙΝΗΣΗ"
+		"DOTA_DarkCarnival_CrateDrop_Help_Move_Details"				"Μετακινήστε την πλατφόρμα με το αριστερό και δεξί βελάκι και αλλάξτε γραμμή με το πάνω και κάτω βελάκι." 
+		"DOTA_DarkCarnival_CrateDrop_Help_Ability"					"ΣΥΝΑΡΜΟΛΟΓΗΣΗ"
+		"DOTA_DarkCarnival_CrateDrop_Help_Ability_Description"		"Χρησιμοποιήστε το πλήκτρο διαστήματος για να μεταφέρετε άμεσα τα κιβώτια που πιάσατε στους συναρμολογητές, κερδίζοντας πόντους για κάθε εξάρτημα." 
+		"DOTA_DarkCarnival_CrateDrop_Scoring"						"ΒΑΘΜΟΛΟΓΗΣΗ" 
+		"DOTA_DarkCarnival_CrateDrop_Scoring_Desc"					"Κάθε κιβώτιο που πιάνετε και συλλέγετε με την ικανότητα συναρμολόγησης παρέχει 100, 150 ή 200 πόντους, βάσει του μεγέθους και του σχήματός του.\n\nΑυξήστε τον πολλαπλασιαστή βαθμολόγησης, στοιβάζοντας κιβώτια όσο πιο ψηλά μπορείτε!" 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_1"					"Μετακινήστε την πλατφόρμα του Τίνκερ αριστερά και δεξιά για να πιάσετε κιβώτια γεμάτα με εξαρτήματα ρομπότ!" 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_2"					"Χρησιμοποιήστε τα βελάκια πάνω και κάτω για να τηλεμεταφερθείτε και να πιάσετε τα κιβώτια στην άλλη γραμμή." 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_3"					"Χρησιμοποιήστε το πλήκτρο διαστήματος για να συλλέξετε τα κιβώτια που πιάσατε και να κερδίσετε πόντους!" 
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText1"				"Χρησιμοποιήστε το πλήκτρο διαστήματος όταν η στοίβα των κιβωτίων είναι μεγάλη για να λάβετε μεγαλύτερο πολλαπλασιαστή!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText2"				"Προσοχή στα επικίνδυνα φορτία που μπορούν να εκραγούν αν τα αγγίξετε!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText3"				"Πιάστε την ενίσχυση Defense Matrix για να αποκρούσετε τις βόμβες!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText4"				"Προσοχή στις βόμβες που εξαϋλώνουν όλα τα κιβώτια!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText5"				"Επαναφέρετε τις χαμένες ζωές με την ενίσχυση Repair!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText6"				"Τα βαρέλια γεμάτα γλίτσα σάς επιβραδύνουν!"
+		
+
+		
+		"DOTA_DarkCarnival_BlimpJump_Title"						"ΣΑΛΤΟ ΓΙΑ ΤΟ ΑΕΡΟΠΛΟΙΟ"
+		"DOTA_DarkCarnival_BlimpJump_Subtitle"					"Φτάστε στο αερόπλοιο!"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Title_Won"		"ΚΕΡΔΙΣΑΤΕ!"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Title_Lost"		"ΤΕΛΟΣ"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_Won"		"Φτάσατε στο αερόπλοιο."
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_Lost"	"Χάσατε."
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_LostStoryMode"	"Δεν φτάσατε στο αερόπλοιο."
+		"DOTA_DarkCarnival_EncounterStatus_BlimpJump"				"Σκοτεινό Τσίρκο: Σάλτο για το αερόπλοιο"
+		
+		"DOTA_DarkCarnival_BlimpJump_Scoring"				"Μόνο σε λειτουργία απείρου.<br>Κερδίστε πόντους πηγαίνοντας όλο και πιο ψηλά."
+		"DOTA_DarkCarnival_BlimpJump_PlayAgain"				"ΔΟΚΙΜΑΣΤΕ ΞΑΝΑ [ΠΛ. ΔΙΑΣΤΗΜΑΤΟΣ]"
+
+		"DOTA_DarkCarnival_Encounter_BlimpJump_ReachTheBlimpRewardTitle" "Φτάστε στο αερόπλοιο"
+
+		"DOTA_DarkCarnival_BlimpJump_InfiniteModeLocked"					"Ξεκλειδώνεται ολοκληρώνοντας τη λειτουργία ιστορίας."
+
+		"DOTA_DarkCarnival_BlimpJump_GoInfinite"						"ΛΕΙΤΟΥΡΓΙΑ ΑΠΕΙΡΟΥ"
+		"DOTA_DarkCarnival_BlimpJump_LeaveEncounter"					"ΕΞΟΔΟΣ ΑΠΟ ΤΗ ΔΟΚΙΜΑΣΙΑ"
+		
+		"DOTA_DarkCarnival_BlimpJump_Controls_Move"					"ΜΕΤΑΚΙΝΗΣΗ"
+		"DOTA_DarkCarnival_BlimpJump_Controls_Move_Details"			"Μετακινήστε τον Slark αριστερά και δεξιά"
+		"DOTA_DarkCarnival_BlimpJump_Controls_ThrowShiv"			"ΡΙΨΗ ΜΑΧΑΙΡΙΟΥ"
+		"DOTA_DarkCarnival_BlimpJump_Controls_ThrowShiv_Details"	"Πετάξτε το μαχαίρι του Σλαρκ"
+
+		"DOTA_DarkCarnival_BlimpJump_Modes_StoryMode"			"ΙΣΤΟΡΙΑ"
+		"DOTA_DarkCarnival_BlimpJump_Modes_StoryMode_Details"	"Φτάστε στο αερόπλοιο στην κορυφή."
+
+		"DOTA_DarkCarnival_BlimpJump_Modes_InfiniteMode"			"ΛΕΙΤΟΥΡΓΙΑ ΑΠΕΙΡΟΥ"
+		"DOTA_DarkCarnival_BlimpJump_Modes_InfiniteMode_Details"	"Πηγαίνετε όσο πιο ψηλά μπορείτε. Κατακτήστε την κορυφή!"
+
+		"DOTA_DarkCarnival_BlimpJump_Resume"						"ΣΥΝΕΧΙΣΗ [ESC]"
+						
 	}
 } 

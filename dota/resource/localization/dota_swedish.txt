@@ -24335,6 +24335,9 @@ För att gå med i kanalen som en erfaren spelare måste du ha spelat minst {d:n
 	"DOTA_Hud_StunBar" "{s:state}"
 	"DOTA_Hud_SpecItemHeroName"	"Lvl <font color='#FFFFFF'>{d:player_level}</font> {g:dota_hero_name:hero_id}"
 
+	// The local client has paused spectating playback, and can resume when they choose
+	"DOTA_Hud_Paused_Spectating_Local"			"Uppspelning pausad"
+	// Someone other than our local client has paused the game
 	"DOTA_Hud_Paused_Spectating"				"En spelare har pausat spelet"
 	"DOTA_Hud_Paused"							"Matchen är pausad"
 	"DOTA_Hud_Unpausing"						"Återupptas"
@@ -38243,6 +38246,7 @@ Om det känns som att du inte kunde lägga tillräckligt mycket uppmärksamhet p
 		"DOTA_CandyShop_ConfirmReroll_EmptyInventory"	"Du har inget godis och kan inte köpa något. Vill du fortfarande fylla på med nya föremål i hyllorna?"
 		"DOTA_CandyShop_RerollCharges"					"{d:quantity}x laddningar med rerolls i godisbutiken"
 
+		"DOTA_CandyShop_CandySackInfo_Crownfall"		"Lås upp platser på Dark Carnival-kartan för att tjäna godis."
 		"DOTA_CandyShop_InventorySlotInfo_Crownfall"	"Besök fler godisbutiker för att utöka ditt lager."
 		"DOTA_CandyShop_View_Crownfall"					"Visa godsaksvagnen"
 
@@ -44557,7 +44561,7 @@ Om det känns som att du inte kunde lägga tillräckligt mycket uppmärksamhet p
 		"DOTA_Overworld_Inventory_HeroTrayPremium"		"<b>Gömställebiljetter</b> är en del av <b>{s:expansion_pack_name}</b>, tillgängliga i Dark Carnival-butiken. Dessa biljetter används för att låsa upp särskilda rum med unika belöningar."
 		"DOTA_Overworld_Inventory_HeroTrayHidden"		"Du fick denna specialbiljett i ett möte."
 		"DOTA_Overworld_Inventory_PathUnlocker"			"<b>Vägupplåsningsbiljetter</b> kan låsa upp en nod utan att spendera de polletter som normalt krävs. Använd dem genom att klicka på knappen <b>LÅS UPP NU</b> under nodkostnaden."
-		"DOTA_Overworld_Inventory_ScrapToken"			"Få <b>{s:scrap_token_name}</b> polletter för varje match du spelar, oavsett om du vinner eller förlorar.<br>De kan bytas hos <b>polletthandlaren</b> mot en valfri hjältepollett."
+		"DOTA_Overworld_Inventory_ScrapToken"			"Få <b>{s:scrap_token_name}</b> biljetter för varje match du spelar, oavsett om du vinner eller förlorar.<br>De kan bytas hos <b>biljetthandlaren</b> mot en valfri biljett."
 		
 		"DOTA_Crownfall_Encounter_UnableToClaimReward"	"Kunde inte hämta belöning"
 		"DOTA_Crownfall_Encounter_TokenExchangeFailed"	"Biljettbytet misslyckades"
@@ -48814,8 +48818,10 @@ Om det känns som att du inte kunde lägga tillräckligt mycket uppmärksamhet p
 		"DOTA_DarkCarnival_Encounter_PickLock_Description"	"Hjälp Slark att bryta sig ut ur cellen!"
 		"DOTA_DarkCarnival_Encounter_SlarkJailbreak"				"Kast med stövel"
 		"DOTA_DarkCarnival_Encounter_SlarkJailbreak_Description"	"Samla byte! Förstör stövlar!"
-		"DOTA_DarkCarnival_Encounter_FriendGifting"					"Vängåvor"
+		"DOTA_DarkCarnival_Encounter_FriendGifting"					"Bytesmarknad för oönskat material"
 		"DOTA_DarkCarnival_Encounter_FriendGifting_Description"		"Ge bort biljetter som du inte behöver till vänner!"
+		"DOTA_DarkCarnival_Encounter_FriendGifting_NoNeed"			"Din vän behöver inga biljetter just nu"
+		"DOTA_DarkCarnival_Encounter_FriendGifting_NoFriendSelected"	"Välj en vän för att se vilka biljetter vännen behöver"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter"					"Biljettsmältverk"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_Description"		"Smält saker du förmodligen inte borde smälta!"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_SmeltButton"		"Smält"
@@ -48825,7 +48831,6 @@ Om det känns som att du inte kunde lägga tillräckligt mycket uppmärksamhet p
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_NothingLeft"		"Du har smält allt som biljettsmältverket just nu kan skapa."
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_SeeingStone:f"					"{num_seeing_stones, plural, one{{d:num_seeing_stones} spådomssten} other{{d:num_seeing_stones} spådomsstenar}}"
 
-		
 		"DOTA_CandyShopName_Dark_Carnival"		"Cirkusgodisbutiken"
 		"DOTA_DarkCarnival_View_Candyworks"		"Ta en titt i cirkusgodisbutiken"
 		"DOTA_DarkCarnivalStore_View"			"Ta en titt i <b>Dark Carnival-butiken</b>"
@@ -48878,6 +48883,7 @@ Om det känns som att du inte kunde lägga tillräckligt mycket uppmärksamhet p
 		"DOTA_DarkCarnival_SecretAdmirer_Gift_Tooltip"	"Du kan ge upp till 5 biljetter om dagen till vänner."
 		"DOTA_DarkCarnival_SecretAdmirer_GiftNoneNeeded"		"Vännen behöver inga biljetter!"
 		"DOTA_DarkCarnival_SecretAdmirer_NoMoreAvailable"	"Du har inga fler gåvor tillgängliga idag"
+		"DOTA_DarkCarnival_SecretAdmirer_CannotSendAnymore"	"Du kan inte skicka fler gåvor idag"
 		"DOTA_DarkCarnival_SecretAdmirer_GiftAvailableTooltip"	"En vän har skickat en gåva!"
 
 		"DOTA_DarkCarnival_SecretRoomsPack_RequiredForRewardsClaims"		"Kräver gömställepaketet.<br>Klicka här för att köpa det."
@@ -49194,12 +49200,17 @@ Om det känns som att du inte kunde lägga tillräckligt mycket uppmärksamhet p
 
 		"DOTA_DarkCarnival_ChatWheelMessage"							"Chatthjulsmeddelande"
 
-		"dota_chatwheel_translation_darkcarnival_money_and_bones"		"PENGAR OCH BEN! PENGAR OCH BEN!"
-		"dota_chatwheel_translation_darkcarnival_are_we_the_idiots"		"Och det är vi som är idioterna?"
-		"dota_chatwheel_translation_darkcarnival_wow"					"Wow!"
+		"dota_chatwheel_translation_darkcarnival_money_and_bones"				"PENGAR OCH BEN! PENGAR OCH BEN!"
+		"dota_chatwheel_translation_darkcarnival_are_we_the_idiots"				"Och det är vi som är idioterna?"
+		"dota_chatwheel_translation_darkcarnival_wow"							"Wow!"
+		"dota_chatwheel_translation_darkcarnival_its_not_that_funny"			"Det är inte så roligt."
+		"dota_chatwheel_translation_darkcarnival_im_sorry_who_are_you_again"	"Förlåt, vem är du nu igen?"
+
 		"dota_chatwheel_source_fishwitch"								"Grindlplit"
 		"dota_chatwheel_source_hoodwink"								"Hoodwink"
 		"dota_chatwheel_source_clown"									"Clarence"
+		"dota_chatwheel_source_cogliacci"								"Cogliacci"
+		"dota_chatwheel_source_lorenzo"									"Lorenzo"
 
 		"DOTA_DarkCarnival_HeroHighlightTooltip_TicketsNeeded"			"Nödvändiga biljetter"
 		"DOTA_DarkCarnival_HeroHighlightTooltip_NoTicketsNeeded"		"Inga biljetter behövs"
@@ -49208,5 +49219,95 @@ Om det känns som att du inte kunde lägga tillräckligt mycket uppmärksamhet p
 
 		"DOTA_DarkCarnival_Overworld_Unlock"						"Lås upp"
 
+		// Dark Carnival Chapter 2
+		
+		"DOTA_DarkCarnival_Encounter_CrateDrop"	"Robotmontering"
+		"DOTA_DarkCarnival_Encounter_CrateDrop_Description"	"Fånga lådorna!"
+		
+		"DOTA_DarkCarnival_Encounter_BlimpJump"	"Luftskeppshopp"
+		"DOTA_DarkCarnival_Encounter_BlimpJump_Description"	"Ta dig till luftskeppet!"
+		
+		"DOTA_Overworld_EncounterShortcut_blimp_jump"		"Luftskeppshopp"
+		"DOTA_Overworld_EncounterShortcut_crate_drop"		"Robotmontering"
+		
+		// Dark Carnival: Crate Drop
+		"DOTA_DarkCarnival_CrateDrop_Title"							"Robotmontering"
+		"DOTA_DarkCarnival_CrateDrop_GameDesc"						"Hjälp Tinker att fånga lådorna med robotdelar för montering"
+		"DOTA_DarkCarnival_CrateDrop_Play"							"Spela"
+		"DOTA_DarkCarnival_CrateDrop_HowToPlay"						"Spelinstruktioner"
+		"DOTA_DarkCarnival_CrateDrop_HowToPlayInstructions"			"Fånga lådorna med robotdelar på plattformen, samtidigt som du undviker bomberna. Du förlorar om du tappar för många lådor!<br><br> Använd piltangenterna för att flytta och mellanslag för att lagra de lådor som redan har fångats."
+		"DOTA_DarkCarnival_CrateDrop_CratesRemaining"				"kvar"
+		"DOTA_DarkCarnival_CrateDrop_Score"							"Poäng: {d:current_score}"
+		"DOTA_DarkCarnival_CrateDrop_Level"							"Nivå"
+		"DOTA_DarkCarnival_CrateDrop_LevelComplete"					"Nivå slutförd!"
+		"DOTA_DarkCarnival_CrateDrop_StartingLevel"					"Nivå {u:level}"
+		"DOTA_DarkCarnival_CrateDrop_LostCrates"					"förlorad(e)"
+		"DOTA_DarkCarnival_CrateDrop_Score_Label"					"Poäng"
+		"DOTA_DarkCarnival_CrateDrop_CurrentMultiplier"				"Multiplikator: {f:current_multiplier} x"
+		"DOTA_DarkCarnival_CrateDrop_GameOver"						"Game over"
+		"DOTA_DarkCarnival_CrateDrop_GameWon"						"Du vann!"
+		"DOTA_DarkCarnival_CrateDrop_GameLost"						"Du tappade för många delar!"
+		"DOTA_DarkCarnival_CrateDrop_PotentialScoreLabel"			"Poäng"
+		
+
+		"DOTA_DarkCarnival_CrateDrop_TotalCratesCaught"				"Fångade lådor"
+		"DOTA_DarkCarnival_CrateDrop_TotalCratesLost"				"Förlorade lådor"
+		"DOTA_DarkCarnival_CrateDrop_MaxHeight"						"Högsta stapeln"
+		"DOTA_DarkCarnival_CrateDrop_HighScores"					"Rekord"
+		"DOTA_DarkCarnival_CrateDrop_PlayAgain"						"Spela igen"
+		"DOTA_DarkCarnival_CrateDrop_HeightBonus"					"Höjdbonus"
+		"DOTA_DarkCarnival_CrateDrop_CratesRequired"				"Krävs för nästa nivå:\n {d:crates_required}"
+		"DOTA_DarkCarnival_CrateDrop_Failed"						"Misslyckades"
+		"DOTA_DarkCarnival_CrateDrop_TryAgainButton"				"Försök igen"
+		"DOTA_DarkCarnival_CrateDrop_Help_Move"						"Flytta"
+		"DOTA_DarkCarnival_CrateDrop_Help_Move_Details"				"Flytta plattformen med vänster- och högerpiltangenterna och byt spår med upp- och nerpiltangenterna." 
+		"DOTA_DarkCarnival_CrateDrop_Help_Ability"					"Montera"
+		"DOTA_DarkCarnival_CrateDrop_Help_Ability_Description"		"Använd mellanslag för att omedelbart transportera fångade lådor till montörerna, och få poäng för varje del." 
+		"DOTA_DarkCarnival_CrateDrop_Scoring"						"Poängsystem" 
+		"DOTA_DarkCarnival_CrateDrop_Scoring_Desc"					"Varje låda som fångades och samlades in med monteringsförmågan ger 100, 150 eller 200 poäng, baserat på dess storlek och form.\n\nÖka poängmultiplikatorn genom att stapla lådor så högt du kan!" 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_1"					"Flytta Tinkers plattform åt vänster och höger för att fånga lådor fulla med robotdelar!" 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_2"					"Använd upp och ner för att byta spår och fånga lådorna på motsatt spår." 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_3"					"Använd mellanslagstangenten för att samla de fångade lådorna och få poäng!" 
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText1"				"Använd mellanslagstangenten när lådorna är staplade högt för att få en större multiplikator!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText2"				"Se upp för faror som kan explodera vid beröring!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText3"				"Fånga powerupen Defense Matrix för att avvärja bomber!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText4"				"Akta dig för bomber som spränger alla lådor i bitar!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText5"				"Återställ förlorade liv med reparationspowerupen!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText6"				"Tunnor fulla med gegga saktar ner dig!"
+		
+
+		
+		"DOTA_DarkCarnival_BlimpJump_Title"						"Luftskeppshopp"
+		"DOTA_DarkCarnival_BlimpJump_Subtitle"					"Ta dig till luftskeppet!"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Title_Won"		"Du vann!"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Title_Lost"		"Game over"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_Won"		"Du nådde luftskeppet."
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_Lost"	"Du förlorade."
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_LostStoryMode"	"Du nådde inte luftskeppet."
+		"DOTA_DarkCarnival_EncounterStatus_BlimpJump"				"Dark Carnival: luftskeppshopp"
+		
+		"DOTA_DarkCarnival_BlimpJump_Scoring"				"Endast i oändligt läge.<br>Tjäna poäng genom att nå högre och högre."
+		"DOTA_DarkCarnival_BlimpJump_PlayAgain"				"Försök igen [mellanslag]"
+
+		"DOTA_DarkCarnival_Encounter_BlimpJump_ReachTheBlimpRewardTitle" "Nå luftskeppet"
+
+		"DOTA_DarkCarnival_BlimpJump_InfiniteModeLocked"					"Lås upp genom att slutföra storyläget."
+
+		"DOTA_DarkCarnival_BlimpJump_GoInfinite"						"Fortsätt oändligt"
+		"DOTA_DarkCarnival_BlimpJump_LeaveEncounter"					"Lämna mötet"
+		
+		"DOTA_DarkCarnival_BlimpJump_Controls_Move"					"Flytta"
+		"DOTA_DarkCarnival_BlimpJump_Controls_Move_Details"			"Flytta Slark åt vänster och höger"
+		"DOTA_DarkCarnival_BlimpJump_Controls_ThrowShiv"			"Kasta Shiv"
+		"DOTA_DarkCarnival_BlimpJump_Controls_ThrowShiv_Details"	"Kasta Slarks Shiv"
+
+		"DOTA_DarkCarnival_BlimpJump_Modes_StoryMode"			"Spela storyn"
+		"DOTA_DarkCarnival_BlimpJump_Modes_StoryMode_Details"	"Nå luftskeppet högst upp."
+
+		"DOTA_DarkCarnival_BlimpJump_Modes_InfiniteMode"			"Spela oändligt"
+		"DOTA_DarkCarnival_BlimpJump_Modes_InfiniteMode_Details"	"Ta dig så högt du kan. Sikta mot stjärnorna!"
+
+		"DOTA_DarkCarnival_BlimpJump_Resume"						"Återuppta [ESC]"
+						
 	}
 } 

@@ -24535,6 +24535,9 @@ Para unirte como jugador experimentado, debes tener al menos {d:new_player_req_g
 	"DOTA_Hud_StunBar" "{s:state}"
 	"DOTA_Hud_SpecItemHeroName"	"{g:dota_hero_name:hero_id} niv <font color='#FFFFFF'>{d:player_level}</font>"
 
+	// The local client has paused spectating playback, and can resume when they choose
+	"DOTA_Hud_Paused_Spectating_Local"			"Reproducción pausada"
+	// Someone other than our local client has paused the game
 	"DOTA_Hud_Paused_Spectating"				"Un jugador pausó la partida"
 	"DOTA_Hud_Paused"							"Partida en pausa"
 	"DOTA_Hud_Unpausing"						"Reanudando"
@@ -46382,7 +46385,7 @@ Fase tardía - <b>30:00 o más </b>"
 		"DOTA_Overworld_Inventory_HeroTrayPremium"		"Los boletos para <b>Cuarto Secreto</b> son parte de <b>{s:expansion_pack_name}</b>, disponible en la tienda de la Feria Macabra. Estos boletos se utilizan para desbloquear cuartos especiales con recompensas únicas."
 		"DOTA_Overworld_Inventory_HeroTrayHidden"		"Este ticket especial se obtuvo mediante un encuentro."
 		"DOTA_Overworld_Inventory_PathUnlocker"			"Los boletos de <b>Desbloqueo de Camino</b> pueden desbloquear un nodo sin gastar los boletos que normalmente se requieren. Utilízalos haciendo clic en el botón <b>DESBLOQUEAR AHORA</b> bajo el costo del nodo."
-		"DOTA_Overworld_Inventory_ScrapToken"			"Obtén boletos de <b>{s:scrap_token_name}</b> cada vez que juegues una partida, ganes o pierdas.<br>Puedes intercambiarlas en la <b>Taquilla</b> por una ficha del héroe que quieras."
+		"DOTA_Overworld_Inventory_ScrapToken"			"Obtén boletos de <b>{s:scrap_token_name}</b> cada vez que juegues una partida, ganes o pierdas.<br>Puedes intercambiarlos en la <b>Taquilla</b> por un boleto del héroe que quieras."
 		
 		"DOTA_Crownfall_Encounter_UnableToClaimReward"	"No se puede reclamar la recompensa"
 		"DOTA_Crownfall_Encounter_TokenExchangeFailed"	"No se pudieron intercambiar los boletos"
@@ -50653,7 +50656,7 @@ Fase tardía - <b>30:00 o más </b>"
 		"DOTA_DarkCarnival_Encounter_PickLock_Description"	"¡Ayuda a Slark a salir de esta celda!"
 		"DOTA_DarkCarnival_Encounter_SlarkJailbreak"				"Rompe Botas"
 		"DOTA_DarkCarnival_Encounter_SlarkJailbreak_Description"	"¡Colecta el botín! ¡Destruye las botas!"
-		"DOTA_DarkCarnival_Encounter_FriendGifting"					"Regalo para Amigos"
+		"DOTA_DarkCarnival_Encounter_FriendGifting"					"Intercambio de Materiales Inconvenientes"
 		"DOTA_DarkCarnival_Encounter_FriendGifting_Description"		"¡Regala los boletos que no necesites con tus amigos!"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter"					"Fundidor de boletos"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_Description"		"¡Funde cosas que probablemente no deberías fundir!"
@@ -50664,7 +50667,6 @@ Fase tardía - <b>30:00 o más </b>"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_NothingLeft"		"Has fundido todo lo que el fundidor de boletos puede crear actualmente."
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_SeeingStone:f"					"{num_seeing_stones, plural, one{{d:num_seeing_stones} Piedra Vidente} other{{d:num_seeing_stones} Piedras Videntes}}"
 
-		
 		"DOTA_CandyShopName_Dark_Carnival"		"Caramelería de la Feria"
 		"DOTA_DarkCarnival_View_Candyworks"		"Ver la Caramelería de la Feria"
 		"DOTA_DarkCarnivalStore_View"			"Ver la <b>tienda de la Feria Macabra</b>"
@@ -50717,6 +50719,7 @@ Fase tardía - <b>30:00 o más </b>"
 		"DOTA_DarkCarnival_SecretAdmirer_Gift_Tooltip"	"Puedes regalar hasta 5 boletos al día a tus amigos."
 		"DOTA_DarkCarnival_SecretAdmirer_GiftNoneNeeded"		"¡Tu amigo no necesita ningún boleto!"
 		"DOTA_DarkCarnival_SecretAdmirer_NoMoreAvailable"	"Hoy no tienes regalos disponibles."
+		"DOTA_DarkCarnival_SecretAdmirer_CannotSendAnymore"	"Ya no puedes enviar más regalos por hoy"
 		"DOTA_DarkCarnival_SecretAdmirer_GiftAvailableTooltip"	"¡Uno de tus amigos te envió un regalo!"
 
 		"DOTA_DarkCarnival_SecretRoomsPack_RequiredForRewardsClaims"		"Requiere un paquete de Cuartos Secretos.<br>Haz clic para comprar uno."
@@ -51033,12 +51036,17 @@ Fase tardía - <b>30:00 o más </b>"
 
 		"DOTA_DarkCarnival_ChatWheelMessage"							"Mensaje de la rueda de chat"
 
-		"dota_chatwheel_translation_darkcarnival_money_and_bones"		"¡DINERO Y HUESOS! ¡DINERO Y HUESOS!"
-		"dota_chatwheel_translation_darkcarnival_are_we_the_idiots"		"¿Somos idiotas?"
-		"dota_chatwheel_translation_darkcarnival_wow"					"¡Guau!"
+		"dota_chatwheel_translation_darkcarnival_money_and_bones"				"¡DINERO Y HUESOS! ¡DINERO Y HUESOS!"
+		"dota_chatwheel_translation_darkcarnival_are_we_the_idiots"				"¿Somos idiotas?"
+		"dota_chatwheel_translation_darkcarnival_wow"							"¡Guau!"
+		"dota_chatwheel_translation_darkcarnival_its_not_that_funny"			"No es tan gracioso."
+		"dota_chatwheel_translation_darkcarnival_im_sorry_who_are_you_again"	"Perdón... ¿quién dices que eres?"
+
 		"dota_chatwheel_source_fishwitch"								"Grindlplit"
 		"dota_chatwheel_source_hoodwink"								"Hoodwink"
 		"dota_chatwheel_source_clown"									"Clarence"
+		"dota_chatwheel_source_cogliacci"								"Cogliacci"
+		"dota_chatwheel_source_lorenzo"									"Lorenzo"
 
 		"DOTA_DarkCarnival_HeroHighlightTooltip_TicketsNeeded"			"Boletos necesarios"
 		"DOTA_DarkCarnival_HeroHighlightTooltip_NoTicketsNeeded"		"No se necesitan boletos"
@@ -51046,6 +51054,85 @@ Fase tardía - <b>30:00 o más </b>"
 		"DOTA_Axe_Missing"			"Axe no está y no puede participar."
 
 		"DOTA_DarkCarnival_Overworld_Unlock"						"Desbloquear"
+"DOTA_DarkCarnival_Encounter_CrateDrop_Description"	"¡Atrapa las cajas!"
+		
+		"DOTA_DarkCarnival_Encounter_BlimpJump"	"Llega al Dirigible"
+		"DOTA_DarkCarnival_Encounter_BlimpJump_Description"	"¡Llega hasta el Dirigible!"
+		
+		"DOTA_Overworld_EncounterShortcut_blimp_jump"		"Llega al Dirigible"
+		"DOTA_Overworld_EncounterShortcut_crate_drop"		"Ensamblaje de Autómatas"
+		
+		// Dark Carnival: Crate Drop
+		"DOTA_DarkCarnival_CrateDrop_Title"							"Ensamblaje de Autómatas"
+		"DOTA_DarkCarnival_CrateDrop_GameDesc"						"Ayuda a Tinker a atrapar las cajas con partes de autómatas para su montaje."
+		"DOTA_DarkCarnival_CrateDrop_Play"							"Jugar"
+		"DOTA_DarkCarnival_CrateDrop_HowToPlay"						"Cómo jugar"
+		"DOTA_DarkCarnival_CrateDrop_HowToPlayInstructions"			"Atrapa las cajas con partes de autómatas en la plataforma mientras evitas las bombas. Si sueltas muchas cajas, ¡pierdes!<br><br>Usa las teclas de flecha para moverte y la barra espaciadora para almacenar las cajas que ya atrapaste."
+		"DOTA_DarkCarnival_CrateDrop_CratesRemaining"				"Restantes"
+		"DOTA_DarkCarnival_CrateDrop_Score"							"Puntuación: {d:current_score}"
+		"DOTA_DarkCarnival_CrateDrop_Level"							"Nivel"
+		"DOTA_DarkCarnival_CrateDrop_LevelComplete"					"¡Nivel completado!"
+		"DOTA_DarkCarnival_CrateDrop_StartingLevel"					"Nivel {u:level}"
+		"DOTA_DarkCarnival_CrateDrop_LostCrates"					"Perdiste"
+		"DOTA_DarkCarnival_CrateDrop_Score_Label"					"Puntuación"
+		"DOTA_DarkCarnival_CrateDrop_CurrentMultiplier"				"Multiplicador: {f:current_multiplier}x"
+		"DOTA_DarkCarnival_CrateDrop_GameOver"						"Fin del juego"
+		"DOTA_DarkCarnival_CrateDrop_GameWon"						"¡Ganaste!"
+		"DOTA_DarkCarnival_CrateDrop_GameLost"						"¡Perdiste demasiadas partes!"
+		"DOTA_DarkCarnival_CrateDrop_PotentialScoreLabel"			"Puntos"
+		
 
+		"DOTA_DarkCarnival_CrateDrop_TotalCratesCaught"				"Total de cajas atrapadas"
+		"DOTA_DarkCarnival_CrateDrop_TotalCratesLost"				"Total de cajas sueltas"
+		"DOTA_DarkCarnival_CrateDrop_MaxHeight"						"Altura más alta de la pila de cajas"
+		"DOTA_DarkCarnival_CrateDrop_HighScores"					"Récord"
+		"DOTA_DarkCarnival_CrateDrop_PlayAgain"						"Jugar de nuevo"
+		"DOTA_DarkCarnival_CrateDrop_HeightBonus"					"Bonificación por altura"
+		"DOTA_DarkCarnival_CrateDrop_CratesRequired"				"Se requieren para el siguiente nivel:\n {d:crates_required}"
+		"DOTA_DarkCarnival_CrateDrop_Failed"						"Fallaste"
+		"DOTA_DarkCarnival_CrateDrop_TryAgainButton"				"Inténtalo de nuevo"
+		"DOTA_DarkCarnival_CrateDrop_Help_Move"						"Mover"
+		"DOTA_DarkCarnival_CrateDrop_Help_Move_Details"				"Mueve la plataforma con las teclas de flecha izquierda y derecha y cambia las vías con las teclas de flecha arriba y abajo." 
+		"DOTA_DarkCarnival_CrateDrop_Help_Ability"					"Ensamblar"
+		"DOTA_DarkCarnival_CrateDrop_Help_Ability_Description"		"Usa la barra espaciadora para transportar de inmediato las cajas atrapadas a los ensambladores, acumulando puntos por cada parte que entregues." 
+		"DOTA_DarkCarnival_CrateDrop_Scoring"						"Puntuaciones" 
+		"DOTA_DarkCarnival_CrateDrop_Scoring_Desc"					"Cada caja que atrapes y colecciones con la habilidad \"Ensamblar\" te otorga 100, 150 o 200 puntos con base en su tamaño y forma.\n\n¡Aumenta el multiplicador de puntuación apilando cajas lo más alto que puedas!" 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_1"					"¡Mueve la plataforma de Tinker a la izquierda y a la derecha para atrapar cajas llenas de partes de autómatas!" 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_2"					"Usa las flechas arriba y abajo para atrapar las cajas del lado opuesto de la vía." 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_3"					"¡Usa la barra espaciadora para recolectar las cajas atrapadas y sumar puntos!" 
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText2"				"¡Ten cuidado con los peligros que pueden explotar si los tocas!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText3"				"¡Atrapa el potenciador \"Matriz de Defensa\" para desviar las bombas!"
+		"DOTA_DarkCarnival_BlimpJump_Title"						"Llega al Dirigible"
+		"DOTA_DarkCarnival_BlimpJump_Subtitle"					"¡Llega hasta el Dirigible!"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Title_Won"		"¡Ganaste!"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Title_Lost"		"Fin de la partida"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_Won"		"Llegaste al Dirigible."
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_Lost"	"Perdiste."
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_LostStoryMode"	"No llegaste hasta el Dirigible."
+		"DOTA_DarkCarnival_EncounterStatus_BlimpJump"				"Feria Macabra: Llega al Dirigible"
+		
+		"DOTA_DarkCarnival_BlimpJump_Scoring"				"Solo en modo Infinito.<br>Obtén puntos al subir cada vez más."
+		"DOTA_DarkCarnival_BlimpJump_PlayAgain"				"Intentar de nuevo [barra espaciadora]"
+
+		"DOTA_DarkCarnival_Encounter_BlimpJump_ReachTheBlimpRewardTitle" "Llega al Dirigible"
+
+		"DOTA_DarkCarnival_BlimpJump_InfiniteModeLocked"					"Se desbloquea al completar el modo Historia."
+
+		"DOTA_DarkCarnival_BlimpJump_GoInfinite"						"Modo Infinito"
+		"DOTA_DarkCarnival_BlimpJump_LeaveEncounter"					"Salir del juego"
+		
+		"DOTA_DarkCarnival_BlimpJump_Controls_Move"					"Mover"
+		"DOTA_DarkCarnival_BlimpJump_Controls_Move_Details"			"Mueve a Slark a la izquierda y a la derecha"
+		"DOTA_DarkCarnival_BlimpJump_Controls_ThrowShiv"			"Lanzar Púa"
+		"DOTA_DarkCarnival_BlimpJump_Controls_ThrowShiv_Details"	"Lanzar Púa de Slark"
+
+		"DOTA_DarkCarnival_BlimpJump_Modes_StoryMode"			"Jugar modo Historia"
+		"DOTA_DarkCarnival_BlimpJump_Modes_StoryMode_Details"	"Llega al Dirigible en la parte superior."
+
+		"DOTA_DarkCarnival_BlimpJump_Modes_InfiniteMode"			"Jugar modo Infinito"
+		"DOTA_DarkCarnival_BlimpJump_Modes_InfiniteMode_Details"	"¡Llega lo más alto que puedas y alcanza las estrellas!"
+
+		"DOTA_DarkCarnival_BlimpJump_Resume"						"Reanudar [ESC]"
+						
 	}
 } 

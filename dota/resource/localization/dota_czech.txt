@@ -24341,6 +24341,9 @@ Aby se mohl připojit zkušenější hráč, musí mít odehráno nejméně {d:n
 	"DOTA_Hud_StunBar" "{s:state}"
 	"DOTA_Hud_SpecItemHeroName"	"<font color='#FFFFFF'>{d:player_level}</font>. úr. – {g:dota_hero_name:hero_id}"
 
+	// The local client has paused spectating playback, and can resume when they choose
+	"DOTA_Hud_Paused_Spectating_Local"			"Přehrávání je pozastaveno"
+	// Someone other than our local client has paused the game
 	"DOTA_Hud_Paused_Spectating"				"Zápas byl pozastaven hráčem"
 	"DOTA_Hud_Paused"							"Zápas je pozastaven"
 	"DOTA_Hud_Unpausing"						"Opět. spouštění"
@@ -50393,8 +50396,10 @@ Jestli ses ale dostatečně nesoustředil a nemůžeš zaručit, že o tomto př
 		"DOTA_DarkCarnival_Encounter_PickLock_Description"	"Pomoz Slarkovi utéct z jeho cely."
 		"DOTA_DarkCarnival_Encounter_SlarkJailbreak"				"Hod botou"
 		"DOTA_DarkCarnival_Encounter_SlarkJailbreak_Description"	"Sbírej odměny a nič boty!"
-		"DOTA_DarkCarnival_Encounter_FriendGifting"					"Dárková pošta"
-		"DOTA_DarkCarnival_Encounter_FriendGifting_Description"		"Daruj svým přátelům lístky, které nepotřebuješ!"
+		"DOTA_DarkCarnival_Encounter_FriendGifting"					"Směnárna nepohodlných materiálů"
+		"DOTA_DarkCarnival_Encounter_FriendGifting_Description"		"Daruj svým přátelům lístky, které nepotřebuješ!"
+		"DOTA_DarkCarnival_Encounter_FriendGifting_NoNeed"			"Tvůj přítel v tuto chvíli nepotřebuje žádné lístky."
+		"DOTA_DarkCarnival_Encounter_FriendGifting_NoFriendSelected"	"Vyber přítele a zjisti, které lístky potřebuje."
 		"DOTA_DarkCarnival_Encounter_TicketSmelter"					"Pec na lístky"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_Description"		"Roztav věci, které by asi neměly být taveny!"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_SmeltButton"		"Vytavit"
@@ -50404,7 +50409,6 @@ Jestli ses ale dostatečně nesoustředil a nemůžeš zaručit, že o tomto př
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_NothingLeft"		"Vytavil jsi všechno, co pec na lístky v tuto chvíli zvládne."
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_SeeingStone:f"					"{num_seeing_stones, plural, one{{d:num_seeing_stones} věštecký kámen} few{{d:num_seeing_stones} věštecké kameny} many{{d:num_seeing_stones} věšteckého kamene} other{{d:num_seeing_stones} věšteckých kamenů}}"
 
-		
 		"DOTA_CandyShopName_Dark_Carnival"		"Karnevalová cukrárna"
 		"DOTA_DarkCarnival_View_Candyworks"		"Navštívit cukrárnu"
 		"DOTA_DarkCarnivalStore_View"			"Přejít do <b>karnevalového obchodu</b>"
@@ -50457,6 +50461,7 @@ Jestli ses ale dostatečně nesoustředil a nemůžeš zaručit, že o tomto př
 		"DOTA_DarkCarnival_SecretAdmirer_Gift_Tooltip"	"Svým přátelům můžeš každý den darovat nejvýše 5 lístků."
 		"DOTA_DarkCarnival_SecretAdmirer_GiftNoneNeeded"		"Tvůj přítel nepotřebuje žádné lístky!"
 		"DOTA_DarkCarnival_SecretAdmirer_NoMoreAvailable"	"Dnes už nemůžeš poslat další dárek!"
+		"DOTA_DarkCarnival_SecretAdmirer_CannotSendAnymore"	"Pro dnešek už nemůžeš poslat další dárky."
 		"DOTA_DarkCarnival_SecretAdmirer_GiftAvailableTooltip"	"Přítel ti poslal dárek!"
 
 		"DOTA_DarkCarnival_SecretRoomsPack_RequiredForRewardsClaims"		"Vyžaduje VIP jízdenku.<br>Kliknutím si ji můžeš zakoupit."
@@ -50773,12 +50778,17 @@ Jestli ses ale dostatečně nesoustředil a nemůžeš zaručit, že o tomto př
 
 		"DOTA_DarkCarnival_ChatWheelMessage"							"Zvuk chatovacího kolečka"
 
-		"dota_chatwheel_translation_darkcarnival_money_and_bones"		"PENÍZE A KOSTI! PENÍZE A KOSTI!"
-		"dota_chatwheel_translation_darkcarnival_are_we_the_idiots"		"My jsme hlupáci?"
-		"dota_chatwheel_translation_darkcarnival_wow"					"Fíha!"
+		"dota_chatwheel_translation_darkcarnival_money_and_bones"				"PENÍZE A KOSTI! PENÍZE A KOSTI!"
+		"dota_chatwheel_translation_darkcarnival_are_we_the_idiots"				"My jsme hlupáci?"
+		"dota_chatwheel_translation_darkcarnival_wow"							"Fíha!"
+		"dota_chatwheel_translation_darkcarnival_its_not_that_funny"			"Není to tak vtipné."
+		"dota_chatwheel_translation_darkcarnival_im_sorry_who_are_you_again"	"Promiňte... vy jste kdo?"
+
 		"dota_chatwheel_source_fishwitch"								"Grindlplit"
 		"dota_chatwheel_source_hoodwink"								"Hoodwink"
 		"dota_chatwheel_source_clown"									"Clarence"
+		"dota_chatwheel_source_cogliacci"								"Cogliacci"
+		"dota_chatwheel_source_lorenzo"									"Lorenzo"
 
 		"DOTA_DarkCarnival_HeroHighlightTooltip_TicketsNeeded"			"Potřebné lístky"
 		"DOTA_DarkCarnival_HeroHighlightTooltip_NoTicketsNeeded"		"Nepotřebuješ žádné lístky"
@@ -50787,5 +50797,95 @@ Jestli ses ale dostatečně nesoustředil a nemůžeš zaručit, že o tomto př
 
 		"DOTA_DarkCarnival_Overworld_Unlock"						"Odemknout"
 
+		// Dark Carnival Chapter 2
+		
+		"DOTA_DarkCarnival_Encounter_CrateDrop"	"Výrobní linka"
+		"DOTA_DarkCarnival_Encounter_CrateDrop_Description"	"Chytej bedny!"
+		
+		"DOTA_DarkCarnival_Encounter_BlimpJump"	"Vzducho-hop"
+		"DOTA_DarkCarnival_Encounter_BlimpJump_Description"	"Vyskákej ke vzducholodi!"
+		
+		"DOTA_Overworld_EncounterShortcut_blimp_jump"		"Vzducho-hop"
+		"DOTA_Overworld_EncounterShortcut_crate_drop"		"Výrobní linka"
+		
+		// Dark Carnival: Crate Drop
+		"DOTA_DarkCarnival_CrateDrop_Title"							"Výrobní linka"
+		"DOTA_DarkCarnival_CrateDrop_GameDesc"						"Pomoz Tinkerovi pochytat bedny s díly automatonů."
+		"DOTA_DarkCarnival_CrateDrop_Play"							"Hrát"
+		"DOTA_DarkCarnival_CrateDrop_HowToPlay"						"Jak hrát"
+		"DOTA_DarkCarnival_CrateDrop_HowToPlayInstructions"			"Chytej na platformu bedny s díly automatonů a vyhýbej se bombám. Když ztratíš příliš mnoho beden, prohraješ!<br><br>Pohyb platformy zajišťují šipky a odeslání chycených beden je prováděno stiskem mezerníku."
+		"DOTA_DarkCarnival_CrateDrop_CratesRemaining"				"Beden"
+		"DOTA_DarkCarnival_CrateDrop_Score"							"Skóre: {d:current_score}"
+		"DOTA_DarkCarnival_CrateDrop_Level"							"Úroveň"
+		"DOTA_DarkCarnival_CrateDrop_LevelComplete"					"Úroveň dokončena!"
+		"DOTA_DarkCarnival_CrateDrop_StartingLevel"					"{u:level}. úroveň"
+		"DOTA_DarkCarnival_CrateDrop_LostCrates"					"Ztracena"
+		"DOTA_DarkCarnival_CrateDrop_Score_Label"					"Skóre"
+		"DOTA_DarkCarnival_CrateDrop_CurrentMultiplier"				"Násobič: {f:current_multiplier}×"
+		"DOTA_DarkCarnival_CrateDrop_GameOver"						"Konec hry"
+		"DOTA_DarkCarnival_CrateDrop_GameWon"						"Vyhrál jsi!"
+		"DOTA_DarkCarnival_CrateDrop_GameLost"						"Ztratil jsi příliš mnoho beden!"
+		"DOTA_DarkCarnival_CrateDrop_PotentialScoreLabel"			"Body"
+		
+
+		"DOTA_DarkCarnival_CrateDrop_TotalCratesCaught"				"Celkový počet chycených beden"
+		"DOTA_DarkCarnival_CrateDrop_TotalCratesLost"				"Celkový počet ztracených beden"
+		"DOTA_DarkCarnival_CrateDrop_MaxHeight"						"Výška nejvyššího štosu beden"
+		"DOTA_DarkCarnival_CrateDrop_HighScores"					"Rekordy"
+		"DOTA_DarkCarnival_CrateDrop_PlayAgain"						"Hrát znovu"
+		"DOTA_DarkCarnival_CrateDrop_HeightBonus"					"Bonus za výšku"
+		"DOTA_DarkCarnival_CrateDrop_CratesRequired"				"Bedny pro další úroveň:\n {d:crates_required}"
+		"DOTA_DarkCarnival_CrateDrop_Failed"						"Smůla"
+		"DOTA_DarkCarnival_CrateDrop_TryAgainButton"				"Zkusit znovu"
+		"DOTA_DarkCarnival_CrateDrop_Help_Move"						"Pohyb"
+		"DOTA_DarkCarnival_CrateDrop_Help_Move_Details"				"Šipkami doleva a doprava lze posouvat platformou a šipkami nahoru a dolů lze přepínat mezi kolejemi." 
+		"DOTA_DarkCarnival_CrateDrop_Help_Ability"					"Sestrojení"
+		"DOTA_DarkCarnival_CrateDrop_Help_Ability_Description"		"Pomocí mezerníku lze okamžitě transportovat chycené bedny k sestrojení a získat body za každou z nich." 
+		"DOTA_DarkCarnival_CrateDrop_Scoring"						"Bodování" 
+		"DOTA_DarkCarnival_CrateDrop_Scoring_Desc"					"Každá chycená bedna transportovaná k sestrojení se podle své velikosti a tvaru rovná 100, 150 nebo 200 bodům.\n\nČím víc beden na sebe naštosuješ, tím vyšší bude násobič skóre!" 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_1"					"Pomocí šipek doleva a doprava posouvej Vědátorovou platformou a chytej bedny s díly." 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_2"					"Pomocí šipek nahoru a dolů přepínej mezi kolejemi." 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_3"					"Pomocí mezerníku odešli chycené bedny a proměň je na body!" 
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText1"				"Než bedny odešleš, co nejvíc jich naštosuj na sebe a zvyš svůj násobič skóre!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText2"				"Dávej si pozor na bomby, které vybuchnou po dotyku!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText3"				"Chyť vylepšení Obranná matice a odraz pomocí něj bomby!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText4"				"Dávej pozor na bomby, které zničí všechny bedny!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText5"				"Obnov ztracené životy pomocí vylepšení Oprava!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText6"				"Barely se slizem tě zpomalí, tak se jim vyhýbej!"
+		
+
+		
+		"DOTA_DarkCarnival_BlimpJump_Title"						"Vzducho-hop"
+		"DOTA_DarkCarnival_BlimpJump_Subtitle"					"Vyskákej ke vzducholodi!"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Title_Won"		"Vyhrál jsi!"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Title_Lost"		"Konec hry"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_Won"		"Dostal ses ke vzducholodi."
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_Lost"	"Prohrál jsi."
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_LostStoryMode"	"Nedostal ses ke vzducholodi."
+		"DOTA_DarkCarnival_EncounterStatus_BlimpJump"				"Karneval krutosti: Vzducho-hop"
+		
+		"DOTA_DarkCarnival_BlimpJump_Scoring"				"Pouze v módu bez konce.<br>Čím výš vyskáčeš, tím víc bodů získáš."
+		"DOTA_DarkCarnival_BlimpJump_PlayAgain"				"Zkusit znovu [MEZERNÍK]"
+
+		"DOTA_DarkCarnival_Encounter_BlimpJump_ReachTheBlimpRewardTitle" "Vyskákej ke vzducholodi!"
+
+		"DOTA_DarkCarnival_BlimpJump_InfiniteModeLocked"					"Lze odemknout dokončením příběhového režimu."
+
+		"DOTA_DarkCarnival_BlimpJump_GoInfinite"						"Přejít do módu bez konce"
+		"DOTA_DarkCarnival_BlimpJump_LeaveEncounter"					"Ukončit minihru"
+		
+		"DOTA_DarkCarnival_BlimpJump_Controls_Move"					"Pohyb"
+		"DOTA_DarkCarnival_BlimpJump_Controls_Move_Details"			"Klávesy pro pohyb Slarka doleva a doprava."
+		"DOTA_DarkCarnival_BlimpJump_Controls_ThrowShiv"			"Hození dýky"
+		"DOTA_DarkCarnival_BlimpJump_Controls_ThrowShiv_Details"	"Klávesy pro hození dýky."
+
+		"DOTA_DarkCarnival_BlimpJump_Modes_StoryMode"			"Příběh"
+		"DOTA_DarkCarnival_BlimpJump_Modes_StoryMode_Details"	"Vyskákej ke vzducholodi."
+
+		"DOTA_DarkCarnival_BlimpJump_Modes_InfiniteMode"			"Bez konce"
+		"DOTA_DarkCarnival_BlimpJump_Modes_InfiniteMode_Details"	"Vyskákej tak vysoko, jak jen to zvládneš!"
+
+		"DOTA_DarkCarnival_BlimpJump_Resume"						"Pokračovat [ESC]"
+						
 	}
 } 

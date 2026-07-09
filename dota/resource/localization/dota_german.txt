@@ -24556,6 +24556,9 @@ Um als erfahrener Spieler beitreten zu können, müssen Sie mindestens {d:new_pl
 	"DOTA_Hud_StunBar" "{s:state}"
 	"DOTA_Hud_SpecItemHeroName"	"{g:dota_hero_name:hero_id} (Lvl. <font color='#FFFFFF'>{d:player_level}</font>)"
 
+	// The local client has paused spectating playback, and can resume when they choose
+	"DOTA_Hud_Paused_Spectating_Local"			"Wiedergabe pausiert"
+	// Someone other than our local client has paused the game
 	"DOTA_Hud_Paused_Spectating"				"Ein Spieler hat das Spiel pausiert"
 	"DOTA_Hud_Paused"							"Partie ist pausiert"
 	"DOTA_Hud_Unpausing"						"Fortsetzen..."
@@ -50672,8 +50675,10 @@ Wenn Sie das Gefühl haben, dass Sie nicht die nötige Aufmerksamkeit aufbringen
 		"DOTA_DarkCarnival_Encounter_PickLock_Description"	"Helfen Sie Slark, aus seiner Zelle auszubrechen!"
 		"DOTA_DarkCarnival_Encounter_SlarkJailbreak"				"Stiefelwurf"
 		"DOTA_DarkCarnival_Encounter_SlarkJailbreak_Description"	"Sammeln Sie Beute durch Zerstörung von Stiefeln!"
-		"DOTA_DarkCarnival_Encounter_FriendGifting"					"Geschenke für Freunde"
+		"DOTA_DarkCarnival_Encounter_FriendGifting"					"Tauschbörse für lästige Materialien"
 		"DOTA_DarkCarnival_Encounter_FriendGifting_Description"		"Verschenken Sie Tickets, die Sie nicht brauchen, an Ihre Freunde!"
+		"DOTA_DarkCarnival_Encounter_FriendGifting_NoNeed"			"Ihr Freund benötigt aktuell keine Tickets."
+		"DOTA_DarkCarnival_Encounter_FriendGifting_NoFriendSelected"	"Wählen Sie einen Freund aus, um die von ihm benötigten Tickets anzuzeigen."
 		"DOTA_DarkCarnival_Encounter_TicketSmelter"					"Ticket-Schmelzofen"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_Description"		"Schmilzt auch Dinge, die man wahrscheinlich nicht schmelzen sollte!"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_SmeltButton"		"Einschmelzen"
@@ -50683,7 +50688,6 @@ Wenn Sie das Gefühl haben, dass Sie nicht die nötige Aufmerksamkeit aufbringen
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_NothingLeft"		"Sie haben bereits alles eingeschmolzen, was der Ticket-Schmelzofen verarbeiten kann."
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_SeeingStone:f"					"{d:num_seeing_stones} {num_seeing_stones, plural, one{Seherstein} other{Sehersteine}}"
 
-		
 		"DOTA_CandyShopName_Dark_Carnival"		"Zirkus-Bonbonladen"
 		"DOTA_DarkCarnival_View_Candyworks"		"Zirkus-Bonbonladen anzeigen"
 		"DOTA_DarkCarnivalStore_View"			"<b>Laden des Dunklen Zirkus</b> anzeigen"
@@ -50736,6 +50740,7 @@ Wenn Sie das Gefühl haben, dass Sie nicht die nötige Aufmerksamkeit aufbringen
 		"DOTA_DarkCarnival_SecretAdmirer_Gift_Tooltip"	"Sie können bis zu 5 Tickets pro Tag an Ihre Freunde verschenken."
 		"DOTA_DarkCarnival_SecretAdmirer_GiftNoneNeeded"		"Ihr Freund braucht keine Tickets."
 		"DOTA_DarkCarnival_SecretAdmirer_NoMoreAvailable"	"Sie können heute keine weiteren Tickets verschenken."
+		"DOTA_DarkCarnival_SecretAdmirer_CannotSendAnymore"	"Es können heute keine weiteren Geschenke versendet werden."
 		"DOTA_DarkCarnival_SecretAdmirer_GiftAvailableTooltip"	"Ein Freund hat Ihnen ein Geschenk geschickt!"
 
 		"DOTA_DarkCarnival_SecretRoomsPack_RequiredForRewardsClaims"		"Benötigt das Geheimabteil-Paket.<br>Zum Kaufen klicken"
@@ -50772,6 +50777,7 @@ Wenn Sie das Gefühl haben, dass Sie nicht die nötige Aufmerksamkeit aufbringen
 		"DOTA_DarkCarnival_InventoryPicker_Title"	"Wählen Sie Tickets aus Ihrem Inventar"
 		"DOTA_DarkCarnival_NoTicketsAvailable"	"Keine Tickets verfügbar"
 
+		"DOTA_DarkCarnival_Tarot_CardBack"			""
 		"DOTA_DarkCarnival_Tarot_TheFool"			"Der Narr"
 		"DOTA_DarkCarnival_Tarot_TheMagician"		"Der Magier"
 		"DOTA_DarkCarnival_Tarot_TheHighPriestess"	"Die Hohepriesterin"
@@ -50878,6 +50884,8 @@ Wenn Sie das Gefühl haben, dass Sie nicht die nötige Aufmerksamkeit aufbringen
 		"DOTA_DarkCarnival_FortuneTeller_Reward"				"Belohnung von „{s:reward_tarot_card_name}“"
 
 		"DOTA_DarkCarnival_Dashboard_GetFortune"				"Enthüllen Sie Ihr Schicksal!"
+		"DOTA_DarkCarnival_Dashboard_NoFortune"					""
+
 		"DOTA_DarkCarnival_FortuneDescription"					"%s3 – %s1 – %s2"
 
 		"DOTA_DarkCarnival_ClickToStart"						"Zum Starten klicken"
@@ -51052,12 +51060,17 @@ Wenn Sie das Gefühl haben, dass Sie nicht die nötige Aufmerksamkeit aufbringen
 
 		"DOTA_DarkCarnival_ChatWheelMessage"							"Chatradnachricht"
 
-		"dota_chatwheel_translation_darkcarnival_money_and_bones"		"GOLD UND KNOCHEN! GOLD UND KNOCHEN!"
-		"dota_chatwheel_translation_darkcarnival_are_we_the_idiots"		"Sind wir etwa die Ahnungslosen?"
-		"dota_chatwheel_translation_darkcarnival_wow"					"Wahnsinn!"
+		"dota_chatwheel_translation_darkcarnival_money_and_bones"				"GOLD UND KNOCHEN! GOLD UND KNOCHEN!"
+		"dota_chatwheel_translation_darkcarnival_are_we_the_idiots"				"Sind wir etwa die Ahnungslosen?"
+		"dota_chatwheel_translation_darkcarnival_wow"							"Wahnsinn!"
+		"dota_chatwheel_translation_darkcarnival_its_not_that_funny"			"Ich fand es nicht lustig."
+		"dota_chatwheel_translation_darkcarnival_im_sorry_who_are_you_again"	"Entschuldigung … wer bist du noch gleich?"
+
 		"dota_chatwheel_source_fishwitch"								"Grindlplit"
 		"dota_chatwheel_source_hoodwink"								"Hoodwink"
 		"dota_chatwheel_source_clown"									"Clarence"
+		"dota_chatwheel_source_cogliacci"								"Cogliacci"
+		"dota_chatwheel_source_lorenzo"									"Lorenzo"
 
 		"DOTA_DarkCarnival_HeroHighlightTooltip_TicketsNeeded"			"Benötigte Tickets"
 		"DOTA_DarkCarnival_HeroHighlightTooltip_NoTicketsNeeded"		"Keine Tickets benötigt"
@@ -51066,5 +51079,95 @@ Wenn Sie das Gefühl haben, dass Sie nicht die nötige Aufmerksamkeit aufbringen
 
 		"DOTA_DarkCarnival_Overworld_Unlock"						"Freischalten"
 
+		// Dark Carnival Chapter 2
+		
+		"DOTA_DarkCarnival_Encounter_CrateDrop"	"Automatenmontage"
+		"DOTA_DarkCarnival_Encounter_CrateDrop_Description"	"Fangen Sie die Kisten!"
+		
+		"DOTA_DarkCarnival_Encounter_BlimpJump"	"Zeppelinsprung"
+		"DOTA_DarkCarnival_Encounter_BlimpJump_Description"	"Erreichen Sie den Zeppelin!"
+		
+		"DOTA_Overworld_EncounterShortcut_blimp_jump"		"Zeppelinsprung"
+		"DOTA_Overworld_EncounterShortcut_crate_drop"		"Automatenmontage"
+		
+		// Dark Carnival: Crate Drop
+		"DOTA_DarkCarnival_CrateDrop_Title"							"Automatenmontage"
+		"DOTA_DarkCarnival_CrateDrop_GameDesc"						"Helfen Sie Tinker bei der Montage und fangen Sie die Kisten mit den Automatenteilen."
+		"DOTA_DarkCarnival_CrateDrop_Play"							"Spielen"
+		"DOTA_DarkCarnival_CrateDrop_HowToPlay"						"Hilfe zum Spiel"
+		"DOTA_DarkCarnival_CrateDrop_HowToPlayInstructions"			"Fangen Sie die Kisten mit den Automatenteilen auf den Gleisen auf und weichen Sie dabei den Bomben aus. Sie verlieren, wenn Sie zu viele Kisten fallen lassen.<br><br>Benutzen Sie die Pfeiltasten zum Bewegen und die Leertaste, um aufgefangene Kisten zur Montage zu schicken."
+		"DOTA_DarkCarnival_CrateDrop_CratesRemaining"				"Verbleibend"
+		"DOTA_DarkCarnival_CrateDrop_Score"							"Punktzahl: {d:level_score}"
+		"DOTA_DarkCarnival_CrateDrop_Level"							"Level"
+		"DOTA_DarkCarnival_CrateDrop_LevelComplete"					"Level abgeschlossen!"
+		"DOTA_DarkCarnival_CrateDrop_StartingLevel"					"Level {d:level}"
+		"DOTA_DarkCarnival_CrateDrop_LostCrates"					"Fallen gelassen"
+		"DOTA_DarkCarnival_CrateDrop_Score_Label"					"Punktzahl"
+		"DOTA_DarkCarnival_CrateDrop_CurrentMultiplier"				"Multiplikator: ×{f:current_multiplier}"
+		"DOTA_DarkCarnival_CrateDrop_GameOver"						"Spiel vorbei"
+		"DOTA_DarkCarnival_CrateDrop_GameWon"						"Sie haben gewonnen!"
+		"DOTA_DarkCarnival_CrateDrop_GameLost"						"Sie haben zu viele Kisten fallen gelassen!"
+		"DOTA_DarkCarnival_CrateDrop_PotentialScoreLabel"			"Punkte"
+		
+
+		"DOTA_DarkCarnival_CrateDrop_TotalCratesCaught"				"Gesamtzahl der aufgefangenen Kisten"
+		"DOTA_DarkCarnival_CrateDrop_TotalCratesLost"				"Gesamtzahl der fallen gelassenen Kisten"
+		"DOTA_DarkCarnival_CrateDrop_MaxHeight"						"Höhe des höchsten Kistenstapels"
+		"DOTA_DarkCarnival_CrateDrop_HighScores"					"Höchste Punktzahlen"
+		"DOTA_DarkCarnival_CrateDrop_PlayAgain"						"Erneut spielen"
+		"DOTA_DarkCarnival_CrateDrop_HeightBonus"					"Höhenbonus"
+		"DOTA_DarkCarnival_CrateDrop_CratesRequired"				"Erforderlich für das nächste Level:\n {d:crates_required}"
+		"DOTA_DarkCarnival_CrateDrop_Failed"						"Fehlgeschlagen"
+		"DOTA_DarkCarnival_CrateDrop_TryAgainButton"				"Erneut versuchen"
+		"DOTA_DarkCarnival_CrateDrop_Help_Move"						"Bewegen"
+		"DOTA_DarkCarnival_CrateDrop_Help_Move_Details"				"Bewegen Sie den Waggon mit den Pfeiltasten nach links und rechts und wechseln Sie mit den Pfeiltasten nach oben und unten zwischen den Gleisen." 
+		"DOTA_DarkCarnival_CrateDrop_Help_Ability"					"Zusammenbauen"
+		"DOTA_DarkCarnival_CrateDrop_Help_Ability_Description"		"Schicken Sie mit der Leertaste aufgefangene Kisten automatisch zur Montage und erhalten Sie Punkte für jedes Automatenteil." 
+		"DOTA_DarkCarnival_CrateDrop_Scoring"						"Punktvergabe" 
+		"DOTA_DarkCarnival_CrateDrop_Scoring_Desc"					"Jede Kiste, die aufgefangen und mit dem Befehl „Zusammenbauen“ zur Montage geschickt wurde, bringt Ihnen je nach Größe und Form 100, 150 oder 200 Punkte ein.\n\nErhöhen Sie Ihren Multiplikator für Punkte, indem Sie die Kisten vorher so hoch wie möglich stapeln." 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_1"					"Bewegen Sie Tinkers Waggon nach links und rechts, um Kisten voller Automatenteile aufzufangen!" 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_2"					"Bewegen Sie sich mit den Pfeiltasten nach oben und unten, um auf beiden Gleisen Kisten aufzufangen." 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_3"					"Schicken Sie mit der Leertaste aufgefangene Kisten zur Montage und sammeln Sie Punkte!" 
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText1"				"Benutzen Sie die Leertaste, wenn die Kisten hoch gestapelt sind, um einen höheren Multiplikator für Punkte zu erhalten!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText2"				"Nehmen Sie sich vor explosiven Gefahren in Acht!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText3"				"Fangen Sie das Power-up „Defense Matrix“ auf, um sich gegen Bombenschaden zu schützen!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText4"				"Vorsicht vor den Bomben, die alle Kisten zerstören!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText5"				"Stellen Sie verlorene Leben mit dem Power-up „Reparatur“ wieder her!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText6"				"Fässer voller Schleim werden Sie verlangsamen!"
+		
+
+		
+		"DOTA_DarkCarnival_BlimpJump_Title"						"Zeppelinsprung"
+		"DOTA_DarkCarnival_BlimpJump_Subtitle"					"Erreichen Sie den Zeppelin!"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Title_Won"		"Sie haben gewonnen!"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Title_Lost"		"Spiel vorbei"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_Won"		"Sie haben den Zeppelin erreicht."
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_Lost"	"Sie haben verloren."
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_LostStoryMode"	"Sie haben den Zeppelin nicht erreicht."
+		"DOTA_DarkCarnival_EncounterStatus_BlimpJump"				"Dunkler Zirkus: Zeppelinsprung"
+		
+		"DOTA_DarkCarnival_BlimpJump_Scoring"				"Nur im Endlosmodus.<br>Sammeln Sie Punkte, indem Sie höher und höher springen."
+		"DOTA_DarkCarnival_BlimpJump_PlayAgain"				"Erneut versuchen [Leertaste]"
+
+		"DOTA_DarkCarnival_Encounter_BlimpJump_ReachTheBlimpRewardTitle" "Zeppelin erreicht"
+
+		"DOTA_DarkCarnival_BlimpJump_InfiniteModeLocked"					"Schließen Sie den Story-Modus ab, um diese Option freizuschalten."
+
+		"DOTA_DarkCarnival_BlimpJump_GoInfinite"						"Endlosmodus spielen"
+		"DOTA_DarkCarnival_BlimpJump_LeaveEncounter"					"Minispiel verlassen"
+		
+		"DOTA_DarkCarnival_BlimpJump_Controls_Move"					"Bewegen"
+		"DOTA_DarkCarnival_BlimpJump_Controls_Move_Details"			"Slark nach links und rechts bewegen"
+		"DOTA_DarkCarnival_BlimpJump_Controls_ThrowShiv"			"Messer werfen"
+		"DOTA_DarkCarnival_BlimpJump_Controls_ThrowShiv_Details"	"Slarks Messer werfen"
+
+		"DOTA_DarkCarnival_BlimpJump_Modes_StoryMode"			"Story-Modus spielen"
+		"DOTA_DarkCarnival_BlimpJump_Modes_StoryMode_Details"	"Erreichen Sie den Zeppelin ganz oben."
+
+		"DOTA_DarkCarnival_BlimpJump_Modes_InfiniteMode"			"Endlosmodus spielen"
+		"DOTA_DarkCarnival_BlimpJump_Modes_InfiniteMode_Details"	"Springen Sie so hoch Sie können! Greifen Sie nach den Sternen!"
+
+		"DOTA_DarkCarnival_BlimpJump_Resume"						"Fortsetzen [ESC]"
+						
 	}
 } 

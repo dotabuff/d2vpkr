@@ -24490,6 +24490,9 @@ Jos asevarastosi on täynnä, seuraavat toiminnot estetään:<br><br><br>- esine
 	"DOTA_Hud_StunBar" "{s:state}"
 	"DOTA_Hud_SpecItemHeroName"	"Tason <font color='#FFFFFF'>{d:player_level}</font> {g:dota_hero_name:hero_id}"
 
+	// The local client has paused spectating playback, and can resume when they choose
+	"DOTA_Hud_Paused_Spectating_Local"			"Toisto keskeytetty"
+	// Someone other than our local client has paused the game
 	"DOTA_Hud_Paused_Spectating"				"Pelaaja on keskeyttänyt pelin"
 	"DOTA_Hud_Paused"							"Peli on pysäytetty"
 	"DOTA_Hud_Unpausing"						"Peli on jatkumassa"
@@ -32497,7 +32500,9 @@ Alkupelin sankareita kuten Zeusta ja Death Prophetia on nähty, puskijoita kuten
     "DOTA_Play_RR_PartyGainingQP"           "Joukkueesi on valinnut kaikki roolit. Jokainen jäsen saa roolihakupelejä."
 
     "DOTA_Play_RR_FiveStack"                "Täydet ryhmät voivat aina hakea roolihakupelejä."
-    "DOTA_Play_RR_SoloSpendingQP"			"Käytät yhden roolihakupelin."
+    "DOTA_Play_RR_HighDemandAtLeastOne"		"Ainakin yksi kovan kysynnän rooli on valittu. Valitse kaikki roolit ansaitaksesi lisää roolihakupelejä."
+
+	"DOTA_Play_RR_SoloSpendingQP"			"Käytät yhden roolihakupelin."
 	"DOTA_Play_RR_PartySpendingQP"			"Jokainen ryhmän jäsen käyttää yhden roolihakupelin."
 
 	"DOTA_Play_RR_SoloMissingQP"			"Sinun on valittava ainakin molemmat kysytyt roolit."
@@ -32517,9 +32522,12 @@ Alkupelin sankareita kuten Zeusta ja Death Prophetia on nähty, puskijoita kuten
 
     "DOTA_RR_SoloEarningQP"			        "Valitsemalla kaikki roolit saat {d:earn_amount} roolihakupeliä tulevia pelejä varten (hävitessä saat puolet)."
     "DOTA_RR_FiveStack"				        "Täydet ryhmät voivat aina pelata roolihakua, mutta eivät ansaitse lisää roolihakupelejä."
+    "DOTA_RR_SoloHighDemand"                "Olet valinnut kovan kysynnän roolin. Jos haluat lisää roolihakupelejä, voit valita kaikki roolit."
     "DOTA_RR_PartyHighDemand"               "Ryhmä on valinnut kaikki kovan kysynnän roolit. Jos haluatte lisää roolihakupelejä, voitte valita kaikki roolit."
 
 	"DOTA_RR_HighDemandRole_Title"		    "Kovan kysynnän rooli"
+	"DOTA_RR_HighDemandRole_Description"	"Roolilla on kova kysyntä. Jos sinä tai ryhmäsi hakee kaikkia kovan kysynnän rooleja, ei tarvita roolihakupelejä roolihaun pelaamiseksi."
+
 	"DOTA_RR_SoloSpendingQP"			    "Käytät yhden roolihakupelin ja saat yhden valitsemistasi rooleista."
 	"DOTA_RR_PartySpendingQP"			    "Jokainen ryhmän jäsen käyttää yhden roolihakupelin ja saa yhden valitsemistaan rooleista."
 	
@@ -43181,11 +43189,11 @@ uudet esinekuvakkeet."
 		"DOTA_Crownfall_TooltipOverworldPath_ActionPopup"					"Klikkaa valitaksesi omistamattomat poletit"
 		"DOTA_Crownfall_TooltipOverworldPath_Requirement_Token:f"		"<span class=\"TokenName\">{count} {count, plural, one{kolikko} other{kolikkoa}} ({name})</span>"
 		"DOTA_Crownfall_TooltipOverworldPath_Requirement_1Types"		"Tarvitaan {s:token1}. {s:path_flavor}"
-		"DOTA_Crownfall_TooltipOverworldPath_Requirement_2Types"		"Tarvitset {s:token1} ja {s:token2}. {s:path_flavor}"
-		"DOTA_Crownfall_TooltipOverworldPath_Requirement_3Types"		"Tarvitset {s:token1}, {s:token2} ja {s:token3}. {s:path_flavor}"
-		"DOTA_Crownfall_TooltipOverworldPath_Requirement_4Types"		"Tarvitset {s:token1}, {s:token2}, {s:token3} ja {s:token4}. {s:path_flavor}"
-		"DOTA_Crownfall_TooltipOverworldPath_Requirement_5Types"		"Tarvitset {s:token1}, {s:token2}, {s:token3}, {s:token4} ja {s:token5}. {s:path_flavor}"
-		"DOTA_Crownfall_TooltipOverworldPath_Requirement_6Types"		"Tarvitset {s:token1}, {s:token2}, {s:token3}, {s:token4}, {s:token5} ja {s:token6}. {s:path_flavor}"
+		"DOTA_Crownfall_TooltipOverworldPath_Requirement_2Types"		"Tarvitaan {s:token1} ja {s:token2}. {s:path_flavor}"
+		"DOTA_Crownfall_TooltipOverworldPath_Requirement_3Types"		"Tarvitaan {s:token1}, {s:token2} ja {s:token3}. {s:path_flavor}"
+		"DOTA_Crownfall_TooltipOverworldPath_Requirement_4Types"		"Tarvitaan {s:token1}, {s:token2}, {s:token3} ja {s:token4}. {s:path_flavor}"
+		"DOTA_Crownfall_TooltipOverworldPath_Requirement_5Types"		"Tarvitaan {s:token1}, {s:token2}, {s:token3}, {s:token4} ja {s:token5}. {s:path_flavor}"
+		"DOTA_Crownfall_TooltipOverworldPath_Requirement_6Types"		"Tarvitaan {s:token1}, {s:token2}, {s:token3}, {s:token4}, {s:token5} ja {s:token6}. {s:path_flavor}"
 
 		"DOTA_Crownfall_TooltipOverworldPath_SpecialPath_Act2_Path17"	"Aavikkomatka on pitkä ja ankara..."
 
@@ -43802,6 +43810,8 @@ uudet esinekuvakkeet."
 		"DOTA_HUD_Pregame_TurboTokenRewardsTooltip"		"Saat 2 polettia Turbo-pelin voitosta. Valitse haluamasi poletit."
 
 		"DOTA_HeroGrid_Overworld"						"Karu karnevaali"
+		"DOTA_HeroGrid_Overworld_Description"			"Korosta sankareita, jotka avaavat polkuja Karun karnevaalin kartalla."
+		
 		"DOTA_CrownfallLeaderboard_Act1_Title"			"Ensimmäisen osan edistyminen"
 		"DOTA_CrownfallLeaderboard_Act2_Title"			"Toisen osan edistyminen"
 		"DOTA_CrownfallLeaderboard_Act3_Title"			"Kolmannen osan edistyminen"
@@ -44467,8 +44477,10 @@ uudet esinekuvakkeet."
 		"DOTA_TalentContent_RejectReason_PhotoBadCrop"					"Valokuvan tulee olla rajattu kasvokuva. Katso ohjeet täältä: https://www.dota2.com/portraitguidelines."
 		"DOTA_TalentContent_RejectReason_PhotoBadQuality"				"Kuva ei noudata laatuohjeita, jotka löytyvät osoitteesta https://www.dota2.com/portraitguidelines."
 		"DOTA_TalentContent_RejectReason_PhotoExtraElements"			"Kuvaan on muokattu ylimääräisiä elementtejä."
+		"DOTA_TalentContent_RejectReason_PhotoAI"						"Kuvasi on tehty tai muokattu generatiivisen tekoälyn avulla."
 		"DOTA_TalentContent_RejectReason_AutoBadAlpha"					"Nimikirjoituksen tausta ei ole täysin läpinäkyvä, eikä sitä voida lähettää."
 		"DOTA_TalentContent_RejectReason_AutoBadQuality"				"Nimikirjoitus ei noudata laatuohjeita, jotka löytyvät osoitteesta https://www.dota2.com/autographguidelines."
+		"DOTA_TalentContent_RejectReason_AutoAI"						"Nimikirjoituksesi on tehty generatiivisen tekoälyn avulla."
 		"DOTA_TalentContent_RejectReason_VoiceNotTalent"				"Repliikissä {d:voiceline_number} käytetty ääni ei ole oma äänesi."
 		"DOTA_TalentContent_RejectReason_VoiceLanguage"					"Repliikin {d:voiceline_number} on oltava äidinkielelläsi, selostuskielelläsi tai englanniksi."
 		"DOTA_TalentContent_RejectReason_VoiceAdvertisement"			"Repliikki {d:voiceline_number} sisältää mainoksia tai sponsorointia, joiden käytölle laki asettaa rajoituksia."
@@ -44484,6 +44496,7 @@ uudet esinekuvakkeet."
 		"DOTA_TalentContent_RejectReason_VoiceQuiet"					"Repliikki {d:voiceline_number} on liian hiljainen."
 		"DOTA_TalentContent_RejectReason_VoiceLength"					"Repliikki {d:voiceline_number} on liian pitkä."
 		"DOTA_TalentContent_RejectReason_VoiceAbrasive"					"Repliikki {d:voiceline_number} on liian raastava tai ärsyttävä."
+		"DOTA_TalentContent_RejectReason_VoiceAI"						"Juontajarepliikkisi {d:voiceline_number} on tehty generatiivisen tekoälyn avulla."
 		"DOTA_TalentContent_Approval_Photo"								"Kuvasi on hyväksytty."
 		"DOTA_TalentContent_Approval_Auto"								"Nimikirjoituksesi on hyväksytty."
 		"DOTA_TalentContent_Approval_Voice"								"Repliikki {d:voiceline_number} on hyväksytty."
@@ -47651,8 +47664,10 @@ uudet esinekuvakkeet."
 		"DOTA_DarkCarnival_Encounter_PickLock_Description"	"Vapauta Slark sellistään."
 		"DOTA_DarkCarnival_Encounter_SlarkJailbreak"				"Kenkäkarkuri"
 		"DOTA_DarkCarnival_Encounter_SlarkJailbreak_Description"	"Kerää saalista ja tuhoa saappaita."
-		"DOTA_DarkCarnival_Encounter_FriendGifting"					"Antelias kaveri"
+		"DOTA_DarkCarnival_Encounter_FriendGifting"					"Epäkäytännöllisten materiaalien vaihto"
 		"DOTA_DarkCarnival_Encounter_FriendGifting_Description"		"Lahjoita kavereillesi lippuja, joita et tarvitse."
+		"DOTA_DarkCarnival_Encounter_FriendGifting_NoNeed"			"Kaverisi ei tarvitse lippuja juuri nyt"
+		"DOTA_DarkCarnival_Encounter_FriendGifting_NoFriendSelected"	"Valitse kaveri nähdäksesi hänen tarvitsemansa liput"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter"					"Lipunsulattaja"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_Description"		"Sulata asioita, joita ei ehkä kuuluisi sulattaa."
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_SmeltButton"		"Sulata"
@@ -47662,7 +47677,6 @@ uudet esinekuvakkeet."
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_NothingLeft"		"Olet sulattanut kaiken, mitä lipunsulattaja voi tällä hetkellä luoda."
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_SeeingStone:f"					"{num_seeing_stones, plural, one{{d:num_seeing_stones} Näkökivi} other{{d:num_seeing_stones} Näkökiveä}}"
 
-		
 		"DOTA_CandyShopName_Dark_Carnival"		"Karnevaalin karkkikauppa"
 		"DOTA_DarkCarnival_View_Candyworks"		"Näytä Karkkikaravaani"
 		"DOTA_DarkCarnivalStore_View"			"Näytä <b>Karun karnevaalin kauppa</b>"
@@ -47715,6 +47729,7 @@ uudet esinekuvakkeet."
 		"DOTA_DarkCarnival_SecretAdmirer_Gift_Tooltip"	"Voit lahjoittaa kavereille enintään viisi lippua."
 		"DOTA_DarkCarnival_SecretAdmirer_GiftNoneNeeded"		"Kaverisi ei tarvitse yhtään lippua."
 		"DOTA_DarkCarnival_SecretAdmirer_NoMoreAvailable"	"Et voi lahjoittaa tänään enää mitään."
+		"DOTA_DarkCarnival_SecretAdmirer_CannotSendAnymore"	"Et voi lähettää enempää lahjoja tänään"
 		"DOTA_DarkCarnival_SecretAdmirer_GiftAvailableTooltip"	"Kaverisi on lähettänyt sinulle lahjan."
 
 		"DOTA_DarkCarnival_SecretRoomsPack_RequiredForRewardsClaims"		"Vaatii Salahuoneet-paketin.<br>Osta klikkaamalla."
@@ -47745,11 +47760,13 @@ uudet esinekuvakkeet."
 		"DOTA_DarkCarnival_Token_Oracle"		"Ennustus"
 		"DOTA_DarkCarnival_Token_NodeUnlock"	"Polkujen avaus"
 		"DOTA_DarkCarnival_Token_MinigameUnlock"	"Karnevaalipelin avaus"
+		"DOTA_DarkCarnival_Token_CarnivalScrap"		"Romu"
 		"DOTA_Overworld_Token_Random"			"Satunnainen lippu"
 
 		"DOTA_DarkCarnival_InventoryPicker_Title"	"Valitse liput tavaraluettelostasi"
 		"DOTA_DarkCarnival_NoTicketsAvailable"	"Ei lippuja saatavilla"
 
+		"DOTA_DarkCarnival_Tarot_CardBack"			""
 		"DOTA_DarkCarnival_Tarot_TheFool"			"Narri"
 		"DOTA_DarkCarnival_Tarot_TheMagician"		"Maagikko"
 		"DOTA_DarkCarnival_Tarot_TheHighPriestess"	"Ylipapitar"
@@ -48030,16 +48047,112 @@ uudet esinekuvakkeet."
 
 		"DOTA_DarkCarnival_ChatWheelMessage"							"Chatrullarepliikki"
 
-		"dota_chatwheel_translation_darkcarnival_money_and_bones"		"RAHAA JA LUITA! RAHAA JA LUITA!"
-		"dota_chatwheel_translation_darkcarnival_are_we_the_idiots"		"Mekö olemme pölkkypäitä?"
-		"dota_chatwheel_translation_darkcarnival_wow"					"Vau!"
+		"dota_chatwheel_translation_darkcarnival_money_and_bones"				"RAHAA JA LUITA! RAHAA JA LUITA!"
+		"dota_chatwheel_translation_darkcarnival_are_we_the_idiots"				"Mekö olemme pölkkypäitä?"
+		"dota_chatwheel_translation_darkcarnival_wow"							"Vau!"
+		"dota_chatwheel_translation_darkcarnival_its_not_that_funny"			"Ei se noin hauskaa ole."
+		"dota_chatwheel_translation_darkcarnival_im_sorry_who_are_you_again"	"Anteeksi, kuka oletkaan?"
+
 		"dota_chatwheel_source_fishwitch"								"Grindlplit"
 		"dota_chatwheel_source_hoodwink"								"Hoodwink"
 		"dota_chatwheel_source_clown"									"Pellervo"
+		"dota_chatwheel_source_cogliacci"								"Cogliacci"
+		"dota_chatwheel_source_lorenzo"									"Lorenzo"
+
+		"DOTA_DarkCarnival_HeroHighlightTooltip_TicketsNeeded"			"Tarvittavat liput"
+		"DOTA_DarkCarnival_HeroHighlightTooltip_NoTicketsNeeded"		"Lippuja ei tarvita"
 
 		"DOTA_Axe_Missing"			"Axe on kadonnut eikä voi osallistua"
 
 		"DOTA_DarkCarnival_Overworld_Unlock"						"Avaa"
 
+		// Dark Carnival Chapter 2
+		
+		"DOTA_DarkCarnival_Encounter_CrateDrop"	"Robottien kokoonpano"
+		"DOTA_DarkCarnival_Encounter_CrateDrop_Description"	"Nappaa laatikot!"
+		
+		"DOTA_DarkCarnival_Encounter_BlimpJump"	"Ilmalaivahyppy"
+		"DOTA_DarkCarnival_Encounter_BlimpJump_Description"	"Mene ilmalaivaan!"
+		
+		"DOTA_Overworld_EncounterShortcut_blimp_jump"		"Ilmalaivahyppy"
+		// Dark Carnival: Crate Drop
+		"DOTA_DarkCarnival_CrateDrop_Title"							"Robottien kokoonpano"
+		"DOTA_DarkCarnival_CrateDrop_GameDesc"						"Auta Peltiseppää nappaamaan robotinosia sisältävät laatikot robottien kokoamista varten."
+		"DOTA_DarkCarnival_CrateDrop_Play"							"Pelaa"
+		"DOTA_DarkCarnival_CrateDrop_HowToPlay"						"Peliohjeet"
+		"DOTA_DarkCarnival_CrateDrop_HowToPlayInstructions"			"Nappaa laatikot alustalle, mutta vältä pommeja. Jos löydät liikaa laatikoita, häviät!<br><br> Käytä nuolinäppäimiä liikuttaaksesi ja välilyöntinäppäintä varastoidaksesi napatut laatikot."
+		"DOTA_DarkCarnival_CrateDrop_CratesRemaining"				"Jäljellä"
+		"DOTA_DarkCarnival_CrateDrop_Score"							"Pisteet: {d:current_score}"
+		"DOTA_DarkCarnival_CrateDrop_Level"							"Taso"
+		"DOTA_DarkCarnival_CrateDrop_LevelComplete"					"Taso suoritettu!"
+		"DOTA_DarkCarnival_CrateDrop_StartingLevel"					"Taso {u:level}"
+		"DOTA_DarkCarnival_CrateDrop_LostCrates"					"Tappio"
+		"DOTA_DarkCarnival_CrateDrop_Score_Label"					"Pisteet"
+		"DOTA_DarkCarnival_CrateDrop_CurrentMultiplier"				"Kerroin: {f:current_multiplier}x"
+		"DOTA_DarkCarnival_CrateDrop_GameOver"						"Peli päättyi"
+		"DOTA_DarkCarnival_CrateDrop_GameWon"						"Voitit!"
+		"DOTA_DarkCarnival_CrateDrop_GameLost"						"Missasit liikaa osia!"
+		"DOTA_DarkCarnival_CrateDrop_PotentialScoreLabel"			"pistettä"
+		
+
+		"DOTA_DarkCarnival_CrateDrop_TotalCratesCaught"				"Napatut laatikot yhteensä"
+		"DOTA_DarkCarnival_CrateDrop_TotalCratesLost"				"Missatut laatikot yhteensä"
+		"DOTA_DarkCarnival_CrateDrop_MaxHeight"						"Korkeimman laatikkopinon korkeus"
+		"DOTA_DarkCarnival_CrateDrop_HighScores"					"Ennätykset"
+		"DOTA_DarkCarnival_CrateDrop_PlayAgain"						"Pelaa uudelleen"
+		"DOTA_DarkCarnival_CrateDrop_HeightBonus"					"Korkeusbonus"
+		"DOTA_DarkCarnival_CrateDrop_CratesRequired"				"Laatikoita tarvitaan seuraan tasoon:\n {d:crates_required}"
+		"DOTA_DarkCarnival_CrateDrop_Failed"						"Epäonnistui"
+		"DOTA_DarkCarnival_CrateDrop_TryAgainButton"				"Yritä uudelleen"
+		"DOTA_DarkCarnival_CrateDrop_Help_Move"						"Liiku"
+		"DOTA_DarkCarnival_CrateDrop_Help_Move_Details"				"Liikuta alustaa vasemmalle ja oikealle ja rataa ylös ja alas nuolinäppäimillä." 
+		"DOTA_DarkCarnival_CrateDrop_Help_Ability"					"Kokoaminen"
+		"DOTA_DarkCarnival_CrateDrop_Help_Ability_Description"		"Käytä välilyöntinäppäintä kuljettaaksesi napatut laatikot välittömästi kokoajille ja kerätäksesi pisteitä jokaisesta osasta." 
+		"DOTA_DarkCarnival_CrateDrop_Scoring"						"Pisteytys" 
+		"DOTA_DarkCarnival_CrateDrop_Scoring_Desc"					"Jokainen kokoamiskyvyllä napattu ja lunastettu laatikko antaa 100, 150 tai 200 pistettä sen koosta ja muodosta riippuen.\n\nKasvata pistekerrointa kokoamalla laatikoista mahdollisimman korkea pino." 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_1"					"Liikuta Peltisepän alustaa vasemmalle ja oikealle napataksesi robotin osia sisältäviä laatikoita!" 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_2"					"Käytä nuolinäppäimiä ylös ja alas kääntääksesi ja napataksesi laatikot vastakkaisella radalla." 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_3"					"Käytä välilyöntinäppäintä lunastaaksesi napatut laatikot ja kerätäksesi pisteitä!" 
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText1"				"Käytä välilyöntinäppäintä, kun laatikot ovat korkealla pinossa, niin saat suuremman kertoimen!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText2"				"Varo osia, jotka voivat räjähtää kosketuksesta!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText3"				"Nappaa Defense Matrix -tehoste pommien torjumiseksi!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText4"				"Varo pommeja, ne tuhoavat kaikki laatikot!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText5"				"Palauta menetetyt elämät korjaustehosteella!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText6"				"Mömmöä täynnä olevat tynnyrit hidastavat sinua!"
+		
+
+		
+		"DOTA_DarkCarnival_BlimpJump_Title"						"Ilmalaivahyppy"
+		"DOTA_DarkCarnival_BlimpJump_Subtitle"					"Mene ilmalaivaan!"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Title_Won"		"Voitit!"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Title_Lost"		"Peli ohi"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_Won"		"Pääsit ilmalaivaan."
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_Lost"	"Hävisit."
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_LostStoryMode"	"Et päässyt ilmalaivaan."
+		"DOTA_DarkCarnival_EncounterStatus_BlimpJump"				"Karu karnevaali – Ilmalaivahyppy"
+		
+		"DOTA_DarkCarnival_BlimpJump_Scoring"				"Vain äärettömässä tilassa.<br>Ansaitse pisteitä nousemalla yhä korkeammalle."
+		"DOTA_DarkCarnival_BlimpJump_PlayAgain"				"Yritä uudelleen [välilyönti]"
+
+		"DOTA_DarkCarnival_Encounter_BlimpJump_ReachTheBlimpRewardTitle" "Saavuta ilmalaiva"
+
+		"DOTA_DarkCarnival_BlimpJump_InfiniteModeLocked"					"Avaa suorittamalla tarinatila."
+
+		"DOTA_DarkCarnival_BlimpJump_GoInfinite"						"Ääretön tila"
+		"DOTA_DarkCarnival_BlimpJump_LeaveEncounter"					"Poistu kohtaamisesta"
+		
+		"DOTA_DarkCarnival_BlimpJump_Controls_Move"					"Liiku"
+		"DOTA_DarkCarnival_BlimpJump_Controls_Move_Details"			"Siirrä Slarkia vasemmalle ja oikealle"
+		"DOTA_DarkCarnival_BlimpJump_Controls_ThrowShiv"			"Heitä puukko"
+		"DOTA_DarkCarnival_BlimpJump_Controls_ThrowShiv_Details"	"Heitä Slarkin puukko"
+
+		"DOTA_DarkCarnival_BlimpJump_Modes_StoryMode"			"Tarina"
+		"DOTA_DarkCarnival_BlimpJump_Modes_StoryMode_Details"	"Pääse perille ilmalaivaan huipulla."
+
+		"DOTA_DarkCarnival_BlimpJump_Modes_InfiniteMode"			"Ääretön tila"
+		"DOTA_DarkCarnival_BlimpJump_Modes_InfiniteMode_Details"	"Mene niin korkealle kuin pystyt, pyri huipulle!"
+
+		"DOTA_DarkCarnival_BlimpJump_Resume"						"Jatka [ESC]"
+						
 	}
 } 

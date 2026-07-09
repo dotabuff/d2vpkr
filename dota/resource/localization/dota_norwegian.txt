@@ -24329,6 +24329,9 @@ Du må ha minst {d:new_player_req_games_played} spilte kamper og en kommunikasjo
 	"DOTA_Hud_StunBar" "{s:state}"
 	"DOTA_Hud_SpecItemHeroName"	"Nivå <font color='#FFFFFF'>{d:player_level}</font> {g:dota_hero_name:hero_id}"
 
+	// The local client has paused spectating playback, and can resume when they choose
+	"DOTA_Hud_Paused_Spectating_Local"			"Avspilling på pause"
+	// Someone other than our local client has paused the game
 	"DOTA_Hud_Paused_Spectating"				"En spiller satte spillet på pause"
 	"DOTA_Hud_Paused"							"Spillet er satt på pause"
 	"DOTA_Hud_Unpausing"						"Spillet gjenopptas"
@@ -50337,8 +50340,10 @@ Drap av målet i Dead Reckoning gir 2 poeng. Medvirkninger gir 1 poeng."
 		"DOTA_DarkCarnival_Encounter_PickLock_Description"	"Hjelp Slark med å bryte ut av cellen!"
 		"DOTA_DarkCarnival_Encounter_SlarkJailbreak"				"Støvelkast"
 		"DOTA_DarkCarnival_Encounter_SlarkJailbreak_Description"	"Samle bytte! Ødelegg støvler!"
-		"DOTA_DarkCarnival_Encounter_FriendGifting"					"Vennegaver"
+		"DOTA_DarkCarnival_Encounter_FriendGifting"					"Veksling av upraktiske materialer"
 		"DOTA_DarkCarnival_Encounter_FriendGifting_Description"		"Gi bort billetter du ikke trenger, til venner!"
+		"DOTA_DarkCarnival_Encounter_FriendGifting_NoNeed"			"Vennen trenger ingen billetter akkurat nå"
+		"DOTA_DarkCarnival_Encounter_FriendGifting_NoFriendSelected"	"Velg en venn for å se billettene de trenger"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter"					"Billettverket"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_Description"		"Smelt ting du sannsynligvis ikke bør smelte!"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_SmeltButton"		"Smelt"
@@ -50348,7 +50353,6 @@ Drap av målet i Dead Reckoning gir 2 poeng. Medvirkninger gir 1 poeng."
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_NothingLeft"		"Du har smeltet ned alt som billettverket kan lage for øyeblikket."
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_SeeingStone:f"					"{num_seeing_stones, plural, one{{d:num_seeing_stones} spåstein} other{{d:num_seeing_stones} spåsteiner}}"
 
-		
 		"DOTA_CandyShopName_Dark_Carnival"		"Tivoliets godtebutikk"
 		"DOTA_DarkCarnival_View_Candyworks"		"Se tivoliets godtebutikk"
 		"DOTA_DarkCarnivalStore_View"			"Se i <b>tivolibutikken</b>"
@@ -50401,6 +50405,7 @@ Drap av målet i Dead Reckoning gir 2 poeng. Medvirkninger gir 1 poeng."
 		"DOTA_DarkCarnival_SecretAdmirer_Gift_Tooltip"	"Du kan gi opptil 5 billetter i gave til venner om dagen."
 		"DOTA_DarkCarnival_SecretAdmirer_GiftNoneNeeded"		"Vennen trenger ingen billetter!"
 		"DOTA_DarkCarnival_SecretAdmirer_NoMoreAvailable"	"Du har ikke flere tilgjengelige gaver i dag "
+		"DOTA_DarkCarnival_SecretAdmirer_CannotSendAnymore"	"Du kan ikke sende flere gaver i dag"
 		"DOTA_DarkCarnival_SecretAdmirer_GiftAvailableTooltip"	"En venn har sendt deg en gave!"
 
 		"DOTA_DarkCarnival_SecretRoomsPack_RequiredForRewardsClaims"		"Krever skjulestedspakken.<br>Trykk for å kjøpe"
@@ -50717,12 +50722,17 @@ Drap av målet i Dead Reckoning gir 2 poeng. Medvirkninger gir 1 poeng."
 
 		"DOTA_DarkCarnival_ChatWheelMessage"							"Samtalehjulmelding"
 
-		"dota_chatwheel_translation_darkcarnival_money_and_bones"		"PENGER OG BEIN! PENGER OG BEIN!"
-		"dota_chatwheel_translation_darkcarnival_are_we_the_idiots"		"Er det vi som er idiotene?"
-		"dota_chatwheel_translation_darkcarnival_wow"					"Wow!"
+		"dota_chatwheel_translation_darkcarnival_money_and_bones"				"PENGER OG BEIN! PENGER OG BEIN!"
+		"dota_chatwheel_translation_darkcarnival_are_we_the_idiots"				"Er det vi som er idiotene?"
+		"dota_chatwheel_translation_darkcarnival_wow"							"Wow!"
+		"dota_chatwheel_translation_darkcarnival_its_not_that_funny"			"Det er ikke så morsomt."
+		"dota_chatwheel_translation_darkcarnival_im_sorry_who_are_you_again"	"Beklager … hvem var du igjen?"
+
 		"dota_chatwheel_source_fishwitch"								"Grindplitt"
 		"dota_chatwheel_source_hoodwink"								"Kilevink"
 		"dota_chatwheel_source_clown"									"Clarence"
+		"dota_chatwheel_source_cogliacci"								"Cogliacci"
+		"dota_chatwheel_source_lorenzo"									"Lorenzo"
 
 		"DOTA_DarkCarnival_HeroHighlightTooltip_TicketsNeeded"			"Nødvendige billetter"
 		"DOTA_DarkCarnival_HeroHighlightTooltip_NoTicketsNeeded"		"Ingen billetter nødvendig"
@@ -50731,5 +50741,95 @@ Drap av målet i Dead Reckoning gir 2 poeng. Medvirkninger gir 1 poeng."
 
 		"DOTA_DarkCarnival_Overworld_Unlock"						"Lås opp"
 
+		// Dark Carnival Chapter 2
+		
+		"DOTA_DarkCarnival_Encounter_CrateDrop"	"Robotmontering"
+		"DOTA_DarkCarnival_Encounter_CrateDrop_Description"	"Fang kassene!"
+		
+		"DOTA_DarkCarnival_Encounter_BlimpJump"	"Luftskiphopp"
+		"DOTA_DarkCarnival_Encounter_BlimpJump_Description"	"Kom deg til luftskipet!"
+		
+		"DOTA_Overworld_EncounterShortcut_blimp_jump"		"Luftskiphopp"
+		"DOTA_Overworld_EncounterShortcut_crate_drop"		"Robotmontering"
+		
+		// Dark Carnival: Crate Drop
+		"DOTA_DarkCarnival_CrateDrop_Title"							"Robotmontering"
+		"DOTA_DarkCarnival_CrateDrop_GameDesc"						"Hjelp Mekker med å fange kassene med robotdeler til montering."
+		"DOTA_DarkCarnival_CrateDrop_Play"							"Spill"
+		"DOTA_DarkCarnival_CrateDrop_HowToPlay"						"Slik spiller du"
+		"DOTA_DarkCarnival_CrateDrop_HowToPlayInstructions"			"Fang kassene med robotdeler på plattformen mens du unngår bombene. Mister du for mange kasser, taper du!<br><br>Bruk piltastene til å bevege deg og mellomrom for å lagre kassene som allerede er fanget."
+		"DOTA_DarkCarnival_CrateDrop_CratesRemaining"				"igjen"
+		"DOTA_DarkCarnival_CrateDrop_Score"							"Poeng: {d:current_score}"
+		"DOTA_DarkCarnival_CrateDrop_Level"							"Nivå"
+		"DOTA_DarkCarnival_CrateDrop_LevelComplete"					"Nivå fullført!"
+		"DOTA_DarkCarnival_CrateDrop_StartingLevel"					"Nivå {u:level}"
+		"DOTA_DarkCarnival_CrateDrop_LostCrates"					"mistet"
+		"DOTA_DarkCarnival_CrateDrop_Score_Label"					"poeng"
+		"DOTA_DarkCarnival_CrateDrop_CurrentMultiplier"				"Multiplikator: {f:current_multiplier}x"
+		"DOTA_DarkCarnival_CrateDrop_GameOver"						"Spillet er slutt"
+		"DOTA_DarkCarnival_CrateDrop_GameWon"						"Du vant!"
+		"DOTA_DarkCarnival_CrateDrop_GameLost"						"Du mistet for mange deler!"
+		"DOTA_DarkCarnival_CrateDrop_PotentialScoreLabel"			"Poeng"
+		
+
+		"DOTA_DarkCarnival_CrateDrop_TotalCratesCaught"				"Fanget totalt"
+		"DOTA_DarkCarnival_CrateDrop_TotalCratesLost"				"Mistet totalt"
+		"DOTA_DarkCarnival_CrateDrop_MaxHeight"						"Høyeste stabel"
+		"DOTA_DarkCarnival_CrateDrop_HighScores"					"Rekorder"
+		"DOTA_DarkCarnival_CrateDrop_PlayAgain"						"Spill igjen"
+		"DOTA_DarkCarnival_CrateDrop_HeightBonus"					"Høydebonus"
+		"DOTA_DarkCarnival_CrateDrop_CratesRequired"				"Kreves for neste nivå:\n {d:crates_required}"
+		"DOTA_DarkCarnival_CrateDrop_Failed"						"Mislyktes"
+		"DOTA_DarkCarnival_CrateDrop_TryAgainButton"				"Prøv igjen"
+		"DOTA_DarkCarnival_CrateDrop_Help_Move"						"Bevegelse"
+		"DOTA_DarkCarnival_CrateDrop_Help_Move_Details"				"Flytt plattformen med piltast venstre og høyre, og bytt spor med piltast opp og ned." 
+		"DOTA_DarkCarnival_CrateDrop_Help_Ability"					"Montering"
+		"DOTA_DarkCarnival_CrateDrop_Help_Ability_Description"		"Bruk mellomrom til å transportere fangede kasser direkte til montørene, som gir poeng for hver del." 
+		"DOTA_DarkCarnival_CrateDrop_Scoring"						"Poenggivning" 
+		"DOTA_DarkCarnival_CrateDrop_Scoring_Desc"					"Hver kasse som fanges og samles med monteringsevnen, gir 100, 150 eller 200 poeng, avhengig av størrelse og form.\n\nØk poengmultiplikatoren ved å stable kassene så høyt du kan!" 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_1"					"Flytt Mekkers plattform til venstre og høyre for å fange kasser fulle av robotdeler!" 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_2"					"Bruk opp og ned for å skifte spor og fange kassene på det motsatte sporet." 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_3"					"Bruk mellomrom til å samle de fangede kassene og få poeng!" 
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText1"				"Bruk mellomromstasten når kassene er stablet høyt for å få en større multiplikator!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText2"				"Pass deg for farer som kan eksplodere ved berøring!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText3"				"Fang forsvarsstyrkelsen for å avlede bomber!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText4"				"Pass deg for bomber som tilintetgjør alle kasser!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText5"				"Gjenopprett tapte liv med reparasjonsstyrkelsen!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText6"				"Tønner fulle av guffe sakker deg!"
+		
+
+		
+		"DOTA_DarkCarnival_BlimpJump_Title"						"Luftskiphopp"
+		"DOTA_DarkCarnival_BlimpJump_Subtitle"					"Kom deg til luftskipet!"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Title_Won"		"Du vant!"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Title_Lost"		"Spillet er slutt"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_Won"		"Du nådde luftskipet."
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_Lost"	"Du tapte."
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_LostStoryMode"	"Du nådde ikke luftskipet."
+		"DOTA_DarkCarnival_EncounterStatus_BlimpJump"				"Mørkets tivoli: Luftskiphopp"
+		
+		"DOTA_DarkCarnival_BlimpJump_Scoring"				"Kun i evighetsmodus.<br>Tjen poeng ved å komme høyere og høyere."
+		"DOTA_DarkCarnival_BlimpJump_PlayAgain"				"Prøv igjen [Mellomrom]"
+
+		"DOTA_DarkCarnival_Encounter_BlimpJump_ReachTheBlimpRewardTitle" "Nå luftskipet"
+
+		"DOTA_DarkCarnival_BlimpJump_InfiniteModeLocked"					"Lås opp ved å fullføre historiemodus."
+
+		"DOTA_DarkCarnival_BlimpJump_GoInfinite"						"Fortsett evig"
+		"DOTA_DarkCarnival_BlimpJump_LeaveEncounter"					"Avslutt treffet"
+		
+		"DOTA_DarkCarnival_BlimpJump_Controls_Move"					"Bevegelse"
+		"DOTA_DarkCarnival_BlimpJump_Controls_Move_Details"			"Flytt Slark til venstre og høyre."
+		"DOTA_DarkCarnival_BlimpJump_Controls_ThrowShiv"			"Kast kniv"
+		"DOTA_DarkCarnival_BlimpJump_Controls_ThrowShiv_Details"	"Kast Slarks kniv."
+
+		"DOTA_DarkCarnival_BlimpJump_Modes_StoryMode"			"Spill historien"
+		"DOTA_DarkCarnival_BlimpJump_Modes_StoryMode_Details"	"Nå luftskipet på toppen."
+
+		"DOTA_DarkCarnival_BlimpJump_Modes_InfiniteMode"			"Spill evig"
+		"DOTA_DarkCarnival_BlimpJump_Modes_InfiniteMode_Details"	"Kom deg så høyt du kan – sikt mot stjernene!"
+
+		"DOTA_DarkCarnival_BlimpJump_Resume"						"Fortsett [ESC]"
+						
 	}
 } 

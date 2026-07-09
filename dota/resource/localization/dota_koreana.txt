@@ -24340,6 +24340,9 @@
 	"DOTA_Hud_StunBar" "{s:state}"
 	"DOTA_Hud_SpecItemHeroName"	"<font color='#FFFFFF'>{d:player_level}</font>레벨 {g:dota_hero_name:hero_id}"
 
+	// The local client has paused spectating playback, and can resume when they choose
+	"DOTA_Hud_Paused_Spectating_Local"			"재생 일시 정지"
+	// Someone other than our local client has paused the game
 	"DOTA_Hud_Paused_Spectating"				"플레이어가 게임을 일시 정지했습니다"
 	"DOTA_Hud_Paused"							"게임이 일시 정지되었습니다"
 	"DOTA_Hud_Unpausing"						"일시 정지를 해제합니다."
@@ -46126,7 +46129,7 @@
 		"DOTA_Overworld_Inventory_HeroTrayPremium"		"<b>비밀의 방</b> 이용권은 어둠의 카니발 상점에서 구매할 수 있는 <b>{s:expansion_pack_name}</b>에 포함되어 있습니다. 이 이용권을 사용하여 독특한 보상이 있는 특별 방을 해제할 수 있습니다."
 		"DOTA_Overworld_Inventory_HeroTrayHidden"		"만남으로 획득한 특별 이용권입니다."
 		"DOTA_Overworld_Inventory_PathUnlocker"			"<b>경로 해제</b> 이용권을 사용하면 보통 요구되는 이용권을 소모하지 않고 노드를 해제할 수 있습니다. 노드 가격 아래에 있는 <b>해제 사용</b> 버튼을 클릭하여 사용합니다."
-		"DOTA_Overworld_Inventory_ScrapToken"			"게임을 플레이할 때마다, 승패에 상관없이 <b>{s:scrap_token_name}</b> 주화를 획득합니다.<br>주화는 <b>주화 상인</b>에게서 원하는 영웅 주화로 교환할 수 있습니다."
+		"DOTA_Overworld_Inventory_ScrapToken"			"게임을 플레이할 때마다, 승패에 상관없이 <b>{s:scrap_token_name}</b> 이용권을 획득합니다.<br>획득한 이용권은 <b>이용권 상인</b>에게서 원하는 영웅 이용권으로 교환할 수 있습니다."
 		
 		"DOTA_Crownfall_Encounter_UnableToClaimReward"	"보상 요청 불가"
 		"DOTA_Crownfall_Encounter_TokenExchangeFailed"	"이용권 교환 실패"
@@ -50397,8 +50400,10 @@
 		"DOTA_DarkCarnival_Encounter_PickLock_Description"	"슬라크가 감방에서 탈출하도록 도와줘야 합니다!"
 		"DOTA_DarkCarnival_Encounter_SlarkJailbreak"				"장화 파괴자"
 		"DOTA_DarkCarnival_Encounter_SlarkJailbreak_Description"	"전리품을 모으세요! 장화를 파괴하세요!"
-		"DOTA_DarkCarnival_Encounter_FriendGifting"					"친구에게 선물하기"
+		"DOTA_DarkCarnival_Encounter_FriendGifting"					"불편한 재료 교환"
 		"DOTA_DarkCarnival_Encounter_FriendGifting_Description"		"필요하지 않은 이용권을 친구에게 선물하세요!"
+		"DOTA_DarkCarnival_Encounter_FriendGifting_NoNeed"			"지금 친구에게는 아무 이용권도 필요하지 않습니다"
+		"DOTA_DarkCarnival_Encounter_FriendGifting_NoFriendSelected"	"친구를 선택하고 필요한 이용권을 확인하세요"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter"					"이용권 용광로"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_Description"		"녹이면 안 될지도 모르는 것들을 녹여 보세요!"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_SmeltButton"		"녹이기"
@@ -50408,7 +50413,6 @@
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_NothingLeft"		"현재 이용권 용광로에서 만들어 낼 수 있는 모든 것을 녹였습니다."
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_SeeingStone:f"					"{num_seeing_stones, plural, one{예견석 {d:num_seeing_stones}개} other{예견석 {d:num_seeing_stones}개}}"
 
-		
 		"DOTA_CandyShopName_Dark_Carnival"		"카니발 사탕전문점"
 		"DOTA_DarkCarnival_View_Candyworks"		"카니발 사탕전문점 보기"
 		"DOTA_DarkCarnivalStore_View"			"<b>어둠의 카니발 상점</b> 보기"
@@ -50461,6 +50465,7 @@
 		"DOTA_DarkCarnival_SecretAdmirer_Gift_Tooltip"	"이용권은 친구에게 하루에 최대 5장까지 선물할 수 있습니다."
 		"DOTA_DarkCarnival_SecretAdmirer_GiftNoneNeeded"		"친구에게 이용권이 필요하지 않습니다!"
 		"DOTA_DarkCarnival_SecretAdmirer_NoMoreAvailable"	"오늘 더 이용할 수 있는 선물이 없습니다"
+		"DOTA_DarkCarnival_SecretAdmirer_CannotSendAnymore"	"오늘은 선물을 더 보낼 수 없습니다"
 		"DOTA_DarkCarnival_SecretAdmirer_GiftAvailableTooltip"	"친구가 선물을 보냈습니다!"
 
 		"DOTA_DarkCarnival_SecretRoomsPack_RequiredForRewardsClaims"		"비밀의 방 팩이 필요합니다.<br>클릭하여 구매"
@@ -50777,12 +50782,17 @@
 
 		"DOTA_DarkCarnival_ChatWheelMessage"							"휠 대화 메시지"
 
-		"dota_chatwheel_translation_darkcarnival_money_and_bones"		"돈과 뼈! 돈과 뼈!"
-		"dota_chatwheel_translation_darkcarnival_are_we_the_idiots"		"그 멍청이들이 우리야?"
-		"dota_chatwheel_translation_darkcarnival_wow"					"와!"
+		"dota_chatwheel_translation_darkcarnival_money_and_bones"				"돈과 뼈! 돈과 뼈!"
+		"dota_chatwheel_translation_darkcarnival_are_we_the_idiots"				"그 멍청이들이 우리야?"
+		"dota_chatwheel_translation_darkcarnival_wow"							"와!"
+		"dota_chatwheel_translation_darkcarnival_its_not_that_funny"			"별로 안 웃겨."
+		"dota_chatwheel_translation_darkcarnival_im_sorry_who_are_you_again"	"미안한데... 누구라고 했지?"
+
 		"dota_chatwheel_source_fishwitch"								"그린들플릿"
 		"dota_chatwheel_source_hoodwink"								"후드윙크"
 		"dota_chatwheel_source_clown"									"클래런스"
+		"dota_chatwheel_source_cogliacci"								"코글리아치"
+		"dota_chatwheel_source_lorenzo"									"로렌조"
 
 		"DOTA_DarkCarnival_HeroHighlightTooltip_TicketsNeeded"			"필요한 이용권"
 		"DOTA_DarkCarnival_HeroHighlightTooltip_NoTicketsNeeded"		"이용권 필요 없음"
@@ -50791,5 +50801,95 @@
 
 		"DOTA_DarkCarnival_Overworld_Unlock"						"잠금 해제"
 
+		// Dark Carnival Chapter 2
+		
+		"DOTA_DarkCarnival_Encounter_CrateDrop"	"자동 기계 조립"
+		"DOTA_DarkCarnival_Encounter_CrateDrop_Description"	"상자를 받으세요!"
+		
+		"DOTA_DarkCarnival_Encounter_BlimpJump"	"비행선 점프"
+		"DOTA_DarkCarnival_Encounter_BlimpJump_Description"	"비행선에 도달하세요!"
+		
+		"DOTA_Overworld_EncounterShortcut_blimp_jump"		"비행선 점프"
+		"DOTA_Overworld_EncounterShortcut_crate_drop"		"자동 기계 조립"
+		
+		// Dark Carnival: Crate Drop
+		"DOTA_DarkCarnival_CrateDrop_Title"							"자동 기계 조립"
+		"DOTA_DarkCarnival_CrateDrop_GameDesc"						"땜장이가 조립에 필요한 자동 기계 부품 상자를 받도록 도와주세요"
+		"DOTA_DarkCarnival_CrateDrop_Play"							"플레이"
+		"DOTA_DarkCarnival_CrateDrop_HowToPlay"						"플레이 방법"
+		"DOTA_DarkCarnival_CrateDrop_HowToPlayInstructions"			"폭탄을 피하면서 작업대 위로 자동 기계 부품 상자를 받으세요. 상자를 너무 많이 떨어뜨리면 실패합니다!<br><br>화살표 키로 이동하고 스페이스로 받은 상자를 보관합니다."
+		"DOTA_DarkCarnival_CrateDrop_CratesRemaining"				"남음"
+		"DOTA_DarkCarnival_CrateDrop_Score"							"점수: {d:current_score}점"
+		"DOTA_DarkCarnival_CrateDrop_Level"							"레벨"
+		"DOTA_DarkCarnival_CrateDrop_LevelComplete"					"레벨 완료!"
+		"DOTA_DarkCarnival_CrateDrop_StartingLevel"					"{u:level}레벨"
+		"DOTA_DarkCarnival_CrateDrop_LostCrates"					"놓침"
+		"DOTA_DarkCarnival_CrateDrop_Score_Label"					"점수"
+		"DOTA_DarkCarnival_CrateDrop_CurrentMultiplier"				"배수: {f:current_multiplier}배"
+		"DOTA_DarkCarnival_CrateDrop_GameOver"						"게임 종료"
+		"DOTA_DarkCarnival_CrateDrop_GameWon"						"성공했습니다!"
+		"DOTA_DarkCarnival_CrateDrop_GameLost"						"부품을 너무 많이 놓쳤습니다!"
+		"DOTA_DarkCarnival_CrateDrop_PotentialScoreLabel"			"점수"
+		
+
+		"DOTA_DarkCarnival_CrateDrop_TotalCratesCaught"				"받은 상자 총 개수"
+		"DOTA_DarkCarnival_CrateDrop_TotalCratesLost"				"놓친 상자 총 개수"
+		"DOTA_DarkCarnival_CrateDrop_MaxHeight"						"가장 높게 쌓은 상자 높이"
+		"DOTA_DarkCarnival_CrateDrop_HighScores"					"최고 점수"
+		"DOTA_DarkCarnival_CrateDrop_PlayAgain"						"다시 하기"
+		"DOTA_DarkCarnival_CrateDrop_HeightBonus"					"높이 보너스"
+		"DOTA_DarkCarnival_CrateDrop_CratesRequired"				"다음 레벨을 위해 필요:\n {d:crates_required}개"
+		"DOTA_DarkCarnival_CrateDrop_Failed"						"실패함"
+		"DOTA_DarkCarnival_CrateDrop_TryAgainButton"				"다시 도전"
+		"DOTA_DarkCarnival_CrateDrop_Help_Move"						"이동"
+		"DOTA_DarkCarnival_CrateDrop_Help_Move_Details"				"오른쪽/왼쪽 화살표 키로 작업대를 움직이고, 위/아래 화살표 키로 궤도를 전환합니다." 
+		"DOTA_DarkCarnival_CrateDrop_Help_Ability"					"조립"
+		"DOTA_DarkCarnival_CrateDrop_Help_Ability_Description"		"스페이스를 누르면 받은 상자가 즉시 조립공에게 전달되며, 부품마다 점수를 얻습니다." 
+		"DOTA_DarkCarnival_CrateDrop_Scoring"						"득점" 
+		"DOTA_DarkCarnival_CrateDrop_Scoring_Desc"					"조립 능력으로 받아서 수집한 상자 1개당 크기와 모양에 따라 100점, 150점, 200점을 얻습니다.\n\n상자를 가능한 한 높이 쌓으면 점수 배수가 증가합니다!" 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_1"					"땜장이의 받침대를 좌우로 움직여 자동 기계 부품이 가득 든 상자를 받으세요!" 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_2"					"위 아래 키를 이용하면 차원을 이동하고 반대편 궤도에서 상자를 받을 수 있습니다." 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_3"					"스페이스 바를 사용하면 받은 상자를 수집하고 점수를 획득합니다!" 
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText1"				"상자가 높이 쌓였을 때 스페이스 바를 누르면 더 큰 배수가 적용됩니다!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText2"				"위험물은 건드리면 폭발하니 조심하세요!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText3"				"방어막 파워업을 받아 폭탄을 막으세요!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText4"				"폭탄은 나무 상자를 전부 파괴하니 조심하세요!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText5"				"수리 파워업으로 잃어버린 생명을 회복하세요!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText6"				"찐득찐득한 물질이 담긴 통을 받으면 속도가 느려집니다!"
+		
+
+		
+		"DOTA_DarkCarnival_BlimpJump_Title"						"비행선 점프"
+		"DOTA_DarkCarnival_BlimpJump_Subtitle"					"비행선에 도달하세요!"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Title_Won"		"승리했습니다!"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Title_Lost"		"게임 종료"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_Won"		"비행선에 도달했습니다."
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_Lost"	"실패했습니다."
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_LostStoryMode"	"비행선에 도달하지 못했습니다."
+		"DOTA_DarkCarnival_EncounterStatus_BlimpJump"				"어둠의 카니발: 비행선 점프"
+		
+		"DOTA_DarkCarnival_BlimpJump_Scoring"				"무한 모드에서만 가능합니다.<br>더 높이 올라갈수록 점수를 얻습니다."
+		"DOTA_DarkCarnival_BlimpJump_PlayAgain"				"다시 시도 [Space]"
+
+		"DOTA_DarkCarnival_Encounter_BlimpJump_ReachTheBlimpRewardTitle" "비행선 도달하기"
+
+		"DOTA_DarkCarnival_BlimpJump_InfiniteModeLocked"					"이야기 모드를 완료하면 해제됩니다."
+
+		"DOTA_DarkCarnival_BlimpJump_GoInfinite"						"무한 모드 가기"
+		"DOTA_DarkCarnival_BlimpJump_LeaveEncounter"					"대면 떠나기"
+		
+		"DOTA_DarkCarnival_BlimpJump_Controls_Move"					"이동"
+		"DOTA_DarkCarnival_BlimpJump_Controls_Move_Details"			"슬라크를 좌우로 이동"
+		"DOTA_DarkCarnival_BlimpJump_Controls_ThrowShiv"			"조악칼 던지기"
+		"DOTA_DarkCarnival_BlimpJump_Controls_ThrowShiv_Details"	"슬라크의 조악칼 던지기"
+
+		"DOTA_DarkCarnival_BlimpJump_Modes_StoryMode"			"플레이 - 이야기"
+		"DOTA_DarkCarnival_BlimpJump_Modes_StoryMode_Details"	"맨 위에서 비행선에 도달합니다."
+
+		"DOTA_DarkCarnival_BlimpJump_Modes_InfiniteMode"			"플레이 - 무한"
+		"DOTA_DarkCarnival_BlimpJump_Modes_InfiniteMode_Details"	"최대한 높이 올라, 별을 쏘세요!"
+
+		"DOTA_DarkCarnival_BlimpJump_Resume"						"재개하기 [ESC]"
+						
 	}
 } 

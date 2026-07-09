@@ -24548,6 +24548,9 @@
 	"DOTA_Hud_StunBar" "{s:state}"
 	"DOTA_Hud_SpecItemHeroName"	"{g:dota_hero_name:hero_id} <font color='#FFFFFF'>{d:player_level}</font>-й рів."
 
+	// The local client has paused spectating playback, and can resume when they choose
+	"DOTA_Hud_Paused_Spectating_Local"			"Перегляд призупинено"
+	// Someone other than our local client has paused the game
 	"DOTA_Hud_Paused_Spectating"				"Гравець призупиняє гру"
 	"DOTA_Hud_Paused"							"Гру призупинено"
 	"DOTA_Hud_Unpausing"						"Гра поновлюється"
@@ -50663,8 +50666,10 @@
 		"DOTA_DarkCarnival_Encounter_PickLock_Description"	"Допоможіть Сларку вибратися з камери!"
 		"DOTA_DarkCarnival_Encounter_SlarkJailbreak"				"Чоботолам"
 		"DOTA_DarkCarnival_Encounter_SlarkJailbreak_Description"	"Збирайте здобич! Знищуйте чоботом!"
-		"DOTA_DarkCarnival_Encounter_FriendGifting"					"Дарунки друзям"
+		"DOTA_DarkCarnival_Encounter_FriendGifting"					"Біржа недоречних матеріалів"
 		"DOTA_DarkCarnival_Encounter_FriendGifting_Description"		"Даруйте непотрібні квитки своїм друзям!"
+		"DOTA_DarkCarnival_Encounter_FriendGifting_NoNeed"			"Вашому другу зараз не потрібні квитки"
+		"DOTA_DarkCarnival_Encounter_FriendGifting_NoFriendSelected"	"Оберіть друга, щоби побачити потрібні йому квитки"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter"					"Плавильня квитків"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_Description"		"Переплавляйте речі, які, мабуть, не варто переплавляти!"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_SmeltButton"		"Переплавити"
@@ -50674,7 +50679,6 @@
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_NothingLeft"		"Ви переплавили все, що плавильня квитків наразі може."
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_SeeingStone:f"					"{num_seeing_stones, plural, one{{d:num_seeing_stones} віщий камінь} few{{d:num_seeing_stones} віщі камені} many{{d:GrantPoints} віщих каменів} other{{d:GrantPoints} віщого каменя}}"
 
-		
 		"DOTA_CandyShopName_Dark_Carnival"		"Цукерня Темного карнавалу"
 		"DOTA_DarkCarnival_View_Candyworks"		"Відвідати цукерню"
 		"DOTA_DarkCarnivalStore_View"			"Відвідати <b>крамницю Темного карнавалу</b>"
@@ -50727,6 +50731,7 @@
 		"DOTA_DarkCarnival_SecretAdmirer_Gift_Tooltip"	"Ви можете дарувати друзям до 5 квитків на день."
 		"DOTA_DarkCarnival_SecretAdmirer_GiftNoneNeeded"		"Вашому другу не потрібні квитки!"
 		"DOTA_DarkCarnival_SecretAdmirer_NoMoreAvailable"	"Сьогодні ви більше не можете дарувати"
+		"DOTA_DarkCarnival_SecretAdmirer_CannotSendAnymore"	"Сьогодні ви більше не можете дарувати"
 		"DOTA_DarkCarnival_SecretAdmirer_GiftAvailableTooltip"	"Ваш друг надіслав вам дарунок!"
 
 		"DOTA_DarkCarnival_SecretRoomsPack_RequiredForRewardsClaims"		"Потрібен набір таємних кімнат.<br>Клацніть для придбання."
@@ -51043,12 +51048,17 @@
 
 		"DOTA_DarkCarnival_ChatWheelMessage"							"Повідомлення колеса чату"
 
-		"dota_chatwheel_translation_darkcarnival_money_and_bones"		"ГРОШВА І КІСТКИ! ГРОШВА І КІСТКИ!"
-		"dota_chatwheel_translation_darkcarnival_are_we_the_idiots"		"Це ми недоумки?"
-		"dota_chatwheel_translation_darkcarnival_wow"					"Ого!"
+		"dota_chatwheel_translation_darkcarnival_money_and_bones"				"ГРОШВА І КІСТКИ! ГРОШВА І КІСТКИ!"
+		"dota_chatwheel_translation_darkcarnival_are_we_the_idiots"				"Це ми недоумки?"
+		"dota_chatwheel_translation_darkcarnival_wow"							"Ого!"
+		"dota_chatwheel_translation_darkcarnival_its_not_that_funny"			"Це не дуже смішно."
+		"dota_chatwheel_translation_darkcarnival_im_sorry_who_are_you_again"	"Перепрошую… а ви хто?"
+
 		"dota_chatwheel_source_fishwitch"								"Ґріндлпліт"
 		"dota_chatwheel_source_hoodwink"								"Каптурниця"
 		"dota_chatwheel_source_clown"									"Кларенс"
+		"dota_chatwheel_source_cogliacci"								"Кольячі"
+		"dota_chatwheel_source_lorenzo"									"Лоренцо"
 
 		"DOTA_DarkCarnival_HeroHighlightTooltip_TicketsNeeded"			"Потрібні квитки"
 		"DOTA_DarkCarnival_HeroHighlightTooltip_NoTicketsNeeded"		"Квитки не потрібні"
@@ -51057,5 +51067,95 @@
 
 		"DOTA_DarkCarnival_Overworld_Unlock"						"Розблокувати"
 
+		// Dark Carnival Chapter 2
+		
+		"DOTA_DarkCarnival_Encounter_CrateDrop"	"Збирання автоматонів"
+		"DOTA_DarkCarnival_Encounter_CrateDrop_Description"	"Ловіть ящики!"
+		
+		"DOTA_DarkCarnival_Encounter_BlimpJump"	"Стрибки до цепеліна"
+		"DOTA_DarkCarnival_Encounter_BlimpJump_Description"	"Дістаньтеся цепеліна!"
+		
+		"DOTA_Overworld_EncounterShortcut_blimp_jump"		"Стрибки до цепеліна"
+		"DOTA_Overworld_EncounterShortcut_crate_drop"		"Збирання автоматонів"
+		
+		// Dark Carnival: Crate Drop
+		"DOTA_DarkCarnival_CrateDrop_Title"							"Збирання автоматонів"
+		"DOTA_DarkCarnival_CrateDrop_GameDesc"						"Допоможіть Механіку зловити ящики запчастин для збирання автоматонів"
+		"DOTA_DarkCarnival_CrateDrop_Play"							"Грати"
+		"DOTA_DarkCarnival_CrateDrop_HowToPlay"						"Як грати"
+		"DOTA_DarkCarnival_CrateDrop_HowToPlayInstructions"			"Ловіть на платформу ящики із запчастинами автоматонів, уникаючи бомб. Ви програєте, якщо не спіймаєте забагато ящиків!<br><br>Клавіші зі стрілками: переміщення. Пробіл: спіймані ящики до сховку."
+		"DOTA_DarkCarnival_CrateDrop_CratesRemaining"				"Залишилося"
+		"DOTA_DarkCarnival_CrateDrop_Score"							"Рахунок: {d:current_score}"
+		"DOTA_DarkCarnival_CrateDrop_Level"							"Рівень"
+		"DOTA_DarkCarnival_CrateDrop_LevelComplete"					"Рівень завершено!"
+		"DOTA_DarkCarnival_CrateDrop_StartingLevel"					"Рівень {u:level}"
+		"DOTA_DarkCarnival_CrateDrop_LostCrates"					"Поразка"
+		"DOTA_DarkCarnival_CrateDrop_Score_Label"					"Рахунок"
+		"DOTA_DarkCarnival_CrateDrop_CurrentMultiplier"				"Множник: ×{f:current_multiplier}"
+		"DOTA_DarkCarnival_CrateDrop_GameOver"						"Кінець гри"
+		"DOTA_DarkCarnival_CrateDrop_GameWon"						"Ви перемогли!"
+		"DOTA_DarkCarnival_CrateDrop_GameLost"						"Ви не спіймали забагато запчастин!"
+		"DOTA_DarkCarnival_CrateDrop_PotentialScoreLabel"			"Очки"
+		
+
+		"DOTA_DarkCarnival_CrateDrop_TotalCratesCaught"				"Усього спіймано ящиків"
+		"DOTA_DarkCarnival_CrateDrop_TotalCratesLost"				"Усього не спіймано ящиків"
+		"DOTA_DarkCarnival_CrateDrop_MaxHeight"						"Найвища купа ящиків"
+		"DOTA_DarkCarnival_CrateDrop_HighScores"					"Рекорди"
+		"DOTA_DarkCarnival_CrateDrop_PlayAgain"						"Зіграти знову"
+		"DOTA_DarkCarnival_CrateDrop_HeightBonus"					"Бонус висоти"
+		"DOTA_DarkCarnival_CrateDrop_CratesRequired"				"Потрібно до наступного рівня:\n {d:crates_required}"
+		"DOTA_DarkCarnival_CrateDrop_Failed"						"Не вдалося"
+		"DOTA_DarkCarnival_CrateDrop_TryAgainButton"				"Спробувати знову"
+		"DOTA_DarkCarnival_CrateDrop_Help_Move"						"Переміщення"
+		"DOTA_DarkCarnival_CrateDrop_Help_Move_Details"				"Переміщуйте платформу клавішами зі стрілками вліво/вправо. Змінюйте колію платформи клавішами зі стрілками вгору/вниз." 
+		"DOTA_DarkCarnival_CrateDrop_Help_Ability"					"Збирання"
+		"DOTA_DarkCarnival_CrateDrop_Help_Ability_Description"		"Миттєво передає спіймані запчастини на збирання, щоб отримати очки за кожну з них." 
+		"DOTA_DarkCarnival_CrateDrop_Scoring"						"Очки" 
+		"DOTA_DarkCarnival_CrateDrop_Scoring_Desc"					"Кожен спійманий ящик, переданий на збирання, дає 100, 150 або 200 очок, залежно від розміру та форми.\n\nЗбільшуйте множник очок, складаючи ящики якомога вище!" 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_1"					"Рухайте платформу Механіка ліворуч і праворуч, щоби ловити ящики із запчастинами автоматонів!" 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_2"					"Стрілками вгору/вниз можна змінювати колію платформи." 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_3"					"Натисніть пробіл, щоби віддати спіймані ящики та отримати очки!" 
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText1"				"Натисніть пробіл, коли ящики складені високо, щоб отримати більший множник!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText2"				"Стережіться бомб, які вибухають, якщо їх спіймати!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText3"				"Ловіть ящики із захисною матрицею, що відбиває бомби!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText4"				"Остерігайтеся бомб, які знищують усі ящики!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText5"				"Відновлюйте втрачені життя за допомогою ремонту!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText6"				"Бочки зі слизом вас сповільнять, тож уникайте їх!"
+		
+
+		
+		"DOTA_DarkCarnival_BlimpJump_Title"						"Стрибки до цепеліна"
+		"DOTA_DarkCarnival_BlimpJump_Subtitle"					"Дістаньтеся цепеліна!"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Title_Won"		"Ви перемогли!"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Title_Lost"		"Кінець гри"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_Won"		"Ви досягли цепеліна."
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_Lost"	"Ви програли."
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_LostStoryMode"	"Ви не досягли цепеліна."
+		"DOTA_DarkCarnival_EncounterStatus_BlimpJump"				"Темний карнавал: Стрибки до цепеліна"
+		
+		"DOTA_DarkCarnival_BlimpJump_Scoring"				"Лише в нескінченному режимі.<br>Заробляйте очки, піднімаючись якомога вище."
+		"DOTA_DarkCarnival_BlimpJump_PlayAgain"				"Спробувати знову [пробіл]"
+
+		"DOTA_DarkCarnival_Encounter_BlimpJump_ReachTheBlimpRewardTitle" "Досягніть цепеліна"
+
+		"DOTA_DarkCarnival_BlimpJump_InfiniteModeLocked"					"Розблокується після завершення в режимі історії."
+
+		"DOTA_DarkCarnival_BlimpJump_GoInfinite"						"Нескінченний режим"
+		"DOTA_DarkCarnival_BlimpJump_LeaveEncounter"					"До потяга"
+		
+		"DOTA_DarkCarnival_BlimpJump_Controls_Move"					"Рух"
+		"DOTA_DarkCarnival_BlimpJump_Controls_Move_Details"			"Рухайте Сларка ліворуч і праворуч"
+		"DOTA_DarkCarnival_BlimpJump_Controls_ThrowShiv"			"Кидок тесака"
+		"DOTA_DarkCarnival_BlimpJump_Controls_ThrowShiv_Details"	"Кидає тесак угору"
+
+		"DOTA_DarkCarnival_BlimpJump_Modes_StoryMode"			"Історія"
+		"DOTA_DarkCarnival_BlimpJump_Modes_StoryMode_Details"	"Досягніть цепеліна вгорі."
+
+		"DOTA_DarkCarnival_BlimpJump_Modes_InfiniteMode"			"Нескінченно"
+		"DOTA_DarkCarnival_BlimpJump_Modes_InfiniteMode_Details"	"Підіймайтеся якомога вище!"
+
+		"DOTA_DarkCarnival_BlimpJump_Resume"						"Продовжити [ESC]"
+						
 	}
 } 

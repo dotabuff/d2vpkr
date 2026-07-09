@@ -24341,6 +24341,9 @@
 	"DOTA_Hud_StunBar" "{s:state}"
 	"DOTA_Hud_SpecItemHeroName"	"レベル <font color='#FFFFFF'>{d:player_level}</font> {g:dota_hero_name:hero_id}"
 
+	// The local client has paused spectating playback, and can resume when they choose
+	"DOTA_Hud_Paused_Spectating_Local"			"プレイバック一時停止中"
+	// Someone other than our local client has paused the game
 	"DOTA_Hud_Paused_Spectating"				"プレイヤーがゲームを一時停止しました"
 	"DOTA_Hud_Paused"							"ゲームを一時停止中"
 	"DOTA_Hud_Unpausing"						"ゲームを再開中"
@@ -32786,6 +32789,8 @@ The International 2015の優勝チームEGは、グループステージ開始�
 
     "DOTA_Play_RR_FiveStack"                "パーティ全員にランクロールの資格があります。"
     "DOTA_Play_RR_HighDemand"               "すべての需要の高いロールが選択されました。すべてのロールを選択すると、ロールキューゲームをさらに獲得できます。"
+	"DOTA_Play_RR_HighDemandAtLeastOne"		"需要の高いロールが1つ以上選択されました。すべてのロールを選択すると、ロールキューゲームをさらに獲得できます。"
+
 	"DOTA_Play_RR_SoloSpendingQP"			"ロールキューゲームx1を消費します。"
 	"DOTA_Play_RR_PartySpendingQP"			"各パーティメンバーがロールキューゲームx1を消費します。"
 
@@ -32808,9 +32813,12 @@ The International 2015の優勝チームEGは、グループステージ開始�
 
     "DOTA_RR_SoloEarningQP"			        "すべてのロールを選択すると、今後使用可能なロールキューゲームx {d:earn_amount}（敗北時は半分）が各プレイヤーに付与されます。"
     "DOTA_RR_FiveStack"				        "パーティ全員がランクロールの資格がありますが、今後使用できるゲームを獲得することはありません。"
+    "DOTA_RR_SoloHighDemand"                "需要の高いロールを選択しました。今後使用するために追加のロールキューゲームを獲得したい場合は、残りのロールを選択してください。"
     "DOTA_RR_PartyHighDemand"               "パーティが需要の高いロールをすべて選択しました。今後使用するために追加のロールキューゲームを獲得したい場合は、残りのロールを選択してください。"
 
 	"DOTA_RR_HighDemandRole_Title"		    "需要の高いロール"
+	"DOTA_RR_HighDemandRole_Description"	"需要の高いロールです。あなたかパーティが需要の高いロールのキューに入っていれば、ランクロールをプレイするのにロールキューゲームは必要ありません。"
+
 	"DOTA_RR_SoloSpendingQP"			    "ロールキューゲームx1を消費して、選択したロールを引き受けます。"
 	"DOTA_RR_PartySpendingQP"			    "各パーティメンバーがロールキューゲームx1を消費して、選択したロールを引き受けます。"
 	
@@ -46125,6 +46133,8 @@ The International 2015の優勝チームEGは、グループステージ開始�
 		"DOTA_Overworld_Inventory_HeroTrayPremium"		"<b>秘密の部屋</b>チケットはダークカーニバルストアで購入できる<b>{s:expansion_pack_name}</b>に含まれます。このチケットを使用すると、ユニークなリワードを獲得できる特殊な部屋をアンロックできます。"
 		"DOTA_Overworld_Inventory_HeroTrayHidden"		"この特殊チケットはある出会いによって獲得した。"
 		"DOTA_Overworld_Inventory_PathUnlocker"			"<b>パスアンロック</b>チケットでは、通常必要なトークンを使わずにノードを解除できる。ノードコストの下にある<b>今すぐアンロック</b>ボタンをクリックして使用しよう。"
+		"DOTA_Overworld_Inventory_ScrapToken"			"勝敗に関わらず、ゲームをプレイするたびに<b>{s:scrap_token_name}</b>チケットを獲得する。<br><b>チケット商人</b>で好きなチケットと交換できる。"
+		
 		"DOTA_Crownfall_Encounter_UnableToClaimReward"	"リワードを受け取ることができない"
 		"DOTA_Crownfall_Encounter_TokenExchangeFailed"	"チケットの交換に失敗"
 		
@@ -46541,6 +46551,8 @@ The International 2015の優勝チームEGは、グループステージ開始�
 		"DOTA_HUD_Pregame_TurboTokenRewardsTooltip"		"ターボゲームでは、勝利時にトークを2つ獲得できる。希望するトークンを選ぼう。"
 
 		"DOTA_HeroGrid_Overworld"						"ダークカーニバル"
+		"DOTA_HeroGrid_Overworld_Description"			"ダークカーニバルマップでパスをアンロックできるヒーローをハイライト。"
+		
 		"DOTA_CrownfallLeaderboard_Act1_Title"			"第1幕の進捗"
 		"DOTA_CrownfallLeaderboard_Act2_Title"			"第2幕の進捗"
 		"DOTA_CrownfallLeaderboard_Act3_Title"			"第3幕の進捗"
@@ -47207,8 +47219,10 @@ The International 2015の優勝チームEGは、グループステージ開始�
 		"DOTA_TalentContent_RejectReason_PhotoBadCrop"					"写真をトリミングして顔だけにする必要があります。ガイドラインはこちら：https://www.dota2.com/portraitguidelines"
 		"DOTA_TalentContent_RejectReason_PhotoBadQuality"				"写真が品質ガイドラインに準拠していません。ガイドラインはこちら：https://www.dota2.com/portraitguidelines"
 		"DOTA_TalentContent_RejectReason_PhotoExtraElements"			"写真には、編集で追加された要素が含まれています"
+		"DOTA_TalentContent_RejectReason_PhotoAI"						"生成AIを使用して作成/編集された画像です"
 		"DOTA_TalentContent_RejectReason_AutoBadAlpha"					"サインの背景が完全に透明ではないため、公開できません"
 		"DOTA_TalentContent_RejectReason_AutoBadQuality"				"サインが品質ガイドラインに準拠していません。ガイドラインはこちら：https://www.dota2.com/autographguidelines"
+		"DOTA_TalentContent_RejectReason_AutoAI"						"生成AIを使用して作成されたサインです"
 		"DOTA_TalentContent_RejectReason_VoiceNotTalent"				"ボイスライン{d:voiceline_number}の音声があなた自身の声ではありません"
 		"DOTA_TalentContent_RejectReason_VoiceLanguage"					"ボイスライン{d:voiceline_number}はあなたの母語、キャスト言語、または英語である必要があります"
 		"DOTA_TalentContent_RejectReason_VoiceAdvertisement"			"ボイスライン{d:voiceline_number}に、使用に法的制限のある広告またはスポンサーシップが含まれています"
@@ -47224,6 +47238,7 @@ The International 2015の優勝チームEGは、グループステージ開始�
 		"DOTA_TalentContent_RejectReason_VoiceQuiet"					"ボイスライン{d:voiceline_number}は音量が小さすぎます"
 		"DOTA_TalentContent_RejectReason_VoiceLength"					"ボイスライン{d:voiceline_number}は長すぎます"
 		"DOTA_TalentContent_RejectReason_VoiceAbrasive"					"ボイスライン{d:voiceline_number}は聞き苦しい、または不快です"
+		"DOTA_TalentContent_RejectReason_VoiceAI"						"生成AIを使用して作成されたボイスライン{d:voiceline_number}です"
 		"DOTA_TalentContent_Approval_Photo"								"写真が承認されました"
 		"DOTA_TalentContent_Approval_Auto"								"サインが承認されました"
 		"DOTA_TalentContent_Approval_Voice"								"ボイスライン{d:voiceline_number}が承認されました"
@@ -50389,7 +50404,7 @@ The International 2015の優勝チームEGは、グループステージ開始�
 		"DOTA_DarkCarnival_Encounter_PickLock_Description"	"スラークの脱出を手助けしよう！"
 		"DOTA_DarkCarnival_Encounter_SlarkJailbreak"				"ブーツ壊し屋"
 		"DOTA_DarkCarnival_Encounter_SlarkJailbreak_Description"	"戦利品を集めよう！ ブーツを破壊しよう！"
-		"DOTA_DarkCarnival_Encounter_FriendGifting"					"フレンドへのギフト"
+		"DOTA_DarkCarnival_Encounter_FriendGifting"					"不都合な素材交易所"
 		"DOTA_DarkCarnival_Encounter_FriendGifting_Description"		"不要なチケットをフレンドにギフトしよう！"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter"					"チケット溶鉱炉"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_Description"		"溶かしてはいけないものを溶かしてみよう！"
@@ -50400,7 +50415,6 @@ The International 2015の優勝チームEGは、グループステージ開始�
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_NothingLeft"		"チケット溶鉱炉で作成できるものをすべて作成しました。"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_SeeingStone:f"					"見通しの石 {d:num_seeing_stones}個"
 
-		
 		"DOTA_CandyShopName_Dark_Carnival"		"カーニバルキャンディワークス"
 		"DOTA_DarkCarnival_View_Candyworks"		"キャンディーワークスを表示する"
 		"DOTA_DarkCarnivalStore_View"			"<b>ダークカーニバルストア</b>を見る"
@@ -50453,6 +50467,7 @@ The International 2015の優勝チームEGは、グループステージ開始�
 		"DOTA_DarkCarnival_SecretAdmirer_Gift_Tooltip"	"1日5枚までフレンドにチケットをギフトできます。"
 		"DOTA_DarkCarnival_SecretAdmirer_GiftNoneNeeded"		"フレンドはチケットが必要ないようだ！"
 		"DOTA_DarkCarnival_SecretAdmirer_NoMoreAvailable"	"今日はこれ以上ギフトできません"
+		"DOTA_DarkCarnival_SecretAdmirer_CannotSendAnymore"	"今日はこれ以上ギフトを送ることができません"
 		"DOTA_DarkCarnival_SecretAdmirer_GiftAvailableTooltip"	"フレンドからギフトが届いた！"
 
 		"DOTA_DarkCarnival_SecretRoomsPack_RequiredForRewardsClaims"		"秘密の部屋パックが必要です。<br>購入するにはクリック"
@@ -50483,6 +50498,7 @@ The International 2015の優勝チームEGは、グループステージ開始�
 		"DOTA_DarkCarnival_Token_Oracle"		"予見"
 		"DOTA_DarkCarnival_Token_NodeUnlock"	"パスのアンロック"
 		"DOTA_DarkCarnival_Token_MinigameUnlock"	"カーニバルゲームのアンロック"
+		"DOTA_DarkCarnival_Token_CarnivalScrap"		"スクラップ"
 		"DOTA_Overworld_Token_Random"			"ランダムなチケット"
 
 		"DOTA_DarkCarnival_InventoryPicker_Title"	"インベントリからチケットを選択"
@@ -50594,6 +50610,8 @@ The International 2015の優勝チームEGは、グループステージ開始�
 		"DOTA_DarkCarnival_FortuneTeller_Reward"				"{s:reward_tarot_card_name}のリワード"
 
 		"DOTA_DarkCarnival_Dashboard_GetFortune"				"運命を占ってもらおう！"
+		"DOTA_DarkCarnival_FortuneDescription"					"%s1 %s2 %s3"
+
 		"DOTA_DarkCarnival_ClickToStart"						"クリックしてスタート"
 
 		"DOTA_PlusPostGame_DarkCarnivalProgress"			"ダークカーニバルイベント進捗状況"
@@ -50766,16 +50784,103 @@ The International 2015の優勝チームEGは、グループステージ開始�
 
 		"DOTA_DarkCarnival_ChatWheelMessage"							"チャットホイールメッセージ"
 
-		"dota_chatwheel_translation_darkcarnival_money_and_bones"		"カネとホネ！ カネとホネ！"
-		"dota_chatwheel_translation_darkcarnival_are_we_the_idiots"		"間抜けどもだって？"
-		"dota_chatwheel_translation_darkcarnival_wow"					"おお！"
+		"dota_chatwheel_translation_darkcarnival_money_and_bones"				"カネとホネ！ カネとホネ！"
+		"dota_chatwheel_translation_darkcarnival_are_we_the_idiots"				"間抜けどもだって？"
+		"dota_chatwheel_translation_darkcarnival_wow"							"おお！"
+		"dota_chatwheel_translation_darkcarnival_its_not_that_funny"			"そこまでおかしくないだろ。"
+		"dota_chatwheel_translation_darkcarnival_im_sorry_who_are_you_again"	"すまん… 誰だったかな？"
+
 		"dota_chatwheel_source_fishwitch"								"グリンドルプリット"
 		"dota_chatwheel_source_hoodwink"								"Hoodwink"
 		"dota_chatwheel_source_clown"									"クラレンス"
+		"dota_chatwheel_source_cogliacci"								"コリアッチ"
+		"dota_chatwheel_source_lorenzo"									"ロレンツォ"
+
+		"DOTA_DarkCarnival_HeroHighlightTooltip_TicketsNeeded"			"要チケット"
+		"DOTA_DarkCarnival_HeroHighlightTooltip_NoTicketsNeeded"		"チケット不要"
 
 		"DOTA_Axe_Missing"			"アックスは行方不明で参加できません"
 
 		"DOTA_DarkCarnival_Overworld_Unlock"						"アンロック"
+"DOTA_DarkCarnival_Encounter_CrateDrop_Description"	"荷箱をキャッチしよう！"
+		
+		"DOTA_DarkCarnival_Encounter_BlimpJump"	"飛行船ジャンプ"
+		"DOTA_DarkCarnival_Encounter_BlimpJump_Description"	"飛行船に飛び乗ろう！"
+		
+		"DOTA_Overworld_EncounterShortcut_blimp_jump"		"飛行船ジャンプ"
+		"DOTA_Overworld_EncounterShortcut_crate_drop"		"オートマトン組み立て"
+		
+		// Dark Carnival: Crate Drop
+		"DOTA_DarkCarnival_CrateDrop_Title"							"オートマトン組み立て"
+		"DOTA_DarkCarnival_CrateDrop_GameDesc"						"組み立てを待つオートマトンの部品が入った荷箱をティンカーがキャッチするのを手伝おう"
+		"DOTA_DarkCarnival_CrateDrop_Play"							"プレイ"
+		"DOTA_DarkCarnival_CrateDrop_HowToPlay"						"遊び方"
+		"DOTA_DarkCarnival_CrateDrop_HowToPlayInstructions"			"台車の上でオートマトンの部品が入った荷箱をキャッチしよう。爆弾は避けること。荷箱を落としすぎるとゲームオーバーだ！<br><br>矢印キーで移動、Spaceキーでキャッチした荷箱をしまうことができる。"
+		"DOTA_DarkCarnival_CrateDrop_CratesRemaining"				"残り"
+		"DOTA_DarkCarnival_CrateDrop_Score"							"スコア：{d:current_score}"
+		"DOTA_DarkCarnival_CrateDrop_Level"							"レベル"
+		"DOTA_DarkCarnival_CrateDrop_LevelComplete"					"レベルクリア！"
+		"DOTA_DarkCarnival_CrateDrop_StartingLevel"					"レベル {u:level}"
+		"DOTA_DarkCarnival_CrateDrop_LostCrates"					"迷子"
+		"DOTA_DarkCarnival_CrateDrop_Score_Label"					"スコア"
+		"DOTA_DarkCarnival_CrateDrop_CurrentMultiplier"				"倍率 : {f:current_multiplier}x"
+		"DOTA_DarkCarnival_CrateDrop_GameOver"						"ゲームオーバー"
+		"DOTA_DarkCarnival_CrateDrop_GameWon"						"勝利！"
+		"DOTA_DarkCarnival_CrateDrop_GameLost"						"部品をロストしすぎた！"
+		"DOTA_DarkCarnival_CrateDrop_PotentialScoreLabel"			"ポイント"
+		
 
+		"DOTA_DarkCarnival_CrateDrop_TotalCratesCaught"				"キャッチした荷箱の数"
+		"DOTA_DarkCarnival_CrateDrop_TotalCratesLost"				"ロストした荷箱の数"
+		"DOTA_DarkCarnival_CrateDrop_MaxHeight"						"積み重ねた荷箱の最高数"
+		"DOTA_DarkCarnival_CrateDrop_HighScores"					"ハイスコア"
+		"DOTA_DarkCarnival_CrateDrop_PlayAgain"						"もう一度プレイ"
+		"DOTA_DarkCarnival_CrateDrop_HeightBonus"					"高さボーナス"
+		"DOTA_DarkCarnival_CrateDrop_CratesRequired"				"次のレベルへの要件：\n {d:crates_required}"
+		"DOTA_DarkCarnival_CrateDrop_Failed"						"失敗"
+		"DOTA_DarkCarnival_CrateDrop_TryAgainButton"				"もう一度"
+		"DOTA_DarkCarnival_CrateDrop_Help_Move"						"移動"
+		"DOTA_DarkCarnival_CrateDrop_Help_Move_Details"				"矢印キー左右で台車を動かし、矢印キー上下で線路を切り替える。" 
+		"DOTA_DarkCarnival_CrateDrop_Help_Ability"					"組み立て"
+		"DOTA_DarkCarnival_CrateDrop_Help_Ability_Description"		"Spaceキーで、キャッチした荷箱を組み立て係に送る。部品ごとにポイントが加算される。" 
+		"DOTA_DarkCarnival_CrateDrop_Scoring"						"スコアリング" 
+		"DOTA_DarkCarnival_CrateDrop_Scoring_Desc"					"組み立てアビリティでキャッチして回収した荷箱からは、そのサイズと形に応じて100、150、または200ポイントを獲得できる。\n\n荷箱をできるだけ高く積み上げて、スコア倍率を上げよう！" 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_1"					"ティンカーの足場を左右に動かして、オートマトンの部品が詰まった荷箱をキャッチしよう！" 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_2"					"矢印キー上下で、反対側の線路にある荷箱をキャッチできる。" 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_3"					"Spaceキーでキャッチした荷箱を回収し、ポイントを獲得しよう！" 
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText2"				"触れると爆発する危険物に注意！"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText3"				"「ディフェンスマトリックス」をキャッチして爆弾を跳ね返そう！"
+		"DOTA_DarkCarnival_BlimpJump_Title"						"飛行船ジャンプ"
+		"DOTA_DarkCarnival_BlimpJump_Subtitle"					"飛行船に飛び乗ろう！"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Title_Won"		"あなたの勝利！"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Title_Lost"		"ゲームオーバー"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_Won"		"飛行船に到達した。"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_Lost"	"敗北"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_LostStoryMode"	"飛行船に到達できなかった。"
+		"DOTA_DarkCarnival_EncounterStatus_BlimpJump"				"ダークカーニバル：飛行船ジャンプ"
+		
+		"DOTA_DarkCarnival_BlimpJump_Scoring"				"無限モードのみ。<br>より高く上ってポイントを獲得しよう。"
+		"DOTA_DarkCarnival_BlimpJump_PlayAgain"				"もう一度 [Space]"
+
+		"DOTA_DarkCarnival_Encounter_BlimpJump_ReachTheBlimpRewardTitle" "飛行船にたどり着け"
+
+		"DOTA_DarkCarnival_BlimpJump_InfiniteModeLocked"					"ストーリーモードクリアでアンロック"
+
+		"DOTA_DarkCarnival_BlimpJump_GoInfinite"						"無限ジャンプ"
+		"DOTA_DarkCarnival_BlimpJump_LeaveEncounter"					"離れる"
+		
+		"DOTA_DarkCarnival_BlimpJump_Controls_Move"					"移動"
+		"DOTA_DarkCarnival_BlimpJump_Controls_Move_Details"			"スラークを左右に移動"
+		"DOTA_DarkCarnival_BlimpJump_Controls_ThrowShiv"			"シヴを投げる"
+		"DOTA_DarkCarnival_BlimpJump_Controls_ThrowShiv_Details"	"スラークのシヴを投げる"
+
+		"DOTA_DarkCarnival_BlimpJump_Modes_StoryMode"			"ストーリーをプレイ"
+		"DOTA_DarkCarnival_BlimpJump_Modes_StoryMode_Details"	"一番上の飛行船にたどり着こう。"
+
+		"DOTA_DarkCarnival_BlimpJump_Modes_InfiniteMode"			"無限プレイ"
+		"DOTA_DarkCarnival_BlimpJump_Modes_InfiniteMode_Details"	"できるだけ高く上って、星を撃とう！"
+
+		"DOTA_DarkCarnival_BlimpJump_Resume"						"再開 [ESC]"
+						
 	}
 } 

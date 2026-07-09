@@ -24339,6 +24339,9 @@ Tapasztalt játékosként a csatlakozáshoz legalább {d:new_player_req_games_pl
 	"DOTA_Hud_StunBar" "{s:state}"
 	"DOTA_Hud_SpecItemHeroName"	"<font color='#FFFFFF'>{d:player_level}</font>. szintű {g:dota_hero_name:hero_id}"
 
+	// The local client has paused spectating playback, and can resume when they choose
+	"DOTA_Hud_Paused_Spectating_Local"			"Lejátszás szüneteltetve"
+	// Someone other than our local client has paused the game
 	"DOTA_Hud_Paused_Spectating"				"Egy játékos szüneteltette a játékot"
 	"DOTA_Hud_Paused"							"Játék szüneteltetve"
 	"DOTA_Hud_Unpausing"						"A játék folytatódik"
@@ -46122,7 +46125,7 @@ Ha úgy érzed, nem tudtál a döntés meghozatalához szükséges szintű figye
 		"DOTA_Overworld_Inventory_HeroTrayPremium"		"A Sötét Karnevál Boltban kapható <b>Titkos Szoba</b> jegyek a(z) <b>{s:expansion_pack_name}</b> része. E jegyek egyedi jutalmakat adó speciális szobák kinyitására szolgálnak."
 		"DOTA_Overworld_Inventory_HeroTrayHidden"		"E különleges jegyet egy találkozásnál szerezted."
 		"DOTA_Overworld_Inventory_PathUnlocker"			"Az <b>Útvonalfeloldás</b> jegyekkel a normál esetben szükséges jegyek elhasználása nélkül nyitható ki egy csomópont. A csomópont ára alatti <b>FELOLDÁS HASZNÁLATA</b> gombra kattintva használhatók."
-		"DOTA_Overworld_Inventory_ScrapToken"			"Szerezz <b>{s:scrap_token_name}</b> zsetonokat minden játszott játékért, akár győzöl, akár veszítesz.<br>A <b>zsetonkereskedőnél</b> becserélhetők egy általad választott hőszsetonra."
+		"DOTA_Overworld_Inventory_ScrapToken"			"Szerezz <b>{s:scrap_token_name}</b> jegyeket minden játszott játékért, akár győzöl, akár veszítesz.<br>A <b>jegykereskedőnél</b> becserélhetők egy általad választott jegyre."
 		
 		"DOTA_Crownfall_Encounter_UnableToClaimReward"	"A jutalmat nem lehet felvenni."
 		"DOTA_Crownfall_Encounter_TokenExchangeFailed"	"A jegycsere nem sikerült."
@@ -50393,8 +50396,10 @@ Ha úgy érzed, nem tudtál a döntés meghozatalához szükséges szintű figye
 		"DOTA_DarkCarnival_Encounter_PickLock_Description"	"Segíts Slarknak kitörni a cellájából!"
 		"DOTA_DarkCarnival_Encounter_SlarkJailbreak"				"Csizmatörő"
 		"DOTA_DarkCarnival_Encounter_SlarkJailbreak_Description"	"Gyűjts zsákmányt! Pusztíts el csizmákat!"
-		"DOTA_DarkCarnival_Encounter_FriendGifting"					"Ajándékozás barátnak"
+		"DOTA_DarkCarnival_Encounter_FriendGifting"					"Alkalmatlan Anyagok Piaca"
 		"DOTA_DarkCarnival_Encounter_FriendGifting_Description"		"Ajándékozd felesleges jegyeidet a barátaidnak!"
+		"DOTA_DarkCarnival_Encounter_FriendGifting_NoNeed"			"A barátodnak most nincs szüksége jegyekre."
+		"DOTA_DarkCarnival_Encounter_FriendGifting_NoFriendSelected"	"Válassz egy barátot, hogy lásd a szükséges jegyeit."
 		"DOTA_DarkCarnival_Encounter_TicketSmelter"					"Jegyolvasztó"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_Description"		"Olvassz be olyasmiket, amiket valószínűleg nem kellene!"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_SmeltButton"		"Beolvasztás"
@@ -50404,7 +50409,6 @@ Ha úgy érzed, nem tudtál a döntés meghozatalához szükséges szintű figye
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_NothingLeft"		"Már mindent beolvasztottál, amiből a jegyolvasztó jelenleg készíteni tud."
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_SeeingStone:f"					"{d:num_seeing_stones} látókő"
 
-		
 		"DOTA_CandyShopName_Dark_Carnival"		"Karneváli Cukorkaművek"
 		"DOTA_DarkCarnival_View_Candyworks"		"Karneváli Cukorkaművek megnézése"
 		"DOTA_DarkCarnivalStore_View"			"<b>Sötét Karnevál Bolt</b> megnézése"
@@ -50457,6 +50461,7 @@ Ha úgy érzed, nem tudtál a döntés meghozatalához szükséges szintű figye
 		"DOTA_DarkCarnival_SecretAdmirer_Gift_Tooltip"	"Naponta legfeljebb 5 jegyet ajándékozhatsz a barátaidnak."
 		"DOTA_DarkCarnival_SecretAdmirer_GiftNoneNeeded"		"A barátodnak nincs szüksége jegyekre!"
 		"DOTA_DarkCarnival_SecretAdmirer_NoMoreAvailable"	"Mára nincs több ajándéklehetőséged."
+		"DOTA_DarkCarnival_SecretAdmirer_CannotSendAnymore"	"Ma már nem küldhetsz több ajándékot."
 		"DOTA_DarkCarnival_SecretAdmirer_GiftAvailableTooltip"	"Egy barátod ajándékot küldött neked!"
 
 		"DOTA_DarkCarnival_SecretRoomsPack_RequiredForRewardsClaims"		"Titkos Szobák Csomag szükséges.<br>Kattints a vásárláshoz"
@@ -50773,12 +50778,17 @@ Ha úgy érzed, nem tudtál a döntés meghozatalához szükséges szintű figye
 
 		"DOTA_DarkCarnival_ChatWheelMessage"							"Csevegőkorong-üzenet"
 
-		"dota_chatwheel_translation_darkcarnival_money_and_bones"		"PÉNZ ÉS CSONT! PÉNZ ÉS CSONT!"
-		"dota_chatwheel_translation_darkcarnival_are_we_the_idiots"		"Mi lennénk az idióták?"
-		"dota_chatwheel_translation_darkcarnival_wow"					"Hű!"
+		"dota_chatwheel_translation_darkcarnival_money_and_bones"				"PÉNZ ÉS CSONT! PÉNZ ÉS CSONT!"
+		"dota_chatwheel_translation_darkcarnival_are_we_the_idiots"				"Mi lennénk az idióták?"
+		"dota_chatwheel_translation_darkcarnival_wow"							"Hű!"
+		"dota_chatwheel_translation_darkcarnival_its_not_that_funny"			"Annyira nem vicces."
+		"dota_chatwheel_translation_darkcarnival_im_sorry_who_are_you_again"	"Bocsánat... Ki is vagy te?"
+
 		"dota_chatwheel_source_fishwitch"								"Grindlplit"
 		"dota_chatwheel_source_hoodwink"								"Csalárdi"
 		"dota_chatwheel_source_clown"									"Clarence"
+		"dota_chatwheel_source_cogliacci"								"Cogliacci"
+		"dota_chatwheel_source_lorenzo"									"Lorenzo"
 
 		"DOTA_DarkCarnival_HeroHighlightTooltip_TicketsNeeded"			"Jegy szükséges"
 		"DOTA_DarkCarnival_HeroHighlightTooltip_NoTicketsNeeded"		"Nem szükséges jegy"
@@ -50787,5 +50797,95 @@ Ha úgy érzed, nem tudtál a döntés meghozatalához szükséges szintű figye
 
 		"DOTA_DarkCarnival_Overworld_Unlock"						"Feloldás"
 
+		// Dark Carnival Chapter 2
+		
+		"DOTA_DarkCarnival_Encounter_CrateDrop"	"Automata-összeszerelés"
+		"DOTA_DarkCarnival_Encounter_CrateDrop_Description"	"Kapd el a ládákat!"
+		
+		"DOTA_DarkCarnival_Encounter_BlimpJump"	"Léghajóugrás"
+		"DOTA_DarkCarnival_Encounter_BlimpJump_Description"	"Juss el a léghajóhoz!"
+		
+		"DOTA_Overworld_EncounterShortcut_blimp_jump"		"Léghajóugrás"
+		"DOTA_Overworld_EncounterShortcut_crate_drop"		"Automata-összeszerelés"
+		
+		// Dark Carnival: Crate Drop
+		"DOTA_DarkCarnival_CrateDrop_Title"							"Automata-összeszerelés"
+		"DOTA_DarkCarnival_CrateDrop_GameDesc"						"Segíts Tinkernek elkapni az automata-alkatrészek ládáit az összeszereléshez."
+		"DOTA_DarkCarnival_CrateDrop_Play"							"Játék"
+		"DOTA_DarkCarnival_CrateDrop_HowToPlay"						"Hogyan játszd"
+		"DOTA_DarkCarnival_CrateDrop_HowToPlayInstructions"			"Kapd el az automata-alkatrészek ládáit a platformmal, közben elkerülve a bombákat. Ha túl sok ládát ejtesz el, veszítesz!<br><br>Használd a nyíl billentyűket a mozgáshoz, a már elkapott ládák tárolásához pedig a szóközt."
+		"DOTA_DarkCarnival_CrateDrop_CratesRemaining"				"van hátra"
+		"DOTA_DarkCarnival_CrateDrop_Score"							"Pontszám: {d:current_score}"
+		"DOTA_DarkCarnival_CrateDrop_Level"							"Szint"
+		"DOTA_DarkCarnival_CrateDrop_LevelComplete"					"Szint teljesítve!"
+		"DOTA_DarkCarnival_CrateDrop_StartingLevel"					"{u:level}. szint"
+		"DOTA_DarkCarnival_CrateDrop_LostCrates"					"elvesztett"
+		"DOTA_DarkCarnival_CrateDrop_Score_Label"					"Pontszám"
+		"DOTA_DarkCarnival_CrateDrop_CurrentMultiplier"				"Szorzó: {f:current_multiplier}x"
+		"DOTA_DarkCarnival_CrateDrop_GameOver"						"Vége a játéknak"
+		"DOTA_DarkCarnival_CrateDrop_GameWon"						"Győztél!"
+		"DOTA_DarkCarnival_CrateDrop_GameLost"						"Túl sok alkatrészt vesztettél el!"
+		"DOTA_DarkCarnival_CrateDrop_PotentialScoreLabel"			"Pont"
+		
+
+		"DOTA_DarkCarnival_CrateDrop_TotalCratesCaught"				"Összes elkapott láda"
+		"DOTA_DarkCarnival_CrateDrop_TotalCratesLost"				"Összes elvesztett láda"
+		"DOTA_DarkCarnival_CrateDrop_MaxHeight"						"Legnagyobb ládahalom magassága"
+		"DOTA_DarkCarnival_CrateDrop_HighScores"					"Legmagasabb pontszámok"
+		"DOTA_DarkCarnival_CrateDrop_PlayAgain"						"Új játék"
+		"DOTA_DarkCarnival_CrateDrop_HeightBonus"					"Magasságbónusz"
+		"DOTA_DarkCarnival_CrateDrop_CratesRequired"				"A következő szinthez szükséges: \n {d:crates_required}"
+		"DOTA_DarkCarnival_CrateDrop_Failed"						"Nem sikerült"
+		"DOTA_DarkCarnival_CrateDrop_TryAgainButton"				"Újrapróbálás"
+		"DOTA_DarkCarnival_CrateDrop_Help_Move"						"Mozgás"
+		"DOTA_DarkCarnival_CrateDrop_Help_Move_Details"				"Mozgasd a platformot a bal és jobb nyíl billentyűkkel, és válts sávot a fel és le nyíl billentyűkkel." 
+		"DOTA_DarkCarnival_CrateDrop_Help_Ability"					"Összeszerelés"
+		"DOTA_DarkCarnival_CrateDrop_Help_Ability_Description"		"Használd a szóközt, hogy az elkapott ládákat azonnal az összeszerelőkhöz szállítsd, minden alkatrészért pontokat szerezve." 
+		"DOTA_DarkCarnival_CrateDrop_Scoring"						"Pontozás" 
+		"DOTA_DarkCarnival_CrateDrop_Scoring_Desc"					"Minden elkapott és az Assemble képességgel összegyűjtött láda 100, 150 vagy 200 pontot ad a láda méretétől és alakjától függően.\n\nNöveld a pontszorzót a ládák lehető legmagasabbra halmozásával!" 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_1"					"Mozgasd Tinker platformját balra vagy jobbra automata-alkatrészekkel teli ládák elkapásához!" 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_2"					"Használd a fel és le nyíl billentyűket a váltáshoz és a ládák elkapásához az ellenkező sávban." 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_3"					"Használd a szóközt az elkapott ládák összegyűjtéséhez és pontok szerzéséhez!" 
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText1"				"Használd a szóköz billentyűt, amikor a ládák magasra vannak halmozva, hogy nagyobb szorzót kapj!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText2"				"Óvakodj a veszélyektől, amelyek érintésre felrobbanhatnak!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText3"				"Kapd el a Defense Matrix erősítést bombák eltérítéséhez!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText4"				"Vigyázz az összes ládát elpárologtató bombákkal!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText5"				"Állítsd vissza az elvesztett életeket a Repair erősítéssel!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText6"				"A trutymóval teli hordók lelassítanak!"
+		
+
+		
+		"DOTA_DarkCarnival_BlimpJump_Title"						"Léghajóugrás"
+		"DOTA_DarkCarnival_BlimpJump_Subtitle"					"Juss el a léghajóhoz!"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Title_Won"		"Győztél!"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Title_Lost"		"Vége a játéknak"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_Won"		"Elérted a léghajót."
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_Lost"	"Vesztettél."
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_LostStoryMode"	"Nem érted el a léghajót."
+		"DOTA_DarkCarnival_EncounterStatus_BlimpJump"				"Sötét Karnevál: Léghajóugrás"
+		
+		"DOTA_DarkCarnival_BlimpJump_Scoring"				"Csak Végtelen módban.<br>Szerezz pontokat egyre magasabbra jutással."
+		"DOTA_DarkCarnival_BlimpJump_PlayAgain"				"Próbáld újra [szóköz]"
+
+		"DOTA_DarkCarnival_Encounter_BlimpJump_ReachTheBlimpRewardTitle" "Érd el a léghajót"
+
+		"DOTA_DarkCarnival_BlimpJump_InfiniteModeLocked"					"A Történet mód teljesítésével oldható fel."
+
+		"DOTA_DarkCarnival_BlimpJump_GoInfinite"						"Végtelen mód"
+		"DOTA_DarkCarnival_BlimpJump_LeaveEncounter"					"Találkozás elhagyása"
+		
+		"DOTA_DarkCarnival_BlimpJump_Controls_Move"					"Mozgatás"
+		"DOTA_DarkCarnival_BlimpJump_Controls_Move_Details"			"Balra és jobbra mozgatja Slarkot."
+		"DOTA_DarkCarnival_BlimpJump_Controls_ThrowShiv"			"Eldob egy bökőt."
+		"DOTA_DarkCarnival_BlimpJump_Controls_ThrowShiv_Details"	"Eldobja Slark bökőjét."
+
+		"DOTA_DarkCarnival_BlimpJump_Modes_StoryMode"			"Történet mód"
+		"DOTA_DarkCarnival_BlimpJump_Modes_StoryMode_Details"	"Érd el a léghajót legfelül."
+
+		"DOTA_DarkCarnival_BlimpJump_Modes_InfiniteMode"			"Végtelen mód"
+		"DOTA_DarkCarnival_BlimpJump_Modes_InfiniteMode_Details"	"Menj amilyen magasra csak tudsz, határ a csillagos ég!"
+
+		"DOTA_DarkCarnival_BlimpJump_Resume"						"Folytatás [ESC]"
+						
 	}
 } 
