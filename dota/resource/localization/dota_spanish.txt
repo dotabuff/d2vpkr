@@ -24526,7 +24526,10 @@ Para unirte como jugador experimentado, debes haber jugado al menos {d:new_playe
 	"DOTA_Hud_ChannelBar" "Canalizando ({s:seconds_left})"
 	"DOTA_Hud_StunBar" "{s:state}"
 	"DOTA_Hud_SpecItemHeroName"	"{g:dota_hero_name:hero_id} (niv. <font color='#FFFFFF'>{d:player_level}</font>)"
-// Someone other than our local client has paused the game
+
+	// The local client has paused spectating playback, and can resume when they choose
+	"DOTA_Hud_Paused_Spectating_Local"			"Reproducción en pausa"
+	// Someone other than our local client has paused the game
 	"DOTA_Hud_Paused_Spectating"				"Un jugador ha pausado la partida"
 	"DOTA_Hud_Paused"							"Partida en pausa"
 	"DOTA_Hud_Unpausing"						"Reanudando"
@@ -33004,12 +33007,8 @@ Con las apariciones de héroes de presión como Zeus y Death Prophet, el éxito 
 	"DOTA_Play_RR_SoloSpendingQP"			"Gastarás una partida de cola con roles."
 	"DOTA_Play_RR_PartySpendingQP"			"Cada miembro del grupo gastará una partida de cola con roles."
 
-	"DOTA_Play_RR_SoloMissingQP"			"Debes elegir al menos los dos roles con más demanda."
-	"DOTA_Play_RR_SoloMissingQP_Tooltip"	"Si seleccionas los dos roles con más demanda, podrás unirte a la cola de esta partida clasificatoria con roles. Seleccionar todos los roles te permitirá obtener partidas de cola con roles para usar con cualquier rol en el futuro."
 	"DOTA_Play_RR_PartyMissingQP"			"Tu grupo necesita ponerse a la cola para los dos roles con más demanda."
-	"DOTA_Play_RR_PartyMissingQP_Tooltip"	"Si tu grupo selecciona ambos roles de Apoyo, podréis jugar en el emparejamiento clasificatorio con roles. Seleccionar todos los roles te permitirá obtener partidas de cola con roles para usar con cualquier rol en el futuro."
-
-    "DOTA_RR_NonEligibleWarningTitle"      "No tienes partidas de cola con roles"
+	"DOTA_RR_NonEligibleWarningTitle"      "No tienes partidas de cola con roles"
     "DOTA_RR_NonEligibleWarning"           "¿Te gustaría hacer cola para todos los roles?<br>El sistema de emparejamiento te asignará un rol para esta partida y obtendrás {d:earn_amount} partidas de cola con roles para usar en el futuro (la mitad por derrotas)."
     "DOTA_RR_QueueAllRoles"                "Cola para todos los roles"
 	"DOTA_RR_QueueAllRoles_Supplement1"	    "(Gana partidas en cola con roles para futuros enfrentamientos)"
@@ -46337,6 +46336,8 @@ Si crees que no has podido dedicar el nivel de atención necesario para llegar a
 		"DOTA_Overworld_Inventory_HeroTrayPremium"		"Los tickets de las <b>salas secretas</b> forman parte de <b>{s:expansion_pack_name}</b>, que está disponible en la tienda de la Feria del Horror. Estos tickets se utilizan para desbloquear salas especiales con recompensas únicas."
 		"DOTA_Overworld_Inventory_HeroTrayHidden"		"Este ticket especial se obtuvo en un encuentro."
 		"DOTA_Overworld_Inventory_PathUnlocker"			"Los tickets de <b>desbloqueo de ruta</b> pueden desbloquear un nodo sin gastar los tickets que normalmente se necesitan. Puedes usarlos mediante el botón <b>USAR DESBLOQUEO</b> que aparece debajo del coste del nodo."
+		"DOTA_Overworld_Inventory_ScrapToken"			"Consigue tickets de <b>{s:scrap_token_name}</b> cada vez que juegues una partida, ganes o pierdas.<br>Puedes intercambiarlos con el <b>Comerciante de Tickets</b> por el ticket que quieras."
+		
 		"DOTA_Crownfall_Encounter_UnableToClaimReward"	"No se puede reclamar la recompensa"
 		"DOTA_Crownfall_Encounter_TokenExchangeFailed"	"No se han podido intercambiar los tickets"
 		
@@ -47416,6 +47417,7 @@ Si crees que no has podido dedicar el nivel de atención necesario para llegar a
 
 		"DOTA_TalentContent_Update_Email"								"Actualización sobre el envío de lotes de talentos"
 		"DOTA_TalentContent_Approved"									"El lote que presentaste se ha aprobado y estará disponible en el cliente cuando se lance el Compendio."
+		"DOTA_TalentContent_PartialApproved"								"Durante la revisión del lote que presentaste, se detectaron algunos problemas (enumerados a continuación) que nos impiden aprobarlo por completo para los fans. Si quieres, puedes ver las directrices completas sobre el contenido en <a href=\"https://dota2.com/proregistration/talent/\">https://dota2.com/proregistration/talent/</a> y volver a presentar el lote. La fecha límite para el envío es el 21 de julio a las 20:00 (hora peninsular).<br>"
 		"DOTA_TalentContent_RejectReason_PhotoBadAlpha"					"La foto no se puede publicar porque el fondo no es completamente transparente."
 		"DOTA_TalentContent_RejectReason_PhotoBadCrop"					"La foto debe ser un primer plano. Consulta las instrucciones disponibles en https://www.dota2.com/portraitguidelines."
 		"DOTA_TalentContent_RejectReason_PhotoBadQuality"				"Tu foto no cumple las pautas de calidad disponibles en https://www.dota2.com/portraitguidelines."
@@ -50482,7 +50484,7 @@ Si crees que no has podido dedicar el nivel de atención necesario para llegar a
 		"DOTA_DarkCarnival_Store_AutomatonPersona_Description_Point1_Axe"		"¡Un nuevo modelo del héroe con un realismo asombroso!"
 		"DOTA_DarkCarnival_Store_AutomatonPersona_Description_Point2_Axe"		"¡Pon a prueba tu fuerza contra tus enemigos con los nuevos efectos de Hoja Selectiva!"
 		"DOTA_DarkCarnival_Store_AutomatonPersona_Description_Point3_Axe"		"¡Sorprende a tus enemigos con las nuevas animaciones de Contraataque Espiral!"
-		"DOTA_DarkCarnival_Store_AutomatonPersona_Description_Point4_Axe"		"¡Todas las líneas de voz de Axe se han actualizado con un nuevo procesamiento robótico! (la gramática no se ha mejorado)."
+		"DOTA_DarkCarnival_Store_AutomatonPersona_Description_Point4_Axe"		"¡Todas las líneas de voz de Axe se han actualizado con un nuevo procesamiento robótico! (La gramática no se ha mejorado)."
 		"DOTA_DarkCarnival_Store_AutomatonPersona_Description_Point5_Axe"		"¡Los Axe animatrónicos son totalmente compatibles con todas las burlas de Axe!"
 
 		"DOTA_DarkCarnival_Store_AutomatonPersona_Description_Includes_LegionCommander"		"Legion Commander Autómata incluye:"
@@ -50503,7 +50505,7 @@ Si crees que no has podido dedicar el nivel de atención necesario para llegar a
 		"DOTA_DarkCarnival_Store_AutomatonPersona_Description_Point1_Oracle"			"¡Un nuevo y luminoso modelo del héroe, con efectos ambientales!"
 		"DOTA_DarkCarnival_Store_AutomatonPersona_Description_Point2_Oracle"			"¡Efectos futuristas para reemplazar Fin de la Fortuna y Edicto del Destino!"
 		"DOTA_DarkCarnival_Store_AutomatonPersona_Description_Point3_Oracle"			"¡Animaciones de reemplazo personalizadas, entre las que se incluyen movimiento y teletransporte!"
-		"DOTA_DarkCarnival_Store_AutomatonPersona_Description_Point4_Oracle"			"¡Todas las líneas de voz de Oracle se han actualizado con procesamiento avanzado! (la precisión de las predicciones no se ha mejorado)."
+		"DOTA_DarkCarnival_Store_AutomatonPersona_Description_Point4_Oracle"			"¡Todas las líneas de voz de Oracle se han actualizado con procesamiento avanzado! (La precisión de las predicciones no se ha mejorado)."
 		"DOTA_DarkCarnival_Store_AutomatonPersona_Description_Point5_Oracle"			"¡Compatible con las burlas de Oracle de carne y hueso!"
 
 		"DOTA_DarkCarnival_Store_AutomatonPersona_Description_Includes_Morphling"		"Morphling Autómata incluye:"
@@ -50521,9 +50523,9 @@ Si crees que no has podido dedicar el nivel de atención necesario para llegar a
 		"DOTA_DarkCarnival_Store_SecretRoomsPack_SalesDescription"			"El lote de salas secretas"
 
 		"DOTA_DarkCarnival_Store_SecretRoomsPack_Included"						"El lote incluye:"
-		"DOTA_DarkCarnival_Store_SecretRoomsPack_Description_Point1"			"¡<b>Creeps de la Feria del Horror</b> (cuerpo a cuerpo, a distancia y asedio)!"
-		"DOTA_DarkCarnival_Store_SecretRoomsPack_Description_Point2"			"¡<b>Lote de música de la Feria del Horror</b>! (nuevos temas para toda la música y stingers)."
-		"DOTA_DarkCarnival_Store_SecretRoomsPack_Description_Point3"			"¡2 <b>tickets de salas secretas</b>! (que dan acceso a las salas secretas de «El vagón de fundición» y «El vagón de almacenamiento», así como a sus historias y recompensas)."
+		"DOTA_DarkCarnival_Store_SecretRoomsPack_Description_Point1"			"¡<b>Creeps de la Feria del Horror</b> (cuerpo a cuerpo, a distancia y de asedio)!"
+		"DOTA_DarkCarnival_Store_SecretRoomsPack_Description_Point2"			"¡<b>Lote de música de la Feria del Horror</b> (nuevas pistas para toda la música y stingers)!"
+		"DOTA_DarkCarnival_Store_SecretRoomsPack_Description_Point3"			"¡2 <b>tickets de salas secretas</b> (que dan acceso a las salas secretas de «El vagón de fundición» y «El vagón de almacenamiento», así como a sus historias y recompensas)!"
 
 		"DOTA_DarkCarnival_Store_SecretRoomsPack_Tooltip_TicketCount"			"2"
 		"DOTA_DarkCarnival_Store_SecretRoomsPack_Tooltip_Tickets"				"Tickets de salas secretas"
@@ -50605,7 +50607,10 @@ Si crees que no has podido dedicar el nivel de atención necesario para llegar a
 		"DOTA_DarkCarnival_Encounter_PickLock_Description"	"¡Ayuda a Slark a salir de su celda!"
 		"DOTA_DarkCarnival_Encounter_SlarkJailbreak"				"Rompebotas"
 		"DOTA_DarkCarnival_Encounter_SlarkJailbreak_Description"	"¡Recoge el botín! ¡Destruye botas!"
+		"DOTA_DarkCarnival_Encounter_FriendGifting"					"Intercambio de materiales incómodos"
 		"DOTA_DarkCarnival_Encounter_FriendGifting_Description"		"¡Regala tickets que no necesites a tus amigos!"
+		"DOTA_DarkCarnival_Encounter_FriendGifting_NoNeed"			"Tu amigo no necesita tickets en este momento"
+		"DOTA_DarkCarnival_Encounter_FriendGifting_NoFriendSelected"	"Selecciona a un amigo para ver los tickets que necesita"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter"					"Fundidor de tickets"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_Description"		"¡Funde cosas que probablemente no deberías fundir!"
 		"DOTA_DarkCarnival_Encounter_TicketSmelter_SmeltButton"		"Fundir"
@@ -50667,6 +50672,7 @@ Si crees que no has podido dedicar el nivel de atención necesario para llegar a
 		"DOTA_DarkCarnival_SecretAdmirer_Gift_Tooltip"	"Puedes regalar hasta 5 tickets al día a tus amigos."
 		"DOTA_DarkCarnival_SecretAdmirer_GiftNoneNeeded"		"¡Tu amigo no necesita tickets!"
 		"DOTA_DarkCarnival_SecretAdmirer_NoMoreAvailable"	"No tienes más regalos disponibles por hoy."
+		"DOTA_DarkCarnival_SecretAdmirer_CannotSendAnymore"	"No puedes enviar más regalos hoy"
 		"DOTA_DarkCarnival_SecretAdmirer_GiftAvailableTooltip"	"¡Un amigo tuyo te ha enviado un regalo!"
 
 		"DOTA_DarkCarnival_SecretRoomsPack_RequiredForRewardsClaims"		"Requiere un lote de salas secretas.<br>Haz clic para comprarlo."
@@ -50831,7 +50837,7 @@ Si crees que no has podido dedicar el nivel de atención necesario para llegar a
 		"DOTA_CandyShop_Dark_Carnival_Subtitle"				"y Emporio del Tesoro"
 		"DOTA_CandyShop_Dark_Carnival_Subheader"			"¡Botín a cambio de piruletas! ¡Tesoros por bombones!"
 		"DOTA_CandyShop_Dark_Carnival_Description"			"Sithil y Quirt han hecho algunas operaciones muy poco astutas en el mercado de futuros de caramelos y ahora necesitan desesperadamente conseguir dulces a casi cualquier precio. Están liquidando su reserva de tesoros restante para conseguirlo: tú pones los dulces; ellos ponen el botín."
-		"DOTA_CandyShop_Dark_Carnival_Rules_01"				"Recoge sacos de caramelos explorando el mapa de la Feria del Horror, o cómpralos en la <b>tienda de la Feria del Horror</b>."
+		"DOTA_CandyShop_Dark_Carnival_Rules_01"				"Recoge caramelos explorando el mapa de la Feria del Horror, o cómpralos en la <b>tienda de la Feria del Horror</b>."
 		"DOTA_CandyShop_Dark_Carnival_Rules_02"				"Intercambia combos de caramelos por recompensas, como <b>monedas de descuento de la Feria del Horror</b>, <b>inmortales</b> y <b>arcanos</b>."
 		"DOTA_CandyShop_Dark_Carnival_Rules_03"				"Si no tienes los ingredientes necesarios, <b>intercambia</b> los que tengas en tu alijo por los que te faltan."
 		"DOTA_CandyShop_Dark_Carnival_Rules_04"				"¿No te gusta lo que te ofrecen Sithil y Quirt? <b>Juega a Dota para ganar renovaciones</b> (10 por semana como máximo) y actualizar la estantería."
@@ -50986,14 +50992,111 @@ Si crees que no has podido dedicar el nivel de atención necesario para llegar a
 		"dota_chatwheel_translation_darkcarnival_money_and_bones"				"¡DINERO Y HUESOS! ¡DINERO Y HUESOS!"
 		"dota_chatwheel_translation_darkcarnival_are_we_the_idiots"				"¿Los idiotas somos nosotros?"
 		"dota_chatwheel_translation_darkcarnival_wow"							"¡Hala!"
+		"dota_chatwheel_translation_darkcarnival_its_not_that_funny"			"No tiene tanta gracia."
+		"dota_chatwheel_translation_darkcarnival_im_sorry_who_are_you_again"	"Perdona... ¿Quién eras tú?"
+
 		"dota_chatwheel_source_fishwitch"								"Grindlplit"
 		"dota_chatwheel_source_hoodwink"								"Hoodwink"
 		"dota_chatwheel_source_clown"									"Clarence"
+		"dota_chatwheel_source_cogliacci"								"Cogliacci"
+		"dota_chatwheel_source_lorenzo"									"Lorenzo"
+
 		"DOTA_DarkCarnival_HeroHighlightTooltip_TicketsNeeded"			"Tickets necesarios"
 		"DOTA_DarkCarnival_HeroHighlightTooltip_NoTicketsNeeded"		"No se necesitan tickets"
 
 		"DOTA_Axe_Missing"			"Axe está ausente y no puede participar"
 
 		"DOTA_DarkCarnival_Overworld_Unlock"						"Desbloquear"
-}
+
+		// Dark Carnival Chapter 2
+		
+		"DOTA_DarkCarnival_Encounter_CrateDrop"	"Montaje de autómatas"
+		"DOTA_DarkCarnival_Encounter_CrateDrop_Description"	"¡Atrapa las cajas!"
+		
+		"DOTA_DarkCarnival_Encounter_BlimpJump"	"Salto al dirigible"
+		"DOTA_DarkCarnival_Encounter_BlimpJump_Description"	"¡Llega al dirigible!"
+		
+		"DOTA_Overworld_EncounterShortcut_blimp_jump"		"Salto al dirigible"
+		"DOTA_Overworld_EncounterShortcut_crate_drop"		"Montaje de autómatas"
+		
+		// Dark Carnival: Crate Drop
+		"DOTA_DarkCarnival_CrateDrop_Title"							"Montaje de autómatas"
+		"DOTA_DarkCarnival_CrateDrop_GameDesc"						"Ayuda a Tinker a atrapar las cajas de piezas de autómatas para su montaje"
+		"DOTA_DarkCarnival_CrateDrop_Play"							"Jugar"
+		"DOTA_DarkCarnival_CrateDrop_HowToPlay"						"Cómo jugar"
+		"DOTA_DarkCarnival_CrateDrop_HowToPlayInstructions"			"Atrapa las cajas de piezas de autómatas en la plataforma y evita las bombas. ¡Perderás si dejas caer demasiadas cajas!<br><br> Usa las teclas de flecha para moverte y la barra espaciadora para guardar las cajas atrapadas."
+		"DOTA_DarkCarnival_CrateDrop_CratesRemaining"				"restantes"
+		"DOTA_DarkCarnival_CrateDrop_Score"							"Puntuación: {d:current_score}"
+		"DOTA_DarkCarnival_CrateDrop_Level"							"Nivel"
+		"DOTA_DarkCarnival_CrateDrop_LevelComplete"					"¡Nivel completado!"
+		"DOTA_DarkCarnival_CrateDrop_StartingLevel"					"Nivel {u:level}"
+		"DOTA_DarkCarnival_CrateDrop_LostCrates"					"Derrota"
+		"DOTA_DarkCarnival_CrateDrop_Score_Label"					"Punt."
+		"DOTA_DarkCarnival_CrateDrop_CurrentMultiplier"				"Multiplicador: ×{f:current_multiplier}"
+		"DOTA_DarkCarnival_CrateDrop_GameOver"						"Fin de la partida"
+		"DOTA_DarkCarnival_CrateDrop_GameWon"						"¡Has ganado!"
+		"DOTA_DarkCarnival_CrateDrop_GameLost"						"¡Has perdido demasiadas piezas!"
+		"DOTA_DarkCarnival_CrateDrop_PotentialScoreLabel"			"Puntos"
+		
+
+		"DOTA_DarkCarnival_CrateDrop_TotalCratesCaught"				"Total de cajas atrapadas"
+		"DOTA_DarkCarnival_CrateDrop_TotalCratesLost"				"Total de cajas perdidas"
+		"DOTA_DarkCarnival_CrateDrop_MaxHeight"						"Altura del montón más alto de cajas"
+		"DOTA_DarkCarnival_CrateDrop_HighScores"					"Récords"
+		"DOTA_DarkCarnival_CrateDrop_PlayAgain"						"Jugar otra vez"
+		"DOTA_DarkCarnival_CrateDrop_HeightBonus"					"Bonificación por altura"
+		"DOTA_DarkCarnival_CrateDrop_CratesRequired"				"Necesarias para el siguiente nivel:\n {d:crates_required}"
+		"DOTA_DarkCarnival_CrateDrop_Failed"						"Fallaste"
+		"DOTA_DarkCarnival_CrateDrop_TryAgainButton"				"Intentarlo de nuevo"
+		"DOTA_DarkCarnival_CrateDrop_Help_Move"						"Mover"
+		"DOTA_DarkCarnival_CrateDrop_Help_Move_Details"				"Mueve la plataforma con las teclas de izquierda y derecha, y cambia de vía con las teclas de arriba y abajo." 
+		"DOTA_DarkCarnival_CrateDrop_Help_Ability"					"Montaje"
+		"DOTA_DarkCarnival_CrateDrop_Help_Ability_Description"		"Usa la barra espaciadora para transportar instantáneamente las cajas atrapadas a los ensambladores, ganando puntos por cada pieza." 
+		"DOTA_DarkCarnival_CrateDrop_Scoring"						"Puntuación" 
+		"DOTA_DarkCarnival_CrateDrop_Scoring_Desc"					"Cada caja atrapada y reunida con la habilidad Montaje otorga entre 100, 150 o 200 puntos, según su tamaño y forma.\n\n¡Aumenta el multiplicador de puntuación amontonando cajas lo más alto que puedas!" 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_1"					"¡Mueve la plataforma de Tinker hacia la izquierda o hacia la derecha para atrapar cajas llenas de piezas de autómatas!" 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_2"					"Usa las teclas de arriba y abajo para cambiar de sitio y atrapar las cajas de la vía contraria." 
+		"DOTA_DarkCarnival_CrateDrop_Tutorial_3"					"¡Usa la barra espaciadora para reunir las cajas atrapadas y ganar puntos!" 
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText1"				"¡Usa la barra espaciadora cuando las cajas estén amontonadas para obtener un multiplicador mayor!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText2"				"¡Ten cuidado con los peligros que pueden explotar si se tocan!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText3"				"¡Atrapa el potenciador de Matriz de Defensa para desviar las bombas!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText4"				"¡Cuidado con las bombas que desintegran todas las cajas!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText5"				"¡Recupera las vidas perdidas con el potenciador de Reparación!"
+		"DOTA_DarkCarnival_CrateDrop_LevelIntroText6"				"¡Los barriles llenos de sustancia viscosa te ralentizarán!"
+		
+
+		
+		"DOTA_DarkCarnival_BlimpJump_Title"						"Salto al dirigible"
+		"DOTA_DarkCarnival_BlimpJump_Subtitle"					"¡Llega al dirigible!"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Title_Won"		"¡Has ganado!"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Title_Lost"		"Fin de la partida"
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_Won"		"Has llegado al dirigible."
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_Lost"	"Has perdido."
+		"DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_LostStoryMode"	"No has llegado al dirigible."
+		"DOTA_DarkCarnival_EncounterStatus_BlimpJump"				"Feria del Horror: Salto al dirigible"
+		
+		"DOTA_DarkCarnival_BlimpJump_Scoring"				"Solo en modo infinito.<br>Gana puntos subiendo cada vez más."
+		"DOTA_DarkCarnival_BlimpJump_PlayAgain"				"Intentarlo de nuevo [Espacio]"
+
+		"DOTA_DarkCarnival_Encounter_BlimpJump_ReachTheBlimpRewardTitle" "Llega al dirigible"
+
+		"DOTA_DarkCarnival_BlimpJump_InfiniteModeLocked"					"Se desbloquea completando el modo historia."
+
+		"DOTA_DarkCarnival_BlimpJump_GoInfinite"						"Modo infinito"
+		"DOTA_DarkCarnival_BlimpJump_LeaveEncounter"					"Salir del encuentro"
+		
+		"DOTA_DarkCarnival_BlimpJump_Controls_Move"					"Moverse"
+		"DOTA_DarkCarnival_BlimpJump_Controls_Move_Details"			"Mueve a Slark hacia la izquierda y hacia la derecha"
+		"DOTA_DarkCarnival_BlimpJump_Controls_ThrowShiv"			"Lanzar cuchilla"
+		"DOTA_DarkCarnival_BlimpJump_Controls_ThrowShiv_Details"	"Lanza la cuchilla de Slark"
+
+		"DOTA_DarkCarnival_BlimpJump_Modes_StoryMode"			"Jugar al modo historia"
+		"DOTA_DarkCarnival_BlimpJump_Modes_StoryMode_Details"	"Llega al dirigible de la parte superior."
+
+		"DOTA_DarkCarnival_BlimpJump_Modes_InfiniteMode"			"Jugar al modo infinito"
+		"DOTA_DarkCarnival_BlimpJump_Modes_InfiniteMode_Details"	"¡Sube tan alto como puedas, hasta las estrellas!"
+
+		"DOTA_DarkCarnival_BlimpJump_Resume"						"Reanudar [ESC]"
+						
+	}
 } 
