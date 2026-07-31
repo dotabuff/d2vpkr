@@ -1,6 +1,5 @@
 "zeus_nimbus_damage"
 {
-	"challengetype"		"459"
 	"desc"				"#DOTA_ChallengeDesc_Zeus_Nimbus_Damage"
 	"status_text"		"#DOTA_ChallengeStatus_Zeus_Nimbus_Damage"
 	"image"				"images/spellicons/zuus_cloud.png"
@@ -10,20 +9,18 @@
 		"matching_type"		"linear_series"
 		"query"
 		{
-			"find_damage"
+			"nimbus_killeater"
 			{
-				"event"					"damage"
-				"attacker"				"npc_dota_zeus_cloud"
-				"target_must_be_hero"	"1"
-				"attacker_team"			"!team"
-				"target_team"			"!enemyteam"
+				"event"						"kill_eater"
+				"caster"					"!hero"
+				"kill_eater_event"			"873"
 				"storage"
-				{
+				{	
 					"1"
 					{
-						"key"			"value"
-						"aggregator"	"sum"
-					}
+						"key"		"value"
+						"aggregator"		"sum"
+					}		
 				}
 			}
 		}
