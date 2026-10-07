@@ -7805,7 +7805,12 @@ Os Ancestrais, tanto Iluminado como Temido, traziam muitas vantagens: energia ci
 		"LoadoutSlot_Ogre_Magi_Base"							"Herói base"
 		"LoadoutSlot_Monkey_King_Base"							"Herói base"
 		"LoadoutSlot_Shadow_Fiend_Base"							"Herói base"
-		
+		"LoadoutSlot_Legion_Commander_Base"							"Herói base"
+		"LoadoutSlot_Nyx_Assassin_Base"							"Herói base"
+		"LoadoutSlot_Tidehunter_Base"							"Herói base"
+		"LoadoutSlot_Drow_Ranger_Base"							"Herói base"
+		"LoadoutSlot_Terrorblade_Base"							"Herói base"
+
 		//PUDGE PERSONA CUTE
 		"LoadoutSlot_Taunt_Pudge_Persona"					"Provocação (Persona)"
 		"LoadoutSlot_Weapon_Pudge_Persona"					"Arma (Persona)"
@@ -12047,6 +12052,15 @@ Os Ancestrais, tanto Iluminado como Temido, traziam muitas vantagens: energia ci
 		"DOTA_Style_Dragon_Knight_Griffin_Knight_0"		"Fogo"
 		"DOTA_Style_Dragon_Knight_Griffin_Knight_1" 	"Corrosivo"
 		"DOTA_Style_Dragon_Knight_Griffin_Knight_2" 	"Congelado"
+
+		"DOTA_Style_Drow_Monster_Back_Style_0"	"Helsing"
+		"DOTA_Style_Drow_Monster_Back_Style_1"	"Furtiva"
+		"DOTA_Style_Drow_Monster_Head_Style_0"	"Helsing"
+		"DOTA_Style_Drow_Monster_Head_Style_1"	"Furtiva"
+
+		"DOTA_Style_Dreadhunt_0"	"Lâminas"
+		"DOTA_Style_Dreadhunt_1" 	"Machado Ilusório"
+		"DOTA_Style_Dreadhunt_2" 	"Olho de Skadi"
 		
 
 //DOTA_ITEM_STYLES_END
@@ -12724,6 +12738,7 @@ Os Ancestrais, tanto Iluminado como Temido, traziam muitas vantagens: energia ci
 		"Crate_Extremely_Rare"		"Extremamente raro"
 		"Crate_Ultra_Rare"	"Ultrarraro"
 		"Crate_Cosmically_Rare"	"Cosmicamente raro"
+		"Crate_Tier"			"Categoria"
 		"Crate_Tier1"			"Classe 1"
 		"Crate_Tier2"			"Classe 2"
 		"Crate_Tier3"			"Classe 3"
@@ -23515,6 +23530,9 @@ Para participar como um jogador experiente, você precisa ter jogado {d:new_play
 	"DOTA_Armory_Filter_FilterName"				"Nome do filtro"
 	"DOTA_Armory_Filter_Required"				"OBRIGATÓRIO"
 
+	"DOTA_Armory_ConflictingEquipment_Title"	"Erro"
+	"DOTA_Armory_ConflictingEquipment_Msg"		"Itens conflitantes foram equipados. Como resultado, seu {s:item_name_ejected} foi desequipado."
+
 	"DOTA_StickerBook_Recent"					"Recém-adicionado"
 
 	"DOTA_EffigyEditor_CreateEffigy"			"Criar efígie"
@@ -23905,6 +23923,7 @@ Para participar como um jogador experiente, você precisa ter jogado {d:new_play
 	"DOTA_tooltip_econ_item_modifier_facet"	"Estilos de faceta"
 	"DOTA_tooltip_econ_item_modifier_mvp_map_override"	"Fundo de destaque"
 	"DOTA_tooltip_econ_item_static_attribute_has_arcana_augment"	"Aprimoramento Arcano"
+	"DOTA_tooltip_econ_item_static_hero_base_model"	"Modelo base do herói"
 
 	"DOTA_tooltip_econ_item_tournament_drop"	"Item de torneio"
 	"DOTA_tooltip_econ_item_leaguename"	"{s:league_name}"
@@ -24396,13 +24415,13 @@ Para participar como um jogador experiente, você precisa ter jogado {d:new_play
 	"DOTA_Treasure_AutographName"		"{s:treasure_autograph_name}"
 	"DOTA_Treasure_AutographDetails"	"Itens de um tesouro autografado vêm insculpidos com uma Runa de Autógrafo. Uma parcela da receita proveniente da venda de um tesouro autografado será destinada a quem o autografou."
 	"DOTA_Treasure_BonusReward"			"Recompensa bônus"
-	"DOTA_Treasure_HelpHeader"			"Cada tesouro contém {d:items_per_treasure} destes itens"
-	"DOTA_Treasure_HelpHeaderPW"		"Item disponível neste tesouro"
-	"DOTA_Treasure_HelpHeaderPWNotPurchasable" "Não é o item disponível deste tesouro"
-	"DOTA_Treasure_HelpHeaderPWZoomedOut"	"Item disponível"
-	"DOTA_Treasure_HelpHeaderPWZoomedOutPlural"	"Itens disponíveis"
-	"DOTA_Treasure_HelpHeaderGrantsAll"	"Cada tesouro contém todos esses itens"
-	"DOTA_Treasure_HelpHeaderUnusuals"			"Os itens neste tesouro têm variantes Incomuns"
+	"DOTA_Treasure_HelpHeader"			"Cada tesouro contém {d:items_per_treasure} destes itens."
+	"DOTA_Treasure_HelpHeaderPW"		"Item disponível neste tesouro."
+	"DOTA_Treasure_HelpHeaderPWNotPurchasable" "Não é o item disponível deste tesouro."
+	"DOTA_Treasure_HelpHeaderPWZoomedOut"	"Item disponível."
+	"DOTA_Treasure_HelpHeaderPWZoomedOutPlural"	"Itens disponíveis."
+	"DOTA_Treasure_HelpHeaderGrantsAll"	"Cada tesouro contém todos esses itens."
+	"DOTA_Treasure_HelpHeaderUnusuals"			"Os itens neste tesouro têm variantes Incomuns."
 	"DOTA_TreasureOdds_Header"			"Taxas de distribuição"
 
 	"DOTA_tooltip_treasure_marketprice_disclaimer"	"Esta estimativa de preço foi calculada de acordo com uma amostra recente dos preços mais baixos do item no Mercado da Comunidade Steam. O preço final da transação pode variar."
@@ -24446,15 +24465,20 @@ Para participar como um jogador experiente, você precisa ter jogado {d:new_play
 	"DOTA_Treasure_OpenDupe"			"Cada tesouro que abrir conterá {d:items_per_treasure} dos itens normais exibidos, com a chance de duplicatas. Caso tenha sorte, você também poderá receber um dos itens raros."
 	"DOTA_Treasure_OpenFailed_NoItem"	"Não foi possível encontrar um tesouro no seu inventário para abrir."
 	"DOTA_Treasure_OpenFailed_NoItemsReceived"	"Não foi possível obter a lista de itens recebidos do tesouro."
+	"DOTA_Treasure_OpenFailed_NoResponse"	"Falha ao abrir tesouro devido a um problema de conexão. Tente novamente mais tarde."
 	"DOTA_Treasure_OpenSuccess"			"Você recebeu:"
 
-	"DOTA_Treasure_RecyclingTitle"		"Reciclar recompensa"
+	"DOTA_Treasure_RecyclingTitle"		"Reciclagem"
 	"DOTA_Treasure_RecyclingSubtitle"	"Recicle conjuntos para receber uma recompensa adicional contendo um tesouro e fragmentos."
-	"DOTA_Treasure_RecyclingSubtitle_TreasureOnly"	"Recicle conjuntos para receber um tesouro adicional."
-	"DOTA_Treasure_RecyclingSubtitle_KeyAndTwoTreasures"	"Recicle conjuntos para receber uma chave adicional e mais dois tesouros."
+	"DOTA_Treasure_RecyclingSubtitle_TreasureOnly"	"Recicle conjuntos para receber um tesouro adicional:"
+	"DOTA_Treasure_RecyclingSubtitle_KeyAndTwoTreasures"	"Recicle conjuntos para receber uma chave adicional e mais dois tesouros:"
 	"DOTA_Treasure_RecyclingCount"		"{d:inventory_count}x"
 	"DOTA_Treasure_DisassembleConfirm_Popup_Title"		"Reciclar último item"
 	"DOTA_Treasure_DisassembleConfirm_Popup_Message"	"Esta é a única cópia desse conjunto no arsenal; ao reciclá-lo, você ficará sem. Continuar mesmo assim?"
+
+	"DOTA_Treasure_MilestoneRewardsTitle"			"Tesouros adicionais"
+	"DOTA_Treasure_MilestoneRewardsDescription"		"Abra tesouros para abrir recompensas adicionais:"
+	"DOTA_Treasure_MilestoneRewardsItemCount"		"<b>{d:current_open_count}</b> / {d:target_open_count} tesouros abertos"
 
    	"DOTA_Treasure_RecyclingSubtitle_BattlePass"	"Recicle itens deste tesouro para conseguir um tesouro adicional e uma rodada na Bênção de Batalha de Rylai."
    	"DOTA_Treasure_RecyclingSubtitle_UnderDraft"	"Recicle conjuntos para receber ouro que pode ser usado na loja secundária."
@@ -24462,7 +24486,7 @@ Para participar como um jogador experiente, você precisa ter jogado {d:new_play
 	"DOTA_OpenTreasureTooltip_NormalTitle"	"Contém os seguintes itens:"
 	"DOTA_OpenTreasureTooltip_NoDupeDescription"	"Você não receberá duplicatas até conseguir um de cada."
 	"DOTA_OpenTreasureTooltip_DupeDescription"		"É possível receber duplicatas antes de obter um de cada."
-	"DOTA_OpenTreasureTooltip_RareTitle"	"Com a chance de receber itens adicionais"
+	"DOTA_OpenTreasureTooltip_RareTitle"	"Com a chance de receber itens adicionais."
 	"DOTA_OpenTreasureTooltip_UnitName"		"{g:dota_item_unit_name:item_def}"
 	"DOTA_OpenTreasureTooltip_ItemName"		"{g:dota_item_name:item_def}"
 	"DOTA_OpenTreasureTooltip_ExtraItems"		"... e mais {d:extra_items_count} itens!!"
@@ -24471,6 +24495,8 @@ Para participar como um jogador experiente, você precisa ter jogado {d:new_play
 	"DOTA_OpenTreasureTooltip_BonusTreasure_BattlePass"		"Enquanto o passe de batalha do International 10 for válido, recicle itens deste tesouro para conseguir um tesouro adicional e outros bônus."
 	"DOTA_OpenTreasureTooltip_BonusTreasuresAndKey"			"Recicle pacotes fechados deste tesouro para progredir em direção à recompensa de dois tesouros e uma chave adicional."
 	"DOTA_OpenTreasureTooltip_RecycleGeneric"				"Recicle pacotes fechados deste tesouro para progredir em direção à recompensa."
+
+	"DOTA_Treasure_BonusRewardsTitle"			"Recompensas adicionais recebidas"
 
 	"DOTA_Treasure_ViewCrateTier"				"Ver categoria:"
 	"DOTA_Treasure_BuyChest"					"Comprar baú"
@@ -24485,7 +24511,7 @@ Para participar como um jogador experiente, você precisa ter jogado {d:new_play
 	"DOTA_Treasure_OpenChest"					"Abrir tesouro"
 	"DOTA_Treasure_Unlock"						"Abrir"
 	"DOTA_Treasure_ShowHeroNames"				"Exibir nome dos heróis"
-	"DOTA_Treasure_PreviewContents"				"Pré-visualizar conteúdos"
+	"DOTA_Treasure_PreviewContents"				"Ir para o item"
 	"DOTA_Treasure_Skip"						"Pular"
 	"DOTA_Treasure_BuyKeyOnly"					"Comprar chave"
 	"DOTA_Treasure_BuyKeyShards"				"Usar fragmentos"
@@ -24494,6 +24520,7 @@ Para participar como um jogador experiente, você precisa ter jogado {d:new_play
 	"DOTA_Treasure_BuyChestAndKey"				"Comprar baú + chave"
 	"DOTA_Treasure_Back"						"Voltar"
 	"DOTA_Treasure_Equip"						"Equipar"
+	"DOTA_Treasure_Equipped"					"Equipado"
 	"DOTA_Treasure_Close"						"Fechar"
 	"DOTA_Treasure_ListView"					"Exibir lista"
 	"DOTA_Treasure_CurrentlyViewing"			"Vendo:"
@@ -24519,10 +24546,12 @@ Para participar como um jogador experiente, você precisa ter jogado {d:new_play
 	"DOTA_Treasure_Unusual_Description"			"Este item foi infundido com as seguintes partículas: {s:unusual_effect_name}"
 	"DOTA_Treasure_BaseSetUnusual_Description"	"Você também recebeu o conjunto completo, além do item Incomum."
 	"DOTA_Treasure_Set"			"Conjunto"
-	"DOTA_Treasure_AndArcana"			"+ Arcano"
-	"DOTA_Treasure_AndPersona"			"+ Persona"
+	"DOTA_Treasure_AndArcana"			"+Arcano"
+	"DOTA_Treasure_AndPersona"			"+Persona"
+	"DOTA_Treasure_Arcana"				"Arcano"
 	"DOTA_Treasure_ArcanaPersonaLabel"	"{s:arcana_persona_unit_name} {s:arcana_persona_label}"
-
+	"DOTA_Treasure_ViewTreasureDetails"		"Ver detalhes"
+	"DOTA_Treasure_HideTreasureDetails"		"Ocultar detalhes"
 	"DOTA_AASystem_Green"		"Tempo de jogo acumulado: {s:playtime}. O seu tempo de jogo atual está dentro do limite diário saudável. Divirta-se!"
 	"DOTA_AASystem_Yellow"		"Tempo de jogo acumulado: %s1. Você excedeu o limite diário saudável. Descanse um pouco antes de jogar mais!"
 	"DOTA_AASystem_Red"			"Tempo de jogo acumulado: {s:playtime}. Você excedeu o limite diário saudável. Recomendamos que pare de jogar e descanse um pouco!"
@@ -27504,6 +27533,7 @@ Agora, lidando com magias perigosas roubadas dos arquivos secretos do seu direto
 	"DOTA_Permanent_ChatWheelRewardSubtitle"			"As mensagens sonoras são ativadas automaticamente e são permanentes."
 
 	"DOTA_Treasure_Odds_Details_Title"					"Dados da chance ascendente para itens <span class='TreasureItemInfoLabel TitleLabel'>{s:item_rarity_token}s</span>"
+	"DOTA_Treasure_Odds_Details_Specific_Title"			"Chance ascendente para este item <span class='TreasureItemInfoLabel TitleLabel'>{s:item_rarity_token}</span>"
 	"DOTA_Treasure_Odds_Details_TitleOpened"			"Tesouro aberto"
 	"DOTA_Treasure_Odds_Details_TitleIndividual"		"Chance"
 	"DOTA_Treasure_Odds_Details_TitleCumulative"		"Chance cumulativa"
@@ -27514,7 +27544,6 @@ Agora, lidando com magias perigosas roubadas dos arquivos secretos do seu direto
 
 	"DOTA_Treasure_Odds_Details_CumulativeTooltip"		"Esse valor é a chance <i>acumulada</i> de se obter um item desta raridade após abrir tal quantidade de tesouros"
 	"DOTA_Treasure_Odds_Details_CurrentEntryTooltip"	"Esta é a sua chance atual. Há um contador separado para cada item com chance ascendente, que volta à chance inicial após recebê-lo."
-
 	"DOTA_Wheel_ItemCategory"						"{s:category}"
 	"DOTA_Wheel_Set"								"Conjunto"
 	"DOTA_Wheel_Arcana"								"Arcano"
@@ -35630,8 +35659,8 @@ Cada região terá uma classificação em tempo real que será usada calcular o 
 		"DOTA_Frontpage_NPX_NewSet" 	"Uma nova abordagem<br>para ajudar novos jogadores"
 		"DOTA_Frontpage_NPX_Description" "Adicionamos inúmeros recursos novos à experiência de novos jogadores. Leia mais no blog."
 
-		"DOTA_Ability_Movie_Label"     "Efeito de habilidade personalizado"
-		"DOTA_Immortal_Movie_Label"     "Efeito de habilidade Imortal"
+		"DOTA_Ability_Movie_Label"     "Efeitos de habilidade personalizados"
+		"DOTA_Immortal_Movie_Label"     "Efeitos de habilidade Imortais"
 		"DOTA_Emblem_Movie_Label"     "Efeito de emblema"
 
 		"DOTA_Diretide_2020_Title"										"Baú Sagrado do Diretide"
@@ -49558,6 +49587,7 @@ Em seções de <b>antijogo</b>, fique de olho em ações negativas em direção 
 		"DOTA_Dark_Carnival_Store"										"Loja do Parque Sombrio"
 		"DOTA_Dark_Carnival_Candyworks"									"Doceria"
 		"DOTA_Dark_Carnival_The_Oracle"									"Oráculo"
+		
 
 		"DOTA_Dark_Carnival_OverworldCell_TokensNeeded"					"Bilhetes para a próxima recompensa"
 
@@ -50563,6 +50593,48 @@ Em seções de <b>antijogo</b>, fique de olho em ações negativas em direção 
 		"DOTA_Announcer_Preview_Ringmaster_05" "Eu ficaria tão humilhado se fosse você."
 		"DOTA_Announcer_Preview_Ringmaster_06" "Um artista de verdade não toleraria isso."
 
+		// Monster Hoard 2026
+		"DOTA_MonsterHoard2026_2026"													"2026"
+		"DOTA_MonsterHoard2026_TreasureTitle"											"Tesouro do Terror"
+		//TIDEHUNTER ARCANA
+		"DOTA_Style_Tidehunter_Arcana_0"	"Mandíbula do Megalodonte"
+		"DOTA_Style_Tidehunter_Arcana_1"	"Martelo de Maelrawn"
+		"DOTA_Style_Tidehunter_Arcana_2"	"Fome Incomensurável"
+
+		"KillEaterEvent_Tidehunter_ArcanaProgress"	"Heróis pegos em Devastações em múltiplos heróis"
+		"KillEaterEvent_Tidehunter_ArcanaFishEaten"	"Peixes comidos"
+
+		"DOTA_TidehunterArcana_Title"	"Progressão do Arcano"
+		"DOTA_TidehunterArcana_Label"	"Heróis Devastados"
+		"DOTA_TidehunterArcana_Score"	"{s:current_score}/{d:unlock_value}"
+		"DOTA_TidehunterArcana_FishLabel"	"Peixes comidos"
+		"DOTA_TidehunterArcana_FishScore"	"{s:fish_current_score}/{d:fish_unlock_value}"
+
+		"DOTA_Arcana_Tidehunter_MiniGame_Title"	"Martelo de Maelrawn"
+		"DOTA_Arcana_Tidehunter_MiniGame_Subtitle"	"Destrava o estilo alternativo Martelo de Maelrawn"
+		"DOTA_Arcana_Tidehunter_MiniGame_Description"	"Destrave o Martelo de Maelrawn ao atingir três ou mais heróis inimigos em um único uso de Devastar. Cada herói pego concede um ponto, somando até 25 por partida."
+		"DOTA_Arcana_Tidehunter_MiniGame_Completion"	"Heróis Devastados"
+
+		"DOTA_Arcana_Tidehunter_Fish_MiniGame_Title"	"Fome Incomensurável"
+		"DOTA_Arcana_Tidehunter_Fish_MiniGame_Subtitle"	"Destrava o estilo alternativo Fome Incomensurável"
+		"DOTA_Arcana_Tidehunter_Fish_MiniGame_Description"	"Destrave a Fome Incomensurável ao comer peixes deixados por heróis inimigos. Pode somar até 20 pontos por partida."
+		"DOTA_Arcana_Tidehunter_Fish_MiniGame_Completion"	"Peixes comidos"
+
+		"DOTA_Arcana_Tidehunter_MiniGame_ScoreboardRavages"	"<b>{d:tidehunter_arcana_ravages}</b>/{d:tidehunter_arcana_ravages_max}"
+		"DOTA_Arcana_Tidehunter_MiniGame_ScoreboardFish"	"<b>{d:tidehunter_arcana_fish}</b>/{d:tidehunter_arcana_fish_max}"
+		"DOTA_HUD_Scoreboard_TidehunterArcanaRavages"	"Heróis pegos em Devastações em múltiplos heróis nesta partida."
+		"DOTA_HUD_Scoreboard_TidehunterArcanaFish"	"Peixes comidos nesta partida."
+
+		"DOTA_ArcanaProgress_Header_npc_dota_hero_tidehunter"	"Estilos da Mandíbula do Megalodonte"
+		"DOTA_ArcanaProgress_Title_npc_dota_hero_tidehunter"	"Progresso p/ destravar"
+		"DOTA_ArcanaProgress_ProgressBar_npc_dota_hero_tidehunter"	"Progresso: {d:arcana_progress_current_score} / {d:arcana_progress_max_score}"
+		"DOTA_ArcanaProgress_Description_npc_dota_hero_tidehunter"	"Heróis Devastados"
+		"DOTA_ArcanaProgress_Description_npc_dota_hero_tidehunter_0"	"Heróis Devastados"
+		"DOTA_ArcanaProgress_Description_npc_dota_hero_tidehunter_1"	"Peixes comidos"
+		"DOTA_ArcanaProgress_Increment_npc_dota_hero_tidehunter"	"+{s:arcana_progress_increment}"
+
+		"DOTA_HUD_Scoreboard_TidehunterArcanaNeeded"	"Heróis afetados em um único uso de Devastar para progredir rumo ao segundo estilo alternativo."
+
 		// TI 2026
 		"DOTA_EventName_International2026"						"The International 2026"
 		"DOTA_EventNameShort_International2026"					"The International 2026"
@@ -50905,6 +50977,8 @@ Em seções de <b>antijogo</b>, fique de olho em ações negativas em direção 
 		"DOTA_Compendium26_SetPredictions"						"Definir palpites"
 		"DOTA_Compendium26_ViewResults"							"Ver resultados"
 		"DOTA_Compendium26_DefaultCTA"							"Ver palpites"
+
+		"DOTA_Compendium_Supporting"					"Apoie"
 		
 		"DOTA_Compendium26_Bronze"						"Bronze"
 		"DOTA_Compendium26_Silver"						"Prata"
@@ -51026,6 +51100,7 @@ Em seções de <b>antijogo</b>, fique de olho em ações negativas em direção 
 		"dota_settings_non_hero_unit_hotkeys_new_setting_description"	"Agora, teclas de unidades não heróicas (Espírito Urso do Lone Druid, Familiares do Visage etc.) podem ser personalizadas individualmente."
 
 		"dota_settings_additional_abilities"	"Habilidades adicionais"
+		"dota_settings_additional_abilities_tooltip"	"Exibe as habilidades adicionais deste herói, para vincular atalhos diretamente."
 
 		"dota_settings_unit_picker_summons_tooltip"	"%s2 de %s1"
 
