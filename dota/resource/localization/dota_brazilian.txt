@@ -8847,6 +8847,7 @@ Os Ancestrais, tanto Iluminado como Temido, traziam muitas vantagens: energia ci
 		"Attrib_Candyshop_1"						"Diretide 2022"
 		"Attrib_Candyshop_2"						"Caravana da Queda Coronal"
 		"Attrib_AccountBound"						"Vinculado à conta"
+		"Attrib_GiftableUntilDate"					"Presenteável até %s1"
 		"InternationalEvent_Station0"				"assistir a uma partida no International"
 		"InternationalEvent_Station1"				"visitar a Loja Secreta no International"
 		"InternationalEvent_Station2"				"visitar a Estação da Oficina no International"
@@ -22631,6 +22632,8 @@ Para participar como um jogador experiente, você precisa ter jogado {d:new_play
 	"dota_settings_low_latency_tooltip_boost"	"O modo de baixa latência está ativado, otimizando a latência do sistema. Inclui técnicas que podem usar um maior processamento gráfico, impactando levemente o QPS para reduzir a latência o máximo possível."
 	"dota_settings_low_latency_amd"				"AMD Anti-Lag 2.0"
 	"dota_settings_show_ability_videos"			"Exibir vídeos nas descrições de habilidades"
+	"dota_settings_hero_grid"					"Grade de heróis"
+	"dota_settings_show_persona_portraits"		"Exibir retratos de personas equipadas"
 	
 	"dota_settings_toasts_teammates"		"Aliados"
 	"dota_settings_toasts_show_itempickups"		"Aliado comprou ou pegou um item importante"
@@ -22699,6 +22702,8 @@ Para participar como um jogador experiente, você precisa ter jogado {d:new_play
 
 	"dota_settings_select_hero_previews_vision_new_setting_title"			"Selecionar herói exibe a visão"
 	"dota_settings_select_hero_previews_vision_new_setting_description"		"Segurar a tecla \"Selecionar herói\" exibirá a área de visão do seu herói."
+	"dota_settings_persona_portraits_new_setting_title"			"Retratos de personas na grade de heróis"
+	"dota_settings_persona_portraits_new_setting_description"	"Exibe os retratos das suas personas equipadas na grade de heróis."
 
 	"DOTA_Hotkeys_Tooltip_Invoker"						"Ativar esta caixa definirá cada habilidade individual do Invoker para usar a configuração clássica, em vez de usar os atalhos para as habilidades 4 e 5."
 
@@ -23890,6 +23895,7 @@ Para participar como um jogador experiente, você precisa ter jogado {d:new_play
 	"DOTA_tooltip_econ_item_gift_restriction_permanent" "Não pode ser presenteado"
 	"DOTA_tooltip_econ_item_gift_allowed" "Presenteável"
 	"DOTA_tooltip_econ_item_gift_restriction_date" "Não pode ser presenteado até: {t:s:tradable_after_date_time} {t:T:tradable_after_date_time}"
+	"DOTA_tooltip_econ_item_gift_restriction_until_date" "Presenteável até: {t:T:giftable_until_date_time} {t:s:giftable_until_date_time}"
 	"DOTA_tooltip_econ_item_gem_type"		"{s:gem_type}"
 	"DOTA_tooltip_econ_item_gem_strange_count" "{s:strange_count}"
 	"DOTA_tooltip_econ_item_gem_description" "{s:gem_description}"
@@ -24474,7 +24480,11 @@ Para participar como um jogador experiente, você precisa ter jogado {d:new_play
 	"DOTA_Treasure_RecyclingSubtitle_KeyAndTwoTreasures"	"Recicle conjuntos para receber uma chave adicional e mais dois tesouros:"
 	"DOTA_Treasure_RecyclingCount"		"{d:inventory_count}x"
 	"DOTA_Treasure_DisassembleConfirm_Popup_Title"		"Reciclar último item"
-	"DOTA_Treasure_DisassembleConfirm_Popup_Message"	"Esta é a única cópia desse conjunto no arsenal; ao reciclá-lo, você ficará sem. Continuar mesmo assim?"
+	"DOTA_Treasure_DisassembleConfirm_Popup_Message"	"Esta é a única cópia desse conjunto no arsenal; ao reciclá-lo, você não terá mais nenhum dos itens deste conjunto. Continuar mesmo assim?"
+	"DOTA_Treasure_GiftingConfirm_Popup_Title"		"Presenteando o último item"
+	"DOTA_Treasure_GiftingConfirm_Popup_Message"	"Esta é a única cópia desse conjunto no arsenal; ao presenteá-lo, você não terá mais nenhum dos itens deste conjunto. Continuar mesmo assim?"
+	"DOTA_Treasure_GiftFriend_Tooltip_Limited"		"Presenteável até: {t:T:giftable_until_date_time} {t:s:giftable_until_date_time}"
+	"DOTA_Treasure_NotMarketableAndGiftingLimited"			"O conteúdo deste tesouro não pode ser comercializado nem trocado. Os itens podem ser presenteados nos 30 primeiros dias após a abertura."
 
 	"DOTA_Treasure_MilestoneRewardsTitle"			"Tesouros adicionais"
 	"DOTA_Treasure_MilestoneRewardsDescription"		"Abra tesouros para abrir recompensas adicionais:"
@@ -27544,6 +27554,9 @@ Agora, lidando com magias perigosas roubadas dos arquivos secretos do seu direto
 
 	"DOTA_Treasure_Odds_Details_CumulativeTooltip"		"Esse valor é a chance <i>acumulada</i> de se obter um item desta raridade após abrir tal quantidade de tesouros"
 	"DOTA_Treasure_Odds_Details_CurrentEntryTooltip"	"Esta é a sua chance atual. Há um contador separado para cada item com chance ascendente, que volta à chance inicial após recebê-lo."
+	"DOTA_Treasure_Odds_Details_BadLuckProtectionTooltip"	"<b>Proteção contra azar</b><br>Você tem a garantia de receber este item se abrir essa quantidade de tesouros."
+	"DOTA_Treasure_BadLuckProtectionTooltip"			"<b>Proteção contra azar</b><br>Você tem a garantia de receber este item se abrir uma certa quantidade de tesouros. Clique para mais detalhes."
+
 	"DOTA_Wheel_ItemCategory"						"{s:category}"
 	"DOTA_Wheel_Set"								"Conjunto"
 	"DOTA_Wheel_Arcana"								"Arcano"
@@ -50593,9 +50606,16 @@ Em seções de <b>antijogo</b>, fique de olho em ações negativas em direção 
 		"DOTA_Announcer_Preview_Ringmaster_05" "Eu ficaria tão humilhado se fosse você."
 		"DOTA_Announcer_Preview_Ringmaster_06" "Um artista de verdade não toleraria isso."
 
-		// Monster Hoard 2026
+		// Trove of Terror 2026
 		"DOTA_MonsterHoard2026_2026"													"2026"
 		"DOTA_MonsterHoard2026_TreasureTitle"											"Tesouro do Terror"
+		"DOTA_MonsterHoard2026_TreasureDescription"										"Mergulhe em uma coleção monstruosa de itens Imortais, um conjunto Arcano exclusivo para a Drow Ranger e um novo Arcano cheio de dentes para o Tidehunter — e obtenha visuais adicionais para a Tormenta e Roshan ao longo do caminho."
+
+		"Notification_Trove_Gifting"					"<b>Atualização de Presentes do Tesouro do Terror</b><br/><br/>
+A funcionalidade que tinha como objetivo impedir o abuso de trocas de presentes foi aplicada erroneamente a todos os itens do Tesouro do Terror, impedindo que qualquer item fosse presenteado.<br/><br/>
+A grande maioria dos presentes entre amigos ocorre logo após a abertura de um tesouro. Para permitir o presenteamento entre amigos enquanto continuamos a aprimorar o código antiabuso, reativamos a opção de presentear para todos os conjuntos do Tesouro do Terror: cada conjunto pode ser presenteado a um amigo uma vez durante os trinta dias após a abertura. Para conjuntos já no seu inventário, os trinta dias começam agora. Para novos tesouros abertos, o prazo começa no momento da abertura.<br/><br/>
+Como alguns conjuntos que poderiam ter sido presenteados já foram reciclados, concedemos a todos um novo Tesouro do Terror a cada seis créditos de reciclagem até o momento, arredondando para cima."
+
 		//TIDEHUNTER ARCANA
 		"DOTA_Style_Tidehunter_Arcana_0"	"Mandíbula do Megalodonte"
 		"DOTA_Style_Tidehunter_Arcana_1"	"Martelo de Maelrawn"
@@ -50634,6 +50654,8 @@ Em seções de <b>antijogo</b>, fique de olho em ações negativas em direção 
 		"DOTA_ArcanaProgress_Increment_npc_dota_hero_tidehunter"	"+{s:arcana_progress_increment}"
 
 		"DOTA_HUD_Scoreboard_TidehunterArcanaNeeded"	"Heróis afetados em um único uso de Devastar para progredir rumo ao segundo estilo alternativo."
+
+		"Notification_TideArcana_CNVO"					"Correção do erro impedindo a nova dublagem do Arcano do Tidehunter em chinês."
 
 		// TI 2026
 		"DOTA_EventName_International2026"						"The International 2026"

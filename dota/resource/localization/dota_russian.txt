@@ -8838,6 +8838,7 @@
 		"Attrib_Candyshop_1"						"Восстание Тьмы 2022"
 		"Attrib_Candyshop_2"						"Караван «Павшей короны»"
 		"Attrib_AccountBound"						"Привязан к аккаунту"
+		"Attrib_GiftableUntilDate"					"Можно подарить до %s1"
 		"InternationalEvent_Station0"				"просмотр матча на чемпионате The International"
 		"InternationalEvent_Station1"				"посещение потайной лавки на чемпионате The International"
 		"InternationalEvent_Station2"				"посещение мастерской на чемпионате The International"
@@ -18567,7 +18568,7 @@
 	"DOTA_Playtest"			"Тест"
 	"DOTA_Facets"			"Аспекты"
 	"dota_unkown"			"Неизвестный"
-	"DOTA_HowItWorks"		"Как это работает"
+	"DOTA_HowItWorks"		"Как всё устроено"
 	"DOTA_ClaimRewards"		"Получить награды"
 	"DOTA_ViewEvent"		"Показать событие"
 	"DOTA_BuyNow"			"Купить"
@@ -22768,6 +22769,8 @@
 	"dota_settings_low_latency_tooltip_boost"	"Режим низкой задержки включён и оптимизирует работу системы. Для максимального снижения задержки может увеличить нагрузку на видеокарту, отчего немного снизится частота кадров."
 	"dota_settings_low_latency_amd"				"AMD Anti-Lag 2.0"
 	"dota_settings_show_ability_videos"			"Показывать видео в описаниях способностей"
+	"dota_settings_hero_grid"					"Сетка героев"
+	"dota_settings_show_persona_portraits"		"Показывать портреты используемых личностей"
 	
 	"dota_settings_toasts_teammates"		"Союзники"
 	"dota_settings_toasts_show_itempickups"		"Уведомлять, когда союзник покупает или подбирает ключевой предмет."
@@ -22836,6 +22839,8 @@
 
 	"dota_settings_select_hero_previews_vision_new_setting_title"			"Выбор героя отображает его обзор"
 	"dota_settings_select_hero_previews_vision_new_setting_description"		"Удерживая клавишу выбора героя, вы увидите радиус его обзора."
+	"dota_settings_persona_portraits_new_setting_title"			"Портреты личностей в сетке героев"
+	"dota_settings_persona_portraits_new_setting_description"	"Показывать в сетке героев портреты используемых вами личностей."
 
 	"DOTA_Hotkeys_Tooltip_Invoker"						"Если включено, каждая способность, которую создаёт Invoker, будет активироваться в соответствии с классической раскладкой, а не клавишами четвёртой и пятой способностей"
 
@@ -24032,6 +24037,7 @@
 	"DOTA_tooltip_econ_item_gift_restriction_permanent" "Нельзя дарить"
 	"DOTA_tooltip_econ_item_gift_allowed" "Можно подарить"
 	"DOTA_tooltip_econ_item_gift_restriction_date" "Нельзя дарить до {t:T:giftable_after_date_time} {t:s:giftable_after_date_time}"
+	"DOTA_tooltip_econ_item_gift_restriction_until_date" "Можно подарить до: {t:T:giftable_until_date_time} {t:s:giftable_until_date_time}"
 	"DOTA_tooltip_econ_item_gem_type"		"{s:gem_type}"
 	"DOTA_tooltip_econ_item_gem_strange_count" "{s:strange_count}"
 	"DOTA_tooltip_econ_item_gem_description" "{s:gem_description}"
@@ -24573,7 +24579,7 @@
 
 	"DOTA_Treasure_RecycleTitle"		"Прогресс перековки"
 
-	"DOTA_Treausre_HelpNoDupe"			"До момента покупки и открытия будет неизвестно, что вы получите. Открыв больше одной сокровищницы, вы не получите дубликаты, только если не достали по каждому из не редких предметов."
+	"DOTA_Treausre_HelpNoDupe"			"До момента покупки и открытия будет неизвестно, что вы получите. При открытии нескольких сокровищниц вы не начнёте получать дубликаты, пока не достанете каждую из обычных наград."
 	"DOTA_Treasure_HelpDupe"			"До момента покупки и открытия будет неизвестно, что вы получите. Открыв больше одной сокровищницы, вы, возможно, получите дубликаты предметов."
 	"DOTA_Treasure_HelpPW"				"В вашем регионе отображается содержимое ещё не открытых сокровищниц.<br><br>Когда вы откроете эту сокровищницу, станет доступен другой предмет из неё."
 	"DOTA_Treasure_HelpPWNotPurchasable1" "В вашем регионе отображается содержимое ещё не открытых сокровищниц.<br><br>Сейчас в ней находится предмет <span class='ItemName'>{g:dota_item_name:peek_item_def}</span>. Когда вы его получите, станет доступен другой предмет из этой сокровищницы."
@@ -24617,6 +24623,10 @@
 	"DOTA_Treasure_RecyclingCount"		"{d:inventory_count} шт."
 	"DOTA_Treasure_DisassembleConfirm_Popup_Title"		"Перековка последнего предмета"
 	"DOTA_Treasure_DisassembleConfirm_Popup_Message"	"Это ваша единственная копия этого предмета. После перековки он исчезнет, и им нельзя будет пользоваться. Вы уверены?"
+	"DOTA_Treasure_GiftingConfirm_Popup_Title"		"Вы дарите последний предмет"
+	"DOTA_Treasure_GiftingConfirm_Popup_Message"	"Это ваша единственная копия этого набора. Подарив его, вы лишитесь всех предметов в нём. Вы уверены?"
+	"DOTA_Treasure_GiftFriend_Tooltip_Limited"		"Можно подарить до: {t:T:giftable_until_date_time} {t:s:giftable_until_date_time}"
+	"DOTA_Treasure_NotMarketableAndGiftingLimited"			"Предметы из этой сокровищницы нельзя продать или обменять, но можно подарить в течение 30 дней после её открытия."
 
 	"DOTA_Treasure_MilestoneRewardsTitle"			"Бонусные награды"
 	"DOTA_Treasure_MilestoneRewardsDescription"		"Открывайте сундуки и получайте бонусные награды:"
@@ -24688,8 +24698,8 @@
 	"DOTA_Treasure_Unusual_Description"			"Этот предмет источает эффект «{s:unusual_effect_name}»"
 	"DOTA_Treasure_BaseSetUnusual_Description"	"В добавок к необычному предмету вы получили полный набор"
 	"DOTA_Treasure_Set"			"Набор"
-	"DOTA_Treasure_AndArcana"			"+Arcana"
-	"DOTA_Treasure_AndPersona"			"+личность"
+	"DOTA_Treasure_AndArcana"			"+ Arcana"
+	"DOTA_Treasure_AndPersona"			"+ личность"
 	"DOTA_Treasure_Arcana"				"Arcana"
 	"DOTA_Treasure_ArcanaPersonaLabel"	"{s:arcana_persona_label} {s:arcana_persona_unit_name}"
 	"DOTA_Treasure_ViewTreasureDetails"		"Показать подробности"
@@ -27712,8 +27722,8 @@
 
 	"DOTA_Permanent_ChatWheelRewardSubtitle"			"Награды для колеса чата активируются автоматически и навсегда."
 
-	"DOTA_Treasure_Odds_Details_Title"					"Вероятность получения: <span class='TreasureItemInfoLabel TitleLabel'>{s:item_rarity_token}</span> награда"
-	"DOTA_Treasure_Odds_Details_Specific_Title"			"Вероятность получения: <span class='TreasureItemInfoLabel TitleLabel'>{s:item_rarity_token}</span> награда"
+	"DOTA_Treasure_Odds_Details_Title"					"Растущий шанс получения: <span class='TreasureItemInfoLabel TitleLabel'>{s:item_rarity_token}</span> награда"
+	"DOTA_Treasure_Odds_Details_Specific_Title"			"Растущий шанс получения: <span class='TreasureItemInfoLabel TitleLabel'>{s:item_rarity_token}</span> награда"
 	"DOTA_Treasure_Odds_Details_TitleOpened"			"Открытых сокровищниц"
 	"DOTA_Treasure_Odds_Details_TitleIndividual"		"Шанс получения"
 	"DOTA_Treasure_Odds_Details_TitleCumulative"		"Итоговый шанс получения"
@@ -27723,7 +27733,7 @@
 	"DOTA_Treasure_Odds_Details_ValueCumulative"		"{s:cumulative_odds}"
 
 	"DOTA_Treasure_Odds_Details_CumulativeTooltip"		"Это <i>суммарный</i> шанс получения одного предмета этой редкости после открытия указанного числа сокровищниц"
-	"DOTA_Treasure_Odds_Details_CurrentEntryTooltip"	"Вы откроете такую по счёту сокровищницу. Счётчик каждого предмета с увеличивающейся вероятностью получения работает независимо от других и сбрасывается при получении соответствующего предмета."
+	"DOTA_Treasure_Odds_Details_CurrentEntryTooltip"	"Вы откроете такую по счёту сокровищницу. У каждого предмета с растущим шансом получения этот счётчик увеличивается по отдельности и сбрасывается при получении соответствующего предмета."
 	"DOTA_Treasure_Odds_Details_BadLuckProtectionTooltip"	"<b>Защита от невезения</b><br>Вы гарантированно получите этот предмет, если счётчик открытия сокровищниц достигнет этого уровня."
 	"DOTA_Treasure_BadLuckProtectionTooltip"			"<b>Защита от невезения</b><br>Вы гарантированно получите этот предмет, если счётчик открытия сокровищниц достигнет этого уровня. Нажмите, чтобы увидеть подробности."
 
@@ -51808,7 +51818,7 @@
 		"DOTA_Announcer_Preview_Ringmaster_05" "На твоём месте я бы чувствовал унижение."
 		"DOTA_Announcer_Preview_Ringmaster_06" "Настоящий артист такого бы не допустил."
 
-		// Monster Hoard 2026
+		// Trove of Terror 2026
 		"DOTA_MonsterHoard2026_2026"													"2026"
 		"DOTA_MonsterHoard2026_TreasureTitle"											"Trove of Terror"
 		"DOTA_MonsterHoard2026_TreasureDescription"										"Окунитесь в чудовищную коллекцию Immortal-предметов, включающую набор с Arcana-предметом для Drow Ranger и совершенно новый зубастый Arcana-набор для Tidehunter. По мере открытия сокровищниц вы также получите новые модели для Терзателя и Рошана."
@@ -51829,11 +51839,18 @@
 
 		"DOTA_Arcana_Tidehunter_MiniGame_Title"	"The Hammer of Maelrawn"
 		"DOTA_Arcana_Tidehunter_MiniGame_Subtitle"	"Откройте второй стиль The Hammer of Maelrawn"
+		"DOTA_Arcana_Tidehunter_MiniGame_Description"	"Откройте стиль The Hammer of Maelrawn, оглушая как минимум по три героя за применение Ravage. Считается каждая жертва такого применения, но не более 25 за игру."
 		"DOTA_Arcana_Tidehunter_MiniGame_Completion"	"Героев в Ravage"
 
 		"DOTA_Arcana_Tidehunter_Fish_MiniGame_Title"	"Unfathomable Hunger"
 		"DOTA_Arcana_Tidehunter_Fish_MiniGame_Subtitle"	"Откройте третий стиль Unfathomable Hunger"
+		"DOTA_Arcana_Tidehunter_Fish_MiniGame_Description"	"Откройте стиль Unfathomable Hunger, кушая рыбку, выпадающую с убитых врагов. За каждую игру засчитывается не более 20 рыбок."
 		"DOTA_Arcana_Tidehunter_Fish_MiniGame_Completion"	"Съеденных рыбок"
+
+		"DOTA_Arcana_Tidehunter_MiniGame_ScoreboardRavages"	"<b>{d:tidehunter_arcana_ravages}</b>/{d:tidehunter_arcana_ravages_max}"
+		"DOTA_Arcana_Tidehunter_MiniGame_ScoreboardFish"	"<b>{d:tidehunter_arcana_fish}</b>/{d:tidehunter_arcana_fish_max}"
+		"DOTA_HUD_Scoreboard_TidehunterArcanaRavages"	"Жертв Ravage по 3+ героям в этой игре."
+		"DOTA_HUD_Scoreboard_TidehunterArcanaFish"	"Рыбок, скушанных за эту игру."
 
 		"DOTA_ArcanaProgress_Header_npc_dota_hero_tidehunter"	"Стили Maw of the Megalodon"
 		"DOTA_ArcanaProgress_Title_npc_dota_hero_tidehunter"	"Прогресс разблокировки"
@@ -51844,6 +51861,8 @@
 		"DOTA_ArcanaProgress_Increment_npc_dota_hero_tidehunter"	"+{s:arcana_progress_increment}"
 
 		"DOTA_HUD_Scoreboard_TidehunterArcanaNeeded"	"Число героев, которых нужно оглушить одним применением Ravage, чтобы засчитался прогресс второго стиля."
+
+		"Notification_TideArcana_CNVO"					"Исправлена ошибка, из-за которой новые реплики Arcana-предмета для Tidehunter не воспроизводились на китайском языке."
 
 		// TI 2026
 		"DOTA_EventName_International2026"						"The International 2026"

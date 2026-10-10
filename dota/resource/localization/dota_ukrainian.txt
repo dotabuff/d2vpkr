@@ -8869,6 +8869,7 @@
 		"Attrib_Candyshop_1"						"Пора Пітьми 2022"
 		"Attrib_Candyshop_2"						"Караван Коронопаду"
 		"Attrib_AccountBound"						"Акаунт прив’язано"
+		"Attrib_GiftableUntilDate"					"Можна дарувати до %s1"
 		"InternationalEvent_Station0"				"перегляд матчу в місці проведення International"
 		"InternationalEvent_Station1"				"відвідання таємної крамниці в місці проведення International"
 		"InternationalEvent_Station2"				"відвідання цеху майстерні в місці проведення International"
@@ -22991,6 +22992,8 @@
 	"dota_settings_low_latency_tooltip_boost"	"Режим низької затримки ввімкнено й він оптимізує затримку системи. Включає технології, які можуть використовувати більше потужності відеокарти й дещо впливати на кадри за секунду задля максимального зменшення затримки."
 	"dota_settings_low_latency_amd"				"AMD Anti-Lag 2.0"
 	"dota_settings_show_ability_videos"			"Показувати відео у підказках здібностей "
+	"dota_settings_hero_grid"					"Сітка героїв"
+	"dota_settings_show_persona_portraits"		"Показувати портрети споряджених персон"
 	
 	"dota_settings_toasts_teammates"		"Союзники"
 	"dota_settings_toasts_show_itempickups"		"Купівля або підбирання ключових предметів союзниками."
@@ -23059,6 +23062,8 @@
 
 	"dota_settings_select_hero_previews_vision_new_setting_title"			"Вибір героя показує його поле видимості"
 	"dota_settings_select_hero_previews_vision_new_setting_description"		"Утримуйте клавішу «Обрати героя» для показу поля видимості вашого героя."
+	"dota_settings_persona_portraits_new_setting_title"			"Портрети персон у сітці героїв"
+	"dota_settings_persona_portraits_new_setting_description"	"Показувати портрети споряджених персон у сітці героїв."
 
 	"DOTA_Hotkeys_Tooltip_Invoker"						"Якщо ввімкнено, то кожна створена Заклиначем здібність активуватиметься згідно з класичною розкладкою, а не з клавішами четвертої та п’ятої здібностей."
 
@@ -24256,6 +24261,7 @@
 	"DOTA_tooltip_econ_item_gift_restriction_permanent" "Не дарується"
 	"DOTA_tooltip_econ_item_gift_allowed" "Можна дарувати"
 	"DOTA_tooltip_econ_item_gift_restriction_date" "Не дарується до: {t:T:giftable_after_date_time} {t:s:giftable_after_date_time}"
+	"DOTA_tooltip_econ_item_gift_restriction_until_date" "Дарується до: {t:T:giftable_until_date_time} {t:s:giftable_until_date_time}"
 	"DOTA_tooltip_econ_item_gem_type"		"{s:gem_type}"
 	"DOTA_tooltip_econ_item_gem_strange_count" "{s:strange_count}"
 	"DOTA_tooltip_econ_item_gem_description" "{s:gem_description}"
@@ -24841,7 +24847,9 @@
 	"DOTA_Treasure_RecyclingCount"		"x{d:inventory_count}"
 	"DOTA_Treasure_DisassembleConfirm_Popup_Title"		"Переробка останнього предмета"
 	"DOTA_Treasure_DisassembleConfirm_Popup_Message"	"Це ваша єдина копія цього набору. Після переробки ви не матимете жодного предмета в цьому комплекті. Ви дійсно хочете продовжити?"
-
+	"DOTA_Treasure_GiftingConfirm_Popup_Title"		"Дарування останнього предмета"
+	"DOTA_Treasure_GiftingConfirm_Popup_Message"	"Це ваша єдина копія цього набору. Після дарування ви не матимете жодного предмета в цьому комплекті. Ви дійсно хочете продовжити?"
+	"DOTA_Treasure_GiftFriend_Tooltip_Limited"		"Дарується до: {t:T:giftable_until_date_time} {t:s:giftable_until_date_time}"
 	"DOTA_Treasure_MilestoneRewardsTitle"			"Додаткові нагороди"
 	"DOTA_Treasure_MilestoneRewardsDescription"		"Відкривайте скрині, щоб отримати додаткові нагороди:"
 	"DOTA_Treasure_MilestoneRewardsItemCount"		"Скринь відкрито: <b>{d:current_open_count}</b>/{d:target_open_count}"
@@ -52096,7 +52104,7 @@
 		"DOTA_Announcer_Preview_Ringmaster_05" "На вашому місці я б почувався приниженим."
 		"DOTA_Announcer_Preview_Ringmaster_06" "Справжній виконавець такого б не допустив."
 
-		// Monster Hoard 2026
+		// Trove of Terror 2026
 		"DOTA_MonsterHoard2026_2026"													"2026"
 		"DOTA_MonsterHoard2026_TreasureTitle"											"Скриня страху"
 		"DOTA_MonsterHoard2026_TreasureDescription"										"Зануртеся в страшенну колекцію нетлінних предметів, набір для Дроу-Рейнджер із таємним предметом та цілком новий зубастий таємний предмет для Хвилеріза — а також додаткові стилі для мучителя та Рошана, які ви заробите в процесі."
@@ -52117,11 +52125,18 @@
 
 		"DOTA_Arcana_Tidehunter_MiniGame_Title"	"Молот Мельрона"
 		"DOTA_Arcana_Tidehunter_MiniGame_Subtitle"	"Розблокуйте альтернативний стиль «Молот Мельрона»"
+		"DOTA_Arcana_Tidehunter_MiniGame_Description"	"Розблокуйте альтернативний стиль «Молот Мельрона», зачепивши трьох або більше ворожих героїв однією Руйнацією. Кожен герой, спійманий Руйнацією, дає очко. За одну гру можна отримати до 25 очок."
 		"DOTA_Arcana_Tidehunter_MiniGame_Completion"	"Герої в Руйнації"
 
 		"DOTA_Arcana_Tidehunter_Fish_MiniGame_Title"	"Безодній голод"
 		"DOTA_Arcana_Tidehunter_Fish_MiniGame_Subtitle"	"Розблокуйте альтернативний стиль «Безодній голод»"
+		"DOTA_Arcana_Tidehunter_Fish_MiniGame_Description"	"Розблокуйте альтернативний стиль «Безодній голод», з’їдаючи рибу, яку лишають після себе полеглі ворожі герої. За одну гру можна отримати до 20 очок."
 		"DOTA_Arcana_Tidehunter_Fish_MiniGame_Completion"	"З’їдено риби"
+
+		"DOTA_Arcana_Tidehunter_MiniGame_ScoreboardRavages"	"<b>{d:tidehunter_arcana_ravages}</b>/{d:tidehunter_arcana_ravages_max}"
+		"DOTA_Arcana_Tidehunter_MiniGame_ScoreboardFish"	"<b>{d:tidehunter_arcana_fish}</b>/{d:tidehunter_arcana_fish_max}"
+		"DOTA_HUD_Scoreboard_TidehunterArcanaRavages"	"Герої в Руйнації на кількох героїв у цій грі."
+		"DOTA_HUD_Scoreboard_TidehunterArcanaFish"	"З’їдено риби в цьому матчі."
 
 		"DOTA_ArcanaProgress_Header_npc_dota_hero_tidehunter"	"Стилі Морди мегалодона"
 		"DOTA_ArcanaProgress_Title_npc_dota_hero_tidehunter"	"Поступ розблокування"
@@ -52132,6 +52147,8 @@
 		"DOTA_ArcanaProgress_Increment_npc_dota_hero_tidehunter"	"+{s:arcana_progress_increment}"
 
 		"DOTA_HUD_Scoreboard_TidehunterArcanaNeeded"	"Кількість героїв, яких потрібно вразити однією Руйнацією для поступу розблокування другого стилю."
+
+		"Notification_TideArcana_CNVO"					"Виправлено помилку, внаслідок якої нове озвучення таємного предмета Хвилеріза не відтворювалося китайською."
 
 		// TI 2026
 		"DOTA_EventName_International2026"						"The International 2026"

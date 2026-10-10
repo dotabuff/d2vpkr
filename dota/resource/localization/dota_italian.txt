@@ -8854,6 +8854,7 @@ Se un tuo oggetto viene scelto per la vendita all'interno del gioco, ne guadagne
 		"Attrib_Candyshop_1"						"Diretide 2022"
 		"Attrib_Candyshop_2"						"Carovana di Crownfall"
 		"Attrib_AccountBound"						"Vincolato all'account"
+		"Attrib_GiftableUntilDate"					"Donabile fino a: %s1"
 		"InternationalEvent_Station0"				"aver guardato una partita al The International"
 		"InternationalEvent_Station1"				"aver visitato il negozio segreto al The International"
 		"InternationalEvent_Station2"				"per aver visitato la Stazione del Workshop al The International"
@@ -22905,7 +22906,6 @@ Per unirti come giocatore esperto, devi aver giocato ad almeno {d:new_player_req
 	"dota_settings_low_latency_tooltip_boost"	"La modalità a bassa latenza è attiva e ottimizza la latenza del sistema. Include tecniche che aumentano la potenza della scheda grafica a discapito degli FPS per ridurre la latenza il più possibile."
 	"dota_settings_low_latency_amd"				"AMD Anti-Lag 2.0"
 	"dota_settings_show_ability_videos"			"Mostra i video delle abilità nelle descrizioni"
-	
 	"dota_settings_toasts_teammates"		"Alleati"
 	"dota_settings_toasts_show_itempickups"		"L'alleato acquista o raccoglie oggetti chiave."
 	"dota_settings_toasts_show_spellsteals"		"Un alleato ruba un incantesimo."
@@ -22973,7 +22973,6 @@ Per unirti come giocatore esperto, devi aver giocato ad almeno {d:new_player_req
 
 	"dota_settings_select_hero_previews_vision_new_setting_title"			"Seleziona l'Eroe per visualizzare le anteprime della visione dell'Eroe"
 	"dota_settings_select_hero_previews_vision_new_setting_description"		"Tenendo premuto il tasto \"Seleziona l'Eroe\" verrà mostrata l'area di visione del tuo Eroe."
-
 	"DOTA_Hotkeys_Tooltip_Invoker"						"Attiva questa opzione per associare ogni incantesimo di Invoker ai tasti originali anziché quelli configurati per le abilità 4 e 5."
 
 	"DOTA_LegacyKeysRemove_Title"				"Sostituisci i tasti personalizzati con i tasti originali"
@@ -24170,6 +24169,7 @@ Per unirti come giocatore esperto, devi aver giocato ad almeno {d:new_player_req
 	"DOTA_tooltip_econ_item_gift_restriction_permanent" "Non donabile"
 	"DOTA_tooltip_econ_item_gift_allowed" "Può essere donato"
 	"DOTA_tooltip_econ_item_gift_restriction_date" "Donabile in data: {t:s:giftable_after_date_time}, ore {t:T:giftable_after_date_time}"
+	"DOTA_tooltip_econ_item_gift_restriction_until_date" "Donabile fino a: {t:s:giftable_until_date_time}, {t:T:giftable_until_date_time}"
 	"DOTA_tooltip_econ_item_gem_type"		"{s:gem_type}"
 	"DOTA_tooltip_econ_item_gem_strange_count" "{d:strange_count}"
 	"DOTA_tooltip_econ_item_gem_description" "{s:gem_description}"
@@ -24755,6 +24755,10 @@ Per unirti come giocatore esperto, devi aver giocato ad almeno {d:new_player_req
 	"DOTA_Treasure_RecyclingCount"		"x{d:inventory_count}"
 	"DOTA_Treasure_DisassembleConfirm_Popup_Title"		"Ultimo oggetto"
 	"DOTA_Treasure_DisassembleConfirm_Popup_Message"	"Questa è la tua sola copia di questo set. Dopo il riciclaggio non avrai più nessuno degli oggetti del set. Sei sicuro di voler continuare?"
+	"DOTA_Treasure_GiftingConfirm_Popup_Title"		"Donare l'ultimo oggetto"
+	"DOTA_Treasure_GiftingConfirm_Popup_Message"	"Questa è la tua sola copia di questo set. Dopo averla donata non avrai più nessuno degli oggetti del set. Sei sicuro di voler continuare?"
+	"DOTA_Treasure_GiftFriend_Tooltip_Limited"		"Donabile fino a: {t:s:giftable_until_date_time}, {t:T:giftable_until_date_time}"
+	"DOTA_Treasure_NotMarketableAndGiftingLimited"			"Il contenuto di questo tesoro non può essere né venduto né scambiato nel Mercato. Gli oggetti possono essere donati entro 30 giorni dall'apertura."
 
 	"DOTA_Treasure_MilestoneRewardsTitle"			"Ricompense bonus"
 	"DOTA_Treasure_MilestoneRewardsDescription"		"Apri gli scrigni per ricevere ricompense bonus:"
@@ -51953,10 +51957,15 @@ Se ritieni di non aver potuto dedicare l'attenzione necessaria al raggiungimento
 		"DOTA_Announcer_Preview_Ringmaster_05" "Che umiliazione. Fossi in te, morirei di vergogna."
 		"DOTA_Announcer_Preview_Ringmaster_06" "Un vero artista non tollererebbe una cosa simile."
 
-		// Monster Hoard 2026
+		// Trove of Terror 2026
 		"DOTA_MonsterHoard2026_2026"													"2026"
 		"DOTA_MonsterHoard2026_TreasureTitle"											"Tesoro del terrore"
 		"DOTA_MonsterHoard2026_TreasureDescription"										"Immergiti in una mostruosa collezione di oggetti Immortali, un set di Drow Ranger che include un Arcano, un nuovissimo e affilatissimo Arcano per Tidehunter e persino skin bonus per Oppressore e Roshan, che potrai ottenere lungo il percorso."
+
+		"Notification_Trove_Gifting"					"<b>Aggiornamento sui doni del Tesoro del terrore</b><br/><br/>
+Una funzionalità pensata per prevenire gli abusi negli scambi di doni è stata erroneamente applicata a tutti gli oggetti ottenuti dal Tesoro del terrore, impedendo così di donarli.<br/><br/>
+La maggior parte dei doni tra amici avviene subito dopo l'apertura di un tesoro. Per consentire ai giocatori di continuare a scambiarsi doni mentre perfezioniamo il codice antiabuso, abbiamo ripristinato la possibilità di donare tutti i set del Tesoro del terrore. Ogni set può essere donato a un amico una sola volta entro 30 giorni. Per i set già presenti nell'inventario, i 30 giorni decorrono da ora. Per quelli ottenuti dai Tesori appena aperti, il periodo inizia al momento dell'apertura.<br/><br/>
+Poiché alcuni set che avrebbero potuto essere donati sono stati invece riciclati, abbiamo assegnato a tutti un nuovo Tesoro del terrore per ogni sei crediti di riciclo accumulati finora, arrotondando il numero di tesori per eccesso."
 
 		//TIDEHUNTER ARCANA
 		"DOTA_Style_Tidehunter_Arcana_0"	"Fauci del Megalodon"
@@ -51989,6 +51998,8 @@ Se ritieni di non aver potuto dedicare l'attenzione necessaria al raggiungimento
 		"DOTA_ArcanaProgress_Increment_npc_dota_hero_tidehunter"	"+{s:arcana_progress_increment}"
 
 		"DOTA_HUD_Scoreboard_TidehunterArcanaNeeded"	"Eroi da colpire con una singola Devastazione per progredire nello sblocco del secondo stile."
+
+		"Notification_TideArcana_CNVO"					"Corretto il bug che impediva la riproduzione dei nuovi sottotitoli in cinese del set Arcano di Tidehunter."
 
 		// TI 2026
 		"DOTA_EventName_International2026"						"The International 2026"

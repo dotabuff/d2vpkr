@@ -8848,6 +8848,7 @@ As each stone's cultural influence spread, it eventually came in conflict with t
 		"Attrib_Candyshop_1"						"Diretide 2022"
 		"Attrib_Candyshop_2"						"Tacın Düşüşü Karavanı"
 		"Attrib_AccountBound"						"Hesaba Bağlı"
+		"Attrib_GiftableUntilDate"					"%s1 tarihine kadar hediye edilebilir"
 		"InternationalEvent_Station0"				"The International'da bir oyun izliyor"
 		"InternationalEvent_Station1"				"The International'daki Secret Shop'u ziyaret"
 		"InternationalEvent_Station2"				"The International'daki Workshop Station'ı ziyaret"
@@ -22871,6 +22872,8 @@ Deneyimli bir oyuncu olarak katılmak için en az {d:new_player_req_games_played
 	"dota_settings_low_latency_tooltip_boost"	"Düşük Gecikme modu etkinleştirildi ve sistem gecikmesini optimize ediyor. GPU'ya daha fazla güç çekebilecek ve gecikmeyi mümkün olduğunca azaltmak için FPS'i biraz etkileyebilecek teknikler içeriyor."
 	"dota_settings_low_latency_amd"				"AMD Anti-Lag 2.0"
 	"dota_settings_show_ability_videos"			"Açıklamalarda Yetenek Videolarını Göster"
+	"dota_settings_hero_grid"					"Kahraman Izgara Görünümü"
+	"dota_settings_show_persona_portraits"		"Kuşanılmış Kişilik Portrelerini Göster"
 	
 	"dota_settings_toasts_teammates"		"Takım Arkadaşları"
 	"dota_settings_toasts_show_itempickups"		"Takım arkadaşları önemli eşyaları aldığında."
@@ -22939,6 +22942,8 @@ Deneyimli bir oyuncu olarak katılmak için en az {d:new_player_req_games_played
 
 	"dota_settings_select_hero_previews_vision_new_setting_title"			"Kahramanı Seç Tuşu Görüş Alanını Gösterir"
 	"dota_settings_select_hero_previews_vision_new_setting_description"		"Kahramanı Seç tuşunu basılı tutmak, kahramanınızın görüş alanını gösterir."
+	"dota_settings_persona_portraits_new_setting_title"			"Kahraman Izgara Görünümünde Kişilik Portreleri"
+	"dota_settings_persona_portraits_new_setting_description"	"Kahraman ızgara görünümünde kuşanılmış kişilik portrelerinizin gösterilmesini etkinleştirin."
 
 	"DOTA_Hotkeys_Tooltip_Invoker"						"Bu kutuyu etkinleştirmek, 4. ve 5. yetenek için tuş atamalarını kullanmak yerine, Invoker'ın her bir büyüsünü eski tuşlara ayarlayacaktır."
 
@@ -24133,6 +24138,7 @@ Deneyimli bir oyuncu olarak katılmak için en az {d:new_player_req_games_played
 	"DOTA_tooltip_econ_item_gift_restriction_permanent" "Hediye Edilemez"
 	"DOTA_tooltip_econ_item_gift_allowed" "Hediye edilebilir"
 	"DOTA_tooltip_econ_item_gift_restriction_date" "Şu Tarihe Kadar Hediye Edilemez: {t:T:giftable_after_date_time} {t:s:giftable_after_date_time}"
+	"DOTA_tooltip_econ_item_gift_restriction_until_date" "Şu tarihe kadar hediye edilebilir: {t:T:giftable_until_date_time} {t:s:giftable_until_date_time}"
 	"DOTA_tooltip_econ_item_gem_type"		"{s:gem_type}"
 	"DOTA_tooltip_econ_item_gem_strange_count" "{s:strange_count}"
 	"DOTA_tooltip_econ_item_gem_description" "{s:gem_description}"
@@ -24718,6 +24724,10 @@ Deneyimli bir oyuncu olarak katılmak için en az {d:new_player_req_games_played
 	"DOTA_Treasure_RecyclingCount"		"x{d:inventory_count}"
 	"DOTA_Treasure_DisassembleConfirm_Popup_Title"		"Son Öğe Geri Dönüştürme"
 	"DOTA_Treasure_DisassembleConfirm_Popup_Message"	"Bu, setin elinizdeki tek kopyasıdır. Geri dönüştürdükten sonra sete ait hiçbir öğe envanterinizde kalmayacak. Devam etmek istediğinizden emin misiniz?"
+	"DOTA_Treasure_GiftingConfirm_Popup_Title"		"Son Eşya Hediye Ediliyor"
+	"DOTA_Treasure_GiftingConfirm_Popup_Message"	"Bu setten elinizde sadece bir adet var. Hediye ettikten sonra bu paketteki hiçbir eşya envanterinizde kalmayacak. Devam etmek istediğinize emin misiniz?"
+	"DOTA_Treasure_GiftFriend_Tooltip_Limited"		"Şu tarihe kadar hediye edilebilir: {t:T:giftable_until_date_time} {t:s:giftable_until_date_time}"
+	"DOTA_Treasure_NotMarketableAndGiftingLimited"			"Bu hazinenin içeriği alınıp satılamaz veya takas edilemez. Eşyalar açıldıktan sonra 30 gün içinde hediye edilebilir."
 
 	"DOTA_Treasure_MilestoneRewardsTitle"			"Bonus ödüller"
 	"DOTA_Treasure_MilestoneRewardsDescription"		"Bonus ödüller almak için sandıkları açın:"
@@ -48336,10 +48346,15 @@ Bir düşmanı gök taşının altında kıstırmak için bir yetenek veya eşya
 		"DOTA_Announcer_Preview_Ringmaster_05" "Yerinde olsam çok utanırdım."
 		"DOTA_Announcer_Preview_Ringmaster_06" "Gerçek bir sanatçı buna göz yummazdı."
 
-		// Monster Hoard 2026
+		// Trove of Terror 2026
 		"DOTA_MonsterHoard2026_2026"													"2026"
 		"DOTA_MonsterHoard2026_TreasureTitle"											"Dehşet Hazinesi"
 		"DOTA_MonsterHoard2026_TreasureDescription"										"Ölümsüz eşyalardan oluşan devasa bir koleksiyonu, gizemli eşyalar içeren bir Drow Ranger setini, dişli Tidehunter için yepyeni bir gizemli eşyayı ve oynadıkça kazanabileceğiniz bonus Tormentor ve Roshan kozmetik eşyalarını keşfedin."
+
+		"Notification_Trove_Gifting"					"<b>Dehşet Hazinesi ile İlgili Hediye Gönderme Güncellemesi</b><br/><br/>
+Hediye alışverişlerinin kötüye kullanımını önlemek amacıyla tasarlanan özellik, bir hata sonucu Dehşet Hazinesi'nden çıkan tüm eşyalara uygulandı ve bu durum tüm hediye gönderimlerini engelledi.<br/><br/>
+Arkadaşlar arasındaki hediyeleşmelerin çok büyük bir kısmı, bir hazine açıldıktan hemen sonra gerçekleşiyor. Kötüye kullanımı önleme kodumuz üzerinde çalışmaya devam ederken, arkadaşlara hediye gönderme özelliğini desteklemek adına tüm Dehşet Hazinesi setleri için hediyeleşmeyi yeniden etkinleştirdik: Her bir set, 30 gün içinde bir arkadaşa bir defaya mahsus olmak üzere hediye edilebilir. Envanterinizde hâlihazırda bulunan setler için bu 30 günlük süre şu andan itibaren başlar. Yeni açılan hazineler için ise süre, hazine açıldığı an başlar.<br/><br/>
+Hediye edilmesi planlanan ancak bu hata nedeniyle geri dönüştürülen setler olduğu için şu ana kadar elde edilen her altı geri dönüşüm kredisi karşılığında (yukarı yuvarlayarak) bir adet yeni Dehşet Hazinesi verdik."
 
 		//TIDEHUNTER ARCANA
 		"DOTA_Style_Tidehunter_Arcana_0"	"Megalodon'un Ağzı"
@@ -48379,6 +48394,8 @@ Bir düşmanı gök taşının altında kıstırmak için bir yetenek veya eşya
 		"DOTA_ArcanaProgress_Increment_npc_dota_hero_tidehunter"	"+{s:arcana_progress_increment}"
 
 		"DOTA_HUD_Scoreboard_TidehunterArcanaNeeded"	"İkinci tarzı açabilmek için tek bir Ravage ile etkilenmesi gereken kahraman sayısı."
+
+		"Notification_TideArcana_CNVO"					"Tidehunter'ın gizemli eşyası için yeni Çince seslendirmenin çalmamasına neden olan hata düzeltildi."
 
 		// TI 2026
 		"DOTA_EventName_International2026"						"THE INTERNATIONAL 2026"

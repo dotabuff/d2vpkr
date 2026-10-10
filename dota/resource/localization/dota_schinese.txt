@@ -8856,6 +8856,7 @@
 		"Attrib_Candyshop_1"						"2022年夜魇暗潮"
 		"Attrib_Candyshop_2"						"倾天之战摊车"
 		"Attrib_AccountBound"						"账号绑定"
+		"Attrib_GiftableUntilDate"					"%s1前可赠送"
 		"InternationalEvent_Station0"				"在国际邀请赛现场观看比赛"
 		"InternationalEvent_Station1"				"在国际邀请赛现场拜访神秘商店"
 		"InternationalEvent_Station2"				"在国际邀请赛现场拜访创意工坊小站"
@@ -22842,6 +22843,8 @@
 	"dota_settings_low_latency_tooltip_boost"	"低延迟模式现已启用，并且优化了系统延迟。包括多项技术可以使GPU获得更多电力，并且轻微影响了FPS，尽量降低了延迟。"
 	"dota_settings_low_latency_amd"				"AMD 防延迟 2.0"
 	"dota_settings_show_ability_videos"			"在技能说明中显示技能视频"
+	"dota_settings_hero_grid"					"英雄网格"
+	"dota_settings_show_persona_portraits"		"显示已装备身心肖像"
 	
 	"dota_settings_toasts_teammates"		"队友"
 	"dota_settings_toasts_show_itempickups"		"队友购买或拾取关键物品。"
@@ -22910,6 +22913,8 @@
 
 	"dota_settings_select_hero_previews_vision_new_setting_title"			"选择英雄预览英雄视野"
 	"dota_settings_select_hero_previews_vision_new_setting_description"		"按住选择英雄的快捷键会显示英雄的视野范围。"
+	"dota_settings_persona_portraits_new_setting_title"			"英雄网格中的身心肖像"
+	"dota_settings_persona_portraits_new_setting_description"	"启用在英雄网格中显示已装备身心的肖像。"
 
 	"DOTA_Hotkeys_Tooltip_Invoker"						"勾选这个方框后祈求者的每个技能都会被设为相应的传统键位，而不是使用技能4和技能5的键位设置。"
 
@@ -24106,6 +24111,7 @@
 	"DOTA_tooltip_econ_item_gift_restriction_permanent" "不可赠送"
 	"DOTA_tooltip_econ_item_gift_allowed" "可以赠送"
 	"DOTA_tooltip_econ_item_gift_restriction_date" "允许赠送时间：{t:T:giftable_after_date_time} {t:s:giftable_after_date_time}"
+	"DOTA_tooltip_econ_item_gift_restriction_until_date" "赠送截止时间：{t:T:giftable_until_date_time} {t:s:giftable_until_date_time}"
 	"DOTA_tooltip_econ_item_gem_type"		"{s:gem_type}"
 	"DOTA_tooltip_econ_item_gem_strange_count" "{s:strange_count}"
 	"DOTA_tooltip_econ_item_gem_description" "{s:gem_description}"
@@ -24691,6 +24697,10 @@
 	"DOTA_Treasure_RecyclingCount"		"x{d:inventory_count}"
 	"DOTA_Treasure_DisassembleConfirm_Popup_Title"		"轮回上件物品"
 	"DOTA_Treasure_DisassembleConfirm_Popup_Message"	"这是本套装仅有的一件。轮回后将不再拥有本捆绑包的任何物品。确定要继续吗？"
+	"DOTA_Treasure_GiftingConfirm_Popup_Title"		"赠送上件物品"
+	"DOTA_Treasure_GiftingConfirm_Popup_Message"	"这是本套装仅有的一件。赠送后将不再拥有本捆绑包的任何物品。确定要继续吗？"
+	"DOTA_Treasure_GiftFriend_Tooltip_Limited"		"赠送截止时间：{t:T:giftable_until_date_time} {t:s:giftable_until_date_time}"
+	"DOTA_Treasure_NotMarketableAndGiftingLimited"			"这个珍藏内的物品不可买卖或交易。解封后30天内可以交易。"
 
 	"DOTA_Treasure_MilestoneRewardsTitle"			"额外奖励"
 	"DOTA_Treasure_MilestoneRewardsDescription"		"打开宝箱后获得额外奖励"
@@ -51889,10 +51899,15 @@
 		"DOTA_Announcer_Preview_Ringmaster_05" "如果我是你，我会觉得非常丢脸。"
 		"DOTA_Announcer_Preview_Ringmaster_06" "真正的表演者不会容忍这种情况。"
 
-		// Monster Hoard 2026
+		// Trove of Terror 2026
 		"DOTA_MonsterHoard2026_2026"													"2026"
 		"DOTA_MonsterHoard2026_TreasureTitle"											"惊世奇珍"
 		"DOTA_MonsterHoard2026_TreasureDescription"										"深入探索海量不朽物品，包含至宝的卓尔游侠套装，全新的巨齿潮汐猎人至宝——一路上还能获得额外的痛苦魔方和肉山饰品。"
+
+		"Notification_Trove_Gifting"					"<b>惊世奇珍赠送功能更新</b><br/><br/>
+原为防止滥用礼物交换的功能被误用于所有惊世奇珍物品，导致任何物品均无法赠送。<br/><br/>
+绝大多数情况下，玩家会在刚打开宝箱后就将所得物品赠与好友。在继续改进反漏洞代码的同时，为支持好友赠送功能，我们已重新开放所有惊世奇珍套装的赠送功能：每个套装均可以在入手30天内赠与好友一次。该30天计时对已经在各位兵器库中的套装立刻起效，而对新从宝箱中打开的套装则会从宝箱打开时起算。<br/><br/>
+鉴于部分原本可以被用来赠送好友的套装现在已被回收，我们目前已按每六次轮回给予一个新珍藏的比例（向上舍入）进行补偿。"
 
 		//TIDEHUNTER ARCANA
 		"DOTA_Style_Tidehunter_Arcana_0"	"齿鲨巨口"
@@ -51910,11 +51925,18 @@
 
 		"DOTA_Arcana_Tidehunter_MiniGame_Title"	"麦尔朗恩之锤"
 		"DOTA_Arcana_Tidehunter_MiniGame_Subtitle"	"解锁麦尔朗恩之锤额外款式"
+		"DOTA_Arcana_Tidehunter_MiniGame_Description"	"通过施放毁灭同时击中3名及以上的敌方英雄来解锁麦尔朗恩之锤。毁灭击中的每名英雄都会提供一点。每场比赛最多获得25点。"
 		"DOTA_Arcana_Tidehunter_MiniGame_Completion"	"毁灭击中英雄"
 
 		"DOTA_Arcana_Tidehunter_Fish_MiniGame_Title"	"深渊饥渴"
 		"DOTA_Arcana_Tidehunter_Fish_MiniGame_Subtitle"	"解锁深渊饥渴额外款式"
+		"DOTA_Arcana_Tidehunter_Fish_MiniGame_Description"	"通过吃掉敌方英雄掉落的鱼解锁深渊饥渴。每场比赛最多获得20点。"
 		"DOTA_Arcana_Tidehunter_Fish_MiniGame_Completion"	"吃掉的鱼"
+
+		"DOTA_Arcana_Tidehunter_MiniGame_ScoreboardRavages"	"<b>{d:tidehunter_arcana_ravages}</b>/{d:tidehunter_arcana_ravages_max}"
+		"DOTA_Arcana_Tidehunter_MiniGame_ScoreboardFish"	"<b>{d:tidehunter_arcana_fish}</b>/{d:tidehunter_arcana_fish_max}"
+		"DOTA_HUD_Scoreboard_TidehunterArcanaRavages"	"本场比赛中击中多人的毁灭作用的英雄数量。"
+		"DOTA_HUD_Scoreboard_TidehunterArcanaFish"	"本场比赛吃掉的鱼。"
 
 		"DOTA_ArcanaProgress_Header_npc_dota_hero_tidehunter"	"齿鲨巨口款式"
 		"DOTA_ArcanaProgress_Title_npc_dota_hero_tidehunter"	"解锁款式"
@@ -51925,6 +51947,8 @@
 		"DOTA_ArcanaProgress_Increment_npc_dota_hero_tidehunter"	"+{s:arcana_progress_increment}"
 
 		"DOTA_HUD_Scoreboard_TidehunterArcanaNeeded"	"单次毁灭需要的英雄数量，解锁第二款式。"
+
+		"Notification_TideArcana_CNVO"					"修复了潮汐猎人至宝的新语音无法播放中文版的问题。"
 
 		// TI 2026
 		"DOTA_EventName_International2026"						"2026年国际邀请赛"

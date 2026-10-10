@@ -8860,6 +8860,7 @@ L'influence culturelle de chaque pierre se propagea puis, un jour, entra en conf
 		"Attrib_Candyshop_1"						"Diretide 2022"
 		"Attrib_Candyshop_2"						"Caravane de La Chute de la couronne"
 		"Attrib_AccountBound"						"Lié au compte"
+		"Attrib_GiftableUntilDate"					"Peut être offert jusqu'à : %s1"
 		"InternationalEvent_Station0"				"regardé un match de The International"
 		"InternationalEvent_Station1"				"visité le Secret Shop de The International"
 		"InternationalEvent_Station2"				"visité le Workshop Station de The International"
@@ -22966,6 +22967,8 @@ Pour y participer en tant que personne expérimentée, vous devez avoir joué au
 	"dota_settings_low_latency_tooltip_boost"	"Active le mode latence faible et réduit la latence du système. Cette option a recours à des techniques pour réduire le plus possible la latence, mais celles-ci peuvent solliciter davantage la carte graphique et réduire légèrement le nombre d'images par seconde."
 	"dota_settings_low_latency_amd"				"AMD Anti-Lag 2.0"
 	"dota_settings_show_ability_videos"			"Afficher les capacités en vidéo dans les infobulles"
+	"dota_settings_hero_grid"					"Grille d'unités héroïques"
+	"dota_settings_show_persona_portraits"		"Afficher les portraits de persona équipés"
 	
 	"dota_settings_toasts_teammates"		"Partenaires de jeu"
 	"dota_settings_toasts_show_itempickups"		"Une personne de l'équipe achète ou ramasse des objets clés"
@@ -23034,6 +23037,8 @@ Pour y participer en tant que personne expérimentée, vous devez avoir joué au
 
 	"dota_settings_select_hero_previews_vision_new_setting_title"			"Le champ de vision de l'unité héroïque s'affiche quand celle-ci est sélectionnée"
 	"dota_settings_select_hero_previews_vision_new_setting_description"		"L'appui long sur la touche « Sélectionner l'unité héroïque » affichera le champ de vision de votre unité."
+	"dota_settings_persona_portraits_new_setting_title"			"Portraits de persona dans la grille d'unités héroïques"
+	"dota_settings_persona_portraits_new_setting_description"	"Active l'affichage des portraits de persona équipés dans la grille d'unités héroïques."
 
 	"DOTA_Hotkeys_Tooltip_Invoker"						"Activez cette case pour utiliser les raccourcis classiques pour les sorts d'Invoke au lieu d'utiliser les raccourcis définis pour les capacités 4 et 5."
 
@@ -24230,6 +24235,7 @@ Pour y participer en tant que personne expérimentée, vous devez avoir joué au
 	"DOTA_tooltip_econ_item_gift_restriction_permanent" "Ne peut pas être offert"
 	"DOTA_tooltip_econ_item_gift_allowed" "Peut être offert"
 	"DOTA_tooltip_econ_item_gift_restriction_date" "Ne peut pas être offert avant le : {t:T:giftable_after_date_time} {t:s:giftable_after_date_time}"
+	"DOTA_tooltip_econ_item_gift_restriction_until_date" "Peut être offert jusqu'à : {t:T:giftable_until_date_time} {t:s:giftable_until_date_time}"
 	"DOTA_tooltip_econ_item_gem_type"		"{s:gem_type}"
 	"DOTA_tooltip_econ_item_gem_strange_count" "{s:strange_count}"
 	"DOTA_tooltip_econ_item_gem_description" "{s:gem_description}"
@@ -24816,7 +24822,9 @@ du Compendium d'Automne 2015"
 	"DOTA_Treasure_RecyclingCount"		"x{d:inventory_count}"
 	"DOTA_Treasure_DisassembleConfirm_Popup_Title"		"Recyclage du dernier item"
 	"DOTA_Treasure_DisassembleConfirm_Popup_Message"	"Vous ne possédez qu'un exemplaire de ce bundle. Une fois qu'il sera recyclé, vous n'aurez plus accès à ses items. Voulez-vous vraiment continuer ?"
-
+	"DOTA_Treasure_GiftingConfirm_Popup_Title"		"Offrir le dernier exemplaire"
+	"DOTA_Treasure_GiftingConfirm_Popup_Message"	"Vous ne possédez qu'un exemplaire de cet ensemble. Après l'avoir offert, vous n'aurez plus accès à ses items. Voulez-vous vraiment continuer ?"
+	"DOTA_Treasure_GiftFriend_Tooltip_Limited"		"Peut être offert jusqu'à : {t:T:giftable_until_date_time} {t:s:giftable_until_date_time}"
 	"DOTA_Treasure_MilestoneRewardsTitle"			"Récompenses bonus"
 	"DOTA_Treasure_MilestoneRewardsDescription"		"Ouvrez des coffres pour recevoir des récompenses bonus :"
 	"DOTA_Treasure_MilestoneRewardsItemCount"		"<b>{d:current_open_count}</b>/{d:target_open_count} coffres ouverts"
@@ -52024,7 +52032,7 @@ Le colosse, qui ne peut pas être commandé, attaquera les unités qu'il voit da
 		"DOTA_Announcer_Preview_Ringmaster_05" "J'aurais honte à votre place."
 		"DOTA_Announcer_Preview_Ringmaster_06" "Les véritables artistes n'accepteraient pas ça."
 
-		// Monster Hoard 2026
+		// Trove of Terror 2026
 		"DOTA_MonsterHoard2026_2026"													"2026"
 		"DOTA_MonsterHoard2026_TreasureTitle"											"Trésor de la terreur"
 		"DOTA_MonsterHoard2026_TreasureDescription"										"Découvrez une monstrueuse collection d'items immortels, un ensemble pour Drow Ranger compatible avec son Arcane, une toute nouvelle Arcane pour Tidehunter toutes dents dehors, ainsi que des cosmétiques bonus pour les fossoyeurs et Roshan à débloquer au fil de votre progression."
@@ -52045,11 +52053,18 @@ Le colosse, qui ne peut pas être commandé, attaquera les unités qu'il voit da
 
 		"DOTA_Arcana_Tidehunter_MiniGame_Title"	"Marteau de Maelrawn"
 		"DOTA_Arcana_Tidehunter_MiniGame_Subtitle"	"Débloquez le style alternatif « Marteau de Maelrawn »"
+		"DOTA_Arcana_Tidehunter_MiniGame_Description"	"Débloquez le « Marteau de Maelrawn » en ravageant simultanément 3 cibles héroïques ou plus. Chaque cible héroïque de Ravage fait gagner un point. Un total de 25 points peuvent être remportés par partie."
 		"DOTA_Arcana_Tidehunter_MiniGame_Completion"	"Cibles héroïques de Ravage"
 
 		"DOTA_Arcana_Tidehunter_Fish_MiniGame_Title"	"Faim insatiable"
 		"DOTA_Arcana_Tidehunter_Fish_MiniGame_Subtitle"	"Débloquez le style secondaire « Faim insatiable »"
+		"DOTA_Arcana_Tidehunter_Fish_MiniGame_Description"	"Débloquez « Faim insatiable » en mangeant les poissons lâchés par les unités héroïques ennemies. Un total de 20 points peuvent être remportés par partie."
 		"DOTA_Arcana_Tidehunter_Fish_MiniGame_Completion"	"Poissons mangés"
+
+		"DOTA_Arcana_Tidehunter_MiniGame_ScoreboardRavages"	"<b>{d:tidehunter_arcana_ravages}</b>/{d:tidehunter_arcana_ravages_max}"
+		"DOTA_Arcana_Tidehunter_MiniGame_ScoreboardFish"	"<b>{d:tidehunter_arcana_fish}</b>/{d:tidehunter_arcana_fish_max}"
+		"DOTA_HUD_Scoreboard_TidehunterArcanaRavages"	"Cibles héroïques de Ravage sur 3 cibles ou plus durant cette partie."
+		"DOTA_HUD_Scoreboard_TidehunterArcanaFish"	"Poissons mangés durant cette partie."
 
 		"DOTA_ArcanaProgress_Header_npc_dota_hero_tidehunter"	"Gueule du Mégalodon : styles"
 		"DOTA_ArcanaProgress_Title_npc_dota_hero_tidehunter"	"Progression vers le déblocage"
@@ -52060,6 +52075,8 @@ Le colosse, qui ne peut pas être commandé, attaquera les unités qu'il voit da
 		"DOTA_ArcanaProgress_Increment_npc_dota_hero_tidehunter"	"+{s:arcana_progress_increment}"
 
 		"DOTA_HUD_Scoreboard_TidehunterArcanaNeeded"	"Cibles héroïques d'une seule instance de Ravage nécessaires pour progresser vers le déblocage du style alternatif."
+
+		"Notification_TideArcana_CNVO"					"Correction du problème suivant : les nouvelles répliques de l'Arcane de Tidehunter ne se lançaient pas en chinois."
 
 		// TI 2026
 		"DOTA_EventName_International2026"						"The International 2026"

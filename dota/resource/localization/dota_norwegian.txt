@@ -8857,6 +8857,7 @@ Etter hvert som hver steins kulturelle innflytelse spredte seg, kom de med tiden
 		"Attrib_Candyshop_1"						"Diretide 2022"
 		"Attrib_Candyshop_2"						"Kronfallvogn"
 		"Attrib_AccountBound"						"Kontobundet"
+		"Attrib_GiftableUntilDate"					"Kan gis som gave frem til %s1"
 		"InternationalEvent_Station0"				"ser på en kamp i The International"
 		"InternationalEvent_Station1"				"besøker den hemmelige butikken ved The International"
 		"InternationalEvent_Station2"				"besøker Workshop-stasjonen ved The International"
@@ -22793,6 +22794,8 @@ Du må ha minst {d:new_player_req_games_played} spilte kamper og en kommunikasjo
 	"dota_settings_low_latency_tooltip_boost"	"Lav forsinkelse-modus er nå slått på og optimaliserer systemforsinkelse. Omfatter teknikker som kan bruke mer kraft fra skjermkortet og påvirke bildefrekvensen litt for å redusere forsinkelse så mye som mulig. "
 	"dota_settings_low_latency_amd"				"AMD Anti-Lag 2.0"
 	"dota_settings_show_ability_videos"			"Vis evnevideoer i verktøytips"
+	"dota_settings_hero_grid"					"Heltenett"
+	"dota_settings_show_persona_portraits"		"Vis utstyrte personaportretter"
 	
 	"dota_settings_toasts_teammates"		"Lagkamerater"
 	"dota_settings_toasts_show_itempickups"		"Lagkamerat kjøper eller plukker opp nøkkelgjenstander."
@@ -22861,6 +22864,8 @@ Du må ha minst {d:new_player_req_games_played} spilte kamper og en kommunikasjo
 
 	"dota_settings_select_hero_previews_vision_new_setting_title"			"Velg helt viser heltens synsfelt"
 	"dota_settings_select_hero_previews_vision_new_setting_description"		"«Velg helt»-knappen viser heltens synsfelt når den holdes nede."
+	"dota_settings_persona_portraits_new_setting_title"			"Personaportretter i heltenett"
+	"dota_settings_persona_portraits_new_setting_description"	"Aktiver visning av utstyrte personaportretter i heltenettet."
 
 	"DOTA_Hotkeys_Tooltip_Invoker"						"Kryss av i denne boksen for å sette hver enkelt av Invokers formler til klassiske taster istedenfor å bruke bindingene for evne 4 og evne 5."
 
@@ -24057,6 +24062,7 @@ Du må ha minst {d:new_player_req_games_played} spilte kamper og en kommunikasjo
 	"DOTA_tooltip_econ_item_gift_restriction_permanent" "Kan ikke gis som gave"
 	"DOTA_tooltip_econ_item_gift_allowed" "Kan gis som gave"
 	"DOTA_tooltip_econ_item_gift_restriction_date" "Kan ikke gis som gave før: {t:T:giftable_after_date_time} {t:s:giftable_after_date_time}"
+	"DOTA_tooltip_econ_item_gift_restriction_until_date" "Kan gis som gave frem til: {t:T:giftable_until_date_time} {t:s:giftable_until_date_time}"
 	"DOTA_tooltip_econ_item_gem_type"		"{s:gem_type}"
 	"DOTA_tooltip_econ_item_gem_strange_count" "{s:strange_count}"
 	"DOTA_tooltip_econ_item_gem_description" "{s:gem_description}"
@@ -24642,6 +24648,10 @@ Du må ha minst {d:new_player_req_games_played} spilte kamper og en kommunikasjo
 	"DOTA_Treasure_RecyclingCount"		"x{d:inventory_count}"
 	"DOTA_Treasure_DisassembleConfirm_Popup_Title"		"Gjenvinner siste gjenstand"
 	"DOTA_Treasure_DisassembleConfirm_Popup_Message"	"Dette er din eneste kopi av dette settet. Etter gjenvinningen vil du ikke lenger ha noen av gjenstandene i denne pakken. Er du sikker på at du vil fortsette?"
+	"DOTA_Treasure_GiftingConfirm_Popup_Title"		"Gir bort siste gjenstand"
+	"DOTA_Treasure_GiftingConfirm_Popup_Message"	"Dette er ditt eneste eksemplar av dette settet. Etter at du har gitt det bort, kommer du ikke til å ha noen av gjenstandene i denne pakken. Er du sikker på at du vil fortsette?"
+	"DOTA_Treasure_GiftFriend_Tooltip_Limited"		"Kan gis som gave frem til: {t:T:giftable_until_date_time} {t:s:giftable_until_date_time}"
+	"DOTA_Treasure_NotMarketableAndGiftingLimited"			"Innholdet i denne skatten kan ikke selges eller byttes. Gjenstander kan gis som gave innen 30 dager etter åpning."
 
 	"DOTA_Treasure_MilestoneRewardsTitle"			"Bonusbelønninger"
 	"DOTA_Treasure_MilestoneRewardsDescription"		"Åpne kister for å motta bonusbelønninger:"
@@ -51841,7 +51851,7 @@ Drap av målet i Dead Reckoning gir 2 poeng. Medvirkninger gir 1 poeng."
 		"DOTA_Announcer_Preview_Ringmaster_05" "Jeg hadde vært så forlegen hvis jeg var deg."
 		"DOTA_Announcer_Preview_Ringmaster_06" "En ekte artist hadde ikke funnet seg i dette."
 
-		// Monster Hoard 2026
+		// Trove of Terror 2026
 		"DOTA_MonsterHoard2026_2026"													"2026"
 		"DOTA_MonsterHoard2026_TreasureTitle"											"Skrekkelig skatt"
 		"DOTA_MonsterHoard2026_TreasureDescription"										"Dykk ned i en monstrøs samling av udødelige gjenstander, et sett til Drow Ranger som inkluderer en arkana, en flunkende ny arkana til Tidehunter – og til og med bonusgjenstander til plageånden og Roshan som du kan tjene underveis."
@@ -51862,11 +51872,18 @@ Drap av målet i Dead Reckoning gir 2 poeng. Medvirkninger gir 1 poeng."
 
 		"DOTA_Arcana_Tidehunter_MiniGame_Title"	"Malrauns hammer"
 		"DOTA_Arcana_Tidehunter_MiniGame_Subtitle"	"Lås opp den alternative stilen «Malrauns hammer»"
+		"DOTA_Arcana_Tidehunter_MiniGame_Description"	"Lås opp Malrauns hammer ved å treffe minst tre fiendtlige helter med Ravage samtidig. Hver helt som fanges i Ravage, gir ett poeng. Du kan tjene opptil 25 poeng per kamp."
 		"DOTA_Arcana_Tidehunter_MiniGame_Completion"	"Helter truffet med Ravage"
 
 		"DOTA_Arcana_Tidehunter_Fish_MiniGame_Title"	"Umettelig sult"
 		"DOTA_Arcana_Tidehunter_Fish_MiniGame_Subtitle"	"Lås opp den alternative stilen «Umettelig sult»"
+		"DOTA_Arcana_Tidehunter_Fish_MiniGame_Description"	"Lås opp Umettelig sult ved å spise fisk som slippes av fiendtlige helter. Du kan tjene opptil 20 poeng per kamp."
 		"DOTA_Arcana_Tidehunter_Fish_MiniGame_Completion"	"Fisk spist"
+
+		"DOTA_Arcana_Tidehunter_MiniGame_ScoreboardRavages"	"<b>{d:tidehunter_arcana_ravages}</b>/{d:tidehunter_arcana_ravages_max}"
+		"DOTA_Arcana_Tidehunter_MiniGame_ScoreboardFish"	"<b>{d:tidehunter_arcana_fish}</b>/{d:tidehunter_arcana_fish_max}"
+		"DOTA_HUD_Scoreboard_TidehunterArcanaRavages"	"Helter i Ravage på flere helter denne kampen."
+		"DOTA_HUD_Scoreboard_TidehunterArcanaFish"	"Fisk spist denne kampen."
 
 		"DOTA_ArcanaProgress_Header_npc_dota_hero_tidehunter"	"Maw of the Megalodon – stiler"
 		"DOTA_ArcanaProgress_Title_npc_dota_hero_tidehunter"	"Fremdrift"
@@ -51877,6 +51894,8 @@ Drap av målet i Dead Reckoning gir 2 poeng. Medvirkninger gir 1 poeng."
 		"DOTA_ArcanaProgress_Increment_npc_dota_hero_tidehunter"	"+{s:arcana_progress_increment}"
 
 		"DOTA_HUD_Scoreboard_TidehunterArcanaNeeded"	"Helter som trengs i en enkelt Ravage for å gjøre fremgang mot å låse opp den andre stilen."
+
+		"Notification_TideArcana_CNVO"					"Feilen som førte til at den stemmen til Tidehunters nye arkana ikke ble spilt av på kinesisk, er blitt løst."
 
 		// TI 2026
 		"DOTA_EventName_International2026"						"The International 2026"
