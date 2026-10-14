@@ -8852,6 +8852,7 @@
 		"Attrib_Candyshop_1"						"ダイアタイド2022"
 		"Attrib_Candyshop_2"						"クラウンフォールキャラバン"
 		"Attrib_AccountBound"						"アカウント専用"
+		"Attrib_GiftableUntilDate"					"%s1までギフト可能"
 		"InternationalEvent_Station0"				"The Internationalで試合を観戦"
 		"InternationalEvent_Station1"				"The Internationalでシークレットショップを訪問"
 		"InternationalEvent_Station2"				"The Internationalでワークショップステーションを訪問"
@@ -22785,6 +22786,9 @@
 	"dota_settings_low_latency_tooltip_boost"	"低レイテンシモードが有効になり、システムレイテンシを最適化します。可能な限り遅延を抑えるために、より多くの電力をGPUに送り、FPSに若干影響を与える可能性のある手法が含まれています。"
 	"dota_settings_low_latency_amd"				"AMD Anti-Lag 2.0"
 	"dota_settings_show_ability_videos"			"ツールチップにアビリティの動画を表示"
+	"dota_settings_hero_grid"					"ヒーローグリッド"
+	"dota_settings_show_persona_portraits"		"装備中のペルソナポートレートを表示"
+	
 	"dota_settings_toasts_teammates"		"チームメイト"
 	"dota_settings_toasts_show_itempickups"		"チームメイトが重要なアイテムを購入/回収する。"
 	"dota_settings_toasts_show_spellsteals"		"チームメイトがスペルを盗む。"
@@ -22852,6 +22856,9 @@
 
 	"dota_settings_select_hero_previews_vision_new_setting_title"			"ヒーローを選択してヒーローの視界を表示"
 	"dota_settings_select_hero_previews_vision_new_setting_description"		"選択したヒーローキーを長押しすると、自身のヒーローの視界が表示されます。"
+	"dota_settings_persona_portraits_new_setting_title"			"ヒーローグリッドのペルソナポートレート"
+	"dota_settings_persona_portraits_new_setting_description"	"装備中のペルソナポートレートをヒーローグリッドで表示します。"
+
 	"DOTA_Hotkeys_Tooltip_Invoker"						"このボックスを有効にすると個々のインヴォーカーのスペルがレガシーキーに設定され、アビリティ4とアビリティ5へのバインディングが使われなくなります。"
 
 	"DOTA_LegacyKeysRemove_Title"				"ユニットごとのホットキーをレガシーキーでオーバーライド"
@@ -24047,6 +24054,7 @@
 	"DOTA_tooltip_econ_item_gift_restriction_permanent" "ギフト不可"
 	"DOTA_tooltip_econ_item_gift_allowed" "ギフト可能"
 	"DOTA_tooltip_econ_item_gift_restriction_date" "{t:T:giftable_after_date_time} {t:s:giftable_after_date_time}までギフト不可"
+	"DOTA_tooltip_econ_item_gift_restriction_until_date" "ギフト期限：{t:T:giftable_until_date_time} {t:s:giftable_until_date_time}"
 	"DOTA_tooltip_econ_item_gem_type"		"{s:gem_type}"
 	"DOTA_tooltip_econ_item_gem_strange_count" "{s:strange_count}"
 	"DOTA_tooltip_econ_item_gem_description" "{s:gem_description}"
@@ -24632,6 +24640,11 @@
 	"DOTA_Treasure_RecyclingCount"		"x{d:inventory_count}"
 	"DOTA_Treasure_DisassembleConfirm_Popup_Title"		"最後のアイテムをリサイクル"
 	"DOTA_Treasure_DisassembleConfirm_Popup_Message"	"これはこのセットの最後のアイテムです。これをリサイクルすると、このバンドルのアイテムは完全になくなります。続けてもよろしいですか？"
+	"DOTA_Treasure_GiftingConfirm_Popup_Title"		"最後のアイテムをギフト"
+	"DOTA_Treasure_GiftingConfirm_Popup_Message"	"これはこのセットの最後のアイテムです。これをギフトすると、このバンドルのアイテムは完全になくなります。続けてもよろしいですか？"
+	"DOTA_Treasure_GiftFriend_Tooltip_Limited"		"ギフト期限：{t:T:giftable_until_date_time} {t:s:giftable_until_date_time}"
+	"DOTA_Treasure_NotMarketableAndGiftingLimited"			"このトレジャーの中身はマーケットやトレードに出せません。アイテムは開封から30日以内であればギフト可能です。"
+
 	"DOTA_Treasure_MilestoneRewardsTitle"			"ボーナスリワード"
 	"DOTA_Treasure_MilestoneRewardsDescription"		"宝箱を開けてボーナスリワードを獲得："
 	"DOTA_Treasure_MilestoneRewardsItemCount"		"宝箱開封：<b>{d:current_open_count}</b> / {d:target_open_count}"
@@ -51836,6 +51849,11 @@ The International 2015の優勝チームEGは、グループステージ開始�
 		"DOTA_MonsterHoard2026_TreasureTitle"											"恐怖の秘宝"
 		"DOTA_MonsterHoard2026_TreasureDescription"										"モンスター級のコレクションを手に入れよう。イモータルアイテム、アルカナを含むドラウレンジャーのセット、牙を見せつけるタイドハンターの新しいアルカナ、さらにはトーメンターとロシャンのボーナススキンも手に入る。"
 
+		"Notification_Trove_Gifting"					"<b>「恐怖の秘宝」ギフトに関するアップデート</b><br/><br/>
+ギフト交換の悪用を防止するための機能が、「恐怖の秘宝」から出るすべてのアイテムに誤って適用され、ギフトがまったくできない状態になっていました。<br/><br/>
+フレンド間でのギフトは、ほとんどがトレジャー開封後すぐに行われています。悪用防止コードの改善を進めつつフレンド間のギフトを可能にするため、「恐怖の秘宝」の全セットのギフト機能を再度有効にしました。各セットは30日以内ならフレンドに一度だけギフトできます。すでにインベントリ内にあるギフトの場合、30日のカウントは本日から開始します。新しく開封するトレジャーについては、開封時に30日のカウントが開始されます。<br/><br/>
+可能であればギフトされるはずだったセットの一部がリサイクルされてしまっているため、リサイクルクレジット6（端数切り上げ）につき新しい「恐怖の秘宝」を1つ、全員に付与しました。"
+
 		//TIDEHUNTER ARCANA
 		"DOTA_Style_Tidehunter_Arcana_0"	"メガロドンの顎"
 		"DOTA_Style_Tidehunter_Arcana_1"	"メイルローンの鉄槌"
@@ -51874,6 +51892,8 @@ The International 2015の優勝チームEGは、グループステージ開始�
 		"DOTA_ArcanaProgress_Increment_npc_dota_hero_tidehunter"	"+{s:arcana_progress_increment}"
 
 		"DOTA_HUD_Scoreboard_TidehunterArcanaNeeded"	"二つ目のスタイルのアンロックに必要な1回のラヴェージでの巻き込みヒーロー数。"
+
+		"Notification_TideArcana_CNVO"					"タイドハンターアルカナの新しいボイスラインが中国語で再生されない不具合を修正しました。"
 
 		// TI 2026
 		"DOTA_EventName_International2026"						"The International 2026"

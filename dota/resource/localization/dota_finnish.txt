@@ -8848,6 +8848,7 @@ Kummankin kiven kulttuuri ja vaikutusvalta kasvoi, kunnes niiden hallitsemat yht
 		"Attrib_Candyshop_1"						"Diretide 2022"
 		"Attrib_Candyshop_2"						"Kruununkaappauksen karavaani"
 		"Attrib_AccountBound"						"Tiliin sidottu"
+		"Attrib_GiftableUntilDate"					"Lahjoitettavissa %s1 asti"
 		"InternationalEvent_Station0"				"The International-ottelun katsomisesta"
 		"InternationalEvent_Station1"				"salakaupassa vierailusta The Internationalissa"
 		"InternationalEvent_Station2"				"The Internationalin Workshop-osastolla käymisestä"
@@ -22934,6 +22935,9 @@ Kokeneet pelaajat, joilla on vähintään {d:new_player_req_behavior_score} vies
 	"dota_settings_low_latency_tooltip_boost"	"Alhaisen latenssin tila on käytössä, mikä optimoi järjestelmäviivettä. Lisäksi käyttää näytönohjaimen tehoja vähentääkseen järjestelmäviivettä vielä enemmän, mutta saattaa mahdollisesti vähentää ruudunpäivitysnopeutta."
 	"dota_settings_low_latency_amd"				"AMD Anti-Lag 2.0"
 	"dota_settings_show_ability_videos"			"Näytä esimerkkivideot kykykuvauksissa"
+	"dota_settings_hero_grid"					"Sankariruudukko"
+	"dota_settings_show_persona_portraits"		"Näytä varustettujen persoonien muotokuvat"
+	
 	"dota_settings_toasts_teammates"		"Liittolaiset"
 	"dota_settings_toasts_show_itempickups"		"Liittolainen ostaa tai poimii tärkeän esineen"
 	"dota_settings_toasts_show_spellsteals"		"Liittolainen varastaa loitsun"
@@ -23001,6 +23005,9 @@ Kokeneet pelaajat, joilla on vähintään {d:new_player_req_behavior_score} vies
 
 	"dota_settings_select_hero_previews_vision_new_setting_title"			"Valitse sankari -painike näyttää sankarin näkökentän esikatselun"
 	"dota_settings_select_hero_previews_vision_new_setting_description"		"Valitse sankari -painikkeen pitäminen painettuna näyttää sankarin näkökentän."
+	"dota_settings_persona_portraits_new_setting_title"			"Persoonamuotokuvat sankariruudukossa"
+	"dota_settings_persona_portraits_new_setting_description"	"Ota käyttöön varustettujen persoonamuotokuvien näyttäminen sankariruudukossa."
+
 	"DOTA_Hotkeys_Tooltip_Invoker"						"Tämä valinta antaa jokaiselle Invokerin loitsulle oman perinteisen näppäimen tyypillisten 4. ja 5. kyvyn pikanäppäimen sijaan."
 
 	"DOTA_LegacyKeysRemove_Title"				"Korvaa hahmojen pikanäppäimet perinteisillä näppäimillä"
@@ -24200,6 +24207,7 @@ Jos asevarastosi on täynnä, seuraavat toiminnot estetään:<br><br><br>- esine
 	"DOTA_tooltip_econ_item_gift_restriction_permanent" "Ei lahjoitettavissa"
 	"DOTA_tooltip_econ_item_gift_allowed" "Lahjoitettavissa"
 	"DOTA_tooltip_econ_item_gift_restriction_date" "Ei voi antaa lahjaksi ennen: {t:T:giftable_after_date_time} {t:s:giftable_after_date_time}"
+	"DOTA_tooltip_econ_item_gift_restriction_until_date" "Lahjoitettavissa {t:T:giftable_until_date_time} {t:s:giftable_until_date_time} asti"
 	"DOTA_tooltip_econ_item_gem_type"		"{s:gem_type}"
 	"DOTA_tooltip_econ_item_gem_strange_count" "{s:strange_count}"
 	"DOTA_tooltip_econ_item_gem_description" "{s:gem_description}"
@@ -24785,6 +24793,11 @@ Jos asevarastosi on täynnä, seuraavat toiminnot estetään:<br><br><br>- esine
 	"DOTA_Treasure_RecyclingCount"		"×{d:inventory_count}"
 	"DOTA_Treasure_DisassembleConfirm_Popup_Title"		"Kierrätetään viimeistä esinettä"
 	"DOTA_Treasure_DisassembleConfirm_Popup_Message"	"Tämä on ainoa omistamasi kappale tästä kokoelmasta. Jos kierrätät kokoelman, sinulla ei ole enää yhtään kokoelman esinettä. Jatketaanko?"
+	"DOTA_Treasure_GiftingConfirm_Popup_Title"		"Lahjoitetaan viimeinen esine"
+	"DOTA_Treasure_GiftingConfirm_Popup_Message"	"Omistat kokoelmasta vain tämän kappaleen. Lahjoituksen jälkeen sinulla ei ole enää yhtään kokoelman esinettä. Haluatko varmasti jatkaa?"
+	"DOTA_Treasure_GiftFriend_Tooltip_Limited"		"Lahjoitettavissa {t:T:giftable_until_date_time} {t:s:giftable_until_date_time} asti"
+	"DOTA_Treasure_NotMarketableAndGiftingLimited"			"Tämän aarteen sisältö ei ole myytävissä tai vaihdettavissa. Tuotteet voidaan lahjoittaa 30 päivän kuluessa avaamisesta."
+
 	"DOTA_Treasure_MilestoneRewardsTitle"			"Lisäpalkinnot"
 	"DOTA_Treasure_MilestoneRewardsDescription"		"Avaa arkkuja saadaksesi lisäpalkintoja."
 	"DOTA_Treasure_MilestoneRewardsItemCount"		"<b>{d:current_open_count}</b>/{d:target_open_count} arkkua avattu"
@@ -49274,11 +49287,18 @@ Koska jotkin lahjaksi tarkoitetut kokoelmat päätyivät kierrätykseen, olemme 
 
 		"DOTA_Arcana_Tidehunter_MiniGame_Title"	"Maelrawnin vasara"
 		"DOTA_Arcana_Tidehunter_MiniGame_Subtitle"	"Avaa Maelrawnin vasaran vaihtoehtoinen tyyli"
+		"DOTA_Arcana_Tidehunter_MiniGame_Description"	"Avaa Maelrawnin vasara tuhomalla kolme tai useampi vihollissankari Ravagella. Jokainen osuma vihollissankariin antaa pisteen. Yhdessä pelissä voi ansaita enintään 25 pistettä."
 		"DOTA_Arcana_Tidehunter_MiniGame_Completion"	"Sankareita tainnutettu Ravagella"
 
 		"DOTA_Arcana_Tidehunter_Fish_MiniGame_Title"	"Pohjaton nälkä"
 		"DOTA_Arcana_Tidehunter_Fish_MiniGame_Subtitle"	"Avaa Pohjattoman nälän vaihtoehtoinen tyyli"
+		"DOTA_Arcana_Tidehunter_Fish_MiniGame_Description"	"Avaa Pohjaton nälkä syömällä vihollissankareiden pudottamia kaloja. Pelin aikana voi ansaita enintään 20 pistettä."
 		"DOTA_Arcana_Tidehunter_Fish_MiniGame_Completion"	"Kaloja syöty"
+
+		"DOTA_Arcana_Tidehunter_MiniGame_ScoreboardRavages"	"<b>{d:tidehunter_arcana_ravages}</b>/{d:tidehunter_arcana_ravages_max}"
+		"DOTA_Arcana_Tidehunter_MiniGame_ScoreboardFish"	"<b>{d:tidehunter_arcana_fish}</b>/{d:tidehunter_arcana_fish_max}"
+		"DOTA_HUD_Scoreboard_TidehunterArcanaRavages"	"Moneen sankariin osuneen Ravagen tainnuttamia vihollisia."
+		"DOTA_HUD_Scoreboard_TidehunterArcanaFish"	"Syötyjä kaloja tässä ottelussa."
 
 		"DOTA_ArcanaProgress_Header_npc_dota_hero_tidehunter"	"Megalodonin kidan tyylit"
 		"DOTA_ArcanaProgress_Title_npc_dota_hero_tidehunter"	"Edistyminen"
@@ -49288,7 +49308,9 @@ Koska jotkin lahjaksi tarkoitetut kokoelmat päätyivät kierrätykseen, olemme 
 		"DOTA_ArcanaProgress_Description_npc_dota_hero_tidehunter_1"	"Kaloja syöty"
 		"DOTA_ArcanaProgress_Increment_npc_dota_hero_tidehunter"	"+{s:arcana_progress_increment}"
 
-		"DOTA_HUD_Scoreboard_TidehunterArcanaNeeded"	"Sankareiden määrä, joihin on osuttava yhdellä Ravagella toisen tyylin avauksen edistymiseksi."
+		"DOTA_HUD_Scoreboard_TidehunterArcanaNeeded"	"Määrä sankareita, joihin on osuttava yhdellä Ravagella toisen tyylin avauksen edistymiseksi."
+
+		"Notification_TideArcana_CNVO"					"Korjattiin virhe, jonka vuoksi Tidehunterin salatieteellisen tyylin uusi ääni ei toiminut kiinaksi."
 
 		// TI 2026
 		"DOTA_EventName_International2026"						"The International 2026"
