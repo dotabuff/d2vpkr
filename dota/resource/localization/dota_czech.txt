@@ -22712,6 +22712,7 @@ Aby se mohl připojit zkušenější hráč, musí mít odehráno nejméně {d:n
 	"dota_settings_quicktargetattack"			"Rychlé útočení"
 	"dota_settings_quickmove"					"Rychlé přesouvání"
 	"dota_settings_preview_hero_vision"			"Výběr hrdiny zobrazující dohled"
+	"dota_settings_render_occluded_npcs"		"Siluety jednotek při jejich zakrytí"
 	"dota_settings_healthbar_hero_icon"			"Ikonky hrdinů vedle ukazatelů zdraví"
 	"dota_settings_targetedattackmove"			"Chytrý útočný přesun"
 	"OS_Default_Device"							"Výchozí zařízení"
@@ -22954,6 +22955,8 @@ Aby se mohl připojit zkušenější hráč, musí mít odehráno nejméně {d:n
 	"DOTA_Hotkeys_Tooltip_QuickcastToggle_OnKeyDown" 	 "Rychlé seslání po stisknutí klávesy"
 	"DOTA_Hotkeys_Tooltip_QuickcastToggle_OnKeyUp" 	 	 "Rychlé seslání po puštění klávesy"
 	"DOTA_Hotkeys_Tooltip_QuickcastToggle_Normal" 	 	 "Rychlé seslání je zakázané"
+	"DOTA_Hotkeys_Tooltip_QuickcastToggle_FollowSlot" 	 "Dle nastavení slotu schopnosti"
+
 	"DOTA_Settings_ChannelCancel_RequiresHoldCancel_Default"	"Vyvolávání této schopnosti přeruší pouze příkaz k držení pozice / přerušení momentální akce (výchozí nastavení)."
 	"DOTA_Settings_ChannelCancel_AnyAction_Default"				"Vyvolávání této schopnosti přeruší libovolná akce (výchozí nastavení)."
 	"DOTA_Settings_ChannelCancel_RequiresHoldCancel"			"Vyvolávání této schopnosti přeruší pouze příkaz k držení pozice / přerušení momentální akce."
@@ -28783,6 +28786,7 @@ Ta proto nyní hledá pět nových ochránců, kteří jí pomohou v nouzi a odr
 	"DOTA_HUD_BuybackAvailable"				"Vykoupení je dostupné"
 	
 	"DOTA_HUD_Item_Owned_By"				"Vlastní: {s:owned_by}"
+	"DOTA_HUD_Item_Tooltip_Sell_Price"		"Prodejní cena: <b>{u:sell_price}</b>"
 	"DOTA_HUD_Item_Tooltip_Sell_Price_Time"	"Prodejní cena: {u:sell_price} ({s:sell_time})"
 	"DOTA_HUD_Item_Tooltip_Disassemble"		"Lze rozložit"
 	"DOTA_HUD_Item_Tooltip_Disassemble_Time"	"Lze rozložit ({s:disassemble_time})"
@@ -50728,6 +50732,7 @@ Jestli ses ale dostatečně nesoustředil a nemůžeš zaručit, že o tomto př
 		"DOTA_DarkCarnival_FortuneReward_Rerolls"		"Obnovení cukrárny"
 
 		"DOTA_DarkCarnival_Fortune_RevealFortuneButtonLabel"			"Vyjevit osud <Img class=\"ButtonIcon\" src=\"file://{images}/events/dark_carnival/oracle/oracle_coin.png\"/> <span class=\"Numbers\">1×</span>"
+		"DOTA_DarkCarnival_Fortune_RevealFortuneButtonLabel_Act2"			"Vyjevit osud <Img class=\"ButtonIcon\" src=\"file://{images}/events/dark_carnival/oracle/oracle_coin_act2.png\"/> <span class=\"Numbers\">1×</span>"
 		"DOTA_DarkCarnival_Fortune_RevealNextFortuneButtonLabel"		"Další vyjevení (1×)"
 
 		"DOTA_DarkCarnival_FortuneReward_k_eOverworldFortuneReward_ThreeRandomTokens"	"3 náhodné lístky"
@@ -50743,6 +50748,10 @@ Jestli ses ale dostatečně nesoustředil a nemůžeš zaručit, že o tomto př
 		"DOTA_DarkCarnival_FortuneReward_k_eOverworldFortuneReward_Rerolls"				"3 obnovení cukrárny"
 		"DOTA_DarkCarnival_FortuneReward_k_eOverworldFortuneReward_PieCharges"			"+1 úroveň koláče"
 		"DOTA_DarkCarnival_FortuneReward_k_eOverworldFortuneReward_LastHeroPlayedTokens"	"Lístky posledního hraného hrdiny"
+		"DOTA_DarkCarnival_FortuneReward_k_eOverworldFortuneReward_CandyworksReroll"		"1 obnovení cukrárny"
+		"DOTA_DarkCarnival_FortuneReward_k_eOverworldFortuneReward_BlessingsCurrencySmall"	"75 žetonů přízně"
+		"DOTA_DarkCarnival_FortuneReward_k_eOverworldFortuneReward_BlessingsCurrencyLarge"	"200 žetonů přízně"
+
 		"DOTA_DarkCarnival_FortuneTeller_BalloonChargesDescription"						"Navýší úroveň sezónní schopnosti Carnival Balloon, pomocí které lze při zápasech vyvolávat balónky.<br>Vyšší úrovně odemykají dodatečná nabití, další druhy balónků a více!"
 		"DOTA_DarkCarnival_FortuneTeller_PieChargesDescription"							"Navýší úroveň sezónní schopnosti Carnival Pie, pomocí které můžeš při zápasech házet na spojence nebo nepřátele koláče.<br>Vyšší úrovně odemykají dodatečná nabití, přeskakující koláče a více!"
 		"DOTA_DarkCarnival_FortuneTeller_FireworksChargesDescription"					"Navýší úroveň sezónní schopnosti Carnival Firework, pomocí které lze při zápasech vystřelovat rachejtle.<br>Vyšší úrovně odemykají dodatečná nabití, zářivější výbuchy a více!"
@@ -50863,8 +50872,13 @@ Jestli ses ale dostatečně nesoustředil a nemůžeš zaručit, že o tomto př
 		"DOTA_Dark_Carnival_PostGame_FortuneTellerProgress"				"Další budeš moci získat za <span class=\"ResetTime\">{t:d:t:m:countdown_time}</span>"
 		"DOTA_Dark_Carnival_PostGame_FortuneTellerMaxProgress"			"Už jsi získal {d:earned_coins}/{d:max_coins} věšteckých kamenů. Další budeš moci získat za <span class=\"ResetTime\">{t:d:t:m:countdown_time}</span>"
 	 
+		"DOTA_Dark_Carnival_Overworld_Map"								"Mapa"
 		"DOTA_Dark_Carnival_The_Train"									"Vlak"
+		"DOTA_Dark_Carnival_Store"										"Obchod"
 		"DOTA_Dark_Carnival_Candyworks"									"Cukrárna"
+		"DOTA_Dark_Carnival_The_Oracle"									"Jasnovidec"
+		
+
 		"DOTA_Dark_Carnival_OverworldCell_TokensNeeded"					"Lístky potřebné pro další odměnu"
 
 		"npc_dota_hero_axe_carnival_cosmetic_group_name"				"Automaton"
@@ -51852,6 +51866,8 @@ Jestli ses ale dostatečně nesoustředil a nemůžeš zaručit, že o tomto př
 		"DOTA_DarkCarnival_WhackAMole_ExpertLabel19"		"SANGE AND YASHA AND KAYA"
 		"DOTA_DarkCarnival_WhackAMole_ExpertTarget19"		"SANGE AND YASHA AND KAYA"
 		
+		"DOTA_Dark_Carnival_Secret_Room"		 "Tajná místnost"
+
 		"DOTA_DarkCarnival_WhackAMole_ImmortalLabel1"		"FROM THE GHASTLY EYRIE I CAN SEE TO THE ENDS OF THE WORLD, AND FROM THIS VANTAGE POINT I DECLARE WITH UTTER CERTAINTY THAT THIS ONE IS IN THE BAG!"
 		"DOTA_DarkCarnival_WhackAMole_ImmortalTarget1"	"FROM THE GHASTLY EYRIE I CAN SEE TO THE ENDS OF THE WORLD AND FROM THIS VANTAGE POINT I DECLARE WITH UTTER CERTAINTY THAT THIS ONE IS IN THE BAG"
 
@@ -51868,7 +51884,72 @@ Jestli ses ale dostatečně nesoustředil a nemůžeš zaručit, že o tomto př
 		"DOTA_Announcer_Preview_Ringmaster_04" "Ale ne, zrovna když se všichni dívali."
 		"DOTA_Announcer_Preview_Ringmaster_05" "Být vámi, tak jsem strašlivě ponížený."
 		"DOTA_Announcer_Preview_Ringmaster_06" "Tohle by skutečný artista nestrpěl."
-// Trove of Terror 2026
+
+		//////////////////////////////////////////////////////
+		// DARK CARNIVAL MIDWAY OF MADNESS
+		//////////////////////////////////////////////////////
+		
+		"DOTA_Dark_Carnival_Tabs_Overworld_Map"								"Mapa"
+		"DOTA_Dark_Carnival_Tabs_Store"										"Obchod"
+		"DOTA_Dark_Carnival_Tabs_Candyworks"								"Cukrárna"
+		"DOTA_Dark_Carnival_Tabs_Oracle"									"Jasnovidec"
+		"DOTA_Dark_Carnival_Tabs_PVE"										"Šapitó"
+		
+		"DOTA_Dark_Carnival_PVE_Intro"										"Sestav družinu čtyř hrdinů a společně se vydejte do útrob Karnevalu krutosti, kde čekají hordy mechanických monstrozit a agresivních automatonů. Dokončujte úkoly, překonávejte smrtící střety a probojujte se přes zvrácené atrakce až k finálnímu bossovi. Kdo tuhle krvavou podívanou přežije, odnese si zasloužené odměny a především si uvědomí, že správná show nikdy nekončí!"
+		"DOTA_Dark_Carnival_PVE_PlayNow"										"Hrát"
+
+		"DOTA_DarkCarnival_Token_QuestBook"			"Kniha"
+		"DOTA_DarkCarnival_Token_QuestCandle"		"Svíce"
+		"DOTA_DarkCarnival_Token_QuestDoor"			"Dveře"
+		"DOTA_DarkCarnival_Token_QuestVessel"		"Schránka"
+		"DOTA_DarkCarnival_MidwayMadness"			"Šapitó šílenství"
+		"DOTA_DarkCarnival_ActActive"				"Aktivní"
+		"DOTA_DarkCarnival_Act2Available_Title"		"Je dostupný II. akt"
+		"DOTA_DarkCarnival_Act2Available_Question"	"II. akt Karnevalu krutosti s názvem „Šapitó šílenství“ je dostupný. Chceš na něj přepnout?"
+		"DOTA_DarkCarnival_SwitchAct_Title"			"Přepnout akt"
+		"DOTA_DarkCarnival_SwitchAct_Question"		"Opravdu chceš přepnout akt Karnevalu krutosti, pro který budeš získávat postup?"
+		"DOTA_Dark_Carnival_EncounterName_PVE"		"Vstup do arény"
+		"DOTA_Dark_Carnival_EncounterDesc_PVE"		"Tady bude jiný text"
+		"DOTA_Dark_Carnival_Play_PVE"				"Hrát Šapitó šílenství"
+		"DOTA_Dark_Carnival_Act2MapName"			"Mapa"
+		"DOTA_Dark_Carnival_Secret_Room_Tooltip" "Vyžaduje VIP jízdenku/vstupenku.<br>Kliknutím si ji můžeš zakoupit."
+		"DOTA_DarkCarnival_Tarot_TheHierophant"		"Velekněz"
+		"DOTA_DarkCarnival_Tarot_TheChariot"		"Vůz"
+		"DOTA_DarkCarnival_Tarot_Justice"		"Spravedlnost"
+		"DOTA_DarkCarnival_Tarot_TheHangedMan"		"Viselec"
+		"DOTA_DarkCarnival_Tarot_Temperance"		"Umírněnost"
+		"DOTA_DarkCarnival_Tarot_TheTower"		"Věž"
+		"DOTA_DarkCarnival_Tarot_TheMoon"		"Měsíc"
+		"DOTA_DarkCarnival_Tarot_TheSun"		"Slunce"
+		"DOTA_DarkCarnival_Tarot_Judgement"		"Soud"
+		"DOTA_DarkCarnival_Tarot_TheWorld"		"Vesmír"
+
+		// Dark Carnival Store
+		"DOTA_DarkCarnival_Store_SecretRoomPack2"								"VIP vstupenka"
+		"DOTA_DarkCarnival_Store_SecretRoomsPack2_SalesDescription"				"VIP vstupenka"
+		"DOTA_DarkCarnival_Store_SecretRoomsPack2_Description_Point1"			"<b>Karnevalový vzhled mapy</b>"
+		"DOTA_DarkCarnival_Store_SecretRoomsPack2_Description_Point2"			"Srdce karnevalu (<b>vzhled Ancienta</b>)"
+		"DOTA_DarkCarnival_Store_SecretRoomsPack2_Description_Point3"			"<b>Karnevalové věže</b>"
+		"DOTA_DarkCarnival_Store_SecretRoomsPack2_Description_Point4"			"<b>1 lístek tajných místností</b> (zajišťující přístup do tajných místností v aréně, kde čekají další příběhy a odměny)"
+		"DOTA_DarkCarnival_Store_SecretRoomsPack2_Scene_Label1"					"Karnevalový vzhled mapy"
+		"DOTA_DarkCarnival_Store_SecretRoomsPack2_Scene_Label2"					"Ancienti"
+		"DOTA_DarkCarnival_Store_SecretRoomsPack2_Scene_Label3"					"Věže"
+		"DOTA_DarkCarnival_Store_SecretRoomsPack2_Scene_Label_Details"			"Podrobnosti"
+		"DOTA_DarkCarnival_Store_SecretRoomsPack2_Ticket_Title"					"1 lístek"
+		"DOTA_DarkCarnival_Store_SecretRoomsPack2_Rooms_Title"					"Přístup do tajných místností"
+		"DOTA_DarkCarnival_Store_SecretRoomsPack2_SecretRoom_Arena"				"Aréna"
+
+		"DOTA_DarkCarnival_Store_SecretRoomsPack2_Radiant"						"Radiant"
+		"DOTA_DarkCarnival_Store_SecretRoomsPack2_Dire"							"Dire"
+
+		// Dark Carnival Automatons
+		"npc_dota_hero_life_stealer_carnival_cosmetic_group_name"		"Automaton"
+		"npc_dota_hero_tidehunter_carnival_cosmetic_group_name"			"Automaton"
+		"npc_dota_hero_lich_carnival_cosmetic_group_name"				"Automaton"
+		"npc_dota_hero_sven_carnival_cosmetic_group_name"				"Automaton"
+		"npc_dota_hero_pugna_carnival_cosmetic_group_name"				"Automaton"
+
+		// Trove of Terror 2026
 		"DOTA_MonsterHoard2026_2026"													"2026"
 		"DOTA_MonsterHoard2026_TreasureTitle"											"Trove of Terror"
 		"DOTA_MonsterHoard2026_TreasureDescription"										"Prohrábni se monstrózní kolekcí zahrnující Immortal předměty, set pro Drow Ranger s přibalenou Arcanou a zbrusu novou žraločí Arcanu pro Tidehuntera. Co víc, za otevírání truhly si můžeš odnést vzhledy Tormentora a Roshana!"
@@ -52387,6 +52468,8 @@ Vzhledem k tomu, že některé sety, které by jinak mohly být darovány, byly 
 		"dota_settings_additional_abilities"	"Dodatečné schopnosti"
 		"dota_settings_additional_abilities_tooltip"	"Zobrazí dodatečné schopnosti tohoto hrdiny, abys mohl přiřadit klávesy přímo k nim."
 		"dota_settings_additional_abilities_new_setting_title"			"Klávesy pro dodatečné schopnosti"
+		"dota_settings_additional_abilities_new_setting_description"	"Některé dodatečné schopnosti hrdinů (<b>Invokerova</b> kouzla, <b>Kezovy</b> schopnosti vidlic sai, <b>Largovy</b> písně, <b>Doomovy</b> pozřené schopnosti a <b>Lifestealerova</b> schopnost Consume) mohou být nově přiřazeny k odděleným klávesám a mít nastavené rychlé sesílání. Stačí zde v nastavení přejít do sekce „Ovládání“, vybrat hrdinu a pod jeho schopnostmi kliknout na „Dodatečné schopnosti“."
+
 		"dota_settings_unit_picker_summons_tooltip"	"%s2 (%s1)"
 
 		"DOTA_TeamFanContent_EffigyExtraInfo"	"Tato podobizna automaticky ve všech zápasech nahradí tvoji běžnou podobiznu a dá všem na odiv tvoje „barvy“! Podobizna zmizí s koncem září společně se zbytkem dočasného obsahu."
